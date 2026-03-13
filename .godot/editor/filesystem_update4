@@ -1,0 +1,10 @@
+res://scene/main.tscn
+res://scene/IdleScreen.tscn
+res://scene/socket.tscn
+res://scene/floppydisk.tscn
+res://scene/screen.tscn
+res://addons/proto_controller/proto_controller.gd
+res://addons/proto_controller/proto_controller.tscn
+res://proto_controller.gd
+res://scripts/proto_controller.gd
+res://scene/character.tscn

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://d08r12hn5mce1"]
+
+[ext_resource type="Script" uid="uid://buy3tn3iclxbm" path="res://scripts/idlescreen.gd" id="1_wago0"]
+[ext_resource type="Texture2D" uid="uid://dqcdqiy8bwnif" path="res://images/nogodot.jpg" id="2_tnduc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m45xy"]
+size = Vector3(6.98, 0.24519287, 2.7174468)
+
+[sub_resource type="BoxMesh" id="BoxMesh_j1fgw"]
+size = Vector3(6.98, 0.15, 2.734)
+
+[node name="StaticBody3D" type="StaticBody3D" unique_id=1201481395]
+transform = Transform3D(-4.3711385e-08, -0.9999999, -4.3711385e-08, 0, -4.3711385e-08, 0.9999999, -0.9999999, 4.3711385e-08, 1.9106853e-15, 0, 0, 0)
+collision_layer = 7
+script = ExtResource("1_wago0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1289984328]
+transform = Transform3D(1, 4.654055e-13, -7.411538e-21, -4.654055e-13, 1, -4.654055e-13, -7.411538e-21, 4.654055e-13, 1, 0, -0.015296636, 0.0114762895)
+shape = SubResource("BoxShape3D_m45xy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=922254401]
+mesh = SubResource("BoxMesh_j1fgw")
+
+[node name="Sprite3D" type="Sprite3D" parent="MeshInstance3D" unique_id=1712471814]
+transform = Transform3D(0.5476475, 4.2351647e-22, 3.907985e-14, -1.9539925e-14, -1.7360804e-08, 0.99999994, -4.2351647e-22, -0.39716896, -4.371136e-08, -4.0788386e-09, -0.09331287, -4.0788386e-09)
+flip_v = true
+texture = ExtResource("2_tnduc")
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=1981470389]
+transform = Transform3D(1, 2.3477664e-10, 6.402697e-09, 6.4026864e-09, -0.07323814, -0.9973145, 2.3477753e-10, 0.9973144, -0.073238134, 1.1148799e-08, -2.7449453, -0.27061415)

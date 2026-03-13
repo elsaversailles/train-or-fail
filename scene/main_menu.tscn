@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://crev2inf1u6xe"]
+
+[ext_resource type="Script" uid="uid://dn12u7ocbrg15" path="res://scripts/main_menu.gd" id="1_06t4h"]
+
+[node name="CanvasLayer2" type="CanvasLayer" unique_id=502315201]
+
+[node name="Main Menu" type="Control" parent="." unique_id=1439973024]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_06t4h")
+
+[node name="ColorRect" type="ColorRect" parent="Main Menu" unique_id=844501067]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="Main Menu" unique_id=464210619]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main Menu/CenterContainer" unique_id=931742168]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+
+[node name="New Game" type="Button" parent="Main Menu/CenterContainer/VBoxContainer" unique_id=2033790857]
+layout_mode = 2
+text = "New Game"
+
+[node name="Load Game" type="Button" parent="Main Menu/CenterContainer/VBoxContainer" unique_id=905321958]
+layout_mode = 2
+text = "Load Game"
+
+[node name="Settings" type="Button" parent="Main Menu/CenterContainer/VBoxContainer" unique_id=446335812]
+layout_mode = 2
+text = "Settings"
+
+[node name="About Us" type="Button" parent="Main Menu/CenterContainer/VBoxContainer" unique_id=2074900280]
+layout_mode = 2
+text = "About Us"
+
+[node name="Quit" type="Button" parent="Main Menu/CenterContainer/VBoxContainer" unique_id=2031676534]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="Main Menu/CenterContainer/VBoxContainer/New Game" to="Main Menu" method="_on_new_game_pressed"]
+[connection signal="pressed" from="Main Menu/CenterContainer/VBoxContainer/Load Game" to="Main Menu" method="_on_load_game_pressed"]
+[connection signal="pressed" from="Main Menu/CenterContainer/VBoxContainer/Settings" to="Main Menu" method="_on_settings_pressed"]
+[connection signal="pressed" from="Main Menu/CenterContainer/VBoxContainer/About Us" to="Main Menu" method="_on_about_us_pressed"]
+[connection signal="pressed" from="Main Menu/CenterContainer/VBoxContainer/Quit" to="Main Menu" method="_on_quit_pressed"]

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://gmpo534wlfpb"]
+
+[ext_resource type="Script" uid="uid://bid8280uum01s" path="res://scripts/data.gd" id="1_ylaa1"]
+
+[node name="data" type="RigidBody3D" unique_id=1847687756]
+collision_layer = 3
+freeze = true
+script = ExtResource("1_ylaa1")
