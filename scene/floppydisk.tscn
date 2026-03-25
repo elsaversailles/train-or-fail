@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://qxngx7cctkt6"]
 
 [ext_resource type="Script" uid="uid://bid8280uum01s" path="res://scripts/data.gd" id="1_0ae5k"]
+[ext_resource type="Texture2D" uid="uid://2o6k54rgxqg3" path="res://images/floppydisk.png" id="2_056wq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pihch"]
 resource_name = "Material"
@@ -136,40 +137,15 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_5to3j")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g3bho"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2lgbr"]
+albedo_texture = ExtResource("2_056wq")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_81dd8"]
-_surfaces = [{
-"aabb": AABB(-0.0130840065, -0.1, -0.11116715, 0.006676818, 0.12766644, 0.20248158),
-"format": 34896613377,
-"index_count": 36,
-"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYA"),
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 8,
-"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAD/////AAAAAP//AAD//wAA////////AAD//wAAAAAAAA==")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_efxa6"]
-resource_name = "FloppyDiskBase_Cube_009"
-_surfaces = [{
-"aabb": AABB(-0.0130840065, -0.1, -0.11116715, 0.006676818, 0.12766644, 0.20248158),
-"attribute_data": PackedByteArray("/1////+f/7//n////1//v/9f/7//n/9//5//v/9f/3//X/9//5//P/+f/3//X/8//1//P/+fAAD/n/8//18AAP8f/3//X/8//1//f/8f/z//n/9//9//P//f/3//n/8/"),
-"format": 34896613399,
-"index_count": 36,
-"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
-"material": SubResource("StandardMaterial3D_g3bho"),
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 24,
-"vertex_data": PackedByteArray("AAAAAP//VNUAAP//AABU1QAA/////1TVAAAAAAAAVNUAAAAAAAD///////8AAP//AAD//wAA/////wAAAAD/////AAAAAFTV////////VNX/////AABU1f//AAD//1TV//8AAP///78AAP//////v/////////+/AAAAAP///78AAAAAAAD/v///AAD///+///8AAAAA/78AAAAA////v/////8AAP//AAD///////8AAP//AAD/////////////VNVU1VTVVNVU1VTVVNVU1f+//7//v/+//7//v/+//7+qKqoqqiqqKqoqqiqqKqoq/////////////////////wAA/38AAP9/AAD/fwAA/3//f/+//3//v/9//7//f/+/")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_81dd8")
+[sub_resource type="QuadMesh" id="QuadMesh_6lufm"]
+material = SubResource("StandardMaterial3D_2lgbr")
+size = Vector2(0.2, 0.12)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dg77c"]
-size = Vector3(0.08439453, 0.282, 0.25976563)
+size = Vector3(0.106634766, 1.1759882, 1.0972534)
 
 [node name="data" type="RigidBody3D" unique_id=1531040890]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
@@ -178,6 +154,7 @@ continuous_cd = true
 script = ExtResource("1_0ae5k")
 
 [node name="disk" type="MeshInstance3D" parent="." unique_id=2097409889]
+transform = Transform3D(2.5109563, 1.7415507e-14, 0, -7.1054274e-15, 6.154391, 0, 0, 0, 6.201379, 0.15730265, 6.875917e-09, 0)
 layers = 3
 mesh = SubResource("ArrayMesh_272bh")
 
@@ -197,10 +174,10 @@ layers = 3
 mesh = SubResource("ArrayMesh_4c57u")
 
 [node name="Cube_004" type="MeshInstance3D" parent="disk" unique_id=847540879]
-transform = Transform3D(0.6270334, 0, 0, 0, 0.6270334, 0, 0, 0, 0.60980064, -0.09242725, 0.00036227703, 0.021366596)
+transform = Transform3D(-2.7408495e-08, -2.9173549e-08, -0.60980064, -2.7408499e-08, 0.66741365, -2.6655233e-08, 0.6270334, 2.9173567e-08, -2.6655224e-08, -0.101857476, -0.019585043, 0.015565242)
 layers = 3
-mesh = SubResource("ArrayMesh_efxa6")
+mesh = SubResource("QuadMesh_6lufm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1232104150]
-transform = Transform3D(0.9999125, 0.01322921, 0, -0.01322921, 0.9999125, 0, 0, 0, 1, -0.095246315, -4.1633488e-09, 0)
+transform = Transform3D(0.9999125, 0.01322921, 0, -0.01322921, 0.9999125, 0, 0, 0, 1, -0.08604262, 0.06262507, 0.08393805)
 shape = SubResource("BoxShape3D_dg77c")

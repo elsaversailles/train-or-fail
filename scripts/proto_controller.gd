@@ -28,6 +28,9 @@ func _ready() -> void:
 	look_rotation.x = head.rotation.x
 	# Add this line to lock the default head position
 	original_head_transform = head.transform
+	for child in get_tree().root.get_children():
+		if child.is_in_group("items"):
+			child.queue_free()
 
 func set_computer_focus(target_transform, monitor_node):
 	is_focusing_screen = true
@@ -189,8 +192,16 @@ func clear_held_item():
 	held_item = null
 
 func _unhandled_input(event: InputEvent) -> void:
-	# Toggle between mouse modes with ESC
-	if event.is_action_pressed("ui_cancel"): # "ui_cancel" is ESC by default
+	if event.is_action_pressed("ui_cancel"):
+		# 1. Clear items to prevent "ghost disks" in the next game
+		for child in get_tree().root.get_children():
+			if child.is_in_group("items"):
+				child.queue_free()
+		
+		# 2. Reset mouse to visible so you can click the menu buttons
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		
+		# 3. Change scene
 		get_tree().change_scene_to_file("res://scene/main_menu.tscn")
 
 	# Only allow looking and clicking if NOT paused
@@ -252,4 +263,8 @@ func _on_data_body_entered(body: Node) -> void:
 
 
 func _on_data_body_exited(body: Node) -> void:
+	pass # Replace with function body.
+
+
+func _on_legit_btn_mouse_entered() -> void:
 	pass # Replace with function body.

@@ -72,4 +72,4 @@ collision_mask = 2
 collide_with_areas = true
 
 [node name="handpoint" type="Marker3D" parent="Head/Camera3D" unique_id=2036793174]
-transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, 0.28938764, -0.30551422, -0.8249244)
+transform = Transform3D(-1.2964473e-07, -9.87361e-08, 1, -0.25881904, 0.9659258, 6.181723e-08, -0.9659258, -0.25881904, -1.5078197e-07, -0.18690044, -0.30551422, -0.86657184)

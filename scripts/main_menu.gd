@@ -5,7 +5,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _on_new_game_pressed():
-	# Change "res://main.tscn" to the actual path of your first level
+	# This removes the menu and loads a brand new 'main.tscn'
 	get_tree().change_scene_to_file("res://scene/main.tscn")
 
 

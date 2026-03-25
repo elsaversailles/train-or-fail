@@ -3,10 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://vc28jjp6ukw7" path="res://images/maypaya_office_bottom.jpeg" id="1_272bh"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scene/character.tscn" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://bmbpamkvhdd2i" path="res://images/wall.jpeg" id="2_5vw27"]
-[ext_resource type="PackedScene" uid="uid://s8c170cgtuw" path="res://addons/Table.glb" id="3_p1hux"]
 [ext_resource type="PackedScene" uid="uid://cwjddyjeack6m" path="res://scene/socket.tscn" id="4_b5f6u"]
+[ext_resource type="PackedScene" uid="uid://c2hpohwilg1lq" path="res://addons/table.tscn" id="7_p1hux"]
 [ext_resource type="PackedScene" uid="uid://qxngx7cctkt6" path="res://scene/floppydisk.tscn" id="8_b5f6u"]
+[ext_resource type="PackedScene" uid="uid://c0v72003xgbg7" path="res://assets/Monitor.glb" id="8_of57s"]
+[ext_resource type="Script" uid="uid://chk5c2vkeowgj" path="res://scripts/screen.gd" id="8_tqoya"]
 [ext_resource type="PackedScene" uid="uid://d08r12hn5mce1" path="res://scene/IdleScreen.tscn" id="9_kek77"]
+[ext_resource type="Script" uid="uid://bd1eqx7ns2mep" path="res://scripts/sliding_panel.gd" id="10_hybxs"]
+[ext_resource type="Texture2D" uid="uid://83ewd4funt4j" path="res://images/Location.png" id="10_k65ib"]
+[ext_resource type="Texture2D" uid="uid://b2giu0ahl61my" path="res://images/Time.png" id="11_wscrc"]
+[ext_resource type="Texture2D" uid="uid://cligat2j1tbpd" path="res://images/Price.png" id="12_mswub"]
+[ext_resource type="Texture2D" uid="uid://bb6n32ohbw2dt" path="res://images/Item.png" id="13_hybxs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -29,9 +36,6 @@ uv1_world_triplanar = true
 albedo_texture = ExtResource("1_272bh")
 uv1_triplanar = true
 uv1_world_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ig7tw"]
-albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_1bvp3"]
 font_color = Color(0.07058824, 0.07058824, 0.07058824, 1)
@@ -74,13 +78,28 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_xgb4x")
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_p1hux"]
+viewport_path = NodePath("Monitor/Screen/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_of57s"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_p1hux")
+
+[sub_resource type="QuadMesh" id="QuadMesh_b5f6u"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_of57s")
+size = Vector2(0.41, 0.53)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wscrc"]
+data = PackedVector3Array(0.205, -0.265, 0, -0.205, -0.265, 0, 0.205, 0.265, 0, -0.205, -0.265, 0, -0.205, 0.265, 0, 0.205, 0.265, 0)
+
 [node name="Main" type="Node3D" unique_id=1103394804]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1808950673]
 environment = SubResource("Environment_0xm2m")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=674580829]
-transform = Transform3D(-0.95054054, -0.013753386, -0.31029612, -0.3010285, -0.20531467, 0.9312508, -0.07651617, 0.97859955, 0.19101976, 0, 10.833578, 0)
+transform = Transform3D(-0.95054054, -0.013753358, -0.31029615, -0.3086199, -0.07083017, 0.94854474, -0.035024006, 0.9973938, 0.06308235, 0, 10.833578, 0)
 light_energy = 0.118
 shadow_enabled = true
 
@@ -90,10 +109,10 @@ material_override = SubResource("StandardMaterial3D_kek77")
 use_collision = true
 
 [node name="Floor" type="CSGBox3D" parent="Room" unique_id=1432533514]
-transform = Transform3D(-4.374418e-08, 0, -1.0999951, 0, 0.20225318, 0, 2.1356926, 0, -1.02612724e-07, -0.13370669, -0.5477987, 22.718273)
+transform = Transform3D(-4.374471e-08, 0, -1.0999951, 0, 0.20225318, 0, 2.1356926, 0, -1.02614216e-07, -0.20675309, -0.5477987, 16.066051)
 material_override = SubResource("StandardMaterial3D_5vw27")
 use_collision = true
-size = Vector3(23.689636, 0.95644534, 12)
+size = Vector3(17.460068, 0.95644534, 11.363281)
 
 [node name="Wall1" type="CSGBox3D" parent="Room" unique_id=1740007138]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 5.684342e-14, 0, 1, -0.022430401, 0.4784144, -0.96127844)
@@ -103,25 +122,17 @@ size = Vector3(12, 2, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 5.684342e-14, 0, 1, 0.02242991, 0.4784144, 21.39698)
 size = Vector3(12, 2, 1)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Room/Wall1_1" unique_id=1026850175]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008117631, -0.38700658, -0.13830566)
-size = Vector3(6.9801025, 0.5652466, 1.2766113)
-material = SubResource("StandardMaterial3D_ig7tw")
-
 [node name="Wall1_2" type="CSGBox3D" parent="Room" unique_id=1554690360]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 5.684342e-14, 0, 1, -0.02243139, 0.4784144, 47.510735)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 5.684342e-14, 0, 1, -0.022431118, 0.4784144, 34.245007)
 size = Vector3(12, 2, 1)
 
 [node name="Wall2" type="CSGBox3D" parent="Room" unique_id=497108233]
-transform = Transform3D(-3.1770643e-08, 0, -0.4685821, 0, 1.0000004, 0, 1.5511212, 0, -4.3712593e-08, 5.763229, 0.4784144, 23.315945)
-size = Vector3(32, 2, 1)
+transform = Transform3D(-3.1770643e-08, 0, -0.4685821, 0, 1.0000004, 0, 1.5511212, 0, -4.3713133e-08, 5.763, 0.478, 16.64)
+size = Vector3(23.3, 2, 1)
 
 [node name="Wall2_2" type="CSGBox3D" parent="Room" unique_id=752027060]
-transform = Transform3D(-3.1770643e-08, 0, -0.4685821, 0, 1.0000004, 0, 1.5511212, 0, -4.3713225e-08, -6.236771, 0.4784144, 23.315945)
-size = Vector3(32, 2, 1)
-
-[node name="Table" parent="Room" unique_id=941121870 instance=ExtResource("3_p1hux")]
-transform = Transform3D(-3.4969112e-08, 0, -1, 0, 0.087, 0, 0.8, 0, -4.3711395e-08, 0.15838575, -0.36436713, 11.706739)
+transform = Transform3D(-3.1770643e-08, 0, -0.4685821, 0, 1.0000004, 0, 1.5511212, 0, -4.3714003e-08, -6.236999, 0.47799996, 16.64)
+size = Vector3(23.3, 2, 1)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="Room" unique_id=69423948]
 transform = Transform3D(-2.8193837e-08, 0, -0.31675217, 0, 0.01449068, 0, 1.3764933, 0, -2.9548064e-08, 4.1413474, -0.20776525, 21.010145)
@@ -167,13 +178,129 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.032068, 0.99805367, -4.1325
 collision_layer = 2
 
 [node name="floppydisk" parent="." unique_id=1531040890 instance=ExtResource("8_b5f6u")]
-transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 2.4042637, 0.7826729, -1.0755742)
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 5.5807233, 0.72026336, -1.5302956)
 
 [node name="IdleScreen" parent="." unique_id=1201481395 instance=ExtResource("9_kek77")]
-transform = Transform3D(-4.371138e-08, 0.9999999, -4.371138e-08, -0.00019207792, 4.3702986e-08, 0.9999999, 0.9999999, 4.3719776e-08, 0.00019207792, 6.741052, 2.4191048, -0.01828301)
+transform = Transform3D(-4.371139e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, 4.371139e-08, 1.9106855e-15, 6.573001, 1.8168597, 0.102722645)
+visible = false
 
 [node name="NPC" type="MeshInstance3D" parent="." unique_id=1440455293]
-transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 11.747131, 1.451592, 0)
+transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 11.747131, 2.5377703, 0)
 mesh = SubResource("ArrayMesh_h2yge")
+
+[node name="Table" parent="." unique_id=941121870 instance=ExtResource("7_p1hux")]
+transform = Transform3D(0.5431538, 0, 0, 0, 0.42786574, 0, 0, 0, 0.9, 5.136668, 0.18296456, -0.19128597)
+
+[node name="Monitor" parent="." unique_id=724615049 instance=ExtResource("8_of57s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.5272965, 0.68358636, 0.083559036)
+
+[node name="Screen" type="Node3D" parent="Monitor" unique_id=1749718098]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.083558746, -0.68358636, 6.6796875)
+script = ExtResource("8_tqoya")
+
+[node name="Quad" type="MeshInstance3D" parent="Monitor/Screen" unique_id=671364175]
+transform = Transform3D(-3.036211e-07, 0, -0.99999976, 0, 2.7617304, 0, 6.9460416, 0, -4.3711378e-08, 6.650567, 1.8339279, 0.10465306)
+mesh = SubResource("QuadMesh_b5f6u")
+
+[node name="Area3D" type="Area3D" parent="Monitor/Screen/Quad" unique_id=2134300452]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Monitor/Screen/Quad/Area3D" unique_id=272003500]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_wscrc")
+
+[node name="SubViewport" type="SubViewport" parent="Monitor/Screen" unique_id=518032394]
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="Monitor/Screen/SubViewport" unique_id=525920961]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 9.471071, 2.7917843, 0)
+
+[node name="SlidingPanel" type="Panel" parent="Monitor/Screen/SubViewport" unique_id=2049437397]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -944.0
+offset_right = -1152.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("10_hybxs")
+
+[node name="GripButton" type="Button" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=330496296]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_right = 32.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "|||
+|||
+|||
+|||"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=1707861505]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = -150.0
+offset_right = -32.0
+offset_bottom = 150.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="LegitButton" type="Button" parent="Monitor/Screen/SubViewport/SlidingPanel/VBoxContainer" unique_id=2056387240]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Legit"
+
+[node name="SusButton" type="Button" parent="Monitor/Screen/SubViewport/SlidingPanel/VBoxContainer" unique_id=1198441296]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Sus"
+
+[node name="TabContainer" type="TabContainer" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=514110691]
+layout_mode = 0
+offset_top = 29.0
+offset_right = 817.0
+offset_bottom = 619.0
+current_tab = 0
+
+[node name="Location" type="TextureRect" parent="Monitor/Screen/SubViewport/SlidingPanel/TabContainer" unique_id=199504032]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("10_k65ib")
+expand_mode = 1
+stretch_mode = 5
+metadata/_tab_index = 0
+
+[node name="Time" type="TextureRect" parent="Monitor/Screen/SubViewport/SlidingPanel/TabContainer" unique_id=1898249044]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("11_wscrc")
+expand_mode = 1
+metadata/_tab_index = 1
+
+[node name="Price" type="TextureRect" parent="Monitor/Screen/SubViewport/SlidingPanel/TabContainer" unique_id=2002361495]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("12_mswub")
+expand_mode = 1
+metadata/_tab_index = 2
+
+[node name="Item" type="TextureRect" parent="Monitor/Screen/SubViewport/SlidingPanel/TabContainer" unique_id=1759297711]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("13_hybxs")
+expand_mode = 1
+metadata/_tab_index = 3
 
 [connection signal="body_entered" from="socket" to="MainChar" method="_on_socket_body_entered"]
