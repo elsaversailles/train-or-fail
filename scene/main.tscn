@@ -225,6 +225,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("10_hybxs")
 
+[node name="ApplicantLabel" type="Label" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=83242092]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 3.0
+offset_right = 142.0
+offset_bottom = 26.0
+text = "Applicant 1 / 5"
+
 [node name="GripButton" type="Button" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=330496296]
 layout_mode = 1
 anchors_preset = 11
@@ -302,5 +310,25 @@ size_flags_horizontal = 3
 texture = ExtResource("13_hybxs")
 expand_mode = 1
 metadata/_tab_index = 3
+
+[node name="ResultPanel" type="Panel" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=1099619049]
+layout_mode = 0
+offset_left = 659.0
+offset_top = 11.0
+offset_right = 817.0
+offset_bottom = 51.0
+
+[node name="ResultLabel" type="Label" parent="Monitor/Screen/SubViewport/SlidingPanel/ResultPanel" unique_id=1727240169]
+layout_mode = 0
+offset_right = 69.0
+offset_bottom = 23.0
+
+[node name="RestartButton" type="Button" parent="Monitor/Screen/SubViewport/SlidingPanel/ResultPanel" unique_id=883350333]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 4.0
+offset_right = 156.0
+offset_bottom = 35.0
+text = "Restart"
 
 [connection signal="body_entered" from="socket" to="MainChar" method="_on_socket_body_entered"]

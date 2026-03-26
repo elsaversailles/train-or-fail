@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://crev2inf1u6xe"]
 
 [ext_resource type="Script" uid="uid://dn12u7ocbrg15" path="res://scripts/main_menu.gd" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://g2jg4pe865e8" path="res://images/MainMenu/New Game.png" id="2_2atga"]
+[ext_resource type="Texture2D" uid="uid://dmsh6m8vv644q" path="res://images/MainMenu/Load Game.png" id="3_by01r"]
+[ext_resource type="Texture2D" uid="uid://dpbnriw38qayc" path="res://images/MainMenu/Settings.png" id="4_dclss"]
+[ext_resource type="Texture2D" uid="uid://cogad2c6f5qh8" path="res://images/MainMenu/About Us.png" id="5_hmxu4"]
+[ext_resource type="Texture2D" uid="uid://bcaoasayu6jx5" path="res://images/MainMenu/Quit.png" id="6_ictww"]
+[ext_resource type="Texture2D" uid="uid://cvpma47eqx85r" path="res://images/MainMenu/Game Title.png" id="7_1o50l"]
 
 [node name="CanvasLayer2" type="CanvasLayer" unique_id=502315201]
 
@@ -20,42 +26,72 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 0, 0, 1)
+color = Color(0, 0, 0, 1)
 
-[node name="CenterContainer" type="CenterContainer" parent="Main Menu" unique_id=464210619]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="New Game" type="Button" parent="Main Menu" unique_id=2033790857]
+layout_mode = 0
+offset_left = 139.00002
+offset_top = 314.00003
+offset_right = 309.0
+offset_bottom = 364.00003
+rotation = 0.08726646
+icon = ExtResource("2_2atga")
+flat = true
+expand_icon = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Main Menu/CenterContainer" unique_id=931742168]
-custom_minimum_size = Vector2(400, 400)
-layout_mode = 2
+[node name="Load Game" type="Button" parent="Main Menu" unique_id=905321958]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 395.0
+offset_right = 301.0
+offset_bottom = 445.0
+rotation = -0.07853982
+icon = ExtResource("3_by01r")
+flat = true
+expand_icon = true
 
-[node name="New Game" type="Button" parent="Main Menu/CenterContainer/VBoxContainer" unique_id=2033790857]
-layout_mode = 2
-text = "New Game"
+[node name="Settings" type="Button" parent="Main Menu" unique_id=446335812]
+layout_mode = 0
+offset_left = 133.99998
+offset_top = 452.99997
+offset_right = 304.0
+offset_bottom = 502.99997
+rotation = 0.05235988
+icon = ExtResource("4_dclss")
+flat = true
+expand_icon = true
 
-[node name="Load Game" type="Button" parent="Main Menu/CenterContainer/VBoxContainer" unique_id=905321958]
-layout_mode = 2
-text = "Load Game"
+[node name="About Us" type="Button" parent="Main Menu" unique_id=2074900280]
+layout_mode = 0
+offset_left = 969.0
+offset_top = 4.0
+offset_right = 1111.0
+offset_bottom = 117.0
+icon = ExtResource("5_hmxu4")
+flat = true
+expand_icon = true
 
-[node name="Settings" type="Button" parent="Main Menu/CenterContainer/VBoxContainer" unique_id=446335812]
-layout_mode = 2
-text = "Settings"
+[node name="Quit" type="Button" parent="Main Menu" unique_id=2031676534]
+layout_mode = 0
+offset_left = 141.0
+offset_top = 517.0
+offset_right = 290.0
+offset_bottom = 565.0
+rotation = 0.034906585
+icon = ExtResource("6_ictww")
+flat = true
+expand_icon = true
 
-[node name="About Us" type="Button" parent="Main Menu/CenterContainer/VBoxContainer" unique_id=2074900280]
-layout_mode = 2
-text = "About Us"
+[node name="TextureRect" type="TextureRect" parent="Main Menu" unique_id=367183986]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 19.0
+offset_right = 538.0
+offset_bottom = 269.0
+texture = ExtResource("7_1o50l")
 
-[node name="Quit" type="Button" parent="Main Menu/CenterContainer/VBoxContainer" unique_id=2031676534]
-layout_mode = 2
-text = "Quit"
-
-[connection signal="pressed" from="Main Menu/CenterContainer/VBoxContainer/New Game" to="Main Menu" method="_on_new_game_pressed"]
-[connection signal="pressed" from="Main Menu/CenterContainer/VBoxContainer/Load Game" to="Main Menu" method="_on_load_game_pressed"]
-[connection signal="pressed" from="Main Menu/CenterContainer/VBoxContainer/Settings" to="Main Menu" method="_on_settings_pressed"]
-[connection signal="pressed" from="Main Menu/CenterContainer/VBoxContainer/About Us" to="Main Menu" method="_on_about_us_pressed"]
-[connection signal="pressed" from="Main Menu/CenterContainer/VBoxContainer/Quit" to="Main Menu" method="_on_quit_pressed"]
+[connection signal="pressed" from="Main Menu/New Game" to="Main Menu" method="_on_new_game_pressed"]
+[connection signal="pressed" from="Main Menu/Load Game" to="Main Menu" method="_on_load_game_pressed"]
+[connection signal="pressed" from="Main Menu/Settings" to="Main Menu" method="_on_settings_pressed"]
+[connection signal="pressed" from="Main Menu/About Us" to="Main Menu" method="_on_about_us_pressed"]
+[connection signal="pressed" from="Main Menu/Quit" to="Main Menu" method="_on_quit_pressed"]
