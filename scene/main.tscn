@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://vc28jjp6ukw7" path="res://images/maypaya_office_bottom.jpeg" id="1_272bh"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scene/character.tscn" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://oblqrvb0temk" path="res://scene/main.gd" id="1_v2gmf"]
 [ext_resource type="Texture2D" uid="uid://bmbpamkvhdd2i" path="res://images/wall.jpeg" id="2_5vw27"]
 [ext_resource type="PackedScene" uid="uid://cwjddyjeack6m" path="res://scene/socket.tscn" id="4_b5f6u"]
 [ext_resource type="PackedScene" uid="uid://c2hpohwilg1lq" path="res://addons/table.tscn" id="7_p1hux"]
@@ -94,6 +95,7 @@ size = Vector2(0.41, 0.53)
 data = PackedVector3Array(0.205, -0.265, 0, -0.205, -0.265, 0, 0.205, 0.265, 0, -0.205, -0.265, 0, -0.205, 0.265, 0, 0.205, 0.265, 0)
 
 [node name="Main" type="Node3D" unique_id=1103394804]
+script = ExtResource("1_v2gmf")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1808950673]
 environment = SubResource("Environment_0xm2m")
@@ -272,6 +274,12 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "Sus"
 
+[node name="ShutdownButton" type="Button" parent="Monitor/Screen/SubViewport/SlidingPanel/VBoxContainer" unique_id=180447544]
+visible = false
+layout_mode = 2
+size_flags_vertical = 10
+text = "Shutdown"
+
 [node name="TabContainer" type="TabContainer" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=514110691]
 layout_mode = 0
 offset_top = 29.0
@@ -311,24 +319,56 @@ texture = ExtResource("13_hybxs")
 expand_mode = 1
 metadata/_tab_index = 3
 
-[node name="ResultPanel" type="Panel" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=1099619049]
-layout_mode = 0
-offset_left = 659.0
-offset_top = 11.0
-offset_right = 817.0
-offset_bottom = 51.0
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=631947750]
 
-[node name="ResultLabel" type="Label" parent="Monitor/Screen/SubViewport/SlidingPanel/ResultPanel" unique_id=1727240169]
-layout_mode = 0
-offset_right = 69.0
-offset_bottom = 23.0
+[node name="FinalResultPanel" type="Panel" parent="CanvasLayer2" unique_id=1746299184]
+offset_left = 300.0
+offset_top = 150.0
+offset_right = 800.0
+offset_bottom = 450.0
 
-[node name="RestartButton" type="Button" parent="Monitor/Screen/SubViewport/SlidingPanel/ResultPanel" unique_id=883350333]
+[node name="FinalResultLabel" type="Label" parent="CanvasLayer2/FinalResultPanel" unique_id=1864189202]
 layout_mode = 0
-offset_left = 91.0
-offset_top = 4.0
-offset_right = 156.0
-offset_bottom = 35.0
-text = "Restart"
+offset_left = 41.0
+offset_top = 32.0
+offset_right = 170.0
+offset_bottom = 90.0
+
+[node name="RestartButton" type="Button" parent="CanvasLayer2/FinalResultPanel" unique_id=889836818]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.9480001
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -57.0
+offset_top = -29.400024
+offset_right = 57.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Restart Game"
+
+[node name="MainmenuButton" type="Button" parent="CanvasLayer2/FinalResultPanel" unique_id=552832448]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 256.0
+offset_right = 96.0
+offset_bottom = 1.0
+grow_vertical = 2
+text = "Main Menu"
+
+[node name="NextgameButton" type="Button" parent="CanvasLayer2/FinalResultPanel" unique_id=996861491]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -95.0
+offset_top = 254.0
+offset_bottom = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "Next Game"
 
 [connection signal="body_entered" from="socket" to="MainChar" method="_on_socket_body_entered"]

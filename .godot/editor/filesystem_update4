@@ -1,0 +1,4 @@
+res://scene/main.tscn
+res://scripts/screen.gd
+res://scripts/sliding_panel.gd
+res://scene/main.gd

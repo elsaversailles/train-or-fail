@@ -1,5 +1,7 @@
 extends Control
 
+@onready var main_node = get_tree().current_scene
+
 # -----------------------------
 # PANEL SETTINGS
 # -----------------------------
@@ -52,6 +54,7 @@ var applicants = [
 # -----------------------------
 var current_index = 0
 var player_answers = []
+var final_score = 0
 
 # -----------------------------
 # NODE REFERENCES
@@ -59,6 +62,7 @@ var player_answers = []
 @onready var grip_button = $GripButton
 @onready var legit_button = $VBoxContainer/LegitButton
 @onready var sus_button = $VBoxContainer/SusButton
+@onready var shutdown_button = $VBoxContainer/ShutdownButton
 
 @onready var tab_container = $TabContainer
 @onready var location_tab = $TabContainer/Location
@@ -68,10 +72,6 @@ var player_answers = []
 
 @onready var applicant_label = $ApplicantLabel
 
-@onready var result_panel = $ResultPanel
-@onready var result_label = $ResultPanel/ResultLabel
-@onready var restart_button = $ResultPanel/RestartButton
-
 # -----------------------------
 # READY
 # -----------------------------
@@ -80,12 +80,12 @@ func _ready():
 	grip_button.pressed.connect(grip_pressed)
 	legit_button.pressed.connect(_on_legit_pressed)
 	sus_button.pressed.connect(_on_sus_pressed)
-	restart_button.pressed.connect(_on_restart_pressed)
+	shutdown_button.pressed.connect(_on_shutdown_pressed)
 
-	# Hide result panel at start
-	result_panel.visible = false
+	# Hide shutdown button at start
+	shutdown_button.visible = false
 
-	# Optional: resize tab area
+	# Resize tab area
 	tab_container.custom_minimum_size = Vector2(600, 400)
 
 	# Load first applicant
@@ -121,8 +121,6 @@ func load_applicant(index):
 	item_tab.texture = data["item"]
 
 	applicant_label.text = "Applicant %d / %d" % [index + 1, applicants.size()]
-
-	# Always return to first tab
 	tab_container.current_tab = 0
 
 # -----------------------------
@@ -142,26 +140,30 @@ func submit_answer(answer):
 	if current_index < applicants.size():
 		load_applicant(current_index)
 	else:
-		show_results()
+		finish_applicants()
 
 # -----------------------------
-# RESULTS
+# AFTER 5TH APPLICANT
 # -----------------------------
-func show_results():
-	var score = 0
+func finish_applicants():
+	final_score = 0
 
 	for i in range(applicants.size()):
 		if player_answers[i] == applicants[i]["correct"]:
-			score += 1
+			final_score += 1
 
-	result_panel.visible = true
-	result_label.text = "Game Over!\nScore: %d / %d" % [score, applicants.size()]
+	applicant_label.text = "All applicants reviewed"
+
+	# Hide judging buttons
+	legit_button.visible = false
+	sus_button.visible = false
+
+	# Show shutdown button
+	shutdown_button.visible = true
 
 # -----------------------------
-# RESTART
+# SHUTDOWN BUTTON
 # -----------------------------
-func _on_restart_pressed():
-	current_index = 0
-	player_answers.clear()
-	result_panel.visible = false
-	load_applicant(current_index)
+func _on_shutdown_pressed():
+	main_node.show_final_result(final_score)
+	self.visible = false

@@ -1,14 +1,14 @@
-TextureRect
 Button
 Label
 Panel
+CanvasLayer
+TextureRect
 Control
 Container
 VBoxContainer
 HBoxContainer
 Area3D
 TabContainer
-CanvasLayer
 Camera3D
 SubViewport
 MeshInstance3D
