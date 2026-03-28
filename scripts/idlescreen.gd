@@ -1,6 +1,6 @@
 extends StaticBody3D
 
-@onready var idle_screen = $MeshInstance3D
+@onready var idle_screen = $Sprite3D
 @onready var focus_point = $Marker3D
 
 var is_focused = false
