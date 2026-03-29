@@ -1,0 +1,42 @@
+name: Build and Upload to Google Drive
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  export-and-upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          lfs: true # Essential if you are using Git LFS for 3D assets
+
+      - name: Setup Godot
+        uses: chickensoft-games/setup-godot@v2
+        with:
+          version: 4.6.1 # Replace with your specific Godot version
+          use-dotnet: false # Set to true if utilizing C#
+          include-templates: true
+
+      - name: Create Build Directories
+        run: |
+          mkdir -p build/windows
+
+      - name: Export Windows Build
+        # Ensure "Windows Desktop" perfectly matches your export_presets.cfg
+        run: godot --headless --export-release "Windows Desktop" build/windows/train-or-fail.exe
+        
+      - name: Zip the Builds
+        run: |
+          zip -r train-or-fail-Windows.zip build/windows/
+
+      - name: Upload Windows Build to Google Drive
+        uses: adityak74/google-drive-upload-git-action@main
+        with:
+          credentials: ${{ secrets.GDRIVE_CREDENTIALS }}
+          filename: "train-or-fail-Windows.zip"
+          folderId: ${{ secrets.GDRIVE_FOLDER_ID }}
+          overwrite: "true"
