@@ -33,6 +33,6 @@ jobs:
         uses: adityak74/google-drive-upload-git-action@main
         with:
           credentials: ${{ secrets.GDRIVE_CREDENTIALS }}
-          filename: "train-or-fail-Windows.exe"
+          filename: "build/windows/train-or-fail-Windows.exe"
           folderId: ${{ secrets.GDRIVE_FOLDER_ID }}
           overwrite: "true"
