@@ -1,4 +1,4 @@
-name: Build and Upload to Google Drive
+name: Build and Upload Train or Fail Windows Version to Google Drive
 
 on:
   push:
@@ -33,6 +33,6 @@ jobs:
         uses: adityak74/google-drive-upload-git-action@main
         with:
           credentials: ${{ secrets.GDRIVE_CREDENTIALS }}
-          filename: "build/windows/train-or-fail-Windows.exe"
+          filename: "build/windows/train-or-fail.exe"
           folderId: ${{ secrets.GDRIVE_FOLDER_ID }}
           overwrite: "true"
