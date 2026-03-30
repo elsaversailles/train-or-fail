@@ -12,27 +12,31 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
-          lfs: true # Essential if you are using Git LFS for 3D assets
+          lfs: true
 
       - name: Setup Godot
         uses: chickensoft-games/setup-godot@v2
         with:
-          version: 4.6.1 # Replace with your specific Godot version
-          use-dotnet: false # Set to true if utilizing C#
+          version: 4.6.1 
+          use-dotnet: false
           include-templates: true
 
+      # NEW STEP: Generates the date string (e.g., March-30)
+      - name: Get Current Date
+        run: echo "BUILD_DATE=$(date +'%B-%d')" >> $GITHUB_ENV
+
       - name: Create Build Directories
-        run: |
-          mkdir -p build/windows
+        run: mkdir -p build/windows
 
       - name: Export Windows Build
-        # Ensure "Windows Desktop" perfectly matches your export_presets.cfg
-        run: godot --headless --export-release "Windows Desktop" build/windows/train-or-fail.exe
+        # Uses the variable created in the previous step
+        run: |
+          godot --headless --export-release "Windows Desktop" build/windows/train-or-fail-${{ env.BUILD_DATE }}.exe
 
       - name: Upload Windows Build to Google Drive
         uses: adityak74/google-drive-upload-git-action@main
         with:
           credentials: ${{ secrets.GDRIVE_CREDENTIALS }}
-          filename: "build/windows/train-or-fail.exe"
+          filename: "build/windows/train-or-fail-${{ env.BUILD_DATE }}.exe"
           folderId: ${{ secrets.GDRIVE_FOLDER_ID }}
           overwrite: "true"
