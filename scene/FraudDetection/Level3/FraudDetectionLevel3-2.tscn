@@ -1,19 +1,19 @@
-[gd_scene format=3 uid="uid://cqow47bch5ocs"]
+[gd_scene format=3 uid="uid://v5xgwqty6ulb"]
 
-[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scene/character.tscn" id="1_ig7tw"]
-[ext_resource type="Script" uid="uid://oblqrvb0temk" path="res://scripts/main.gd" id="1_v2gmf"]
-[ext_resource type="PackedScene" uid="uid://cwjddyjeack6m" path="res://scene/socket.tscn" id="4_b5f6u"]
-[ext_resource type="PackedScene" uid="uid://dpt5xjdv4rn4c" path="res://assets/MaleCharacter/guy-mesh.glb" id="7_hybxs"]
-[ext_resource type="PackedScene" uid="uid://c2hpohwilg1lq" path="res://addons/table.tscn" id="7_p1hux"]
-[ext_resource type="PackedScene" uid="uid://qxngx7cctkt6" path="res://scene/floppydisk.tscn" id="8_b5f6u"]
-[ext_resource type="PackedScene" uid="uid://c0v72003xgbg7" path="res://assets/Monitor.glb" id="8_of57s"]
-[ext_resource type="Script" uid="uid://chk5c2vkeowgj" path="res://scripts/screen.gd" id="8_tqoya"]
-[ext_resource type="PackedScene" uid="uid://d08r12hn5mce1" path="res://scene/IdleScreen.tscn" id="9_kek77"]
-[ext_resource type="Script" uid="uid://bd1eqx7ns2mep" path="res://scripts/sliding_panel.gd" id="10_hybxs"]
-[ext_resource type="AudioStream" uid="uid://lm3fs23d4v2l" path="res://music/gameplaymusic.mp3" id="17_smf0o"]
-[ext_resource type="Script" uid="uid://dg3y5e7vspyxu" path="res://scripts/pause_panel.gd" id="18_0vlqb"]
-[ext_resource type="Script" uid="uid://bapodi31h647x" path="res://scripts/gameplaysettings_panel.gd" id="20_fdqew"]
-[ext_resource type="Script" uid="uid://cqkq7ghcjka7o" path="res://scripts/music_control.gd" id="20_gjnwh"]
+[ext_resource type="Script" uid="uid://dnyetvbxhdt2a" path="res://scripts/FraudDetection/Level3/FraudDetectionLevel3-2.gd" id="1_aouaw"]
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scene/character.tscn" id="2_nb620"]
+[ext_resource type="PackedScene" uid="uid://cwjddyjeack6m" path="res://scene/socket.tscn" id="3_m06tp"]
+[ext_resource type="PackedScene" uid="uid://qxngx7cctkt6" path="res://scene/floppydisk.tscn" id="4_1ajlw"]
+[ext_resource type="PackedScene" uid="uid://d08r12hn5mce1" path="res://scene/IdleScreen.tscn" id="5_ywsmv"]
+[ext_resource type="PackedScene" uid="uid://c2hpohwilg1lq" path="res://addons/table.tscn" id="6_4hhqn"]
+[ext_resource type="PackedScene" uid="uid://dpt5xjdv4rn4c" path="res://assets/MaleCharacter/guy-mesh.glb" id="7_opdmr"]
+[ext_resource type="PackedScene" uid="uid://c0v72003xgbg7" path="res://assets/Monitor.glb" id="8_4fiaj"]
+[ext_resource type="Script" uid="uid://chk5c2vkeowgj" path="res://scripts/screen.gd" id="9_c1621"]
+[ext_resource type="Script" uid="uid://bd1eqx7ns2mep" path="res://scripts/sliding_panel.gd" id="10_kbfq6"]
+[ext_resource type="Script" uid="uid://dg3y5e7vspyxu" path="res://scripts/pause_panel.gd" id="11_eyup6"]
+[ext_resource type="Script" uid="uid://bapodi31h647x" path="res://scripts/gameplaysettings_panel.gd" id="12_mqr4s"]
+[ext_resource type="Script" uid="uid://cqkq7ghcjka7o" path="res://scripts/music_control.gd" id="13_c0f5n"]
+[ext_resource type="AudioStream" uid="uid://lm3fs23d4v2l" path="res://music/gameplaymusic.mp3" id="14_e6wea"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -85,8 +85,8 @@ thickness = 6
 color = Color(0.12108166, 0.57758135, 1.92523e-07, 1)
 thickness = 6
 
-[node name="Main" type="Node3D" unique_id=1103394804]
-script = ExtResource("1_v2gmf")
+[node name="FraudDetectionLevel3" type="Node3D" unique_id=1103394804]
+script = ExtResource("1_aouaw")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1808950673]
 environment = SubResource("Environment_0xm2m")
@@ -127,8 +127,25 @@ size = Vector3(23.3, 2, 1)
 transform = Transform3D(-3.1770643e-08, 0, -0.4685821, 0, 1.0000004, 0, 1.5511212, 0, -4.3714003e-08, -6.236999, 0.47799996, 16.64)
 size = Vector3(23.3, 2, 1)
 
-[node name="MainChar" parent="." unique_id=2061402672 instance=ExtResource("1_ig7tw")]
+[node name="MainChar" parent="." unique_id=2061402672 instance=ExtResource("2_nb620")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.888, -0.024540752, 0)
+
+[node name="socket" parent="." unique_id=315384306 instance=ExtResource("3_m06tp")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.4089456, 0.87024593, -2.075036)
+collision_layer = 2
+
+[node name="floppydisk" parent="." unique_id=1531040890 instance=ExtResource("4_1ajlw")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 5.5807233, 0.6673304, -1.24653)
+
+[node name="IdleScreen" parent="." unique_id=1201481395 instance=ExtResource("5_ywsmv")]
+transform = Transform3D(-4.371139e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, 4.371139e-08, 1.9106855e-15, 6.573001, 1.8168597, 0.102722645)
+visible = false
+
+[node name="Table" parent="." unique_id=941121870 instance=ExtResource("6_4hhqn")]
+transform = Transform3D(0.5431538, 0, 0, 0, 0.42786574, 0, 0, 0, 0.9, 5.136668, 0.18296456, -0.19128597)
+
+[node name="NPC" parent="." unique_id=966341260 instance=ExtResource("7_opdmr")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11.124, 1.087, -0.052)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1476932616]
 
@@ -162,29 +179,20 @@ grow_horizontal = 2
 grow_vertical = 2
 label_settings = SubResource("LabelSettings_1bvp3")
 
-[node name="socket" parent="." unique_id=315384306 instance=ExtResource("4_b5f6u")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.4089456, 0.87024593, -2.075036)
-collision_layer = 2
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=742678508]
+offset_left = 73.0
+offset_top = 24.0
+offset_right = 186.0
+offset_bottom = 124.0
+text = "Level 3
+Day 2"
 
-[node name="floppydisk" parent="." unique_id=1531040890 instance=ExtResource("8_b5f6u")]
-transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 5.5807233, 0.6673304, -1.24653)
-
-[node name="IdleScreen" parent="." unique_id=1201481395 instance=ExtResource("9_kek77")]
-transform = Transform3D(-4.371139e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, 4.371139e-08, 1.9106855e-15, 6.573001, 1.8168597, 0.102722645)
-visible = false
-
-[node name="Table" parent="." unique_id=941121870 instance=ExtResource("7_p1hux")]
-transform = Transform3D(0.5431538, 0, 0, 0, 0.42786574, 0, 0, 0, 0.9, 5.136668, 0.18296456, -0.19128597)
-
-[node name="NPC" parent="." unique_id=966341260 instance=ExtResource("7_hybxs")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11.124, 1.087, -0.052)
-
-[node name="Monitor" parent="." unique_id=724615049 instance=ExtResource("8_of57s")]
+[node name="Monitor" parent="." unique_id=724615049 instance=ExtResource("8_4fiaj")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.5272965, 0.68358636, 0.083559036)
 
 [node name="Screen" type="Node3D" parent="Monitor" unique_id=1749718098]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.083558746, -0.68358636, 6.6796875)
-script = ExtResource("8_tqoya")
+script = ExtResource("9_c1621")
 
 [node name="Quad" type="MeshInstance3D" parent="Monitor/Screen" unique_id=671364175]
 transform = Transform3D(-3.036211e-07, 0, -0.99999976, 0, 2.7617304, 0, 6.9460416, 0, -4.3711378e-08, 6.650567, 1.8339279, 0.10465306)
@@ -212,7 +220,7 @@ offset_right = -1152.0
 offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("10_hybxs")
+script = ExtResource("10_kbfq6")
 
 [node name="ApplicantLabel" type="Label" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=83242092]
 layout_mode = 0
@@ -351,22 +359,22 @@ offset_right = 895.0
 offset_bottom = 240.0
 theme_override_font_sizes/font_size = 20
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=631947750]
+[node name="ResultPanel" type="CanvasLayer" parent="." unique_id=631947750]
 
-[node name="FinalResultPanel" type="Panel" parent="CanvasLayer2" unique_id=1746299184]
+[node name="FinalResultPanel" type="Panel" parent="ResultPanel" unique_id=1746299184]
 offset_left = 300.0
 offset_top = 150.0
 offset_right = 800.0
 offset_bottom = 450.0
 
-[node name="FinalResultLabel" type="Label" parent="CanvasLayer2/FinalResultPanel" unique_id=1864189202]
+[node name="FinalResultLabel" type="Label" parent="ResultPanel/FinalResultPanel" unique_id=1864189202]
 layout_mode = 0
 offset_left = 41.0
 offset_top = 32.0
 offset_right = 170.0
 offset_bottom = 90.0
 
-[node name="RestartButton" type="Button" parent="CanvasLayer2/FinalResultPanel" unique_id=889836818]
+[node name="RestartButton" type="Button" parent="ResultPanel/FinalResultPanel" unique_id=889836818]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -380,7 +388,7 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Restart Game"
 
-[node name="MainmenuButton" type="Button" parent="CanvasLayer2/FinalResultPanel" unique_id=552832448]
+[node name="MainmenuButton" type="Button" parent="ResultPanel/FinalResultPanel" unique_id=552832448]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -390,7 +398,7 @@ offset_bottom = 1.0
 grow_vertical = 2
 text = "Main Menu"
 
-[node name="NextgameButton" type="Button" parent="CanvasLayer2/FinalResultPanel" unique_id=996861491]
+[node name="NextgameButton" type="Button" parent="ResultPanel/FinalResultPanel" unique_id=996861491]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -403,12 +411,6 @@ grow_horizontal = 0
 grow_vertical = 2
 text = "Next Game"
 
-[node name="MusicGameplay" type="AudioStreamPlayer2D" parent="." unique_id=1071873422]
-stream = ExtResource("17_smf0o")
-volume_db = 7.0
-autoplay = true
-bus = &"Music"
-
 [node name="PausePanel" type="Panel" parent="." unique_id=352277706]
 process_mode = 2
 anchors_preset = 8
@@ -420,7 +422,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("18_0vlqb")
+script = ExtResource("11_eyup6")
 
 [node name="TextureRect" type="TextureRect" parent="PausePanel" unique_id=1676720568]
 layout_mode = 1
@@ -496,7 +498,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("20_fdqew")
+script = ExtResource("12_mqr4s")
 
 [node name="TextureRect" type="TextureRect" parent="PausePanel/SettingsPanel" unique_id=7418640]
 layout_mode = 1
@@ -540,7 +542,7 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_0d4pv")
 max_value = 1.0
 step = 0.05
 value = 1.0
-script = ExtResource("20_gjnwh")
+script = ExtResource("13_c0f5n")
 audio_bus_name = "Music"
 
 [node name="BackButton" type="Button" parent="PausePanel/SettingsPanel" unique_id=1160108481]
@@ -551,8 +553,14 @@ offset_right = -28.0
 offset_bottom = 193.0
 text = "Back"
 
+[node name="MusicGameplay" type="AudioStreamPlayer2D" parent="." unique_id=1071873422]
+stream = ExtResource("14_e6wea")
+volume_db = 7.0
+autoplay = true
+bus = &"Music"
+
 [connection signal="body_entered" from="socket" to="MainChar" method="_on_socket_body_entered"]
-[connection signal="pressed" from="CanvasLayer2/FinalResultPanel/MainmenuButton" to="CanvasLayer2/FinalResultPanel" method="_on_mainmenu_button_pressed"]
+[connection signal="pressed" from="ResultPanel/FinalResultPanel/MainmenuButton" to="ResultPanel/FinalResultPanel" method="_on_mainmenu_button_pressed"]
 [connection signal="pressed" from="PausePanel/Resume" to="PausePanel" method="_on_resume_pressed"]
 [connection signal="pressed" from="PausePanel/Settings" to="PausePanel" method="_on_settings_pressed"]
 [connection signal="pressed" from="PausePanel/Quit" to="PausePanel" method="_on_quit_pressed"]

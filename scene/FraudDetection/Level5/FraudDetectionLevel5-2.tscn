@@ -1,0 +1,568 @@
+[gd_scene format=3 uid="uid://b077y1c2ahvpu"]
+
+[ext_resource type="Script" uid="uid://ld7sdhd4ub8k" path="res://scripts/FraudDetection/Level5/FraudDetectionLevel5-2.gd" id="1_4cnil"]
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scene/character.tscn" id="2_jihkj"]
+[ext_resource type="PackedScene" uid="uid://cwjddyjeack6m" path="res://scene/socket.tscn" id="3_0ams3"]
+[ext_resource type="PackedScene" uid="uid://qxngx7cctkt6" path="res://scene/floppydisk.tscn" id="4_x4tbq"]
+[ext_resource type="PackedScene" uid="uid://d08r12hn5mce1" path="res://scene/IdleScreen.tscn" id="5_7mryw"]
+[ext_resource type="PackedScene" uid="uid://c2hpohwilg1lq" path="res://addons/table.tscn" id="6_pbnk3"]
+[ext_resource type="PackedScene" uid="uid://dpt5xjdv4rn4c" path="res://assets/MaleCharacter/guy-mesh.glb" id="7_3aupl"]
+[ext_resource type="PackedScene" uid="uid://c0v72003xgbg7" path="res://assets/Monitor.glb" id="8_2al7j"]
+[ext_resource type="Script" uid="uid://chk5c2vkeowgj" path="res://scripts/screen.gd" id="9_lfku8"]
+[ext_resource type="Script" uid="uid://bd1eqx7ns2mep" path="res://scripts/sliding_panel.gd" id="10_y1rax"]
+[ext_resource type="Script" uid="uid://dg3y5e7vspyxu" path="res://scripts/pause_panel.gd" id="11_gugsf"]
+[ext_resource type="Script" uid="uid://bapodi31h647x" path="res://scripts/gameplaysettings_panel.gd" id="12_056x0"]
+[ext_resource type="Script" uid="uid://cqkq7ghcjka7o" path="res://scripts/music_control.gd" id="13_wqwwq"]
+[ext_resource type="AudioStream" uid="uid://lm3fs23d4v2l" path="res://music/gameplaymusic.mp3" id="14_ev0nq"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_ig7tw"]
+sky_material = SubResource("ProceduralSkyMaterial_7dm0k")
+
+[sub_resource type="Environment" id="Environment_0xm2m"]
+background_mode = 2
+sky = SubResource("Sky_ig7tw")
+tonemap_mode = 2
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hybxs"]
+load_path = "res://.godot/imported/wall.jpeg-274b9c5ce9692041c8e6911d093e9da9.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kek77"]
+albedo_texture = SubResource("CompressedTexture2D_hybxs")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v2gmf"]
+load_path = "res://.godot/imported/maypaya_office_bottom.jpeg-e5ebdc69096f40a3d82b8c5391cd5f6f.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5vw27"]
+albedo_texture = SubResource("CompressedTexture2D_v2gmf")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_1bvp3"]
+font_color = Color(0.07058824, 0.07058824, 0.07058824, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_p1hux"]
+viewport_path = NodePath("Monitor/Screen/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_of57s"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_p1hux")
+
+[sub_resource type="QuadMesh" id="QuadMesh_b5f6u"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_of57s")
+size = Vector2(0.41, 0.53)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wscrc"]
+data = PackedVector3Array(0.205, -0.265, 0, -0.205, -0.265, 0, 0.205, 0.265, 0, -0.205, -0.265, 0, -0.205, 0.265, 0, 0.205, 0.265, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjnwh"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jcbur"]
+load_path = "res://.godot/imported/a1_location.png-852cc11683418185bf71a881fc977259.ctex"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0d4pv"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_smf0o"]
+load_path = "res://.godot/imported/a1_item.png-7b744bdf4a8da27af7e07679ad301fdd.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tv8i1"]
+load_path = "res://.godot/imported/phone.png-e079165b39efe232079a9973b010bed1.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_0vlqb"]
+font_size = 31
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_fdqew"]
+thickness = 6
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_0d4pv"]
+color = Color(0.12108166, 0.57758135, 1.92523e-07, 1)
+thickness = 6
+
+[node name="FraudDetectionLevel5" type="Node3D" unique_id=1103394804]
+script = ExtResource("1_4cnil")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1808950673]
+environment = SubResource("Environment_0xm2m")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=674580829]
+transform = Transform3D(-0.95054054, -0.013753358, -0.31029615, -0.3086199, -0.07083017, 0.94854474, -0.035024006, 0.9973938, 0.06308235, 0, 10.833578, 0)
+light_energy = 0.118
+shadow_enabled = true
+
+[node name="Room" type="CSGCombiner3D" parent="." unique_id=1227119580]
+transform = Transform3D(-4.371139e-08, 0, 0.4685821, 0, 4.9475074, 0, -1, 0, -2.0482373e-08, -3, 2, 0)
+material_override = SubResource("StandardMaterial3D_kek77")
+use_collision = true
+
+[node name="Floor" type="CSGBox3D" parent="Room" unique_id=1432533514]
+transform = Transform3D(-4.374471e-08, 0, -1.0999951, 0, 0.20225318, 0, 2.1356926, 0, -1.02614216e-07, -0.20675309, -0.5477987, 16.066051)
+material_override = SubResource("StandardMaterial3D_5vw27")
+use_collision = true
+size = Vector3(17.460068, 0.95644534, 11.363281)
+
+[node name="Wall1" type="CSGBox3D" parent="Room" unique_id=1740007138]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 5.684342e-14, 0, 1, -0.022430401, 0.4784144, -0.96127844)
+size = Vector3(12, 2, 1)
+
+[node name="Wall1_1" type="CSGBox3D" parent="Room" unique_id=77627719]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 5.684342e-14, 0, 1, 0.02242991, 0.4784144, 21.39698)
+size = Vector3(12, 2, 1)
+
+[node name="Wall1_2" type="CSGBox3D" parent="Room" unique_id=1554690360]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 5.684342e-14, 0, 1, -0.022431118, 0.4784144, 34.245007)
+size = Vector3(12, 2, 1)
+
+[node name="Wall2" type="CSGBox3D" parent="Room" unique_id=497108233]
+transform = Transform3D(-3.1770643e-08, 0, -0.4685821, 0, 1.0000004, 0, 1.5511212, 0, -4.3713133e-08, 5.763, 0.478, 16.64)
+size = Vector3(23.3, 2, 1)
+
+[node name="Wall2_2" type="CSGBox3D" parent="Room" unique_id=752027060]
+transform = Transform3D(-3.1770643e-08, 0, -0.4685821, 0, 1.0000004, 0, 1.5511212, 0, -4.3714003e-08, -6.236999, 0.47799996, 16.64)
+size = Vector3(23.3, 2, 1)
+
+[node name="MainChar" parent="." unique_id=2061402672 instance=ExtResource("2_jihkj")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.888, -0.024540752, 0)
+
+[node name="socket" parent="." unique_id=315384306 instance=ExtResource("3_0ams3")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.4089456, 0.87024593, -2.075036)
+collision_layer = 2
+
+[node name="floppydisk" parent="." unique_id=1531040890 instance=ExtResource("4_x4tbq")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 5.5807233, 0.6673304, -1.24653)
+
+[node name="IdleScreen" parent="." unique_id=1201481395 instance=ExtResource("5_7mryw")]
+transform = Transform3D(-4.371139e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, 4.371139e-08, 1.9106855e-15, 6.573001, 1.8168597, 0.102722645)
+visible = false
+
+[node name="Table" parent="." unique_id=941121870 instance=ExtResource("6_pbnk3")]
+transform = Transform3D(0.5431538, 0, 0, 0, 0.42786574, 0, 0, 0, 0.9, 5.136668, 0.18296456, -0.19128597)
+
+[node name="NPC" parent="." unique_id=966341260 instance=ExtResource("7_3aupl")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11.124, 1.087, -0.052)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1476932616]
+
+[node name="Crosshair" type="ColorRect" parent="CanvasLayer" unique_id=741844015]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.5
+offset_top = -1.5
+offset_right = 1.5
+offset_bottom = 1.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(1.5, 1.5)
+mouse_filter = 2
+color = Color(1, 0, 0, 1)
+
+[node name="InteractionLabel" type="Label" parent="CanvasLayer" unique_id=1891291745]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 22.0
+offset_top = -43.0
+offset_right = 159.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_1bvp3")
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=742678508]
+offset_left = 73.0
+offset_top = 24.0
+offset_right = 186.0
+offset_bottom = 124.0
+text = "Level 5
+Day 2"
+
+[node name="Monitor" parent="." unique_id=724615049 instance=ExtResource("8_2al7j")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.5272965, 0.68358636, 0.083559036)
+
+[node name="Screen" type="Node3D" parent="Monitor" unique_id=1749718098]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.083558746, -0.68358636, 6.6796875)
+script = ExtResource("9_lfku8")
+
+[node name="Quad" type="MeshInstance3D" parent="Monitor/Screen" unique_id=671364175]
+transform = Transform3D(-3.036211e-07, 0, -0.99999976, 0, 2.7617304, 0, 6.9460416, 0, -4.3711378e-08, 6.650567, 1.8339279, 0.10465306)
+mesh = SubResource("QuadMesh_b5f6u")
+
+[node name="Area3D" type="Area3D" parent="Monitor/Screen/Quad" unique_id=2134300452]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Monitor/Screen/Quad/Area3D" unique_id=272003500]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_wscrc")
+
+[node name="SubViewport" type="SubViewport" parent="Monitor/Screen" unique_id=518032394]
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="Monitor/Screen/SubViewport" unique_id=525920961]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 9.471071, 2.7917843, 0)
+
+[node name="SlidingPanel" type="Panel" parent="Monitor/Screen/SubViewport" unique_id=2049437397]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -944.0
+offset_right = -1152.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("10_y1rax")
+
+[node name="ApplicantLabel" type="Label" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=83242092]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 3.0
+offset_right = 142.0
+offset_bottom = 26.0
+text = "Applicant 1 / 5"
+
+[node name="ButtonPanel" type="Panel" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=948163116]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GripButton" type="Button" parent="Monitor/Screen/SubViewport/SlidingPanel/ButtonPanel" unique_id=330496296]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_right = 40.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "|||
+|||
+|||
+|||"
+
+[node name="LegitButton" type="Button" parent="Monitor/Screen/SubViewport/SlidingPanel/ButtonPanel" unique_id=2056387240]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 300.0
+offset_right = 900.0
+offset_bottom = 440.0
+size_flags_vertical = 3
+text = "Legit"
+
+[node name="SusButton" type="Button" parent="Monitor/Screen/SubViewport/SlidingPanel/ButtonPanel" unique_id=1198441296]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 450.0
+offset_right = 900.0
+offset_bottom = 590.0
+size_flags_vertical = 3
+text = "Sus"
+
+[node name="ShutdownButton" type="Button" parent="Monitor/Screen/SubViewport/SlidingPanel/ButtonPanel" unique_id=180447544]
+visible = false
+layout_mode = 0
+offset_left = 852.0
+offset_top = 174.0
+offset_right = 939.0
+offset_bottom = 205.0
+size_flags_vertical = 10
+text = "Shutdown"
+
+[node name="LocationLabel" type="Label" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=7511633]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 39.0
+offset_right = 438.0
+offset_bottom = 69.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_gjnwh")
+text = "Location"
+horizontal_alignment = 1
+
+[node name="LocationTextureButton" type="TextureButton" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=1357714526]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 80.0
+offset_right = 738.0
+offset_bottom = 590.0
+texture_normal = SubResource("CompressedTexture2D_jcbur")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ItemLabel" type="Label" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=242352973]
+layout_mode = 0
+offset_left = 589.0
+offset_top = 350.0
+offset_right = 699.0
+offset_bottom = 385.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_0d4pv")
+text = "Item"
+horizontal_alignment = 1
+
+[node name="ItemTextureButton" type="TextureButton" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=234596525]
+layout_mode = 0
+offset_left = 529.0
+offset_top = 388.0
+offset_right = 699.0
+offset_bottom = 558.0
+texture_normal = SubResource("CompressedTexture2D_smf0o")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TimeLabel" type="Label" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=1442096397]
+layout_mode = 0
+offset_left = 765.0
+offset_top = 80.0
+offset_right = 895.0
+offset_bottom = 110.0
+theme_override_font_sizes/font_size = 20
+text = "Time"
+
+[node name="TimeValueLabel" type="Label" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=1495080212]
+layout_mode = 0
+offset_left = 765.0
+offset_top = 120.0
+offset_right = 895.0
+offset_bottom = 150.0
+theme_override_font_sizes/font_size = 20
+
+[node name="PriceLabel" type="Label" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=1682235694]
+layout_mode = 0
+offset_left = 765.0
+offset_top = 175.0
+offset_right = 895.0
+offset_bottom = 205.0
+theme_override_font_sizes/font_size = 20
+text = "Price"
+
+[node name="PriceValueLabel" type="Label" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=1725269754]
+layout_mode = 0
+offset_left = 765.0
+offset_top = 210.0
+offset_right = 895.0
+offset_bottom = 240.0
+theme_override_font_sizes/font_size = 20
+
+[node name="ResultPanel" type="CanvasLayer" parent="." unique_id=631947750]
+
+[node name="FinalResultPanel" type="Panel" parent="ResultPanel" unique_id=1746299184]
+offset_left = 300.0
+offset_top = 150.0
+offset_right = 800.0
+offset_bottom = 450.0
+
+[node name="FinalResultLabel" type="Label" parent="ResultPanel/FinalResultPanel" unique_id=1864189202]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 32.0
+offset_right = 170.0
+offset_bottom = 90.0
+
+[node name="RestartButton" type="Button" parent="ResultPanel/FinalResultPanel" unique_id=889836818]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.9480001
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -57.0
+offset_top = -29.400024
+offset_right = 57.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Restart Game"
+
+[node name="MainmenuButton" type="Button" parent="ResultPanel/FinalResultPanel" unique_id=552832448]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 256.0
+offset_right = 96.0
+offset_bottom = 1.0
+grow_vertical = 2
+text = "Main Menu"
+
+[node name="NextgameButton" type="Button" parent="ResultPanel/FinalResultPanel" unique_id=996861491]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -95.0
+offset_top = 254.0
+offset_bottom = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "Next Game"
+
+[node name="PausePanel" type="Panel" parent="." unique_id=352277706]
+process_mode = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("11_gugsf")
+
+[node name="TextureRect" type="TextureRect" parent="PausePanel" unique_id=1676720568]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -161.5
+offset_top = -282.5
+offset_right = 161.5
+offset_bottom = 282.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_tv8i1")
+
+[node name="Label" type="Label" parent="PausePanel" unique_id=811658260]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.0
+offset_top = -188.0
+offset_right = 60.0
+offset_bottom = -144.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Paused"
+label_settings = SubResource("LabelSettings_0vlqb")
+
+[node name="Resume" type="Button" parent="PausePanel" unique_id=1739406857]
+layout_mode = 0
+offset_left = -45.0
+offset_top = -95.0
+offset_right = 59.0
+offset_bottom = -60.0
+text = "Resume"
+
+[node name="Settings" type="Button" parent="PausePanel" unique_id=1677164621]
+layout_mode = 0
+offset_left = -45.0
+offset_top = -50.0
+offset_right = 59.0
+offset_bottom = -15.0
+text = "Settings"
+
+[node name="Controls" type="Button" parent="PausePanel" unique_id=336563695]
+layout_mode = 0
+offset_left = -45.0
+offset_top = -5.0
+offset_right = 59.0
+offset_bottom = 30.0
+text = "Controls"
+
+[node name="Quit" type="Button" parent="PausePanel" unique_id=646997393]
+layout_mode = 0
+offset_left = -45.0
+offset_top = 150.0
+offset_right = 59.0
+offset_bottom = 186.0
+text = "Quit"
+
+[node name="SettingsPanel" type="Panel" parent="PausePanel" unique_id=1063477040]
+process_mode = 2
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("12_056x0")
+
+[node name="TextureRect" type="TextureRect" parent="PausePanel/SettingsPanel" unique_id=7418640]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -161.5
+offset_top = -282.5
+offset_right = 161.5
+offset_bottom = 282.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_tv8i1")
+
+[node name="Label" type="Label" parent="PausePanel/SettingsPanel" unique_id=101820037]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = -198.0
+offset_right = -50.0
+offset_bottom = -169.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Settings"
+
+[node name="MusicControl" type="HSlider" parent="PausePanel/SettingsPanel" unique_id=959294353]
+layout_mode = 0
+offset_left = -71.0
+offset_top = -142.0
+offset_right = 77.0
+offset_bottom = -126.0
+theme_override_styles/slider = SubResource("StyleBoxLine_fdqew")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_0d4pv")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_0d4pv")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("13_wqwwq")
+audio_bus_name = "Music"
+
+[node name="BackButton" type="Button" parent="PausePanel/SettingsPanel" unique_id=1160108481]
+layout_mode = 0
+offset_left = -105.0
+offset_top = 158.0
+offset_right = -28.0
+offset_bottom = 193.0
+text = "Back"
+
+[node name="MusicGameplay" type="AudioStreamPlayer2D" parent="." unique_id=1071873422]
+stream = ExtResource("14_ev0nq")
+volume_db = 7.0
+autoplay = true
+bus = &"Music"
+
+[connection signal="body_entered" from="socket" to="MainChar" method="_on_socket_body_entered"]
+[connection signal="pressed" from="ResultPanel/FinalResultPanel/MainmenuButton" to="ResultPanel/FinalResultPanel" method="_on_mainmenu_button_pressed"]
+[connection signal="pressed" from="PausePanel/Resume" to="PausePanel" method="_on_resume_pressed"]
+[connection signal="pressed" from="PausePanel/Settings" to="PausePanel" method="_on_settings_pressed"]
+[connection signal="pressed" from="PausePanel/Quit" to="PausePanel" method="_on_quit_pressed"]
+[connection signal="value_changed" from="PausePanel/SettingsPanel/MusicControl" to="PausePanel/SettingsPanel/MusicControl" method="_on_value_changed"]
+[connection signal="pressed" from="PausePanel/SettingsPanel/BackButton" to="PausePanel/SettingsPanel" method="_on_back_button_pressed"]

@@ -12,7 +12,7 @@ func _ready():
 
 func _on_new_game_pressed():
 	# This removes the menu and loads a brand  new 'main.tscn'
-	get_tree().change_scene_to_file("res://scene/main.tscn")
+	get_tree().change_scene_to_file("res://scene/FraudDetection/Level1/FraudDetectionLevel1-1.tscn")
 
 func _on_settings_pressed():
 	# Settings

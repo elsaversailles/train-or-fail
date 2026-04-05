@@ -14,9 +14,9 @@ var last_event_time: float = -1.0
 # -----------------------------
 # FINAL RESULT UI REFERENCES
 # -----------------------------
-@onready var final_result_panel = $"../../CanvasLayer2/FinalResultPanel"
-@onready var final_result_label = $"../../CanvasLayer2/FinalResultPanel/FinalResultLabel"
-@onready var restart_button = $"../../CanvasLayer2/FinalResultPanel/RestartButton"
+@onready var final_result_panel = $"../../ResultPanel/FinalResultPanel"
+@onready var final_result_label = $"../../ResultPanel/FinalResultPanel/FinalResultLabel"
+@onready var restart_button = $"../../ResultPanel/FinalResultPanel/RestartButton"
 
 func _ready():
 	node_area.mouse_entered.connect(_mouse_entered_area)
