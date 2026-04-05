@@ -1,26 +1,36 @@
 extends RigidBody3D
 
-var is_held = false
-var is_inserted = false
+var is_held: bool = false
+var is_inserted: bool = false
 
-func socket_item(target_transform: Transform3D):
+func _ready() -> void:
+	is_held = false
+	is_inserted = false
+	freeze = false
+
+func socket_item(target_transform: Transform3D, socket_node: Node):
+	if is_inserted:
+		return
+
 	is_held = false
 	is_inserted = true
-	freeze = true 
-	
-	# 1. Remove from current parent (the player's hand)
-	if get_parent():
-		get_parent().remove_child(self)
-	
-	# 2. Add to the scene tree ONLY if it's currently available
-	# Using call_deferred is safer for physics objects
-	var main_tree = Engine.get_main_loop() 
-	if main_tree:
-		main_tree.root.call_deferred("add_child", self)
-	
-	# 3. Position it perfectly in the wall
-	global_transform = target_transform
+	freeze = true
+
 	$CollisionShape3D.set_deferred("disabled", true)
 
+	# Remove from hand / old parent
+	if get_parent():
+		get_parent().remove_child(self)
+
+	# Add back into current level scene
+	socket_node.get_parent().add_child(self)
+
+	# Start slightly outside socket for animation
+	global_transform = target_transform.translated_local(Vector3(0, -0.6, 0))
+
+	# Smooth insert animation
+	var tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "global_transform", target_transform, 1)
+
 func _on_socket_body_entered(_body: Node3D) -> void:
-	pass # Replace with function body.
+	pass
