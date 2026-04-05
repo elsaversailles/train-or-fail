@@ -1,17 +1,21 @@
 [gd_scene format=3 uid="uid://cwjddyjeack6m"]
 
 [ext_resource type="Script" uid="uid://3b7d3ej4yqxs" path="res://scripts/socket.gd" id="1_3ogqf"]
+[ext_resource type="PackedScene" uid="uid://d4eobsk7ivhig" path="res://assets/floppydiskcartridge/FloppyCartridge.glb" id="2_dhn8j"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lquwl"]
-size = Vector3(0.6, 0.11, 0.42)
+size = Vector3(1.1661866, 0.3649225, 1.0784808)
 
 [node name="socket" type="Area3D" unique_id=315384306]
 collision_layer = 7
 script = ExtResource("1_3ogqf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=140019004]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0012629926, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24638109, 0.0051608235, 0.23078948)
 shape = SubResource("BoxShape3D_lquwl")
 
 [node name="Marker3D" type="Marker3D" parent="." unique_id=1235067536]
-transform = Transform3D(5.9604645e-08, 0.99999994, 0, -1, 0, 0, 0, 0, 0.9999999, -0.22868815, -0.014175057, 0)
+transform = Transform3D(-5.9604645e-08, -0.99999994, 1.13426154e-07, -1, 0, 0, -5.2108035e-15, -8.742277e-08, -1.297444, 0.7404684, -0.014175057, 0.27659643)
+
+[node name="FloppyCartridge" parent="." unique_id=529770228 instance=ExtResource("2_dhn8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29391694, -0.14487758, 0.23176554)

@@ -1,7 +1,5 @@
 extends Control
 
-@onready var main_node = get_tree().current_scene
-
 # -----------------------------
 # PANEL SETTINGS
 # -----------------------------
@@ -14,37 +12,37 @@ var panel_width = 944
 var applicants = [
 	{
 		"location": preload("res://images/applicants info/a1/a1_location.png"),
-		"time": preload("res://images/applicants info/a1/a1_time.png"),
-		"price": preload("res://images/applicants info/a1/a1_price.png"),
 		"item": preload("res://images/applicants info/a1/a1_item.png"),
+		"time": "08:45",
+		"price": "$450",
 		"correct": "legit"
 	},
 	{
 		"location": preload("res://images/applicants info/a2/a2_location.png"),
-		"time": preload("res://images/applicants info/a2/a2_time.png"),
-		"price": preload("res://images/applicants info/a2/a2_price.png"),
 		"item": preload("res://images/applicants info/a2/a2_item.png"),
+		"time": "02:15",
+		"price": "$9,999",
 		"correct": "sus"
 	},
 	{
 		"location": preload("res://images/applicants info/a3/a3_location.png"),
-		"time": preload("res://images/applicants info/a3/a3_time.png"),
-		"price": preload("res://images/applicants info/a3/a3_price.png"),
 		"item": preload("res://images/applicants info/a3/a3_item.png"),
+		"time": "11:20",
+		"price": "$120",
 		"correct": "legit"
 	},
 	{
 		"location": preload("res://images/applicants info/a4/a4_location.png"),
-		"time": preload("res://images/applicants info/a4/a4_time.png"),
-		"price": preload("res://images/applicants info/a4/a4_price.png"),
 		"item": preload("res://images/applicants info/a4/a4_item.png"),
+		"time": "01:05",
+		"price": "$6,700",
 		"correct": "sus"
 	},
 	{
 		"location": preload("res://images/applicants info/a5/a5_location.png"),
-		"time": preload("res://images/applicants info/a5/a5_time.png"),
-		"price": preload("res://images/applicants info/a5/a5_price.png"),
 		"item": preload("res://images/applicants info/a5/a5_item.png"),
+		"time": "06:40",
+		"price": "$980",
 		"correct": "legit"
 	}
 ]
@@ -59,18 +57,32 @@ var final_score = 0
 # -----------------------------
 # NODE REFERENCES
 # -----------------------------
-@onready var grip_button = $GripButton
-@onready var legit_button = $VBoxContainer/LegitButton
-@onready var sus_button = $VBoxContainer/SusButton
-@onready var shutdown_button = $VBoxContainer/ShutdownButton
-
-@onready var tab_container = $TabContainer
-@onready var location_tab = $TabContainer/Location
-@onready var time_tab = $TabContainer/Time
-@onready var price_tab = $TabContainer/Price
-@onready var item_tab = $TabContainer/Item
+@onready var grip_button = $ButtonPanel/GripButton
+@onready var legit_button = $ButtonPanel/LegitButton
+@onready var sus_button = $ButtonPanel/SusButton
+@onready var shutdown_button = $ButtonPanel/ShutdownButton
 
 @onready var applicant_label = $ApplicantLabel
+@onready var location_label = $LocationLabel
+@onready var item_label = $ItemLabel
+@onready var location_button = $LocationTextureButton
+@onready var item_button = $ItemTextureButton
+@onready var time_value_label = $TimeValueLabel
+@onready var price_value_label = $PriceValueLabel
+
+# -----------------------------
+# ORIGINAL POSITIONS / SIZES FOR SWAP
+# -----------------------------
+var location_original_position: Vector2
+var item_original_position: Vector2
+
+var location_original_size: Vector2
+var item_original_size: Vector2
+
+var location_label_original_position: Vector2
+var item_label_original_position: Vector2
+
+var images_swapped = false
 
 # -----------------------------
 # READY
@@ -82,11 +94,31 @@ func _ready():
 	sus_button.pressed.connect(_on_sus_pressed)
 	shutdown_button.pressed.connect(_on_shutdown_pressed)
 
-	# Hide shutdown button at start
+	# Connect image clicks
+	location_button.pressed.connect(_on_swap_images)
+	item_button.pressed.connect(_on_swap_images)
+
+	# Hide shutdown at start
 	shutdown_button.visible = false
 
-	# Resize tab area
-	tab_container.custom_minimum_size = Vector2(600, 400)
+	# Save original positions
+	location_original_position = location_button.position
+	item_original_position = item_button.position
+
+	# Save original sizes
+	location_original_size = location_button.size
+	item_original_size = item_button.size
+
+	# Save label positions
+	location_label_original_position = location_label.position
+	item_label_original_position = item_label.position
+
+	# Default layer order:
+	# Item is small at start -> should be on top
+	location_button.z_index = 1
+	item_button.z_index = 2
+	location_label.z_index = 1
+	item_label.z_index = 2
 
 	# Load first applicant
 	load_applicant(current_index)
@@ -95,18 +127,25 @@ func _ready():
 # PANEL SLIDE
 # -----------------------------
 func grip_pressed():
+	var main = get_tree().current_scene
+	
+	if main.has_node("MainChar"):
+		var player = main.get_node("MainChar")
+		if not player.is_focusing_screen:
+			return
+
 	slide_panel()
 
 func slide_panel():
 	var tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-	
+
 	if is_open:
-		# close → slide LEFT
+		# Close panel
 		tween.tween_property(self, "position:x", -panel_width, 0.6)
 	else:
-		# open → slide RIGHT
+		# Open panel
 		tween.tween_property(self, "position:x", -3, 0.6)
-	
+
 	is_open = !is_open
 
 # -----------------------------
@@ -115,13 +154,90 @@ func slide_panel():
 func load_applicant(index):
 	var data = applicants[index]
 
-	location_tab.texture = data["location"]
-	time_tab.texture = data["time"]
-	price_tab.texture = data["price"]
-	item_tab.texture = data["item"]
+	# Set applicant images
+	location_button.texture_normal = data["location"]
+	item_button.texture_normal = data["item"]
 
+	# Set text values
+	time_value_label.text = str(data["time"])
+	price_value_label.text = str(data["price"])
+
+	# Applicant progress text
 	applicant_label.text = "Applicant %d / %d" % [index + 1, applicants.size()]
-	tab_container.current_tab = 0
+
+	# Reset image layout
+	reset_image_positions()
+
+# -----------------------------
+# SWAP IMAGE + LABEL + SIZE + LAYER
+# -----------------------------
+func _on_swap_images():
+	var tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+
+	if not images_swapped:
+		# When swapped:
+		# Location becomes SMALL -> should be ON TOP
+		# Item becomes BIG -> should be BEHIND
+		location_button.z_index = 2
+		item_button.z_index = 1
+		location_label.z_index = 2
+		item_label.z_index = 1
+
+		# Swap image positions
+		tween.parallel().tween_property(location_button, "position", item_original_position, 0.3)
+		tween.parallel().tween_property(item_button, "position", location_original_position, 0.3)
+
+		# Swap image sizes
+		tween.parallel().tween_property(location_button, "size", item_original_size, 0.3)
+		tween.parallel().tween_property(item_button, "size", location_original_size, 0.3)
+
+		# Swap label positions
+		tween.parallel().tween_property(location_label, "position", item_label_original_position, 0.3)
+		tween.parallel().tween_property(item_label, "position", location_label_original_position, 0.3)
+
+	else:
+		# Return to normal:
+		# Item is SMALL -> should be ON TOP
+		# Location is BIG -> should be BEHIND
+		location_button.z_index = 1
+		item_button.z_index = 2
+		location_label.z_index = 1
+		item_label.z_index = 2
+
+		# Return image positions
+		tween.parallel().tween_property(location_button, "position", location_original_position, 0.3)
+		tween.parallel().tween_property(item_button, "position", item_original_position, 0.3)
+
+		# Return image sizes
+		tween.parallel().tween_property(location_button, "size", location_original_size, 0.3)
+		tween.parallel().tween_property(item_button, "size", item_original_size, 0.3)
+
+		# Return label positions
+		tween.parallel().tween_property(location_label, "position", location_label_original_position, 0.3)
+		tween.parallel().tween_property(item_label, "position", item_label_original_position, 0.3)
+
+	images_swapped = !images_swapped
+
+func reset_image_positions():
+	# Reset image positions
+	location_button.position = location_original_position
+	item_button.position = item_original_position
+
+	# Reset image sizes
+	location_button.size = location_original_size
+	item_button.size = item_original_size
+
+	# Reset label positions
+	location_label.position = location_label_original_position
+	item_label.position = item_label_original_position
+
+	# Reset layer order
+	location_button.z_index = 1
+	item_button.z_index = 2
+	location_label.z_index = 1
+	item_label.z_index = 2
+
+	images_swapped = false
 
 # -----------------------------
 # PLAYER CHOICE
@@ -134,7 +250,6 @@ func _on_sus_pressed():
 
 func submit_answer(answer):
 	player_answers.append(answer)
-
 	current_index += 1
 
 	if current_index < applicants.size():
@@ -154,16 +269,13 @@ func finish_applicants():
 
 	applicant_label.text = "All applicants reviewed"
 
-	# Hide judging buttons
 	legit_button.visible = false
 	sus_button.visible = false
-
-	# Show shutdown button
 	shutdown_button.visible = true
 
 # -----------------------------
 # SHUTDOWN BUTTON
 # -----------------------------
 func _on_shutdown_pressed():
-	main_node.show_final_result(final_score)
+	get_tree().current_scene.show_final_result(final_score)
 	self.visible = false

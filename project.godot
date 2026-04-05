@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="PrototypeWeek1 code testing backup"
+config/name="TrainOrFail"
 run/main_scene="uid://crev2inf1u6xe"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"

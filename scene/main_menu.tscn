@@ -1,12 +1,23 @@
 [gd_scene format=3 uid="uid://crev2inf1u6xe"]
 
 [ext_resource type="Script" uid="uid://dn12u7ocbrg15" path="res://scripts/main_menu.gd" id="1_06t4h"]
-[ext_resource type="Texture2D" uid="uid://g2jg4pe865e8" path="res://images/MainMenu/New Game.png" id="2_2atga"]
-[ext_resource type="Texture2D" uid="uid://dmsh6m8vv644q" path="res://images/MainMenu/Load Game.png" id="3_by01r"]
-[ext_resource type="Texture2D" uid="uid://dpbnriw38qayc" path="res://images/MainMenu/Settings.png" id="4_dclss"]
-[ext_resource type="Texture2D" uid="uid://cogad2c6f5qh8" path="res://images/MainMenu/About Us.png" id="5_hmxu4"]
-[ext_resource type="Texture2D" uid="uid://bcaoasayu6jx5" path="res://images/MainMenu/Quit.png" id="6_ictww"]
+[ext_resource type="Texture2D" uid="uid://bbsagn711k4sn" path="res://images/MainMenu/buttons/Play.png" id="2_14wem"]
+[ext_resource type="Texture2D" uid="uid://da2o0xs3j1sv2" path="res://images/MainMenu/buttons/background.png" id="2_ictww"]
+[ext_resource type="Texture2D" uid="uid://dpbnriw38qayc" path="res://images/MainMenu/buttons/Settings.png" id="4_dclss"]
+[ext_resource type="Texture2D" uid="uid://dqiu7tdvewlhm" path="res://images/MainMenu/buttons/About Us.png" id="5_hmxu4"]
+[ext_resource type="Texture2D" uid="uid://bcaoasayu6jx5" path="res://images/MainMenu/buttons/Quit.png" id="6_ictww"]
 [ext_resource type="Texture2D" uid="uid://cvpma47eqx85r" path="res://images/MainMenu/Game Title.png" id="7_1o50l"]
+[ext_resource type="Texture2D" uid="uid://diqf6bh0u04i0" path="res://images/MainMenu/phone.png" id="7_2atga"]
+[ext_resource type="Script" uid="uid://crqcpxburycoe" path="res://scripts/settings_panel.gd" id="7_hmxu4"]
+[ext_resource type="AudioStream" uid="uid://dx7o60nd06xxj" path="res://music/music.mp3" id="8_by01r"]
+[ext_resource type="Script" uid="uid://cqkq7ghcjka7o" path="res://scripts/music_control.gd" id="8_dclss"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_by01r"]
+thickness = 6
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_dclss"]
+color = Color(0.12108166, 0.57758135, 1.92523e-07, 1)
+thickness = 6
 
 [node name="CanvasLayer2" type="CanvasLayer" unique_id=502315201]
 
@@ -19,65 +30,56 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_06t4h")
 
-[node name="ColorRect" type="ColorRect" parent="Main Menu" unique_id=844501067]
+[node name="Background" type="TextureRect" parent="Main Menu" unique_id=1590727757]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+texture = ExtResource("2_ictww")
 
-[node name="New Game" type="Button" parent="Main Menu" unique_id=2033790857]
+[node name="Buttons" type="Control" parent="Main Menu" unique_id=55528658]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="New Game" type="Button" parent="Main Menu/Buttons" unique_id=2033790857]
 layout_mode = 0
-offset_left = 139.00002
-offset_top = 314.00003
-offset_right = 309.0
-offset_bottom = 364.00003
-rotation = 0.08726646
-icon = ExtResource("2_2atga")
+offset_left = 58.0
+offset_top = 344.0
+offset_right = 227.99998
+offset_bottom = 394.0
+icon = ExtResource("2_14wem")
 flat = true
 expand_icon = true
 
-[node name="Load Game" type="Button" parent="Main Menu" unique_id=905321958]
+[node name="Settings" type="Button" parent="Main Menu/Buttons" unique_id=446335812]
 layout_mode = 0
-offset_left = 131.0
-offset_top = 395.0
-offset_right = 301.0
-offset_bottom = 445.0
-rotation = -0.07853982
-icon = ExtResource("3_by01r")
-flat = true
-expand_icon = true
-
-[node name="Settings" type="Button" parent="Main Menu" unique_id=446335812]
-layout_mode = 0
-offset_left = 133.99998
-offset_top = 452.99997
-offset_right = 304.0
-offset_bottom = 502.99997
-rotation = 0.05235988
+offset_left = 58.0
+offset_top = 400.0
+offset_right = 228.0
+offset_bottom = 450.0
 icon = ExtResource("4_dclss")
 flat = true
 expand_icon = true
 
-[node name="About Us" type="Button" parent="Main Menu" unique_id=2074900280]
+[node name="About Us" type="Button" parent="Main Menu/Buttons" unique_id=2077448952]
 layout_mode = 0
-offset_left = 969.0
-offset_top = 4.0
-offset_right = 1111.0
-offset_bottom = 117.0
+offset_left = 53.0
+offset_top = 460.0
+offset_right = 202.00002
+offset_bottom = 508.0
 icon = ExtResource("5_hmxu4")
 flat = true
 expand_icon = true
 
-[node name="Quit" type="Button" parent="Main Menu" unique_id=2031676534]
+[node name="Quit" type="Button" parent="Main Menu/Buttons" unique_id=2031676534]
 layout_mode = 0
-offset_left = 141.0
-offset_top = 517.0
-offset_right = 290.0
-offset_bottom = 565.0
-rotation = 0.034906585
+offset_left = 57.0
+offset_top = 520.0
+offset_right = 206.0
+offset_bottom = 568.0
 icon = ExtResource("6_ictww")
 flat = true
 expand_icon = true
@@ -90,8 +92,81 @@ offset_right = 538.0
 offset_bottom = 269.0
 texture = ExtResource("7_1o50l")
 
-[connection signal="pressed" from="Main Menu/New Game" to="Main Menu" method="_on_new_game_pressed"]
-[connection signal="pressed" from="Main Menu/Load Game" to="Main Menu" method="_on_load_game_pressed"]
-[connection signal="pressed" from="Main Menu/Settings" to="Main Menu" method="_on_settings_pressed"]
-[connection signal="pressed" from="Main Menu/About Us" to="Main Menu" method="_on_about_us_pressed"]
-[connection signal="pressed" from="Main Menu/Quit" to="Main Menu" method="_on_quit_pressed"]
+[node name="SettingsPanel" type="Panel" parent="Main Menu" unique_id=618342899]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("7_hmxu4")
+
+[node name="TextureRect" type="TextureRect" parent="Main Menu/SettingsPanel" unique_id=915633352]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -161.5
+offset_top = -282.5
+offset_right = 161.5
+offset_bottom = 282.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_2atga")
+
+[node name="Label" type="Label" parent="Main Menu/SettingsPanel" unique_id=1518622818]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = -198.0
+offset_right = -50.0
+offset_bottom = -169.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Settings"
+
+[node name="MusicControl" type="HSlider" parent="Main Menu/SettingsPanel" unique_id=1191292593]
+layout_mode = 0
+offset_left = -71.0
+offset_top = -142.0
+offset_right = 77.0
+offset_bottom = -126.0
+theme_override_styles/slider = SubResource("StyleBoxLine_by01r")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_dclss")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_dclss")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("8_dclss")
+audio_bus_name = "Music"
+
+[node name="BackButton" type="Button" parent="Main Menu/SettingsPanel" unique_id=1566616162]
+layout_mode = 0
+offset_left = -105.0
+offset_top = 158.0
+offset_right = -28.0
+offset_bottom = 193.0
+text = "Back"
+
+[node name="Music" type="AudioStreamPlayer2D" parent="Main Menu" unique_id=1850022703]
+stream = ExtResource("8_by01r")
+volume_db = 7.0
+autoplay = true
+bus = &"Music"
+
+[connection signal="pressed" from="Main Menu/Buttons/New Game" to="Main Menu" method="_on_new_game_pressed"]
+[connection signal="pressed" from="Main Menu/Buttons/Settings" to="Main Menu" method="_on_settings_pressed"]
+[connection signal="pressed" from="Main Menu/Buttons/About Us" to="Main Menu" method="_on_about_us_pressed"]
+[connection signal="pressed" from="Main Menu/Buttons/Quit" to="Main Menu" method="_on_quit_pressed"]
+[connection signal="value_changed" from="Main Menu/SettingsPanel/MusicControl" to="Main Menu/SettingsPanel/MusicControl" method="_on_value_changed"]
+[connection signal="pressed" from="Main Menu/SettingsPanel/BackButton" to="Main Menu/SettingsPanel" method="_on_back_button_pressed"]
