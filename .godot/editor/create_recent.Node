@@ -1,9 +1,9 @@
 Label
-TextureButton
-Panel
-TextureRect
 Button
+TextureRect
+Panel
 Control
+TextureButton
 AudioStreamPlayer2D
 HSlider
 AnimationPlayer

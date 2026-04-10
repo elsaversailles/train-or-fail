@@ -34,4 +34,4 @@ func _on_mainmenu_button_pressed():
 	get_tree().change_scene_to_file("res://scene/main_menu.tscn")
 	
 func _on_nextgame_button_pressed():
-	get_tree().change_scene_to_file("res://scene/FraudDetection/Level2/FraudDetectionLevel2-1.tscn")
+	get_tree().change_scene_to_file("res://scene/KnowYourCustomer/Level1/KnowYourCustomer1-1.tscn")

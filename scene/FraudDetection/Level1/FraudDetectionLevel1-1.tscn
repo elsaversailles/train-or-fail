@@ -69,7 +69,6 @@ load_path = "res://.godot/imported/a1_location.png-852cc11683418185bf71a881fc977
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0d4pv"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_smf0o"]
-load_path = "res://.godot/imported/a1_item.png-7b744bdf4a8da27af7e07679ad301fdd.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tv8i1"]
 load_path = "res://.godot/imported/phone.png-e079165b39efe232079a9973b010bed1.ctex"
@@ -209,7 +208,7 @@ size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="Monitor/Screen/SubViewport" unique_id=525920961]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 9.471071, 2.7917843, 0)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.4478445, 2.7917843, -0.067971945)
 
 [node name="SlidingPanel" type="Panel" parent="Monitor/Screen/SubViewport" unique_id=2049437397]
 anchors_preset = 15

@@ -11,38 +11,38 @@ var panel_width = 944
 # -----------------------------
 var applicants = [
 	{
-		"location": preload("res://images/applicants info/a1/a1_location.png"),
-		"item": preload("res://images/applicants info/a1/a1_item.png"),
-		"time": "08:45",
-		"price": "$450",
+		"location": preload("res://images/applicants info/day1/a1/a1_location.png"),
+		"item": preload("res://images/applicants info/day1/a1/a1_item.jpg"),
+		"time": "11:45 AM",
+		"price": "₱1,550",
 		"correct": "legit"
 	},
 	{
-		"location": preload("res://images/applicants info/a2/a2_location.png"),
-		"item": preload("res://images/applicants info/a2/a2_item.png"),
-		"time": "02:15",
-		"price": "$9,999",
+		"location": preload("res://images/applicants info/day1/a2/a2_location.png"),
+		"item": preload("res://images/applicants info/day1/a2/a2_item.png"),
+		"time": "3:12 AM",
+		"price": "₱450,000",
 		"correct": "sus"
 	},
 	{
-		"location": preload("res://images/applicants info/a3/a3_location.png"),
-		"item": preload("res://images/applicants info/a3/a3_item.png"),
-		"time": "11:20",
-		"price": "$120",
+		"location": preload("res://images/applicants info/day1/a3/a3_location.png"),
+		"item": preload("res://images/applicants info/day1/a3/a3_item.jpg"),
+		"time": "8:30 AM",
+		"price": "₱210",
 		"correct": "legit"
 	},
 	{
-		"location": preload("res://images/applicants info/a4/a4_location.png"),
-		"item": preload("res://images/applicants info/a4/a4_item.png"),
-		"time": "01:05",
-		"price": "$6,700",
+		"location": preload("res://images/applicants info/day1/a4/a4_location.png"),
+		"item": preload("res://images/applicants info/day1/a4/a4_item.jpg"),
+		"time": "2:22 AM",
+		"price": "₱25,000",
 		"correct": "sus"
 	},
 	{
-		"location": preload("res://images/applicants info/a5/a5_location.png"),
-		"item": preload("res://images/applicants info/a5/a5_item.png"),
-		"time": "06:40",
-		"price": "$980",
+		"location": preload("res://images/applicants info/day1/a5/a5_location.png"),
+		"item": preload("res://images/applicants info/day1/a5/a5_item.png"),
+		"time": "5:30 PM",
+		"price": "₱3,200",
 		"correct": "legit"
 	}
 ]
