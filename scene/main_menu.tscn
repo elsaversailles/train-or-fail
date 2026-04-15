@@ -40,9 +40,12 @@ grow_vertical = 2
 texture = ExtResource("2_ictww")
 
 [node name="Buttons" type="Control" parent="Main Menu" unique_id=55528658]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchor_top = 0.418
+anchor_right = 0.342
+anchor_bottom = 1.0
+offset_top = -270.864
+offset_right = 757.016
 
 [node name="New Game" type="Button" parent="Main Menu/Buttons" unique_id=2033790857]
 layout_mode = 0

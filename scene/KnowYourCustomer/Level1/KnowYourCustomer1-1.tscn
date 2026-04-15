@@ -10,9 +10,14 @@
 [ext_resource type="PackedScene" uid="uid://c0v72003xgbg7" path="res://assets/Monitor.glb" id="8_r1wyv"]
 [ext_resource type="Script" uid="uid://chk5c2vkeowgj" path="res://scripts/screen.gd" id="9_qudjs"]
 [ext_resource type="Script" uid="uid://5jdutigoh210" path="res://scripts/kyc_panel.gd" id="10_bomre"]
+<<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://dg3y5e7vspyxu" path="res://scripts/pause_panel.gd" id="11_qwoob"]
 [ext_resource type="Script" uid="uid://bapodi31h647x" path="res://scripts/gameplaysettings_panel.gd" id="12_6mqtv"]
 [ext_resource type="Script" uid="uid://cqkq7ghcjka7o" path="res://scripts/music_control.gd" id="13_iabnw"]
+=======
+[ext_resource type="PackedScene" uid="uid://dtpe25cd85fc8" path="res://scene/result_panel.tscn" id="11_bomre"]
+[ext_resource type="PackedScene" uid="uid://bx7scsfg2nivv" path="res://scene/pause_panel.tscn" id="12_h8xxj"]
+>>>>>>> Stashed changes
 [ext_resource type="AudioStream" uid="uid://lm3fs23d4v2l" path="res://music/gameplaymusic.mp3" id="14_ncsuc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
@@ -70,6 +75,7 @@ load_path = "res://.godot/imported/a1_location.png-852cc11683418185bf71a881fc977
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_smf0o"]
 
+<<<<<<< Updated upstream
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tv8i1"]
 load_path = "res://.godot/imported/phone.png-e079165b39efe232079a9973b010bed1.ctex"
 
@@ -84,6 +90,8 @@ thickness = 6
 color = Color(0.12108166, 0.57758135, 1.92523e-07, 1)
 thickness = 6
 
+=======
+>>>>>>> Stashed changes
 [node name="KnowYourCustomer1-1" type="Node3D" unique_id=1103394804]
 script = ExtResource("1_bomre")
 
@@ -138,7 +146,10 @@ transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 5.58
 
 [node name="IdleScreen" parent="." unique_id=1201481395 instance=ExtResource("5_of608")]
 transform = Transform3D(-4.371139e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, 4.371139e-08, 1.9106855e-15, 6.573001, 1.8168597, 0.102722645)
+<<<<<<< Updated upstream
 visible = false
+=======
+>>>>>>> Stashed changes
 
 [node name="Table" parent="." unique_id=941121870 instance=ExtResource("6_1ir4t")]
 transform = Transform3D(0.5431538, 0, 0, 0, 0.42786574, 0, 0, 0, 0.9, 5.136668, 0.18296456, -0.19128597)
@@ -420,6 +431,7 @@ offset_right = 895.0
 offset_bottom = 240.0
 theme_override_font_sizes/font_size = 20
 
+<<<<<<< Updated upstream
 [node name="ResultPanel" type="CanvasLayer" parent="." unique_id=631947750]
 
 [node name="FinalResultPanel" type="Panel" parent="ResultPanel" unique_id=1746299184]
@@ -613,6 +625,11 @@ offset_top = 158.0
 offset_right = -28.0
 offset_bottom = 193.0
 text = "Back"
+=======
+[node name="ResultPanel" parent="." unique_id=779608946 instance=ExtResource("11_bomre")]
+
+[node name="PausePanel" parent="." unique_id=1179524455 instance=ExtResource("12_h8xxj")]
+>>>>>>> Stashed changes
 
 [node name="MusicGameplay" type="AudioStreamPlayer2D" parent="." unique_id=1071873422]
 stream = ExtResource("14_ncsuc")
@@ -621,9 +638,12 @@ autoplay = true
 bus = &"Music"
 
 [connection signal="body_entered" from="socket" to="MainChar" method="_on_socket_body_entered"]
+<<<<<<< Updated upstream
 [connection signal="pressed" from="ResultPanel/FinalResultPanel/MainmenuButton" to="ResultPanel/FinalResultPanel" method="_on_mainmenu_button_pressed"]
 [connection signal="pressed" from="PausePanel/Resume" to="PausePanel" method="_on_resume_pressed"]
 [connection signal="pressed" from="PausePanel/Settings" to="PausePanel" method="_on_settings_pressed"]
 [connection signal="pressed" from="PausePanel/Quit" to="PausePanel" method="_on_quit_pressed"]
 [connection signal="value_changed" from="PausePanel/SettingsPanel/MusicControl" to="PausePanel/SettingsPanel/MusicControl" method="_on_value_changed"]
 [connection signal="pressed" from="PausePanel/SettingsPanel/BackButton" to="PausePanel/SettingsPanel" method="_on_back_button_pressed"]
+=======
+>>>>>>> Stashed changes

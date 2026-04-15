@@ -1,14 +1,22 @@
+<<<<<<< Updated upstream
 Label
 Button
 TextureRect
 Panel
 Control
+=======
+Button
+Label
+TextureRect
+TabContainer
+VSlider
+Control
+Panel
+CanvasLayer
+>>>>>>> Stashed changes
 TextureButton
 AudioStreamPlayer2D
 HSlider
 AnimationPlayer
-CanvasLayer
 Container
 VBoxContainer
-HBoxContainer
-Area3D

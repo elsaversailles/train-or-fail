@@ -3,6 +3,7 @@ res://scene/character.tscn::40546898b88b4c42785dac8bd828bdf2::1775820901::res://
 res://scene/data.tscn::c74b4bfcbc5d6a091c91116981cf7155::1775820901::res://.godot/exported/133200997/export-308ee09e135af6a53c6588f62f230428-data.scn
 res://scene/floppydisk.tscn::7f7e80addeaafabee9af90a92dfb1516::1775820901::res://.godot/exported/133200997/export-04728ab84b73e1e42f4b2ea94bd1cbbe-floppydisk.scn
 res://scene/IdleScreen.tscn::c6546156fe82ae264b0601b64451e1b0::1775820901::res://.godot/exported/133200997/export-463dd8ffe2f8897e8ab4f548fd7499b1-IdleScreen.scn
+<<<<<<< Updated upstream
 res://scene/main_menu.tscn::238fe2d9895e69fdb107a20048b0768f::1775820901::res://.godot/exported/133200997/export-5004891b3c37f00fbb846473dbb63447-main_menu.scn
 res://scene/screen.tscn::57a551bbd0df624a5fd71322eeaec653::1775820901::res://.godot/exported/133200997/export-5261c0ee21d55703c11f9c1b975c0d5c-screen.scn
 res://scene/socket.tscn::1c64018b12be34281e082ba56d18f332::1775820901::res://.godot/exported/133200997/export-5e751226423e6cb1c9a025be73c58918-socket.scn
@@ -11,3 +12,17 @@ res://scene/FraudDetection/Level1/FraudDetectionLevel1-1.tscn::78020cb3e202efa67
 res://scene/FraudDetection/Level1/FraudDetectionLevel1-2.tscn::99695865a9a24f73a47d28bbbf878b5d::1775829836::res://.godot/exported/133200997/export-b08a50ad4404e0d846b44c9199f8dc45-FraudDetectionLevel1-2.scn
 res://scene/KnowYourCustomer/Level1/KnowYourCustomer1-1.tscn::0ff96d8ca647907f7f04a7d46c20e840::1775834209::res://.godot/exported/133200997/export-ff65fc4b3ce8ded1aa9796743cad1b10-KnowYourCustomer1-1.scn
 res://scene/KnowYourCustomer/Level1/KnowYourCustomer1-2.tscn::dc1f42433567924949e45580283af3e5::1775833497::res://.godot/exported/133200997/export-a7cd7eb33fa60895b9c8c0d4a9192744-KnowYourCustomer1-2.scn
+=======
+res://scene/main_menu.tscn::5a4a411c54fdbc28cbae22a99ea6dafc::1776083473::res://.godot/exported/133200997/export-5004891b3c37f00fbb846473dbb63447-main_menu.scn
+res://scene/screen.tscn::57a551bbd0df624a5fd71322eeaec653::1775820901::res://.godot/exported/133200997/export-5261c0ee21d55703c11f9c1b975c0d5c-screen.scn
+res://scene/socket.tscn::1c64018b12be34281e082ba56d18f332::1775820901::res://.godot/exported/133200997/export-5e751226423e6cb1c9a025be73c58918-socket.scn
+res://default_bus_layout.tres::bc030955f207b43cfb1d74d6e947ff6e::1775820892::res://.godot/exported/133200997/export-19246414aa9fb561ced4b8dce477acec-default_bus_layout.res
+res://scene/FraudDetection/Level1/FraudDetectionLevel1-1.tscn::4a7185ec7f66dbd0f65a2aee9dcc8aa9::1776083514::res://.godot/exported/133200997/export-6900074a4d1e8e43887767c7defeba06-FraudDetectionLevel1-1.scn
+res://scene/FraudDetection/Level1/FraudDetectionLevel1-2.tscn::61af20d7acdd4253106380181a473419::1776083532::res://.godot/exported/133200997/export-b08a50ad4404e0d846b44c9199f8dc45-FraudDetectionLevel1-2.scn
+res://scene/KnowYourCustomer/Level1/KnowYourCustomer1-1.tscn::be2a063edcb1dfa45d957ef97de066b2::1776083558::res://.godot/exported/133200997/export-ff65fc4b3ce8ded1aa9796743cad1b10-KnowYourCustomer1-1.scn
+res://scene/KnowYourCustomer/Level1/KnowYourCustomer1-2.tscn::d420e8e188b374c0757c3a95adf2df2c::1776083564::res://.godot/exported/133200997/export-a7cd7eb33fa60895b9c8c0d4a9192744-KnowYourCustomer1-2.scn
+res://scene/CreditScoring/CreditScoring1-1.tscn::98799e7b7b1016f67bb0a0646dbf597d::1776086914::res://.godot/exported/133200997/export-fc239236bc8129063fb4363ec4715928-CreditScoring1-1.scn
+res://scene/CreditScoring/CreditScoring1-2.tscn::e6b5339c8d51a1146425420d3175456f::1776086357::res://.godot/exported/133200997/export-5c864fb1afa8a0c31099ec7f663d78f3-CreditScoring1-2.scn
+res://scene/pause_panel.tscn::d075b2b7dfdc97b00f27bee225f89375::1775914258::res://.godot/exported/133200997/export-47ed82ef66f9c21fa0c0ad9d602e6ba1-pause_panel.scn
+res://scene/result_panel.tscn::692e1aa14db4c7534b0e0846b67c0035::1775979745::res://.godot/exported/133200997/export-c3a71c06d918d329c633337297149307-result_panel.scn
+>>>>>>> Stashed changes

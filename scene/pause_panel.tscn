@@ -1,0 +1,167 @@
+[gd_scene format=3 uid="uid://bx7scsfg2nivv"]
+
+[ext_resource type="Script" uid="uid://dg3y5e7vspyxu" path="res://scripts/pause_panel.gd" id="1_0bhv7"]
+[ext_resource type="Script" uid="uid://bapodi31h647x" path="res://scripts/gameplaysettings_panel.gd" id="2_h251e"]
+[ext_resource type="Script" uid="uid://cqkq7ghcjka7o" path="res://scripts/music_control.gd" id="3_i20o8"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tv8i1"]
+load_path = "res://.godot/imported/phone.png-e079165b39efe232079a9973b010bed1.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_0vlqb"]
+font_size = 31
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_fdqew"]
+thickness = 6
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_0d4pv"]
+color = Color(0.12108166, 0.57758135, 1.92523e-07, 1)
+thickness = 6
+
+[node name="PausePanel" type="Panel" unique_id=1179524455]
+process_mode = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_0bhv7")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1521716910]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -161.5
+offset_top = -282.5
+offset_right = 161.5
+offset_bottom = 282.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_tv8i1")
+
+[node name="Label" type="Label" parent="." unique_id=1248934033]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.0
+offset_top = -188.0
+offset_right = 60.0
+offset_bottom = -144.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Paused"
+label_settings = SubResource("LabelSettings_0vlqb")
+
+[node name="Resume" type="Button" parent="." unique_id=1473593301]
+layout_mode = 0
+offset_left = -45.0
+offset_top = -95.0
+offset_right = 59.0
+offset_bottom = -60.0
+text = "Resume"
+
+[node name="Settings" type="Button" parent="." unique_id=844184154]
+layout_mode = 0
+offset_left = -45.0
+offset_top = -50.0
+offset_right = 59.0
+offset_bottom = -15.0
+text = "Settings"
+
+[node name="Controls" type="Button" parent="." unique_id=2042390155]
+layout_mode = 0
+offset_left = -45.0
+offset_top = -5.0
+offset_right = 59.0
+offset_bottom = 30.0
+text = "Controls"
+
+[node name="Quit" type="Button" parent="." unique_id=15608994]
+layout_mode = 0
+offset_left = -45.0
+offset_top = 150.0
+offset_right = 59.0
+offset_bottom = 186.0
+text = "Quit"
+
+[node name="SettingsPanel" type="Panel" parent="." unique_id=763778184]
+process_mode = 2
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("2_h251e")
+
+[node name="TextureRect" type="TextureRect" parent="SettingsPanel" unique_id=299731088]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -161.5
+offset_top = -282.5
+offset_right = 161.5
+offset_bottom = 282.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_tv8i1")
+
+[node name="Label" type="Label" parent="SettingsPanel" unique_id=1837658541]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = -198.0
+offset_right = -50.0
+offset_bottom = -169.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Settings"
+
+[node name="MusicControl" type="HSlider" parent="SettingsPanel" unique_id=149800915]
+layout_mode = 0
+offset_left = -71.0
+offset_top = -142.0
+offset_right = 77.0
+offset_bottom = -126.0
+theme_override_styles/slider = SubResource("StyleBoxLine_fdqew")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_0d4pv")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_0d4pv")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("3_i20o8")
+audio_bus_name = "Music"
+
+[node name="BackButton" type="Button" parent="SettingsPanel" unique_id=477529242]
+layout_mode = 0
+offset_left = -105.0
+offset_top = 158.0
+offset_right = -28.0
+offset_bottom = 193.0
+text = "Back"
+
+[connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="value_changed" from="SettingsPanel/MusicControl" to="SettingsPanel/MusicControl" method="_on_value_changed"]
+[connection signal="pressed" from="SettingsPanel/BackButton" to="SettingsPanel" method="_on_back_button_pressed"]

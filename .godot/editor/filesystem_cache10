@@ -1,7 +1,13 @@
 63f7b34db8d8cdea90c76aacccf841ec
+<<<<<<< Updated upstream
 ::res://::1775830683
 default_bus_layout.tres::AudioBusLayout::7769793707950091213::1775820892::0::1::::<><><>0<>0<><>::
 export_presets.cfg::TextFile::-1::1775830683::0::1::::<><><>0<>0<><>::
+=======
+::res://::1776086352
+default_bus_layout.tres::AudioBusLayout::7769793707950091213::1775820892::0::1::::<><><>0<>0<><>::
+export_presets.cfg::TextFile::-1::1776085934::0::1::::<><><>0<>0<><>::
+>>>>>>> Stashed changes
 icon.svg::CompressedTexture2D::1790880795757653::1775820892::1775820892::1::::<><><>0<>0<>1d558fff71561543e2cf7e0d300c3350<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 README.md::TextFile::-1::1775820892::0::1::::<><><>0<>0<><>::
 ::res://addons/::1775820900
@@ -76,11 +82,16 @@ Settings.png::CompressedTexture2D::8214979218295614914::1775820901::1775820901::
 ::res://music/::1775820901
 gameplaymusic.mp3::AudioStreamMP3::798559806241446733::1775820901::1775820901::1::::<><><>0<>0<>84f92368c23f92da3f9447c7cc26a628<>res://.godot/imported/gameplaymusic.mp3-67f1f37cb9cd423efa0101ffe77f79c8.mp3str::
 music.mp3::AudioStreamMP3::8840572273730914587::1775820901::1775820901::1::::<><><>0<>0<>e3c447a756c0bb4390c66f4bf7273082<>res://.godot/imported/music.mp3-5ddf4732b6b280ab5bd5f315f9847f09.mp3str::
+<<<<<<< Updated upstream
 ::res://scene/::1775823656
+=======
+::res://scene/::1776083474
+>>>>>>> Stashed changes
 character.tscn::PackedScene::3717544648773412845::1775820901::0::1::::<><><>0<>0<><>::uid://c1nkb217t4usv::::res://scripts/proto_controller.gd<>uid://dpt5xjdv4rn4c::::res://assets/MaleCharacter/guy-mesh.glb<>uid://bekrqvkoqwq63::::res://scripts/camera_3d.gd<>uid://dxwpg0hwslwyc::::res://assets/hand mesh.glb
 data.tscn::PackedScene::446842971185570411::1775820901::0::1::::<><><>0<>0<><>::uid://bid8280uum01s::::res://scripts/data.gd
 floppydisk.tscn::PackedScene::1171303479786383557::1775820901::0::1::::<><><>0<>0<><>::uid://bid8280uum01s::::res://scripts/data.gd<>uid://d3v2e3ac0nll5::::res://assets/FloppyDiskBasewithface.glb<>uid://2o6k54rgxqg3::::res://images/floppydisk.png
 IdleScreen.tscn::PackedScene::8983187657007952074::1775820901::0::1::::<><><>0<>0<><>::uid://buy3tn3iclxbm::::res://scripts/idlescreen.gd<>uid://dqcdqiy8bwnif::::res://images/nogodot.jpg
+<<<<<<< Updated upstream
 main_menu.tscn::PackedScene::5975632934064522798::1775820901::0::1::::<><><>0<>0<><>::uid://dn12u7ocbrg15::::res://scripts/main_menu.gd<>uid://bbsagn711k4sn::::res://images/MainMenu/buttons/Play.png<>uid://da2o0xs3j1sv2::::res://images/MainMenu/buttons/background.png<>uid://dpbnriw38qayc::::res://images/MainMenu/buttons/Settings.png<>uid://dqiu7tdvewlhm::::res://images/MainMenu/buttons/About Us.png<>uid://bcaoasayu6jx5::::res://images/MainMenu/buttons/Quit.png<>uid://cvpma47eqx85r::::res://images/MainMenu/Game Title.png<>uid://diqf6bh0u04i0::::res://images/MainMenu/phone.png<>uid://crqcpxburycoe::::res://scripts/settings_panel.gd<>uid://dx7o60nd06xxj::::res://music/music.mp3<>uid://cqkq7ghcjka7o::::res://scripts/music_control.gd
 screen.tscn::PackedScene::7615596864396089834::1775820901::0::1::::<><><>0<>0<><>::
 socket.tscn::PackedScene::6335764110214942754::1775820901::0::1::::<><><>0<>0<><>::uid://3b7d3ej4yqxs::::res://scripts/socket.gd<>uid://d4eobsk7ivhig::::res://assets/floppydiskcartridge/FloppyCartridge.glb
@@ -93,10 +104,32 @@ FraudDetectionLevel1-2.tscn::PackedScene::5865131216991773607::1775829836::0::1:
 KnowYourCustomer1-1.tscn::PackedScene::6007757846744516759::1775833754::0::1::::<><><>0<>0<><>::uid://cnree0sifxodl::::res://scripts/KnowYourCustomer/Level1/KnowYourCustomer1-1.gd<>uid://bs72ogkvdd7d6::::res://scene/character.tscn<>uid://cwjddyjeack6m::::res://scene/socket.tscn<>uid://qxngx7cctkt6::::res://scene/floppydisk.tscn<>uid://d08r12hn5mce1::::res://scene/IdleScreen.tscn<>uid://c2hpohwilg1lq::::res://addons/table.tscn<>uid://dpt5xjdv4rn4c::::res://assets/MaleCharacter/guy-mesh.glb<>uid://c0v72003xgbg7::::res://assets/Monitor.glb<>uid://chk5c2vkeowgj::::res://scripts/screen.gd<>uid://5jdutigoh210::::res://scripts/kyc_panel.gd<>uid://dg3y5e7vspyxu::::res://scripts/pause_panel.gd<>uid://bapodi31h647x::::res://scripts/gameplaysettings_panel.gd<>uid://cqkq7ghcjka7o::::res://scripts/music_control.gd<>uid://lm3fs23d4v2l::::res://music/gameplaymusic.mp3
 KnowYourCustomer1-2.tscn::PackedScene::3963364838130396627::1775833497::0::1::::<><><>0<>0<><>::uid://dm1rlu6yvhac8::::res://scripts/KnowYourCustomer/Level1/KnowYourCustomer1-2.gd<>uid://bs72ogkvdd7d6::::res://scene/character.tscn<>uid://cwjddyjeack6m::::res://scene/socket.tscn<>uid://qxngx7cctkt6::::res://scene/floppydisk.tscn<>uid://d08r12hn5mce1::::res://scene/IdleScreen.tscn<>uid://c2hpohwilg1lq::::res://addons/table.tscn<>uid://dpt5xjdv4rn4c::::res://assets/MaleCharacter/guy-mesh.glb<>uid://c0v72003xgbg7::::res://assets/Monitor.glb<>uid://chk5c2vkeowgj::::res://scripts/screen.gd<>uid://5jdutigoh210::::res://scripts/kyc_panel.gd<>uid://dg3y5e7vspyxu::::res://scripts/pause_panel.gd<>uid://bapodi31h647x::::res://scripts/gameplaysettings_panel.gd<>uid://cqkq7ghcjka7o::::res://scripts/music_control.gd<>uid://lm3fs23d4v2l::::res://music/gameplaymusic.mp3
 ::res://scripts/::1775833690
+=======
+main_menu.tscn::PackedScene::5975632934064522798::1776083473::0::1::::<><><>0<>0<><>::uid://dn12u7ocbrg15::::res://scripts/main_menu.gd<>uid://bbsagn711k4sn::::res://images/MainMenu/buttons/Play.png<>uid://da2o0xs3j1sv2::::res://images/MainMenu/buttons/background.png<>uid://dpbnriw38qayc::::res://images/MainMenu/buttons/Settings.png<>uid://dqiu7tdvewlhm::::res://images/MainMenu/buttons/About Us.png<>uid://bcaoasayu6jx5::::res://images/MainMenu/buttons/Quit.png<>uid://cvpma47eqx85r::::res://images/MainMenu/Game Title.png<>uid://diqf6bh0u04i0::::res://images/MainMenu/phone.png<>uid://crqcpxburycoe::::res://scripts/settings_panel.gd<>uid://dx7o60nd06xxj::::res://music/music.mp3<>uid://cqkq7ghcjka7o::::res://scripts/music_control.gd
+pause_panel.tscn::PackedScene::4067921606408904087::1775914258::0::1::::<><><>0<>0<><>::uid://dg3y5e7vspyxu::::res://scripts/pause_panel.gd<>uid://bapodi31h647x::::res://scripts/gameplaysettings_panel.gd<>uid://cqkq7ghcjka7o::::res://scripts/music_control.gd
+result_panel.tscn::PackedScene::8524108409891016665::1775979745::0::1::::<><><>0<>0<><>::
+screen.tscn::PackedScene::7615596864396089834::1775820901::0::1::::<><><>0<>0<><>::
+socket.tscn::PackedScene::6335764110214942754::1775820901::0::1::::<><><>0<>0<><>::uid://3b7d3ej4yqxs::::res://scripts/socket.gd<>uid://d4eobsk7ivhig::::res://assets/floppydiskcartridge/FloppyCartridge.glb
+::res://scene/CreditScoring/::1776086352
+CreditScoring1-1.tscn::PackedScene::6340499395807731136::1776086352::0::1::::<><><>0<>0<><>::uid://d0js4550ire4::::res://scripts/CreditScoring/Level1/credit_scoring_1_1.gd<>uid://bs72ogkvdd7d6::::res://scene/character.tscn<>uid://cwjddyjeack6m::::res://scene/socket.tscn<>uid://qxngx7cctkt6::::res://scene/floppydisk.tscn<>uid://d08r12hn5mce1::::res://scene/IdleScreen.tscn<>uid://c2hpohwilg1lq::::res://addons/table.tscn<>uid://dpt5xjdv4rn4c::::res://assets/MaleCharacter/guy-mesh.glb<>uid://c0v72003xgbg7::::res://assets/Monitor.glb<>uid://chk5c2vkeowgj::::res://scripts/screen.gd<>uid://fpwll3wo1ylp::::res://scripts/credit_scoring_panel.gd<>uid://dtpe25cd85fc8::::res://scene/result_panel.tscn<>uid://bx7scsfg2nivv::::res://scene/pause_panel.tscn<>uid://lm3fs23d4v2l::::res://music/gameplaymusic.mp3
+CreditScoring1-2.tscn::PackedScene::5583242626040863341::1776086233::0::1::::<><><>0<>0<><>::uid://cina5lilh4y42::::res://scripts/CreditScoring/Level1/credit_scoring_1_2.gd<>uid://bs72ogkvdd7d6::::res://scene/character.tscn<>uid://cwjddyjeack6m::::res://scene/socket.tscn<>uid://qxngx7cctkt6::::res://scene/floppydisk.tscn<>uid://d08r12hn5mce1::::res://scene/IdleScreen.tscn<>uid://c2hpohwilg1lq::::res://addons/table.tscn<>uid://dpt5xjdv4rn4c::::res://assets/MaleCharacter/guy-mesh.glb<>uid://c0v72003xgbg7::::res://assets/Monitor.glb<>uid://chk5c2vkeowgj::::res://scripts/screen.gd<>uid://blgaxpq43s78r::::res://scripts/credi_scoring_panel_day2.gd<>uid://dtpe25cd85fc8::::res://scene/result_panel.tscn<>uid://bx7scsfg2nivv::::res://scene/pause_panel.tscn<>uid://lm3fs23d4v2l::::res://music/gameplaymusic.mp3
+::res://scene/FraudDetection/::1775821303
+::res://scene/FraudDetection/Level1/::1776083532
+FraudDetectionLevel1-1.tscn::PackedScene::5926153398409090926::1776083514::0::1::::<><><>0<>0<><>::uid://oblqrvb0temk::::res://scripts/FraudDetection/Level1/FraudDetectionLevel1-1.gd<>uid://bs72ogkvdd7d6::::res://scene/character.tscn<>uid://cwjddyjeack6m::::res://scene/socket.tscn<>uid://qxngx7cctkt6::::res://scene/floppydisk.tscn<>uid://d08r12hn5mce1::::res://scene/IdleScreen.tscn<>uid://c2hpohwilg1lq::::res://addons/table.tscn<>uid://dpt5xjdv4rn4c::::res://assets/MaleCharacter/guy-mesh.glb<>uid://c0v72003xgbg7::::res://assets/Monitor.glb<>uid://chk5c2vkeowgj::::res://scripts/screen.gd<>uid://bd1eqx7ns2mep::::res://scripts/left_sliding_panel.gd<>uid://dtpe25cd85fc8::::res://scene/result_panel.tscn<>uid://bx7scsfg2nivv::::res://scene/pause_panel.tscn<>uid://lm3fs23d4v2l::::res://music/gameplaymusic.mp3
+FraudDetectionLevel1-2.tscn::PackedScene::5865131216991773607::1776083532::0::1::::<><><>0<>0<><>::uid://c7523xy3oll5p::::res://scripts/FraudDetection/Level1/FraudDetectionLevel1-2.gd<>uid://bs72ogkvdd7d6::::res://scene/character.tscn<>uid://cwjddyjeack6m::::res://scene/socket.tscn<>uid://qxngx7cctkt6::::res://scene/floppydisk.tscn<>uid://d08r12hn5mce1::::res://scene/IdleScreen.tscn<>uid://c2hpohwilg1lq::::res://addons/table.tscn<>uid://dpt5xjdv4rn4c::::res://assets/MaleCharacter/guy-mesh.glb<>uid://c0v72003xgbg7::::res://assets/Monitor.glb<>uid://chk5c2vkeowgj::::res://scripts/screen.gd<>uid://bd1eqx7ns2mep::::res://scripts/left_sliding_panel.gd<>uid://dtpe25cd85fc8::::res://scene/result_panel.tscn<>uid://bx7scsfg2nivv::::res://scene/pause_panel.tscn<>uid://lm3fs23d4v2l::::res://music/gameplaymusic.mp3
+::res://scene/KnowYourCustomer/::1775823707
+::res://scene/KnowYourCustomer/Level1/::1776083564
+KnowYourCustomer1-1.tscn::PackedScene::6007757846744516759::1776083558::0::1::::<><><>0<>0<><>::uid://cnree0sifxodl::::res://scripts/KnowYourCustomer/Level1/KnowYourCustomer1-1.gd<>uid://bs72ogkvdd7d6::::res://scene/character.tscn<>uid://cwjddyjeack6m::::res://scene/socket.tscn<>uid://qxngx7cctkt6::::res://scene/floppydisk.tscn<>uid://d08r12hn5mce1::::res://scene/IdleScreen.tscn<>uid://c2hpohwilg1lq::::res://addons/table.tscn<>uid://dpt5xjdv4rn4c::::res://assets/MaleCharacter/guy-mesh.glb<>uid://c0v72003xgbg7::::res://assets/Monitor.glb<>uid://chk5c2vkeowgj::::res://scripts/screen.gd<>uid://5jdutigoh210::::res://scripts/kyc_panel.gd<>uid://dtpe25cd85fc8::::res://scene/result_panel.tscn<>uid://bx7scsfg2nivv::::res://scene/pause_panel.tscn<>uid://lm3fs23d4v2l::::res://music/gameplaymusic.mp3
+KnowYourCustomer1-2.tscn::PackedScene::3963364838130396627::1776083564::0::1::::<><><>0<>0<><>::uid://dm1rlu6yvhac8::::res://scripts/KnowYourCustomer/Level1/KnowYourCustomer1-2.gd<>uid://bs72ogkvdd7d6::::res://scene/character.tscn<>uid://cwjddyjeack6m::::res://scene/socket.tscn<>uid://qxngx7cctkt6::::res://scene/floppydisk.tscn<>uid://d08r12hn5mce1::::res://scene/IdleScreen.tscn<>uid://c2hpohwilg1lq::::res://addons/table.tscn<>uid://dpt5xjdv4rn4c::::res://assets/MaleCharacter/guy-mesh.glb<>uid://c0v72003xgbg7::::res://assets/Monitor.glb<>uid://chk5c2vkeowgj::::res://scripts/screen.gd<>uid://5jdutigoh210::::res://scripts/kyc_panel.gd<>uid://dtpe25cd85fc8::::res://scene/result_panel.tscn<>uid://bx7scsfg2nivv::::res://scene/pause_panel.tscn<>uid://lm3fs23d4v2l::::res://music/gameplaymusic.mp3
+::res://scripts/::1776086352
+>>>>>>> Stashed changes
 button.gd::GDScript::2754511357747034156::1775820901::0::1::::<>Area3D<><>0<>0<><>::
 camera_3d.gd::GDScript::2688881716462095338::1775820901::0::1::::<>Camera3D<><>0<>0<><>::
+credit_scoring_panel.gd::GDScript::383265924105587925::1776086307::0::1::::<>Control<><>0<>0<><>::
+credi_scoring_panel_day2.gd::GDScript::3170926117418541667::1776084918::0::1::::<>Control<><>0<>0<><>::
 data.gd::GDScript::2956178216082866762::1775820901::0::1::::<>RigidBody3D<><>0<>0<><>::
 gameplaysettings_panel.gd::GDScript::2418242209917696115::1775820901::0::1::::<>Panel<><>0<>0<><>::
+<<<<<<< Updated upstream
 idlescreen.gd::GDScript::3841477354857527938::1775820901::0::1::::<>StaticBody3D<><>0<>0<><>::
 kyc_panel.gd::GDScript::2124463586377623377::1775833466::0::1::::<>Control<><>0<>0<><>::
 main_menu.gd::GDScript::8127067617129420418::1775820901::0::1::::<>Control<><>0<>0<><>::
@@ -118,3 +151,30 @@ FraudDetectionLevel1-2.gd::GDScript::7082506303862769263::1775827099::0::1::::<>
 ::res://scripts/KnowYourCustomer/Level1/::1775829007
 KnowYourCustomer1-1.gd::GDScript::5720642108907643185::1775828560::0::1::::<>Node3D<><>0<>0<><>::
 KnowYourCustomer1-2.gd::GDScript::8056254928425957933::1775829007::0::1::::<>Node3D<><>0<>0<><>::
+=======
+idlescreen.gd::GDScript::3841477354857527938::1776083772::0::1::::<>StaticBody3D<><>0<>0<><>::
+kyc_panel.gd::GDScript::2124463586377623377::1775834154::0::1::::<>Control<><>0<>0<><>::
+kyc_panel_day2.gd::GDScript::5724618420601545082::1775834209::0::1::::<>Control<><>0<>0<><>::
+left_sliding_panel.gd::GDScript::2650933734972880991::1775974608::0::1::::<>Control<><>0<>0<><>::
+left_sliding_panel_day2.gd::GDScript::8261898587454120741::1775835063::0::1::::<>Control<><>0<>0<><>::
+main_menu.gd::GDScript::8127067617129420418::1776083474::0::1::::<>Control<><>0<>0<><>::
+music_control.gd::GDScript::5917535586481561902::1775820901::0::1::::<>HSlider<><>0<>0<><>::
+pause_panel.gd::GDScript::7639708732170671162::1775974224::0::1::::<>Panel<><>0<>0<><>::
+proto_controller.gd::GDScript::6625198628275246945::1775978916::0::1::::<>CharacterBody3D<><>0<>0<><>::
+rigid_body_3d.gd::GDScript::7383276156968702673::1775835067::0::1::::<>RigidBody3D<><>0<>0<><>::
+screen.gd::GDScript::5286633582795452381::1776085893::0::1::::<>Node3D<><>0<>0<><>::
+settings_panel.gd::GDScript::5999231184706045432::1775911682::0::1::::<>Panel<><>0<>0<><>::
+socket.gd::GDScript::1969301778050864912::1775820901::0::1::::<>Area3D<><>0<>0<><>::
+::res://scripts/CreditScoring/::1775914458
+::res://scripts/CreditScoring/Level1/::1776085831
+credit_scoring_1_1.gd::GDScript::262756142908869881::1776084458::0::1::::<>Node3D<><>0<>0<><>::
+credit_scoring_1_2.gd::GDScript::5361243191735984653::1776085831::0::1::::<>Node3D<><>0<>0<><>::
+::res://scripts/FraudDetection/::1775821312
+::res://scripts/FraudDetection/Level1/::1775978743
+FraudDetectionLevel1-1.gd::GDScript::985405573726863418::1775978743::0::1::::<>Node3D<><>0<>0<><>::
+FraudDetectionLevel1-2.gd::GDScript::7082506303862769263::1775827099::0::1::::<>Node3D<><>0<>0<><>::
+::res://scripts/KnowYourCustomer/::1775828369
+::res://scripts/KnowYourCustomer/Level1/::1775980091
+KnowYourCustomer1-1.gd::GDScript::5720642108907643185::1775828560::0::1::::<>Node3D<><>0<>0<><>::
+KnowYourCustomer1-2.gd::GDScript::8056254928425957933::1775980091::0::1::::<>Node3D<><>0<>0<><>::
+>>>>>>> Stashed changes

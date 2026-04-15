@@ -13,6 +13,7 @@ func _on_resume_pressed() -> void:
 		settings_panel.visible = false
 		player.resume_game()
 
+
 func _on_settings_pressed() -> void:
 	settings_panel.visible = true
 

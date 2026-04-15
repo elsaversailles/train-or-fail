@@ -9,10 +9,16 @@
 [ext_resource type="PackedScene" uid="uid://dpt5xjdv4rn4c" path="res://assets/MaleCharacter/guy-mesh.glb" id="7_xcx4e"]
 [ext_resource type="PackedScene" uid="uid://c0v72003xgbg7" path="res://assets/Monitor.glb" id="8_q16oh"]
 [ext_resource type="Script" uid="uid://chk5c2vkeowgj" path="res://scripts/screen.gd" id="9_nb81f"]
+<<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://dpyei6vp3w2i0" path="res://scripts/sliding_panel_day2.gd" id="10_ifqkn"]
 [ext_resource type="Script" uid="uid://dg3y5e7vspyxu" path="res://scripts/pause_panel.gd" id="11_rutdk"]
 [ext_resource type="Script" uid="uid://bapodi31h647x" path="res://scripts/gameplaysettings_panel.gd" id="12_waspx"]
 [ext_resource type="Script" uid="uid://cqkq7ghcjka7o" path="res://scripts/music_control.gd" id="13_vp1ta"]
+=======
+[ext_resource type="Script" uid="uid://bd1eqx7ns2mep" path="res://scripts/left_sliding_panel.gd" id="10_uji23"]
+[ext_resource type="PackedScene" uid="uid://dtpe25cd85fc8" path="res://scene/result_panel.tscn" id="11_d38wm"]
+[ext_resource type="PackedScene" uid="uid://bx7scsfg2nivv" path="res://scene/pause_panel.tscn" id="12_uji23"]
+>>>>>>> Stashed changes
 [ext_resource type="AudioStream" uid="uid://lm3fs23d4v2l" path="res://music/gameplaymusic.mp3" id="14_5n8yc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
@@ -61,6 +67,7 @@ size = Vector2(0.41, 0.53)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wscrc"]
 data = PackedVector3Array(0.205, -0.265, 0, -0.205, -0.265, 0, 0.205, 0.265, 0, -0.205, -0.265, 0, -0.205, 0.265, 0, 0.205, 0.265, 0)
 
+<<<<<<< Updated upstream
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjnwh"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jcbur"]
@@ -85,6 +92,18 @@ color = Color(0.12108166, 0.57758135, 1.92523e-07, 1)
 thickness = 6
 
 [node name="FraudDetectionLevel1" type="Node3D" unique_id=1103394804]
+=======
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ifqkn"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d38wm"]
+load_path = "res://.godot/imported/a1_location.png-852cc11683418185bf71a881fc977259.ctex"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1k4c1"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cl75t"]
+
+[node name="FraudDetectionLevel1-2" type="Node3D" unique_id=1103394804]
+>>>>>>> Stashed changes
 script = ExtResource("1_5uc2y")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1808950673]
@@ -138,7 +157,10 @@ transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 5.58
 
 [node name="IdleScreen" parent="." unique_id=1201481395 instance=ExtResource("5_16we4")]
 transform = Transform3D(-4.371139e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, 4.371139e-08, 1.9106855e-15, 6.573001, 1.8168597, 0.102722645)
+<<<<<<< Updated upstream
 visible = false
+=======
+>>>>>>> Stashed changes
 
 [node name="Table" parent="." unique_id=941121870 instance=ExtResource("6_b71em")]
 transform = Transform3D(0.5431538, 0, 0, 0, 0.42786574, 0, 0, 0, 0.9, 5.136668, 0.18296456, -0.19128597)
@@ -210,7 +232,11 @@ render_target_update_mode = 4
 [node name="Camera3D" type="Camera3D" parent="Monitor/Screen/SubViewport" unique_id=525920961]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.448, 2.792, -0.068)
 
+<<<<<<< Updated upstream
 [node name="SlidingPanel" type="Panel" parent="Monitor/Screen/SubViewport" unique_id=2049437397]
+=======
+[node name="LeftSlidingPanel" type="Panel" parent="Monitor/Screen/SubViewport" unique_id=1240848283]
+>>>>>>> Stashed changes
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -219,9 +245,15 @@ offset_right = -1152.0
 offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
+<<<<<<< Updated upstream
 script = ExtResource("10_ifqkn")
 
 [node name="ApplicantLabel" type="Label" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=83242092]
+=======
+script = ExtResource("10_uji23")
+
+[node name="ApplicantLabel" type="Label" parent="Monitor/Screen/SubViewport/LeftSlidingPanel" unique_id=1516348792]
+>>>>>>> Stashed changes
 layout_mode = 0
 offset_left = 31.0
 offset_top = 3.0
@@ -229,7 +261,11 @@ offset_right = 142.0
 offset_bottom = 26.0
 text = "Applicant 1 / 5"
 
+<<<<<<< Updated upstream
 [node name="ButtonPanel" type="Panel" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=948163116]
+=======
+[node name="ButtonPanel" type="Panel" parent="Monitor/Screen/SubViewport/LeftSlidingPanel" unique_id=2009832002]
+>>>>>>> Stashed changes
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -237,7 +273,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+<<<<<<< Updated upstream
 [node name="GripButton" type="Button" parent="Monitor/Screen/SubViewport/SlidingPanel/ButtonPanel" unique_id=330496296]
+=======
+[node name="GripButton" type="Button" parent="Monitor/Screen/SubViewport/LeftSlidingPanel/ButtonPanel" unique_id=1034462046]
+>>>>>>> Stashed changes
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -252,7 +292,11 @@ text = "|||
 |||
 |||"
 
+<<<<<<< Updated upstream
 [node name="LegitButton" type="Button" parent="Monitor/Screen/SubViewport/SlidingPanel/ButtonPanel" unique_id=2056387240]
+=======
+[node name="LegitButton" type="Button" parent="Monitor/Screen/SubViewport/LeftSlidingPanel/ButtonPanel" unique_id=1288448061]
+>>>>>>> Stashed changes
 layout_mode = 0
 offset_left = 760.0
 offset_top = 300.0
@@ -261,7 +305,11 @@ offset_bottom = 440.0
 size_flags_vertical = 3
 text = "Legit"
 
+<<<<<<< Updated upstream
 [node name="SusButton" type="Button" parent="Monitor/Screen/SubViewport/SlidingPanel/ButtonPanel" unique_id=1198441296]
+=======
+[node name="SusButton" type="Button" parent="Monitor/Screen/SubViewport/LeftSlidingPanel/ButtonPanel" unique_id=1194551732]
+>>>>>>> Stashed changes
 layout_mode = 0
 offset_left = 760.0
 offset_top = 450.0
@@ -270,7 +318,11 @@ offset_bottom = 590.0
 size_flags_vertical = 3
 text = "Sus"
 
+<<<<<<< Updated upstream
 [node name="ShutdownButton" type="Button" parent="Monitor/Screen/SubViewport/SlidingPanel/ButtonPanel" unique_id=180447544]
+=======
+[node name="ShutdownButton" type="Button" parent="Monitor/Screen/SubViewport/LeftSlidingPanel/ButtonPanel" unique_id=188444526]
+>>>>>>> Stashed changes
 visible = false
 layout_mode = 0
 offset_left = 852.0
@@ -280,7 +332,11 @@ offset_bottom = 205.0
 size_flags_vertical = 10
 text = "Shutdown"
 
+<<<<<<< Updated upstream
 [node name="LocationLabel" type="Label" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=7511633]
+=======
+[node name="LocationLabel" type="Label" parent="Monitor/Screen/SubViewport/LeftSlidingPanel" unique_id=703358458]
+>>>>>>> Stashed changes
 layout_mode = 0
 offset_left = 328.0
 offset_top = 39.0
@@ -288,21 +344,37 @@ offset_right = 438.0
 offset_bottom = 69.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
+<<<<<<< Updated upstream
 theme_override_styles/normal = SubResource("StyleBoxFlat_gjnwh")
 text = "Location"
 horizontal_alignment = 1
 
 [node name="LocationTextureButton" type="TextureButton" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=1357714526]
+=======
+theme_override_styles/normal = SubResource("StyleBoxFlat_ifqkn")
+text = "Location"
+horizontal_alignment = 1
+
+[node name="LocationTextureButton" type="TextureButton" parent="Monitor/Screen/SubViewport/LeftSlidingPanel" unique_id=765274171]
+>>>>>>> Stashed changes
 layout_mode = 0
 offset_left = 38.0
 offset_top = 80.0
 offset_right = 738.0
 offset_bottom = 590.0
+<<<<<<< Updated upstream
 texture_normal = SubResource("CompressedTexture2D_jcbur")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="ItemLabel" type="Label" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=242352973]
+=======
+texture_normal = SubResource("CompressedTexture2D_d38wm")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ItemLabel" type="Label" parent="Monitor/Screen/SubViewport/LeftSlidingPanel" unique_id=499814963]
+>>>>>>> Stashed changes
 layout_mode = 0
 offset_left = 589.0
 offset_top = 350.0
@@ -310,21 +382,37 @@ offset_right = 699.0
 offset_bottom = 385.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
+<<<<<<< Updated upstream
 theme_override_styles/normal = SubResource("StyleBoxFlat_0d4pv")
 text = "Item"
 horizontal_alignment = 1
 
 [node name="ItemTextureButton" type="TextureButton" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=234596525]
+=======
+theme_override_styles/normal = SubResource("StyleBoxFlat_1k4c1")
+text = "Item"
+horizontal_alignment = 1
+
+[node name="ItemTextureButton" type="TextureButton" parent="Monitor/Screen/SubViewport/LeftSlidingPanel" unique_id=90708378]
+>>>>>>> Stashed changes
 layout_mode = 0
 offset_left = 529.0
 offset_top = 388.0
 offset_right = 699.0
 offset_bottom = 558.0
+<<<<<<< Updated upstream
 texture_normal = SubResource("CompressedTexture2D_smf0o")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="TimeLabel" type="Label" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=1442096397]
+=======
+texture_normal = SubResource("CompressedTexture2D_cl75t")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TimeLabel" type="Label" parent="Monitor/Screen/SubViewport/LeftSlidingPanel" unique_id=293954028]
+>>>>>>> Stashed changes
 layout_mode = 0
 offset_left = 765.0
 offset_top = 80.0
@@ -333,7 +421,11 @@ offset_bottom = 110.0
 theme_override_font_sizes/font_size = 20
 text = "Time"
 
+<<<<<<< Updated upstream
 [node name="TimeValueLabel" type="Label" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=1495080212]
+=======
+[node name="TimeValueLabel" type="Label" parent="Monitor/Screen/SubViewport/LeftSlidingPanel" unique_id=1801498600]
+>>>>>>> Stashed changes
 layout_mode = 0
 offset_left = 765.0
 offset_top = 120.0
@@ -341,7 +433,11 @@ offset_right = 895.0
 offset_bottom = 150.0
 theme_override_font_sizes/font_size = 20
 
+<<<<<<< Updated upstream
 [node name="PriceLabel" type="Label" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=1682235694]
+=======
+[node name="PriceLabel" type="Label" parent="Monitor/Screen/SubViewport/LeftSlidingPanel" unique_id=1649399940]
+>>>>>>> Stashed changes
 layout_mode = 0
 offset_left = 765.0
 offset_top = 175.0
@@ -350,7 +446,11 @@ offset_bottom = 205.0
 theme_override_font_sizes/font_size = 20
 text = "Price"
 
+<<<<<<< Updated upstream
 [node name="PriceValueLabel" type="Label" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=1725269754]
+=======
+[node name="PriceValueLabel" type="Label" parent="Monitor/Screen/SubViewport/LeftSlidingPanel" unique_id=1631386822]
+>>>>>>> Stashed changes
 layout_mode = 0
 offset_left = 765.0
 offset_top = 210.0
@@ -358,6 +458,7 @@ offset_right = 895.0
 offset_bottom = 240.0
 theme_override_font_sizes/font_size = 20
 
+<<<<<<< Updated upstream
 [node name="ResultPanel" type="CanvasLayer" parent="." unique_id=631947750]
 
 [node name="FinalResultPanel" type="Panel" parent="ResultPanel" unique_id=1746299184]
@@ -551,6 +652,11 @@ offset_top = 158.0
 offset_right = -28.0
 offset_bottom = 193.0
 text = "Back"
+=======
+[node name="ResultPanel" parent="." unique_id=779608946 instance=ExtResource("11_d38wm")]
+
+[node name="PausePanel" parent="." unique_id=1179524455 instance=ExtResource("12_uji23")]
+>>>>>>> Stashed changes
 
 [node name="MusicGameplay" type="AudioStreamPlayer2D" parent="." unique_id=1071873422]
 stream = ExtResource("14_5n8yc")
@@ -559,9 +665,12 @@ autoplay = true
 bus = &"Music"
 
 [connection signal="body_entered" from="socket" to="MainChar" method="_on_socket_body_entered"]
+<<<<<<< Updated upstream
 [connection signal="pressed" from="ResultPanel/FinalResultPanel/MainmenuButton" to="ResultPanel/FinalResultPanel" method="_on_mainmenu_button_pressed"]
 [connection signal="pressed" from="PausePanel/Resume" to="PausePanel" method="_on_resume_pressed"]
 [connection signal="pressed" from="PausePanel/Settings" to="PausePanel" method="_on_settings_pressed"]
 [connection signal="pressed" from="PausePanel/Quit" to="PausePanel" method="_on_quit_pressed"]
 [connection signal="value_changed" from="PausePanel/SettingsPanel/MusicControl" to="PausePanel/SettingsPanel/MusicControl" method="_on_value_changed"]
 [connection signal="pressed" from="PausePanel/SettingsPanel/BackButton" to="PausePanel/SettingsPanel" method="_on_back_button_pressed"]
+=======
+>>>>>>> Stashed changes

@@ -1,5 +1,11 @@
+<<<<<<< Updated upstream
+[gd_scene format=3 uid="uid://clstgqaxn60c4"]
+
+<<<<<<<< Updated upstream:scene/FraudDetection/Level1/FraudDetectionLevel1-1.tscn
+=======
 [gd_scene format=3 uid="uid://cqow47bch5ocs"]
 
+>>>>>>> Stashed changes
 [ext_resource type="Script" uid="uid://oblqrvb0temk" path="res://scripts/FraudDetection/Level1/FraudDetectionLevel1-1.gd" id="1_k4d8p"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scene/character.tscn" id="2_4jepk"]
 [ext_resource type="PackedScene" uid="uid://cwjddyjeack6m" path="res://scene/socket.tscn" id="3_n0abr"]
@@ -9,11 +15,33 @@
 [ext_resource type="PackedScene" uid="uid://dpt5xjdv4rn4c" path="res://assets/MaleCharacter/guy-mesh.glb" id="7_xcx4e"]
 [ext_resource type="PackedScene" uid="uid://c0v72003xgbg7" path="res://assets/Monitor.glb" id="8_q16oh"]
 [ext_resource type="Script" uid="uid://chk5c2vkeowgj" path="res://scripts/screen.gd" id="9_nb81f"]
+<<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://bd1eqx7ns2mep" path="res://scripts/sliding_panel.gd" id="10_r4d08"]
 [ext_resource type="Script" uid="uid://dg3y5e7vspyxu" path="res://scripts/pause_panel.gd" id="11_rutdk"]
 [ext_resource type="Script" uid="uid://bapodi31h647x" path="res://scripts/gameplaysettings_panel.gd" id="12_waspx"]
 [ext_resource type="Script" uid="uid://cqkq7ghcjka7o" path="res://scripts/music_control.gd" id="13_vp1ta"]
 [ext_resource type="AudioStream" uid="uid://lm3fs23d4v2l" path="res://music/gameplaymusic.mp3" id="14_5n8yc"]
+========
+[ext_resource type="Script" uid="uid://cina5lilh4y42" path="res://scripts/CreditScoring/Level1/credit_scoring_1_2.gd" id="1_fmv5y"]
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scene/character.tscn" id="2_ulhhn"]
+[ext_resource type="PackedScene" uid="uid://cwjddyjeack6m" path="res://scene/socket.tscn" id="3_x3uc4"]
+[ext_resource type="PackedScene" uid="uid://qxngx7cctkt6" path="res://scene/floppydisk.tscn" id="4_qjfgl"]
+[ext_resource type="PackedScene" uid="uid://d08r12hn5mce1" path="res://scene/IdleScreen.tscn" id="5_2ihdh"]
+[ext_resource type="PackedScene" uid="uid://c2hpohwilg1lq" path="res://addons/table.tscn" id="6_itfvv"]
+[ext_resource type="PackedScene" uid="uid://dpt5xjdv4rn4c" path="res://assets/MaleCharacter/guy-mesh.glb" id="7_vdthp"]
+[ext_resource type="PackedScene" uid="uid://c0v72003xgbg7" path="res://assets/Monitor.glb" id="8_c76eh"]
+[ext_resource type="Script" uid="uid://chk5c2vkeowgj" path="res://scripts/screen.gd" id="9_2ccsx"]
+[ext_resource type="Script" uid="uid://blgaxpq43s78r" path="res://scripts/credit_scoring_panel_day2.gd" id="10_fmv5y"]
+[ext_resource type="PackedScene" uid="uid://dtpe25cd85fc8" path="res://scene/result_panel.tscn" id="11_4hbxn"]
+[ext_resource type="PackedScene" uid="uid://bx7scsfg2nivv" path="res://scene/pause_panel.tscn" id="12_cf54u"]
+[ext_resource type="AudioStream" uid="uid://lm3fs23d4v2l" path="res://music/gameplaymusic.mp3" id="13_hhkhg"]
+>>>>>>>> Stashed changes:scene/CreditScoring/CreditScoring1-2.tscn
+=======
+[ext_resource type="Script" uid="uid://bd1eqx7ns2mep" path="res://scripts/left_sliding_panel.gd" id="10_r4d08"]
+[ext_resource type="PackedScene" uid="uid://dtpe25cd85fc8" path="res://scene/result_panel.tscn" id="11_cgafg"]
+[ext_resource type="PackedScene" uid="uid://bx7scsfg2nivv" path="res://scene/pause_panel.tscn" id="13_dg6ke"]
+[ext_resource type="AudioStream" uid="uid://lm3fs23d4v2l" path="res://music/gameplaymusic.mp3" id="14_5n8yc"]
+>>>>>>> Stashed changes
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -69,6 +97,8 @@ load_path = "res://.godot/imported/a1_location.png-852cc11683418185bf71a881fc977
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0d4pv"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_smf0o"]
+<<<<<<< Updated upstream
+<<<<<<<< Updated upstream:scene/FraudDetection/Level1/FraudDetectionLevel1-1.tscn
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tv8i1"]
 load_path = "res://.godot/imported/phone.png-e079165b39efe232079a9973b010bed1.ctex"
@@ -86,6 +116,25 @@ thickness = 6
 
 [node name="FraudDetectionLevel1" type="Node3D" unique_id=1103394804]
 script = ExtResource("1_k4d8p")
+========
+
+[node name="CreditScoring1-2" type="Node3D" unique_id=1103394804]
+script = ExtResource("1_fmv5y")
+>>>>>>>> Stashed changes:scene/CreditScoring/CreditScoring1-2.tscn
+=======
+
+[sub_resource type="GDScript" id="GDScript_dg6ke"]
+script/source = "extends CanvasLayer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+"
+
+[node name="FraudDetectionLevel1-1" type="Node3D" unique_id=1103394804]
+script = ExtResource("1_k4d8p")
+>>>>>>> Stashed changes
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1808950673]
 environment = SubResource("Environment_0xm2m")
@@ -126,6 +175,10 @@ size = Vector3(23.3, 2, 1)
 transform = Transform3D(-3.1770643e-08, 0, -0.4685821, 0, 1.0000004, 0, 1.5511212, 0, -4.3714003e-08, -6.236999, 0.47799996, 16.64)
 size = Vector3(23.3, 2, 1)
 
+<<<<<<< Updated upstream
+<<<<<<<< Updated upstream:scene/FraudDetection/Level1/FraudDetectionLevel1-1.tscn
+=======
+>>>>>>> Stashed changes
 [node name="MainChar" parent="." unique_id=2061402672 instance=ExtResource("2_4jepk")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.888, -0.024540752, 0)
 
@@ -138,12 +191,38 @@ transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 5.58
 
 [node name="IdleScreen" parent="." unique_id=1201481395 instance=ExtResource("5_16we4")]
 transform = Transform3D(-4.371139e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, 4.371139e-08, 1.9106855e-15, 6.573001, 1.8168597, 0.102722645)
+<<<<<<< Updated upstream
 visible = false
+=======
+>>>>>>> Stashed changes
 
 [node name="Table" parent="." unique_id=941121870 instance=ExtResource("6_b71em")]
 transform = Transform3D(0.5431538, 0, 0, 0, 0.42786574, 0, 0, 0, 0.9, 5.136668, 0.18296456, -0.19128597)
 
 [node name="NPC" parent="." unique_id=966341260 instance=ExtResource("7_xcx4e")]
+<<<<<<< Updated upstream
+========
+[node name="MainChar" parent="." unique_id=2061402672 instance=ExtResource("2_ulhhn")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.888, -0.024540752, 0)
+
+[node name="socket" parent="." unique_id=315384306 instance=ExtResource("3_x3uc4")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.4089456, 0.87024593, -2.075036)
+collision_layer = 2
+
+[node name="floppydisk" parent="." unique_id=1531040890 instance=ExtResource("4_qjfgl")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 5.5807233, 0.6673304, -1.24653)
+
+[node name="IdleScreen" parent="." unique_id=1201481395 instance=ExtResource("5_2ihdh")]
+transform = Transform3D(-4.371139e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, 4.371139e-08, 1.9106855e-15, 6.573001, 1.8168597, 0.102722645)
+visible = false
+
+[node name="Table" parent="." unique_id=941121870 instance=ExtResource("6_itfvv")]
+transform = Transform3D(0.5431538, 0, 0, 0, 0.42786574, 0, 0, 0, 0.9, 5.136668, 0.18296456, -0.19128597)
+
+[node name="NPC" parent="." unique_id=966341260 instance=ExtResource("7_vdthp")]
+>>>>>>>> Stashed changes:scene/CreditScoring/CreditScoring1-2.tscn
+=======
+>>>>>>> Stashed changes
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11.124, 1.087, -0.052)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1476932616]
@@ -183,15 +262,37 @@ offset_left = 73.0
 offset_top = 24.0
 offset_right = 186.0
 offset_bottom = 124.0
+<<<<<<< Updated upstream
+<<<<<<<< Updated upstream:scene/FraudDetection/Level1/FraudDetectionLevel1-1.tscn
+=======
+>>>>>>> Stashed changes
 text = "Level 1
 Day 1"
 
 [node name="Monitor" parent="." unique_id=724615049 instance=ExtResource("8_q16oh")]
+<<<<<<< Updated upstream
+========
+text = "Credit Scoring
+Level 1
+Day 2"
+
+[node name="Monitor" parent="." unique_id=724615049 instance=ExtResource("8_c76eh")]
+>>>>>>>> Stashed changes:scene/CreditScoring/CreditScoring1-2.tscn
+=======
+>>>>>>> Stashed changes
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.5272965, 0.68358636, 0.083559036)
 
 [node name="Screen" type="Node3D" parent="Monitor" unique_id=1749718098]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.083558746, -0.68358636, 6.6796875)
+<<<<<<< Updated upstream
+<<<<<<<< Updated upstream:scene/FraudDetection/Level1/FraudDetectionLevel1-1.tscn
 script = ExtResource("9_nb81f")
+========
+script = ExtResource("9_2ccsx")
+>>>>>>>> Stashed changes:scene/CreditScoring/CreditScoring1-2.tscn
+=======
+script = ExtResource("9_nb81f")
+>>>>>>> Stashed changes
 
 [node name="Quad" type="MeshInstance3D" parent="Monitor/Screen" unique_id=671364175]
 transform = Transform3D(-3.036211e-07, 0, -0.99999976, 0, 2.7617304, 0, 6.9460416, 0, -4.3711378e-08, 6.650567, 1.8339279, 0.10465306)
@@ -208,9 +309,140 @@ size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="Monitor/Screen/SubViewport" unique_id=525920961]
+<<<<<<< Updated upstream
+<<<<<<<< Updated upstream:scene/FraudDetection/Level1/FraudDetectionLevel1-1.tscn
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.4478445, 2.7917843, -0.067971945)
+========
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.448, 2.792, -0.068)
+
+[node name="CrediScoringPanel" type="Control" parent="Monitor/Screen/SubViewport" unique_id=884762313]
+layout_mode = 3
+anchor_right = 0.975
+anchor_bottom = 1.0
+offset_left = 1150.0
+offset_right = 970.79895
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("10_fmv5y")
+
+[node name="Panel" type="Panel" parent="Monitor/Screen/SubViewport/CrediScoringPanel" unique_id=1209214002]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VSlider" type="VSlider" parent="Monitor/Screen/SubViewport/CrediScoringPanel/Panel" unique_id=1006106703]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.30900002
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = 38.0
+offset_right = -162.686
+offset_bottom = -135.0
+grow_vertical = 2
+max_value = 1.0
+step = 0.1
+
+[node name="FraudDetectionLabel" type="Label" parent="Monitor/Screen/SubViewport/CrediScoringPanel/Panel" unique_id=795173196]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.314
+anchor_bottom = 1.0
+offset_left = 150.0
+offset_top = 130.0
+offset_right = -31.72815
+offset_bottom = -443.0
+
+[node name="KYCLabel" type="Label" parent="Monitor/Screen/SubViewport/CrediScoringPanel/Panel" unique_id=614804825]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.314
+anchor_bottom = 1.0
+offset_left = 150.0
+offset_top = 250.0
+offset_right = -32.000122
+offset_bottom = -323.0
+
+[node name="TabContainer" type="TabContainer" parent="Monitor/Screen/SubViewport/CrediScoringPanel/Panel" unique_id=1024807784]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 356.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+
+[node name="GeneralInfo" type="TextureRect" parent="Monitor/Screen/SubViewport/CrediScoringPanel/Panel/TabContainer" unique_id=1383928987]
+layout_mode = 2
+expand_mode = 1
+metadata/_tab_index = 0
+
+[node name="PaymentHistory" type="TextureRect" parent="Monitor/Screen/SubViewport/CrediScoringPanel/Panel/TabContainer" unique_id=1422576295]
+visible = false
+layout_mode = 2
+expand_mode = 1
+metadata/_tab_index = 1
+
+[node name="Arrears" type="TextureRect" parent="Monitor/Screen/SubViewport/CrediScoringPanel/Panel/TabContainer" unique_id=1824694466]
+visible = false
+layout_mode = 2
+expand_mode = 1
+metadata/_tab_index = 2
+
+[node name="DebtRatio" type="TextureRect" parent="Monitor/Screen/SubViewport/CrediScoringPanel/Panel/TabContainer" unique_id=785009764]
+visible = false
+layout_mode = 2
+expand_mode = 1
+metadata/_tab_index = 3
+
+[node name="SubmitButton" type="Button" parent="Monitor/Screen/SubViewport/CrediScoringPanel/Panel" unique_id=1239056119]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.81200004
+anchor_right = 0.263
+anchor_bottom = 1.0
+offset_left = 72.0
+offset_top = 27.823975
+offset_right = -71.97601
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Submit"
+
+[node name="GripButton" type="Button" parent="Monitor/Screen/SubViewport/CrediScoringPanel/Panel" unique_id=1200747543]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -988.715
+offset_right = -940.7149
+grow_horizontal = 0
+grow_vertical = 2
+text = "|||
+|||
+|||
+|||"
+
+[node name="ResultLabel" type="Label" parent="Monitor/Screen/SubViewport/CrediScoringPanel/Panel" unique_id=1413420878]
+layout_mode = 0
+offset_left = 136.51501
+offset_top = 426.0
+offset_right = 321.515
+offset_bottom = 506.0
+>>>>>>>> Stashed changes:scene/CreditScoring/CreditScoring1-2.tscn
 
 [node name="SlidingPanel" type="Panel" parent="Monitor/Screen/SubViewport" unique_id=2049437397]
+=======
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.4478445, 2.7917843, -0.067971945)
+
+[node name="LeftSlidingPanel" type="Panel" parent="Monitor/Screen/SubViewport" unique_id=2049437397]
+>>>>>>> Stashed changes
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -219,9 +451,18 @@ offset_right = -1152.0
 offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
+<<<<<<< Updated upstream
+<<<<<<<< Updated upstream:scene/FraudDetection/Level1/FraudDetectionLevel1-1.tscn
 script = ExtResource("10_r4d08")
+========
+>>>>>>>> Stashed changes:scene/CreditScoring/CreditScoring1-2.tscn
 
 [node name="ApplicantLabel" type="Label" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=83242092]
+=======
+script = ExtResource("10_r4d08")
+
+[node name="ApplicantLabel" type="Label" parent="Monitor/Screen/SubViewport/LeftSlidingPanel" unique_id=83242092]
+>>>>>>> Stashed changes
 layout_mode = 0
 offset_left = 31.0
 offset_top = 3.0
@@ -229,7 +470,11 @@ offset_right = 142.0
 offset_bottom = 26.0
 text = "Applicant 1 / 5"
 
+<<<<<<< Updated upstream
 [node name="ButtonPanel" type="Panel" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=948163116]
+=======
+[node name="ButtonPanel" type="Panel" parent="Monitor/Screen/SubViewport/LeftSlidingPanel" unique_id=948163116]
+>>>>>>> Stashed changes
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -237,14 +482,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+<<<<<<< Updated upstream
 [node name="GripButton" type="Button" parent="Monitor/Screen/SubViewport/SlidingPanel/ButtonPanel" unique_id=330496296]
+=======
+[node name="GripButton" type="Button" parent="Monitor/Screen/SubViewport/LeftSlidingPanel/ButtonPanel" unique_id=330496296]
+>>>>>>> Stashed changes
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -8.0
+<<<<<<< Updated upstream
+offset_right = 48.0
+=======
 offset_right = 40.0
+>>>>>>> Stashed changes
 grow_horizontal = 0
 grow_vertical = 2
 text = "|||
@@ -252,7 +505,11 @@ text = "|||
 |||
 |||"
 
+<<<<<<< Updated upstream
 [node name="LegitButton" type="Button" parent="Monitor/Screen/SubViewport/SlidingPanel/ButtonPanel" unique_id=2056387240]
+=======
+[node name="LegitButton" type="Button" parent="Monitor/Screen/SubViewport/LeftSlidingPanel/ButtonPanel" unique_id=2056387240]
+>>>>>>> Stashed changes
 layout_mode = 0
 offset_left = 760.0
 offset_top = 300.0
@@ -261,7 +518,11 @@ offset_bottom = 440.0
 size_flags_vertical = 3
 text = "Legit"
 
+<<<<<<< Updated upstream
 [node name="SusButton" type="Button" parent="Monitor/Screen/SubViewport/SlidingPanel/ButtonPanel" unique_id=1198441296]
+=======
+[node name="SusButton" type="Button" parent="Monitor/Screen/SubViewport/LeftSlidingPanel/ButtonPanel" unique_id=1198441296]
+>>>>>>> Stashed changes
 layout_mode = 0
 offset_left = 760.0
 offset_top = 450.0
@@ -270,7 +531,11 @@ offset_bottom = 590.0
 size_flags_vertical = 3
 text = "Sus"
 
+<<<<<<< Updated upstream
 [node name="ShutdownButton" type="Button" parent="Monitor/Screen/SubViewport/SlidingPanel/ButtonPanel" unique_id=180447544]
+=======
+[node name="ShutdownButton" type="Button" parent="Monitor/Screen/SubViewport/LeftSlidingPanel/ButtonPanel" unique_id=180447544]
+>>>>>>> Stashed changes
 visible = false
 layout_mode = 0
 offset_left = 852.0
@@ -280,7 +545,11 @@ offset_bottom = 205.0
 size_flags_vertical = 10
 text = "Shutdown"
 
+<<<<<<< Updated upstream
 [node name="LocationLabel" type="Label" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=7511633]
+=======
+[node name="LocationLabel" type="Label" parent="Monitor/Screen/SubViewport/LeftSlidingPanel" unique_id=7511633]
+>>>>>>> Stashed changes
 layout_mode = 0
 offset_left = 328.0
 offset_top = 39.0
@@ -292,7 +561,11 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_gjnwh")
 text = "Location"
 horizontal_alignment = 1
 
+<<<<<<< Updated upstream
 [node name="LocationTextureButton" type="TextureButton" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=1357714526]
+=======
+[node name="LocationTextureButton" type="TextureButton" parent="Monitor/Screen/SubViewport/LeftSlidingPanel" unique_id=1357714526]
+>>>>>>> Stashed changes
 layout_mode = 0
 offset_left = 38.0
 offset_top = 80.0
@@ -302,7 +575,11 @@ texture_normal = SubResource("CompressedTexture2D_jcbur")
 ignore_texture_size = true
 stretch_mode = 0
 
+<<<<<<< Updated upstream
 [node name="ItemLabel" type="Label" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=242352973]
+=======
+[node name="ItemLabel" type="Label" parent="Monitor/Screen/SubViewport/LeftSlidingPanel" unique_id=242352973]
+>>>>>>> Stashed changes
 layout_mode = 0
 offset_left = 589.0
 offset_top = 350.0
@@ -314,7 +591,11 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_0d4pv")
 text = "Item"
 horizontal_alignment = 1
 
+<<<<<<< Updated upstream
 [node name="ItemTextureButton" type="TextureButton" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=234596525]
+=======
+[node name="ItemTextureButton" type="TextureButton" parent="Monitor/Screen/SubViewport/LeftSlidingPanel" unique_id=234596525]
+>>>>>>> Stashed changes
 layout_mode = 0
 offset_left = 529.0
 offset_top = 388.0
@@ -324,7 +605,11 @@ texture_normal = SubResource("CompressedTexture2D_smf0o")
 ignore_texture_size = true
 stretch_mode = 0
 
+<<<<<<< Updated upstream
 [node name="TimeLabel" type="Label" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=1442096397]
+=======
+[node name="TimeLabel" type="Label" parent="Monitor/Screen/SubViewport/LeftSlidingPanel" unique_id=1442096397]
+>>>>>>> Stashed changes
 layout_mode = 0
 offset_left = 765.0
 offset_top = 80.0
@@ -333,7 +618,11 @@ offset_bottom = 110.0
 theme_override_font_sizes/font_size = 20
 text = "Time"
 
+<<<<<<< Updated upstream
 [node name="TimeValueLabel" type="Label" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=1495080212]
+=======
+[node name="TimeValueLabel" type="Label" parent="Monitor/Screen/SubViewport/LeftSlidingPanel" unique_id=1495080212]
+>>>>>>> Stashed changes
 layout_mode = 0
 offset_left = 765.0
 offset_top = 120.0
@@ -341,7 +630,11 @@ offset_right = 895.0
 offset_bottom = 150.0
 theme_override_font_sizes/font_size = 20
 
+<<<<<<< Updated upstream
 [node name="PriceLabel" type="Label" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=1682235694]
+=======
+[node name="PriceLabel" type="Label" parent="Monitor/Screen/SubViewport/LeftSlidingPanel" unique_id=1682235694]
+>>>>>>> Stashed changes
 layout_mode = 0
 offset_left = 765.0
 offset_top = 175.0
@@ -350,7 +643,11 @@ offset_bottom = 205.0
 theme_override_font_sizes/font_size = 20
 text = "Price"
 
+<<<<<<< Updated upstream
 [node name="PriceValueLabel" type="Label" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=1725269754]
+=======
+[node name="PriceValueLabel" type="Label" parent="Monitor/Screen/SubViewport/LeftSlidingPanel" unique_id=1725269754]
+>>>>>>> Stashed changes
 layout_mode = 0
 offset_left = 765.0
 offset_top = 210.0
@@ -358,6 +655,8 @@ offset_right = 895.0
 offset_bottom = 240.0
 theme_override_font_sizes/font_size = 20
 
+<<<<<<< Updated upstream
+<<<<<<<< Updated upstream:scene/FraudDetection/Level1/FraudDetectionLevel1-1.tscn
 [node name="ResultPanel" type="CanvasLayer" parent="." unique_id=631947750]
 
 [node name="FinalResultPanel" type="Panel" parent="ResultPanel" unique_id=1746299184]
@@ -554,14 +853,39 @@ text = "Back"
 
 [node name="MusicGameplay" type="AudioStreamPlayer2D" parent="." unique_id=1071873422]
 stream = ExtResource("14_5n8yc")
+========
+[node name="ResultPanel" parent="." unique_id=779608946 instance=ExtResource("11_4hbxn")]
+visible = false
+
+[node name="PausePanel" parent="." unique_id=1179524455 instance=ExtResource("12_cf54u")]
+
+[node name="MusicGameplay" type="AudioStreamPlayer2D" parent="." unique_id=1071873422]
+stream = ExtResource("13_hhkhg")
+>>>>>>>> Stashed changes:scene/CreditScoring/CreditScoring1-2.tscn
+=======
+[node name="ResultPanel" parent="." unique_id=779608946 instance=ExtResource("11_cgafg")]
+script = SubResource("GDScript_dg6ke")
+
+[node name="MusicGameplay" type="AudioStreamPlayer2D" parent="." unique_id=1071873422]
+stream = ExtResource("14_5n8yc")
+>>>>>>> Stashed changes
 volume_db = 7.0
 autoplay = true
 bus = &"Music"
 
+<<<<<<< Updated upstream
 [connection signal="body_entered" from="socket" to="MainChar" method="_on_socket_body_entered"]
+<<<<<<<< Updated upstream:scene/FraudDetection/Level1/FraudDetectionLevel1-1.tscn
 [connection signal="pressed" from="ResultPanel/FinalResultPanel/MainmenuButton" to="ResultPanel/FinalResultPanel" method="_on_mainmenu_button_pressed"]
 [connection signal="pressed" from="PausePanel/Resume" to="PausePanel" method="_on_resume_pressed"]
 [connection signal="pressed" from="PausePanel/Settings" to="PausePanel" method="_on_settings_pressed"]
 [connection signal="pressed" from="PausePanel/Quit" to="PausePanel" method="_on_quit_pressed"]
 [connection signal="value_changed" from="PausePanel/SettingsPanel/MusicControl" to="PausePanel/SettingsPanel/MusicControl" method="_on_value_changed"]
 [connection signal="pressed" from="PausePanel/SettingsPanel/BackButton" to="PausePanel/SettingsPanel" method="_on_back_button_pressed"]
+========
+>>>>>>>> Stashed changes:scene/CreditScoring/CreditScoring1-2.tscn
+=======
+[node name="PausePanel" parent="." unique_id=1179524455 instance=ExtResource("13_dg6ke")]
+
+[connection signal="body_entered" from="socket" to="MainChar" method="_on_socket_body_entered"]
+>>>>>>> Stashed changes
