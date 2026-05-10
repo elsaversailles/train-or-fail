@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bs72ogkvdd7d6"]
 
 [ext_resource type="Script" uid="uid://c1nkb217t4usv" path="res://scripts/proto_controller.gd" id="1_ucva2"]
-[ext_resource type="PackedScene" uid="uid://dpt5xjdv4rn4c" path="res://assets/MaleCharacter/guy-mesh.glb" id="2_6k5wm"]
+[ext_resource type="PackedScene" uid="uid://len1dm6f7m4u" path="res://assets/Applicants/M/M LONG HAIR.glb" id="2_6k5wm"]
 [ext_resource type="Script" uid="uid://bekrqvkoqwq63" path="res://scripts/camera_3d.gd" id="2_wr06p"]
 [ext_resource type="PackedScene" uid="uid://dxwpg0hwslwyc" path="res://assets/hand mesh.glb" id="4_6k5wm"]
 
@@ -12,12 +12,11 @@ radius = 0.4
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 script = ExtResource("1_ucva2")
 
-[node name="guy-mesh2" parent="." unique_id=966341260 instance=ExtResource("2_6k5wm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012966512, 0.0011899471, 0.039482594)
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=383208175]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9397334, 0)
 shape = SubResource("CapsuleShape3D_5hfox")
+
+[node name="M LONG HAIR" parent="." unique_id=998723096 instance=ExtResource("2_6k5wm")]
 
 [node name="Head" type="Node3D" parent="." unique_id=1089358957]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8219416, -0.34214658)

@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://difex33lpgkim"]
+
+[ext_resource type="PackedScene" uid="uid://cbrapr6dmlkn2" path="res://assets/Applicants/F/F SHORT HAIR.glb" id="1_ys73q"]
+
+[node name="F SHORT HAIR" unique_id=1021592945 instance=ExtResource("1_ys73q")]

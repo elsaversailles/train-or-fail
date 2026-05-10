@@ -1,0 +1,168 @@
+[gd_scene format=3 uid="uid://dmxltttqxwip0"]
+
+[ext_resource type="Script" uid="uid://bd1eqx7ns2mep" path="res://scripts/screengameplays/left_sliding_panel.gd" id="1_28aal"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28aal"]
+bg_color = Color(11.708403, 11.708403, 11.708403, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uanr2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjnwh"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jcbur"]
+load_path = "res://.godot/imported/a1_location.png-852cc11683418185bf71a881fc977259.ctex"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0d4pv"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_smf0o"]
+
+[node name="LeftSlidingPanel" type="Panel" unique_id=998709551]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -944.0
+offset_right = -1152.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_28aal")
+
+[node name="ApplicantLabel" type="Label" parent="." unique_id=1771091912]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 3.0
+offset_right = 142.0
+offset_bottom = 26.0
+text = "Applicant 1 / 5"
+
+[node name="ButtonPanel" type="Panel" parent="." unique_id=1400235126]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GripButton" type="Button" parent="ButtonPanel" unique_id=1082902497]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_right = 40.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "|||
+|||
+|||
+|||"
+
+[node name="LegitButton" type="Button" parent="ButtonPanel" unique_id=62105491]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 300.0
+offset_right = 900.0
+offset_bottom = 440.0
+size_flags_vertical = 3
+text = "Legit"
+
+[node name="SusButton" type="Button" parent="ButtonPanel" unique_id=63002803]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 450.0
+offset_right = 900.0
+offset_bottom = 590.0
+size_flags_vertical = 3
+text = "Sus"
+
+[node name="ShutdownButton" type="Button" parent="ButtonPanel" unique_id=1851240839]
+layout_mode = 0
+offset_left = 805.0
+offset_top = 20.0
+offset_right = 933.0
+offset_bottom = 61.0
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_28aal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uanr2")
+text = "End Training"
+
+[node name="LocationLabel" type="Label" parent="." unique_id=453996444]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 39.0
+offset_right = 438.0
+offset_bottom = 69.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_gjnwh")
+text = "Location"
+horizontal_alignment = 1
+
+[node name="LocationTextureButton" type="TextureButton" parent="." unique_id=1860925544]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 80.0
+offset_right = 738.0
+offset_bottom = 590.0
+texture_normal = SubResource("CompressedTexture2D_jcbur")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ItemLabel" type="Label" parent="." unique_id=467584935]
+layout_mode = 0
+offset_left = 589.0
+offset_top = 350.0
+offset_right = 699.0
+offset_bottom = 385.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_0d4pv")
+text = "Item"
+horizontal_alignment = 1
+
+[node name="ItemTextureButton" type="TextureButton" parent="." unique_id=1560976966]
+layout_mode = 0
+offset_left = 529.0
+offset_top = 388.0
+offset_right = 699.0
+offset_bottom = 558.0
+texture_normal = SubResource("CompressedTexture2D_smf0o")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TimeLabel" type="Label" parent="." unique_id=1962118203]
+layout_mode = 0
+offset_left = 765.0
+offset_top = 80.0
+offset_right = 895.0
+offset_bottom = 110.0
+theme_override_font_sizes/font_size = 20
+text = "Time"
+
+[node name="TimeValueLabel" type="Label" parent="." unique_id=649184482]
+layout_mode = 0
+offset_left = 765.0
+offset_top = 120.0
+offset_right = 895.0
+offset_bottom = 150.0
+theme_override_font_sizes/font_size = 20
+
+[node name="PriceLabel" type="Label" parent="." unique_id=668583854]
+layout_mode = 0
+offset_left = 765.0
+offset_top = 175.0
+offset_right = 895.0
+offset_bottom = 205.0
+theme_override_font_sizes/font_size = 20
+text = "Price"
+
+[node name="PriceValueLabel" type="Label" parent="." unique_id=619346279]
+layout_mode = 0
+offset_left = 765.0
+offset_top = 210.0
+offset_right = 895.0
+offset_bottom = 240.0
+theme_override_font_sizes/font_size = 20

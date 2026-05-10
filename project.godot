@@ -10,10 +10,21 @@ config_version=5
 
 [application]
 
-config/name="TrainOrFail Demo"
+config/name="TrainOrFail Demo Backup"
 run/main_scene="uid://crev2inf1u6xe"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Database="*uid://dobteaufurtes"
+SaveManager="*uid://bwqfj2w5sixej"
+SettingsManager="*uid://csyt0p5ar44py"
+
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [filesystem]
 

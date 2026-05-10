@@ -7,17 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dqiu7tdvewlhm" path="res://images/MainMenu/buttons/About Us.png" id="5_hmxu4"]
 [ext_resource type="Texture2D" uid="uid://bcaoasayu6jx5" path="res://images/MainMenu/buttons/Quit.png" id="6_ictww"]
 [ext_resource type="Texture2D" uid="uid://cvpma47eqx85r" path="res://images/MainMenu/Game Title.png" id="7_1o50l"]
-[ext_resource type="Texture2D" uid="uid://diqf6bh0u04i0" path="res://images/MainMenu/phone.png" id="7_2atga"]
-[ext_resource type="Script" uid="uid://crqcpxburycoe" path="res://scripts/settings_panel.gd" id="7_hmxu4"]
 [ext_resource type="AudioStream" uid="uid://dx7o60nd06xxj" path="res://music/music.mp3" id="8_by01r"]
-[ext_resource type="Script" uid="uid://cqkq7ghcjka7o" path="res://scripts/music_control.gd" id="8_dclss"]
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_by01r"]
-thickness = 6
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_dclss"]
-color = Color(0.12108166, 0.57758135, 1.92523e-07, 1)
-thickness = 6
+[ext_resource type="PackedScene" uid="uid://eb3my6rwhod3" path="res://scene/settings_panel.tscn" id="8_dclss"]
 
 [node name="CanvasLayer2" type="CanvasLayer" unique_id=502315201]
 
@@ -95,71 +86,8 @@ offset_right = 538.0
 offset_bottom = 269.0
 texture = ExtResource("7_1o50l")
 
-[node name="SettingsPanel" type="Panel" parent="Main Menu" unique_id=618342899]
+[node name="SettingsPanel" parent="Main Menu" unique_id=1962049893 instance=ExtResource("8_dclss")]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("7_hmxu4")
-
-[node name="TextureRect" type="TextureRect" parent="Main Menu/SettingsPanel" unique_id=915633352]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -161.5
-offset_top = -282.5
-offset_right = 161.5
-offset_bottom = 282.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("7_2atga")
-
-[node name="Label" type="Label" parent="Main Menu/SettingsPanel" unique_id=1518622818]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -115.0
-offset_top = -198.0
-offset_right = -50.0
-offset_bottom = -169.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Settings"
-
-[node name="MusicControl" type="HSlider" parent="Main Menu/SettingsPanel" unique_id=1191292593]
-layout_mode = 0
-offset_left = -71.0
-offset_top = -142.0
-offset_right = 77.0
-offset_bottom = -126.0
-theme_override_styles/slider = SubResource("StyleBoxLine_by01r")
-theme_override_styles/grabber_area = SubResource("StyleBoxLine_dclss")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_dclss")
-max_value = 1.0
-step = 0.05
-value = 1.0
-script = ExtResource("8_dclss")
-audio_bus_name = "Music"
-
-[node name="BackButton" type="Button" parent="Main Menu/SettingsPanel" unique_id=1566616162]
-layout_mode = 0
-offset_left = -105.0
-offset_top = 158.0
-offset_right = -28.0
-offset_bottom = 193.0
-text = "Back"
 
 [node name="Music" type="AudioStreamPlayer2D" parent="Main Menu" unique_id=1850022703]
 stream = ExtResource("8_by01r")
@@ -167,9 +95,92 @@ volume_db = 7.0
 autoplay = true
 bus = &"Music"
 
+[node name="Slots" type="Node" parent="Main Menu" unique_id=228181691]
+
+[node name="Panel" type="Panel" parent="Main Menu/Slots" unique_id=184581229]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SlotButton1" type="Button" parent="Main Menu/Slots/Panel" unique_id=770681911]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -150.0
+offset_right = 330.0
+offset_bottom = 150.0
+grow_vertical = 2
+
+[node name="SlotButton2" type="Button" parent="Main Menu/Slots/Panel" unique_id=647935257]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.0
+offset_top = -150.0
+offset_right = 165.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SlotButton3" type="Button" parent="Main Menu/Slots/Panel" unique_id=2106314731]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -330.0
+offset_top = -150.0
+offset_bottom = 150.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="SlotInfoLabel" type="Label" parent="Main Menu/Slots/Panel" unique_id=225948189]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -355.0
+offset_top = 10.0
+offset_right = 355.0
+offset_bottom = 121.0
+grow_horizontal = 2
+
+[node name="SelectButton" type="Button" parent="Main Menu/Slots/Panel" unique_id=1259505804]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 362.27
+offset_top = -118.0
+offset_right = 462.27
+offset_bottom = -43.0
+grow_vertical = 0
+text = "Select"
+
+[node name="DeleteButton" type="Button" parent="Main Menu/Slots/Panel" unique_id=247234857]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -460.005
+offset_top = -118.0
+offset_right = -360.005
+offset_bottom = -43.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Delete"
+
 [connection signal="pressed" from="Main Menu/Buttons/New Game" to="Main Menu" method="_on_new_game_pressed"]
 [connection signal="pressed" from="Main Menu/Buttons/Settings" to="Main Menu" method="_on_settings_pressed"]
 [connection signal="pressed" from="Main Menu/Buttons/About Us" to="Main Menu" method="_on_about_us_pressed"]
 [connection signal="pressed" from="Main Menu/Buttons/Quit" to="Main Menu" method="_on_quit_pressed"]
-[connection signal="value_changed" from="Main Menu/SettingsPanel/MusicControl" to="Main Menu/SettingsPanel/MusicControl" method="_on_value_changed"]
-[connection signal="pressed" from="Main Menu/SettingsPanel/BackButton" to="Main Menu/SettingsPanel" method="_on_back_button_pressed"]

@@ -4,14 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://d4eobsk7ivhig" path="res://assets/floppydiskcartridge/FloppyCartridge.glb" id="2_dhn8j"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lquwl"]
-size = Vector3(1.1661866, 0.3649225, 1.0784808)
+size = Vector3(1.1661866, 0.3719144, 1.0784808)
 
 [node name="socket" type="Area3D" unique_id=315384306]
 collision_layer = 7
 script = ExtResource("1_3ogqf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=140019004]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24638109, 0.0051608235, 0.23078948)
+transform = Transform3D(1, 0, 0, 0, 1.0370646, 0, 0, 0, 1, 0.24638109, 0.008786346, 0.23078948)
 shape = SubResource("BoxShape3D_lquwl")
 
 [node name="Marker3D" type="Marker3D" parent="." unique_id=1235067536]
@@ -19,3 +19,5 @@ transform = Transform3D(-5.9604645e-08, -0.99999994, 1.13426154e-07, -1, 0, 0, -
 
 [node name="FloppyCartridge" parent="." unique_id=529770228 instance=ExtResource("2_dhn8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29391694, -0.14487758, 0.23176554)
+
+[editable path="FloppyCartridge"]

@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dr2mqkd22dcq4"]
+
+[ext_resource type="PackedScene" uid="uid://42bpe8igdkd3" path="res://assets/Applicants/F/F SPIKEY .glb" id="1_3rdd1"]
+
+[node name="F SPIKEY " unique_id=351272968 instance=ExtResource("1_3rdd1")]

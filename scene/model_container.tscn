@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dphv38qynyp4e"]
+
+[ext_resource type="PackedScene" uid="uid://go4wfhalte3b" path="res://assets/Applicants/F/F BUNS.glb" id="1_ndyhg"]
+
+[node name="ModelContainer" type="Node3D" unique_id=941138124]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="F BUNS" parent="." unique_id=1465131730 instance=ExtResource("1_ndyhg")]

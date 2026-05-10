@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dfwl0bn6k050c"]
+
+[ext_resource type="PackedScene" uid="uid://b14nvsxtaajfn" path="res://assets/Applicants/F/F SIDESWEPT.glb" id="1_a6evu"]
+
+[node name="F SIDESWEPT" unique_id=551094600 instance=ExtResource("1_a6evu")]

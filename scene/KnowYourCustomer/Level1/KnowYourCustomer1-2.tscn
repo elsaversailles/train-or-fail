@@ -6,18 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://qxngx7cctkt6" path="res://scene/floppydisk.tscn" id="4_yb0fj"]
 [ext_resource type="PackedScene" uid="uid://d08r12hn5mce1" path="res://scene/IdleScreen.tscn" id="5_80bj3"]
 [ext_resource type="PackedScene" uid="uid://c2hpohwilg1lq" path="res://addons/table.tscn" id="6_xst17"]
-[ext_resource type="PackedScene" uid="uid://dpt5xjdv4rn4c" path="res://assets/MaleCharacter/guy-mesh.glb" id="7_4yy8u"]
 [ext_resource type="PackedScene" uid="uid://c0v72003xgbg7" path="res://assets/Monitor.glb" id="8_qtmvn"]
 [ext_resource type="Script" uid="uid://chk5c2vkeowgj" path="res://scripts/screen.gd" id="9_j1mm6"]
-[ext_resource type="Script" uid="uid://5jdutigoh210" path="res://scripts/kyc_panel.gd" id="10_6klkq"]
-<<<<<<< Updated upstream
-[ext_resource type="Script" uid="uid://dg3y5e7vspyxu" path="res://scripts/pause_panel.gd" id="12_83evm"]
-[ext_resource type="Script" uid="uid://bapodi31h647x" path="res://scripts/gameplaysettings_panel.gd" id="13_yplnn"]
-[ext_resource type="Script" uid="uid://cqkq7ghcjka7o" path="res://scripts/music_control.gd" id="14_ehvkf"]
-=======
+[ext_resource type="PackedScene" uid="uid://dgqp1lf8jb1wv" path="res://scene/screengameplays/kyc_panel.tscn" id="10_bwtav"]
+[ext_resource type="PackedScene" uid="uid://dphv38qynyp4e" path="res://scene/model_container.tscn" id="10_iv7ca"]
 [ext_resource type="PackedScene" uid="uid://dtpe25cd85fc8" path="res://scene/result_panel.tscn" id="11_gko3p"]
 [ext_resource type="PackedScene" uid="uid://bx7scsfg2nivv" path="res://scene/pause_panel.tscn" id="12_bwtav"]
->>>>>>> Stashed changes
 [ext_resource type="AudioStream" uid="uid://lm3fs23d4v2l" path="res://music/gameplaymusic.mp3" id="15_46f8o"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
@@ -75,25 +69,11 @@ load_path = "res://.godot/imported/a1_location.png-852cc11683418185bf71a881fc977
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_smf0o"]
 
-<<<<<<< Updated upstream
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tv8i1"]
-load_path = "res://.godot/imported/phone.png-e079165b39efe232079a9973b010bed1.ctex"
-
-[sub_resource type="LabelSettings" id="LabelSettings_0vlqb"]
-font_size = 31
-font_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_fdqew"]
-thickness = 6
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_0d4pv"]
-color = Color(0.12108166, 0.57758135, 1.92523e-07, 1)
-thickness = 6
-
-=======
->>>>>>> Stashed changes
 [node name="KnowYourCustomer1-2" type="Node3D" unique_id=1103394804]
 script = ExtResource("1_gko3p")
+next_scene_path = "uid://cwlndmc6sc8x5"
+next_stage_name = "CREDIT L1 - Day 1"
+current_level_id = "kyc_l1_d2"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1808950673]
 environment = SubResource("Environment_0xm2m")
@@ -146,16 +126,9 @@ transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 5.58
 
 [node name="IdleScreen" parent="." unique_id=1201481395 instance=ExtResource("5_80bj3")]
 transform = Transform3D(-4.371139e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, 4.371139e-08, 1.9106855e-15, 6.573001, 1.8168597, 0.102722645)
-<<<<<<< Updated upstream
-visible = false
-=======
->>>>>>> Stashed changes
 
 [node name="Table" parent="." unique_id=941121870 instance=ExtResource("6_xst17")]
 transform = Transform3D(0.5431538, 0, 0, 0, 0.42786574, 0, 0, 0, 0.9, 5.136668, 0.18296456, -0.19128597)
-
-[node name="NPC" parent="." unique_id=966341260 instance=ExtResource("7_4yy8u")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11.124, 1.087, -0.052)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1476932616]
 
@@ -203,6 +176,7 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.52
 
 [node name="Screen" type="Node3D" parent="Monitor" unique_id=1749718098]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.083558746, -0.68358636, 6.6796875)
+visible = false
 script = ExtResource("9_j1mm6")
 
 [node name="Quad" type="MeshInstance3D" parent="Monitor/Screen" unique_id=671364175]
@@ -222,67 +196,10 @@ render_target_update_mode = 4
 [node name="Camera3D" type="Camera3D" parent="Monitor/Screen/SubViewport" unique_id=525920961]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.448, 2.792, -0.068)
 
-[node name="KYCPanel" type="Control" parent="Monitor/Screen/SubViewport" unique_id=1692750191]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("10_6klkq")
+[node name="ModelContainer" parent="Monitor/Screen/SubViewport" unique_id=941138124 instance=ExtResource("10_iv7ca")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11.211, 1.156, -0.087)
 
-[node name="ApplicantLabel" type="Label" parent="Monitor/Screen/SubViewport/KYCPanel" unique_id=1522583052]
-layout_mode = 0
-offset_left = 130.0
-offset_top = 50.0
-offset_right = 211.0
-offset_bottom = 103.0
-
-[node name="CustomerLabel" type="Label" parent="Monitor/Screen/SubViewport/KYCPanel" unique_id=538566754]
-layout_mode = 0
-offset_left = 230.0
-offset_top = 50.0
-offset_right = 311.0
-offset_bottom = 103.000015
-
-[node name="CustomerNameLabel" type="Label" parent="Monitor/Screen/SubViewport/KYCPanel" unique_id=1032712125]
-layout_mode = 0
-offset_left = 330.0
-offset_top = 50.0
-offset_right = 411.0
-offset_bottom = 103.0
-
-[node name="IDPanel" type="Panel" parent="Monitor/Screen/SubViewport/KYCPanel" unique_id=67413931]
-layout_mode = 0
-offset_left = 794.0
-offset_top = 425.0
-offset_right = 1069.0
-offset_bottom = 600.0
-
-[node name="IDImage" type="TextureRect" parent="Monitor/Screen/SubViewport/KYCPanel/IDPanel" unique_id=764031096]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-stretch_mode = 5
-
-[node name="LegitButton" type="Button" parent="Monitor/Screen/SubViewport/KYCPanel" unique_id=465099319]
-layout_mode = 0
-offset_left = 50.0
-offset_top = 500.0
-offset_right = 150.0
-offset_bottom = 600.0
-text = "Legit"
-
-[node name="SusButton" type="Button" parent="Monitor/Screen/SubViewport/KYCPanel" unique_id=1388405949]
-layout_mode = 0
-offset_left = 200.0
-offset_top = 500.0
-offset_right = 300.0
-offset_bottom = 600.0
-text = "Sus"
+[node name="KYCPanel" parent="Monitor/Screen/SubViewport" unique_id=902633833 instance=ExtResource("10_bwtav")]
 
 [node name="SlidingPanel" type="Panel" parent="Monitor/Screen/SubViewport" unique_id=2049437397]
 anchors_preset = 15
@@ -431,205 +348,10 @@ offset_right = 895.0
 offset_bottom = 240.0
 theme_override_font_sizes/font_size = 20
 
-<<<<<<< Updated upstream
-[node name="ResultPanel" type="CanvasLayer" parent="." unique_id=631947750]
-
-[node name="FinalResultPanel" type="Panel" parent="ResultPanel" unique_id=1746299184]
-offset_left = 300.0
-offset_top = 150.0
-offset_right = 800.0
-offset_bottom = 450.0
-
-[node name="FinalResultLabel" type="Label" parent="ResultPanel/FinalResultPanel" unique_id=1864189202]
-layout_mode = 0
-offset_left = 41.0
-offset_top = 32.0
-offset_right = 170.0
-offset_bottom = 90.0
-
-[node name="RestartButton" type="Button" parent="ResultPanel/FinalResultPanel" unique_id=889836818]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.9480001
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -57.0
-offset_top = -29.400024
-offset_right = 57.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "Restart Game"
-
-[node name="MainmenuButton" type="Button" parent="ResultPanel/FinalResultPanel" unique_id=552832448]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_top = 256.0
-offset_right = 96.0
-offset_bottom = 1.0
-grow_vertical = 2
-text = "Main Menu"
-
-[node name="NextgameButton" type="Button" parent="ResultPanel/FinalResultPanel" unique_id=996861491]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -95.0
-offset_top = 254.0
-offset_bottom = -1.0
-grow_horizontal = 0
-grow_vertical = 2
-text = "Next Game"
-
-[node name="PausePanel" type="Panel" parent="." unique_id=352277706]
-process_mode = 2
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("12_83evm")
-
-[node name="TextureRect" type="TextureRect" parent="PausePanel" unique_id=1676720568]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -161.5
-offset_top = -282.5
-offset_right = 161.5
-offset_bottom = 282.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("CompressedTexture2D_tv8i1")
-
-[node name="Label" type="Label" parent="PausePanel" unique_id=811658260]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -49.0
-offset_top = -188.0
-offset_right = 60.0
-offset_bottom = -144.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Paused"
-label_settings = SubResource("LabelSettings_0vlqb")
-
-[node name="Resume" type="Button" parent="PausePanel" unique_id=1739406857]
-layout_mode = 0
-offset_left = -45.0
-offset_top = -95.0
-offset_right = 59.0
-offset_bottom = -60.0
-text = "Resume"
-
-[node name="Settings" type="Button" parent="PausePanel" unique_id=1677164621]
-layout_mode = 0
-offset_left = -45.0
-offset_top = -50.0
-offset_right = 59.0
-offset_bottom = -15.0
-text = "Settings"
-
-[node name="Controls" type="Button" parent="PausePanel" unique_id=336563695]
-layout_mode = 0
-offset_left = -45.0
-offset_top = -5.0
-offset_right = 59.0
-offset_bottom = 30.0
-text = "Controls"
-
-[node name="Quit" type="Button" parent="PausePanel" unique_id=646997393]
-layout_mode = 0
-offset_left = -45.0
-offset_top = 150.0
-offset_right = 59.0
-offset_bottom = 186.0
-text = "Quit"
-
-[node name="SettingsPanel" type="Panel" parent="PausePanel" unique_id=1063477040]
-process_mode = 2
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("13_yplnn")
-
-[node name="TextureRect" type="TextureRect" parent="PausePanel/SettingsPanel" unique_id=7418640]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -161.5
-offset_top = -282.5
-offset_right = 161.5
-offset_bottom = 282.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("CompressedTexture2D_tv8i1")
-
-[node name="Label" type="Label" parent="PausePanel/SettingsPanel" unique_id=101820037]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -115.0
-offset_top = -198.0
-offset_right = -50.0
-offset_bottom = -169.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Settings"
-
-[node name="MusicControl" type="HSlider" parent="PausePanel/SettingsPanel" unique_id=959294353]
-layout_mode = 0
-offset_left = -71.0
-offset_top = -142.0
-offset_right = 77.0
-offset_bottom = -126.0
-theme_override_styles/slider = SubResource("StyleBoxLine_fdqew")
-theme_override_styles/grabber_area = SubResource("StyleBoxLine_0d4pv")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_0d4pv")
-max_value = 1.0
-step = 0.05
-value = 1.0
-script = ExtResource("14_ehvkf")
-audio_bus_name = "Music"
-
-[node name="BackButton" type="Button" parent="PausePanel/SettingsPanel" unique_id=1160108481]
-layout_mode = 0
-offset_left = -105.0
-offset_top = 158.0
-offset_right = -28.0
-offset_bottom = 193.0
-text = "Back"
-=======
 [node name="ResultPanel" parent="." unique_id=779608946 instance=ExtResource("11_gko3p")]
 
 [node name="PausePanel" parent="." unique_id=1179524455 instance=ExtResource("12_bwtav")]
->>>>>>> Stashed changes
+visible = false
 
 [node name="MusicGameplay" type="AudioStreamPlayer2D" parent="." unique_id=1071873422]
 stream = ExtResource("15_46f8o")
@@ -638,12 +360,3 @@ autoplay = true
 bus = &"Music"
 
 [connection signal="body_entered" from="socket" to="MainChar" method="_on_socket_body_entered"]
-<<<<<<< Updated upstream
-[connection signal="pressed" from="ResultPanel/FinalResultPanel/MainmenuButton" to="ResultPanel/FinalResultPanel" method="_on_mainmenu_button_pressed"]
-[connection signal="pressed" from="PausePanel/Resume" to="PausePanel" method="_on_resume_pressed"]
-[connection signal="pressed" from="PausePanel/Settings" to="PausePanel" method="_on_settings_pressed"]
-[connection signal="pressed" from="PausePanel/Quit" to="PausePanel" method="_on_quit_pressed"]
-[connection signal="value_changed" from="PausePanel/SettingsPanel/MusicControl" to="PausePanel/SettingsPanel/MusicControl" method="_on_value_changed"]
-[connection signal="pressed" from="PausePanel/SettingsPanel/BackButton" to="PausePanel/SettingsPanel" method="_on_back_button_pressed"]
-=======
->>>>>>> Stashed changes

@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://ciaf3uwmj7fp2"]
+
+[ext_resource type="PackedScene" uid="uid://cgn4roe1jhho4" path="res://assets/Applicants/F/F PONYTAIL HIGH.glb" id="1_v108k"]
+
+[node name="F PONYTAIL HIGH" unique_id=937552533 instance=ExtResource("1_v108k")]

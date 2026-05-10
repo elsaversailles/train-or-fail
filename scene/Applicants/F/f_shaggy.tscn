@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://mpy0dqithpnp"]
+
+[ext_resource type="PackedScene" uid="uid://c8no5248d7uwr" path="res://assets/Applicants/F/F SHAGGY.glb" id="1_wnpxb"]
+
+[node name="F SHAGGY" unique_id=95597323 instance=ExtResource("1_wnpxb")]

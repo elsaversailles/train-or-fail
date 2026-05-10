@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dc4m3dekc1i08"]
+
+[ext_resource type="PackedScene" uid="uid://cmuvee4kj4ytt" path="res://assets/Applicants/F/F LONG HAIR.glb" id="1_toscw"]
+
+[node name="F LONG HAIR" unique_id=1609010589 instance=ExtResource("1_toscw")]

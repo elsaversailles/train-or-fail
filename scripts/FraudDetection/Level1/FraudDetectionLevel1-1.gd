@@ -1,37 +1,56 @@
 extends Node3D
 
-@onready var final_result_panel = $ResultPanel/FinalResultPanel
-@onready var final_result_label = $ResultPanel/FinalResultPanel/FinalResultLabel
-@onready var restart_button = $ResultPanel/FinalResultPanel/RestartButton
-@onready var nextgame_button = $ResultPanel/FinalResultPanel/NextgameButton
-@onready var mainmenu_button = $ResultPanel/FinalResultPanel/MainmenuButton
+@onready var canvas_layer: CanvasLayer = $CanvasLayer
+
+# main panel now
+@onready var final_result_panel = $ResultPanel
 @onready var player = $MainChar
 
+# Added this so the Terminal knows what "Epoch" to display
+@export var current_level_number: int = 1
 
+# For save game
+@export_file("*.tscn") var next_scene_path: String
+@export var next_stage_name: String
+@export var current_level_id: String
 
 func _ready():
 	final_result_panel.visible = false
 	
-	restart_button.pressed.connect(_on_restart_button_pressed)
-	mainmenu_button.pressed.connect(_on_mainmenu_button_pressed)
-	nextgame_button.pressed.connect(_on_nextgame_button_pressed)
+	# Connect the single click signal from your new terminal script
+	final_result_panel.continue_requested.connect(_on_terminal_clicked)
 	
 func show_final_result(score: int):
-	final_result_panel.visible = true
-	final_result_label.text = "Level Cleared!\n\nFinal Score: %d / 5" % score
+	canvas_layer.visible = false
 	
+	# Tell the terminal script to format and display the text
+	final_result_panel.display_terminal_report(score, current_level_number)
+
+	# Grabs whatever typed in the Inspector
+	SaveManager.auto_save_level(
+		next_scene_path, 
+		next_stage_name, 
+		current_level_id, 
+		score
+	)
+
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	if player:
+		player.is_paused = true
+
 	# Unlock mouse so player can click buttons
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	
+
 	# Stop player movement/look
 	if player:
 		player.is_paused = true
 
-func _on_restart_button_pressed():
-	pass
-
-func _on_mainmenu_button_pressed():
-	get_tree().change_scene_to_file("res://scene/main_menu.tscn")
+# Replaced the 3 old button functions with this single terminal click function
+func _on_terminal_clicked():
+	get_tree().paused = false 
 	
-func _on_nextgame_button_pressed():
-	get_tree().change_scene_to_file("res://scene/FraudDetection/Level1/FraudDetectionLevel1-2.tscn")
+	# Uses your Inspector variable to safely load the next scene!
+	if next_scene_path != "":
+		get_tree().change_scene_to_file(next_scene_path)
+	else:
+		print("ERROR: You forgot to set the Next Scene Path in the Inspector!")

@@ -1,22 +1,14 @@
-<<<<<<< Updated upstream
-Label
 Button
-TextureRect
-Panel
+HBoxContainer
 Control
-=======
-Button
 Label
+ColorRect
+Panel
+RichTextLabel
+HSlider
+Node3D
+Node
+TextureButton
 TextureRect
 TabContainer
 VSlider
-Control
-Panel
-CanvasLayer
->>>>>>> Stashed changes
-TextureButton
-AudioStreamPlayer2D
-HSlider
-AnimationPlayer
-Container
-VBoxContainer

@@ -5,32 +5,19 @@ extends Node3D
 @onready var node_quad = $Quad
 @onready var node_area = $Quad/Area3D
 
-<<<<<<< Updated upstream
-# -----------------------------
-# FINAL RESULT UI REFERENCES
-# -----------------------------
-@onready var final_result_panel = $"../../ResultPanel/FinalResultPanel"
-@onready var final_result_label = $"../../ResultPanel/FinalResultPanel/FinalResultLabel"
-@onready var restart_button = $"../../ResultPanel/FinalResultPanel/RestartButton"
-=======
 # --- UI References ---
-@onready var final_result_panel = $"../../ResultPanel/FinalResultPanel"
-@onready var final_result_label = $"../../ResultPanel/FinalResultPanel/FinalResultLabel"
-@onready var restart_button = $"../../ResultPanel/FinalResultPanel/RestartButton"
+# We only need to reference the main panel now!
+@onready var final_result_panel = $"../../ResultPanel"
 
 # --- State ---
 var is_mouse_inside = false
 var last_event_pos2D = null
 var last_event_time: float = -1.0
->>>>>>> Stashed changes
 
 func _ready():
 	node_area.mouse_entered.connect(func(): is_mouse_inside = true)
 	node_area.mouse_exited.connect(func(): is_mouse_inside = false)
 	node_area.input_event.connect(_mouse_input_event)
-
-	final_result_panel.visible = false
-	restart_button.pressed.connect(_on_restart_button_pressed)
 
 func _unhandled_input(event):
 	# Guard: Don't process if deleting or if it's a mouse event (handled by physics picking)
@@ -82,11 +69,17 @@ func _mouse_input_event(_camera: Camera3D, event: InputEvent, event_position: Ve
 	# 4. Final Push
 	node_viewport.push_input(event)
 
-func show_final_result(score):
-	final_result_panel.visible = true
-	final_result_label.text = "PC Shutdown Complete\n\nFinal Score: %d / 5" % score
 
-func _on_restart_button_pressed():
-	# Stop input immediately to prevent errors during reload
-	set_process_input(false)
-	get_tree().reload_current_scene()
+# ==========================================
+# RESULT PANEL TRIGGER (Optional)
+# ==========================================
+
+# NOTE: If your Main Level script is already handling the "show_final_result" 
+# logic, you actually don't even need this function here anymore! 
+# But I left it safely mapped to your new Terminal system just in case your 
+# game architecture relies on the monitor triggering the screen.
+func show_final_result(score: int, epoch: int = 1):
+	if final_result_panel.has_method("display_terminal_report"):
+		final_result_panel.display_terminal_report(score, epoch)
+	else:
+		print("Warning: The ResultPanel doesn't have the terminal script attached!")

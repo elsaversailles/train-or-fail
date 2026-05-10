@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://2o6k54rgxqg3" path="res://images/floppydisk.png" id="2_056wq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dg77c"]
-size = Vector3(0.106634766, 1.1759882, 1.0972534)
+size = Vector3(0.14133008, 1.1759882, 1.0972534)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2lgbr"]
 albedo_texture = ExtResource("2_056wq")
@@ -21,13 +21,15 @@ continuous_cd = true
 script = ExtResource("1_0ae5k")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1232104150]
-transform = Transform3D(0.9999125, 0.01322921, 0, -0.01322921, 0.9999125, 0, 0, 0, 1, -0.08604262, 0.06262507, 0.08393805)
+transform = Transform3D(0.9999125, 0.01322921, 0, -0.01322921, 0.9999125, 0, 0, 0, 1, -0.068696484, 0.06239558, 0.08393805)
 shape = SubResource("BoxShape3D_dg77c")
 
 [node name="FloppyDiskBasewithface" parent="." unique_id=1163016887 instance=ExtResource("2_2lgbr")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.03271412, -0.16978467, 0.053340256)
 
 [node name="Cube_004" type="MeshInstance3D" parent="." unique_id=847540879]
-transform = Transform3D(-3.838563e-08, -5.0654947e-08, -1.5328407, -9.408376e-08, 2.8403623, -1.6422435e-07, 2.1688187, 1.2510407e-07, -1.6547813e-07, -0.09048732, -0.13852677, 0.05164992)
+transform = Transform3D(-3.838563e-08, -5.0654947e-08, -1.5328407, -9.408376e-08, 2.8403623, -1.6422435e-07, 2.1688187, 1.2510407e-07, -1.6547813e-07, -0.07265913, -0.13852677, 0.05164992)
 layers = 3
 mesh = SubResource("QuadMesh_6lufm")
+
+[editable path="FloppyDiskBasewithface"]
