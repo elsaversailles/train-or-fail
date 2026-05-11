@@ -21,6 +21,18 @@ func _ready():
 	final_result_panel.continue_requested.connect(_on_terminal_clicked)
 	
 func show_final_result(score: int):
+	# 1. Fade the screen to completely black
+	await SceneTransition.fade_to_black()
+	
+	# 2. While it's black, safely show the terminal and pause the player
+	final_result_panel.display_terminal_report(score, current_level_number)
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	if player:
+		player.is_paused = true
+		
+	# 3. Fade back in to reveal the terminal!
+	SceneTransition.fade_from_black()
+	
 	canvas_layer.visible = false
 	
 	# Tell the terminal script to format and display the text
@@ -49,8 +61,8 @@ func show_final_result(score: int):
 func _on_terminal_clicked():
 	get_tree().paused = false 
 	
-	# Uses your Inspector variable to safely load the next scene!
 	if next_scene_path != "":
-		get_tree().change_scene_to_file(next_scene_path)
+		# Tell the transition manager to fade to black, load the next scene, and fade back in!
+		SceneTransition.change_scene(next_scene_path)
 	else:
-		print("ERROR: You forgot to set the Next Scene Path in the Inspector!")
+		print("ERROR: Next Scene Path is missing!")

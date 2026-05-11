@@ -1,11 +1,3 @@
-res://scene/screengameplays/left_sliding_panel.tscn
-res://scene/FraudDetection/Level1/FraudDetectionLevel1-1.tscn
-res://scene/screengameplays/kyc_panel.tscn
-res://scripts/screengameplays/kyc_panel.gd
-res://scene/IdleScreen.tscn
-res://scripts/data.gd
-res://scripts/idlescreen.gd
-res://scene/floppydisk.tscn
-res://scene/socket.tscn
-res://scene/result_panel.tscn
-res://scripts/result_panel.gd
+res://scene/about_us_panel.tscn
+res://scripts/about_us_panel.gd
+res://scripts/main_menu.gd

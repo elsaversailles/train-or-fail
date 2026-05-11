@@ -86,6 +86,7 @@ size_flags_vertical = 10
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_28aal")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uanr2")
 theme_override_styles/hover = SubResource("StyleBoxFlat_uanr2")
 text = "End Training"
 

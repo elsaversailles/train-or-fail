@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Database="*uid://dobteaufurtes"
 SaveManager="*uid://bwqfj2w5sixej"
 SettingsManager="*uid://csyt0p5ar44py"
+SceneTransition="*uid://c2wvsl3rgk8l7"
 
 [display]
 

@@ -1,9 +1,10 @@
+ScrollContainer
+Label
+Panel
+Control
 Button
 HBoxContainer
-Control
-Label
 ColorRect
-Panel
 RichTextLabel
 HSlider
 Node3D
