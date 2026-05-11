@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://3cnv6xw32cjb"]
 
 [ext_resource type="Script" uid="uid://ckimwkn5h5k2j" path="res://scripts/about_us_panel.gd" id="1_1rpr2"]
-[ext_resource type="FontFile" uid="uid://cr0as831oignr" path="res://assets/fonts/IBMPlexMono-Regular.ttf" id="1_602f5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1rpr2"]
 bg_color = Color(0, 0, 0, 1)
@@ -26,12 +25,12 @@ grow_horizontal = 2
 grow_vertical = 2
 vertical_scroll_mode = 3
 
-[node name="Label" type="Label" parent="ScrollContainer" unique_id=63248336]
+[node name="Label" type="RichTextLabel" parent="ScrollContainer" unique_id=815904031]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("1_602f5")
-theme_override_font_sizes/font_size = 25
+bbcode_enabled = true
+fit_content = true
+autowrap_mode = 2
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 2

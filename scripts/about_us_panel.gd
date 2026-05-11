@@ -9,7 +9,7 @@ extends Panel
 var current_tween: Tween
 var is_typing: bool = false
 
-var about_us_text = """Train or Fail
+var about_us_text = """[font_size=18]Train or Fail
 
 Made with ♥
 
@@ -21,8 +21,8 @@ Vince Austria (Project Manager)
 
 STI San Jose del Monte Capstone Project
 
-==========================================
-Content Disclaimer: Characters, events, and names shown in this game are fictional. Any similarities are purely coincidental. Moreover, the technologies and processes shown in this game are generalized for learning and entertainment purposes. This game does not aim to infringe upon any proprietary processes or systems.
+==========================================[/font_size]
+[font_size=12]Content Disclaimer: Characters, events, and names shown in this game are fictional. Any similarities are purely coincidental. Moreover, the technologies and processes shown in this game are generalized for learning and entertainment purposes. This game does not aim to infringe upon any proprietary processes or systems.[/font_size]
 """
 
 func _ready():

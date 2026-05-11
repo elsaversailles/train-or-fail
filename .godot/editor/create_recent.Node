@@ -1,3 +1,4 @@
+RichTextLabel
 ScrollContainer
 Label
 Panel
@@ -5,11 +6,9 @@ Control
 Button
 HBoxContainer
 ColorRect
-RichTextLabel
 HSlider
 Node3D
 Node
 TextureButton
 TextureRect
 TabContainer
-VSlider

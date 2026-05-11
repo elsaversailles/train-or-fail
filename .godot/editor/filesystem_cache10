@@ -1,7 +1,7 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1778510247
+::res://::1778511764
 default_bus_layout.tres::AudioBusLayout::7769793707950091213::1776698649::0::1::::<><><>0<>0<><>::
-export_presets.cfg::TextFile::-1::1778510127::0::1::::<><><>0<>0<><>::
+export_presets.cfg::TextFile::-1::1778511341::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::1790880795757653::1776698649::1776698649::1::::<><><>0<>0<>1d558fff71561543e2cf7e0d300c3350<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 README.md::TextFile::-1::1776698649::0::1::::<><><>0<>0<><>::
 ::res://addons/::1776698672
@@ -178,8 +178,8 @@ Settings.png::CompressedTexture2D::8214979218295614914::1776698676::1776698676::
 ::res://music/::1777551781
 gameplaymusic.mp3::AudioStreamMP3::798559806241446733::1776698676::1777551781::1::::<><><>0<>0<>1892c207ad78f199b027e4e82d68f2fd<>res://.godot/imported/gameplaymusic.mp3-67f1f37cb9cd423efa0101ffe77f79c8.mp3str::
 music.mp3::AudioStreamMP3::8840572273730914587::1776698676::1777551776::1::::<><><>0<>0<>f3f34219090d85a73ab670e1152afc82<>res://.godot/imported/music.mp3-5ddf4732b6b280ab5bd5f315f9847f09.mp3str::
-::res://scene/::1778510045
-about_us_panel.tscn::PackedScene::1970244864743409747::1778509990::0::1::::<><><>0<>0<><>::uid://ckimwkn5h5k2j::::res://scripts/about_us_panel.gd<>uid://cr0as831oignr::::res://assets/fonts/IBMPlexMono-Regular.ttf
+::res://scene/::1778511257
+about_us_panel.tscn::PackedScene::1970244864743409747::1778511257::0::1::::<><><>0<>0<><>::uid://ckimwkn5h5k2j::::res://scripts/about_us_panel.gd<>uid://cr0as831oignr::::res://assets/fonts/IBMPlexMono-Regular.ttf
 character.tscn::PackedScene::3717544648773412845::1777554250::0::1::::<><><>0<>0<><>::uid://c1nkb217t4usv::::res://scripts/proto_controller.gd<>uid://len1dm6f7m4u::::res://assets/Applicants/M/M LONG HAIR.glb<>uid://bekrqvkoqwq63::::res://scripts/camera_3d.gd<>uid://dxwpg0hwslwyc::::res://assets/hand mesh.glb
 data.tscn::PackedScene::446842971185570411::1776698676::0::1::::<><><>0<>0<><>::uid://bid8280uum01s::::res://scripts/data.gd
 floppydisk.tscn::PackedScene::1171303479786383557::1778428243::0::1::::<><><>0<>0<><>::uid://bid8280uum01s::::res://scripts/data.gd<>uid://d3v2e3ac0nll5::::res://assets/FloppyDiskBasewithface.glb<>uid://2o6k54rgxqg3::::res://images/floppydisk.png
@@ -220,14 +220,14 @@ KnowYourCustomer1-2.tscn::PackedScene::3963364838130396627::1777559625::0::1::::
 credit_scoring_panel.tscn::PackedScene::8054950467227571042::1777626557::0::1::::<><><>0<>0<><>::uid://fpwll3wo1ylp::::res://scripts/screengameplays/credit_scoring_panel.gd
 kyc_panel.tscn::PackedScene::7614382929497817953::1778507837::0::1::::<><><>0<>0<><>::uid://5jdutigoh210::::res://scripts/screengameplays/kyc_panel.gd<>uid://dhif7ts8u8gyu::::res://assets/icons/arrow_left.png<>uid://cgap6fjotm2qg::::res://assets/icons/circle.png<>uid://bcqtpbomljds5::::res://assets/icons/arrow_right.png
 left_sliding_panel.tscn::PackedScene::8049711708137204375::1778509313::0::1::::<><><>0<>0<><>::uid://bd1eqx7ns2mep::::res://scripts/screengameplays/left_sliding_panel.gd
-::res://scripts/::1778509990
-about_us_panel.gd::GDScript::5492013263867676967::1778509990::0::1::::<>Panel<><>0<>0<><>::
+::res://scripts/::1778511299
+about_us_panel.gd::GDScript::5492013263867676967::1778511299::0::1::::<>Panel<><>0<>0<><>::
 applicant_database.gd::GDScript::8145131036954681166::1777556601::0::1::::<>Node<><>0<>0<><>::
 camera_3d.gd::GDScript::2688881716462095338::1776698676::0::1::::<>Camera3D<><>0<>0<><>::
 data.gd::GDScript::2956178216082866762::1778427328::0::1::::<>RigidBody3D<><>0<>0<><>::
 gameplaysettings_panel.gd::GDScript::2418242209917696115::1776698676::0::1::::<>Panel<><>0<>0<><>::
 idlescreen.gd::GDScript::3841477354857527938::1778427447::0::1::::<>StaticBody3D<><>0<>0<><>::
-main_menu.gd::GDScript::8127067617129420418::1778509775::0::1::::<>Control<><>0<>0<><>::
+main_menu.gd::GDScript::8127067617129420418::1778510777::0::1::::<>Control<><>0<>0<><>::
 music_control.gd::GDScript::5917535586481561902::1776698676::0::1::::<>HSlider<><>0<>0<><>::
 pause_panel.gd::GDScript::7639708732170671162::1777627576::0::1::::<>Panel<><>0<>0<><>::
 proto_controller.gd::GDScript::6625198628275246945::1777041095::0::1::::<>CharacterBody3D<><>0<>0<><>::
