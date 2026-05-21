@@ -2,14 +2,14 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxfi1gscmrum3"
+uid="uid://xskw3k5xcf3t"
 path.s3tc="res://.godot/imported/FloppyCartridge_Untitled.png-2bad1b296607ea4677919be4734c2d45.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "251160c896b315637112e6d87b0835c9"
+"md5": "55041f26ecb4c30aef2adc10d3042017"
 }
 
 [deps]

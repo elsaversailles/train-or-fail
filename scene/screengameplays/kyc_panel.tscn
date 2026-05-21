@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dgqp1lf8jb1wv"]
 
 [ext_resource type="Script" uid="uid://5jdutigoh210" path="res://scripts/screengameplays/kyc_panel.gd" id="1_s16ii"]
+[ext_resource type="Texture2D" uid="uid://bd3b36dmmtqqv" path="res://assets/icons/magnifying-glass.png" id="2_8n3vj"]
 [ext_resource type="Texture2D" uid="uid://dhif7ts8u8gyu" path="res://assets/icons/arrow_left.png" id="2_g730g"]
 [ext_resource type="Texture2D" uid="uid://cgap6fjotm2qg" path="res://assets/icons/circle.png" id="3_8n3vj"]
 [ext_resource type="Texture2D" uid="uid://bcqtpbomljds5" path="res://assets/icons/arrow_right.png" id="4_a5r6c"]
@@ -63,6 +64,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+
+[node name="ZoomIcon" type="TextureRect" parent="IDPanel" unique_id=1150218878]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 30.0
+offset_bottom = 28.0
+texture = ExtResource("2_8n3vj")
 expand_mode = 1
 
 [node name="LegitButton" type="Button" parent="." unique_id=832557719]
@@ -142,3 +153,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_a5r6c")
 action_mode = 0
 icon = ExtResource("4_a5r6c")
 expand_icon = true
+
+[connection signal="mouse_entered" from="IDPanel" to="." method="_on_id_panel_mouse_entered"]
+[connection signal="mouse_exited" from="IDPanel" to="." method="_on_id_panel_mouse_exited"]

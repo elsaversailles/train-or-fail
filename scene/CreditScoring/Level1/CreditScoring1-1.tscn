@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://qxngx7cctkt6" path="res://scene/floppydisk.tscn" id="4_dn53d"]
 [ext_resource type="PackedScene" uid="uid://d08r12hn5mce1" path="res://scene/IdleScreen.tscn" id="5_qlcwt"]
 [ext_resource type="PackedScene" uid="uid://c2hpohwilg1lq" path="res://addons/table.tscn" id="6_plurb"]
-[ext_resource type="PackedScene" uid="uid://c0v72003xgbg7" path="res://assets/Monitor.glb" id="8_5kwha"]
+[ext_resource type="PackedScene" uid="uid://c0v72003xgbg7" path="res://assets/Monitor/Monitor.glb" id="8_5kwha"]
 [ext_resource type="Script" uid="uid://chk5c2vkeowgj" path="res://scripts/screen.gd" id="9_46dfy"]
 [ext_resource type="PackedScene" uid="uid://dm044fdmw3w5o" path="res://scene/screengameplays/credit_scoring_panel.tscn" id="10_bebfk"]
 [ext_resource type="PackedScene" uid="uid://dphv38qynyp4e" path="res://scene/model_container.tscn" id="10_gkt0f"]

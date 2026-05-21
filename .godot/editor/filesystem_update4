@@ -1,2 +1,4 @@
-res://scene/about_us_panel.tscn
-res://scripts/about_us_panel.gd
+res://scene/screengameplays/kyc_panel.tscn
+res://scripts/screengameplays/kyc_panel.gd
+res://scene/floppydisk.tscn
+res://scripts/data.gd

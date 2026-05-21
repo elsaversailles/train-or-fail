@@ -1,9 +1,9 @@
 extends Panel
 
 @onready var scroll_container = $ScrollContainer
+
 @onready var label = $ScrollContainer/Label
 
-# Adjust this to change typing speed (smaller = faster)
 @export var typing_speed: float = 0.02 
 
 var current_tween: Tween
@@ -14,9 +14,9 @@ var about_us_text = """[font_size=18]Train or Fail
 Made with ♥
 
 Raymart De Guzman (Programmer)
-Matt Kevin Chavaz (Art Direction)
-Angelo Mabignay (Quality Assurance)
-Vince Austria (Project Manager)
+Matt Kevin Chabas (Art Direction)
+John Angelo Mabingnay (Quality Assurance)
+Vince Bernard Austria (Project Manager)
 
 
 STI San Jose del Monte Capstone Project
@@ -28,55 +28,44 @@ STI San Jose del Monte Capstone Project
 func _ready():
 	scroll_container.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_SHOW_NEVER
 	
-	# Listen for clicks so the player can skip the typing
-	gui_input.connect(_on_panel_clicked)
-	
-	# --- THE NEW ADDITION ---
-	# Automatically start typing as soon as the scene loads!
 	start_typing()
-
-# ... (Keep your start_typing and _on_typing_finished functions exactly the same!) ...
-
-# ==========================================
-# INPUT LOGIC
-# ==========================================
 
 func start_typing():
 	label.text = about_us_text
-	label.visible_characters = 0
+	
+	label.visible_ratio = 0.0
 	is_typing = true
 	
-	# Ensure scrollbar stays hidden while typing
 	scroll_container.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_SHOW_NEVER
-	# Reset scroll position to the very top
+
 	scroll_container.scroll_vertical = 0 
 	
-	var total_chars = label.get_total_character_count()
+	var total_chars = label.get_parsed_text().length()
 	var total_duration = total_chars * typing_speed
 	
 	if current_tween:
 		current_tween.kill()
 		
 	current_tween = create_tween()
-	current_tween.tween_property(label, "visible_characters", total_chars, total_duration)
+	current_tween.tween_property(label, "visible_ratio", 1.0, total_duration)
 	current_tween.finished.connect(_on_typing_finished)
 
 func _on_typing_finished():
 	is_typing = false
-	label.visible_characters = -1 # Show all text
+	label.visible_ratio = 1.0 
 	
 	scroll_container.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_SHOW_NEVER
 
-func _on_panel_clicked(event: InputEvent):
+
+func _input(event: InputEvent) -> void:
+	
+	# click anyhwere to skip
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		# If they click while it's typing, instantly skip to the end!
 		if is_typing:
 			if current_tween:
 				current_tween.kill()
 			_on_typing_finished()
-func _unhandled_input(event: InputEvent) -> void:
-	# "ui_cancel" is automatically bound to the Escape key in Godot!
+			
+
 	if event.is_action_pressed("ui_cancel"):
-		# Fade out and go back to the Main Menu
-		# (Make sure this path perfectly matches your main menu scene file!)
 		SceneTransition.change_scene("res://scene/main_menu.tscn")

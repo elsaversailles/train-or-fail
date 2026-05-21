@@ -16,6 +16,7 @@ var is_rotating_right: bool = false
 var is_id_zoomed: bool = false
 var original_id_pos: Vector2
 var zoom_scale: float = 3 # Change this to make it bigger/smaller when clicked
+var custom_cursor_img = preload("res://assets/cursor/cursor_magnifyingglass.svg") # mouse hover cursor
 
 # -----------------------------
 # NODE REFERENCES
@@ -33,6 +34,7 @@ var zoom_scale: float = 3 # Change this to make it bigger/smaller when clicked
 
 # --- NEW: Reference the panel itself, not just the image ---
 @onready var id_panel = $IDPanel 
+@onready var zoom_icon: TextureRect = $IDPanel/ZoomIcon
 
 # -----------------------------
 # READY
@@ -73,8 +75,9 @@ func toggle_id_zoom():
 	tween.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 	
 	if is_id_zoomed:
+		Input.set_custom_mouse_cursor(null, Input.CURSOR_ARROW)
 		id_panel.move_to_front()
-		
+		zoom_icon.visible = false
 		# --- YOUR HARDCODED NUMBERS ---
 		# Tweak these two numbers until it lands perfectly in the middle!
 		# X is left/right, Y is up/down.
@@ -83,6 +86,8 @@ func toggle_id_zoom():
 		tween.tween_property(id_panel, "position", target_pos, 0.3)
 		tween.tween_property(id_panel, "scale", Vector2(zoom_scale, zoom_scale), 0.3)
 	else:
+		Input.set_custom_mouse_cursor(custom_cursor_img, Input.CURSOR_ARROW, Vector2(0, 0))
+		zoom_icon.visible = true
 		tween.tween_property(id_panel, "position", original_id_pos, 0.3)
 		tween.tween_property(id_panel, "scale", Vector2(1, 1), 0.3)
 
@@ -163,3 +168,11 @@ func finish_game():
 
 func show_result():
 	get_tree().current_scene.show_final_result(final_score)
+
+
+func _on_id_panel_mouse_entered() -> void:
+	if not is_id_zoomed:
+		Input.set_custom_mouse_cursor(custom_cursor_img, Input.CURSOR_ARROW, Vector2(0, 0))
+
+func _on_id_panel_mouse_exited() -> void:
+	Input.set_custom_mouse_cursor(null, Input.CURSOR_ARROW)

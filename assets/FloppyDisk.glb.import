@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d3v2e3ac0nll5"
-path="res://.godot/imported/FloppyDiskBasewithface.glb-46da8bbb5e94a709283d00e0d24a6cea.scn"
+uid="uid://byra7gwo4bt7n"
+path="res://.godot/imported/FloppyDisk.glb-52693ca9196f2c36ff9aa7902947c603.scn"
 
 [deps]
 
-source_file="res://assets/FloppyDiskBasewithface.glb"
-dest_files=["res://.godot/imported/FloppyDiskBasewithface.glb-46da8bbb5e94a709283d00e0d24a6cea.scn"]
+source_file="res://assets/FloppyDisk.glb"
+dest_files=["res://.godot/imported/FloppyDisk.glb-52693ca9196f2c36ff9aa7902947c603.scn"]
 
 [params]
 

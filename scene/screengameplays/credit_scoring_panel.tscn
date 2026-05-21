@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dm044fdmw3w5o"]
 
 [ext_resource type="Script" uid="uid://fpwll3wo1ylp" path="res://scripts/screengameplays/credit_scoring_panel.gd" id="1_uhrk6"]
+[ext_resource type="Texture2D" uid="uid://bj4ti26rue7p8" path="res://assets/icons/redflag.png" id="2_vshj4"]
 
 [node name="CreditScoringPanel" type="Control" unique_id=1931401684]
 layout_mode = 3
@@ -213,14 +214,15 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 200.0
-offset_top = 555.0
-offset_right = -639.0001
-offset_bottom = -38.0
+offset_left = 235.99994
+offset_top = 548.0
+offset_right = -642.00055
+offset_bottom = -37.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Reject
-"
+icon = ExtResource("2_vshj4")
+flat = true
+expand_icon = true
 
 [node name="CreditscoreLabel" type="Label" parent="Panel" unique_id=873302042]
 layout_mode = 1

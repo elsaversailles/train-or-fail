@@ -2,24 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gdy8f4815dtq"
-path.s3tc="res://.godot/imported/Monitor_angiloan.png-0ebdf3e7b3117f576bb67833f67ec3b3.s3tc.ctex"
+uid="uid://4oa4dkit1phd"
+path="res://.godot/imported/cursor_magnifyingglass.svg-c85e577728363ac59a68b9f6aefcc99d.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
-}
-generator_parameters={
-"md5": "d4ee0baf6bb9cd7989e9b7083ffd8f32"
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Monitor_angiloan.png"
-dest_files=["res://.godot/imported/Monitor_angiloan.png-0ebdf3e7b3117f576bb67833f67ec3b3.s3tc.ctex"]
+source_file="res://assets/cursor/cursor_magnifyingglass.svg"
+dest_files=["res://.godot/imported/cursor_magnifyingglass.svg-c85e577728363ac59a68b9f6aefcc99d.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -27,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -41,4 +37,7 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false
