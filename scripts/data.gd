@@ -32,7 +32,6 @@ func socket_item(target_transform: Transform3D, socket_node: Node):
 	if is_inserted:
 		return
 
-	screen.visible = true
 	is_held = false
 	is_inserted = true
 	freeze = true
@@ -60,6 +59,9 @@ func socket_item(target_transform: Transform3D, socket_node: Node):
 func _on_insert_finished():
 	# Disk is fully inserted LED light should be green
 	set_active_led("green")
+	
+	# Screen only shows after disk finished inserting
+	screen.visible = true
 	
 	# Screen updates ONLY when fully seated!
 	if sprite_empty: sprite_empty.visible = false

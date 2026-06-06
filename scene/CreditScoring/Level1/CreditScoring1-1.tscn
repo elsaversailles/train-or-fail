@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d0js4550ire4" path="res://scripts/CreditScoring/Level1/credit_scoring_1_1.gd" id="1_x4bpk"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scene/character.tscn" id="2_elty4"]
+[ext_resource type="PackedScene" uid="uid://dxt53abolq2fm" path="res://scene/sky.tscn" id="2_gkt0f"]
 [ext_resource type="PackedScene" uid="uid://cwjddyjeack6m" path="res://scene/socket.tscn" id="3_j7mwx"]
 [ext_resource type="PackedScene" uid="uid://qxngx7cctkt6" path="res://scene/floppydisk.tscn" id="4_dn53d"]
 [ext_resource type="PackedScene" uid="uid://d08r12hn5mce1" path="res://scene/IdleScreen.tscn" id="5_qlcwt"]
@@ -13,18 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://dtpe25cd85fc8" path="res://scene/result_panel.tscn" id="11_quma2"]
 [ext_resource type="PackedScene" uid="uid://bx7scsfg2nivv" path="res://scene/pause_panel.tscn" id="12_8hxc1"]
 [ext_resource type="AudioStream" uid="uid://lm3fs23d4v2l" path="res://music/gameplaymusic.mp3" id="13_3uodl"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_ig7tw"]
-sky_material = SubResource("ProceduralSkyMaterial_7dm0k")
-
-[sub_resource type="Environment" id="Environment_0xm2m"]
-background_mode = 2
-sky = SubResource("Sky_ig7tw")
-tonemap_mode = 2
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hybxs"]
 load_path = "res://.godot/imported/wall.jpeg-274b9c5ce9692041c8e6911d093e9da9.s3tc.ctex"
@@ -75,13 +64,12 @@ next_scene_path = "uid://clstgqaxn60c4"
 next_stage_name = "CREDIT L1 - Day 2"
 current_level_id = "credit_l1_d1"
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1808950673]
-environment = SubResource("Environment_0xm2m")
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=674580829]
 transform = Transform3D(-0.95054054, -0.013753358, -0.31029615, -0.3086199, -0.07083017, 0.94854474, -0.035024006, 0.9973938, 0.06308235, 0, 10.833578, 0)
 light_energy = 0.118
 shadow_enabled = true
+
+[node name="WorldEnvironment" parent="." unique_id=210053870 instance=ExtResource("2_gkt0f")]
 
 [node name="Room" type="CSGCombiner3D" parent="." unique_id=1227119580]
 transform = Transform3D(-4.371139e-08, 0, 0.4685821, 0, 4.9475074, 0, -1, 0, -2.0482373e-08, -3, 2, 0)

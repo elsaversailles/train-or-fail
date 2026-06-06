@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://8ys3m125plqr"]
+
+[ext_resource type="Shader" uid="uid://baadk6j16xnmh" path="res://assets/textures/sky texture/shader_under_sky_material.tres" id="1_5julj"]
+[ext_resource type="Texture2D" uid="uid://b0x6b2franeoi" path="res://assets/textures/sky texture/cloud_noise_1.tres" id="2_qvrnn"]
+[ext_resource type="Texture2D" uid="uid://cyl3t51yk257u" path="res://assets/textures/sky texture/cloud_noise_2.tres" id="3_l7gp0"]
+[ext_resource type="Texture2D" uid="uid://byw1frpr43t8u" path="res://assets/textures/sky texture/COLORGRADIENT.tres" id="4_ykv6u"]
+
+[resource]
+shader = ExtResource("1_5julj")
+shader_parameter/pixelation = Vector2(256, 128)
+shader_parameter/cloud_noise1 = ExtResource("2_qvrnn")
+shader_parameter/cloud_noise2 = ExtResource("3_l7gp0")
+shader_parameter/color_gradient = ExtResource("4_ykv6u")
+shader_parameter/scroll_speed1 = 0.02
+shader_parameter/scroll_speed2 = -0.015
+shader_parameter/sun_color = Color(1, 0.9, 0.5, 1)
+shader_parameter/sun_size = 0.08
+shader_parameter/cloud_coverage = 0.45
+shader_parameter/cloud_density = 1.2
+shader_parameter/cloud_top_start = 0.25

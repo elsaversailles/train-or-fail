@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://oblqrvb0temk" path="res://scripts/FraudDetection/Level1/FraudDetectionLevel1-1.gd" id="1_k4d8p"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scene/character.tscn" id="2_4jepk"]
+[ext_resource type="PackedScene" uid="uid://dxt53abolq2fm" path="res://scene/sky.tscn" id="2_6w6fk"]
 [ext_resource type="PackedScene" uid="uid://cwjddyjeack6m" path="res://scene/socket.tscn" id="3_n0abr"]
 [ext_resource type="PackedScene" uid="uid://qxngx7cctkt6" path="res://scene/floppydisk.tscn" id="4_p7i88"]
 [ext_resource type="PackedScene" uid="uid://d08r12hn5mce1" path="res://scene/IdleScreen.tscn" id="5_16we4"]
@@ -13,19 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://dtpe25cd85fc8" path="res://scene/result_panel.tscn" id="11_cgafg"]
 [ext_resource type="PackedScene" uid="uid://bx7scsfg2nivv" path="res://scene/pause_panel.tscn" id="13_dg6ke"]
 [ext_resource type="AudioStream" uid="uid://lm3fs23d4v2l" path="res://music/gameplaymusic.mp3" id="14_5n8yc"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_ig7tw"]
-sky_material = SubResource("ProceduralSkyMaterial_7dm0k")
-
-[sub_resource type="Environment" id="Environment_0xm2m"]
-background_mode = 2
-background_energy_multiplier = 0.8
-sky = SubResource("Sky_ig7tw")
-tonemap_mode = 2
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hybxs"]
 load_path = "res://.godot/imported/wall.jpeg-274b9c5ce9692041c8e6911d093e9da9.s3tc.ctex"
@@ -67,8 +55,7 @@ next_scene_path = "uid://cptd4bq7jf1tb"
 next_stage_name = "KYC L1 - Day 2"
 current_level_id = "fraud_l1_d1"
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1808950673]
-environment = SubResource("Environment_0xm2m")
+[node name="WorldEnvironment" parent="." unique_id=210053870 instance=ExtResource("2_6w6fk")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=674580829]
 transform = Transform3D(-0.95054054, -0.013753358, -0.31029615, -0.3086199, -0.07083017, 0.94854474, -0.035024006, 0.9973938, 0.06308235, 0, 10.833578, 0)

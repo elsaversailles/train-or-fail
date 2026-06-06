@@ -1,4 +1,5 @@
-res://scene/screengameplays/kyc_panel.tscn
-res://scripts/screengameplays/kyc_panel.gd
-res://scene/floppydisk.tscn
-res://scripts/data.gd
+res://scene/FraudDetection/Level1/FraudDetectionLevel1-1.tscn
+res://assets/textures/sky texture/shader_under_sky_material.tres
+res://assets/textures/sky texture/cloud_noise_1.tres
+res://assets/textures/sky texture/cloud_noise_2.tres
+res://assets/textures/sky texture/COLORGRADIENT.tres

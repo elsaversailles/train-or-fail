@@ -44,36 +44,40 @@ offset_left = 58.0
 offset_top = 344.0
 offset_right = 227.99998
 offset_bottom = 394.0
+rotation = 0.12796889
 icon = ExtResource("2_14wem")
 flat = true
 expand_icon = true
 
 [node name="Settings" type="Button" parent="Main Menu/Buttons" unique_id=446335812]
 layout_mode = 0
-offset_left = 58.0
-offset_top = 400.0
-offset_right = 228.0
-offset_bottom = 450.0
+offset_left = 54.0
+offset_top = 418.0
+offset_right = 224.0
+offset_bottom = 468.0
+rotation = -0.03679195
 icon = ExtResource("4_dclss")
 flat = true
 expand_icon = true
 
 [node name="About Us" type="Button" parent="Main Menu/Buttons" unique_id=2077448952]
 layout_mode = 0
-offset_left = 53.0
-offset_top = 460.0
-offset_right = 202.00002
-offset_bottom = 508.0
+offset_left = 62.0
+offset_top = 470.0
+offset_right = 211.00002
+offset_bottom = 518.0
+rotation = 0.024527084
 icon = ExtResource("5_hmxu4")
 flat = true
 expand_icon = true
 
 [node name="Quit" type="Button" parent="Main Menu/Buttons" unique_id=2031676534]
 layout_mode = 0
-offset_left = 57.0
-offset_top = 520.0
-offset_right = 206.0
-offset_bottom = 568.0
+offset_left = 64.99999
+offset_top = 533.99994
+offset_right = 214.0
+offset_bottom = 581.99994
+rotation = -0.10609939
 icon = ExtResource("6_ictww")
 flat = true
 expand_icon = true

@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://bs72ogkvdd7d6"]
 
 [ext_resource type="Script" uid="uid://c1nkb217t4usv" path="res://scripts/proto_controller.gd" id="1_ucva2"]
-[ext_resource type="PackedScene" uid="uid://len1dm6f7m4u" path="res://assets/Applicants/M/M LONG HAIR.glb" id="2_6k5wm"]
+[ext_resource type="PackedScene" uid="uid://bkpfninaiyw5d" path="res://main char/maincharhandfix.glb" id="2_d7vt2"]
 [ext_resource type="Script" uid="uid://bekrqvkoqwq63" path="res://scripts/camera_3d.gd" id="2_wr06p"]
-[ext_resource type="PackedScene" uid="uid://dxwpg0hwslwyc" path="res://assets/hand mesh.glb" id="4_6k5wm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5hfox"]
 radius = 0.4
@@ -16,16 +15,14 @@ script = ExtResource("1_ucva2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9397334, 0)
 shape = SubResource("CapsuleShape3D_5hfox")
 
-[node name="M LONG HAIR" parent="." unique_id=998723096 instance=ExtResource("2_6k5wm")]
+[node name="maincharhandfix" parent="." unique_id=1579506954 instance=ExtResource("2_d7vt2")]
+transform = Transform3D(-1, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -1, 0, 0, 0)
 
 [node name="Head" type="Node3D" parent="." unique_id=1089358957]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8219416, -0.34214658)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1644174975]
 script = ExtResource("2_wr06p")
-
-[node name="hand mesh" parent="Head/Camera3D" unique_id=2119182962 instance=ExtResource("4_6k5wm")]
-transform = Transform3D(1, -1.0514771e-08, -1.2835066e-09, 1.0514771e-08, 0.9706368, 0.24054994, -1.2835066e-09, -0.24054994, 0.9706368, 0.35634574, -0.5047494, -0.19491631)
 
 [node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=1819240192]
 target_position = Vector3(0, 0, -3)

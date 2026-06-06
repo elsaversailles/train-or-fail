@@ -1,20 +1,20 @@
 res://addons/table.tscn::ded9c6fc3103e6cff33d8ad6514ace8a::1776698672::res://.godot/exported/133200997/export-554ad69a964da231c21be0d6016b3566-table.scn
-res://scene/character.tscn::b02a7b6401c840176c8bcb6c3a4ff8be::1777554250::res://.godot/exported/133200997/export-4931db860d6571e42e0c4fd506d3cbe9-character.scn
+res://scene/character.tscn::12e6c5c67315123c46fad469ed488972::1780664333::res://.godot/exported/133200997/export-4931db860d6571e42e0c4fd506d3cbe9-character.scn
 res://scene/data.tscn::c74b4bfcbc5d6a091c91116981cf7155::1776698676::res://.godot/exported/133200997/export-308ee09e135af6a53c6588f62f230428-data.scn
 res://scene/floppydisk.tscn::2c8da902732827b6b0fa1a7d57966d26::1779362778::res://.godot/exported/133200997/export-04728ab84b73e1e42f4b2ea94bd1cbbe-floppydisk.scn
 res://scene/IdleScreen.tscn::74b0e2fa9c040c25b0d6d75e1ab79384::1778428450::res://.godot/exported/133200997/export-463dd8ffe2f8897e8ab4f548fd7499b1-IdleScreen.scn
-res://scene/main_menu.tscn::214ade12058f281c336e2b5d543f622b::1779278464::res://.godot/exported/133200997/export-5004891b3c37f00fbb846473dbb63447-main_menu.scn
+res://scene/main_menu.tscn::57d5977f36a2c5bc761189ab67db7ee5::1780665241::res://.godot/exported/133200997/export-5004891b3c37f00fbb846473dbb63447-main_menu.scn
 res://scene/screen.tscn::57a551bbd0df624a5fd71322eeaec653::1776698676::res://.godot/exported/133200997/export-5261c0ee21d55703c11f9c1b975c0d5c-screen.scn
 res://scene/socket.tscn::de1275825bc3b4fbf761126f40b2c6b5::1779278399::res://.godot/exported/133200997/export-5e751226423e6cb1c9a025be73c58918-socket.scn
 res://default_bus_layout.tres::bc030955f207b43cfb1d74d6e947ff6e::1776698649::res://.godot/exported/133200997/export-19246414aa9fb561ced4b8dce477acec-default_bus_layout.res
-res://scene/FraudDetection/Level1/FraudDetectionLevel1-1.tscn::a22097f4f65263ee76a57d74b91e8501::1779279067::res://.godot/exported/133200997/export-6900074a4d1e8e43887767c7defeba06-FraudDetectionLevel1-1.scn
-res://scene/FraudDetection/Level1/FraudDetectionLevel1-2.tscn::809c60b88e49ab08f1113a099cf1bcf3::1779279067::res://.godot/exported/133200997/export-b08a50ad4404e0d846b44c9199f8dc45-FraudDetectionLevel1-2.scn
-res://scene/KnowYourCustomer/Level1/KnowYourCustomer1-1.tscn::0ae0363f85ab4687ab662493dfc72512::1779281641::res://.godot/exported/133200997/export-ff65fc4b3ce8ded1aa9796743cad1b10-KnowYourCustomer1-1.scn
-res://scene/KnowYourCustomer/Level1/KnowYourCustomer1-2.tscn::7374dda4e1fbdbef0c50ae7f5961bac7::1779279067::res://.godot/exported/133200997/export-a7cd7eb33fa60895b9c8c0d4a9192744-KnowYourCustomer1-2.scn
+res://scene/FraudDetection/Level1/FraudDetectionLevel1-1.tscn::bb17ef6ec831f6ae78488d6284e10483::1780746727::res://.godot/exported/133200997/export-6900074a4d1e8e43887767c7defeba06-FraudDetectionLevel1-1.scn
+res://scene/FraudDetection/Level1/FraudDetectionLevel1-2.tscn::55b30d692563d9995776375f437b7ac9::1780663629::res://.godot/exported/133200997/export-b08a50ad4404e0d846b44c9199f8dc45-FraudDetectionLevel1-2.scn
+res://scene/KnowYourCustomer/Level1/KnowYourCustomer1-1.tscn::5b060c573ed9a8aba500783d933221c2::1780663660::res://.godot/exported/133200997/export-ff65fc4b3ce8ded1aa9796743cad1b10-KnowYourCustomer1-1.scn
+res://scene/KnowYourCustomer/Level1/KnowYourCustomer1-2.tscn::66885e2c6ddfd4b5fb61ed8a8f202be5::1780663677::res://.godot/exported/133200997/export-a7cd7eb33fa60895b9c8c0d4a9192744-KnowYourCustomer1-2.scn
 res://scene/pause_panel.tscn::b42d4be3b32df9978408beafc8adc5c5::1777627576::res://.godot/exported/133200997/export-47ed82ef66f9c21fa0c0ad9d602e6ba1-pause_panel.scn
 res://scene/result_panel.tscn::21627c3e83916a4379ceaa689e259e96::1778428099::res://.godot/exported/133200997/export-c3a71c06d918d329c633337297149307-result_panel.scn
-res://scene/CreditScoring/Level1/CreditScoring1-1.tscn::77dbae4d63c1a574112f3c917638d065::1779279067::res://.godot/exported/133200997/export-8835078aebff7c4c0e9ee84a5a158dc2-CreditScoring1-1.scn
-res://scene/CreditScoring/Level1/CreditScoring1-2.tscn::dddf0a0aa0d8ce3fc14163a0836d6673::1779279516::res://.godot/exported/133200997/export-0209e37d1f3cd12be68d88192e654263-CreditScoring1-2.scn
+res://scene/CreditScoring/Level1/CreditScoring1-1.tscn::244be33aa982b48f89aaa9f0ea6553c9::1780663708::res://.godot/exported/133200997/export-8835078aebff7c4c0e9ee84a5a158dc2-CreditScoring1-1.scn
+res://scene/CreditScoring/Level1/CreditScoring1-2.tscn::da51d9b1a536e4503ab46d3519b0bb1b::1780664191::res://.godot/exported/133200997/export-0209e37d1f3cd12be68d88192e654263-CreditScoring1-2.scn
 res://scene/Applicants/F/f_buns.tscn::29c9a7baf06d5d5bd672e1eaa4edbc21::1777556252::res://.godot/exported/133200997/export-aef9dea8c89a1ed2e82fb1b54dd455c1-f_buns.scn
 res://scene/Applicants/F/f_long_hair.tscn::a34e1cf94ef9441ca00166da6c7c694f::1777556435::res://.godot/exported/133200997/export-623c375292c40bce202b4c9cdfbd86f4-f_long_hair.scn
 res://scene/Applicants/F/f_long_shaggy.tscn::fb5695809a428c132600c2676758eed4::1777556445::res://.godot/exported/133200997/export-69c71dec924025d08f7af85c99efcf35-f_long_shaggy.scn
@@ -32,3 +32,17 @@ res://scene/model_container.tscn::c32a877b550e3979c9ae5005c51c2f5e::1777557125::
 res://scene/settings_panel.tscn::163ab5fac2f9f335346418d262c7d5a4::1777627254::res://.godot/exported/133200997/export-35437418e4492084f95e61ca25cb1966-settings_panel.scn
 res://scene/about_us_panel.tscn::557e7d8b5dee9acd2f7172d38e19bf1e::1778512044::res://.godot/exported/133200997/export-3d63481207d0bca650d79ca61b6fc21d-about_us_panel.scn
 res://scene/slots_menu.tscn::cbe5f906b6d73f40c87baaab52d6fc48::1778510045::res://.godot/exported/133200997/export-564d460892b8f77b39af42565a593ac0-slots_menu.scn
+res://assets/textures/sky texture/cloud_noise_1.tres::d8c232063b7eebd29674ccb40fcfdf28::1780746727::res://.godot/exported/133200997/export-37eff6dc92ca8d9fe4a5360eb3992d5c-cloud_noise_1.res
+res://assets/textures/sky texture/cloud_noise_2.tres::5574dd9503af3ebae58ef4d7ea2c5498::1780746727::res://.godot/exported/133200997/export-5801bc6bf1ed2fde46cedacd243bfa6d-cloud_noise_2.res
+res://assets/textures/sky texture/COLORGRADIENT.tres::5e1de1f9eef6be412cb4dcb65be5c724::1780746727::res://.godot/exported/133200997/export-1d70da8fa1f7545774cd8f7d426e95c6-COLORGRADIENT.res
+res://assets/textures/sky texture/environment.tres::cf8c971bf2ad318b96d7e4097471951d::1780664425::res://.godot/exported/133200997/export-5fb71e3135e13935b638afbf44049958-environment.res
+res://assets/textures/sky texture/shader_under_sky_material.tres::64e1b4c498faf7610ffd0021a91e7d37::1780746727::res://.godot/exported/133200997/export-0d5c1ced8ce92157a08f97f46509df92-shader_under_sky_material.res
+res://assets/textures/sky texture/sky.tres::87fe12210695be988b7a3ccd9751188a::1780663554::res://.godot/exported/133200997/export-2ff0d59c06397d54b80f6e9e3c2d61dd-sky.res
+res://assets/textures/sky texture/sky_material.tres::987aae0d27e384ae0c1c4c8adffd8e4b::1780664425::res://.godot/exported/133200997/export-643d591108e594353501d97c1ff9375b-sky_material.res
+res://assets/textures/cloud_noise_1_NOISE.tres::7a7b38c413cc894544922c791155db9f::1780662845::res://.godot/exported/133200997/export-ecb1d6c0fe60c6cd5bdeeda9bed608dc-cloud_noise_1_NOISE.res
+res://assets/textures/cloud_noise_1_NOISE_GRADIENT.tres::140d6dba0bbfdeab771da2faf7056ff6::1780662845::res://.godot/exported/133200997/export-29027f8e4fe59f4884aefbbd64e7d2c2-cloud_noise_1_NOISE_GRADIENT.res
+res://assets/textures/cloud_noise_2_NOISE.tres::fede655a4a88b7cf1c87e25168f6301e::1780662845::res://.godot/exported/133200997/export-be1e79548c11f87f03c3111c37682c6e-cloud_noise_2_NOISE.res
+res://assets/textures/cloud_noise_2_NOISE_GRADIENT.tres::4cb3d81fb7740676880d58e049a8e79a::1780662845::res://.godot/exported/133200997/export-b58bea8de1a631fad0d96c6c9f44b242-cloud_noise_2_NOISE_GRADIENT.res
+res://assets/textures/GRADIENT.tres::792da736c33a49bdb16eb0f15668125b::1780662845::res://.godot/exported/133200997/export-0d245607ad97cbe2cba606282c23c64f-GRADIENT.res
+res://assets/try/sky_environment.tres::a6fd590ff70f00d8ca97b642630a1f86::1780662172::res://.godot/exported/133200997/export-1d0965fc4e1ae170145ccc14e53fb32d-sky_environment.res
+res://scene/sky.tscn::d2876a92789ed6a50002240b6fbc5626::1780664708::res://.godot/exported/133200997/export-a0594ae9530ce7bb73b9fb872a7ffb05-sky.scn

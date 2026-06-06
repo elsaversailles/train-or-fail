@@ -1,0 +1,320 @@
+[gd_resource type="Shader" format=3 uid="uid://baadk6j16xnmh"]
+
+[resource]
+code = "shader_type sky;
+
+uniform vec2 pixelation = vec2(256.0, 128.0);
+
+uniform sampler2D cloud_noise1 : repeat_enable;
+uniform sampler2D cloud_noise2 : repeat_enable;
+uniform sampler2D color_gradient : source_color;
+
+uniform float scroll_speed1 = 0.02;
+uniform float scroll_speed2 = -0.015;
+
+// Sun
+uniform vec4 sun_color : source_color = vec4(1.0, 0.9, 0.5, 1.0);
+uniform float sun_size : hint_range(0.01, 0.5, 0.01) = 0.08;
+
+// Cloud controls
+uniform float cloud_coverage : hint_range(0.0, 1.0) = 0.45;
+uniform float cloud_density : hint_range(0.0, 2.0) = 1.2;
+uniform float cloud_top_start : hint_range(0.0, 1.0) = 0.25;
+
+void sky() {
+
+	// Pixelated direction
+	vec3 pixel_dir = floor(EYEDIR * pixelation.x) / pixelation.x;
+	pixel_dir = normalize(pixel_dir);
+
+	// Dome projection
+	float plane_divider = max(pixel_dir.y, 0.01);
+	vec2 dome_uv = pixel_dir.xz / plane_divider;
+
+	vec2 uv = floor(dome_uv * pixelation.y) / pixelation.y;
+
+	// ==========================
+	// LARGE RANDOM CLOUD REGIONS
+	// ==========================
+
+	vec2 macro_uv =
+		uv * 0.08 +
+		vec2(TIME * 0.001, 0.0);
+
+	float macro_noise =
+		texture(
+			cloud_noise2,
+			fract(macro_uv)
+		).r;
+
+	float cloud_region =
+		smoothstep(
+			0.40,
+			0.75,
+			macro_noise
+		);
+
+	// ==========================
+	// CLOUD DETAILS
+	// ==========================
+
+	vec2 uv1 =
+		uv +
+		vec2(
+			TIME * scroll_speed1,
+			TIME * scroll_speed1 * 0.5
+		);
+
+	vec2 uv2 =
+		vec2(
+			uv.x * 0.707 - uv.y * 0.707,
+			uv.x * 0.707 + uv.y * 0.707
+		) +
+		vec2(
+			TIME * scroll_speed2,
+			TIME * scroll_speed2 * 0.3
+		);
+
+	float detail1 =
+		texture(
+			cloud_noise1,
+			fract(uv1)
+		).r;
+
+	float detail2 =
+		texture(
+			cloud_noise2,
+			fract(uv2)
+		).r;
+
+	float detail =
+		mix(detail1, detail2, 0.5);
+
+// ==========================
+// COMBINE
+// ==========================
+
+float cloud_noise =
+	detail *
+	cloud_region *
+	cloud_density;
+
+// Sky height
+float height = clamp(pixel_dir.y, 0.0, 1.0);
+
+// Keep horizon mostly clear
+float horizon_mask =
+	smoothstep(
+		0.05,   // horizon start
+		0.20,   // clouds fully visible above this
+		height
+	);
+
+float cloud_mask =
+	smoothstep(
+		cloud_coverage,
+		cloud_coverage + 0.20,
+		cloud_noise
+	);
+
+// Remove clouds only near horizon
+cloud_mask *= horizon_mask;
+
+// Pixel-art cloud chunks
+cloud_mask =
+	floor(cloud_mask * 10.0) / 10.0;
+
+// ==========================
+// SKY COLORS
+// ==========================
+
+vec3 sky_color =
+	texture(
+		color_gradient,
+		vec2(height, 0.5)
+	).rgb;
+
+vec3 cloud_color = vec3(1.0);
+
+// ==========================
+// RANDOMIZED PIXEL SUN
+// ==========================
+
+vec3 moving_sun =
+	normalize(
+		LIGHT0_DIRECTION +
+		vec3(
+			sin(TIME * 0.002) * 3.15,
+			0.0,
+			cos(TIME * 0.002) * 3.15
+		)
+	);
+
+float sun_dist =
+	distance(
+		pixel_dir,
+		moving_sun
+	);
+
+// Direction from sun
+vec3 sun_delta =
+	normalize(pixel_dir - moving_sun);
+
+float angle =
+	atan(
+		sun_delta.y,
+		sun_delta.x
+	);
+
+// Randomized ray pattern
+float ray_noise =
+    sin(angle * 35.0 + TIME * 2.37) * 0.5 +
+    sin(angle * 17.0 - TIME * 2.23) * 0.3 +
+    sin(angle * 7.0 + TIME * 2.51) * 0.3;
+
+ray_noise = ray_noise * 0.5 + 0.5;
+
+// Quantize for pixel-art look
+ray_noise =
+	floor(ray_noise * 5.0) / 4.0;
+
+// Ray length varies by angle
+float ray_radius =
+	sun_size *
+	(
+		1.4 +
+		ray_noise * 0.8
+	);
+
+// Animated rays
+float rays =
+	1.0 -
+	smoothstep(
+		sun_size * 0.80,
+		ray_radius,
+		sun_dist
+	);
+
+// Outer orange ring
+float outer_ring =
+	1.0 -
+	smoothstep(
+		sun_size * 0.20,
+		sun_size * 2.3,
+		sun_dist
+	);
+
+// Bright yellow center
+float inner_disc =
+	1.0 -
+	smoothstep(
+		sun_size * 0.020,
+		sun_size,
+		sun_dist
+	);
+
+// Pixelate shapes
+rays =
+	floor(rays * 2.0);
+
+outer_ring =
+	floor(outer_ring * 1.0);
+
+inner_disc =
+	floor(inner_disc * 2.0);
+
+// Clouds occlude sun
+float sun_visibility =
+	1.0 - cloud_mask;
+
+float glow_visibility =
+	1.0 - cloud_mask * 0.65;
+
+// Colors
+vec3 ray_color =
+	vec3(
+		1.98,
+		1.65,
+		0.25
+	);
+
+vec3 ring_color =
+	vec3(
+		0.99,
+		1.75,
+		0.30
+	);
+
+vec3 center_color =
+	vec3(
+		1.0,
+		0.88,
+		0.25
+	);
+
+// Start from sky
+vec3 final_color = sky_color;
+
+// Rays first
+final_color =
+	mix(
+		final_color,
+		ray_color,
+		rays *
+		0.85 *
+		glow_visibility
+	);
+
+// Ring
+final_color =
+	mix(
+		final_color,
+		ring_color,
+		outer_ring *
+		glow_visibility
+	);
+
+// Center
+final_color =
+	mix(
+		final_color,
+		center_color,
+		inner_disc *
+		sun_visibility
+	);
+
+// Atmospheric glow
+float glow =
+	1.0 -
+	smoothstep(
+		sun_size * 2.0,
+		sun_size * 5.0,
+		sun_dist
+	);
+
+final_color +=
+	center_color *
+	glow *
+	0.18 *
+	glow_visibility;
+
+// Clouds in front
+final_color =
+	mix(
+		final_color,
+		cloud_color,
+		cloud_mask
+	);
+
+// Cloud silver lining
+float cloud_glow =
+	glow *
+	cloud_mask *
+	0.2;
+
+final_color +=
+	ring_color *
+	cloud_glow;
+
+COLOR = final_color;
+}"

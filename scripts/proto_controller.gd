@@ -19,7 +19,6 @@ var current_monitor = null
 @onready var interact_ray: RayCast3D = $Head/Camera3D/RayCast3D
 @onready var raycast: RayCast3D = $Head/Camera3D/RayCast3D
 @onready var hand_node: Node3D = $Head/Camera3D/handpoint
-@onready var visual_hand: Node3D = $"Head/Camera3D/hand mesh"
 
 # HUD references
 @onready var interaction_label: Label = get_tree().current_scene.get_node("CanvasLayer/InteractionLabel")
@@ -225,10 +224,6 @@ func update_gameplay_ui() -> void:
 	# Crosshair
 	if crosshair:
 		crosshair.visible = show_gameplay_ui
-
-	# Hand mesh
-	if visual_hand:
-		visual_hand.visible = show_gameplay_ui
 
 	# Interaction label
 	if interaction_label:
