@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dtpe25cd85fc8"]
 
-[ext_resource type="Script" uid="uid://dch17ww67wmr5" path="res://scripts/result_panel.gd" id="1_qvss6"]
+[ext_resource type="Script" uid="uid://dch17ww67wmr5" path="res://scripts/ResultPanel.gd" id="1_qvss6"]
 [ext_resource type="FontFile" uid="uid://cr0as831oignr" path="res://assets/fonts/IBMPlexMono-Regular.ttf" id="2_in6dr"]
 
 [node name="ResultPanel" type="Control" unique_id=1111248632]

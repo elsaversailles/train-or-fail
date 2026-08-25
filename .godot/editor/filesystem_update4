@@ -1,5 +1,3 @@
-res://scene/FraudDetection/Level1/FraudDetectionLevel1-1.tscn
-res://assets/textures/sky texture/shader_under_sky_material.tres
-res://assets/textures/sky texture/cloud_noise_1.tres
-res://assets/textures/sky texture/cloud_noise_2.tres
-res://assets/textures/sky texture/COLORGRADIENT.tres
+res://scene/outside_world.tscn
+res://scripts/Npc_Dialogue_Box.gd
+res://scene/npc_dialogue_box.tscn

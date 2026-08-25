@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dxr02hqka7jvb"]
 
-[ext_resource type="Script" uid="uid://c8ln5egxolfgr" path="res://scripts/slots_menu.gd" id="1_wn1mk"]
+[ext_resource type="Script" uid="uid://c8ln5egxolfgr" path="res://scripts/SlotsMenu.gd" id="1_wn1mk"]
 
 [node name="Slots" type="Control" unique_id=379260567]
 layout_mode = 3
@@ -93,3 +93,13 @@ offset_bottom = -43.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "Delete"
+
+[node name="Try" type="Button" parent="." unique_id=246177083]
+layout_mode = 0
+offset_left = 372.0
+offset_top = 39.0
+offset_right = 502.0
+offset_bottom = 130.0
+text = "Debugging Purpose"
+
+[connection signal="pressed" from="Try" to="." method="_on_try_pressed"]

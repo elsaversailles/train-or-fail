@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://8tr8gjknjso5"]
+
+[ext_resource type="PackedScene" uid="uid://blllo2y4i3i" path="res://models3d/Lobby.tscn" id="1_oauyh"]
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scene/character.tscn" id="2_uyght"]
+[ext_resource type="Script" uid="uid://bebkd43in6ylf" path="res://scripts/ElevetorDoor.gd" id="3_re36c"]
+[ext_resource type="PackedScene" uid="uid://bx7scsfg2nivv" path="res://scene/pause_panel.tscn" id="4_oauyh"]
+[ext_resource type="PackedScene" uid="uid://cv87ukpeiw7cp" path="res://scene/crosshair.tscn" id="5_qqb2a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oauyh"]
+size = Vector3(3, 2.0584717, 14.159119)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qqb2a"]
+albedo_color = Color(0.54509807, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qqb2a"]
+size = Vector3(32.104553, 1, 32.20337)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_85j0d"]
+size = Vector3(13.583, 2, 1.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ren0j"]
+size = Vector3(0.8616934, 2, 12.987353)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iogu2"]
+size = Vector3(8.879486, 2, 0.45168447)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pfttj"]
+size = Vector3(0.98075867, 2, 16.454134)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rhla1"]
+size = Vector3(20.745733, 2, 0.78467)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nka3p"]
+size = Vector3(2.0420115, 2, 2.0570376)
+
+[node name="OfficeLobby" type="Node3D" unique_id=1755870788]
+
+[node name="OLobby" parent="." unique_id=331321462 instance=ExtResource("1_oauyh")]
+
+[node name="Player" parent="." unique_id=2061402672 instance=ExtResource("2_uyght")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.051943, 0, 1.7845943)
+
+[node name="ElevetorDoor" type="Area3D" parent="." unique_id=1431212108]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2249746, -0.1403935, -3.4720943)
+script = ExtResource("3_re36c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ElevetorDoor" unique_id=119235886]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.77923584, -0.07577515)
+shape = SubResource("BoxShape3D_oauyh")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="ElevetorDoor" unique_id=1517961826]
+size = Vector3(3, 0.5, 5)
+material = SubResource("StandardMaterial3D_qqb2a")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="ElevetorDoor/CSGBox3D" unique_id=1744585853]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.08033037, 0.04345703)
+operation = 2
+size = Vector3(2.5, 0.7285156, 4.5)
+
+[node name="PausePanel" parent="." unique_id=1179524455 instance=ExtResource("4_oauyh")]
+
+[node name="CanvasLayer" parent="." unique_id=1382565654 instance=ExtResource("5_qqb2a")]
+
+[node name="Collisions" type="StaticBody3D" parent="." unique_id=1060565866]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09108949, 0)
+
+[node name="Floor" type="CollisionShape3D" parent="Collisions" unique_id=1985578433]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004486084, -0.36789286, -0.03942871)
+shape = SubResource("BoxShape3D_qqb2a")
+
+[node name="Wall1" type="CollisionShape3D" parent="Collisions" unique_id=2122323453]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.267, 1, 14.16)
+shape = SubResource("BoxShape3D_85j0d")
+
+[node name="Wall2" type="CollisionShape3D" parent="Collisions" unique_id=1360901036]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.906, 1, 8.316145)
+shape = SubResource("BoxShape3D_ren0j")
+
+[node name="Wall3" type="CollisionShape3D" parent="Collisions" unique_id=1483811674]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1028962, 1, 2.0483103)
+shape = SubResource("BoxShape3D_iogu2")
+
+[node name="Wall4" type="CollisionShape3D" parent="Collisions" unique_id=1967061106]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.05226, 1, -5.952914)
+shape = SubResource("BoxShape3D_pfttj")
+
+[node name="Wall5" type="CollisionShape3D" parent="Collisions" unique_id=1600464151]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8302274, 1, -14.018355)
+shape = SubResource("BoxShape3D_rhla1")
+
+[node name="Wall6" type="CollisionShape3D" parent="Collisions" unique_id=1281610983]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.987971, 1, -6.99693)
+shape = SubResource("BoxShape3D_nka3p")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=2041095180]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.958038, 1.9714355, 0.47207642)
+use_collision = true
+size = Vector3(1.0317383, 4.942871, 30.664734)
+
+[node name="Label3D" type="Label3D" parent="." unique_id=317225155]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5, 2.942129, -3.585891)
+text = "ELEVATOR
+"
+font_size = 133
+
+[connection signal="body_entered" from="ElevetorDoor" to="ElevetorDoor" method="_on_body_entered"]

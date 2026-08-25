@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dci8u0ys21qui"]
+
+[ext_resource type="Script" uid="uid://bmgppf0fx0hwn" path="res://scripts/Npc_Dialogue_Box.gd" id="1_302gq"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_jv1ba"]
+viewport_path = NodePath("SubViewport")
+
+[node name="NPCDialogueBox" type="Node3D" unique_id=1030725355]
+script = ExtResource("1_302gq")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=653702321]
+billboard = 1
+texture = SubResource("ViewportTexture_jv1ba")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=820776742]
+transparent_bg = true
+
+[node name="TextBoxContainer" type="MarginContainer" parent="SubViewport" unique_id=547054543]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="SubViewport/TextBoxContainer" unique_id=1138680160]
+layout_mode = 2
+
+[node name="Padding" type="MarginContainer" parent="SubViewport/TextBoxContainer" unique_id=1947854623]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Label" type="Label" parent="SubViewport/TextBoxContainer/Padding" unique_id=767446633]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LetterDisplayTimer" type="Timer" parent="SubViewport/TextBoxContainer" unique_id=185230985]
+one_shot = true
+
+[connection signal="timeout" from="SubViewport/TextBoxContainer/LetterDisplayTimer" to="." method="_on_letter_display_timer_timeout"]

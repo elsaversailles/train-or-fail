@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dogkxfi5tbrs"]
+
+[node name="Lights" type="Node3D" unique_id=1778490459]
+transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1732073340]
+light_energy = 5.0
+omni_range = 12.990115
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1528349775]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.790422, 7.684831e-07, 0)
+light_energy = 5.0
+omni_range = 12.990115

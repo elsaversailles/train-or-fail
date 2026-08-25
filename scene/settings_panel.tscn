@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://eb3my6rwhod3"]
 
-[ext_resource type="Script" uid="uid://crqcpxburycoe" path="res://scripts/settings_panel.gd" id="1_ub00n"]
+[ext_resource type="Script" uid="uid://crqcpxburycoe" path="res://scripts/SettingsPanel.gd" id="1_ub00n"]
 [ext_resource type="Texture2D" uid="uid://diqf6bh0u04i0" path="res://images/MainMenu/phone.png" id="2_w58jy"]
-[ext_resource type="Script" uid="uid://cqkq7ghcjka7o" path="res://scripts/music_control.gd" id="3_anfas"]
+[ext_resource type="Script" uid="uid://cqkq7ghcjka7o" path="res://scripts/MusicControl.gd" id="3_anfas"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_by01r"]
 thickness = 6

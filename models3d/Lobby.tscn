@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://blllo2y4i3i"]
+
+[ext_resource type="PackedScene" uid="uid://bencvabtvmlun" path="res://assets/try/lobby/OLobby.glb" id="1_us7hs"]
+[ext_resource type="Texture2D" uid="uid://b8lwkwmu54cvf" path="res://assets/textures/Tiles/4K-ceramic_decorative_2-diffuse.jpg" id="2_hkkxi"]
+[ext_resource type="Texture2D" uid="uid://4j3ku57jt75m" path="res://assets/textures/false_ceiling_1-4K/4K_false_ceiling_basecolor.png" id="3_vlnmj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_slnph"]
+albedo_texture = ExtResource("2_hkkxi")
+uv1_scale = Vector3(5, 5, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fj4n3"]
+albedo_texture = ExtResource("3_vlnmj")
+uv1_scale = Vector3(2.5, 2.5, 2.5)
+uv1_offset = Vector3(-0.31, -0.16, 0)
+
+[node name="OLobby" unique_id=331321462 instance=ExtResource("1_us7hs")]
+
+[node name="Floor-Lobby" parent="." index="0" unique_id=1982631312]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.53, 0)
+material_override = SubResource("StandardMaterial3D_slnph")
+
+[node name="Ceiling-Lobby" parent="." index="15" unique_id=1153881867]
+material_override = SubResource("StandardMaterial3D_fj4n3")

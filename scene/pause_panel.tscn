@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bx7scsfg2nivv"]
 
-[ext_resource type="Script" uid="uid://dg3y5e7vspyxu" path="res://scripts/pause_panel.gd" id="1_0bhv7"]
+[ext_resource type="Script" uid="uid://dg3y5e7vspyxu" path="res://scripts/PausePanel.gd" id="1_0bhv7"]
 [ext_resource type="PackedScene" uid="uid://eb3my6rwhod3" path="res://scene/settings_panel.tscn" id="2_0bhv7"]
 [ext_resource type="Texture2D" uid="uid://diqf6bh0u04i0" path="res://images/MainMenu/phone.png" id="3_h251e"]
 

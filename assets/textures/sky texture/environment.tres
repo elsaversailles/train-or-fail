@@ -1,7 +1,0 @@
-[gd_resource type="Environment" format=3 uid="uid://dnr0y2rv1m1go"]
-
-[ext_resource type="Sky" uid="uid://c40ni1ia0w1kq" path="res://assets/textures/sky texture/sky.tres" id="1_js3wg"]
-
-[resource]
-background_mode = 2
-sky = ExtResource("1_js3wg")

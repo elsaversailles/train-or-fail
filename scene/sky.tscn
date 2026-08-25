@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://dxt53abolq2fm"]
-
-[ext_resource type="Environment" uid="uid://c50k40uu112t1" path="res://assets/textures/sky texture/environment.tres" id="1_28pcw"]
-
-[node name="WorldEnvironment" type="WorldEnvironment" unique_id=210053870]
-environment = ExtResource("1_28pcw")

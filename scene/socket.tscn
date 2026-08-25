@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://cwjddyjeack6m"]
 
-[ext_resource type="Script" uid="uid://3b7d3ej4yqxs" path="res://scripts/socket.gd" id="1_3ogqf"]
+[ext_resource type="Script" uid="uid://3b7d3ej4yqxs" path="res://scripts/Socket.gd" id="1_3ogqf"]
 [ext_resource type="Texture2D" uid="uid://xskw3k5xcf3t" path="res://assets/floppydiskcartridge/FloppyCartridge_Untitled.png" id="2_oreyi"]
 [ext_resource type="Texture2D" uid="uid://dihey32v763lv" path="res://assets/floppydiskcartridge/FloppyCartridge_angiloan.png" id="3_f2n76"]
 

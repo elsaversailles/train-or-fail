@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://bs72ogkvdd7d6"]
 
-[ext_resource type="Script" uid="uid://c1nkb217t4usv" path="res://scripts/proto_controller.gd" id="1_ucva2"]
-[ext_resource type="PackedScene" uid="uid://bkpfninaiyw5d" path="res://main char/maincharhandfix.glb" id="2_d7vt2"]
-[ext_resource type="Script" uid="uid://bekrqvkoqwq63" path="res://scripts/camera_3d.gd" id="2_wr06p"]
+[ext_resource type="Script" uid="uid://c1nkb217t4usv" path="res://scripts/Controller.gd" id="1_ucva2"]
+[ext_resource type="PackedScene" uid="uid://cowxelafbnnp7" path="res://scene/men_and_women.tscn" id="3_d7vt2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5hfox"]
 radius = 0.4
@@ -15,14 +14,11 @@ script = ExtResource("1_ucva2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9397334, 0)
 shape = SubResource("CapsuleShape3D_5hfox")
 
-[node name="maincharhandfix" parent="." unique_id=1579506954 instance=ExtResource("2_d7vt2")]
-transform = Transform3D(-1, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -1, 0, 0, 0)
-
 [node name="Head" type="Node3D" parent="." unique_id=1089358957]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8219416, -0.34214658)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.567005e-09, 1.7624735, -0.14615637)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1644174975]
-script = ExtResource("2_wr06p")
+transform = Transform3D(1, 0, 1.3909071e-08, 0, 1, 0, -1.3909071e-08, 0, 1, 0, 0, 0)
 
 [node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=1819240192]
 target_position = Vector3(0, 0, -3)
@@ -31,3 +27,6 @@ collide_with_areas = true
 
 [node name="handpoint" type="Marker3D" parent="Head/Camera3D" unique_id=2036793174]
 transform = Transform3D(-1.2964473e-07, -9.87361e-08, 1, -0.25881904, 0.9659258, 6.181723e-08, -0.9659258, -0.25881904, -1.5078197e-07, -0.18690044, -0.30551422, -0.86657184)
+
+[node name="MenANDWomen" parent="." unique_id=145518032 instance=ExtResource("3_d7vt2")]
+transform = Transform3D(-2, 0, -1.7484555e-07, 0, 2, 0, 1.7484555e-07, 0, -2, 0.0073112845, 0, -0.0023609998)
