@@ -69,8 +69,13 @@ func _on_select_pressed():
 		# It's an Existing Game! Load their progress into memory
 		SaveManager.current_save_data = SaveManager.load_game(selected_slot)
 	
-	# 3. No matter if it is Day 1 or Day 5, everyone starts their morning on the street!
-	SceneTransition.change_scene("res://scene/outside_world.tscn")
+	# 3. ROUTE THE PLAYER BASED ON THE DAY!
+	var current_day = SaveManager.current_save_data.get("current_day", 1)
+	
+	if current_day == 1 or current_day == 4 or current_day == 7:
+		SceneTransition.change_scene("res://scene/office_lobby.tscn")
+	else:
+		SceneTransition.change_scene("res://scene/elevator.tscn")
 
 func _on_delete_pressed():
 	SaveManager.delete_save(selected_slot)

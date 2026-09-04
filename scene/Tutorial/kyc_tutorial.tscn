@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://0u7pd7wd268r"]
+
+[ext_resource type="Texture2D" uid="uid://yahc322jgg0j" path="res://images/TutorialsIMG/FRAUDDETECTION/fdpanel.png" id="1_3d6cu"]
+[ext_resource type="Script" uid="uid://cu38vqdla8nbs" path="res://scripts/TutorialsScript/KYCTutorial.gd" id="1_jsxfr"]
+[ext_resource type="Texture2D" uid="uid://chu7s6pq6ous6" path="res://images/TutorialsIMG/KCY/KYC_data_highlight_img.png" id="2_3edny"]
+[ext_resource type="Texture2D" uid="uid://bxh10lesmpexn" path="res://images/TutorialsIMG/KCY/KYC_button_highlight_img.png" id="3_vbyvn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jsxfr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d0jgs"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3edny"]
+
+[node name="KYCTutorial" type="Control" unique_id=852419912]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jsxfr")
+data_highlight_img = ExtResource("2_3edny")
+button_highlight_img = ExtResource("3_vbyvn")
+
+[node name="BackgroundPanel" type="Panel" parent="." unique_id=2047280113]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jsxfr")
+
+[node name="Background" type="Panel" parent="BackgroundPanel" unique_id=2081065326]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_d0jgs")
+
+[node name="HighlightImage" type="TextureRect" parent="BackgroundPanel" unique_id=1206056742]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -552.0
+offset_top = 11.0
+offset_right = 557.0
+offset_bottom = 488.0
+grow_horizontal = 2
+mouse_filter = 2
+expand_mode = 1
+
+[node name="TextBoxContainer" type="MarginContainer" parent="BackgroundPanel" unique_id=628816693]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -138.0
+offset_right = -18.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="BackgroundPanel/TextBoxContainer" unique_id=1217574691]
+layout_mode = 2
+texture = ExtResource("1_3d6cu")
+region_rect = Rect2(-6.854431, -8.245972, 1599.0522, 1052.2499)
+patch_margin_left = 31
+patch_margin_top = 8
+patch_margin_bottom = 9
+
+[node name="MessageLabel" type="Label" parent="BackgroundPanel" unique_id=524498667]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 0
+offset_left = 47.0
+offset_top = 529.0
+offset_right = 1105.0
+offset_bottom = 616.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_3edny")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+justification_flags = 171
+
+[node name="LetterDisplayTimer" type="Timer" parent="BackgroundPanel" unique_id=1263280202]
+one_shot = true

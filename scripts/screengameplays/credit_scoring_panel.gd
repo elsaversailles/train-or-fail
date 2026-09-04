@@ -11,6 +11,7 @@ var applicants_list = []
 var current_case_index = 0
 var actual_score = 1.0
 var total_correct_answers = 0
+var mistakes = 0 # --- NEW: Tracks player mistakes ---
 var is_rejected: bool = false
 var final_credit_amount = 500
 
@@ -29,15 +30,6 @@ var final_credit_amount = 500
 @onready var payment_history = $"Panel/TabContainer/Payment History"
 @onready var arrears_tex = $Panel/TabContainer/Arrears
 @onready var debt_ratio_tex = $"Panel/TabContainer/Debt Ratio"
-
-# --- SCORING & DATA ---
-const PENALTIES = {
-	"fraud_sus": -0.4,
-	"kyc_invalid": -0.3, 
-	"payment_bad": -0.1,
-	"arrears": -0.1,
-	"debt_high": -0.1
-}
 
 func _ready():
 	slider.value_changed.connect(_on_slider_value_changed)
@@ -72,7 +64,6 @@ func _on_slider_value_changed(value: float):
 	var display_score = int(lerp(0, 10000, value))
 	credit_score_label.text = "Proposed Credit: $" + str(display_score)
 
-
 # ==========================================
 # STREAMLINED GAME LOOP
 # ==========================================
@@ -82,7 +73,7 @@ func load_applicant():
 		finish_game()
 		return
 
-	# --- NEW: Reset the UI for the new person ---
+	# Reset the UI for the new person
 	slider.value = 0.0
 	is_rejected = false
 	credit_score_label.text = "Proposed Credit: $0"
@@ -102,17 +93,10 @@ func load_applicant():
 		arrears_tex.texture = tex
 		debt_ratio_tex.texture = tex
 
-	var score = 1.0
-	if data["fraud_correct"] == "sus": score += PENALTIES.fraud_sus
-	if data["kyc_correct"] == "sus": score += PENALTIES.kyc_invalid
-	if data["payment"] == "bad": score += PENALTIES.payment_bad
-	if data["arrears"]: score += PENALTIES.arrears
-	if data["debt_ratio"] == "high": score += PENALTIES.debt_high
-	actual_score = clamp(score, 0.0, 1.0)
+	# --- NEW: Grab the target score straight from the database! ---
+	actual_score = data["credit_correct"]
 	
-	# The text just stays as "Evaluating..." now!
 	result_label.text = "Evaluating: " + data["name"]
-	
 	spawn_3d_model(data["model_scene"])
 
 func spawn_3d_model(model_packed_scene: PackedScene):
@@ -129,10 +113,20 @@ func spawn_3d_model(model_packed_scene: PackedScene):
 func _on_submit():
 	# 1. Instantly grade the player's choice
 	var player_choice = snapped(slider.value, 0.01)
-	var diff = abs(player_choice - actual_score)
-	
-	if diff <= 0.15:
+	var diff = snapped(abs(player_choice - actual_score), 0.01)
+	# --- NEW: Margin of Error set to exactly 0.20 ---
+	if diff <= 0.20:
 		total_correct_answers += 1
+	else:
+		# --- Mistake Tracker ---
+		mistakes += 1
+		if mistakes >= 3:
+			submit_button.visible = false
+			reject_button.visible = false
+			slider.visible = false
+			result_label.text = "TERMINATED"
+			get_tree().current_scene.trigger_game_over()
+			return # Stop loading the next applicant
 
 	# 2. Immediately move to the next person!
 	current_case_index += 1

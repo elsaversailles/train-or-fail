@@ -1,19 +1,25 @@
 [gd_scene format=3 uid="uid://dgqp1lf8jb1wv"]
 
-[ext_resource type="Script" uid="uid://5jdutigoh210" path="res://scripts/screengameplays/kyc_panel.gd" id="1_s16ii"]
+[ext_resource type="Script" uid="uid://5jdutigoh210" path="res://scripts/screengameplays/Kyc_Panel.gd" id="1_s16ii"]
 [ext_resource type="Texture2D" uid="uid://bd3b36dmmtqqv" path="res://assets/icons/magnifying-glass.png" id="2_8n3vj"]
-[ext_resource type="Texture2D" uid="uid://dhif7ts8u8gyu" path="res://assets/icons/arrow_left.png" id="2_g730g"]
-[ext_resource type="Texture2D" uid="uid://cgap6fjotm2qg" path="res://assets/icons/circle.png" id="3_8n3vj"]
-[ext_resource type="Texture2D" uid="uid://bcqtpbomljds5" path="res://assets/icons/arrow_right.png" id="4_a5r6c"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g730g"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8n3vj"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+[ext_resource type="Texture2D" uid="uid://dshvjvdwc8xl1" path="res://images/TutorialsIMG/KCY/kycbutton.png" id="3_a5r6c"]
+[ext_resource type="Texture2D" uid="uid://coiaxcsw4e5fh" path="res://images/TutorialsIMG/KCY/kycleft.png" id="4_a5r6c"]
+[ext_resource type="Texture2D" uid="uid://dkkqgqns5f8ry" path="res://images/TutorialsIMG/KCY/kyccenter.png" id="5_ud6u0"]
+[ext_resource type="Texture2D" uid="uid://donkh3s6d7vgj" path="res://images/TutorialsIMG/KCY/kycright.png" id="6_yd263"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5r6c"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d0jgs"]
+texture = ExtResource("3_a5r6c")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ud6u0"]
+texture = ExtResource("4_a5r6c")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xjj1h"]
+texture = ExtResource("5_ud6u0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yd263"]
+texture = ExtResource("6_yd263")
 
 [node name="KYCPanel" type="Control" unique_id=902633833]
 layout_mode = 3
@@ -30,6 +36,7 @@ offset_left = 130.0
 offset_top = 50.0
 offset_right = 211.0
 offset_bottom = 103.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="CustomerLabel" type="Label" parent="." unique_id=1140032366]
 layout_mode = 0
@@ -37,6 +44,7 @@ offset_left = 230.0
 offset_top = 50.0
 offset_right = 311.0
 offset_bottom = 103.000015
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="CustomerNameLabel" type="Label" parent="." unique_id=1956078083]
 layout_mode = 0
@@ -44,6 +52,7 @@ offset_left = 330.0
 offset_top = 50.0
 offset_right = 411.0
 offset_bottom = 103.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="IDPanel" type="Panel" parent="." unique_id=936656019]
 layout_mode = 1
@@ -56,6 +65,7 @@ offset_right = -44.0
 offset_bottom = -58.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a5r6c")
 
 [node name="IDImage" type="TextureRect" parent="IDPanel" unique_id=1758403976]
 layout_mode = 1
@@ -81,26 +91,40 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 50.0
-offset_top = 500.0
-offset_right = -1002.0
-offset_bottom = -48.0
+offset_left = 64.0
+offset_top = 489.0
+offset_right = -968.0
+offset_bottom = -39.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Legit"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_d0jgs")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_d0jgs")
+theme_override_styles/hover = SubResource("StyleBoxTexture_d0jgs")
+text = "LEGIT"
 
 [node name="SusButton" type="Button" parent="." unique_id=1994152291]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 200.0
-offset_top = 500.0
-offset_right = -852.0
-offset_bottom = -48.0
+offset_left = 221.0
+offset_top = 490.0
+offset_right = -811.0
+offset_bottom = -38.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Sus"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_d0jgs")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_d0jgs")
+theme_override_styles/hover = SubResource("StyleBoxTexture_d0jgs")
+text = "SUSPICIOUS"
 
 [node name="LeftButton" type="Button" parent="." unique_id=522971002]
 layout_mode = 1
@@ -114,9 +138,10 @@ offset_bottom = -53.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
-theme_override_styles/pressed = SubResource("StyleBoxFlat_g730g")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ud6u0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ud6u0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ud6u0")
 action_mode = 0
-icon = ExtResource("2_g730g")
 icon_alignment = 1
 expand_icon = true
 
@@ -125,16 +150,17 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 532.0
+offset_left = 531.0
 offset_top = 519.0
-offset_right = -552.0
+offset_right = -546.0
 offset_bottom = -54.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-theme_override_styles/pressed = SubResource("StyleBoxFlat_8n3vj")
+theme_override_styles/normal = SubResource("StyleBoxTexture_xjj1h")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_xjj1h")
+theme_override_styles/hover = SubResource("StyleBoxTexture_xjj1h")
 action_mode = 0
-icon = ExtResource("3_8n3vj")
 expand_icon = true
 
 [node name="RightButton" type="Button" parent="." unique_id=1852923915]
@@ -149,9 +175,10 @@ offset_bottom = -53.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 8
-theme_override_styles/pressed = SubResource("StyleBoxFlat_a5r6c")
+theme_override_styles/normal = SubResource("StyleBoxTexture_yd263")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yd263")
+theme_override_styles/hover = SubResource("StyleBoxTexture_yd263")
 action_mode = 0
-icon = ExtResource("4_a5r6c")
 expand_icon = true
 
 [connection signal="mouse_entered" from="IDPanel" to="." method="_on_id_panel_mouse_entered"]

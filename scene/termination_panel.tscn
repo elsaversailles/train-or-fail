@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bat7ph8npd5an"]
+
+[ext_resource type="Texture2D" uid="uid://cu3mqqxg73kgm" path="res://images/Endings/Terminated.png" id="1_t1ayg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jv1ba"]
+texture = ExtResource("1_t1ayg")
+
+[node name="termination_panel" type="Control" unique_id=1147590657]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="termination_panel" type="Panel" parent="." unique_id=1847831290]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_jv1ba")

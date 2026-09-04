@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="TrainOrFail Demo Backup (Copy)"
+config/name="TrainOrFail Demo (Copy)"
 run/main_scene="uid://crev2inf1u6xe"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -26,11 +26,15 @@ DialogManager="*uid://nb4suyvp8km4"
 [display]
 
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+window/use_occlusion_culling=false
 
 [filesystem]
 
 import/blender/enabled=false
+
+[gui]
+
+theme/custom="uid://dnly48qlf8v66"
 
 [input]
 
@@ -75,3 +79,4 @@ interact={
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+occlusion_culling/use_occlusion_culling=true

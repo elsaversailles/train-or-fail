@@ -17,6 +17,7 @@ var final_score = 0
 # -----------------------------
 # NODE REFERENCES
 # -----------------------------
+@onready var button_panel: Panel = $ButtonPanel/Panel
 @onready var grip_button = $ButtonPanel/GripButton
 @onready var legit_button = $ButtonPanel/LegitButton
 @onready var sus_button = $ButtonPanel/SusButton
@@ -42,10 +43,17 @@ var location_label_original_position: Vector2
 var item_label_original_position: Vector2
 var images_swapped = false
 
+var mistakes = 0
+
 # -----------------------------
 # READY
 # -----------------------------
 func _ready():
+	# --- 1. CRITICAL DAY 2 FIXES ---
+	self.visible = true # Force it to show up!
+	is_open = false
+	position.x = -panel_width # Ensure it starts tucked away so the grip button is clickable
+	
 	# --- FETCH DATA FROM AUTOLOAD ---
 	applicants = Database.get_session_applicants()
 
@@ -163,6 +171,19 @@ func _on_sus_pressed():
 	submit_answer("sus")
 
 func submit_answer(answer):
+	# 1. Check for a mistake immediately
+	var correct_answer = applicants[current_index]["fraud_correct"]
+	if answer != correct_answer:
+		mistakes += 1
+		
+		# 2. If they hit 3 strikes, tell the main 3D scene to end the game!
+		if mistakes >= 3:
+			button_panel.visible = false
+			applicant_label.text = "TERMINATED"
+			get_tree().current_scene.trigger_game_over()
+			return # Stop loading the next applicant
+
+	# 3. If they survive, continue as normal
 	player_answers.append(answer)
 	current_index += 1
 
@@ -200,6 +221,7 @@ func finish_applicants():
 	applicant_label.text = "All applicants reviewed"
 	legit_button.visible = false
 	sus_button.visible = false
+	button_panel.visible = false
 	shutdown_button.visible = true
 
 func _on_shutdown_pressed():

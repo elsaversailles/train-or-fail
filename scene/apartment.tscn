@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://crr4tk3omcu06"]
+
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scene/character.tscn" id="1_mb15i"]
+[ext_resource type="Script" uid="uid://wlle720apfeg" path="res://scripts/Apartment.gd" id="1_x34op"]
+[ext_resource type="PackedScene" uid="uid://bx7scsfg2nivv" path="res://scene/pause_panel.tscn" id="2_x34op"]
+[ext_resource type="PackedScene" uid="uid://dtpe25cd85fc8" path="res://scene/result_panel.tscn" id="3_w0ngi"]
+[ext_resource type="PackedScene" uid="uid://cv87ukpeiw7cp" path="res://scene/crosshair.tscn" id="5_w0ngi"]
+[ext_resource type="Texture2D" uid="uid://djrodjg24p7dk" path="res://images/Endings/Perfect.png" id="6_gsw74"]
+
+[sub_resource type="Environment" id="Environment_jv1ba"]
+
+[node name="Apartment" type="Node3D" unique_id=2014020559]
+script = ExtResource("1_x34op")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1682298595]
+environment = SubResource("Environment_jv1ba")
+
+[node name="floor" type="CSGBox3D" parent="." unique_id=873283138]
+transform = Transform3D(10, 0, 0, 0, 0.5, 0, 0, 0, 10, 0, 0, 0)
+use_collision = true
+
+[node name="ceiling" type="CSGBox3D" parent="." unique_id=1155596356]
+transform = Transform3D(10, 0, 0, 0, 0.5, 0, 0, 0, 10, 0, 6.1676917, 0)
+use_collision = true
+
+[node name="wall" type="CSGBox3D" parent="." unique_id=398790339]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 10, -5, 3, 0)
+use_collision = true
+size = Vector3(1, 13.625977, 1)
+
+[node name="wall2" type="CSGBox3D" parent="." unique_id=1194402785]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 10, 5, 3, 0)
+use_collision = true
+size = Vector3(1, 13.625977, 1)
+
+[node name="wall3" type="CSGBox3D" parent="." unique_id=2048059627]
+transform = Transform3D(10, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 3, 5)
+use_collision = true
+size = Vector3(1, 13.626, 1)
+
+[node name="wall4" type="CSGBox3D" parent="." unique_id=373984810]
+transform = Transform3D(10, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 3, -5)
+use_collision = true
+size = Vector3(1, 13.626, 1)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=215847046]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.8573294, 0)
+light_energy = 20.0
+omni_range = 8.32
+omni_attenuation = 2.0
+
+[node name="Player" parent="." unique_id=2061402672 instance=ExtResource("1_mb15i")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.1288652, 0.3669883, 1.1014926)
+
+[node name="PausePanel" parent="." unique_id=1179524455 instance=ExtResource("2_x34op")]
+
+[node name="ResultPanel" parent="." unique_id=1111248632 instance=ExtResource("3_w0ngi")]
+
+[node name="CanvasLayer" parent="." unique_id=1382565654 instance=ExtResource("5_w0ngi")]
+
+[node name="GameFinishedPanel" type="Panel" parent="." unique_id=852810982]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="GameFinishedPanel" unique_id=638450705]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_gsw74")
+expand_mode = 1

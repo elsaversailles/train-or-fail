@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dci8u0ys21qui"]
 
 [ext_resource type="Script" uid="uid://bmgppf0fx0hwn" path="res://scripts/Npc_Dialogue_Box.gd" id="1_302gq"]
+[ext_resource type="Texture2D" uid="uid://dkjx5vwyvbxh5" path="res://assets/try/chat_bubble.png" id="2_khly1"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_jv1ba"]
 viewport_path = NodePath("SubViewport")
@@ -16,11 +17,17 @@ texture = SubResource("ViewportTexture_jv1ba")
 transparent_bg = true
 
 [node name="TextBoxContainer" type="MarginContainer" parent="SubViewport" unique_id=547054543]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 43.0
+offset_bottom = 43.0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="SubViewport/TextBoxContainer" unique_id=1138680160]
 layout_mode = 2
+texture = ExtResource("2_khly1")
+region_rect = Rect2(0, 0, 32.300575, 32.510662)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
 
 [node name="Padding" type="MarginContainer" parent="SubViewport/TextBoxContainer" unique_id=1947854623]
 layout_mode = 2

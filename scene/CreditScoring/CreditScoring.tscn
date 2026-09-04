@@ -10,11 +10,14 @@
 [ext_resource type="PackedScene" uid="uid://c2hpohwilg1lq" path="res://addons/table.tscn" id="6_plurb"]
 [ext_resource type="PackedScene" uid="uid://c0v72003xgbg7" path="res://assets/Monitor/Monitor.glb" id="8_5kwha"]
 [ext_resource type="Script" uid="uid://chk5c2vkeowgj" path="res://scripts/Screen.gd" id="9_46dfy"]
+[ext_resource type="PackedScene" uid="uid://b6tmwnj3ngb3a" path="res://scene/Tutorial/cs_tutorial.tscn" id="9_y65os"]
+[ext_resource type="Texture2D" uid="uid://cu3mqqxg73kgm" path="res://images/Endings/Terminated.png" id="10_3iqyl"]
 [ext_resource type="PackedScene" uid="uid://dm044fdmw3w5o" path="res://scene/screengameplays/credit_scoring_panel.tscn" id="10_bebfk"]
 [ext_resource type="PackedScene" uid="uid://dphv38qynyp4e" path="res://scene/model_container.tscn" id="10_gkt0f"]
 [ext_resource type="PackedScene" uid="uid://dtpe25cd85fc8" path="res://scene/result_panel.tscn" id="11_quma2"]
 [ext_resource type="PackedScene" uid="uid://bx7scsfg2nivv" path="res://scene/pause_panel.tscn" id="12_8hxc1"]
 [ext_resource type="AudioStream" uid="uid://lm3fs23d4v2l" path="res://music/gameplaymusic.mp3" id="13_3uodl"]
+[ext_resource type="Texture2D" uid="uid://c5x64jsfa3ot3" path="res://images/TutorialsIMG/FRAUDDETECTION/fdholder.png" id="13_n8goo"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hybxs"]
 load_path = "res://.godot/imported/wall.jpeg-274b9c5ce9692041c8e6911d093e9da9.s3tc.ctex"
@@ -58,14 +61,8 @@ size = Vector2(0.41, 0.53)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wscrc"]
 data = PackedVector3Array(0.205, -0.265, 0, -0.205, -0.265, 0, 0.205, 0.265, 0, -0.205, -0.265, 0, -0.205, 0.265, 0, 0.205, 0.265, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjnwh"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jcbur"]
-load_path = "res://.godot/imported/a1_location.png-852cc11683418185bf71a881fc977259.ctex"
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0d4pv"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_smf0o"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y65os"]
+texture = ExtResource("13_n8goo")
 
 [node name="CreditScoring" type="Node3D" unique_id=1103394804]
 script = ExtResource("1_x4bpk")
@@ -169,6 +166,25 @@ text = "Credit Scoring
 Level 1
 Day 1"
 
+[node name="CSTutorial" parent="CanvasLayer" unique_id=427432534 instance=ExtResource("9_y65os")]
+
+[node name="GameOverPanel" type="Panel" parent="CanvasLayer" unique_id=1004124913]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameOverPanel" unique_id=1967696182]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_3iqyl")
+expand_mode = 1
+
 [node name="Monitor" parent="." unique_id=724615049 instance=ExtResource("8_5kwha")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.5272965, 0.68358636, 0.083559036)
 
@@ -199,152 +215,41 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11.2
 
 [node name="CreditScoringPanel" parent="Monitor/Screen/SubViewport" unique_id=1931401684 instance=ExtResource("10_bebfk")]
 
-[node name="SlidingPanel" type="Panel" parent="Monitor/Screen/SubViewport" unique_id=2049437397]
+[node name="SlidingPanel" type="Panel" parent="Monitor/Screen/SubViewport" unique_id=138544825]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -944.0
-offset_right = -1152.0
+offset_left = -941.0
+offset_right = -1149.0
 offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ApplicantLabel" type="Label" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=83242092]
-layout_mode = 0
-offset_left = 31.0
-offset_top = 3.0
-offset_right = 142.0
-offset_bottom = 26.0
-text = "Applicant 1 / 5"
-
-[node name="ButtonPanel" type="Panel" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=948163116]
+[node name="ButtonPanel" type="Panel" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=2107755784]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 8.0
+offset_right = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GripButton" type="Button" parent="Monitor/Screen/SubViewport/SlidingPanel/ButtonPanel" unique_id=330496296]
+[node name="GripButton" type="Button" parent="Monitor/Screen/SubViewport/SlidingPanel/ButtonPanel" unique_id=956626159]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -8.0
-offset_right = 48.0
+offset_left = -4.0
+offset_top = -1.0
+offset_right = 44.0
+offset_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 2
-text = "|||
-|||
-|||
-|||"
-
-[node name="LegitButton" type="Button" parent="Monitor/Screen/SubViewport/SlidingPanel/ButtonPanel" unique_id=2056387240]
-layout_mode = 0
-offset_left = 760.0
-offset_top = 300.0
-offset_right = 900.0
-offset_bottom = 440.0
-size_flags_vertical = 3
-text = "Legit"
-
-[node name="SusButton" type="Button" parent="Monitor/Screen/SubViewport/SlidingPanel/ButtonPanel" unique_id=1198441296]
-layout_mode = 0
-offset_left = 760.0
-offset_top = 450.0
-offset_right = 900.0
-offset_bottom = 590.0
-size_flags_vertical = 3
-text = "Sus"
-
-[node name="ShutdownButton" type="Button" parent="Monitor/Screen/SubViewport/SlidingPanel/ButtonPanel" unique_id=180447544]
-visible = false
-layout_mode = 0
-offset_left = 852.0
-offset_top = 174.0
-offset_right = 939.0
-offset_bottom = 205.0
-size_flags_vertical = 10
-text = "Shutdown"
-
-[node name="LocationLabel" type="Label" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=7511633]
-layout_mode = 0
-offset_left = 328.0
-offset_top = 39.0
-offset_right = 438.0
-offset_bottom = 69.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_gjnwh")
-text = "Location"
-horizontal_alignment = 1
-
-[node name="LocationTextureButton" type="TextureButton" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=1357714526]
-layout_mode = 0
-offset_left = 38.0
-offset_top = 80.0
-offset_right = 738.0
-offset_bottom = 590.0
-texture_normal = SubResource("CompressedTexture2D_jcbur")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="ItemLabel" type="Label" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=242352973]
-layout_mode = 0
-offset_left = 589.0
-offset_top = 350.0
-offset_right = 699.0
-offset_bottom = 385.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_0d4pv")
-text = "Item"
-horizontal_alignment = 1
-
-[node name="ItemTextureButton" type="TextureButton" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=234596525]
-layout_mode = 0
-offset_left = 529.0
-offset_top = 388.0
-offset_right = 699.0
-offset_bottom = 558.0
-texture_normal = SubResource("CompressedTexture2D_smf0o")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="TimeLabel" type="Label" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=1442096397]
-layout_mode = 0
-offset_left = 765.0
-offset_top = 80.0
-offset_right = 895.0
-offset_bottom = 110.0
-theme_override_font_sizes/font_size = 20
-text = "Time"
-
-[node name="TimeValueLabel" type="Label" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=1495080212]
-layout_mode = 0
-offset_left = 765.0
-offset_top = 120.0
-offset_right = 895.0
-offset_bottom = 150.0
-theme_override_font_sizes/font_size = 20
-
-[node name="PriceLabel" type="Label" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=1682235694]
-layout_mode = 0
-offset_left = 765.0
-offset_top = 175.0
-offset_right = 895.0
-offset_bottom = 205.0
-theme_override_font_sizes/font_size = 20
-text = "Price"
-
-[node name="PriceValueLabel" type="Label" parent="Monitor/Screen/SubViewport/SlidingPanel" unique_id=1725269754]
-layout_mode = 0
-offset_left = 765.0
-offset_top = 210.0
-offset_right = 895.0
-offset_bottom = 240.0
-theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_y65os")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_y65os")
+theme_override_styles/hover = SubResource("StyleBoxTexture_y65os")
 
 [node name="ResultPanel" parent="." unique_id=779608946 instance=ExtResource("11_quma2")]
 

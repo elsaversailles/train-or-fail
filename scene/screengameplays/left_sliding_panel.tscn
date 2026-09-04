@@ -1,18 +1,40 @@
 [gd_scene format=3 uid="uid://dmxltttqxwip0"]
 
-[ext_resource type="Script" uid="uid://bd1eqx7ns2mep" path="res://scripts/screengameplays/left_sliding_panel.gd" id="1_28aal"]
+[ext_resource type="Script" uid="uid://bd1eqx7ns2mep" path="res://scripts/screengameplays/Left_Sliding_Panel.gd" id="1_28aal"]
+[ext_resource type="Texture2D" uid="uid://yahc322jgg0j" path="res://images/TutorialsIMG/FRAUDDETECTION/fdpanel.png" id="2_glxag"]
+[ext_resource type="Texture2D" uid="uid://koiyree2g1jc" path="res://images/TutorialsIMG/FRAUDDETECTION/fdbuttons.png" id="2_uanr2"]
+[ext_resource type="Texture2D" uid="uid://c5x64jsfa3ot3" path="res://images/TutorialsIMG/FRAUDDETECTION/fdholder.png" id="3_3w45d"]
+[ext_resource type="Texture2D" uid="uid://bxsdiccws8elw" path="res://images/TutorialsIMG/FRAUDDETECTION/fdidk.png" id="5_m7ag6"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28aal"]
-bg_color = Color(11.708403, 11.708403, 11.708403, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jv1ba"]
+texture = ExtResource("2_glxag")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uanr2"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jv1ba"]
+bg_color = Color(0.09411765, 0, 0.6784314, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ew6px"]
+texture = ExtResource("3_3w45d")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ew2bv"]
+texture = ExtResource("2_uanr2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m5civ"]
+texture = ExtResource("2_uanr2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ieep"]
+texture = ExtResource("2_uanr2")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ieep"]
+bg_color = Color(0.09411765, 0, 0.6784314, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjnwh"]
+bg_color = Color(0.09411765, 0, 0.6784314, 1)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jcbur"]
 load_path = "res://.godot/imported/a1_location.png-852cc11683418185bf71a881fc977259.ctex"
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0d4pv"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ew6px"]
+bg_color = Color(0.09411765, 0, 0.6784314, 1)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_smf0o"]
 
@@ -27,14 +49,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_28aal")
 
-[node name="ApplicantLabel" type="Label" parent="." unique_id=1771091912]
-layout_mode = 0
-offset_left = 31.0
-offset_top = 3.0
-offset_right = 142.0
-offset_bottom = 26.0
-text = "Applicant 1 / 5"
-
 [node name="ButtonPanel" type="Panel" parent="." unique_id=1400235126]
 layout_mode = 1
 anchors_preset = 15
@@ -42,6 +56,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_jv1ba")
+
+[node name="Panel" type="Panel" parent="ButtonPanel" unique_id=1163994305]
+layout_mode = 0
+offset_left = 750.0
+offset_top = 391.0
+offset_right = 933.0
+offset_bottom = 593.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jv1ba")
 
 [node name="GripButton" type="Button" parent="ButtonPanel" unique_id=1082902497]
 layout_mode = 1
@@ -49,32 +72,48 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -8.0
-offset_right = 40.0
+offset_left = -4.0
+offset_top = -1.0
+offset_right = 44.0
+offset_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 2
-text = "|||
-|||
-|||
-|||"
+theme_override_styles/normal = SubResource("StyleBoxTexture_ew6px")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ew6px")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ew6px")
 
 [node name="LegitButton" type="Button" parent="ButtonPanel" unique_id=62105491]
 layout_mode = 0
-offset_left = 760.0
-offset_top = 300.0
-offset_right = 900.0
-offset_bottom = 440.0
+offset_left = 765.0
+offset_top = 403.0
+offset_right = 915.0
+offset_bottom = 478.0
 size_flags_vertical = 3
-text = "Legit"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_ew2bv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ew2bv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ew2bv")
+text = "LEGIT"
+expand_icon = true
 
 [node name="SusButton" type="Button" parent="ButtonPanel" unique_id=63002803]
 layout_mode = 0
-offset_left = 760.0
-offset_top = 450.0
-offset_right = 900.0
-offset_bottom = 590.0
+offset_left = 765.0
+offset_top = 503.0
+offset_right = 915.0
+offset_bottom = 578.0
 size_flags_vertical = 3
-text = "Sus"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_m5civ")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ew2bv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ew2bv")
+text = "SUSPICIOUS"
 
 [node name="ShutdownButton" type="Button" parent="ButtonPanel" unique_id=1851240839]
 layout_mode = 0
@@ -84,11 +123,51 @@ offset_right = 933.0
 offset_bottom = 61.0
 size_flags_vertical = 10
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_28aal")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_uanr2")
-theme_override_styles/hover = SubResource("StyleBoxFlat_uanr2")
+theme_override_styles/normal = SubResource("StyleBoxTexture_5ieep")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ew2bv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ew2bv")
 text = "End Training"
+
+[node name="Panel" type="Panel" parent="." unique_id=1210390800]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 11.925
+offset_right = 312.0
+offset_bottom = 46.925
+theme_override_styles/panel = SubResource("StyleBoxFlat_5ieep")
+
+[node name="Label" type="Label" parent="Panel" unique_id=1989083174]
+layout_mode = 0
+offset_left = 49.44
+offset_top = -1.3
+offset_right = 295.44
+offset_bottom = 33.7
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Fraud Detection.cmd"
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=2008636769]
+layout_mode = 0
+offset_left = -7.93
+offset_top = -15.76
+offset_right = 46.400017
+offset_bottom = 40.965004
+texture = ExtResource("5_m7ag6")
+expand_mode = 1
+
+[node name="ApplicantLabel" type="Label" parent="." unique_id=1771091912]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 45.0
+offset_right = 180.0
+offset_bottom = 71.99998
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Applicant 1 / 5"
 
 [node name="LocationLabel" type="Label" parent="." unique_id=453996444]
 layout_mode = 0
@@ -120,7 +199,7 @@ offset_right = 699.0
 offset_bottom = 385.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_0d4pv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ew6px")
 text = "Item"
 horizontal_alignment = 1
 
@@ -140,6 +219,7 @@ offset_left = 765.0
 offset_top = 80.0
 offset_right = 895.0
 offset_bottom = 110.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Time"
 
@@ -157,6 +237,7 @@ offset_left = 765.0
 offset_top = 175.0
 offset_right = 895.0
 offset_bottom = 205.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Price"
 

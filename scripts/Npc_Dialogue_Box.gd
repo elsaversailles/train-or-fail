@@ -20,7 +20,7 @@ func _ready():
 	# self.visible = false # Temporarily comment this out!
 	
 	# Feed it a long sentence to test the width and the typing effect
-	display_text("Hi!.. To get to your office just go straight then turn left... You will see a building named angiloan.")
+	display_text("Go inside your appartment.")
 func display_text(text_to_display: String):
 	self.visible = true
 	text = text_to_display

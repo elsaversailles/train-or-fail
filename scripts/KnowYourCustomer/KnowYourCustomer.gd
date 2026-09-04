@@ -1,85 +1,64 @@
 extends Node3D
 
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
-@onready var final_result_panel = $ResultPanel
 @onready var player = $MainChar
 @onready var info_label: Label = $CanvasLayer/Label
+@onready var tutorial_ui = $CanvasLayer/KYCTutorial
+@onready var game_over_panel = $CanvasLayer/GameOverPanel
 
 # --- DYNAMIC TRACKING ---
 var current_level: int = 1
 var current_day: int = 1
-var gameplay_name: String = "KYC"
+var gameplay_name: String = "KnowYourCustomer"
 
 func _ready():
-	final_result_panel.visible = false
-	final_result_panel.continue_requested.connect(_on_terminal_clicked)
+	if canvas_layer:
+		canvas_layer.visible = true
+	# Hide Game Over panel by default and connect the click event
+	if game_over_panel:
+		game_over_panel.visible = false
+		game_over_panel.gui_input.connect(_on_game_over_clicked)
 	
 	# 1. Ask SaveManager what level/day we are currently playing. 
-	# (If they don't exist yet, it defaults to 1).
 	current_level = SaveManager.current_save_data.get("current_level", 1)
 	current_day = SaveManager.current_save_data.get("current_day", 1)
-	
-	if info_label:
-		info_label.text = "Know Your Customer\nLevel %d\nDay %d" % [current_level, current_day]
 
-func show_final_result(score: int):
-	# Fade out
-	await SceneTransition.fade_to_black()
+	if info_label:
+			info_label.text = "Know Your Customer\nDay %d" % current_day
+			
+	if tutorial_ui:
+		if current_day == 4: # Day 4 is KYC Tutorial Day!
+			pass 
+		else:
+			# Days 5 and 6 skip the tutorial instantly
+			tutorial_ui.queue_free()
+
+# TERMINATION LOGIC
+func trigger_game_over():
+	# Show the full-screen termination panel
+	if game_over_panel:
+		game_over_panel.visible = true
 	
-	# Pause player and show terminal
+	# Unlock mouse and freeze player
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if player:
 		player.is_paused = true
-		
-	canvas_layer.visible = false
-	final_result_panel.display_terminal_report(score, current_level)
-	
-	# Fade back in
-	SceneTransition.fade_from_black()
 
-	# ---------------------------------------------------------
-	# 2. CALCULATE THE NEXT DAY AND LEVEL
-	# ---------------------------------------------------------
-	var next_level = current_level
-	var next_day = current_day + 1
-	var next_scene_path = "res://scene/KnowYourCustomer/KnowYourCustomer.tscn" # It loops back to itself!
-	
-	# If Day 2 is finished, reset to Day 1 and go to the next Level
-	if next_day > 2:
-		next_day = 1
-		next_level += 1
+func _on_game_over_clicked(event: InputEvent):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		get_tree().paused = false 
+		get_tree().reload_current_scene()
 
-	# Format the text for the Save JSON
-	var current_level_id = "%s_L%d_D%d" % [gameplay_name.to_lower(), current_level, current_day]
-	var next_stage_name = "%s L%d - Day %d" % [gameplay_name, next_level, next_day]
+func show_final_result(score: int):
+	# 1. Temporarily store the shift's results to read later in the apartment
+	SaveManager.current_save_data["pending_score"] = score
+	SaveManager.current_save_data["pending_day"] = current_day
+	SaveManager.current_save_data["pending_level"] = current_level
+	SaveManager.current_save_data["pending_department"] = gameplay_name
 
-	# ---------------------------------------------------------
-	# 3. CHECK FOR PROMOTION / NEXT GAMEPLAY TYPE
-	# ---------------------------------------------------------
-	if next_level > 5:
-		# They beat Fraud L5 D2! Send them to KYC tomorrow.
-		next_scene_path = "res://scene/CreditScoring/CreditScoring.tscn"
-		next_stage_name = "Credit L1 - Day 1"
-		
-		# Reset the internal trackers for the KYC script to use
-		SaveManager.current_save_data["current_level"] = 1
-		SaveManager.current_save_data["current_day"] = 1
-	else:
-		# Save the updated trackers for tomorrow's Fraud shift
-		SaveManager.current_save_data["current_level"] = next_level
-		SaveManager.current_save_data["current_day"] = next_day
+	# 2. Update the save file so if they quit, they load back into the outside world!
+	SaveManager.current_save_data["current_scene_path"] = "res://scene/outside_world.tscn"
+	SaveManager.save_game(SaveManager.current_slot, SaveManager.current_save_data)
 
-	# 4. Save the game!
-	SaveManager.auto_save_level(next_scene_path, next_stage_name, current_level_id, score)
-
-
-# ---------------------------------------------------------
-# TERMINAL CLICK (END OF DAY)
-# ---------------------------------------------------------
-func _on_terminal_clicked():
-	get_tree().paused = false 
-	
-	# Send them to the street to start the next morning!
-	# (The invisible door on the street will read the SaveManager and 
-	# teleport them right back here, but as the next day!)
+	# 3. Send them to the street without advancing the day yet
 	SceneTransition.change_scene("res://scene/outside_world.tscn")

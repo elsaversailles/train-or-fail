@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bx7scsfg2nivv" path="res://scene/pause_panel.tscn" id="4_oauyh"]
 [ext_resource type="PackedScene" uid="uid://cv87ukpeiw7cp" path="res://scene/crosshair.tscn" id="5_qqb2a"]
 
+[sub_resource type="Environment" id="Environment_jv1ba"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_oauyh"]
 size = Vector3(3, 2.0584717, 14.159119)
 
@@ -34,6 +36,9 @@ size = Vector3(20.745733, 2, 0.78467)
 size = Vector3(2.0420115, 2, 2.0570376)
 
 [node name="OfficeLobby" type="Node3D" unique_id=1755870788]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=319132172]
+environment = SubResource("Environment_jv1ba")
 
 [node name="OLobby" parent="." unique_id=331321462 instance=ExtResource("1_oauyh")]
 
@@ -102,5 +107,25 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5, 
 text = "ELEVATOR
 "
 font_size = 133
+
+[node name="Lights" type="Node3D" parent="." unique_id=822087955]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights" unique_id=62073456]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1938133, 8.743194, 5.1580176)
+light_energy = 40.0
+omni_range = 20.0
+omni_attenuation = 2.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lights" unique_id=299769539]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1938133, 8.743194, -7.350701)
+light_energy = 40.0
+omni_range = 20.0
+omni_attenuation = 2.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Lights" unique_id=1793677457]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8653579, 8.743194, -7.350701)
+light_energy = 40.0
+omni_range = 20.0
+omni_attenuation = 2.0
 
 [connection signal="body_entered" from="ElevetorDoor" to="ElevetorDoor" method="_on_body_entered"]

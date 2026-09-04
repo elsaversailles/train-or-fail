@@ -17,7 +17,7 @@ var is_id_zoomed: bool = false
 var original_id_pos: Vector2
 var zoom_scale: float = 3 # Change this to make it bigger/smaller when clicked
 var custom_cursor_img = preload("res://assets/cursor/cursor_magnifyingglass.svg") # mouse hover cursor
-
+var mistakes = 0
 # -----------------------------
 # NODE REFERENCES
 # -----------------------------
@@ -136,6 +136,20 @@ func _on_sus_pressed():
 	submit_answer("sus")
 
 func submit_answer(answer):
+	# 1. Check for a mistake immediately
+	var correct_answer = applicants[current_index]["kyc_correct"] # FIXED: Now checks KYC rules!
+	if answer != correct_answer:
+		mistakes += 1
+		
+		# 2. If they hit 3 strikes, tell the main 3D scene to end the game!
+		if mistakes >= 3:
+			legit_button.visible = false # FIXED: Hiding the buttons directly
+			sus_button.visible = false
+			applicant_label.text = "TERMINATED"
+			get_tree().current_scene.trigger_game_over()
+			return # Stop loading the next applicant
+
+	# 3. If they survive, continue as normal
 	player_answers.append(answer)
 	current_index += 1
 

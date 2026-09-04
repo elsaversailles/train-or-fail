@@ -10,11 +10,13 @@
 [ext_resource type="PackedScene" uid="uid://c2hpohwilg1lq" path="res://addons/table.tscn" id="8_v70cj"]
 [ext_resource type="PackedScene" uid="uid://c0v72003xgbg7" path="res://assets/Monitor/Monitor.glb" id="9_qfd7q"]
 [ext_resource type="Script" uid="uid://chk5c2vkeowgj" path="res://scripts/Screen.gd" id="10_1g14j"]
+[ext_resource type="Texture2D" uid="uid://cu3mqqxg73kgm" path="res://images/Endings/Terminated.png" id="10_118ik"]
 [ext_resource type="PackedScene" uid="uid://dphv38qynyp4e" path="res://scene/model_container.tscn" id="11_g8pml"]
 [ext_resource type="PackedScene" uid="uid://dmxltttqxwip0" path="res://scene/screengameplays/left_sliding_panel.tscn" id="12_ss3kf"]
 [ext_resource type="PackedScene" uid="uid://dtpe25cd85fc8" path="res://scene/result_panel.tscn" id="13_y8j5q"]
 [ext_resource type="AudioStream" uid="uid://lm3fs23d4v2l" path="res://music/gameplaymusic.mp3" id="14_sv7s7"]
 [ext_resource type="PackedScene" uid="uid://bx7scsfg2nivv" path="res://scene/pause_panel.tscn" id="15_65k3s"]
+[ext_resource type="PackedScene" uid="uid://cdoxo1627leua" path="res://scene/Tutorial/fd_tutorial.tscn" id="16_k8o8q"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hybxs"]
 load_path = "res://.godot/imported/wall.jpeg-274b9c5ce9692041c8e6911d093e9da9.s3tc.ctex"
@@ -151,6 +153,26 @@ offset_bottom = 124.0
 text = "Fraud Detection
 Level 1
 Day 1"
+
+[node name="FDTutorial" parent="CanvasLayer" unique_id=1793439782 instance=ExtResource("16_k8o8q")]
+visible = false
+
+[node name="GameOverPanel" type="Panel" parent="CanvasLayer" unique_id=1157503563]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameOverPanel" unique_id=1092630431]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_118ik")
+expand_mode = 1
 
 [node name="Monitor" parent="." unique_id=724615049 instance=ExtResource("9_qfd7q")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.5272965, 0.68358636, 0.083559036)

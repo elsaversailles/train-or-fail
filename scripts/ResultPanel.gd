@@ -6,8 +6,6 @@ signal continue_requested
 @onready var background = $Background
 
 # --- THE PRO WAY: Exported Variable ---
-# This creates a setting directly in your Godot Inspector!
-# Make it smaller (e.g., 0.005) to type faster, or larger (0.05) to type slower.
 @export var typing_speed: float = 0.01
 
 # --- State Variables ---
@@ -19,42 +17,33 @@ func _ready():
 	visible = false
 	background.gui_input.connect(_on_background_clicked)
 
-func display_terminal_report(score: int, current_level: int):
-	var is_promoted = "Yes" if score >= 3 else "No"
-	var alignment_decimal = float(score) / 5.0
-	var percentage = int(alignment_decimal * 100)
+# --- UPDATED FUNCTION SIGNATURE ---
+# Now it specifically asks for the Gameplay Name, Level, Day, and Score!
+func display_terminal_report(gameplay_name: String, level: int, day: int, score: int):
 	
-	var report_string = """Angiloan AI Model Training Report
-======================
+	# The triple quotes let us draw a clean ASCII box to make it lively!
+	var report_string = """> UPLOADING DAILY METRICS...
+> ANALYZING OPERATIVE PERFORMANCE...
 
-Fraud Detection Cases: 5
-Epoch: %d
-Accurate Detection: %d/5
-Status: Regiment Training %d/5 Done
+===================================
+  GAMEPLAY : %s
+  LEVEL    : %d
+  DAY      : %d
+===================================
+  SCORE    : %d / 5
+===================================
 
-======================
-GPU Utilization: 100%%
-RAM Consumed: 17GB
-Model Type: Regression
-Training Type: RLHF
-======================
-
-Alignment Score: %.1f (%d%%)
-Promotion: %s
-
-======================
-END OF REPORT
-...
-...
-
-"CLICK ANYWHERE TO CONTINUE"
+> DATA SYNC COMPLETE.
+> [CLICK ANYWHERE TO CONTINUE]
 █
 """
 	
 	# Hide all characters initially
 	terminal_text.visible_characters = 0
+	
+	# Fill in the placeholders with our 4 variables
 	terminal_text.text = report_string % [
-		current_level, score, current_level, alignment_decimal, percentage, is_promoted
+		gameplay_name, level, day, score
 	]
 	
 	visible = true
@@ -62,8 +51,6 @@ END OF REPORT
 	can_continue = false
 	
 	var total_chars = terminal_text.get_total_character_count()
-	
-	# --- USING YOUR NEW VARIABLE ---
 	var total_duration = total_chars * typing_speed
 	
 	# Create a Tween to animate the typing
@@ -74,12 +61,10 @@ END OF REPORT
 	current_tween.tween_property(terminal_text, "visible_characters", total_chars, total_duration)
 	current_tween.finished.connect(_on_typing_finished)
 
-
 func _on_typing_finished():
 	is_typing = false
 	can_continue = true
 	terminal_text.visible_characters = -1 
-
 
 func _on_background_clicked(event: InputEvent):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:

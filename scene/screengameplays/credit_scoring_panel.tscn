@@ -1,14 +1,45 @@
 [gd_scene format=3 uid="uid://dm044fdmw3w5o"]
 
-[ext_resource type="Script" uid="uid://fpwll3wo1ylp" path="res://scripts/screengameplays/credit_scoring_panel.gd" id="1_uhrk6"]
-[ext_resource type="Texture2D" uid="uid://bj4ti26rue7p8" path="res://assets/icons/redflag.png" id="2_vshj4"]
+[ext_resource type="Script" uid="uid://fpwll3wo1ylp" path="res://scripts/screengameplays/Credit_Scoring_Panel.gd" id="1_uhrk6"]
+[ext_resource type="Texture2D" uid="uid://b63q7xp4ywisp" path="res://images/TutorialsIMG/CREDITSCORING/cspanel.png" id="2_etpp7"]
+[ext_resource type="Texture2D" uid="uid://cshetdib31i03" path="res://images/TutorialsIMG/CREDITSCORING/csgrabber.png" id="3_122qi"]
+[ext_resource type="Texture2D" uid="uid://b2li6b1n0vt2x" path="res://images/TutorialsIMG/CREDITSCORING/csbutton.png" id="4_5aogp"]
+[ext_resource type="Texture2D" uid="uid://bn283ixmr4qtu" path="res://images/TutorialsIMG/CREDITSCORING/csslider.png" id="4_122qi"]
+[ext_resource type="Texture2D" uid="uid://dowrpijsmf37r" path="res://images/TutorialsIMG/CREDITSCORING/csholder.png" id="5_4s6tp"]
+[ext_resource type="FontFile" uid="uid://bmy32g0c66s4e" path="res://theme/DarumadropOne-Regular.ttf" id="5_5aogp"]
+[ext_resource type="Texture2D" uid="uid://dcsws2l6c4bs7" path="res://images/TutorialsIMG/CREDITSCORING/csflagbutton.png" id="6_xghf2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d5ytb"]
+texture = ExtResource("2_etpp7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xsfjf"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+texture = ExtResource("4_122qi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v10c6"]
+texture = ExtResource("4_5aogp")
+texture_margin_left = 17.0
+texture_margin_top = 15.0
+texture_margin_right = 14.0
+texture_margin_bottom = 6.0
+region_rect = Rect2(-1, 9, 187, 154)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s784d"]
+texture = ExtResource("4_5aogp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x3kqo"]
+texture = ExtResource("5_4s6tp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t70an"]
+texture = ExtResource("6_xghf2")
 
 [node name="CreditScoringPanel" type="Control" unique_id=1931401684]
 layout_mode = 3
 anchor_right = 0.975
 anchor_bottom = 1.0
-offset_left = 1150.0
-offset_right = 970.8004
+offset_left = 1145.0
+offset_right = 965.8004
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_uhrk6")
@@ -18,8 +49,11 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_d5ytb")
 
 [node name="VSlider" type="VSlider" parent="Panel" unique_id=2043813608]
 layout_mode = 1
@@ -31,6 +65,10 @@ offset_top = 63.0
 offset_right = -154.69617
 offset_bottom = -185.0
 grow_vertical = 2
+theme_override_icons/grabber = ExtResource("3_122qi")
+theme_override_icons/grabber_highlight = ExtResource("3_122qi")
+theme_override_icons/grabber_disabled = ExtResource("3_122qi")
+theme_override_styles/slider = SubResource("StyleBoxTexture_xsfjf")
 max_value = 1.0
 step = 0.2
 
@@ -41,6 +79,7 @@ anchor_bottom = 1.0
 offset_right = 23.0
 offset_bottom = -375.0
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "1.0"
 horizontal_alignment = 1
 
@@ -52,6 +91,7 @@ offset_top = 70.0
 offset_right = 23.0
 offset_bottom = -305.0
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0.8"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -64,6 +104,7 @@ offset_top = 145.0
 offset_right = 23.0
 offset_bottom = -230.0
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0.6"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -76,6 +117,7 @@ offset_top = 225.0
 offset_right = 23.0
 offset_bottom = -150.0
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0.4"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -88,6 +130,7 @@ offset_top = 300.0
 offset_right = 23.0
 offset_bottom = -75.0
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0.2"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -100,6 +143,7 @@ offset_top = 380.0
 offset_right = 23.0
 offset_bottom = 5.0
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -113,6 +157,7 @@ offset_left = 150.0
 offset_top = 130.0
 offset_right = -31.72815
 offset_bottom = -443.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="KYCLabel" type="Label" parent="Panel" unique_id=703007805]
 layout_mode = 1
@@ -123,6 +168,7 @@ offset_left = 150.0
 offset_top = 250.0
 offset_right = -32.000122
 offset_bottom = -323.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="TabContainer" type="TabContainer" parent="Panel" unique_id=1484242440]
 layout_mode = 1
@@ -133,7 +179,13 @@ offset_left = 356.0
 offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hovered_color = Color(0, 0, 0, 1)
+theme_override_colors/font_unselected_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_5aogp")
+theme_override_styles/tab_selected = SubResource("StyleBoxTexture_v10c6")
 current_tab = 0
+tab_focus_mode = 1
 
 [node name="General Info" type="TextureRect" parent="Panel/TabContainer" unique_id=186648840]
 layout_mode = 2
@@ -170,6 +222,12 @@ offset_right = -68.27214
 offset_bottom = -38.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_s784d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_s784d")
+theme_override_styles/hover = SubResource("StyleBoxTexture_s784d")
 text = "Submit"
 
 [node name="GripButton" type="Button" parent="Panel" unique_id=1887618933]
@@ -182,10 +240,9 @@ offset_left = -988.715
 offset_right = -940.7149
 grow_horizontal = 0
 grow_vertical = 2
-text = "|||
-|||
-|||
-|||"
+theme_override_styles/normal = SubResource("StyleBoxTexture_x3kqo")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_x3kqo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_x3kqo")
 
 [node name="ResultLabel" type="Label" parent="Panel" unique_id=1718469601]
 layout_mode = 0
@@ -193,6 +250,7 @@ offset_left = 140.0
 offset_top = 376.0
 offset_right = 325.0
 offset_bottom = 456.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="Panel" unique_id=2023006502]
 layout_mode = 1
@@ -205,6 +263,7 @@ offset_right = -592.0005
 offset_bottom = -576.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "2,000 to 10,000"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -214,14 +273,15 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 235.99994
-offset_top = 548.0
-offset_right = -642.00055
+offset_left = 232.99994
+offset_top = 551.0
+offset_right = -640.00055
 offset_bottom = -37.0
 grow_horizontal = 2
 grow_vertical = 2
-icon = ExtResource("2_vshj4")
-flat = true
+theme_override_styles/normal = SubResource("StyleBoxTexture_t70an")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_t70an")
+theme_override_styles/hover = SubResource("StyleBoxTexture_t70an")
 expand_icon = true
 
 [node name="CreditscoreLabel" type="Label" parent="Panel" unique_id=873302042]
@@ -235,4 +295,5 @@ offset_right = -745.0005
 offset_bottom = -105.999756
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 horizontal_alignment = 1

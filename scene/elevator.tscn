@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bx7scsfg2nivv" path="res://scene/pause_panel.tscn" id="4_yrka2"]
 [ext_resource type="PackedScene" uid="uid://cv87ukpeiw7cp" path="res://scene/crosshair.tscn" id="5_nag7y"]
 
+[sub_resource type="Environment" id="Environment_jv1ba"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_nag7y"]
 size = Vector3(3, 2.0584717, 14.159119)
 
@@ -28,6 +30,9 @@ size = Vector3(0.6099864, 9.451746, 6.99969)
 size = Vector3(0.78057885, 9.451746, 6.99969)
 
 [node name="Elevator" type="Node3D" unique_id=371849551]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2059541322]
+environment = SubResource("Environment_jv1ba")
 
 [node name="OElevator" parent="." unique_id=802968147 instance=ExtResource("1_u6fvk")]
 

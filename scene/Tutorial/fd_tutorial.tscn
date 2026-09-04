@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://cdoxo1627leua"]
+
+[ext_resource type="Script" uid="uid://bg58s1fir1w6l" path="res://scripts/TutorialsScript/FDTutorial.gd" id="1_gr474"]
+[ext_resource type="Texture2D" uid="uid://cxcmnsjc30j2m" path="res://images/TutorialsIMG/FRAUDDETECTION/FD_data_highlight_img.png" id="2_bs7mi"]
+[ext_resource type="Texture2D" uid="uid://dsvrgg868hrti" path="res://images/TutorialsIMG/FRAUDDETECTION/FD_button_highlight_img.png" id="3_m3o2c"]
+[ext_resource type="Texture2D" uid="uid://yahc322jgg0j" path="res://images/TutorialsIMG/FRAUDDETECTION/fdpanel.png" id="4_m3o2c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ei5bu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_118ik"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bs7mi"]
+
+[node name="FDTutorial" type="Control" unique_id=1856469]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_gr474")
+data_highlight_img = ExtResource("2_bs7mi")
+button_highlight_img = ExtResource("3_m3o2c")
+
+[node name="BackgroundPanel" type="Panel" parent="." unique_id=114467594]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ei5bu")
+
+[node name="Background" type="Panel" parent="BackgroundPanel" unique_id=2126774895]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_118ik")
+
+[node name="HighlightImage" type="TextureRect" parent="BackgroundPanel" unique_id=1751608659]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -552.0
+offset_top = 11.0
+offset_right = 557.0
+offset_bottom = 488.0
+grow_horizontal = 2
+mouse_filter = 2
+expand_mode = 1
+
+[node name="TextBoxContainer" type="MarginContainer" parent="BackgroundPanel" unique_id=817672828]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -138.0
+offset_right = -18.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="BackgroundPanel/TextBoxContainer" unique_id=967248801]
+layout_mode = 2
+texture = ExtResource("4_m3o2c")
+region_rect = Rect2(-6.854431, -8.245972, 1599.0522, 1052.2499)
+patch_margin_left = 31
+patch_margin_top = 8
+patch_margin_bottom = 9
+
+[node name="MessageLabel" type="Label" parent="BackgroundPanel" unique_id=110076958]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 0
+offset_left = 47.0
+offset_top = 529.0
+offset_right = 1105.0
+offset_bottom = 616.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_bs7mi")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+justification_flags = 171
+
+[node name="LetterDisplayTimer" type="Timer" parent="BackgroundPanel" unique_id=1255123840]
+one_shot = true

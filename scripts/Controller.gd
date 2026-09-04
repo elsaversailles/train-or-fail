@@ -153,11 +153,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event is InputEventMouseMotion:
 			rotate_look(event.relative)
 
-# =========================================================
-# ESC / PAUSE / COMPUTER FOCUS LOGIC
-# =========================================================
 
-func handle_escape() -> void:
+func handle_escape() -> void: # ESC / PAUSE / COMPUTER FOCUS LOGIC
+	var tutorial = get_tree().current_scene.get_node_or_null("CanvasLayer/FDTutorial")
+	if tutorial and tutorial.visible:
+		return
+
 	# If on computer, ESC exits computer first
 	if is_focusing_screen:
 		release_computer_focus()
