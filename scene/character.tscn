@@ -22,7 +22,7 @@ transform = Transform3D(1, 0, 1.3909071e-08, 0, 1, 0, -1.3909071e-08, 0, 1, 0, 0
 
 [node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=1819240192]
 target_position = Vector3(0, 0, -3)
-collision_mask = 2
+collision_mask = 3
 collide_with_areas = true
 
 [node name="handpoint" type="Marker3D" parent="Head/Camera3D" unique_id=2036793174]

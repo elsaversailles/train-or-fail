@@ -1,3 +1,6 @@
+CollisionShape3D
+StaticBody3D
+Area3D
 TextureRect
 Panel
 Timer
@@ -9,6 +12,3 @@ Node3D
 OccluderInstance3D
 OmniLight3D
 WorldEnvironment
-CSGBox3D
-SpotLight3D
-CollisionShape3D

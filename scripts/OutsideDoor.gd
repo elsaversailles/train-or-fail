@@ -8,5 +8,5 @@ func _on_body_entered(body: Node3D) -> void:
 		# Wait 1 second before fading
 		await get_tree().create_timer(1.0).timeout
 		
-		# Always teleport the player straight to the lobby!
+		# Always teleport the player straight to the apartment.
 		SceneTransition.change_scene("res://scene/apartment.tscn")

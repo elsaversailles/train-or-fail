@@ -9,6 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://go4wfhalte3b" path="res://assets/Applicants/F/F BUNS.glb" id="7_ym7lu"]
 [ext_resource type="PackedScene" uid="uid://dci8u0ys21qui" path="res://scene/npc_dialogue_box.tscn" id="8_ym7lu"]
 [ext_resource type="ArrayOccluder3D" uid="uid://khhjre27wmie" path="res://addons/outside_world.occ" id="9_crkg8"]
+[ext_resource type="PackedScene" uid="uid://sxdkkuvbhpuw" path="res://assets/Applicants/M/M OLD 1.glb" id="10_mpw7b"]
+[ext_resource type="PackedScene" uid="uid://cgn4roe1jhho4" path="res://assets/Applicants/F/F PONYTAIL HIGH.glb" id="11_n4nn1"]
+[ext_resource type="Script" uid="uid://dr6xjimk03mxt" path="res://scene/Grandpa.gd" id="11_tm8yg"]
+[ext_resource type="Script" uid="uid://cu6rmtyoooa2n" path="res://scene/AmbientChatTrigger.gd" id="12_tm8yg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5ieep"]
 size = Vector3(483.0239, 1, 443.11908)
@@ -55,12 +59,19 @@ size = Vector3(3, 2.0584717, 14.159119)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jv1ba"]
 albedo_color = Color(0.54509807, 0, 0, 1)
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yj86u"]
+height = 2.309082
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aai3x"]
+size = Vector3(9.575256, 1.0324707, 12.591484)
+
 [node name="Outside_World" type="Node3D" unique_id=36747045]
 
 [node name="WorldEnvironment" parent="." unique_id=1060883038 instance=ExtResource("1_74bty")]
 
-[node name="Player" parent="." unique_id=2061402672 instance=ExtResource("3_ma6ok")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 20.179283, 0.11216402, -8.411929)
+[node name="Player" parent="." unique_id=2061402672 groups=["player"] instance=ExtResource("3_ma6ok")]
+transform = Transform3D(0.018174732, 0, -0.99983484, 0, 1, 0, 0.99983484, 0, 0.018174732, -21.772274, 0.11216402, -7.531521)
+collision_layer = 3
 speed = 60.0
 
 [node name="Map V_0_3" parent="." unique_id=372428485 instance=ExtResource("3_ym7lu")]
@@ -150,4 +161,38 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.647562, 0)
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=385124564]
 occluder = ExtResource("9_crkg8")
 
+[node name="M OLD 1" parent="." unique_id=1962034939 instance=ExtResource("10_mpw7b")]
+transform = Transform3D(-0.38435674, 0, -0.92318463, 0, 1, 0, 0.92318463, 0, -0.38435674, -5.304599, -0.13, -6.7186766)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="M OLD 1" unique_id=1593904460]
+script = ExtResource("11_tm8yg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="M OLD 1/StaticBody3D" unique_id=428578247]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8527577, 0)
+shape = SubResource("CapsuleShape3D_yj86u")
+
+[node name="NPCDialogueBox" parent="M OLD 1" unique_id=311128597 instance=ExtResource("8_ym7lu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.648, 0)
+
+[node name="F PONYTAIL HIGH" parent="." unique_id=937552533 instance=ExtResource("11_n4nn1")]
+transform = Transform3D(-0.6484208, 0, -0.76128227, 0, 1, 0, 0.76128227, 0, -0.6484208, -3.735461, -0.13, -8.553545)
+
+[node name="NPCDialogueBox" parent="F PONYTAIL HIGH" unique_id=899122111 instance=ExtResource("8_ym7lu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.648, 0)
+
+[node name="AmbientChatTrigger" type="Area3D" parent="." unique_id=366009866 node_paths=PackedStringArray("grandpa_npc", "assistant_npc", "grandpa_bubble", "assistant_bubble", "grandpa_interact_body")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.574912, 0, -7.7263803)
+collision_mask = 2
+script = ExtResource("12_tm8yg")
+grandpa_npc = NodePath("../M OLD 1")
+assistant_npc = NodePath("../F PONYTAIL HIGH")
+grandpa_bubble = NodePath("../M OLD 1/NPCDialogueBox")
+assistant_bubble = NodePath("../F PONYTAIL HIGH/NPCDialogueBox")
+grandpa_interact_body = NodePath("../M OLD 1/StaticBody3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AmbientChatTrigger" unique_id=1108795479]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1166277, 0.54989266, 4.7088127)
+shape = SubResource("BoxShape3D_aai3x")
+
 [connection signal="body_entered" from="OfficeDoor" to="OfficeDoor" method="_on_body_entered"]
+[connection signal="body_entered" from="AmbientChatTrigger" to="AmbientChatTrigger" method="_on_body_entered"]

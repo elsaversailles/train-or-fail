@@ -158,6 +158,9 @@ func handle_escape() -> void: # ESC / PAUSE / COMPUTER FOCUS LOGIC
 	var tutorial = get_tree().current_scene.get_node_or_null("CanvasLayer/FDTutorial")
 	if tutorial and tutorial.visible:
 		return
+	
+	if Dialogic.current_timeline != null:
+		return
 
 	# If on computer, ESC exits computer first
 	if is_focusing_screen:

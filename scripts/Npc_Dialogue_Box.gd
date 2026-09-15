@@ -17,10 +17,9 @@ var punctuation_time: float = 0.2
 signal finished_displaying
 
 func _ready():
-	# self.visible = false # Temporarily comment this out!
-	
-	# Feed it a long sentence to test the width and the typing effect
-	display_text("Go inside your appartment.")
+	self.visible = false
+	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+
 func display_text(text_to_display: String):
 	self.visible = true
 	text = text_to_display

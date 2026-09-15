@@ -1,0 +1,5 @@
+res://scene/pause_panel.tscn
+res://scene/outside_world.tscn
+res://scene/Grandpa.gd
+res://scripts/PausePanel.gd
+res://scripts/Controller.gd
