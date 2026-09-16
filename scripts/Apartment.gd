@@ -2,9 +2,16 @@ extends Node3D
 
 @onready var result_panel = $ResultPanel 
 @onready var player = $Player
-
-# --- NEW: Reference to your ending panel ---
 @onready var game_finished_panel = $GameFinishedPanel
+@onready var ending_texture_rect = $GameFinishedPanel/TextureRect
+
+@export var default_ending_image: Texture2D
+@export var special_rejection_ending_image: Texture2D
+
+const ALL_SPECIAL_IDS: Array[String] = [
+	"tita_elena",
+	"mark_krazy"
+]
 
 func _ready():
 	result_panel.visible = false
@@ -12,7 +19,6 @@ func _ready():
 	if not result_panel.continue_requested.is_connected(_on_continue_clicked):
 		result_panel.continue_requested.connect(_on_continue_clicked)
 		
-	# Hide the ending panel by default and connect the click event
 	if game_finished_panel:
 		game_finished_panel.visible = false
 		game_finished_panel.gui_input.connect(_on_game_finished_clicked)
@@ -35,23 +41,19 @@ func show_daily_results():
 	result_panel.display_terminal_report(gameplay_name, current_level, current_day, score)
 
 func _on_continue_clicked():
-	# 1. Hide the daily result UI
 	result_panel.visible = false
 		
-	# 2. Retrieve pending data for calculation
 	var current_level = SaveManager.current_save_data.get("pending_level", 1)
 	var current_day = SaveManager.current_save_data.get("pending_day", 1)
 	var department = SaveManager.current_save_data.get("pending_department", "FraudDetection")
 	var score = SaveManager.current_save_data.get("pending_score", 0)
 
-	# 3. CALCULATE PROGRESSION
 	var next_level = current_level
 	var next_day = current_day + 1
 	var next_scene_path = "" 
 	var current_level_id = "%s_L%d_D%d" % [department.to_lower(), current_level, current_day]
 	var next_stage_name = ""
 
-	# --- FRAUD DETECTION (Days 1 - 3) ---
 	if next_day <= 3:
 		next_scene_path = "res://scene/FraudDetection/FraudDetection.tscn"
 		if next_day == 2:
@@ -59,7 +61,6 @@ func _on_continue_clicked():
 		elif next_day == 3:
 			next_stage_name = "Fraud L3 - Day 3"
 
-	# --- KNOW YOUR CUSTOMER (Days 4 - 6) ---
 	elif next_day <= 6:
 		next_scene_path = "res://scene/KnowYourCustomer/KnowYourCustomer.tscn"
 		next_level = 2 
@@ -70,7 +71,6 @@ func _on_continue_clicked():
 		elif next_day == 6:
 			next_stage_name = "KYC L3 - Day 6"
 
-	# --- CREDIT SCORING (Days 7 - 9) ---
 	elif next_day <= 9:
 		next_scene_path = "res://scene/CreditScoring/CreditScoring.tscn" 
 		next_level = 3 
@@ -81,28 +81,28 @@ func _on_continue_clicked():
 		elif next_day == 9:
 			next_stage_name = "Credit L3 - Day 9"
 			
-	# --- END OF GAME (Day 10+) ---
 	else:
 		next_scene_path = "res://scene/main_menu.tscn" 
 		next_stage_name = "Game Finished"
 
-	# Apply new stats
 	SaveManager.current_save_data["current_level"] = next_level
 	SaveManager.current_save_data["current_day"] = next_day
 
-	# 4. Erase pending data so this doesn't accidentally run twice
 	SaveManager.current_save_data.erase("pending_score")
 	SaveManager.current_save_data.erase("pending_day")
 	SaveManager.current_save_data.erase("pending_level")
 	SaveManager.current_save_data.erase("pending_department")
 
-	# 5. OFFICIALLY SAVE THE NEXT LEVEL!
 	SaveManager.auto_save_level(next_scene_path, next_stage_name, current_level_id, score, next_day)
 	
-	# 6. ROUTE THE PLAYER
 	if next_day > 9:
-		# Show the Game Finished panel! Keep mouse visible.
 		if game_finished_panel:
+			# Check using the SaveManager helper
+			if check_all_special_rejected():
+				ending_texture_rect.texture = special_rejection_ending_image
+			else:
+				ending_texture_rect.texture = default_ending_image
+			
 			game_finished_panel.visible = true
 	else:
 		# Unpause player and continue to the next morning
@@ -115,10 +115,10 @@ func _on_continue_clicked():
 		else:
 			SceneTransition.change_scene("res://scene/elevator.tscn")
 
-# ==========================================
-# END OF GAME LOGIC
-# ==========================================
+func check_all_special_rejected() -> bool:
+	# Calls the helper in SaveManager to ensure every special was flagged 'sus'
+	return SaveManager.are_all_specials_marked(ALL_SPECIAL_IDS, "sus")
+
 func _on_game_finished_clicked(event: InputEvent):
-	# Listen for a left mouse click anywhere on the Game Finished panel
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		SceneTransition.change_scene("res://scene/main_menu.tscn")

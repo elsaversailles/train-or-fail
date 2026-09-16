@@ -49,7 +49,6 @@ var mistakes = 0
 # READY
 # -----------------------------
 func _ready():
-	# --- 1. CRITICAL DAY 2 FIXES ---
 	self.visible = true # Force it to show up!
 	is_open = false
 	position.x = -panel_width # Ensure it starts tucked away so the grip button is clickable
@@ -171,8 +170,17 @@ func _on_sus_pressed():
 	submit_answer("sus")
 
 func submit_answer(answer):
+	var current_applicant = applicants[current_index]
+
+	# Check if this character is a special story applicant and record the choice
+	if current_applicant.get("is_special", false):
+		var char_id = current_applicant.get("id", "")
+		if not SaveManager.current_save_data.has("special_decisions"):
+			SaveManager.current_save_data["special_decisions"] = {}
+		SaveManager.current_save_data["special_decisions"][char_id] = answer
+
 	# 1. Check for a mistake immediately
-	var correct_answer = applicants[current_index]["fraud_correct"]
+	var correct_answer = current_applicant["fraud_correct"]
 	if answer != correct_answer:
 		mistakes += 1
 		
@@ -191,6 +199,9 @@ func submit_answer(answer):
 		load_applicant(current_index)
 	else:
 		finish_applicants()
+		
+	if current_applicant.get("is_special", false):
+		SaveManager.record_special_decision(current_applicant.get("id", ""), answer)
 
 func spawn_3d_model(model_packed_scene: PackedScene):
 	# 1. Delete whatever 3D model is currently standing there

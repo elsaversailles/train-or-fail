@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scene/character.tscn" id="1_mb15i"]
 [ext_resource type="Script" uid="uid://wlle720apfeg" path="res://scripts/Apartment.gd" id="1_x34op"]
 [ext_resource type="PackedScene" uid="uid://bx7scsfg2nivv" path="res://scene/pause_panel.tscn" id="2_x34op"]
+[ext_resource type="Texture2D" uid="uid://dowt3jc1kbxpg" path="res://images/Endings/Cold_Efficiency.png" id="3_ludmo"]
 [ext_resource type="PackedScene" uid="uid://dtpe25cd85fc8" path="res://scene/result_panel.tscn" id="3_w0ngi"]
 [ext_resource type="PackedScene" uid="uid://cv87ukpeiw7cp" path="res://scene/crosshair.tscn" id="5_w0ngi"]
 [ext_resource type="Texture2D" uid="uid://djrodjg24p7dk" path="res://images/Endings/Perfect.png" id="6_gsw74"]
@@ -11,6 +12,8 @@
 
 [node name="Apartment" type="Node3D" unique_id=2014020559]
 script = ExtResource("1_x34op")
+default_ending_image = ExtResource("6_gsw74")
+special_rejection_ending_image = ExtResource("3_ludmo")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1682298595]
 environment = SubResource("Environment_jv1ba")

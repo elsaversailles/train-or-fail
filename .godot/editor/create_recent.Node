@@ -1,6 +1,7 @@
 CollisionShape3D
-StaticBody3D
 Area3D
+Node3D
+StaticBody3D
 TextureRect
 Panel
 Timer
@@ -8,7 +9,6 @@ Control
 MarginContainer
 NinePatchRect
 Label
-Node3D
 OccluderInstance3D
 OmniLight3D
 WorldEnvironment

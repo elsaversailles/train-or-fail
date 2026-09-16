@@ -11,7 +11,7 @@ var applicants_list = []
 var current_case_index = 0
 var actual_score = 1.0
 var total_correct_answers = 0
-var mistakes = 0 # --- NEW: Tracks player mistakes ---
+var mistakes = 0 
 var is_rejected: bool = false
 var final_credit_amount = 500
 
@@ -26,9 +26,10 @@ var final_credit_amount = 500
 @onready var model_container = $"../ModelContainer"
 @onready var credit_score_label = $Panel/CreditscoreLabel
 
+# Reference the 4 tabs inside the TabContainer
 @onready var general_info = $"Panel/TabContainer/General Info"
 @onready var payment_history = $"Panel/TabContainer/Payment History"
-@onready var arrears_tex = $Panel/TabContainer/Arrears
+@onready var arrears_tex = $"Panel/TabContainer/Arrears"
 @onready var debt_ratio_tex = $"Panel/TabContainer/Debt Ratio"
 
 func _ready():
@@ -86,14 +87,21 @@ func load_applicant():
 	kyc_label.text = "KYC: " + ("INVALID" if data["kyc_correct"] == "sus" else "VALID")
 	kyc_label.modulate = Color.RED if data["kyc_correct"] == "sus" else Color.GREEN
 
-	var tex = data["credit_img"]
-	if tex:
-		general_info.texture = tex
-		payment_history.texture = tex
-		arrears_tex.texture = tex
-		debt_ratio_tex.texture = tex
+	# --- THE FIX IS HERE ---
+	# We safely check for the 4 distinct image keys and apply them to their specific tabs!
+	if data.has("general_info_img") and data["general_info_img"]:
+		general_info.texture = data["general_info_img"]
+		
+	if data.has("payment_history_img") and data["payment_history_img"]:
+		payment_history.texture = data["payment_history_img"]
+		
+	if data.has("arrears_img") and data["arrears_img"]:
+		arrears_tex.texture = data["arrears_img"]
+		
+	if data.has("debt_ratio_img") and data["debt_ratio_img"]:
+		debt_ratio_tex.texture = data["debt_ratio_img"]
 
-	# --- NEW: Grab the target score straight from the database! ---
+	# Grab the exact target score straight from the database!
 	actual_score = data["credit_correct"]
 	
 	result_label.text = "Evaluating: " + data["name"]
@@ -113,8 +121,11 @@ func spawn_3d_model(model_packed_scene: PackedScene):
 func _on_submit():
 	# 1. Instantly grade the player's choice
 	var player_choice = snapped(slider.value, 0.01)
+	
+	# Snap the difference to safely handle floating-point precision errors
 	var diff = snapped(abs(player_choice - actual_score), 0.01)
-	# --- NEW: Margin of Error set to exactly 0.20 ---
+	
+	# --- Margin of Error strictly set to exactly 0.20 ---
 	if diff <= 0.20:
 		total_correct_answers += 1
 	else:

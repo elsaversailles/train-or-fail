@@ -28,7 +28,10 @@ Dialogic="*uid://ds2q0uclmolvu"
 
 directories/dch_directory={}
 directories/dtl_directory={
-"grandpa_day1": "res://Dialogic/Timelines/grandpa_day1.dtl"
+"clara_monologue": "res://Dialogic/Timelines/clara_monologue.dtl",
+"grandpa_day1": "res://Dialogic/Timelines/grandpa_day1.dtl",
+"mark_day2": "res://Dialogic/Timelines/mark_day2.dtl",
+"mark_day4": "res://Dialogic/Timelines/mark_day4.dtl"
 }
 layout/style_directory={}
 glossary/default_case_sensitive=true
