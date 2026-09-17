@@ -41,6 +41,7 @@ layout/default_style="Default"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/use_occlusion_culling=false
 

@@ -1,2 +1,7 @@
+res://addons/outside_world.occ
+res://animation/idle_anim.res
+res://models3d/characters/nurse_clara.tscn
 res://scene/outside_world.tscn
-res://scripts/ApplicantDatabase.gd
+res://scene/settings_panel.tscn
+res://scripts/SettingsManager.gd
+res://scripts/SettingsPanel.gd

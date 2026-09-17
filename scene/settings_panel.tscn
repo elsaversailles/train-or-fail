@@ -99,5 +99,16 @@ offset_right = -28.0
 offset_bottom = 193.0
 text = "Back"
 
+[node name="FullscreenCheckbox" type="CheckBox" parent="." unique_id=1117961063]
+layout_mode = 0
+offset_left = -102.0
+offset_top = -85.0
+offset_right = -78.0
+offset_bottom = -61.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.15127608, 0.15127608, 0.15127608, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+text = "Full Screen"
+
 [connection signal="value_changed" from="MusicControl" to="MusicControl" method="_on_value_changed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
