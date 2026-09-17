@@ -1,9 +1,13 @@
 extends StaticBody3D
 
 var can_talk: bool = false
+var is_talking: bool = false
 
 func interact():
-	if can_talk:
+	# Only allow interaction if unlocked AND not already mid-dialogue
+	if can_talk and not is_talking:
+		is_talking = true
+		
 		# 1. Turn Clara to face the player
 		var player = get_tree().get_first_node_in_group("player")
 		var clara_root = get_parent()
@@ -16,3 +20,7 @@ func interact():
 
 		# 2. Run the MC internal monologue
 		Dialogic.start("clara_monologue")
+		
+		# 3. Wait until Dialogic fully finishes before unlocking interaction
+		await Dialogic.timeline_ended
+		is_talking = false

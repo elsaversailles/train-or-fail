@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://go4wfhalte3b" path="res://assets/Applicants/F/F BUNS.glb" id="7_ym7lu"]
 [ext_resource type="PackedScene" uid="uid://dci8u0ys21qui" path="res://scene/npc_dialogue_box.tscn" id="8_ym7lu"]
 [ext_resource type="ArrayOccluder3D" uid="uid://khhjre27wmie" path="res://addons/outside_world.occ" id="9_crkg8"]
-[ext_resource type="PackedScene" uid="uid://sxdkkuvbhpuw" path="res://assets/Applicants/M/M OLD 1.glb" id="10_mpw7b"]
+[ext_resource type="PackedScene" uid="uid://clksguilwmnxk" path="res://assets/Applicants/M/Grandpa.glb" id="10_dbkl4"]
 [ext_resource type="PackedScene" uid="uid://cgn4roe1jhho4" path="res://assets/Applicants/F/F PONYTAIL HIGH.glb" id="11_n4nn1"]
 [ext_resource type="Script" uid="uid://dr6xjimk03mxt" path="res://scripts/Grandpa.gd" id="11_tm8yg"]
 [ext_resource type="Script" uid="uid://cu6rmtyoooa2n" path="res://scripts/AmbientChatTrigger.gd" id="12_tm8yg"]
@@ -21,6 +21,10 @@
 [ext_resource type="PackedScene" uid="uid://cdona0dtgbm1y" path="res://assets/Applicants/M/M BALD.glb" id="19_d62gi"]
 [ext_resource type="Script" uid="uid://dp0l48pbd1oyy" path="res://scripts/NurseClara.gd" id="19_dbkl4"]
 [ext_resource type="Script" uid="uid://ct6ahlgf0t5c" path="res://scripts/TriggerClaraAndSupplier.gd" id="21_ddiht"]
+[ext_resource type="PackedScene" uid="uid://crq63j0sjda7x" path="res://assets/Applicants/M/M BASE.glb" id="22_b0mti"]
+[ext_resource type="PackedScene" uid="uid://cbrapr6dmlkn2" path="res://assets/Applicants/F/F SHORT HAIR.glb" id="23_tv3p0"]
+[ext_resource type="Script" uid="uid://dorssn1uy1iwj" path="res://scripts/jericho.gd" id="23_x7ph6"]
+[ext_resource type="Script" uid="uid://cfay18l2r4r4e" path="res://scripts/TriggerJerichoAndJoice.gd" id="24_x7ph6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5ieep"]
 size = Vector3(483.0239, 1, 443.11908)
@@ -74,14 +78,14 @@ height = 2.309082
 size = Vector3(9.575256, 1.0324707, 12.591484)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vohb4"]
-size = Vector3(8.883774, 1, 15.601501)
+size = Vector3(8.883774, 1, 20.403366)
 
 [node name="Outside_World" type="Node3D" unique_id=36747045]
 
 [node name="WorldEnvironment" parent="." unique_id=1060883038 instance=ExtResource("1_74bty")]
 
 [node name="Player" parent="." unique_id=2061402672 groups=["player"] instance=ExtResource("3_ma6ok")]
-transform = Transform3D(0.018174732, 0, -0.99983484, 0, 1, 0, 0.99983484, 0, 0.018174732, -72.70133, 0.11216402, -1.8436837)
+transform = Transform3D(0.018174732, 0, -0.99983484, 0, 1, 0, 0.99983484, 0, 0.018174732, -125.55406, 0.11216402, -1.8436837)
 collision_layer = 3
 speed = 30.0
 
@@ -174,18 +178,28 @@ occluder = ExtResource("9_crkg8")
 
 [node name="FraudDetection" type="Node3D" parent="." unique_id=247957009]
 
-[node name="M OLD 1" parent="FraudDetection" unique_id=1962034939 instance=ExtResource("10_mpw7b")]
-transform = Transform3D(-0.38435674, 0, -0.92318463, 0, 1, 0, 0.92318463, 0, -0.38435674, -5.304599, -0.13, -6.7186766)
+[node name="Grandpa" parent="FraudDetection" unique_id=1155018319 instance=ExtResource("10_dbkl4")]
+transform = Transform3D(0.109176606, 0, 0.9940227, 0, 1, 0, -0.9940227, 0, 0.109176606, -5.305, -0.147, -7.048294)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="FraudDetection/M OLD 1" unique_id=1593904460]
+[node name="Skeleton3D" parent="FraudDetection/Grandpa/Player" parent_id_path=PackedInt32Array(1155018319, 1209193978) index="0" unique_id=1032951004]
+bones/8/rotation = Quaternion(-0.581503, 0.078653, -0.226937, 0.95646)
+bones/9/rotation = Quaternion(0.014039, 0.014855, -0.042407, 0.98207)
+bones/12/rotation = Quaternion(-0.571503, -0.196347, 0.226937, 0.95646)
+bones/13/rotation = Quaternion(0.014039, -0.014855, 0.127407, 0.98207)
+
+[node name="spine_006" parent="FraudDetection/Grandpa/Player/Skeleton3D" index="0" unique_id=1218122492]
+transform = Transform3D(1, 4.950281e-09, -5.100169e-09, -5.100169e-09, 0.9995551, -0.029820547, 4.9502806e-09, 0.029820487, 0.99955535, -4.4703476e-09, 4.601302, -0.071551256)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="FraudDetection/Grandpa" unique_id=1593904460]
+transform = Transform3D(-0.3843566, 0, -0.9231843, 0, 1, 0, 0.9231843, 0, -0.3843566, 0.00040102005, 0.017000005, -0.4625473)
 script = ExtResource("11_tm8yg")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FraudDetection/M OLD 1/StaticBody3D" unique_id=428578247]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FraudDetection/Grandpa/StaticBody3D" unique_id=428578247]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8527577, 0)
 shape = SubResource("CapsuleShape3D_yj86u")
 
-[node name="NPCDialogueBox" parent="FraudDetection/M OLD 1" unique_id=311128597 instance=ExtResource("8_ym7lu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.648, 0)
+[node name="NPCDialogueBox" parent="FraudDetection/Grandpa" unique_id=311128597 instance=ExtResource("8_ym7lu")]
+transform = Transform3D(-0.3843566, 0, -0.9231843, 0, 1, 0, 0.9231843, 0, -0.3843566, 0, 2.665, 0)
 
 [node name="F PONYTAIL HIGH" parent="FraudDetection" unique_id=937552533 instance=ExtResource("11_n4nn1")]
 transform = Transform3D(-0.6484208, 0, -0.76128227, 0, 1, 0, 0.76128227, 0, -0.6484208, -3.735461, -0.13, -8.553545)
@@ -197,11 +211,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.648, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.574912, 0, -7.7263803)
 collision_mask = 2
 script = ExtResource("12_tm8yg")
-grandpa_npc = NodePath("../M OLD 1")
+grandpa_npc = NodePath("../Grandpa")
 assistant_npc = NodePath("../F PONYTAIL HIGH")
-grandpa_bubble = NodePath("../M OLD 1/NPCDialogueBox")
+grandpa_bubble = NodePath("../Grandpa/NPCDialogueBox")
 assistant_bubble = NodePath("../F PONYTAIL HIGH/NPCDialogueBox")
-grandpa_interact_body = NodePath("../M OLD 1/StaticBody3D")
+grandpa_interact_body = NodePath("../Grandpa/StaticBody3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FraudDetection/TriggerGrandpaAndAssistant" unique_id=1108795479]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1166277, 0.54989266, 4.7088127)
@@ -215,6 +229,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.648, 0)
 
 [node name="Mark Krazy" parent="FraudDetection" unique_id=300767029 instance=ExtResource("16_skcek")]
 transform = Transform3D(-0.8927618, 0, -0.4505289, 0, 1, 0, 0.4505289, 0, -0.8927618, -34.266888, -0.14677155, 6.688719)
+
+[node name="Skeleton3D" parent="FraudDetection/Mark Krazy/Player" parent_id_path=PackedInt32Array(300767029, 531314648) index="0" unique_id=1773003214]
+bones/8/rotation = Quaternion(-0.581503, 0.078653, -0.226937, 0.95646)
+bones/9/rotation = Quaternion(0.014039, -0.014855, -0.082407, 0.98207)
+bones/12/rotation = Quaternion(-0.571503, -0.196347, 0.226937, 0.95646)
+bones/13/rotation = Quaternion(0.059039, -0.014855, 0.092407, 0.98207)
+
+[node name="spine_006" parent="FraudDetection/Mark Krazy/Player/Skeleton3D" index="0" unique_id=41608982]
+transform = Transform3D(1, 4.950282e-09, -5.10017e-09, -5.100168e-09, 0.999555, -0.029820338, 4.950281e-09, 0.029820368, 0.999555, -1.6792266e-09, 1.7284175, -0.026877431)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="FraudDetection/Mark Krazy" unique_id=741845743 node_paths=PackedStringArray("mark_bubble")]
 script = ExtResource("16_sypdl")
@@ -277,7 +300,45 @@ clara_interact_body = NodePath("../F SPIKEY /StaticBody3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.673439, -0.20579815, 5.4637756)
 shape = SubResource("BoxShape3D_vohb4")
 
+[node name="M BASE" parent="CreditScoring" unique_id=162152394 instance=ExtResource("22_b0mti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -106.181, -0.100458145, 6.1896105)
+
+[node name="NPCDialogueBox" parent="CreditScoring/M BASE" unique_id=1381116985 instance=ExtResource("8_ym7lu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.648, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CreditScoring/M BASE" unique_id=411111931]
+transform = Transform3D(0.99999994, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 0.99999994, 0, 0, 0)
+script = ExtResource("23_x7ph6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CreditScoring/M BASE/StaticBody3D" unique_id=159289044]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8527577, 0)
+shape = SubResource("CapsuleShape3D_yj86u")
+
+[node name="F SHORT HAIR" parent="CreditScoring" unique_id=1021592945 instance=ExtResource("23_tv3p0")]
+transform = Transform3D(0.98981756, 0, 0.14234155, 0, 1, 0, -0.14234155, 0, 0.98981756, -103.7992, -0.100458145, 6.2507615)
+
+[node name="NPCDialogueBox" parent="CreditScoring/F SHORT HAIR" unique_id=1328916587 instance=ExtResource("8_ym7lu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.648, 0)
+
+[node name="TriggerJerichoAndJoice" type="Area3D" parent="CreditScoring" unique_id=1993269788 node_paths=PackedStringArray("jericho_npc", "joice_npc", "jericho_bubble", "joice_bubble", "jericho_interact_body")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -105.11315, 0.77798176, 0.9971237)
+collision_mask = 2
+script = ExtResource("24_x7ph6")
+jericho_npc = NodePath("../M BASE")
+joice_npc = NodePath("../F SHORT HAIR")
+jericho_bubble = NodePath("../M BASE/NPCDialogueBox")
+joice_bubble = NodePath("../F SHORT HAIR/NPCDialogueBox")
+jericho_interact_body = NodePath("../M BASE/StaticBody3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CreditScoring/TriggerJerichoAndJoice" unique_id=395693980]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.673439, -0.20579815, -0.45165253)
+shape = SubResource("BoxShape3D_vohb4")
+
 [connection signal="body_entered" from="OfficeDoor" to="OfficeDoor" method="_on_body_entered"]
 [connection signal="body_entered" from="FraudDetection/TriggerGrandpaAndAssistant" to="FraudDetection/TriggerGrandpaAndAssistant" method="_on_body_entered"]
 [connection signal="body_entered" from="FraudDetection/TriggerMarkAndCashier" to="FraudDetection/TriggerMarkAndCashier" method="_on_body_entered"]
 [connection signal="body_entered" from="CreditScoring/TriggerClaraAndSupplier" to="CreditScoring/TriggerClaraAndSupplier" method="_on_body_entered"]
+[connection signal="body_entered" from="CreditScoring/TriggerJerichoAndJoice" to="CreditScoring/TriggerJerichoAndJoice" method="_on_body_entered"]
+
+[editable path="FraudDetection/Grandpa"]
+[editable path="FraudDetection/Mark Krazy"]

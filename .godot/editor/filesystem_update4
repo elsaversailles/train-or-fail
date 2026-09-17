@@ -1,9 +1,2 @@
 res://scene/outside_world.tscn
-res://scene/Mark.gd
-res://scripts/MarkAndCashier.gd
 res://scripts/ApplicantDatabase.gd
-res://scripts/screengameplays/Left_Sliding_Panel.gd
-res://Dialogic/Timelines/clara_monologue.dtl
-res://scene/TriggerClaraAndSupplier.gd
-res://scripts/NurseClara.gd
-res://scripts/TriggerClaraAndSupplier.gd

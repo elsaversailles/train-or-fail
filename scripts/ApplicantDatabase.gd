@@ -3,202 +3,305 @@ extends Node
 func _ready():
 	randomize()
 
-# Add as many applicants as you want here. The game will pick 5 randomly!
-var all_applicants = [
+# ==========================================
+# FRAUD DETECTION POOL (Days 1 - 3)
+# ==========================================
+var fraud_applicants: Array = [
 	{
-		"id": "a1",
-		"name": "Elias Thorne",
-		"model_scene": preload("res://assets/Applicants/F/F BUNS.glb"),
-		"location": preload("res://images/applicants info/a1/a1_location.png"),
-		"item": preload("res://images/applicants info/a1/a1_item.jpg"),
-		"time": "11:45 AM",
-		"price": "₱1,550",
-		"fraud_correct": "legit", 
-		"id_image": preload("res://images/applicants info/a1/a1_id.png"),
-		"kyc_correct": "legit",   
-		
-		# --- NEW: Credit Scoring Tabs ---
-		"general_info_img": preload("res://images/creditscoring/general information/general info.png"),
-		"payment_history_img": preload("res://images/creditscoring/payment history/Payment_History.png"),
-		"arrears_img": preload("res://images/creditscoring/arrears/arrears.png"),
-		"debt_ratio_img": preload("res://images/creditscoring/debt ratio/Debt_Ratio.png"),
-		"credit_correct": 0.6
+		"id": "fd_a1",
+		"name": "Alyssa Cruz",
+		"model_scene": preload("res://assets/Applicants/F/F SHORT HAIR.glb"),
+		"location": preload("res://images/applicants info/FraudDetection/a2/fd_r02_location_convenience_counter.png"),
+		"item": preload("res://images/applicants info/FraudDetection/a2/fd_r02_item_laundry_detergent.png"),
+		"time": "9:15 AM",
+		"price": "₱240",
+		"fraud_correct": "legit"
 	},
 	{
-		"id": "a2",
-		"name": "Marcus Vane",
+		"id": "fd_a2",
+		"name": "Jomar Salazar",
+		"model_scene": preload("res://assets/Applicants/M/M MOHAWK.glb"),
+		"location": preload("res://images/applicants info/FraudDetection/a3/fd_r03_location_hardware_main_aisle.png"),
+		"item": preload("res://images/applicants info/FraudDetection/a3/fd_r03_item_electric_stand_fan.png"),
+		"time": "3:20 PM",
+		"price": "₱1,850",
+		"fraud_correct": "legit"
+	},
+	{
+		"id": "fd_a3",
+		"name": "Jake Meza",
 		"model_scene": preload("res://assets/Applicants/M/M BASE.glb"),
-		"location": preload("res://images/applicants info/a2/a2_location.png"),
-		"item": preload("res://images/applicants info/a2/a2_item.png"),
-		"time": "3:12 AM",
-		"price": "₱450,000",
-		"fraud_correct": "sus",
-		"id_image": preload("res://images/applicants info/a2/a2_id.png"),
-		"kyc_correct": "sus", 
-		
-		# --- NEW: Credit Scoring Tabs ---
-		"general_info_img": preload("res://images/creditscoring/general information/general info.png"),
-		"payment_history_img": preload("res://images/creditscoring/payment history/Payment_History.png"),
-		"arrears_img": preload("res://images/creditscoring/arrears/arrears.png"),
-		"debt_ratio_img": preload("res://images/creditscoring/debt ratio/Debt_Ratio.png"),
-		"credit_correct": 0.6
+		"location": preload("res://images/applicants info/FraudDetection/a4/fd_r04_location_dark_unregistered_terminal.png"),
+		"item": preload("res://images/applicants info/FraudDetection/a4/fd_r04_item_10_gaming_load_cards.png"),
+		"time": "2:45 AM",
+		"price": "₱15,000",
+		"fraud_correct": "sus"
 	},
 	{
-		"id": "a3",
-		"name": "Sarah Jenkins",
-		"model_scene": preload("res://assets/Applicants/F/F LONG HAIR.glb"),
-		"location": preload("res://images/applicants info/a3/a3_location.png"),
-		"item": preload("res://images/applicants info/a3/a3_item.jpg"),
+		"id": "fd_a4",
+		"name": "Nico Ferrer",
+		"model_scene": preload("res://assets/Applicants/M/M MULLET.glb"),
+		"location": preload("res://images/applicants info/FraudDetection/a5/fd_r05_location_pharmacy_drive_thru.png"),
+		"item": preload("res://images/applicants info/FraudDetection/a5/fd_r05_item_prescription_antibiotics.png"),
+		"time": "1:10 PM",
+		"price": "₱650",
+		"fraud_correct": "legit"
+	},
+	{
+		"id": "fd_a5",
+		"name": "Trisha Aquino",
+		"model_scene": preload("res://assets/Applicants/F/F SIDESWEPT.glb"),
+		"location": preload("res://images/applicants info/FraudDetection/a6/fd_r06_location_department_store_shoes.png"),
+		"item": preload("res://images/applicants info/FraudDetection/a6/fd_r06_item_two_leather_work_shoes.png"),
+		"time": "5:40 PM",
+		"price": "₱4,200",
+		"fraud_correct": "legit"
+	},
+	{
+		"id": "fd_a6",
+		"name": "Carlo Herrer",
+		"model_scene": preload("res://assets/Applicants/M/M LONG HAIR.glb"),
+		"location": preload("res://images/applicants info/FraudDetection/a8/fd_r08_location_dark_alley_terminal.png"),
+		"item": preload("res://images/applicants info/FraudDetection/a8/fd_r08_item_five_graphics_cards.png"),
+		"time": "3:12 AM",
+		"price": "₱109,000",
+		"fraud_correct": "sus"
+	},
+	{
+		"id": "fd_a7",
+		"name": "Angelo",
+		"model_scene": preload("res://assets/Applicants/M/M MULLET.glb"),
+		"location": preload("res://images/applicants info/FraudDetection/a9/fd_r09_location_coffee_drive_thru.png"),
+		"item": preload("res://images/applicants info/FraudDetection/a9/fd_r09_item_iced_latte.png"),
 		"time": "8:30 AM",
 		"price": "₱210",
-		"fraud_correct": "legit",
-		"id_image": preload("res://images/applicants info/a3/a3_id.png"),
-		"kyc_correct": "legit",
-		
-		# --- NEW: Credit Scoring Tabs ---
-		"general_info_img": preload("res://images/creditscoring/general information/general info.png"),
-		"payment_history_img": preload("res://images/creditscoring/payment history/Payment_History.png"),
-		"arrears_img": preload("res://images/creditscoring/arrears/arrears.png"),
-		"debt_ratio_img": preload("res://images/creditscoring/debt ratio/Debt_Ratio.png"),
-		"credit_correct": 0.6
+		"fraud_correct": "legit"
 	},
 	{
-		"id": "a4",
-		"name": "Charlie Brown",
-		"model_scene": preload("res://assets/Applicants/M/M MOHAWK.glb"),
-		"location": preload("res://images/applicants info/a4/a4_location.png"),
-		"item": preload("res://images/applicants info/a4/a4_item.jpg"),
+		"id": "fd_a8",
+		"name": "Miguel Nava",
+		"model_scene": preload("res://assets/Applicants/M/M SHAGGY.glb"),
+		"location": preload("res://images/applicants info/FraudDetection/a10/fd_r10_location_vpn_moscow_transaction.png"),
+		"item": preload("res://images/applicants info/FraudDetection/a10/fd_r10_item_prepaid_gaming_credits.png"),
 		"time": "2:22 AM",
-		"price": "₱205,000",
-		"fraud_correct": "sus",
-		"id_image": preload("res://images/applicants info/a2/a2_id.png"),
-		"kyc_correct": "sus",
-		
-		# --- NEW: Credit Scoring Tabs ---
-		"general_info_img": preload("res://images/creditscoring/general information/general info.png"),
-		"payment_history_img": preload("res://images/creditscoring/payment history/Payment_History.png"),
-		"arrears_img": preload("res://images/creditscoring/arrears/arrears.png"),
-		"debt_ratio_img": preload("res://images/creditscoring/debt ratio/Debt_Ratio.png"),
-		"credit_correct": 0.6
+		"price": "₱25,000",
+		"fraud_correct": "sus"
 	},
 	{
-		"id": "a5",
-		"name": "Linda Miller",
-		"model_scene": preload("res://assets/Applicants/F/F LONG SHAGGY.glb"),
-		"location": preload("res://images/applicants info/a5/a5_location.png"),
-		"item": preload("res://images/applicants info/a5/a5_item.png"),
+		"id": "fd_a9",
+		"name": "Adrian Santos",
+		"model_scene": preload("res://assets/Applicants/M/M SPIKEY LONG.glb"),
+		"location": preload("res://images/applicants info/FraudDetection/a10/fd_r10_location_vpn_moscow_transaction.png"),
+		"item": preload("res://images/applicants info/FraudDetection/a10/fd_r10_item_prepaid_gaming_credits.png"),
 		"time": "5:30 PM",
 		"price": "₱3,200",
-		"fraud_correct": "legit",
-		"id_image": preload("res://images/applicants info/a2/a2_id.png"),
-		"kyc_correct": "legit",
-		
-		# --- NEW: Credit Scoring Tabs ---
-		"general_info_img": preload("res://images/creditscoring/general information/general info.png"),
-		"payment_history_img": preload("res://images/creditscoring/payment history/Payment_History.png"),
-		"arrears_img": preload("res://images/creditscoring/arrears/arrears.png"),
-		"debt_ratio_img": preload("res://images/creditscoring/debt ratio/Debt_Ratio.png"),
-		"credit_correct": 0.6
+		"fraud_correct": "legit"
 	},
 	{
-		"id": "a6",
-		"name": "Kate Ignacio",
-		"model_scene": preload("res://assets/Applicants/F/F MULLET.glb"),
-		"location": preload("res://images/applicants info/a6/bracelet_location.png"),
-		"item": preload("res://images/applicants info/a6/bracelet_item.png"),
-		"time": "1:00 AM",
-		"price": "₱1,200,000",
-		"fraud_correct": "sus",
-		"id_image": preload("res://images/applicants info/a2/a2_id.png"),
-		"kyc_correct": "legit",
-		
-		# --- NEW: Credit Scoring Tabs ---
-		"general_info_img": preload("res://images/creditscoring/general information/general info.png"),
-		"payment_history_img": preload("res://images/creditscoring/payment history/Payment_History.png"),
-		"arrears_img": preload("res://images/creditscoring/arrears/arrears.png"),
-		"debt_ratio_img": preload("res://images/creditscoring/debt ratio/Debt_Ratio.png"),
-		"credit_correct": 0.6
-	},
-	{
-		"id": "a7",
-		"name": "Resymarc Gabillete",
-		"model_scene": preload("res://assets/Applicants/M/M BALD.glb"),
-		"location": preload("res://images/applicants info/a7/notebook_location.png"),
-		"item": preload("res://images/applicants info/a7/notebook_item.jpg"),
-		"time": "2:15 PM",
-		"price": "₱90",
-		"fraud_correct": "legit",
-		"id_image": preload("res://images/applicants info/a2/a2_id.png"),
-		"kyc_correct": "legit",
-		
-		# --- NEW: Credit Scoring Tabs ---
-		"general_info_img": preload("res://images/creditscoring/general information/general info.png"),
-		"payment_history_img": preload("res://images/creditscoring/payment history/Payment_History.png"),
-		"arrears_img": preload("res://images/creditscoring/arrears/arrears.png"),
-		"debt_ratio_img": preload("res://images/creditscoring/debt ratio/Debt_Ratio.png"),
-		"credit_correct": 0.6
-	},
-	{
-		"id": "a8",
+		"id": "fd_a10",
 		"name": "Regine Manuel",
-		"model_scene": preload("res://assets/Applicants/F/F SHORT HAIR.glb"),
-		"location": preload("res://images/applicants info/a8/iphone_location.png"),
-		"item": preload("res://images/applicants info/a8/iphone_item.png"),
+		"model_scene": preload("res://assets/Applicants/F/F LONG HAIR.glb"),
+		"location": preload("res://images/applicants info/FraudDetection/a14/fd_r14_location_abandoned_warehouse_dock.png"),
+		"item": preload("res://images/applicants info/FraudDetection/a14/fd_r14_item_ten_premium_smartphones.png"),
 		"time": "11:55 PM",
 		"price": "₱900,000",
-		"fraud_correct": "sus",
-		"id_image": preload("res://images/applicants info/a2/a2_id.png"),
-		"kyc_correct": "legit",
-		
-		# --- NEW: Credit Scoring Tabs ---
-		"general_info_img": preload("res://images/creditscoring/general information/general info.png"),
-		"payment_history_img": preload("res://images/creditscoring/payment history/Payment_History.png"),
-		"arrears_img": preload("res://images/creditscoring/arrears/arrears.png"),
-		"debt_ratio_img": preload("res://images/creditscoring/debt ratio/Debt_Ratio.png"),
-		"credit_correct": 0.6
+		"fraud_correct": "sus" # Marked as "sus" (spreadsheet has a duplicate "₱900,000" in the status column)
 	},
 	{
-		"id": "a9",
+		"id": "fd_a11",
 		"name": "Briar Galima",
-		"model_scene": preload("res://assets/Applicants/M/M LONG HAIR.glb"),
-		"location": preload("res://images/applicants info/a9/jolibee_location.png"),
-		"item": preload("res://images/applicants info/a9/jolibee_item.png"),
+		"model_scene": preload("res://assets/Applicants/M/M SPIKEY.glb"),
+		"location": preload("res://images/applicants info/FraudDetection/a15/fd_r15_location_fast_food_delivery.png"),
+		"item": preload("res://images/applicants info/FraudDetection/a15/fd_r15_item_fast_food_family_meal.png"),
 		"time": "6:45 PM",
 		"price": "₱1,200",
-		"fraud_correct": "legit",
-		"id_image": preload("res://images/applicants info/a2/a2_id.png"),
-		"kyc_correct": "legit",
-		
-		# --- NEW: Credit Scoring Tabs ---
-		"general_info_img": preload("res://images/creditscoring/general information/general info.png"),
-		"payment_history_img": preload("res://images/creditscoring/payment history/Payment_History.png"),
-		"arrears_img": preload("res://images/creditscoring/arrears/arrears.png"),
-		"debt_ratio_img": preload("res://images/creditscoring/debt ratio/Debt_Ratio.png"),
-		"credit_correct": 0.6
+		"fraud_correct": "legit"
 	},
 	{
-		"id": "a10",
+		"id": "fd_a12",
 		"name": "Michele Garcia",
-		"model_scene": preload("res://assets/Applicants/F/F SHORT HAIR.glb"),
-		"location": preload("res://images/applicants info/a10/luxurywatch_location.png"),
-		"item": preload("res://images/applicants info/a10/luxurywatch_item.png"),
+		"model_scene": preload("res://assets/Applicants/F/F BUNS.glb"),
+		"location": preload("res://images/applicants info/FraudDetection/a16/fd_r16_location_camera_taped.png"),
+		"item": preload("res://images/applicants info/FraudDetection/a16/fd_r16_item_luxury_watch.png"),
 		"time": "4:00 AM",
 		"price": "₱500,000",
-		"fraud_correct": "sus",
-		
-		"id_image": preload("res://images/applicants info/a2/a2_id.png"),
-		"kyc_correct": "legit",
-		
-		# --- NEW: Credit Scoring Tabs ---
-		"general_info_img": preload("res://images/creditscoring/general information/general info.png"),
-		"payment_history_img": preload("res://images/creditscoring/payment history/Payment_History.png"),
-		"arrears_img": preload("res://images/creditscoring/arrears/arrears.png"),
-		"debt_ratio_img": preload("res://images/creditscoring/debt ratio/Debt_Ratio.png"),
-		"credit_correct": 0.6
+		"fraud_correct": "sus"
 	}
 ]
 
-var special_applicants = [
+# ==========================================
+# KYC POOL (Days 4 - 6)
+# ==========================================
+var kyc_applicants: Array = [
+	{
+		"id": "kyc_a1",
+		"name": "Maria Santos",
+		"model_scene": preload("res://assets/Applicants/F/F SHORT HAIR.glb"),
+		"id_image": preload("res://images/applicants info/special characters/MarkKrazy/Mark_Krazy_ID.png"),
+		"kyc_correct": "legit"
+	}
+]
+
+# ==========================================
+# CREDIT SCORING POOL (Days 7 - 9)
+# ==========================================
+var credit_applicants: Array = [
+	{
+		"id": "cs_a1",
+		"name": "Mark Reyes",
+		"model_scene": preload("res://assets/Applicants/M/M MULLET.glb"),
+		"general_info_img": preload("res://images/applicants info/CreditScoring/a1/cs_a1_GI.png"),
+		"payment_history_img": preload("res://images/applicants info/CreditScoring/a1/cs_a1_PH.png"),
+		"arrears_img": preload("res://images/applicants info/CreditScoring/a1/cs_a1_arrears.png"),
+		"debt_ratio_img": preload("res://images/applicants info/CreditScoring/a1/cs_a1_DR.png"),
+		"credit_correct": 0.6
+	},
+	{
+		"id": "cs_a2",
+		"name": "Clara Lim",
+		"model_scene": preload("res://assets/Applicants/F/F LONG HAIR.glb"),
+		"general_info_img": preload("res://images/applicants info/CreditScoring/a2/cs_a2_GI.png"),
+		"payment_history_img": preload("res://images/applicants info/CreditScoring/a2/cs_a2_PH.png"),
+		"arrears_img": preload("res://images/applicants info/CreditScoring/a2/cs_a2_arrears.png"),
+		"debt_ratio_img": preload("res://images/applicants info/CreditScoring/a2/cs_a2_DR.png"),
+		"credit_correct": 0.6
+	},
+	{
+		"id": "cs_a3",
+		"name": "Rico Tan",
+		"model_scene": preload("res://assets/Applicants/M/M SHAGGY.glb"),
+		"general_info_img": preload("res://images/applicants info/CreditScoring/a3/cs_a3_GI.png"),
+		"payment_history_img": preload("res://images/applicants info/CreditScoring/a3/cs_a3_PH.png"),
+		"arrears_img": preload("res://images/applicants info/CreditScoring/a3/cs_a3_arrears.png"),
+		"debt_ratio_img": preload("res://images/applicants info/CreditScoring/a3/cs_a3_DR.png"),
+		"credit_correct": 0.1
+	},
+	{
+		"id": "cs_a4",
+		"name": "Anita Go",
+		"model_scene": preload("res://assets/Applicants/F/F SHORT HAIR.glb"),
+		"general_info_img": preload("res://images/applicants info/CreditScoring/a4/cs_a4_GI.png"),
+		"payment_history_img": preload("res://images/applicants info/CreditScoring/a4/cs_a4_PH.png"),
+		"arrears_img": preload("res://images/applicants info/CreditScoring/a4/cs_a4_arrears.png"),
+		"debt_ratio_img": preload("res://images/applicants info/CreditScoring/a4/cs_a4_DR.png"),
+		"credit_correct": 0.45
+	},
+	{
+		"id": "cs_a5",
+		"name": "Luis Sy",
+		"model_scene": preload("res://assets/Applicants/M/M LONG HAIR.glb"),
+		"general_info_img": preload("res://images/applicants info/CreditScoring/a5/cs_a5_GI.png"),
+		"payment_history_img": preload("res://images/applicants info/CreditScoring/a5/cs_a5_PH.png"),
+		"arrears_img": preload("res://images/applicants info/CreditScoring/a5/cs_a5_arrears.png"),
+		"debt_ratio_img": preload("res://images/applicants info/CreditScoring/a5/cs_a5_DR.png"),
+		"credit_correct": 0.85
+	},
+	{
+		"id": "cs_a6",
+		"name": "Grandma Baba",
+		"model_scene": preload("res://assets/Applicants/F/F SHORT HAIR.glb"),
+		"general_info_img": preload("res://images/applicants info/CreditScoring/a6/cs_a6_GI.png"),
+		"payment_history_img": preload("res://images/applicants info/CreditScoring/a6/cs_a6_PH.png"),
+		"arrears_img": preload("res://images/applicants info/CreditScoring/a6/cs_a6_arrears.png"),
+		"debt_ratio_img": preload("res://images/applicants info/CreditScoring/a6/cs_a6_DR.png"),
+		"credit_correct": 0.4
+	},
+	{
+		"id": "cs_a7",
+		"name": "John Bernard \"Bernard\" Adayo",
+		"model_scene": preload("res://assets/Applicants/M/M BASE.glb"),
+		"general_info_img": preload("res://images/applicants info/CreditScoring/a7/cs_a7_GI.png"),
+		"payment_history_img": preload("res://images/applicants info/CreditScoring/a7/cs_a7_PH.png"),
+		"arrears_img": preload("res://images/applicants info/CreditScoring/a7/cs_a7_arrears.png"),
+		"debt_ratio_img": preload("res://images/applicants info/CreditScoring/a7/cs_a7_DR.png"),
+		"credit_correct": 0.6
+	},
+	{
+		"id": "cs_a8",
+		"name": "Nurse Clara Garcia",
+		"model_scene": preload("res://assets/Applicants/F/Nurse Clara Garcia.glb"),
+		"general_info_img": preload("res://images/applicants info/CreditScoring/a8/cs_a8_GI.png"),
+		"payment_history_img": preload("res://images/applicants info/CreditScoring/a8/cs_a8_PH.png"),
+		"arrears_img": preload("res://images/applicants info/CreditScoring/a8/cs_a8_arrears.png"),
+		"debt_ratio_img": preload("res://images/applicants info/CreditScoring/a8/cs_a8_DR.png"),
+		"credit_correct": 0.7
+	},
+	{
+		"id": "cs_a9",
+		"name": "Meg Sy",
+		"model_scene": preload("res://assets/Applicants/F/F MULLET.glb"),
+		"general_info_img": preload("res://images/applicants info/CreditScoring/a9/cs_a9_GI.png"),
+		"payment_history_img": preload("res://images/applicants info/CreditScoring/a9/cs_a9_PH.png"),
+		"arrears_img": preload("res://images/applicants info/CreditScoring/a9/cs_a9_arrears.png"),
+		"debt_ratio_img": preload("res://images/applicants info/CreditScoring/a9/cs_a9_DR.png"),
+		"credit_correct": 0.5
+	},
+	{
+		"id": "cs_a10",
+		"name": "Jan Di",
+		"model_scene": preload("res://assets/Applicants/M/M SIDESWIPE.glb"),
+		"general_info_img": preload("res://images/applicants info/CreditScoring/a10/cs_a10_GI.png"),
+		"payment_history_img": preload("res://images/applicants info/CreditScoring/a10/cs_a10_PH.png"),
+		"arrears_img": preload("res://images/applicants info/CreditScoring/a10/cs_a10_arrears.png"),
+		"debt_ratio_img": preload("res://images/applicants info/CreditScoring/a10/cs_a10_DR.png"),
+		"credit_correct": 0.05
+	},
+	{
+		"id": "cs_a11",
+		"name": "Alex Rivera",
+		"model_scene": preload("res://assets/Applicants/M/M BALD.glb"),
+		"general_info_img": preload("res://images/applicants info/CreditScoring/a11/cs_a11_GI.png"),
+		"payment_history_img": preload("res://images/applicants info/CreditScoring/a11/cs_a11_PH.png"),
+		"arrears_img": preload("res://images/applicants info/CreditScoring/a11/cs_a11_arrears.png"),
+		"debt_ratio_img": preload("res://images/applicants info/CreditScoring/a11/cs_a11_DR.png"),
+		"credit_correct": 0.3
+	},
+	{
+		"id": "cs_a12",
+		"name": "Prof. Jericho Santur",
+		"model_scene": preload("res://assets/Applicants/M/M BASE.glb"),
+		"general_info_img": preload("res://images/applicants info/CreditScoring/a12/cs_a12_GI.png"),
+		"payment_history_img": preload("res://images/applicants info/CreditScoring/a12/cs_a12_PH.png"),
+		"arrears_img": preload("res://images/applicants info/CreditScoring/a12/cs_a12_arrears.png"),
+		"debt_ratio_img": preload("res://images/applicants info/CreditScoring/a12/cs_a12_DR.png"),
+		"credit_correct": 0.55
+	},
+	{
+		"id": "cs_a13",
+		"name": "Sol Ti",
+		"model_scene": preload("res://assets/Applicants/M/M SPIKEY.glb"),
+		"general_info_img": preload("res://images/applicants info/CreditScoring/a13/cs_a13_GI.png"),
+		"payment_history_img": preload("res://images/applicants info/CreditScoring/a13/cs_a13_PH.png"),
+		"arrears_img": preload("res://images/applicants info/CreditScoring/a13/cs_a13_arrears.png"),
+		"debt_ratio_img": preload("res://images/applicants info/CreditScoring/a13/cs_a13_DR.png"),
+		"credit_correct": 0.9
+	},
+	{
+		"id": "cs_a14",
+		"name": "Sam Lo",
+		"model_scene": preload("res://assets/Applicants/M/M SPIKEY LONG.glb"),
+		"general_info_img": preload("res://images/applicants info/CreditScoring/a14/cs_a14_GI.png"),
+		"payment_history_img": preload("res://images/applicants info/CreditScoring/a14/cs_a14_PH.png"),
+		"arrears_img": preload("res://images/applicants info/CreditScoring/a14/cs_a14_arrears.png"),
+		"debt_ratio_img": preload("res://images/applicants info/CreditScoring/a14/cs_a14_DR.png"),
+		"credit_correct": 0.65
+	},
+	{
+		"id": "cs_a15",
+		"name": "Ben Jo",
+		"model_scene": preload("res://assets/Applicants/M/M OLD 1.glb"),
+		"general_info_img": preload("res://images/applicants info/CreditScoring/a15/cs_a15_GI.png"),
+		"payment_history_img": preload("res://images/applicants info/CreditScoring/a15/cs_a15_PH.png"),
+		"arrears_img": preload("res://images/applicants info/CreditScoring/a15/cs_a15_arrears.png"),
+		"debt_ratio_img": preload("res://images/applicants info/CreditScoring/a15/cs_a15_DR.png"),
+		"credit_correct": 0.15
+	}
+]
+
+# ==========================================
+# SPECIAL STORY CHARACTERS
+# ==========================================
+var special_applicants: Array = [
 	{
 		"id": "tita_elena",
 		"target_day": 2,
@@ -224,7 +327,7 @@ var special_applicants = [
 		"target_day": [3, 5],
 		"is_special": true,
 		"name": "Mark Krazy",
-		"model_scene": preload("res://assets/Applicants/M/Mark Krazy.glb"),
+		"model_scene": preload("res://models3d/characters/mark_krazy.tscn"),
 		"location": preload("res://images/applicants info/special characters/MarkKrazy/atm_location.png"),
 		"item": preload("res://images/applicants info/special characters/MarkKrazy/atm_item.png"),
 		"time": "2:45 AM",
@@ -239,19 +342,65 @@ var special_applicants = [
 		"arrears_img": preload("res://images/creditscoring/arrears/arrears.png"),
 		"debt_ratio_img": preload("res://images/creditscoring/debt ratio/Debt_Ratio.png"),
 		"credit_correct": 0.6
+	},
+	{
+		"id": "nurse_clara",
+		"target_day": [8],
+		"is_special": true,
+		"name": "Clara Garcia",
+		"model_scene": preload("res://assets/Applicants/F/Nurse Clara Garcia.glb"),
+		
+		"general_info_img": preload("res://images/applicants info/special characters/Clara Garcia/claragarcia_general_information.png"),
+		"payment_history_img": preload("res://images/applicants info/special characters/Clara Garcia/claragarcia_payment_history.png"),
+		"arrears_img": preload("res://images/applicants info/special characters/Clara Garcia/claragarcia_arrears.png"),
+		"debt_ratio_img": preload("res://images/applicants info/special characters/Clara Garcia/claragarcia_debt_ratio.png"),
+		"credit_correct": 0.2
+	},
+	{
+		"id": "jericho_santur",
+		"target_day": [9],
+		"is_special": true,
+		"name": "Jericho Santur",
+		"model_scene": preload("res://assets/Applicants/M/M BASE.glb"),
+		
+		"general_info_img": preload("res://images/applicants info/special characters/JerichoSantur/jericho_generalinformation.png"),
+		"payment_history_img": preload("res://images/applicants info/special characters/JerichoSantur/jericho_payment_history.png"),
+		"arrears_img": preload("res://images/applicants info/special characters/JerichoSantur/jericho_arrears.png"),
+		"debt_ratio_img": preload("res://images/applicants info/special characters/JerichoSantur/jericho_debt_ratio.png"),
+		"credit_correct": 0.2
 	}
 ]
-# Pick random applicants and pick special character for a specific day
-func get_session_applicants() -> Array:
-	var current_day = SaveManager.current_save_data.get("current_day", 1) #
-	var pool = all_applicants.duplicate() 
-	pool.shuffle() 
 
-	var guaranteed_applicant = null 
+# ==========================================
+# SESSION APPLICANT SELECTION
+# ==========================================
+func get_session_applicants(department: String = "") -> Array:
+	var current_day = SaveManager.current_save_data.get("current_day", 1)
+	var pool: Array = []
+	
+	# Determine department automatically by current_day if not specified
+	if department == "":
+		if current_day <= 3:
+			department = "fraud"
+		elif current_day <= 6:
+			department = "kyc"
+		else:
+			department = "credit"
+			
+	match department.to_lower():
+		"fraud", "fraud_detection":
+			pool = fraud_applicants.duplicate()
+		"kyc", "know_your_customer":
+			pool = kyc_applicants.duplicate()
+		"credit", "credit_scoring":
+			pool = credit_applicants.duplicate()
+
+	pool.shuffle()
+
+	# Check for a guaranteed special character on this day
+	var guaranteed_applicant = null
 	for special in special_applicants:
-		# Check if target_days exists as an array, otherwise fall back to target_day
 		var target = special.get("target_days", special.get("target_day"))
-		
 		if target is Array:
 			if current_day in target:
 				guaranteed_applicant = special
@@ -267,5 +416,5 @@ func get_session_applicants() -> Array:
 	else:
 		session = pool.slice(0, 5)
 
-	session.shuffle() 
+	session.shuffle()
 	return session

@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://d2v5cntvaphoy"]
+
+[ext_resource type="PackedScene" uid="uid://dlpvfr1rxfd53" path="res://try/Breathing Idle.glb" id="1_lmxvc"]
+
+[node name="empty_1" unique_id=304326390 instance=ExtResource("1_lmxvc")]
+
+[node name="mixamorig_Hips" parent="FBX_Root" parent_id_path=PackedInt32Array(780370853) index="0" unique_id=2085319183]
+transform = Transform3D(0.99984896, 0.017257305, -0.002049996, -0.017196815, 0.9994993, 0.026558869, 0.002507304, -0.026519604, 0.9996452, 0.00043169534, 0.47202066, 0.0073618703)
+
+[node name="mixamorig_Spine" parent="FBX_Root/mixamorig_Hips" index="0" unique_id=1673970605]
+transform = Transform3D(0.9999972, 0.0012231966, -0.0020170335, -0.001137963, 0.9991282, 0.041729927, 0.0020663193, -0.041727517, 0.99912685, 0, 0.0471, -0.0028)
+
+[node name="mixamorig_Spine1" parent="FBX_Root/mixamorig_Hips/mixamorig_Spine" index="0" unique_id=1566550935]
+transform = Transform3D(0.99906147, -1.0515039e-05, -0.04331548, -0.0007588677, 0.9998422, -0.017745823, 0.043308835, 0.017762039, 0.9989038, 0, 0.055, 0)
+
+[node name="mixamorig_Spine2" parent="FBX_Root/mixamorig_Hips/mixamorig_Spine/mixamorig_Spine1" index="0" unique_id=988713294]
+transform = Transform3D(0.99906194, -0.00076596113, -0.043296743, 1.3529498e-06, 0.9998441, -0.017656986, 0.04330352, 0.017640365, 0.99890614, 0, 0.0629, 0)
+
+[node name="mixamorig_Neck" parent="FBX_Root/mixamorig_Hips/mixamorig_Spine/mixamorig_Spine1/mixamorig_Spine2" index="0" unique_id=916184788]
+transform = Transform3D(0.9995716, 0.024909046, 0.01536423, -0.024747118, 0.999637, -0.010641052, -0.015623713, 0.010256274, 0.99982524, 0, 0.0707, 0)
+
+[node name="mixamorig_Head" parent="FBX_Root/mixamorig_Hips/mixamorig_Spine/mixamorig_Spine1/mixamorig_Spine2/mixamorig_Neck" index="0" unique_id=2065741502]
+transform = Transform3D(0.9975688, -0.06441242, -0.026599612, 0.061550193, 0.99336374, -0.09715987, 0.032681394, 0.095286444, 0.9949132, 0, 0.0412, 0.0034)
+
+[node name="mixamorig_LeftShoulder" parent="FBX_Root/mixamorig_Hips/mixamorig_Spine/mixamorig_Spine1/mixamorig_Spine2" index="1" unique_id=1391745223]
+transform = Transform3D(-0.14249352, 0.9418502, -0.30432513, -0.0069344556, -0.30840498, -0.9512299, -0.9897714, -0.13343376, 0.050476927, 0.0298, 0.0605, -0.0004)
+
+[node name="mixamorig_LeftArm" parent="FBX_Root/mixamorig_Hips/mixamorig_Spine/mixamorig_Spine1/mixamorig_Spine2/mixamorig_LeftShoulder" index="0" unique_id=139796140]
+transform = Transform3D(0.9177716, -0.0460324, 0.3944318, 0.34596357, 0.5802933, -0.73727125, -0.19494778, 0.8131056, 0.5485022, 0, 0.0641, 0)
+
+[node name="mixamorig_LeftForeArm" parent="FBX_Root/mixamorig_Hips/mixamorig_Spine/mixamorig_Spine1/mixamorig_Spine2/mixamorig_LeftShoulder/mixamorig_LeftArm" index="0" unique_id=2031392441]
+transform = Transform3D(0.8723834, -0.48881003, -0.0034520717, 0.48855007, 0.8721116, -0.027205264, 0.016308798, 0.022046912, 0.99962384, 0, 0.1266, 0)
+
+[node name="mixamorig_RightShoulder" parent="FBX_Root/mixamorig_Hips/mixamorig_Spine/mixamorig_Spine1/mixamorig_Spine2" index="2" unique_id=228384171]
+transform = Transform3D(0.021821316, -0.96892697, 0.24638271, -0.015391534, -0.24673778, -0.96896005, 0.99964345, 0.017351784, -0.020297416, -0.0298, 0.0605, -0.0008)
+
+[node name="mixamorig_RightArm" parent="FBX_Root/mixamorig_Hips/mixamorig_Spine/mixamorig_Spine1/mixamorig_Spine2/mixamorig_RightShoulder" index="0" unique_id=1821943195]
+transform = Transform3D(0.91269684, 0.106250964, -0.39458194, -0.389641, 0.5172657, -0.76198155, 0.1231425, 0.8492035, 0.51350653, 0, 0.0641, 0)
+
+[node name="mixamorig_RightForeArm" parent="FBX_Root/mixamorig_Hips/mixamorig_Spine/mixamorig_Spine1/mixamorig_Spine2/mixamorig_RightShoulder/mixamorig_RightArm" index="0" unique_id=635251103]
+transform = Transform3D(0.8905291, 0.4549166, 0.0029527966, -0.45468158, 0.8902445, -0.027008487, -0.01491532, 0.022709263, 0.9996308, 0, 0.1266, 0)
+
+[node name="mixamorig_LeftUpLeg" parent="FBX_Root/mixamorig_Hips" index="1" unique_id=984777361]
+transform = Transform3D(-0.99485326, 0.069294654, 0.07392947, -0.058579233, -0.98864585, 0.13837695, 0.08267884, 0.13333403, 0.9876164, 0.0412, -0.0262, -0.0058)
+
+[node name="mixamorig_LeftLeg" parent="FBX_Root/mixamorig_Hips/mixamorig_LeftUpLeg" index="0" unique_id=262636250]
+transform = Transform3D(0.98800874, 0.04001929, -0.14912143, 0.01907252, 0.9267935, 0.3750865, 0.1532155, -0.37343284, 0.9149169, 0, 0.1962, 0)
+
+[node name="mixamorig_LeftFoot" parent="FBX_Root/mixamorig_Hips/mixamorig_LeftUpLeg/mixamorig_LeftLeg" index="0" unique_id=736417087]
+transform = Transform3D(0.98499537, 0.14959505, 0.086054966, 0.017343517, 0.41030827, -0.9117819, -0.17170714, 0.8995935, 0.4015572, 0, 0.2079, 0)
+
+[node name="mixamorig_LeftToeBase" parent="FBX_Root/mixamorig_Hips/mixamorig_LeftUpLeg/mixamorig_LeftLeg/mixamorig_LeftFoot" index="0" unique_id=1184857462]
+transform = Transform3D(0.99419594, -0.065093614, -0.085657105, 0.0002492629, 0.79757965, -0.6032135, 0.107583724, 0.5996911, 0.79296666, 0, 0.0809, 0)
+
+[node name="mixamorig_RightUpLeg" parent="FBX_Root/mixamorig_Hips" index="2" unique_id=879304194]
+transform = Transform3D(-0.9629288, -0.13305081, -0.2346614, 0.10196873, -0.9848878, 0.13999529, -0.24974163, 0.11087737, 0.96194357, -0.0412, -0.0262, -0.0062)
+
+[node name="mixamorig_RightLeg" parent="FBX_Root/mixamorig_Hips/mixamorig_RightUpLeg" index="0" unique_id=2061525844]
+transform = Transform3D(0.9973823, -0.040664166, 0.0597911, 0.021328287, 0.95554054, 0.29408735, -0.06909163, -0.2920423, 0.95390654, 0, 0.1962, 0)
+
+[node name="mixamorig_RightFoot" parent="FBX_Root/mixamorig_Hips/mixamorig_RightUpLeg/mixamorig_RightLeg" index="0" unique_id=1315322295]
+transform = Transform3D(0.9889729, -0.14657849, -0.021148548, 0.052258715, 0.47901863, -0.8762477, 0.13856962, 0.8654801, 0.48139644, 0, 0.2078, 0)
+
+[node name="mixamorig_RightToeBase" parent="FBX_Root/mixamorig_Hips/mixamorig_RightUpLeg/mixamorig_RightLeg/mixamorig_RightFoot" index="0" unique_id=861107414]
+transform = Transform3D(0.99496406, 0.05886956, 0.081121676, 4.097819e-08, 0.809343, -0.5873363, -0.10023148, 0.58437854, 0.8052672, 0, 0.0822, 0)

@@ -92,4 +92,4 @@ func _unhandled_input(event: InputEvent) -> void:
 		SceneTransition.change_scene("res://scene/main_menu.tscn")
 
 func _on_try_pressed() -> void:
-	SceneTransition.change_scene("res://scene/outside_world.tscn")
+	SceneTransition.change_scene("res://scene/CreditScoring/CreditScoring.tscn")

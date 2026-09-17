@@ -35,7 +35,7 @@ func play_ambient_conversation():
 	# 2. Mark speaks
 	mark_bubble.display_text("I swear the card works! The bank just keeps flagging it every time I move to a new bench. They think someone stole my life savings!")
 	await mark_bubble.finished_displaying
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(2.0).timeout
 	mark_bubble.visible = false
 
 	await get_tree().create_timer(0.5).timeout
@@ -43,7 +43,7 @@ func play_ambient_conversation():
 	# 3. Cashier replies
 	cashier_bubble.display_text("Look, man, the card is declining. I can't give you the bread.")
 	await cashier_bubble.finished_displaying
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(2.0).timeout
 	cashier_bubble.visible = false
 
 	# 4. Unlock Mark's interaction for Dialogic

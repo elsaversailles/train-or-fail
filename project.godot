@@ -30,6 +30,7 @@ directories/dch_directory={}
 directories/dtl_directory={
 "clara_monologue": "res://Dialogic/Timelines/clara_monologue.dtl",
 "grandpa_day1": "res://Dialogic/Timelines/grandpa_day1.dtl",
+"jericho_monologue": "res://Dialogic/Timelines/jericho_monologue.dtl",
 "mark_day2": "res://Dialogic/Timelines/mark_day2.dtl",
 "mark_day4": "res://Dialogic/Timelines/mark_day4.dtl"
 }

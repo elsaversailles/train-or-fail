@@ -1,16 +1,17 @@
 extends StaticBody3D
 
-# --- ADD THIS LINE HERE ---
 var can_talk: bool = false
-
-@export var mark_bubble: Node3D
 var is_talking: bool = false
 
+@export var mark_bubble: Node3D
+
 func interact():
-	# Allow interaction if unlocked by Day 2 ambient chat OR if it's Day 4
 	var current_day = SaveManager.current_save_data.get("current_day", 1)
 	
-	if current_day == 2 and can_talk:
+	# Day 2: Unlocked after the cashier ambient sequence
+	if current_day == 2 and can_talk and not is_talking:
+		is_talking = true
+		
 		var player = get_tree().get_first_node_in_group("player")
 		var mark_root = get_parent()
 		if mark_root and player:
@@ -20,9 +21,13 @@ func interact():
 			mark_root.rotate_y(PI)
 		
 		Dialogic.start("mark_day2")
+		await Dialogic.timeline_ended
+		is_talking = false
 
+	# Day 4: Direct interaction with 3D chat bubble before Dialogic
 	elif current_day == 4 and not is_talking:
 		is_talking = true
+		
 		var player = get_tree().get_first_node_in_group("player")
 		var mark_root = get_parent()
 		if mark_root and player:
@@ -38,3 +43,5 @@ func interact():
 			mark_bubble.visible = false
 			
 		Dialogic.start("mark_day4")
+		await Dialogic.timeline_ended
+		is_talking = false

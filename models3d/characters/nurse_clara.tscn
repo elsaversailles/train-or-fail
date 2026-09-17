@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cklxtva6ub13a"]
+
+[ext_resource type="PackedScene" uid="uid://cax77qnlur5jo" path="res://assets/Applicants/F/Nurse Clara Garcia.glb" id="1_o4fq0"]
+
+[node name="Nurse Clara Garcia" unique_id=388356210 instance=ExtResource("1_o4fq0")]
+
+[node name="Skeleton3D" parent="Player" parent_id_path=PackedInt32Array(951834998) index="2" unique_id=1614495876]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 0, 0)
+bones/8/rotation = Quaternion(-0.581503, 0.078653, -0.226937, 0.95646)
+bones/12/rotation = Quaternion(-0.571503, -0.196347, 0.226937, 0.95646)

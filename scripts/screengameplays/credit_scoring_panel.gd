@@ -1,19 +1,19 @@
 extends Control
 
 # --- PANEL SETTINGS (RIGHT-TO-LEFT) ---
-var is_open = false
-var panel_width = 900
-var slide_speed = 10.0
-var closed_x : float
-var open_x : float
+var is_open: bool = false
+var panel_width: float = 900.0
+var slide_speed: float = 10.0
+var closed_x: float
+var open_x: float
 
-var applicants_list = [] 
-var current_case_index = 0
-var actual_score = 1.0
-var total_correct_answers = 0
-var mistakes = 0 
+var applicants_list: Array = []
+var current_case_index: int = 0
+var actual_score: float = 1.0
+var total_correct_answers: int = 0
+var mistakes: int = 0
 var is_rejected: bool = false
-var final_credit_amount = 500
+var final_credit_amount: int = 0
 
 # --- UI REFERENCES ---
 @onready var grip_button = $Panel/GripButton
@@ -21,12 +21,10 @@ var final_credit_amount = 500
 @onready var submit_button = $Panel/SubmitButton
 @onready var reject_button = $Panel/RejectButton
 @onready var result_label = $Panel/ResultLabel
-@onready var fraud_label = $Panel/FraudDetectionLabel
-@onready var kyc_label = $Panel/KYCLabel
-@onready var model_container = $"../ModelContainer"
 @onready var credit_score_label = $Panel/CreditscoreLabel
+@onready var model_container = $"../ModelContainer"
 
-# Reference the 4 tabs inside the TabContainer
+# TabContainer references for customer documentation
 @onready var general_info = $"Panel/TabContainer/General Info"
 @onready var payment_history = $"Panel/TabContainer/Payment History"
 @onready var arrears_tex = $"Panel/TabContainer/Arrears"
@@ -36,19 +34,18 @@ func _ready():
 	slider.value_changed.connect(_on_slider_value_changed)
 	
 	var screen_width = get_viewport_rect().size.x
-	closed_x = screen_width - 10
+	closed_x = screen_width - 10.0
 	open_x = screen_width - panel_width
-	position.x = closed_x 
+	position.x = closed_x
 	
 	reject_button.pressed.connect(_on_reject_pressed)
 	grip_button.pressed.connect(_on_grip_pressed)
 	submit_button.pressed.connect(_on_submit)
 	
 	applicants_list = Database.get_session_applicants()
-	
 	load_applicant()
 
-func _process(delta):
+func _process(delta: float):
 	var target_x = open_x if is_open else closed_x
 	position.x = lerp(position.x, target_x, slide_speed * delta)
 
@@ -62,11 +59,13 @@ func _on_reject_pressed():
 	credit_score_label.text = "Proposed Credit: $0 (REJECTED)"
 
 func _on_slider_value_changed(value: float):
+	if value > 0.0:
+		is_rejected = false
 	var display_score = int(lerp(0, 10000, value))
 	credit_score_label.text = "Proposed Credit: $" + str(display_score)
 
 # ==========================================
-# STREAMLINED GAME LOOP
+# APPLICANT EVALUATION LOOP
 # ==========================================
 
 func load_applicant():
@@ -74,44 +73,34 @@ func load_applicant():
 		finish_game()
 		return
 
-	# Reset the UI for the new person
-	slider.value = 0.0
+	# Reset selection state
+	slider.set_value_no_signal(0.0)
 	is_rejected = false
 	credit_score_label.text = "Proposed Credit: $0"
 	
 	var data = applicants_list[current_case_index]
-	
-	fraud_label.text = "Fraud Detection: " + data["fraud_correct"].to_upper()
-	fraud_label.modulate = Color.RED if data["fraud_correct"] == "sus" else Color.GREEN
-	
-	kyc_label.text = "KYC: " + ("INVALID" if data["kyc_correct"] == "sus" else "VALID")
-	kyc_label.modulate = Color.RED if data["kyc_correct"] == "sus" else Color.GREEN
 
-	# --- THE FIX IS HERE ---
-	# We safely check for the 4 distinct image keys and apply them to their specific tabs!
+	# Assign document textures to each tab
 	if data.has("general_info_img") and data["general_info_img"]:
 		general_info.texture = data["general_info_img"]
-		
 	if data.has("payment_history_img") and data["payment_history_img"]:
 		payment_history.texture = data["payment_history_img"]
-		
 	if data.has("arrears_img") and data["arrears_img"]:
 		arrears_tex.texture = data["arrears_img"]
-		
 	if data.has("debt_ratio_img") and data["debt_ratio_img"]:
 		debt_ratio_tex.texture = data["debt_ratio_img"]
 
-	# Grab the exact target score straight from the database!
-	actual_score = data["credit_correct"]
+	# Retrieve target score directly from the applicant's dictionary
+	actual_score = data.get("credit_correct", 0.0)
+	result_label.text = "Evaluating: " + str(data.get("name", "Unknown"))
 	
-	result_label.text = "Evaluating: " + data["name"]
-	spawn_3d_model(data["model_scene"])
+	spawn_3d_model(data.get("model_scene"))
 
 func spawn_3d_model(model_packed_scene: PackedScene):
 	for child in model_container.get_children():
 		child.queue_free()
 		
-	await get_tree().process_frame 
+	await get_tree().process_frame
 	
 	if model_packed_scene:
 		var new_model = model_packed_scene.instantiate()
@@ -119,17 +108,29 @@ func spawn_3d_model(model_packed_scene: PackedScene):
 		new_model.position = Vector3.ZERO
 
 func _on_submit():
-	# 1. Instantly grade the player's choice
-	var player_choice = snapped(slider.value, 0.01)
-	
-	# Snap the difference to safely handle floating-point precision errors
+	var current_applicant = applicants_list[current_case_index]
+
+	# 1. Calculate player selection (snapped to 0.01)
+	var player_choice = 0.0 if is_rejected else snapped(slider.value, 0.01)
+
+	# 2. Record decision for special characters based on score threshold
+	if current_applicant.get("is_special", false):
+		var verdict = "sus"
+		if player_choice >= 0.6:
+			verdict = "legit"
+		elif player_choice <= 0.4:
+			verdict = "sus"
+		else:
+			# Fallback if the slider sits between 0.41 and 0.59
+			verdict = "sus"
+
+		SaveManager.record_special_decision(current_applicant.get("id", ""), verdict)
+
+	# 3. Grade accuracy against the target score (±0.20 margin of error)
 	var diff = snapped(abs(player_choice - actual_score), 0.01)
-	
-	# --- Margin of Error strictly set to exactly 0.20 ---
 	if diff <= 0.20:
 		total_correct_answers += 1
 	else:
-		# --- Mistake Tracker ---
 		mistakes += 1
 		if mistakes >= 3:
 			submit_button.visible = false
@@ -137,9 +138,9 @@ func _on_submit():
 			slider.visible = false
 			result_label.text = "TERMINATED"
 			get_tree().current_scene.trigger_game_over()
-			return # Stop loading the next applicant
+			return
 
-	# 2. Immediately move to the next person!
+	# 4. Advance to the next applicant
 	current_case_index += 1
 	if current_case_index < applicants_list.size():
 		load_applicant()
@@ -147,8 +148,8 @@ func _on_submit():
 		finish_game()
 
 func finish_game():
-	is_open = false 
-	self.visible = false 
+	is_open = false
+	self.visible = false
 	
 	if get_tree().current_scene.has_method("show_final_result"):
 		get_tree().current_scene.show_final_result(total_correct_answers)

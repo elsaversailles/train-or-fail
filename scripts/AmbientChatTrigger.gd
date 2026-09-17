@@ -25,6 +25,7 @@ func play_ambient_conversation():
 		var target_assistant = assistant_npc.global_position
 		target_assistant.y = grandpa_npc.global_position.y 
 		grandpa_npc.look_at(target_assistant, Vector3.UP)
+		grandpa_npc.rotate_y(PI) # Flips Grandpa 180 degrees to face the assistant
 		
 		var target_grandpa = grandpa_npc.global_position
 		target_grandpa.y = assistant_npc.global_position.y
@@ -34,7 +35,7 @@ func play_ambient_conversation():
 	grandpa_bubble.display_text("Man, rush-order season is right around the corner. We gotta stock flour early before local prices spike...")
 	
 	await grandpa_bubble.finished_displaying
-	await get_tree().create_timer(3.0).timeout 
+	await get_tree().create_timer(2.0).timeout 
 	grandpa_bubble.visible = false
 	
 	# Short pause between speakers
@@ -44,7 +45,7 @@ func play_ambient_conversation():
 	assistant_bubble.display_text("Yeah, but that overseas supplier demands the full payment upfront...")
 	
 	await assistant_bubble.finished_displaying
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(2.0).timeout
 	assistant_bubble.visible = false
 	
 	# 4. Unlock Grandpa's interactive Dialogic chat!

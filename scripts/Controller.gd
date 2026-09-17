@@ -14,6 +14,8 @@ var screen_target_transform: Transform3D
 var original_head_transform: Transform3D
 var current_monitor = null
 
+var is_in_dialogue: bool = false
+
 @onready var anim_player = $MenANDWomen/AnimationPlayer
 
 @onready var head: Node3D = $Head
@@ -30,6 +32,9 @@ var current_monitor = null
 func _ready() -> void:
 	add_to_group("player")
 	capture_mouse()
+	
+	Dialogic.timeline_started.connect(_on_dialogic_started)
+	Dialogic.timeline_ended.connect(_on_dialogic_ended)
 
 	look_rotation.y = rotation.y
 	look_rotation.x = head.rotation.x
@@ -39,7 +44,12 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	# Do nothing while paused
-	if is_paused:
+	if is_paused or is_in_dialogue:
+		velocity.x = 0
+		velocity.z = 0
+		if not is_on_floor():
+			velocity.y -= gravity * delta
+		move_and_slide()
 		return
 
 	# Smooth camera move when focusing on computer
@@ -141,6 +151,8 @@ func _input(event: InputEvent) -> void:
 					check_interaction()
 
 func _unhandled_input(event: InputEvent) -> void:
+	if is_in_dialogue:
+		return
 	# ESC behavior
 	if SceneTransition.is_transitioning:
 		return
@@ -308,3 +320,11 @@ func drop_item() -> void:
 
 func clear_held_item() -> void:
 	held_item = null
+	
+func _on_dialogic_started() -> void:
+	is_in_dialogue = true
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
+func _on_dialogic_ended() -> void:
+	is_in_dialogue = false
+	capture_mouse()

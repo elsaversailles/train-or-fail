@@ -10,7 +10,9 @@ extends Node3D
 
 const ALL_SPECIAL_IDS: Array[String] = [
 	"tita_elena",
-	"mark_krazy"
+	"mark_krazy",
+	"nurse_clara",
+	"jericho_santur"
 ]
 
 func _ready():
