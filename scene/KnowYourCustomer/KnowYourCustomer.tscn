@@ -23,7 +23,7 @@
 size = Vector3(1.0327148, 1.3692627, 31.334213)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s784d"]
-size = Vector3(48.456665, 1.3692627, 2.605833)
+size = Vector3(2.8863602, 1.3692627, 12.457443)
 
 [sub_resource type="LabelSettings" id="LabelSettings_1bvp3"]
 font_color = Color(0.07058824, 0.07058824, 0.07058824, 1)
@@ -49,19 +49,23 @@ texture = ExtResource("14_x3kqo")
 [node name="KnowYourCustomer" type="Node3D" unique_id=1103394804]
 script = ExtResource("1_bomre")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1051809464]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1546302649]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.769102, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1983723215]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=409279104]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.69016075, 0.18463135, -0.13005829)
 shape = SubResource("BoxShape3D_d5ytb")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=1856903701]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=358780558]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.258926, 0.18463135, -0.13005829)
 shape = SubResource("BoxShape3D_s784d")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=581313157]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.255692, 0.18463135, 9.962283)
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=4883322]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.255692, 0.18463135, 7.0717897)
+shape = SubResource("BoxShape3D_s784d")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" unique_id=1240786298]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.584972, 0.18463135, 2.1459846)
 shape = SubResource("BoxShape3D_s784d")
 
 [node name="WorldEnvironment" parent="." unique_id=1060883038 instance=ExtResource("2_qob2y")]

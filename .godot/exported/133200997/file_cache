@@ -1,5 +1,5 @@
 res://addons/table.tscn::ded9c6fc3103e6cff33d8ad6514ace8a::1787998625::res://.godot/exported/133200997/export-554ad69a964da231c21be0d6016b3566-table.scn
-res://scene/character.tscn::293f89569f94552a5af72608e42830f7::1789733821::res://.godot/exported/133200997/export-4931db860d6571e42e0c4fd506d3cbe9-character.scn
+res://scene/character.tscn::1e99bd11b3cbecd6a0cc7d2dc1f207da::1789734512::res://.godot/exported/133200997/export-4931db860d6571e42e0c4fd506d3cbe9-character.scn
 res://scene/data.tscn::12e8216e4fecab600b2c30f4c9906ef9::1787998628::res://.godot/exported/133200997/export-308ee09e135af6a53c6588f62f230428-data.scn
 res://scene/floppydisk.tscn::91c07688692915826b0be7271517333f::1787998628::res://.godot/exported/133200997/export-04728ab84b73e1e42f4b2ea94bd1cbbe-floppydisk.scn
 res://scene/IdleScreen.tscn::860e57a846320589bacd2ef56b0ef54b::1789730731::res://.godot/exported/133200997/export-463dd8ffe2f8897e8ab4f548fd7499b1-IdleScreen.scn
@@ -16,9 +16,9 @@ res://scene/model_container.tscn::c32a877b550e3979c9ae5005c51c2f5e::1787998628::
 res://scene/settings_panel.tscn::f04663134ae0abcf9986605d11d1c5e6::1789629645::res://.godot/exported/133200997/export-35437418e4492084f95e61ca25cb1966-settings_panel.scn
 res://scene/about_us_panel.tscn::3ec2905f16bf73146c9ae042689dd11c::1787998628::res://.godot/exported/133200997/export-3d63481207d0bca650d79ca61b6fc21d-about_us_panel.scn
 res://scene/slots_menu.tscn::1caf819622f5fe1d0df124e2e7ed361a::1789690422::res://.godot/exported/133200997/export-564d460892b8f77b39af42565a593ac0-slots_menu.scn
-res://scene/CreditScoring/CreditScoring.tscn::1274f29d5ac1145eb1fc8564f2927fbb::1789733451::res://.godot/exported/133200997/export-a6ced45c123fbf79723273196af11557-CreditScoring.scn
-res://scene/FraudDetection/FraudDetection.tscn::573ef1620310450797a1f155486de426::1789733461::res://.godot/exported/133200997/export-a1ebad31b4c8080ca74c6e974f067fc5-FraudDetection.scn
-res://scene/KnowYourCustomer/KnowYourCustomer.tscn::9a24f4afd9a529edb0e8839796043552::1789733295::res://.godot/exported/133200997/export-c22d8fbc10b5ba9520a35435e0d99e24-KnowYourCustomer.scn
+res://scene/CreditScoring/CreditScoring.tscn::103d75211bf2a8290213fba6af54fd5d::1789734017::res://.godot/exported/133200997/export-a6ced45c123fbf79723273196af11557-CreditScoring.scn
+res://scene/FraudDetection/FraudDetection.tscn::3d0fe02a47b23aee025c02940c4ec336::1789734372::res://.godot/exported/133200997/export-a1ebad31b4c8080ca74c6e974f067fc5-FraudDetection.scn
+res://scene/KnowYourCustomer/KnowYourCustomer.tscn::143edb9563432187c27038f2116dc6df::1789734018::res://.godot/exported/133200997/export-c22d8fbc10b5ba9520a35435e0d99e24-KnowYourCustomer.scn
 res://scene/crosshair.tscn::fc3736df3f0457cc348b8d0d1eda9139::1787998628::res://.godot/exported/133200997/export-de8d31390062d665d0671160a2ce639e-crosshair.scn
 res://scene/elevator.tscn::7f0b370990eedf8da1f15c065d1997a8::1789732958::res://.godot/exported/133200997/export-0f67b259be778e902baa208cbf174ea3-elevator.scn
 res://scene/lights.tscn::b1060a883d9c953e97dabbcefe199fd9::1789733230::res://.godot/exported/133200997/export-f8575ca403d4e17d687ec5c74a837fbb-lights.scn

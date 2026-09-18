@@ -22,7 +22,7 @@
 size = Vector3(1.0327148, 1.3692627, 31.334213)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v7irp"]
-size = Vector3(48.456665, 1.3692627, 2.605833)
+size = Vector3(2.8863602, 1.3692627, 12.457443)
 
 [sub_resource type="LabelSettings" id="LabelSettings_1bvp3"]
 font_color = Color(0.07058824, 0.07058824, 0.07058824, 1)
@@ -57,7 +57,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.258926, 0.18463135, -0.130
 shape = SubResource("BoxShape3D_v7irp")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=1350517854]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.255692, 0.18463135, 9.962283)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.255692, 0.18463135, 7.0717897)
+shape = SubResource("BoxShape3D_v7irp")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" unique_id=10133756]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.584972, 0.18463135, 2.1459846)
 shape = SubResource("BoxShape3D_v7irp")
 
 [node name="WorldEnvironment" parent="." unique_id=1060883038 instance=ExtResource("2_k8o8q")]
@@ -68,7 +72,7 @@ transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, -5.2
 [node name="Office" parent="." unique_id=1198069303 instance=ExtResource("4_118ik")]
 
 [node name="MainChar" parent="." unique_id=2061402672 instance=ExtResource("4_v7irp")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.2215095, 0.09924817, 5.1921763)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3500395, 0.09924817, 3.3019118)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1476932616]
 
