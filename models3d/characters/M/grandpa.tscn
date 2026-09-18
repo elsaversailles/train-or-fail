@@ -5,7 +5,7 @@
 
 [node name="Grandpa" unique_id=1700817525 instance=ExtResource("1_o3iwo")]
 
-[node name="Skeleton3D" parent="Player" parent_id_path=PackedInt32Array(852888248) index="0" unique_id=341334456]
+[node name="Skeleton3D" parent="Player" parent_id_path=PackedInt32Array(1245340447) index="0" unique_id=1332202183]
 bones/0/rotation = Quaternion(0.109116785, 0, 0, 0.99402905)
 bones/1/rotation = Quaternion(-0.0267569, 0, 0, 0.9996421)
 bones/6/rotation = Quaternion(-0.08071607, -2.7415483e-09, -2.2612316e-09, 0.9967372)
@@ -14,7 +14,7 @@ bones/12/rotation = Quaternion(-0.46767864, -0.08599728, 0.11689056, 0.8719047)
 bones/21/rotation = Quaternion(0.66487205, 0.6648722, -0.24071778, 0.24071771)
 bones/26/rotation = Quaternion(-0.66487205, 0.6648722, -0.24071778, -0.24071771)
 
-[node name="spine_006" parent="Player/Skeleton3D" index="0" unique_id=1647618599]
-transform = Transform3D(1, 4.9502806e-09, -5.100171e-09, -5.2330837e-09, 0.9983723, -0.057029486, 4.8095585e-09, 0.05702938, 0.99837255, -4.4703476e-09, 4.601302, -0.07155129)
+[node name="spine_006" parent="Player/Skeleton3D" index="0" unique_id=905656689]
+transform = Transform3D(1, 4.9502806e-09, -5.100171e-09, -5.2330837e-09, 0.9983723, -0.057029486, 4.8095585e-09, 0.05702938, 0.99837255, -3.7252894e-09, 3.8344176, -0.05962607)
 
-[node name="AnimationPlayer" parent="Player" parent_id_path=PackedInt32Array(852888248) index="1" unique_id=941433842 instance=ExtResource("2_a45o8")]
+[node name="AnimationPlayer" parent="Player" parent_id_path=PackedInt32Array(1245340447) index="1" unique_id=941433842 instance=ExtResource("2_a45o8")]

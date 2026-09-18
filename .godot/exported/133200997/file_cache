@@ -1,5 +1,5 @@
 res://addons/table.tscn::ded9c6fc3103e6cff33d8ad6514ace8a::1787998625::res://.godot/exported/133200997/export-554ad69a964da231c21be0d6016b3566-table.scn
-res://scene/character.tscn::93d16d031a16a4a683cc11b4111225fc::1789480478::res://.godot/exported/133200997/export-4931db860d6571e42e0c4fd506d3cbe9-character.scn
+res://scene/character.tscn::2f202db5b830d6a02b1b67657748e254::1789716824::res://.godot/exported/133200997/export-4931db860d6571e42e0c4fd506d3cbe9-character.scn
 res://scene/data.tscn::12e8216e4fecab600b2c30f4c9906ef9::1787998628::res://.godot/exported/133200997/export-308ee09e135af6a53c6588f62f230428-data.scn
 res://scene/floppydisk.tscn::91c07688692915826b0be7271517333f::1787998628::res://.godot/exported/133200997/export-04728ab84b73e1e42f4b2ea94bd1cbbe-floppydisk.scn
 res://scene/IdleScreen.tscn::c634d986e1415e5f002ade2d29ed434c::1787998628::res://.godot/exported/133200997/export-463dd8ffe2f8897e8ab4f548fd7499b1-IdleScreen.scn
@@ -16,16 +16,16 @@ res://scene/model_container.tscn::c32a877b550e3979c9ae5005c51c2f5e::1787998628::
 res://scene/settings_panel.tscn::f04663134ae0abcf9986605d11d1c5e6::1789629645::res://.godot/exported/133200997/export-35437418e4492084f95e61ca25cb1966-settings_panel.scn
 res://scene/about_us_panel.tscn::3ec2905f16bf73146c9ae042689dd11c::1787998628::res://.godot/exported/133200997/export-3d63481207d0bca650d79ca61b6fc21d-about_us_panel.scn
 res://scene/slots_menu.tscn::1caf819622f5fe1d0df124e2e7ed361a::1789690422::res://.godot/exported/133200997/export-564d460892b8f77b39af42565a593ac0-slots_menu.scn
-res://scene/CreditScoring/CreditScoring.tscn::17e4a1366c8a73bf94cd0960aa444c84::1789551691::res://.godot/exported/133200997/export-a6ced45c123fbf79723273196af11557-CreditScoring.scn
+res://scene/CreditScoring/CreditScoring.tscn::7901caf998ec80701a197e861b97f83b::1789713149::res://.godot/exported/133200997/export-a6ced45c123fbf79723273196af11557-CreditScoring.scn
 res://scene/FraudDetection/FraudDetection.tscn::cfd2616a36a4d858796fff8bb96645c0::1789700961::res://.godot/exported/133200997/export-a1ebad31b4c8080ca74c6e974f067fc5-FraudDetection.scn
-res://scene/KnowYourCustomer/KnowYourCustomer.tscn::b0affa89e5585fb47e42394fd8ab184c::1788536837::res://.godot/exported/133200997/export-c22d8fbc10b5ba9520a35435e0d99e24-KnowYourCustomer.scn
+res://scene/KnowYourCustomer/KnowYourCustomer.tscn::83903de206d3a4d4498cf6046316e53e::1789713139::res://.godot/exported/133200997/export-c22d8fbc10b5ba9520a35435e0d99e24-KnowYourCustomer.scn
 res://scene/crosshair.tscn::fc3736df3f0457cc348b8d0d1eda9139::1787998628::res://.godot/exported/133200997/export-de8d31390062d665d0671160a2ce639e-crosshair.scn
-res://scene/elevator.tscn::31234096d3a403b1a76b38b40243f61f::1789702288::res://.godot/exported/133200997/export-0f67b259be778e902baa208cbf174ea3-elevator.scn
+res://scene/elevator.tscn::1c32d279cf89af9b196b5b0517435a38::1789719706::res://.godot/exported/133200997/export-0f67b259be778e902baa208cbf174ea3-elevator.scn
 res://scene/lights.tscn::ffc2a8a96bcb3d3a380c0b276b22ddc3::1787998628::res://.godot/exported/133200997/export-f8575ca403d4e17d687ec5c74a837fbb-lights.scn
 res://scene/men_and_women.tscn::02b5bccc1ac55220f2a201db61bf91d0::1787998628::res://.godot/exported/133200997/export-ec2061d5e87c8c9dbadb30e29e1dac9c-men_and_women.scn
 res://scene/npc_dialogue_box.tscn::df67b964c42c4199698bb04ad304c295::1788015893::res://.godot/exported/133200997/export-ec7020149593643d344fcd29d83dce7e-npc_dialogue_box.scn
-res://scene/office_lobby.tscn::391ef96e27b2d0f865ecf13b28032d33::1789701771::res://.godot/exported/133200997/export-ad03d04d05cbda464c5851556d45619c-office_lobby.scn
-res://scene/outside_world.tscn::225b110b0198924dddfdac8bb0cf9361::1789697766::res://.godot/exported/133200997/export-02707674f5a7f43fe06fff74cfe6a8b0-outside_world.scn
+res://scene/office_lobby.tscn::4d3b989f9ae6a47db6ed67305717e44f::1789718419::res://.godot/exported/133200997/export-ad03d04d05cbda464c5851556d45619c-office_lobby.scn
+res://scene/outside_world.tscn::0319f4bd9b7a320ba0362b306e59f239::1789719608::res://.godot/exported/133200997/export-02707674f5a7f43fe06fff74cfe6a8b0-outside_world.scn
 res://scene/world_environment.tscn::2d81d399e8e35181cdb571a88c95a022::1787998628::res://.godot/exported/133200997/export-2bcaf7b1dd5942c8bece5eeddad0ebb4-world_environment.scn
 res://scene/apartment.tscn::94b5bbd846dedb1d29e90837d23cfa52::1789535513::res://.godot/exported/133200997/export-b39493c067bfc7d272b6254a22f7129c-apartment.scn
 res://theme/game_theme.tres::36f4821fb18b00ed7582ad48e4846b5e::1788182473::res://.godot/exported/133200997/export-546dfbfbe014cb3aa94699a286e462bc-game_theme.res
@@ -175,7 +175,7 @@ res://models3d/characters/M/apolinaryo_limaga.tscn::e2d3198ffea7164e00d6872d99b5
 res://models3d/characters/M/ben_jo.tscn::c4308f99f7d0080105bb7a3fdfcdb615::1789700462::res://.godot/exported/133200997/export-ee7536fd8b87136bd020d75b01c1957f-ben_jo.scn
 res://models3d/characters/M/briar_galima.tscn::7d6f333952f44d6ac65c6f910d1e69fe::1789695970::res://.godot/exported/133200997/export-0799feb423fa0382bf11b3d1638af098-briar_galima.scn
 res://models3d/characters/M/carlo_herrer.tscn::9db6dced4416450c52f99ec1e841a62b::1789695985::res://.godot/exported/133200997/export-8f3607f899499591e18cd2411654e06b-carlo_herrer.scn
-res://models3d/characters/M/grandpa.tscn::feb760acbf15661815f30bc88b5b7c4c::1789696001::res://.godot/exported/133200997/export-0f31235f096a74842629bd22a212bda8-grandpa.scn
+res://models3d/characters/M/grandpa.tscn::04897aa0522400ef4b1f53e1cd0ed750::1789717239::res://.godot/exported/133200997/export-0f31235f096a74842629bd22a212bda8-grandpa.scn
 res://models3d/characters/M/jake_meza.tscn::e802be78647171d63ab047e48edf3592::1789696019::res://.godot/exported/133200997/export-692f690731ad65c8a25869fc9ffe5823-jake_meza.scn
 res://models3d/characters/M/jomar_salazar.tscn::3b1433f858f089126e0fd91ebe0e645e::1789699965::res://.godot/exported/133200997/export-a34658bb1119459a3a939c918f78983d-jomar_salazar.scn
 res://models3d/characters/M/jose_gonzales.tscn::6a21fca1702d8762f62c9f6b935fe2da::1789696102::res://.godot/exported/133200997/export-b744edbc84ff17abd625112492095a8a-jose_gonzales.scn
@@ -192,4 +192,5 @@ res://models3d/characters/M/ricardo_villanueva.tscn::d04f79db79252ffec13585789d0
 res://models3d/characters/M/rico_tan.tscn::54dc4890af6d93a0c08d0d3210d0b98e::1789696289::res://.godot/exported/133200997/export-af384ffa1a0c6acaeba78efc0cf209ac-rico_tan.scn
 res://models3d/characters/M/sam_lo.tscn::a90da173a09245c47701a17ac139c577::1789700621::res://.godot/exported/133200997/export-98e411d267649e30e1276f588e82ae22-sam_lo.scn
 res://models3d/map/elevator.tscn::53865e23cfad9bc1f6a469b21695fbb3::1789702165::res://.godot/exported/133200997/export-1b8c4f1e542ada6afa9933eb4a744fb3-elevator.scn
-res://models3d/map/office_lobby.tscn::e44f6c38a9de06a738d6ae2872df2a28::1789695041::res://.godot/exported/133200997/export-64a7b9f76ebf24acf13f45661bb89340-office_lobby.scn
+res://models3d/map/office_lobby.tscn::57e24d296696904e763e7250e5db2813::1789712972::res://.godot/exported/133200997/export-64a7b9f76ebf24acf13f45661bb89340-office_lobby.scn
+res://scene/FloorMarker.tscn::9383e3db695d482129966c1212a16863::1789713035::res://.godot/exported/133200997/export-f379732a83345089b8a994282f9a37c5-FloorMarker.scn

@@ -1,0 +1,17 @@
+res://scene/elevator.tscn
+res://scene/character.tscn
+res://scene/office_lobby.tscn
+res://models3d/map/office_lobby.tscn
+res://scene/FloorMarker.tscn
+res://scene/KnowYourCustomer/KnowYourCustomer.tscn
+res://scene/CreditScoring/CreditScoring.tscn
+res://addons/outside_world.occ
+res://scene/outside_world.tscn
+res://models3d/characters/M/grandpa.tscn
+res://scripts/AmbientChatTrigger.gd
+res://scripts/MarkAndCashier.gd
+res://scripts/TriggerClaraAndSupplier.gd
+res://scripts/TriggerJerichoAndJoice.gd
+res://scripts/NurseClara.gd
+res://scripts/jericho.gd
+res://scene/FraudDetection/FraudDetection.tscn

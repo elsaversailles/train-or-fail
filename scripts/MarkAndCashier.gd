@@ -31,7 +31,8 @@ func play_ambient_conversation():
 		var target_mark = mark_npc.global_position
 		target_mark.y = cashier_npc.global_position.y
 		cashier_npc.look_at(target_mark, Vector3.UP)
-
+		cashier_npc.rotate_y(PI)
+		
 	# 2. Mark speaks
 	mark_bubble.display_text("I swear the card works! The bank just keeps flagging it every time I move to a new bench. They think someone stole my life savings!")
 	await mark_bubble.finished_displaying

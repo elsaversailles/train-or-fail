@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cl3phq1ph8o8"]
+
+[ext_resource type="Script" uid="uid://c6v6tcbcsdso4" path="res://scene/FloorMarker.gd" id="1_bdibf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ieep"]
+transparency = 1
+albedo_color = Color(0.054241963, 0.29207325, 1, 1)
+emission_enabled = true
+emission = Color(0.05490196, 0.2901961, 1, 1)
+emission_energy_multiplier = 2.5
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_jv1ba"]
+top_radius = 0.8
+bottom_radius = 0.8
+height = 0.2
+
+[node name="Node3D" type="Node3D" unique_id=306043952]
+script = ExtResource("1_bdibf")
+
+[node name="DiscMesh" type="MeshInstance3D" parent="." unique_id=1265174726]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+material_override = SubResource("StandardMaterial3D_5ieep")
+mesh = SubResource("CylinderMesh_jv1ba")
+
+[node name="GroundLight" type="OmniLight3D" parent="." unique_id=1715294328]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6244088, 0)
+light_color = Color(0.05490196, 0.2901961, 1, 1)
+light_energy = 1.2
+omni_range = 2.5

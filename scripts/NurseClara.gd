@@ -16,7 +16,7 @@ func interact():
 			var target_pos = player.global_position
 			target_pos.y = clara_root.global_position.y
 			clara_root.look_at(target_pos, Vector3.UP)
-			# clara_root.rotate_y(PI) # Uncomment if her model faces away from you
+			clara_root.rotate_y(PI) # Uncomment if her model faces away from you
 
 		# 2. Run the MC internal monologue
 		Dialogic.start("clara_monologue")

@@ -27,12 +27,12 @@ func play_ambient_conversation():
 		var target_joice = joice_npc.global_position
 		target_joice.y = jericho_npc.global_position.y
 		jericho_npc.look_at(target_joice, Vector3.UP)
-		# jericho_npc.rotate_y(PI) # Uncomment if Jericho faces backwards
+		jericho_npc.rotate_y(PI) # Uncomment if Jericho faces backwards
 
 		var target_jericho = jericho_npc.global_position
 		target_jericho.y = joice_npc.global_position.y
 		joice_npc.look_at(target_jericho, Vector3.UP)
-		# joice_npc.rotate_y(PI) # Uncomment if Joice faces backwards
+		joice_npc.rotate_y(PI) # Uncomment if Joice faces backwards
 
 	# 2. Dialogue sequence
 	jericho_bubble.display_text("Joice, our fleet expansion plan for local commercial buyers like Adrian, Carlo, and Miguel is solid.")

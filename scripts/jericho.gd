@@ -17,7 +17,7 @@ func interact():
 			var target_pos = player.global_position
 			target_pos.y = jericho_root.global_position.y
 			jericho_root.look_at(target_pos, Vector3.UP)
-			# jericho_root.rotate_y(PI) # Uncomment if armature faces away from player
+			jericho_root.rotate_y(PI) # Uncomment if armature faces away from player
 
 		Dialogic.start("jericho_monologue")
 		

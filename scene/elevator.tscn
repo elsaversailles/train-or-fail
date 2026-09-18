@@ -3,17 +3,15 @@
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scene/character.tscn" id="2_hrthe"]
 [ext_resource type="PackedScene" uid="uid://clafut24meymg" path="res://models3d/map/elevator.tscn" id="2_yrka2"]
 [ext_resource type="Script" uid="uid://dpvdnmufqm8v8" path="res://scripts/ElevetorExitDoor.gd" id="3_yrka2"]
+[ext_resource type="PackedScene" uid="uid://cl3phq1ph8o8" path="res://scene/FloorMarker.tscn" id="4_nag7y"]
 [ext_resource type="PackedScene" uid="uid://bx7scsfg2nivv" path="res://scene/pause_panel.tscn" id="4_yrka2"]
 [ext_resource type="PackedScene" uid="uid://cv87ukpeiw7cp" path="res://scene/crosshair.tscn" id="5_nag7y"]
 
 [sub_resource type="Environment" id="Environment_jv1ba"]
 reflected_light_source = 1
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_nag7y"]
-size = Vector3(0.8275757, 2.0584717, 3.927658)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wubs3"]
-albedo_color = Color(0.54509807, 0, 0, 1)
+[sub_resource type="SphereShape3D" id="SphereShape3D_011ef"]
+radius = 2.0994508
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yrka2"]
 size = Vector3(8.634984, 0.85987854, 8.186584)
@@ -42,21 +40,15 @@ transform = Transform3D(-6.3818625e-08, 0, -1.46, 0, 1.46, 0, 1.46, 0, -6.381862
 transform = Transform3D(-1.825, 0, -2.7556734e-07, 0, 1.825, 0, 2.7556734e-07, 0, -1.825, 0, 0, 0)
 
 [node name="ElevetorExitDoor" type="Area3D" parent="." unique_id=1339241862]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8610134, -5.9435444, 0.25169194)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8610134, -6.169188, 0.25169194)
 script = ExtResource("3_yrka2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ElevetorExitDoor" unique_id=1066677560]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0862122, 0.77923584, 0.11090839)
-shape = SubResource("BoxShape3D_nag7y")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0602446, 0.39243126, 0.13943827)
+shape = SubResource("SphereShape3D_011ef")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="ElevetorExitDoor" unique_id=1182190518]
-size = Vector3(3, 0.5, 5)
-material = SubResource("StandardMaterial3D_wubs3")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="ElevetorExitDoor/CSGBox3D" unique_id=2120084666]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.08033037, 0.04345703)
-operation = 2
-size = Vector3(2.5, 0.7285156, 4.5)
+[node name="Node3D" parent="ElevetorExitDoor" unique_id=306043952 instance=ExtResource("4_nag7y")]
+transform = Transform3D(2.54, 0, 0, 0, 2.54, 0, 0, 0, 2.54, -0.9807019, 0.41372156, 0.12494421)
 
 [node name="PausePanel" parent="." unique_id=1179524455 instance=ExtResource("4_yrka2")]
 

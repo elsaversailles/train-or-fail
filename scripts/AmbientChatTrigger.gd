@@ -30,7 +30,8 @@ func play_ambient_conversation():
 		var target_grandpa = grandpa_npc.global_position
 		target_grandpa.y = assistant_npc.global_position.y
 		assistant_npc.look_at(target_grandpa, Vector3.UP)
-
+		assistant_npc.rotate_y(PI)
+		
 	# 2. Grandpa speaks
 	grandpa_bubble.display_text("Man, rush-order season is right around the corner. We gotta stock flour early before local prices spike...")
 	

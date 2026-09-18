@@ -28,12 +28,12 @@ func play_ambient_conversation():
 		var target_supplier = supplier_npc.global_position
 		target_supplier.y = clara_npc.global_position.y
 		clara_npc.look_at(target_supplier, Vector3.UP)
-		# clara_npc.rotate_y(PI) # Uncomment if Clara's model faces backward
+		clara_npc.rotate_y(PI) # Uncomment if Clara's model faces backward
 
 		var target_clara = clara_npc.global_position
 		target_clara.y = supplier_npc.global_position.y
 		supplier_npc.look_at(target_clara, Vector3.UP)
-		# supplier_npc.rotate_y(PI) # Uncomment if Supplier's model faces backward
+		supplier_npc.rotate_y(PI) # Uncomment if Supplier's model faces backward
 
 	# 2. Clara speaks
 	clara_bubble.display_text("I know it’s a risk, but this neighborhood really needs a local, low-cost community clinic.")

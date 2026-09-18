@@ -1,7 +1,7 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1789704099
+::res://::1789711854
 default_bus_layout.tres::AudioBusLayout::7769793707950091213::1787998556::0::1::::<><><>0<>0<><>::
-export_presets.cfg::TextFile::-1::1789646525::0::1::::<><><>0<>0<><>::
+export_presets.cfg::TextFile::-1::1789704221::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::1790880795757653::1787998556::1787998556::1::::<><><>0<>0<>1d558fff71561543e2cf7e0d300c3350<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 README.md::TextFile::-1::1787998556::0::1::::<><><>0<>0<><>::
 ::res://addons/::1789696939
@@ -818,7 +818,7 @@ Tita Elena_EMPTYASPHALT.png::CompressedTexture2D::6198141728577485284::178964213
 Trisha Aquino.glb::PackedScene::4705952518492647635::1789641814::1789699638::1::::<><><>0<>0<>8f6379b9d91969e0985cf2846d6f7a19<>res://.godot/imported/Trisha Aquino.glb-f0d68e95e806408a61b48325931d7ba2.scn::uid://cn7ar5k3r16pb::::res://assets/Applicants/newmodels/F/Trisha Aquino_char1.png<>uid://llcrlrw0sfxl::::res://assets/Applicants/newmodels/F/Trisha Aquino_EMPTYASPHALT.png
 Trisha Aquino_char1.png::CompressedTexture2D::5751388373751435483::1789642145::1789642185::1::::<><><>0<>0<>6d61bafd06138d1098965772946a83ed<>res://.godot/imported/Trisha Aquino_char1.png-94cfbd3bb39fc0dc7a8a356d29243d53.s3tc.ctex::
 Trisha Aquino_EMPTYASPHALT.png::CompressedTexture2D::794937832847158349::1789642152::1789642185::1::::<><><>0<>0<>7747c12a4be87bdc5d1443abbc534171<>res://.godot/imported/Trisha Aquino_EMPTYASPHALT.png-ffee4cb4e99c77e2827cdfd7a2164f3c.s3tc.ctex::
-::res://assets/Applicants/newmodels/M/::1789700395
+::res://assets/Applicants/newmodels/M/::1789704102
 Adrian Santos.glb::PackedScene::6130712867229580635::1789641812::1789699687::1::::<><><>0<>0<>32aec1e2bbbc925285a7c816148860af<>res://.godot/imported/Adrian Santos.glb-9e1dbdd7615e1eebca675f0bac0d1a94.scn::uid://cejoeihb57otp::::res://assets/Applicants/newmodels/M/Adrian Santos_char1.png<>uid://bul4tmj4vb13d::::res://assets/Applicants/newmodels/M/Adrian Santos_EMPTYASPHALT.png
 Adrian Santos_char1.png::CompressedTexture2D::5073033753886451853::1789642154::1789642185::1::::<><><>0<>0<>c21dc91e8204564237e6d8483e923a2d<>res://.godot/imported/Adrian Santos_char1.png-a7d0cc4b8bc22115b330fd4bd9911a7b.s3tc.ctex::
 Adrian Santos_EMPTYASPHALT.png::CompressedTexture2D::3814701080152028891::1789642160::1789642184::1::::<><><>0<>0<>973b2cdd8c5ded6983e4d6b6f45c5eca<>res://.godot/imported/Adrian Santos_EMPTYASPHALT.png-d209f9560b0a6bf6d6db4a2f4976192f.s3tc.ctex::
@@ -1280,13 +1280,15 @@ Office_windowangeloan.png::CompressedTexture2D::7920305631948506930::1789694511:
 gameplaymusic.mp3::AudioStreamMP3::798559806241446733::1787998628::1787998628::1::::<><><>0<>0<>1892c207ad78f199b027e4e82d68f2fd<>res://.godot/imported/gameplaymusic.mp3-67f1f37cb9cd423efa0101ffe77f79c8.mp3str::
 insertdisk.mp3::AudioStreamMP3::3049849708785294659::1787998628::1787998628::1::::<><><>0<>0<>ba6a65e39256ef24b7c45231c7bd3232<>res://.godot/imported/insertdisk.mp3-5d264d91bbc9cb06aa48e40590b5cf86.mp3str::
 music.mp3::AudioStreamMP3::8840572273730914587::1787998628::1787998628::1::::<><><>0<>0<>f3f34219090d85a73ab670e1152afc82<>res://.godot/imported/music.mp3-5ddf4732b6b280ab5bd5f315f9847f09.mp3str::
-::res://scene/::1789703483
+::res://scene/::1789710132
 about_us_panel.tscn::PackedScene::1970244864743409747::1787998628::0::1::::<><><>0<>0<><>::uid://ckimwkn5h5k2j::::res://scripts/AboutUsPanel.gd
 apartment.tscn::PackedScene::6002941423066448977::1789535513::0::1::::<><><>0<>0<><>::uid://bs72ogkvdd7d6::::res://scene/character.tscn<>uid://wlle720apfeg::::res://scripts/Apartment.gd<>uid://bx7scsfg2nivv::::res://scene/pause_panel.tscn<>uid://dowt3jc1kbxpg::::res://images/Endings/Cold_Efficiency.png<>uid://dtpe25cd85fc8::::res://scene/result_panel.tscn<>uid://cv87ukpeiw7cp::::res://scene/crosshair.tscn<>uid://djrodjg24p7dk::::res://images/Endings/Perfect.png
 character.tscn::PackedScene::3717544648773412845::1789480478::0::1::::<><><>0<>0<><>::uid://c1nkb217t4usv::::res://scripts/Controller.gd<>uid://cowxelafbnnp7::::res://scene/men_and_women.tscn
 crosshair.tscn::PackedScene::6316910757914381379::1787998628::0::1::::<><><>0<>0<><>::
 data.tscn::PackedScene::446842971185570411::1787998628::0::1::::<><><>0<>0<><>::uid://bid8280uum01s::::res://scripts/Data.gd
 elevator.tscn::PackedScene::8095751526068040055::1789702288::0::1::::<><><>0<>0<><>::uid://bs72ogkvdd7d6::::res://scene/character.tscn<>uid://clafut24meymg::::res://models3d/map/elevator.tscn<>uid://dpvdnmufqm8v8::::res://scripts/ElevetorExitDoor.gd<>uid://bx7scsfg2nivv::::res://scene/pause_panel.tscn<>uid://cv87ukpeiw7cp::::res://scene/crosshair.tscn
+FloorMarker.gd::GDScript::6993963716566983545::1789709559::0::1::::<>Node3D<><>0<>0<><>::
+FloorMarker.tscn::PackedScene::164813098858758249::1789710132::0::1::::<><><>0<>0<><>::uid://c6v6tcbcsdso4::::res://scene/FloorMarker.gd
 floppydisk.tscn::PackedScene::1171303479786383557::1787998628::0::1::::<><><>0<>0<><>::uid://bid8280uum01s::::res://scripts/Data.gd<>uid://byra7gwo4bt7n::::res://assets/FloppyDisk.glb<>uid://2o6k54rgxqg3::::res://images/floppydisk.png<>uid://bjpmtxpsk76x0::::res://music/insertdisk.mp3
 IdleScreen.tscn::PackedScene::8983187657007952074::1787998628::0::1::::<><><>0<>0<><>::uid://buy3tn3iclxbm::::res://scripts/IdleScreen.gd<>uid://buabalu48ie7y::::res://images/idle_1.png<>uid://da2o0xs3j1sv2::::res://images/MainMenu/buttons/background.png
 lights.tscn::PackedScene::239851195531979152::1787998628::0::1::::<><><>0<>0<><>::

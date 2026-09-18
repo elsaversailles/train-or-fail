@@ -4,13 +4,28 @@
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scene/character.tscn" id="2_uyght"]
 [ext_resource type="Script" uid="uid://bebkd43in6ylf" path="res://scripts/ElevetorDoor.gd" id="3_re36c"]
 [ext_resource type="PackedScene" uid="uid://bx7scsfg2nivv" path="res://scene/pause_panel.tscn" id="4_oauyh"]
+[ext_resource type="PackedScene" uid="uid://cl3phq1ph8o8" path="res://scene/FloorMarker.tscn" id="4_qqb2a"]
 [ext_resource type="PackedScene" uid="uid://cv87ukpeiw7cp" path="res://scene/crosshair.tscn" id="5_qqb2a"]
-[ext_resource type="PackedScene" uid="uid://clafut24meymg" path="res://models3d/map/elevator.tscn" id="6_qqb2a"]
 
 [sub_resource type="Environment" id="Environment_jv1ba"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_oauyh"]
-size = Vector3(2.7491455, 2.5111694, 1.8733788)
+[sub_resource type="SphereShape3D" id="SphereShape3D_85j0d"]
+radius = 1.6443634
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jv1ba"]
+size = Vector3(1.0649414, 1, 20.799866)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qqb2a"]
+size = Vector3(20.839867, 1, 0.9289353)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_85j0d"]
+size = Vector3(0.78681827, 1, 9.617056)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ren0j"]
+size = Vector3(14.887008, 1, 0.7367768)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iogu2"]
+size = Vector3(14.887008, 1, 0.7367768)
 
 [node name="OfficeLobby" type="Node3D" unique_id=1755870788]
 
@@ -22,14 +37,18 @@ transform = Transform3D(-3.278354e-08, 0, 0.75, 0, 0.75, 0, -0.75, 0, -3.278354e
 speed = 10.0
 
 [node name="OfficeLobby2" parent="." unique_id=248703940 instance=ExtResource("2_oauyh")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
 
 [node name="ElevetorDoor" type="Area3D" parent="." unique_id=1431212108]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1823645, -0.1403935, -1.3944037)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9979334, -0.1403935, -1.0945399)
 script = ExtResource("3_re36c")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ElevetorDoor" unique_id=119235886]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12542725, 1.0055847, 0.64922523)
-shape = SubResource("BoxShape3D_oauyh")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18581367, -0.02357459, 0.047867894)
+shape = SubResource("SphereShape3D_85j0d")
+
+[node name="Node3D" parent="ElevetorDoor" unique_id=306043952 instance=ExtResource("4_qqb2a")]
+transform = Transform3D(1.655, 0, 0, 0, 1.655, 0, 0, 0, 1.655, 0.50260353, 0.16135693, 0.057761252)
 
 [node name="PausePanel" parent="." unique_id=1179524455 instance=ExtResource("4_oauyh")]
 
@@ -39,12 +58,6 @@ shape = SubResource("BoxShape3D_oauyh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.958038, 1.9714355, 0.47207642)
 use_collision = true
 size = Vector3(1.0317383, 4.942871, 30.664734)
-
-[node name="Label3D" type="Label3D" parent="." unique_id=317225155]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5, 2.942129, -3.585891)
-text = "ELEVATOR
-"
-font_size = 133
 
 [node name="Lights" type="Node3D" parent="." unique_id=822087955]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.907672, 0)
@@ -67,7 +80,26 @@ light_energy = 40.0
 omni_range = 20.0
 omni_attenuation = 2.0
 
-[node name="Floor-Lobby_004" parent="." unique_id=2016695317 instance=ExtResource("6_qqb2a")]
-transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -5.8, 3.1999998, -1)
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=2052364370]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=465896189]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.384537, 0, 0.22727394)
+shape = SubResource("BoxShape3D_jv1ba")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=1782721028]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.058939934, 0, 10.418654)
+shape = SubResource("BoxShape3D_qqb2a")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=555948202]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.325152, 0, 5.7043467)
+shape = SubResource("BoxShape3D_85j0d")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" unique_id=83312882]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.508401, 0, 1.4658673)
+shape = SubResource("BoxShape3D_ren0j")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D" unique_id=1429335106]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7273521, 0, -10.273304)
+shape = SubResource("BoxShape3D_iogu2")
 
 [connection signal="body_entered" from="ElevetorDoor" to="ElevetorDoor" method="_on_body_entered"]
