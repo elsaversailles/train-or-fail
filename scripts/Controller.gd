@@ -16,8 +16,6 @@ var current_monitor = null
 
 var is_in_dialogue: bool = false
 
-@onready var anim_player = $MenANDWomen/AnimationPlayer
-
 @onready var head: Node3D = $Head
 @onready var camera: Camera3D = $Head/Camera3D
 @onready var interact_ray: RayCast3D = $Head/Camera3D/RayCast3D
@@ -55,7 +53,6 @@ func _physics_process(delta: float) -> void:
 	# Smooth camera move when focusing on computer
 	if is_focusing_screen:
 		head.global_transform = head.global_transform.interpolate_with(screen_target_transform, 15 * delta)
-		anim_player.play("idle") 
 		return
 
 	# Return head smoothly to original position after exiting computer
@@ -69,13 +66,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
-	# Movement
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
-	if input_dir != Vector2.ZERO:
-		anim_player.play("walk")
-	else:
-		anim_player.play("idle")
-		
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 
 	if direction:
@@ -165,8 +156,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event is InputEventMouseMotion:
 			rotate_look(event.relative)
 
-
-func handle_escape() -> void: # ESC / PAUSE / COMPUTER FOCUS LOGIC
+func handle_escape() -> void: 
 	var tutorial = get_tree().current_scene.get_node_or_null("CanvasLayer/FDTutorial")
 	if tutorial and tutorial.visible:
 		return

@@ -34,11 +34,27 @@ Dialogic="*uid://ds2q0uclmolvu"
 
 directories/dch_directory={}
 directories/dtl_directory={
+"assistant_generic_1": "res://Dialogic/Timelines/assistant_generic_1.dtl",
+"assistant_generic_2": "res://Dialogic/Timelines/assistant_generic_2.dtl",
+"cashier_generic_1": "res://Dialogic/Timelines/cashier_generic_1.dtl",
+"cashier_generic_2": "res://Dialogic/Timelines/cashier_generic_2.dtl",
+"clara_generic_1": "res://Dialogic/Timelines/clara_generic_1.dtl",
+"clara_generic_2": "res://Dialogic/Timelines/clara_generic_2.dtl",
 "clara_monologue": "res://Dialogic/Timelines/clara_monologue.dtl",
 "grandpa_day1": "res://Dialogic/Timelines/grandpa_day1.dtl",
+"grandpa_generic_1": "res://Dialogic/Timelines/grandpa_generic_1.dtl",
+"grandpa_generic_2": "res://Dialogic/Timelines/grandpa_generic_2.dtl",
+"jericho_generic_1": "res://Dialogic/Timelines/jericho_generic_1.dtl",
+"jericho_generic_2": "res://Dialogic/Timelines/jericho_generic_2.dtl",
 "jericho_monologue": "res://Dialogic/Timelines/jericho_monologue.dtl",
+"joice_generic_1": "res://Dialogic/Timelines/joice_generic_1.dtl",
+"joice_generic_2": "res://Dialogic/Timelines/joice_generic_2.dtl",
 "mark_day2": "res://Dialogic/Timelines/mark_day2.dtl",
-"mark_day4": "res://Dialogic/Timelines/mark_day4.dtl"
+"mark_day4": "res://Dialogic/Timelines/mark_day4.dtl",
+"mark_generic_1": "res://Dialogic/Timelines/mark_generic_1.dtl",
+"mark_generic_2": "res://Dialogic/Timelines/mark_generic_2.dtl",
+"supplier_generic_1": "res://Dialogic/Timelines/supplier_generic_1.dtl",
+"supplier_generic_2": "res://Dialogic/Timelines/supplier_generic_2.dtl"
 }
 layout/style_directory={}
 glossary/default_case_sensitive=true

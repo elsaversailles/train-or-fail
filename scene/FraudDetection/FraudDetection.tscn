@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://oblqrvb0temk" path="res://scripts/FraudDetection/FraudDetection.gd" id="1_vdmht"]
 [ext_resource type="PackedScene" uid="uid://drkya446h6odi" path="res://scene/world_environment.tscn" id="2_k8o8q"]
 [ext_resource type="PackedScene" uid="uid://dogkxfi5tbrs" path="res://scene/lights.tscn" id="3_118ik"]
+[ext_resource type="PackedScene" uid="uid://dey515o1sh44x" path="res://models3d/map/office.tscn" id="4_118ik"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scene/character.tscn" id="4_v7irp"]
 [ext_resource type="PackedScene" uid="uid://cwjddyjeack6m" path="res://scene/socket.tscn" id="5_0ww2n"]
 [ext_resource type="PackedScene" uid="uid://qxngx7cctkt6" path="res://scene/floppydisk.tscn" id="6_xfii8"]
 [ext_resource type="PackedScene" uid="uid://d08r12hn5mce1" path="res://scene/IdleScreen.tscn" id="7_stgsx"]
-[ext_resource type="PackedScene" uid="uid://c2hpohwilg1lq" path="res://addons/table.tscn" id="8_v70cj"]
 [ext_resource type="PackedScene" uid="uid://c0v72003xgbg7" path="res://assets/Monitor/Monitor.glb" id="9_qfd7q"]
 [ext_resource type="Script" uid="uid://chk5c2vkeowgj" path="res://scripts/Screen.gd" id="10_1g14j"]
 [ext_resource type="Texture2D" uid="uid://cu3mqqxg73kgm" path="res://images/Endings/Terminated.png" id="10_118ik"]
@@ -18,21 +18,11 @@
 [ext_resource type="PackedScene" uid="uid://bx7scsfg2nivv" path="res://scene/pause_panel.tscn" id="15_65k3s"]
 [ext_resource type="PackedScene" uid="uid://cdoxo1627leua" path="res://scene/Tutorial/fd_tutorial.tscn" id="16_k8o8q"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hybxs"]
-load_path = "res://.godot/imported/wall.jpeg-274b9c5ce9692041c8e6911d093e9da9.s3tc.ctex"
+[sub_resource type="BoxShape3D" id="BoxShape3D_118ik"]
+size = Vector3(1.0327148, 1.3692627, 31.334213)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kek77"]
-albedo_texture = SubResource("CompressedTexture2D_hybxs")
-uv1_triplanar = true
-uv1_world_triplanar = true
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vdmht"]
-load_path = "res://.godot/imported/maypaya_office_bottom.jpeg-e5ebdc69096f40a3d82b8c5391cd5f6f.s3tc.ctex"
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5vw27"]
-albedo_texture = SubResource("CompressedTexture2D_vdmht")
-uv1_triplanar = true
-uv1_world_triplanar = true
+[sub_resource type="BoxShape3D" id="BoxShape3D_v7irp"]
+size = Vector3(48.456665, 1.3692627, 2.605833)
 
 [sub_resource type="LabelSettings" id="LabelSettings_1bvp3"]
 font_color = Color(0.07058824, 0.07058824, 0.07058824, 1)
@@ -55,70 +45,30 @@ data = PackedVector3Array(0.205, -0.265, 0, -0.205, -0.265, 0, 0.205, 0.265, 0, 
 [node name="FraudDetectionLevel" type="Node3D" unique_id=1103394804]
 script = ExtResource("1_vdmht")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=642989767]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.769102, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1270319002]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.69016075, 0.18463135, -0.13005829)
+shape = SubResource("BoxShape3D_118ik")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=1410011499]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.258926, 0.18463135, -0.13005829)
+shape = SubResource("BoxShape3D_v7irp")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=1350517854]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.255692, 0.18463135, 9.962283)
+shape = SubResource("BoxShape3D_v7irp")
+
 [node name="WorldEnvironment" parent="." unique_id=1060883038 instance=ExtResource("2_k8o8q")]
 
 [node name="Lights" parent="." unique_id=1778490459 instance=ExtResource("3_118ik")]
-transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 1.4498668, 6.797091, 0)
+transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, -5.242485, 10.772501, -12.478853)
 
-[node name="Room" type="CSGCombiner3D" parent="." unique_id=1227119580]
-transform = Transform3D(-4.371139e-08, 0, 0.4685821, 0, 4.9475074, 0, -1, 0, -2.0482373e-08, -3, 2, 0)
-material_override = SubResource("StandardMaterial3D_kek77")
-use_collision = true
-
-[node name="Floor" type="CSGBox3D" parent="Room" unique_id=1432533514]
-transform = Transform3D(-4.374471e-08, 0, -1.0999951, 0, 0.20225318, 0, 2.1356926, 0, -1.02614216e-07, -0.20675309, -0.5477987, 16.066051)
-layers = 7
-material_override = SubResource("StandardMaterial3D_5vw27")
-use_collision = true
-size = Vector3(17.460068, 0.95644534, 11.363281)
-
-[node name="Roof" type="CSGBox3D" parent="Room" unique_id=1252430896]
-transform = Transform3D(-4.374472e-08, 0, -1.0999951, 0, 0.20225318, 0, 2.1356926, 0, -1.02614244e-07, -0.20675309, 1.3827066, 16.066051)
-layers = 7
-material_override = SubResource("StandardMaterial3D_5vw27")
-use_collision = true
-size = Vector3(17.460068, 0.95644534, 11.363281)
-
-[node name="Wall1" type="CSGBox3D" parent="Room" unique_id=1740007138]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 5.684342e-14, 0, 1, -0.022430401, 0.4784144, -0.96127844)
-layers = 7
-size = Vector3(12, 2, 1)
-
-[node name="Wall1_1" type="CSGBox3D" parent="Room" unique_id=77627719]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 5.684342e-14, 0, 1, 0.02242991, 0.4784144, 21.39698)
-layers = 7
-size = Vector3(12, 2, 1)
-
-[node name="Wall1_2" type="CSGBox3D" parent="Room" unique_id=1554690360]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 5.684342e-14, 0, 1, -0.022431118, 0.4784144, 34.245007)
-layers = 7
-size = Vector3(12, 2, 1)
-
-[node name="Wall2" type="CSGBox3D" parent="Room" unique_id=497108233]
-transform = Transform3D(-3.1770643e-08, 0, -0.4685821, 0, 1.0000004, 0, 1.5511212, 0, -4.3713133e-08, 5.763, 0.478, 16.64)
-layers = 7
-size = Vector3(23.3, 2, 1)
-
-[node name="Wall2_2" type="CSGBox3D" parent="Room" unique_id=752027060]
-transform = Transform3D(-3.1770643e-08, 0, -0.4685821, 0, 1.0000004, 0, 1.5511212, 0, -4.3714003e-08, -6.236999, 0.47799996, 16.64)
-layers = 7
-size = Vector3(23.3, 2, 1)
+[node name="Office" parent="." unique_id=1198069303 instance=ExtResource("4_118ik")]
 
 [node name="MainChar" parent="." unique_id=2061402672 instance=ExtResource("4_v7irp")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.888, -0.025, 0)
-
-[node name="socket" parent="." unique_id=315384306 instance=ExtResource("5_0ww2n")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.4089456, 0.87024593, -2.075036)
-collision_layer = 2
-
-[node name="floppydisk" parent="." unique_id=1531040890 instance=ExtResource("6_xfii8")]
-transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 5.5807233, 0.6673304, -1.24653)
-
-[node name="IdleScreen" parent="." unique_id=1201481395 instance=ExtResource("7_stgsx")]
-transform = Transform3D(-4.371139e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, 4.371139e-08, 1.9106855e-15, 6.573001, 1.8168597, 0.102722645)
-
-[node name="Table" parent="." unique_id=941121870 instance=ExtResource("8_v70cj")]
-transform = Transform3D(0.5431538, 0, 0, 0, 0.42786574, 0, 0, 0, 0.9, 5.136668, 0.18296456, -0.19128597)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.2215095, 0.09924817, 5.1921763)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1476932616]
 
@@ -181,16 +131,26 @@ grow_vertical = 2
 texture = ExtResource("10_118ik")
 expand_mode = 1
 
+[node name="socket" parent="." unique_id=315384306 instance=ExtResource("5_0ww2n")]
+transform = Transform3D(0.6316952, 0, -0.7752169, 0, 1, 0, 0.7752169, 0, 0.6316952, -7.8863554, 2.5073187, -12.526727)
+collision_layer = 2
+
+[node name="floppydisk" parent="." unique_id=1531040890 instance=ExtResource("6_xfii8")]
+transform = Transform3D(2.7612272e-08, -0.63169515, 0.77521694, -1, -4.371139e-08, 0, 3.3885808e-08, -0.77521694, -0.63169515, -6.7748747, 2.3650446, -12.831889)
+
+[node name="IdleScreen" parent="." unique_id=1201481395 instance=ExtResource("7_stgsx")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -4.6047025, 3.4497404, -14.240144)
+
 [node name="Monitor" parent="." unique_id=724615049 instance=ExtResource("9_qfd7q")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.5272965, 0.68358636, 0.083559036)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6238666, 2.316467, -14.194439)
 
 [node name="Screen" type="Node3D" parent="Monitor" unique_id=1749718098]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.083558746, -0.68358636, 6.6796875)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.08355856, -0.68358636, -25.953388)
 visible = false
 script = ExtResource("10_1g14j")
 
 [node name="Quad" type="MeshInstance3D" parent="Monitor/Screen" unique_id=671364175]
-transform = Transform3D(-3.036211e-07, 0, -0.99999976, 0, 2.7617304, 0, 6.9460416, 0, -4.3711378e-08, 6.650567, 1.8339279, 0.10465306)
+transform = Transform3D(-3.036211e-07, 0, -0.99999976, 0, 2.7617304, 0, 6.9460416, 0, -4.3711378e-08, -25.999886, 1.8339279, 0.1046505)
 mesh = SubResource("QuadMesh_b5f6u")
 
 [node name="Area3D" type="Area3D" parent="Monitor/Screen/Quad" unique_id=2134300452]
@@ -204,10 +164,10 @@ size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="Monitor/Screen/SubViewport" unique_id=525920961]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.4478445, 1.6362021, -0.067971945)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 33.75235, 18.186012, -0.067971945)
 
 [node name="ModelContainer" parent="Monitor/Screen/SubViewport" unique_id=941138124 instance=ExtResource("11_g8pml")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11.016321, 0.063937664, -0.087307215)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 34.32083, 16.516174, -0.087307215)
 
 [node name="LeftSlidingPanel" parent="Monitor/Screen/SubViewport" unique_id=998709551 instance=ExtResource("12_ss3kf")]
 

@@ -11,10 +11,10 @@
 reflected_light_source = 1
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_011ef"]
-radius = 2.0994508
+radius = 3.7878366
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yrka2"]
-size = Vector3(8.634984, 0.85987854, 8.186584)
+size = Vector3(8.634984, 0.80078506, 8.186584)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jv1ba"]
 size = Vector3(0.7917862, 4.82135, 8.269653)
@@ -34,42 +34,38 @@ size = Vector3(8.819701, 4.82135, 0.5966222)
 environment = SubResource("Environment_jv1ba")
 
 [node name="Player" parent="." unique_id=2061402672 instance=ExtResource("2_hrthe")]
-transform = Transform3D(-6.3818625e-08, 0, -1.46, 0, 1.46, 0, 1.46, 0, -6.3818625e-08, -2.3540797, -5.464982, 0.7641642)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.364479, -12.258283, 0.7641642)
 
 [node name="Floor-Lobby_004" parent="." unique_id=2016695317 instance=ExtResource("2_yrka2")]
-transform = Transform3D(-1.825, 0, -2.7556734e-07, 0, 1.825, 0, 2.7556734e-07, 0, -1.825, 0, 0, 0)
+transform = Transform3D(-4, 0, -6.039832e-07, 0, 4, 0, 6.039832e-07, 0, -4, 0, 0, 0)
 
 [node name="ElevetorExitDoor" type="Area3D" parent="." unique_id=1339241862]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8610134, -6.169188, 0.25169194)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.977472, -13.143234, 0.25169194)
 script = ExtResource("3_yrka2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ElevetorExitDoor" unique_id=1066677560]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0602446, 0.39243126, 0.13943827)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25139332, 0.59705067, 0.47411644)
 shape = SubResource("SphereShape3D_011ef")
 
 [node name="Node3D" parent="ElevetorExitDoor" unique_id=306043952 instance=ExtResource("4_nag7y")]
-transform = Transform3D(2.54, 0, 0, 0, 2.54, 0, 0, 0, 2.54, -0.9807019, 0.41372156, 0.12494421)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0.674283, 0.41372108, 0.5668416)
 
 [node name="PausePanel" parent="." unique_id=1179524455 instance=ExtResource("4_yrka2")]
 
 [node name="CanvasLayer" parent="." unique_id=1382565654 instance=ExtResource("5_nag7y")]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1016832786]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -0.77853775, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -1.9456306, 0)
 light_color = Color(0.9798911, 0.61366117, 7.70092e-07, 1)
 light_energy = 10.0
-spot_range = 9.542625
-spot_angle = 89.10324
-
-[node name="Label3D" type="Label3D" parent="." unique_id=1219887029]
-transform = Transform3D(-1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, -1, -0.4920839, 2, 3.7391834)
-text = "Exit Elevator"
-font_size = 68
+spot_range = 20.0
+spot_angle = 89.99
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=579331172]
+transform = Transform3D(2.17, 0, 0, 0, 2.17, 0, 0, 0, 2.17, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=454221327]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18378973, -6.232671, 0.45559525)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18378979, -6.262219, 0.45559534)
 shape = SubResource("BoxShape3D_yrka2")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=1254925805]

@@ -298,7 +298,7 @@ var credit_applicants: Array = [
 	{
 		"id": "cs_a7",
 		"name": "John Bernard Adayo",
-		"model_scene": preload("res://models3d/characters/M/briar_galima.tscn"),
+		"model_scene": preload("res://models3d/characters/M/john_bernard.tscn"),
 		"general_info_img": preload("res://images/applicants info/CreditScoring/a7/cs_a7_GI.png"),
 		"payment_history_img": preload("res://images/applicants info/CreditScoring/a7/cs_a7_PH.png"),
 		"arrears_img": preload("res://images/applicants info/CreditScoring/a7/cs_a7_arrears.png"),

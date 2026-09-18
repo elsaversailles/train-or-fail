@@ -1,6 +1,8 @@
-StaticBody3D
 Node3D
 CollisionShape3D
+StaticBody3D
+Camera3D
+Label
 Area3D
 OmniLight3D
 MeshInstance3D
@@ -8,7 +10,5 @@ LightmapGI
 CPUParticles3D
 AnimationPlayer
 CSGBox3D
-Camera3D
 CheckBox
 TextureRect
-Panel

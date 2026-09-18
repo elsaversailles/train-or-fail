@@ -3,8 +3,9 @@ extends Node3D
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
 @onready var player = $MainChar
 @onready var info_label: Label = $CanvasLayer/Label
-@onready var tutorial_ui = $CanvasLayer/FDTutorial
 
+# Safely grab the tutorial node using get_node_or_null so it never crashes if missing
+@onready var tutorial_ui = $CanvasLayer/FDTutorial
 
 # --- NEW: GAME OVER REFERENCES ---
 @onready var game_over_panel = $CanvasLayer/GameOverPanel
@@ -18,6 +19,10 @@ var gameplay_name: String = "FraudDetection"
 var mistakes: int = 0
 
 func _ready():
+	# 1. THE FIX: Freeze the player instantly upon loading
+	if player:
+		player.is_paused = true
+
 	if canvas_layer:
 		canvas_layer.visible = true
 
@@ -26,17 +31,26 @@ func _ready():
 		game_over_panel.visible = false
 		game_over_panel.gui_input.connect(_on_game_over_clicked)
 
+	# 2. Ask SaveManager what level/day we are currently playing. 
 	current_level = SaveManager.current_save_data.get("current_level", 1)
 	current_day = SaveManager.current_save_data.get("current_day", 1)
 
 	if info_label:
 		info_label.text = "Fraud Detection\nLevel %d\nDay %d" % [current_level, current_day]
 
+	# 3. TUTORIAL LOGIC
 	if tutorial_ui:
 		if current_day == 1:
 			tutorial_ui.visible = true
 		else:
 			tutorial_ui.queue_free()
+
+	# 4. THE FIX: Wait 0.5 seconds for physics and fades to settle, then unfreeze
+	await get_tree().create_timer(0.5).timeout
+	if player:
+		# Double-check that they didn't somehow trigger a game over during the fade
+		if not (game_over_panel and game_over_panel.visible):
+			player.is_paused = false
 
 # ==========================================
 # TERMINATION LOGIC
