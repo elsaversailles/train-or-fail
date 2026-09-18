@@ -159,15 +159,33 @@ func submit_answer(answer):
 		finish_game()
 
 func spawn_3d_model(model_packed_scene: PackedScene):
+	# 1. Clear previous 3D model
 	for child in model_container.get_children():
 		child.queue_free()
 		
+	# 2. Wait a frame so the node tree cleans up
 	await get_tree().process_frame 
 	
+	# 3. Spawn new character model
 	if model_packed_scene:
 		var new_model = model_packed_scene.instantiate()
 		model_container.add_child(new_model)
 		new_model.position = Vector3.ZERO
+		
+		# --- 180° FLIP: Makes the character face the camera ---
+		new_model.rotate_y(PI)
+		
+		# --- ANIMATION FIX: Forces idle animation to play on every applicant ---
+		var anim_player: AnimationPlayer = new_model.find_child("AnimationPlayer", true, false)
+		if anim_player:
+			if anim_player.autoplay != "":
+				anim_player.play(anim_player.autoplay)
+			elif anim_player.has_animation("idle"):
+				anim_player.play("idle")
+			elif anim_player.has_animation("Idle"):
+				anim_player.play("Idle")
+			elif anim_player.get_animation_list().size() > 0:
+				anim_player.play(anim_player.get_animation_list()[0])
 
 func finish_game():
 	final_score = 0

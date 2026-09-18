@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://djwo2k15q3hs3"]
+
+[ext_resource type="PackedScene" uid="uid://6m3awx6o60o" path="res://assets/Applicants/newmodels/M/Ricardo Villanueva.glb" id="1_64xfq"]
+[ext_resource type="PackedScene" uid="uid://bdtgui5nwpvki" path="res://animation/animation_player.tscn" id="2_h3pol"]
+
+[node name="Ricardo Villanueva" unique_id=841237029 instance=ExtResource("1_64xfq")]
+
+[node name="Skeleton3D" parent="Player" parent_id_path=PackedInt32Array(379354657) index="0" unique_id=1210647243]
+bones/0/rotation = Quaternion(0.109116785, 0, 0, 0.99402905)
+bones/1/rotation = Quaternion(-0.0267569, 0, 0, 0.9996421)
+bones/2/rotation = Quaternion(-0.08248057, 0, 0, 0.9965927)
+bones/3/rotation = Quaternion(-0.063610844, 0, 0, 0.9979748)
+bones/5/rotation = Quaternion(0.08651408, 0, 0, 0.9962506)
+bones/6/rotation = Quaternion(-0.08071607, -2.7415483e-09, -2.2612316e-09, 0.9967371)
+bones/7/rotation = Quaternion(-0.66392314, -0.22765976, -0.45562637, 0.5475233)
+bones/8/rotation = Quaternion(-0.4872828, 0.08365045, -0.13475826, 0.85871905)
+bones/9/rotation = Quaternion(0.014038506, 0.014854619, -0.18740651, 0.9820698)
+bones/10/rotation = Quaternion(-0.008426246, -0.0116907945, -9.850645e-05, 0.99989617)
+bones/11/rotation = Quaternion(-0.66392314, 0.22765976, 0.45562637, 0.5475233)
+bones/12/rotation = Quaternion(-0.46767867, -0.08599731, 0.116890565, 0.87190473)
+bones/13/rotation = Quaternion(0.014038506, -0.014854619, 0.18740651, 0.9820698)
+bones/14/rotation = Quaternion(-0.008426246, 0.0116907945, 9.850645e-05, 0.99989617)
+bones/15/rotation = Quaternion(3.281215e-08, 0.6606951, 0.7506544, 2.8879906e-08)
+bones/16/rotation = Quaternion(3.281215e-08, 0.6606951, 0.7506544, 2.8879906e-08)
+bones/17/rotation = Quaternion(0.99081695, -1.9352134e-08, -1.5523602e-08, 0.13521041)
+bones/18/rotation = Quaternion(0.04898345, 1.7139799e-08, -1.7936571e-08, 0.9987996)
+bones/19/rotation = Quaternion(-0.44461122, 3.6151637e-14, 1.9081306e-14, 0.89572364)
+bones/20/rotation = Quaternion(-1.4880484e-08, 0.94027144, -0.34042576, 4.1100567e-08)
+bones/21/rotation = Quaternion(0.6648721, 0.6648723, -0.24071778, 0.24071772)
+bones/22/rotation = Quaternion(0.99081695, 1.9352134e-08, 1.5523602e-08, 0.13521041)
+bones/23/rotation = Quaternion(0.04898345, -1.7139799e-08, 1.7936571e-08, 0.9987996)
+bones/24/rotation = Quaternion(-0.44461122, -3.6151637e-14, -1.9081306e-14, 0.89572364)
+bones/25/rotation = Quaternion(1.4880484e-08, 0.94027144, -0.34042576, -4.1100567e-08)
+bones/26/rotation = Quaternion(-0.6648721, 0.6648723, -0.24071778, -0.24071772)
+
+[node name="spine_006" parent="Player/Skeleton3D" index="0" unique_id=1098342617]
+transform = Transform3D(1, 4.950281e-09, -5.1001705e-09, -5.2330824e-09, 0.9983722, -0.057029366, 4.8095568e-09, 0.05702941, 0.99837214, -1.7522366e-09, 1.8035661, -0.028045882)
+
+[node name="AnimationPlayer" parent="Player" parent_id_path=PackedInt32Array(379354657) index="1" unique_id=941433842 instance=ExtResource("2_h3pol")]

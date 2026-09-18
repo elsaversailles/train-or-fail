@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bdtgui5nwpvki"]
+
+[ext_resource type="AnimationLibrary" uid="uid://bna7wem1opejf" path="res://animation/idle_animation.res" id="1_8ja23"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" unique_id=941433842]
+libraries/ = ExtResource("1_8ja23")
+autoplay = &"idle"

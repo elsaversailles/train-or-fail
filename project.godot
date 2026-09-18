@@ -8,6 +8,12 @@
 
 config_version=5
 
+[animation]
+
+warnings/check_invalid_skeleton_modifier_node_paths=false
+warnings/check_invalid_track_paths=false
+warnings/check_angle_interpolation_type_conflicting=false
+
 [application]
 
 config/name="TrainOrFail Demo (Copy)"

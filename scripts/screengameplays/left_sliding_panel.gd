@@ -204,20 +204,32 @@ func submit_answer(answer):
 		SaveManager.record_special_decision(current_applicant.get("id", ""), answer)
 
 func spawn_3d_model(model_packed_scene: PackedScene):
-	# 1. Delete whatever 3D model is currently standing there
+	# 1. Delete the previous applicant model
 	for child in model_container.get_children():
 		child.queue_free()
 		
-	# 2. Wait for a split second to ensure it's deleted before spawning the new one
 	await get_tree().process_frame 
 	
-	# 3. Spawn the new model!
+	# 2. Spawn the new .tscn model
 	if model_packed_scene:
 		var new_model = model_packed_scene.instantiate()
 		model_container.add_child(new_model)
-		
-		# Optional: Ensure the model spawns at the exact center (0,0,0) of the container
 		new_model.position = Vector3.ZERO
+		
+		# Rotate 180° if not already adjusted inside the .tscn
+		new_model.rotate_y(PI)
+		
+		# 3. Find AnimationPlayer and start the idle animation
+		var anim_player: AnimationPlayer = new_model.find_child("AnimationPlayer", true, false)
+		if anim_player:
+			if anim_player.autoplay != "":
+				anim_player.play(anim_player.autoplay)
+			elif anim_player.has_animation("idle"):
+				anim_player.play("idle")
+			elif anim_player.has_animation("Idle"):
+				anim_player.play("Idle")
+			elif anim_player.get_animation_list().size() > 0:
+				anim_player.play(anim_player.get_animation_list()[0])
 
 # -----------------------------
 # AFTER 5TH APPLICANT

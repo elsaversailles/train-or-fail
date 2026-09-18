@@ -10,7 +10,7 @@ var fraud_applicants: Array = [
 	{
 		"id": "fd_a1",
 		"name": "Alyssa Cruz",
-		"model_scene": preload("res://assets/Applicants/F/F SHORT HAIR.glb"),
+		"model_scene": preload("res://models3d/characters/F/alyssa_cruz.tscn"),
 		"location": preload("res://images/applicants info/FraudDetection/a2/fd_r02_location_convenience_counter.png"),
 		"item": preload("res://images/applicants info/FraudDetection/a2/fd_r02_item_laundry_detergent.png"),
 		"time": "9:15 AM",
@@ -20,7 +20,7 @@ var fraud_applicants: Array = [
 	{
 		"id": "fd_a2",
 		"name": "Jomar Salazar",
-		"model_scene": preload("res://assets/Applicants/M/M MOHAWK.glb"),
+		"model_scene": preload("res://models3d/characters/M/jomar_salazar.tscn"),
 		"location": preload("res://images/applicants info/FraudDetection/a3/fd_r03_location_hardware_main_aisle.png"),
 		"item": preload("res://images/applicants info/FraudDetection/a3/fd_r03_item_electric_stand_fan.png"),
 		"time": "3:20 PM",
@@ -30,7 +30,7 @@ var fraud_applicants: Array = [
 	{
 		"id": "fd_a3",
 		"name": "Jake Meza",
-		"model_scene": preload("res://assets/Applicants/M/M BASE.glb"),
+		"model_scene": preload("res://models3d/characters/M/jake_meza.tscn"),
 		"location": preload("res://images/applicants info/FraudDetection/a4/fd_r04_location_dark_unregistered_terminal.png"),
 		"item": preload("res://images/applicants info/FraudDetection/a4/fd_r04_item_10_gaming_load_cards.png"),
 		"time": "2:45 AM",
@@ -40,7 +40,7 @@ var fraud_applicants: Array = [
 	{
 		"id": "fd_a4",
 		"name": "Nico Ferrer",
-		"model_scene": preload("res://assets/Applicants/M/M MULLET.glb"),
+		"model_scene": preload("res://models3d/characters/M/nico_ferrer.tscn"),
 		"location": preload("res://images/applicants info/FraudDetection/a5/fd_r05_location_pharmacy_drive_thru.png"),
 		"item": preload("res://images/applicants info/FraudDetection/a5/fd_r05_item_prescription_antibiotics.png"),
 		"time": "1:10 PM",
@@ -50,7 +50,7 @@ var fraud_applicants: Array = [
 	{
 		"id": "fd_a5",
 		"name": "Trisha Aquino",
-		"model_scene": preload("res://assets/Applicants/F/F SIDESWEPT.glb"),
+		"model_scene": preload("res://models3d/characters/F/trisha_aquino.tscn"),
 		"location": preload("res://images/applicants info/FraudDetection/a6/fd_r06_location_department_store_shoes.png"),
 		"item": preload("res://images/applicants info/FraudDetection/a6/fd_r06_item_two_leather_work_shoes.png"),
 		"time": "5:40 PM",
@@ -60,7 +60,7 @@ var fraud_applicants: Array = [
 	{
 		"id": "fd_a6",
 		"name": "Carlo Herrer",
-		"model_scene": preload("res://assets/Applicants/M/M LONG HAIR.glb"),
+		"model_scene": preload("res://models3d/characters/M/carlo_herrer.tscn"),
 		"location": preload("res://images/applicants info/FraudDetection/a8/fd_r08_location_dark_alley_terminal.png"),
 		"item": preload("res://images/applicants info/FraudDetection/a8/fd_r08_item_five_graphics_cards.png"),
 		"time": "3:12 AM",
@@ -70,7 +70,7 @@ var fraud_applicants: Array = [
 	{
 		"id": "fd_a7",
 		"name": "Angelo",
-		"model_scene": preload("res://assets/Applicants/M/M MULLET.glb"),
+		"model_scene": preload("res://models3d/characters/M/angelo.tscn"),
 		"location": preload("res://images/applicants info/FraudDetection/a9/fd_r09_location_coffee_drive_thru.png"),
 		"item": preload("res://images/applicants info/FraudDetection/a9/fd_r09_item_iced_latte.png"),
 		"time": "8:30 AM",
@@ -80,7 +80,7 @@ var fraud_applicants: Array = [
 	{
 		"id": "fd_a8",
 		"name": "Miguel Nava",
-		"model_scene": preload("res://assets/Applicants/M/M SHAGGY.glb"),
+		"model_scene": preload("res://models3d/characters/M/miguel_nava.tscn"),
 		"location": preload("res://images/applicants info/FraudDetection/a10/fd_r10_location_vpn_moscow_transaction.png"),
 		"item": preload("res://images/applicants info/FraudDetection/a10/fd_r10_item_prepaid_gaming_credits.png"),
 		"time": "2:22 AM",
@@ -90,7 +90,7 @@ var fraud_applicants: Array = [
 	{
 		"id": "fd_a9",
 		"name": "Adrian Santos",
-		"model_scene": preload("res://assets/Applicants/M/M SPIKEY LONG.glb"),
+		"model_scene": preload("res://models3d/characters/M/adrian_santos.tscn"),
 		"location": preload("res://images/applicants info/FraudDetection/a10/fd_r10_location_vpn_moscow_transaction.png"),
 		"item": preload("res://images/applicants info/FraudDetection/a10/fd_r10_item_prepaid_gaming_credits.png"),
 		"time": "5:30 PM",
@@ -100,17 +100,17 @@ var fraud_applicants: Array = [
 	{
 		"id": "fd_a10",
 		"name": "Regine Manuel",
-		"model_scene": preload("res://assets/Applicants/F/F LONG HAIR.glb"),
+		"model_scene": preload("res://models3d/characters/F/regine_manuel.tscn"),
 		"location": preload("res://images/applicants info/FraudDetection/a14/fd_r14_location_abandoned_warehouse_dock.png"),
 		"item": preload("res://images/applicants info/FraudDetection/a14/fd_r14_item_ten_premium_smartphones.png"),
 		"time": "11:55 PM",
 		"price": "₱900,000",
-		"fraud_correct": "sus" # Marked as "sus" (spreadsheet has a duplicate "₱900,000" in the status column)
+		"fraud_correct": "sus"
 	},
 	{
 		"id": "fd_a11",
 		"name": "Briar Galima",
-		"model_scene": preload("res://assets/Applicants/M/M SPIKEY.glb"),
+		"model_scene": preload("res://models3d/characters/M/briar_galima.tscn"),
 		"location": preload("res://images/applicants info/FraudDetection/a15/fd_r15_location_fast_food_delivery.png"),
 		"item": preload("res://images/applicants info/FraudDetection/a15/fd_r15_item_fast_food_family_meal.png"),
 		"time": "6:45 PM",
@@ -120,7 +120,7 @@ var fraud_applicants: Array = [
 	{
 		"id": "fd_a12",
 		"name": "Michele Garcia",
-		"model_scene": preload("res://assets/Applicants/F/F BUNS.glb"),
+		"model_scene": preload("res://models3d/characters/F/michele_garcia.tscn"),
 		"location": preload("res://images/applicants info/FraudDetection/a16/fd_r16_location_camera_taped.png"),
 		"item": preload("res://images/applicants info/FraudDetection/a16/fd_r16_item_luxury_watch.png"),
 		"time": "4:00 AM",
@@ -129,16 +129,105 @@ var fraud_applicants: Array = [
 	}
 ]
 
-# ==========================================
 # KYC POOL (Days 4 - 6)
-# ==========================================
 var kyc_applicants: Array = [
 	{
 		"id": "kyc_a1",
 		"name": "Maria Santos",
-		"model_scene": preload("res://assets/Applicants/F/F SHORT HAIR.glb"),
-		"id_image": preload("res://images/applicants info/special characters/MarkKrazy/Mark_Krazy_ID.png"),
+		"model_scene": preload("res://models3d/characters/F/maria_santos.tscn"),
+		"id_image": preload("res://images/applicants info/KYC/a1/a1_id.png"),
 		"kyc_correct": "legit"
+	},
+	{
+		"id": "kyc_a2",
+		"name": "Juan Perez",
+		"model_scene": preload("res://models3d/characters/M/juan_perez.tscn"),
+		"id_image": preload("res://images/applicants info/KYC/a2/a2_id.png"),
+		"kyc_correct": "legit"
+	},
+	{
+		"id": "kyc_a3",
+		"name": "Carlo Mendoza",
+		"model_scene": preload("res://models3d/characters/M/carlo_herrer.tscn"),
+		"id_image": preload("res://images/applicants info/KYC/a3/a3_id.png"),
+		"kyc_correct": "sus"
+	},
+	{
+		"id": "kyc_a4",
+		"name": "Teresa Lim",
+		"model_scene": preload("res://models3d/characters/F/teresa_lim.tscn"),
+		"id_image": preload("res://images/applicants info/KYC/a4/a4_id.png"),
+		"kyc_correct": "legit"
+	},
+	{
+		"id": "kyc_a5",
+		"name": "Miguel Reyes",
+		"model_scene": preload("res://models3d/characters/M/miguel_reyes.tscn"),
+		"id_image": preload("res://images/applicants info/KYC/a5/a5_id.png"),
+		"kyc_correct": "legit"
+	},
+	{
+		"id": "kyc_a6",
+		"name": "Anna Reyes",
+		"model_scene": preload("res://models3d/characters/F/anna_reyes.tscn"),
+		"id_image": preload("res://images/applicants info/KYC/a6/a6_id.png"),
+		"kyc_correct": "sus"
+	},
+	{
+		"id": "kyc_a7",
+		"name": "Rosa Dela Torre",
+		"model_scene": preload("res://models3d/characters/F/rosa_dela_torre.tscn"),
+		"id_image": preload("res://images/applicants info/KYC/a7/a7_id.png"),
+		"kyc_correct": "legit"
+	},
+	{
+		"id": "kyc_a8",
+		"name": "Aponilaryo Limaga",
+		"model_scene": preload("res://models3d/characters/M/apolinaryo_limaga.tscn"),
+		"id_image": preload("res://images/applicants info/KYC/a8/a8_id.png"),
+		"kyc_correct": "sust"
+	},
+	{
+		"id": "kyc_a9",
+		"name": "Carmen Bautista",
+		"model_scene": preload("res://models3d/characters/F/carmen_bautista.tscn"),
+		"id_image": preload("res://images/applicants info/KYC/a9/a9_id.png"),
+		"kyc_correct": "legit"
+	},
+	{
+		"id": "kyc_a10",
+		"name": "Alex Rivera",
+		"model_scene": preload("res://models3d/characters/M/alex_rivera.tscn"),
+		"id_image": preload("res://images/applicants info/KYC/a10/a10_id.png"),
+		"kyc_correct": "legit"
+	},
+	{
+		"id": "kyc_a11",
+		"name": "Mark Lim",
+		"model_scene": preload("res://models3d/characters/M/mark_lim.tscn"),
+		"id_image": preload("res://images/applicants info/KYC/a11/a11_id.png"),
+		"kyc_correct": "sus"
+	},
+	{
+		"id": "kyc_a12",
+		"name": "Jose Gonzales",
+		"model_scene": preload("res://models3d/characters/M/jose_gonzales.tscn"),
+		"id_image": preload("res://images/applicants info/KYC/a12/a12_id.png"),
+		"kyc_correct": "legit"
+	},
+	{
+		"id": "kyc_a13",
+		"name": " Ricardo Villanueva",
+		"model_scene": preload("res://models3d/characters/M/ricardo_villanueva.tscn"),
+		"id_image": preload("res://images/applicants info/KYC/a13/a13_id.png"),
+		"kyc_correct": "sus"
+	},
+	{
+		"id": "kyc_a14",
+		"name": "Antonio Garcia",
+		"model_scene": preload("res://models3d/characters/M/antonio_garcia.tscn"),
+		"id_image": preload("res://images/applicants info/KYC/a14/a14_id.png"),
+		"kyc_correct": "sus"
 	}
 ]
 
@@ -149,152 +238,152 @@ var credit_applicants: Array = [
 	{
 		"id": "cs_a1",
 		"name": "Mark Reyes",
-		"model_scene": preload("res://assets/Applicants/M/M MULLET.glb"),
+		"model_scene": preload("res://models3d/characters/M/mark_reyes.tscn"),
 		"general_info_img": preload("res://images/applicants info/CreditScoring/a1/cs_a1_GI.png"),
 		"payment_history_img": preload("res://images/applicants info/CreditScoring/a1/cs_a1_PH.png"),
 		"arrears_img": preload("res://images/applicants info/CreditScoring/a1/cs_a1_arrears.png"),
 		"debt_ratio_img": preload("res://images/applicants info/CreditScoring/a1/cs_a1_DR.png"),
-		"credit_correct": 0.6
+		"credit_correct": 1.0
 	},
 	{
 		"id": "cs_a2",
 		"name": "Clara Lim",
-		"model_scene": preload("res://assets/Applicants/F/F LONG HAIR.glb"),
+		"model_scene": preload("res://models3d/characters/F/clara_lim.tscn"),
 		"general_info_img": preload("res://images/applicants info/CreditScoring/a2/cs_a2_GI.png"),
 		"payment_history_img": preload("res://images/applicants info/CreditScoring/a2/cs_a2_PH.png"),
 		"arrears_img": preload("res://images/applicants info/CreditScoring/a2/cs_a2_arrears.png"),
 		"debt_ratio_img": preload("res://images/applicants info/CreditScoring/a2/cs_a2_DR.png"),
-		"credit_correct": 0.6
+		"credit_correct": 0.8
 	},
 	{
 		"id": "cs_a3",
 		"name": "Rico Tan",
-		"model_scene": preload("res://assets/Applicants/M/M SHAGGY.glb"),
+		"model_scene": preload("res://models3d/characters/M/rico_tan.tscn"),
 		"general_info_img": preload("res://images/applicants info/CreditScoring/a3/cs_a3_GI.png"),
 		"payment_history_img": preload("res://images/applicants info/CreditScoring/a3/cs_a3_PH.png"),
 		"arrears_img": preload("res://images/applicants info/CreditScoring/a3/cs_a3_arrears.png"),
 		"debt_ratio_img": preload("res://images/applicants info/CreditScoring/a3/cs_a3_DR.png"),
-		"credit_correct": 0.1
+		"credit_correct": 0.0
 	},
 	{
 		"id": "cs_a4",
 		"name": "Anita Go",
-		"model_scene": preload("res://assets/Applicants/F/F SHORT HAIR.glb"),
+		"model_scene": preload("res://models3d/characters/F/anita_go.tscn"),
 		"general_info_img": preload("res://images/applicants info/CreditScoring/a4/cs_a4_GI.png"),
 		"payment_history_img": preload("res://images/applicants info/CreditScoring/a4/cs_a4_PH.png"),
 		"arrears_img": preload("res://images/applicants info/CreditScoring/a4/cs_a4_arrears.png"),
 		"debt_ratio_img": preload("res://images/applicants info/CreditScoring/a4/cs_a4_DR.png"),
-		"credit_correct": 0.45
+		"credit_correct": 0.6
 	},
 	{
 		"id": "cs_a5",
 		"name": "Luis Sy",
-		"model_scene": preload("res://assets/Applicants/M/M LONG HAIR.glb"),
+		"model_scene": preload("res://models3d/characters/M/luis_sy.tscn"),
 		"general_info_img": preload("res://images/applicants info/CreditScoring/a5/cs_a5_GI.png"),
 		"payment_history_img": preload("res://images/applicants info/CreditScoring/a5/cs_a5_PH.png"),
 		"arrears_img": preload("res://images/applicants info/CreditScoring/a5/cs_a5_arrears.png"),
 		"debt_ratio_img": preload("res://images/applicants info/CreditScoring/a5/cs_a5_DR.png"),
-		"credit_correct": 0.85
+		"credit_correct": 0.8
 	},
 	{
 		"id": "cs_a6",
 		"name": "Grandma Baba",
-		"model_scene": preload("res://assets/Applicants/F/F SHORT HAIR.glb"),
+		"model_scene": preload("res://models3d/characters/F/grandma_baba.tscn"),
 		"general_info_img": preload("res://images/applicants info/CreditScoring/a6/cs_a6_GI.png"),
 		"payment_history_img": preload("res://images/applicants info/CreditScoring/a6/cs_a6_PH.png"),
 		"arrears_img": preload("res://images/applicants info/CreditScoring/a6/cs_a6_arrears.png"),
 		"debt_ratio_img": preload("res://images/applicants info/CreditScoring/a6/cs_a6_DR.png"),
-		"credit_correct": 0.4
+		"credit_correct": 0.6
 	},
 	{
 		"id": "cs_a7",
-		"name": "John Bernard \"Bernard\" Adayo",
-		"model_scene": preload("res://assets/Applicants/M/M BASE.glb"),
+		"name": "John Bernard Adayo",
+		"model_scene": preload("res://models3d/characters/M/briar_galima.tscn"),
 		"general_info_img": preload("res://images/applicants info/CreditScoring/a7/cs_a7_GI.png"),
 		"payment_history_img": preload("res://images/applicants info/CreditScoring/a7/cs_a7_PH.png"),
 		"arrears_img": preload("res://images/applicants info/CreditScoring/a7/cs_a7_arrears.png"),
 		"debt_ratio_img": preload("res://images/applicants info/CreditScoring/a7/cs_a7_DR.png"),
-		"credit_correct": 0.6
+		"credit_correct": 0.4
 	},
 	{
 		"id": "cs_a8",
 		"name": "Nurse Clara Garcia",
-		"model_scene": preload("res://assets/Applicants/F/Nurse Clara Garcia.glb"),
+		"model_scene": preload("res://models3d/characters/F/nurse_clara_garcia.tscn"),
 		"general_info_img": preload("res://images/applicants info/CreditScoring/a8/cs_a8_GI.png"),
 		"payment_history_img": preload("res://images/applicants info/CreditScoring/a8/cs_a8_PH.png"),
 		"arrears_img": preload("res://images/applicants info/CreditScoring/a8/cs_a8_arrears.png"),
 		"debt_ratio_img": preload("res://images/applicants info/CreditScoring/a8/cs_a8_DR.png"),
-		"credit_correct": 0.7
+		"credit_correct": 0.4
 	},
 	{
 		"id": "cs_a9",
 		"name": "Meg Sy",
-		"model_scene": preload("res://assets/Applicants/F/F MULLET.glb"),
+		"model_scene": preload("res://models3d/characters/F/meg_sy.tscn"),
 		"general_info_img": preload("res://images/applicants info/CreditScoring/a9/cs_a9_GI.png"),
 		"payment_history_img": preload("res://images/applicants info/CreditScoring/a9/cs_a9_PH.png"),
 		"arrears_img": preload("res://images/applicants info/CreditScoring/a9/cs_a9_arrears.png"),
 		"debt_ratio_img": preload("res://images/applicants info/CreditScoring/a9/cs_a9_DR.png"),
-		"credit_correct": 0.5
+		"credit_correct": 0.4
 	},
 	{
 		"id": "cs_a10",
 		"name": "Jan Di",
-		"model_scene": preload("res://assets/Applicants/M/M SIDESWIPE.glb"),
+		"model_scene": preload("res://models3d/characters/F/jan_di.tscn"),
 		"general_info_img": preload("res://images/applicants info/CreditScoring/a10/cs_a10_GI.png"),
 		"payment_history_img": preload("res://images/applicants info/CreditScoring/a10/cs_a10_PH.png"),
 		"arrears_img": preload("res://images/applicants info/CreditScoring/a10/cs_a10_arrears.png"),
 		"debt_ratio_img": preload("res://images/applicants info/CreditScoring/a10/cs_a10_DR.png"),
-		"credit_correct": 0.05
+		"credit_correct": 0.2
 	},
 	{
 		"id": "cs_a11",
 		"name": "Alex Rivera",
-		"model_scene": preload("res://assets/Applicants/M/M BALD.glb"),
+		"model_scene": preload("res://models3d/characters/M/alex_rivera.tscn"),
 		"general_info_img": preload("res://images/applicants info/CreditScoring/a11/cs_a11_GI.png"),
 		"payment_history_img": preload("res://images/applicants info/CreditScoring/a11/cs_a11_PH.png"),
 		"arrears_img": preload("res://images/applicants info/CreditScoring/a11/cs_a11_arrears.png"),
 		"debt_ratio_img": preload("res://images/applicants info/CreditScoring/a11/cs_a11_DR.png"),
-		"credit_correct": 0.3
+		"credit_correct": 0.0
 	},
 	{
 		"id": "cs_a12",
 		"name": "Prof. Jericho Santur",
-		"model_scene": preload("res://assets/Applicants/M/M BASE.glb"),
+		"model_scene": preload("res://models3d/characters/M/prof__jericho_santur.tscn"),
 		"general_info_img": preload("res://images/applicants info/CreditScoring/a12/cs_a12_GI.png"),
 		"payment_history_img": preload("res://images/applicants info/CreditScoring/a12/cs_a12_PH.png"),
 		"arrears_img": preload("res://images/applicants info/CreditScoring/a12/cs_a12_arrears.png"),
 		"debt_ratio_img": preload("res://images/applicants info/CreditScoring/a12/cs_a12_DR.png"),
-		"credit_correct": 0.55
+		"credit_correct": 0.4
 	},
 	{
 		"id": "cs_a13",
 		"name": "Sol Ti",
-		"model_scene": preload("res://assets/Applicants/M/M SPIKEY.glb"),
+		"model_scene": preload("res://models3d/characters/F/sol_ti.tscn"),
 		"general_info_img": preload("res://images/applicants info/CreditScoring/a13/cs_a13_GI.png"),
 		"payment_history_img": preload("res://images/applicants info/CreditScoring/a13/cs_a13_PH.png"),
 		"arrears_img": preload("res://images/applicants info/CreditScoring/a13/cs_a13_arrears.png"),
 		"debt_ratio_img": preload("res://images/applicants info/CreditScoring/a13/cs_a13_DR.png"),
-		"credit_correct": 0.9
+		"credit_correct": 0.6
 	},
 	{
 		"id": "cs_a14",
 		"name": "Sam Lo",
-		"model_scene": preload("res://assets/Applicants/M/M SPIKEY LONG.glb"),
+		"model_scene": preload("res://models3d/characters/M/sam_lo.tscn"),
 		"general_info_img": preload("res://images/applicants info/CreditScoring/a14/cs_a14_GI.png"),
 		"payment_history_img": preload("res://images/applicants info/CreditScoring/a14/cs_a14_PH.png"),
 		"arrears_img": preload("res://images/applicants info/CreditScoring/a14/cs_a14_arrears.png"),
 		"debt_ratio_img": preload("res://images/applicants info/CreditScoring/a14/cs_a14_DR.png"),
-		"credit_correct": 0.65
+		"credit_correct": 0.8
 	},
 	{
 		"id": "cs_a15",
 		"name": "Ben Jo",
-		"model_scene": preload("res://assets/Applicants/M/M OLD 1.glb"),
+		"model_scene": preload("res://models3d/characters/M/ben_jo.tscn"),
 		"general_info_img": preload("res://images/applicants info/CreditScoring/a15/cs_a15_GI.png"),
 		"payment_history_img": preload("res://images/applicants info/CreditScoring/a15/cs_a15_PH.png"),
 		"arrears_img": preload("res://images/applicants info/CreditScoring/a15/cs_a15_arrears.png"),
 		"debt_ratio_img": preload("res://images/applicants info/CreditScoring/a15/cs_a15_DR.png"),
-		"credit_correct": 0.15
+		"credit_correct": 0.2
 	}
 ]
 
@@ -307,7 +396,7 @@ var special_applicants: Array = [
 		"target_day": 2,
 		"is_special": true,
 		"name": "Elena Dinorado",
-		"model_scene": preload("res://assets/Applicants/F/F SIDESWEPT.glb"),
+		"model_scene": preload("res://models3d/characters/F/tita_elena.tscn"),
 		"location": preload("res://images/applicants info/special characters/TitaElena/flour_location.png"),
 		"item": preload("res://images/applicants info/special characters/TitaElena/flour_item.png"),
 		"time": "11:45 AM",
@@ -327,7 +416,7 @@ var special_applicants: Array = [
 		"target_day": [3, 5],
 		"is_special": true,
 		"name": "Mark Krazy",
-		"model_scene": preload("res://models3d/characters/mark_krazy.tscn"),
+		"model_scene": preload("res://models3d/characters/M/mark_krazy.tscn"),
 		"location": preload("res://images/applicants info/special characters/MarkKrazy/atm_location.png"),
 		"item": preload("res://images/applicants info/special characters/MarkKrazy/atm_item.png"),
 		"time": "2:45 AM",
@@ -348,7 +437,7 @@ var special_applicants: Array = [
 		"target_day": [8],
 		"is_special": true,
 		"name": "Clara Garcia",
-		"model_scene": preload("res://assets/Applicants/F/Nurse Clara Garcia.glb"),
+		"model_scene": preload("res://models3d/characters/F/nurse_clara_garcia.tscn"),
 		
 		"general_info_img": preload("res://images/applicants info/special characters/Clara Garcia/claragarcia_general_information.png"),
 		"payment_history_img": preload("res://images/applicants info/special characters/Clara Garcia/claragarcia_payment_history.png"),
@@ -361,7 +450,7 @@ var special_applicants: Array = [
 		"target_day": [9],
 		"is_special": true,
 		"name": "Jericho Santur",
-		"model_scene": preload("res://assets/Applicants/M/M BASE.glb"),
+		"model_scene": preload("res://models3d/characters/M/prof__jericho_santur.tscn"),
 		
 		"general_info_img": preload("res://images/applicants info/special characters/JerichoSantur/jericho_generalinformation.png"),
 		"payment_history_img": preload("res://images/applicants info/special characters/JerichoSantur/jericho_payment_history.png"),

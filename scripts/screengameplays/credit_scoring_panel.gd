@@ -97,15 +97,33 @@ func load_applicant():
 	spawn_3d_model(data.get("model_scene"))
 
 func spawn_3d_model(model_packed_scene: PackedScene):
+	# 1. Clear previous 3D model
 	for child in model_container.get_children():
 		child.queue_free()
 		
+	# 2. Wait a frame so the node tree cleans up
 	await get_tree().process_frame
 	
+	# 3. Spawn the new character model
 	if model_packed_scene:
 		var new_model = model_packed_scene.instantiate()
 		model_container.add_child(new_model)
 		new_model.position = Vector3.ZERO
+		
+		# --- 180° FLIP: Makes the applicant face the desk/camera ---
+		new_model.rotate_y(PI)
+		
+		# --- ANIMATION FIX: Plays idle animation automatically ---
+		var anim_player: AnimationPlayer = new_model.find_child("AnimationPlayer", true, false)
+		if anim_player:
+			if anim_player.autoplay != "":
+				anim_player.play(anim_player.autoplay)
+			elif anim_player.has_animation("idle"):
+				anim_player.play("idle")
+			elif anim_player.has_animation("Idle"):
+				anim_player.play("Idle")
+			elif anim_player.get_animation_list().size() > 0:
+				anim_player.play(anim_player.get_animation_list()[0])
 
 func _on_submit():
 	var current_applicant = applicants_list[current_case_index]

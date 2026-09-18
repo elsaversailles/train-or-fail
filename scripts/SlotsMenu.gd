@@ -90,6 +90,3 @@ func _unhandled_input(event: InputEvent) -> void:
 		# Fade out and go back to the Main Menu
 		# (Make sure this path perfectly matches your main menu scene file!)
 		SceneTransition.change_scene("res://scene/main_menu.tscn")
-
-func _on_try_pressed() -> void:
-	SceneTransition.change_scene("res://scene/CreditScoring/CreditScoring.tscn")

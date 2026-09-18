@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ba41rl5ab0sxw"]
+
+[ext_resource type="PackedScene" uid="uid://ctl07ewyyjl4n" path="res://assets/Applicants/newmodels/M/Adrian Santos.glb" id="1_fro56"]
+[ext_resource type="PackedScene" uid="uid://bdtgui5nwpvki" path="res://animation/animation_player.tscn" id="2_orwxy"]
+
+[node name="Adrian Santos" unique_id=1780272143 instance=ExtResource("1_fro56")]
+
+[node name="Skeleton3D" parent="Player" parent_id_path=PackedInt32Array(1003419859) index="0" unique_id=801549105]
+bones/0/rotation = Quaternion(0.109116785, 0, 0, 0.99402905)
+bones/1/rotation = Quaternion(-0.0267569, 0, 0, 0.9996421)
+bones/8/rotation = Quaternion(-0.48728278, 0.08365045, -0.13475823, 0.858719)
+bones/12/rotation = Quaternion(-0.46767864, -0.08599728, 0.11689056, 0.8719047)
+bones/21/rotation = Quaternion(0.66487205, 0.6648722, -0.24071778, 0.24071771)
+bones/26/rotation = Quaternion(-0.66487205, 0.6648722, -0.24071778, -0.24071771)
+
+[node name="spine_006" parent="Player/Skeleton3D" index="0" unique_id=613596886]
+transform = Transform3D(1, 4.950281e-09, -5.100169e-09, -5.100169e-09, 0.9995551, -0.029820547, 4.9502806e-09, 0.029820472, 0.99955535, -4.4703476e-09, 4.601302, -0.07155129)
+
+[node name="AnimationPlayer" parent="Player" parent_id_path=PackedInt32Array(1003419859) index="1" unique_id=941433842 instance=ExtResource("2_orwxy")]

@@ -1,9 +1,12 @@
-res://animation/
-res://scripts/
-res://Dialogic/Timelines/
-res://models3d/characters/
-res://try/
 C:/Users/mart/Desktop/
+res://models3d/map/
+res://models3d/characters/F/
+res://models3d/characters/
+res://animation/
+res://try/
+res://scripts/
+res://
+res://Dialogic/Timelines/
 res://images/Endings/
 res://scene/
 res://scripts/TutorialsScript/
@@ -14,7 +17,6 @@ res://images/TutorialsIMG/KCY/
 res://assets/try/
 res://addons/
 res://models3d/
-res://
 res://assets/textures/
 res://assets/icons/
 C:/Users/mart/Downloads/

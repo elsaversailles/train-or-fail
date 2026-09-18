@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bd4a31op6qttp"]
+
+[ext_resource type="PackedScene" uid="uid://bg2qmlmtpmygi" path="res://assets/Applicants/newmodels/M/Jomar Salazar.glb" id="1_jxyib"]
+[ext_resource type="PackedScene" uid="uid://bdtgui5nwpvki" path="res://animation/animation_player.tscn" id="2_7n36k"]
+
+[node name="Jomar Salazar" unique_id=1375062058 instance=ExtResource("1_jxyib")]
+
+[node name="Skeleton3D" parent="Player" parent_id_path=PackedInt32Array(1246309341) index="0" unique_id=873809168]
+bones/0/rotation = Quaternion(0.109116785, 0, 0, 0.99402905)
+bones/1/rotation = Quaternion(-0.0267569, 0, 0, 0.9996421)
+bones/6/rotation = Quaternion(-0.08071607, -2.7415483e-09, -2.2612316e-09, 0.9967372)
+bones/8/rotation = Quaternion(-0.48728278, 0.08365045, -0.13475823, 0.858719)
+bones/12/rotation = Quaternion(-0.46767864, -0.08599728, 0.11689056, 0.8719047)
+bones/21/rotation = Quaternion(0.66487205, 0.6648722, -0.24071778, 0.24071771)
+bones/26/rotation = Quaternion(-0.66487205, 0.6648722, -0.24071778, -0.24071771)
+
+[node name="spine_006" parent="Player/Skeleton3D" index="0" unique_id=858241221]
+transform = Transform3D(1, 4.9502806e-09, -5.100171e-09, -5.2330837e-09, 0.9983723, -0.057029486, 4.8095585e-09, 0.05702938, 0.99837255, -3.7252894e-09, 3.8344176, -0.05962607)
+
+[node name="AnimationPlayer" parent="Player" parent_id_path=PackedInt32Array(1246309341) index="1" unique_id=941433842 instance=ExtResource("2_7n36k")]
