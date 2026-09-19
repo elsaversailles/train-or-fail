@@ -1,3 +1,5 @@
+Button
+HBoxContainer
 Node3D
 CollisionShape3D
 StaticBody3D
@@ -11,4 +13,3 @@ CPUParticles3D
 AnimationPlayer
 CSGBox3D
 CheckBox
-TextureRect

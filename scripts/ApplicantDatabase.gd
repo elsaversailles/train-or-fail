@@ -3,9 +3,6 @@ extends Node
 func _ready():
 	randomize()
 
-# ==========================================
-# FRAUD DETECTION POOL (Days 1 - 3)
-# ==========================================
 var fraud_applicants: Array = [
 	{
 		"id": "fd_a1",
@@ -185,7 +182,7 @@ var kyc_applicants: Array = [
 		"name": "Aponilaryo Limaga",
 		"model_scene": preload("res://models3d/characters/M/apolinaryo_limaga.tscn"),
 		"id_image": preload("res://images/applicants info/KYC/a8/a8_id.png"),
-		"kyc_correct": "sust"
+		"kyc_correct": "sus"
 	},
 	{
 		"id": "kyc_a9",
@@ -403,13 +400,6 @@ var special_applicants: Array = [
 		"price": "₱702,000.00",
 		"fraud_correct": "sus",
 		
-		# Fallback data for safety
-		"kyc_correct": "sus",
-		"general_info_img": preload("res://images/creditscoring/general information/general info.png"),
-		"payment_history_img": preload("res://images/creditscoring/payment history/Payment_History.png"),
-		"arrears_img": preload("res://images/creditscoring/arrears/arrears.png"),
-		"debt_ratio_img": preload("res://images/creditscoring/debt ratio/Debt_Ratio.png"),
-		"credit_correct": 0.6
 	},
 	{
 		"id": "mark_krazy",
@@ -425,12 +415,6 @@ var special_applicants: Array = [
 		
 		"id_image": preload("res://images/applicants info/special characters/MarkKrazy/Mark_Krazy_ID.png"),
 		"kyc_correct": "sus",
-		
-		"general_info_img": preload("res://images/creditscoring/general information/general info.png"),
-		"payment_history_img": preload("res://images/creditscoring/payment history/Payment_History.png"),
-		"arrears_img": preload("res://images/creditscoring/arrears/arrears.png"),
-		"debt_ratio_img": preload("res://images/creditscoring/debt ratio/Debt_Ratio.png"),
-		"credit_correct": 0.6
 	},
 	{
 		"id": "nurse_clara",
@@ -438,7 +422,6 @@ var special_applicants: Array = [
 		"is_special": true,
 		"name": "Clara Garcia",
 		"model_scene": preload("res://models3d/characters/F/nurse_clara_garcia.tscn"),
-		
 		"general_info_img": preload("res://images/applicants info/special characters/Clara Garcia/claragarcia_general_information.png"),
 		"payment_history_img": preload("res://images/applicants info/special characters/Clara Garcia/claragarcia_payment_history.png"),
 		"arrears_img": preload("res://images/applicants info/special characters/Clara Garcia/claragarcia_arrears.png"),
@@ -460,12 +443,26 @@ var special_applicants: Array = [
 	}
 ]
 
-# ==========================================
-# SESSION APPLICANT SELECTION
-# ==========================================
+var grandpa_applicant_data: Array = [
+	{
+		"id": "grandpa",
+		"name": "Grandpa",
+		"is_special": true,
+		"model_scene": preload("res://models3d/characters/M/grandpa.tscn"),
+		"general_info_img": preload("res://images/applicants info/special characters/Grandpa/cs_grandpa_GI.png"),
+		"payment_history_img": preload("res://images/applicants info/special characters/Grandpa/cs_grandpa_PH.png"),
+		"arrears_img": preload("res://images/applicants info/special characters/Grandpa/cs_grandpa_arrears.png"),
+		"debt_ratio_img": preload("res://images/applicants info/special characters/Grandpa/cs_grandpa_DR.png"),
+		"credit_correct": 0.2
+	}
+]
+
 func get_session_applicants(department: String = "") -> Array:
 	var current_day = SaveManager.current_save_data.get("current_day", 1)
 	var pool: Array = []
+	
+	if SaveManager.current_save_data.get("is_grandpa_shift", false):
+		return grandpa_applicant_data.duplicate()
 	
 	# Determine department automatically by current_day if not specified
 	if department == "":
@@ -507,3 +504,4 @@ func get_session_applicants(department: String = "") -> Array:
 
 	session.shuffle()
 	return session
+	

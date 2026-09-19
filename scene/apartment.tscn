@@ -2,18 +2,33 @@
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scene/character.tscn" id="1_mb15i"]
 [ext_resource type="Script" uid="uid://wlle720apfeg" path="res://scripts/Apartment.gd" id="1_x34op"]
+[ext_resource type="Texture2D" uid="uid://x0qiy380o8qb" path="res://images/Endings/Algorithm_Reformer.png" id="2_kr8m4"]
 [ext_resource type="PackedScene" uid="uid://bx7scsfg2nivv" path="res://scene/pause_panel.tscn" id="2_x34op"]
+[ext_resource type="Texture2D" uid="uid://closi13hc2vs7" path="res://images/Endings/Stagnant_Survival.png" id="3_3778g"]
 [ext_resource type="Texture2D" uid="uid://dowt3jc1kbxpg" path="res://images/Endings/Cold_Efficiency.png" id="3_ludmo"]
 [ext_resource type="PackedScene" uid="uid://dtpe25cd85fc8" path="res://scene/result_panel.tscn" id="3_w0ngi"]
+[ext_resource type="Texture2D" uid="uid://ckutpkeo8vjq5" path="res://images/Endings/The_Clean_Exit.png" id="4_gusyn"]
 [ext_resource type="PackedScene" uid="uid://cv87ukpeiw7cp" path="res://scene/crosshair.tscn" id="5_w0ngi"]
 [ext_resource type="Texture2D" uid="uid://djrodjg24p7dk" path="res://images/Endings/Perfect.png" id="6_gsw74"]
+[ext_resource type="Texture2D" uid="uid://dcqthubwl11j3" path="res://images/Endings/Conflict_of_Interest.png" id="6_qgprs"]
+[ext_resource type="Texture2D" uid="uid://sqhwdyq7qbt7" path="res://images/Endings/Another_Cog_In_The_Machine.png" id="7_3778g"]
 
 [sub_resource type="Environment" id="Environment_jv1ba"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aai3x"]
+bg_color = Color(0.5333243, 3.2488256e-07, 2.8878452e-07, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vohb4"]
+bg_color = Color(2.9961393e-06, 0.5267913, 1.0588765e-06, 1)
+
 [node name="Apartment" type="Node3D" unique_id=2014020559]
 script = ExtResource("1_x34op")
-default_ending_image = ExtResource("6_gsw74")
-special_rejection_ending_image = ExtResource("3_ludmo")
+ending_algorithm_reformer = ExtResource("2_kr8m4")
+ending_stagnant_survival = ExtResource("3_3778g")
+ending_clean_exit = ExtResource("4_gusyn")
+ending_cold_efficiency = ExtResource("3_ludmo")
+ending_conflict_of_interest = ExtResource("6_qgprs")
+ending_another_cog_in_the_machine = ExtResource("7_3778g")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1682298595]
 environment = SubResource("Environment_jv1ba")
@@ -49,6 +64,42 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_gsw74")
 expand_mode = 1
+
+[node name="ChoiceContainer" type="HBoxContainer" parent="GameFinishedPanel" unique_id=736500957]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="SurvivalButton" type="Button" parent="GameFinishedPanel/ChoiceContainer" unique_id=867225084]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_aai3x")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_aai3x")
+theme_override_styles/hover = SubResource("StyleBoxFlat_aai3x")
+text = "Stay at Desk"
+
+[node name="CleanExitButton" type="Button" parent="GameFinishedPanel/ChoiceContainer" unique_id=1632283562]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_vohb4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vohb4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vohb4")
+text = "Resign & Walk Away"
 
 [node name="Node3D" type="Node3D" parent="." unique_id=153943184]
 

@@ -50,15 +50,31 @@ func _on_game_over_clicked(event: InputEvent):
 		get_tree().reload_current_scene()
 
 func show_final_result(score: int):
-	# 1. Temporarily store the shift's results to read later in the apartment
+	# -------------------------------------------------------------
+	# CASE A: Secret Grandpa Bonus Shift Finished
+	# -------------------------------------------------------------
+	if SaveManager.current_save_data.get("is_grandpa_shift", false):
+		# Clean up shift flags
+		SaveManager.current_save_data.erase("is_grandpa_shift")
+		SaveManager.current_save_data["grandpa_round_completed"] = true
+		SaveManager.save_game(SaveManager.current_slot, SaveManager.current_save_data)
+		
+		# Head straight to the apartment to trigger Cold Efficiency / Conflict of Interest
+		SceneTransition.change_scene("res://scene/apartment.tscn")
+		return
+
+	# -------------------------------------------------------------
+	# CASE B: Normal Daily Shift (Days 1 to 9)
+	# -------------------------------------------------------------
+	# 1. Store pending data for the apartment terminal to read tonight
 	SaveManager.current_save_data["pending_score"] = score
 	SaveManager.current_save_data["pending_day"] = current_day
 	SaveManager.current_save_data["pending_level"] = current_level
 	SaveManager.current_save_data["pending_department"] = gameplay_name
 
-	# 2. Update the save file so if they quit, they load back into the outside world!
+	# 2. Update save path to the outside world
 	SaveManager.current_save_data["current_scene_path"] = "res://scene/outside_world.tscn"
 	SaveManager.save_game(SaveManager.current_slot, SaveManager.current_save_data)
 
-	# 3. Send them to the street without advancing the day yet
+	# 3. Transition to the evening commute
 	SceneTransition.change_scene("res://scene/outside_world.tscn")

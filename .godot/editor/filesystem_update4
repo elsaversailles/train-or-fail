@@ -1,3 +1,3 @@
-res://scene/FraudDetection/FraudDetection.tscn
-res://scene/CreditScoring/CreditScoring.tscn
-res://scene/KnowYourCustomer/KnowYourCustomer.tscn
+res://scene/apartment.tscn
+res://scripts/Apartment.gd
+res://scene/character.tscn

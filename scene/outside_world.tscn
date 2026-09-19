@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ohta1txhbs1d" path="res://scene/map.tscn" id="3_tv3p0"]
 [ext_resource type="PackedScene" uid="uid://cv87ukpeiw7cp" path="res://scene/crosshair.tscn" id="4_7lxs7"]
 [ext_resource type="PackedScene" uid="uid://bx7scsfg2nivv" path="res://scene/pause_panel.tscn" id="5_4tgtf"]
+[ext_resource type="PackedScene" uid="uid://dya8bjh5ampjn" path="res://try/bakery.glb" id="5_luw4s"]
 [ext_resource type="Script" uid="uid://bbpde2vfs0tbh" path="res://scripts/OutsideDoor.gd" id="6_b6qw5"]
 [ext_resource type="PackedScene" uid="uid://cl3phq1ph8o8" path="res://scene/FloorMarker.tscn" id="7_x7ph6"]
 [ext_resource type="PackedScene" uid="uid://dj5p4pp8g1bk3" path="res://models3d/characters/F/grandma_baba.tscn" id="8_x7ph6"]
@@ -96,6 +97,9 @@ text = "Need to go home to lolo's bakery and sleep.
 (Go home, maybe talk to people on the way.)"
 label_settings = SubResource("LabelSettings_x7ph6")
 
+[node name="bakery" parent="CanvasLayer" unique_id=1409383611 instance=ExtResource("5_luw4s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.615902, -0.8230076, 18.910591)
+
 [node name="Collisions" type="StaticBody3D" parent="." unique_id=1663905457]
 transform = Transform3D(1.655, 0, 0, 0, 1.655, 0, 0, 0, 1.655, 0, 0, 0)
 
@@ -160,7 +164,6 @@ transform = Transform3D(-0.9416751, 0, 0.33652365, 0, 1.0000002, 0, -0.33652365,
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=385124564]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.046951294, 0.050958633, 0.02030468)
-visible = false
 layers = 1023
 occluder = ExtResource("9_crkg8")
 
