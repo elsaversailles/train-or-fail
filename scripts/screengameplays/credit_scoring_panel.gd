@@ -57,10 +57,14 @@ func _on_reject_pressed():
 	final_credit_amount = 0
 	slider.set_value_no_signal(0.0)
 	credit_score_label.text = "Proposed Credit: $0 (REJECTED)"
+	# If clicked directly, ensure it stays pressed (though Godot handles this automatically for toggle buttons, it's safe to enforce):
+	reject_button.button_pressed = true
 
 func _on_slider_value_changed(value: float):
 	if value > 0.0:
 		is_rejected = false
+		reject_button.button_pressed = false # Unpresses the toggle button visually
+  
 	var display_score = int(lerp(0, 10000, value))
 	credit_score_label.text = "Proposed Credit: $" + str(display_score)
 
@@ -76,7 +80,9 @@ func load_applicant():
 	# Reset selection state
 	slider.set_value_no_signal(0.0)
 	is_rejected = false
+	reject_button.button_pressed = false # Ensure button is visually unpressed on new load
 	credit_score_label.text = "Proposed Credit: $0"
+
 	
 	var data = applicants_list[current_case_index]
 

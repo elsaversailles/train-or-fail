@@ -85,5 +85,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26632833, -4.335904, -3.86
 shape = SubResource("BoxShape3D_mlrcf")
 
 [connection signal="body_entered" from="ElevetorExitDoor" to="ElevetorExitDoor" method="_on_body_entered"]
+[connection signal="body_exited" from="ElevetorExitDoor" to="ElevetorExitDoor" method="_on_body_exited"]
 
 [editable path="Floor-Lobby_004"]

@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dqiu7tdvewlhm" path="res://images/MainMenu/buttons/About Us.png" id="5_hmxu4"]
 [ext_resource type="Texture2D" uid="uid://bcaoasayu6jx5" path="res://images/MainMenu/buttons/Quit.png" id="6_ictww"]
 [ext_resource type="Texture2D" uid="uid://cvpma47eqx85r" path="res://images/MainMenu/Game Title.png" id="7_1o50l"]
-[ext_resource type="AudioStream" uid="uid://dx7o60nd06xxj" path="res://music/music.mp3" id="8_by01r"]
+[ext_resource type="AudioStream" uid="uid://dx7o60nd06xxj" path="res://assets/music/music.mp3" id="8_by01r"]
 [ext_resource type="PackedScene" uid="uid://eb3my6rwhod3" path="res://scene/settings_panel.tscn" id="8_dclss"]
 
 [node name="CanvasLayer2" type="CanvasLayer" unique_id=502315201]
@@ -40,9 +40,9 @@ offset_right = 757.016
 
 [node name="New Game" type="Button" parent="Main Menu/Buttons" unique_id=2033790857]
 layout_mode = 0
-offset_left = 58.0
+offset_left = 91.205
 offset_top = 344.0
-offset_right = 227.99998
+offset_right = 261.205
 offset_bottom = 394.0
 rotation = 0.12796889
 icon = ExtResource("2_14wem")
@@ -51,9 +51,9 @@ expand_icon = true
 
 [node name="Settings" type="Button" parent="Main Menu/Buttons" unique_id=446335812]
 layout_mode = 0
-offset_left = 54.0
+offset_left = 91.205
 offset_top = 418.0
-offset_right = 224.0
+offset_right = 261.205
 offset_bottom = 468.0
 rotation = -0.03679195
 icon = ExtResource("4_dclss")
@@ -62,9 +62,9 @@ expand_icon = true
 
 [node name="About Us" type="Button" parent="Main Menu/Buttons" unique_id=2077448952]
 layout_mode = 0
-offset_left = 62.0
+offset_left = 91.205
 offset_top = 470.0
-offset_right = 211.00002
+offset_right = 240.20503
 offset_bottom = 518.0
 rotation = 0.024527084
 icon = ExtResource("5_hmxu4")
@@ -73,9 +73,9 @@ expand_icon = true
 
 [node name="Quit" type="Button" parent="Main Menu/Buttons" unique_id=2031676534]
 layout_mode = 0
-offset_left = 64.99999
+offset_left = 91.205
 offset_top = 533.99994
-offset_right = 214.0
+offset_right = 240.205
 offset_bottom = 581.99994
 rotation = -0.10609939
 icon = ExtResource("6_ictww")

@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bx7scsfg2nivv" path="res://scene/pause_panel.tscn" id="4_oauyh"]
 [ext_resource type="PackedScene" uid="uid://cl3phq1ph8o8" path="res://scene/FloorMarker.tscn" id="4_qqb2a"]
 [ext_resource type="PackedScene" uid="uid://cv87ukpeiw7cp" path="res://scene/crosshair.tscn" id="5_qqb2a"]
+[ext_resource type="PackedScene" uid="uid://dh0qcontxryi4" path="res://assets/Applicants/newmodels/M/Supervisor.glb" id="7_85j0d"]
 
 [sub_resource type="Environment" id="Environment_jv1ba"]
 
@@ -98,4 +99,8 @@ shape = SubResource("BoxShape3D_ren0j")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7273521, 0, -10.273304)
 shape = SubResource("BoxShape3D_iogu2")
 
+[node name="Supervisor" parent="." unique_id=1763235175 instance=ExtResource("7_85j0d")]
+transform = Transform3D(-0.5075384, 0, 0.8616291, 0, 1, 0, -0.8616291, 0, -0.5075384, 5.54769, 0, -11.911746)
+
 [connection signal="body_entered" from="ElevetorDoor" to="ElevetorDoor" method="_on_body_entered"]
+[connection signal="body_exited" from="ElevetorDoor" to="ElevetorDoor" method="_on_body_exited"]

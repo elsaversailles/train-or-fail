@@ -66,9 +66,9 @@ max_value = 1.0
 step = 0.01
 value = 1.0
 script = ExtResource("3_anfas")
-audio_bus_name = "Music"
+audio_bus_name = "Master"
 
-[node name="MasterVolume" type="Label" parent="MusicControl" unique_id=39191960]
+[node name="Volume Label" type="Label" parent="MusicControl" unique_id=39191960]
 layout_mode = 1
 offset_top = -17.52
 offset_right = 118.0
@@ -102,13 +102,46 @@ text = "Back"
 [node name="FullscreenCheckbox" type="CheckBox" parent="." unique_id=1117961063]
 layout_mode = 0
 offset_left = -102.0
-offset_top = -85.0
-offset_right = -78.0
-offset_bottom = -61.0
+offset_top = -41.0
+offset_right = 4.0
+offset_bottom = -9.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.15127608, 0.15127608, 0.15127608, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 text = "Full Screen"
+
+[node name="Sensitivity" type="HSlider" parent="." unique_id=2076778275]
+layout_mode = 0
+offset_left = -96.0
+offset_top = -80.0
+offset_right = 96.0
+offset_bottom = -64.0
+theme_override_styles/slider = SubResource("StyleBoxLine_by01r")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_dclss")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_dclss")
+max_value = 1.0
+value = 1.0
+
+[node name="SensLabel" type="Label" parent="Sensitivity" unique_id=766720649]
+layout_mode = 0
+offset_top = -17.520004
+offset_right = 118.0
+offset_bottom = 5.4799957
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "Sensitivity"
+
+[node name="SensValue" type="Label" parent="Sensitivity" unique_id=114711501]
+layout_mode = 0
+offset_left = 150.265
+offset_top = -17.5
+offset_right = 190.265
+offset_bottom = 6.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 2
 
 [connection signal="value_changed" from="MusicControl" to="MusicControl" method="_on_value_changed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

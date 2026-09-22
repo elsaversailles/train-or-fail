@@ -21,6 +21,10 @@ run/main_scene="uid://crev2inf1u6xe"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://assets/music/default_bus_layout.tres"
+
 [autoload]
 
 Database="*uid://dobteaufurtes"

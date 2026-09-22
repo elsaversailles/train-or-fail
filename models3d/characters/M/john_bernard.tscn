@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://djbocrywwfwjm"]
 
-[ext_resource type="PackedScene" uid="uid://cwcghjnm86js2" path="res://assets/Applicants/M/John-Bernard.glb" id="1_32wbe"]
+[ext_resource type="PackedScene" uid="uid://cwcghjnm86js2" path="res://assets/Applicants/newmodels/M/John-Bernard.glb" id="1_32wbe"]
 [ext_resource type="PackedScene" uid="uid://bdtgui5nwpvki" path="res://animation/animation_player.tscn" id="2_2gibm"]
 
 [node name="John-Bernard" unique_id=914347090 instance=ExtResource("1_32wbe")]

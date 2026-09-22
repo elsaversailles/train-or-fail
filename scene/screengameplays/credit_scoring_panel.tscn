@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bn283ixmr4qtu" path="res://images/TutorialsIMG/CREDITSCORING/csslider.png" id="4_122qi"]
 [ext_resource type="Texture2D" uid="uid://dowrpijsmf37r" path="res://images/TutorialsIMG/CREDITSCORING/csholder.png" id="5_4s6tp"]
 [ext_resource type="FontFile" uid="uid://bmy32g0c66s4e" path="res://theme/DarumadropOne-Regular.ttf" id="5_5aogp"]
-[ext_resource type="Texture2D" uid="uid://dcsws2l6c4bs7" path="res://images/TutorialsIMG/CREDITSCORING/csflagbutton.png" id="6_xghf2"]
+[ext_resource type="Texture2D" uid="uid://btl8nacck2i5j" path="res://images/TutorialsIMG/CREDITSCORING/csflagbutton_red.png" id="8_5aogp"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d5ytb"]
 texture = ExtResource("2_etpp7")
@@ -31,8 +31,17 @@ texture = ExtResource("4_5aogp")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x3kqo"]
 texture = ExtResource("5_4s6tp")
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5aogp"]
+load_path = "res://.godot/imported/csflagbutton.png-64673581eae28ce419de4e1e274c8bcb.ctex"
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t70an"]
-texture = ExtResource("6_xghf2")
+texture = SubResource("CompressedTexture2D_5aogp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xghf2"]
+texture = ExtResource("8_5aogp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gskt0"]
+texture = ExtResource("8_5aogp")
 
 [node name="CreditScoringPanel" type="Control" unique_id=1931401684]
 layout_mode = 3
@@ -281,8 +290,10 @@ offset_bottom = -37.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_t70an")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_t70an")
-theme_override_styles/hover = SubResource("StyleBoxTexture_t70an")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_xghf2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gskt0")
+toggle_mode = true
+button_pressed = true
 expand_icon = true
 
 [node name="CreditscoreLabel" type="Label" parent="Panel" unique_id=873302042]

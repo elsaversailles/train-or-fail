@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dphv38qynyp4e" path="res://scene/model_container.tscn" id="11_g8pml"]
 [ext_resource type="PackedScene" uid="uid://dmxltttqxwip0" path="res://scene/screengameplays/left_sliding_panel.tscn" id="12_ss3kf"]
 [ext_resource type="PackedScene" uid="uid://dtpe25cd85fc8" path="res://scene/result_panel.tscn" id="13_y8j5q"]
-[ext_resource type="AudioStream" uid="uid://lm3fs23d4v2l" path="res://music/gameplaymusic.mp3" id="14_sv7s7"]
+[ext_resource type="AudioStream" uid="uid://lm3fs23d4v2l" path="res://assets/music/gameplaymusic.mp3" id="14_sv7s7"]
 [ext_resource type="PackedScene" uid="uid://bx7scsfg2nivv" path="res://scene/pause_panel.tscn" id="15_65k3s"]
 [ext_resource type="PackedScene" uid="uid://cdoxo1627leua" path="res://scene/Tutorial/fd_tutorial.tscn" id="16_k8o8q"]
 
@@ -26,6 +26,7 @@ size = Vector3(2.8863602, 1.3692627, 12.457443)
 
 [sub_resource type="LabelSettings" id="LabelSettings_1bvp3"]
 font_color = Color(0.07058824, 0.07058824, 0.07058824, 1)
+outline_size = 5
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_p1hux"]
 viewport_path = NodePath("Monitor/Screen/SubViewport")

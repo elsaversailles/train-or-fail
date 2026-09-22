@@ -14,6 +14,8 @@ var screen_target_transform: Transform3D
 var original_head_transform: Transform3D
 var current_monitor = null
 
+var current_zone_prompt: String = ""
+
 var is_in_dialogue: bool = false
 
 @onready var head: Node3D = $Head
@@ -80,33 +82,41 @@ func _physics_process(delta: float) -> void:
 
 func _process(_delta: float) -> void:
 	# Hide interaction text while paused or focused on computer
-	if is_paused or held_item or is_focusing_screen:
+	if is_paused or is_focusing_screen:
 		interaction_label.visible = false
 		return
+
+	var found_raycast_target = false
 
 	if raycast.is_colliding():
 		var collider = raycast.get_collider()
 
-		# Pick up disk
-		if collider is RigidBody3D and collider.has_method("socket_item") and not collider.is_inserted:
-			interaction_label.text = "Press E to Pick Up"
-			interaction_label.visible = true
-
 		# Insert disk into socket
-		elif collider is Area3D and collider.has_method("socket_item"):
+		if collider is Area3D and collider.has_method("socket_item"):
 			if held_item != null:
 				interaction_label.text = "Press E to Insert Disk"
-				interaction_label.visible = true
-			else:
-				interaction_label.visible = false
+				found_raycast_target = true
+
+		# Hide pickup/interact prompts if hands are full
+		elif held_item != null:
+			pass 
+
+		# Pick up disk
+		elif collider is RigidBody3D and collider.has_method("socket_item") and not collider.is_inserted:
+			interaction_label.text = "Press E to Pick Up"
+			found_raycast_target = true
 
 		# Interact with monitor / interactable object
 		elif collider.has_method("interact"):
 			interaction_label.text = "Press E to Interact"
-			interaction_label.visible = true
+			found_raycast_target = true
 
-		else:
-			interaction_label.visible = false
+	# Display logic: Show raycast target first, otherwise show the zone prompt
+	if found_raycast_target:
+		interaction_label.visible = true
+	elif current_zone_prompt != "":
+		interaction_label.text = current_zone_prompt
+		interaction_label.visible = true
 	else:
 		interaction_label.visible = false
 
@@ -250,9 +260,12 @@ func update_gameplay_ui() -> void:
 # =========================================================
 
 func rotate_look(rot_input: Vector2) -> void:
-	look_rotation.x -= rot_input.y * sensitivity
+	# Pull sensitivity directly from your central SettingsManager
+	var current_sensitivity = SettingsManager.mouse_sensitivity
+	
+	look_rotation.x -= rot_input.y * current_sensitivity
 	look_rotation.x = clamp(look_rotation.x, deg_to_rad(-60), deg_to_rad(40))
-	look_rotation.y -= rot_input.x * sensitivity
+	look_rotation.y -= rot_input.x * current_sensitivity
 
 	transform.basis = Basis()
 	rotate_y(look_rotation.y)
