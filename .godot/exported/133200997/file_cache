@@ -145,7 +145,7 @@ res://addons/dialogic/Modules/Text/character_settings/character_portrait_mood_se
 res://addons/dialogic/Modules/Text/settings_text.tscn::90e750152fee8cc31a7f5972e35ac376::1789479704::res://.godot/exported/133200997/export-67100a9f8a5726886cf8dbc525c7a035-settings_text.scn
 res://addons/dialogic/Modules/Variable/variables_editor/variables_editor.tscn::536582f77ff4d2a16d75d09109287d32::1789479704::res://.godot/exported/133200997/export-81d6117e9fbfcc345d9d0dd8f77e3c55-variables_editor.scn
 res://scene/termination_panel.tscn::4a615cbc5f8865bc31bc51eef948397e::1788533714::res://.godot/exported/133200997/export-4aca2f953fb5bf5335745f13cd24e717-termination_panel.scn
-res://scene/map.tscn::5a04b6163731648f55f37a729c31dd3a::1789729063::res://.godot/exported/133200997/export-78db744b64a7bb3b84b042cabd134fef-map.scn
+res://scene/map.tscn::bc51a3a909151bb2f5f1765082e3ec89::1790091061::res://.godot/exported/133200997/export-78db744b64a7bb3b84b042cabd134fef-map.scn
 res://animation/animation_player.tscn::87751ba9c148fa743e327158762920e0::1789695618::res://.godot/exported/133200997/export-83371951ca4234076cbeb051e18a51b8-animation_player.scn
 res://models3d/characters/F/alyssa_cruz.tscn::5dfc284628030bf222c8e63b1967d09d::1789699711::res://.godot/exported/133200997/export-58e7ea3801d08ce2456d1fde5b1b4f11-alyssa_cruz.scn
 res://models3d/characters/F/andrea_mendoza.tscn::d9b67235bc68ccd9d235283c2e0027c1::1789696364::res://.godot/exported/133200997/export-d666f51ee33062222bad36f6ebac5d63-andrea_mendoza.scn

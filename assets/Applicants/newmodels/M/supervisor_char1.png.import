@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dbsgef0lbj4qi"
-path.s3tc="res://.godot/imported/supervisor_char1.png-ad494b6daa5862dab81bebed4a66163f.s3tc.ctex"
+path.s3tc="res://.godot/imported/Supervisor_char1.png-8ebd095f701e3d9a6fd3fff9f817268c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/Applicants/newmodels/M/supervisor_char1.png"
-dest_files=["res://.godot/imported/supervisor_char1.png-ad494b6daa5862dab81bebed4a66163f.s3tc.ctex"]
+source_file="res://assets/Applicants/newmodels/M/Supervisor_char1.png"
+dest_files=["res://.godot/imported/Supervisor_char1.png-8ebd095f701e3d9a6fd3fff9f817268c.s3tc.ctex"]
 
 [params]
 

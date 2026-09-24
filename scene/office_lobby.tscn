@@ -6,12 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://bx7scsfg2nivv" path="res://scene/pause_panel.tscn" id="4_oauyh"]
 [ext_resource type="PackedScene" uid="uid://cl3phq1ph8o8" path="res://scene/FloorMarker.tscn" id="4_qqb2a"]
 [ext_resource type="PackedScene" uid="uid://cv87ukpeiw7cp" path="res://scene/crosshair.tscn" id="5_qqb2a"]
-[ext_resource type="PackedScene" uid="uid://dh0qcontxryi4" path="res://assets/Applicants/newmodels/M/Supervisor.glb" id="7_85j0d"]
+[ext_resource type="PackedScene" uid="uid://bjv1n1gjlnkvq" path="res://models3d/characters/M/supervisor.tscn" id="7_iogu2"]
+[ext_resource type="Script" uid="uid://b6b278r7i2yf8" path="res://scripts/dialogue/Supervisor.gd" id="8_iogu2"]
+[ext_resource type="PackedScene" uid="uid://dci8u0ys21qui" path="res://scene/npc_dialogue_box.tscn" id="9_rhla1"]
+[ext_resource type="Script" uid="uid://ba4wqtr2kvmtd" path="res://scripts/TriggerSupervisorLobby.gd" id="10_pfttj"]
 
 [sub_resource type="Environment" id="Environment_jv1ba"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_85j0d"]
-radius = 2.6241329
+radius = 3.0688066
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jv1ba"]
 size = Vector3(1.0649414, 1, 20.799866)
@@ -28,13 +31,20 @@ size = Vector3(7.9389763, 1, 0.7367768)
 [sub_resource type="BoxShape3D" id="BoxShape3D_iogu2"]
 size = Vector3(14.887008, 1, 0.7367768)
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nka3p"]
+height = 2.6799316
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rhla1"]
+size = Vector3(22.163477, 1.0324707, 17.21783)
+
 [node name="OfficeLobby" type="Node3D" unique_id=1755870788]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=319132172]
 environment = SubResource("Environment_jv1ba")
 
-[node name="Player" parent="." unique_id=2061402672 instance=ExtResource("2_uyght")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 17.571623, 0.28040838, 4.261319)
+[node name="Player" parent="." unique_id=2061402672 groups=["player"] instance=ExtResource("2_uyght")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 17.571623, 0.28040838, 6.264459)
+collision_layer = 3
 speed = 10.0
 
 [node name="OfficeLobby2" parent="." unique_id=248703940 instance=ExtResource("2_oauyh")]
@@ -49,7 +59,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49018192, 0.14741397, -1.39
 shape = SubResource("SphereShape3D_85j0d")
 
 [node name="Node3D" parent="ElevetorDoor" unique_id=306043952 instance=ExtResource("4_qqb2a")]
-transform = Transform3D(3.16, 0, 0, 0, 3.16, 0, 0, 0, 3.16, 0.36612225, 0.16135693, -1.3725195)
+transform = Transform3D(3.16, 0, 0, 0, 3.16, 0, 0, 0, 3.16, 0.9774933, 0.16135693, -1.3725195)
 
 [node name="PausePanel" parent="." unique_id=1179524455 instance=ExtResource("4_oauyh")]
 
@@ -99,8 +109,32 @@ shape = SubResource("BoxShape3D_ren0j")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7273521, 0, -10.273304)
 shape = SubResource("BoxShape3D_iogu2")
 
-[node name="Supervisor" parent="." unique_id=1763235175 instance=ExtResource("7_85j0d")]
-transform = Transform3D(-0.5075384, 0, 0.8616291, 0, 1, 0, -0.8616291, 0, -0.5075384, 5.54769, 0, -11.911746)
+[node name="Supervisor" parent="." unique_id=413634621 instance=ExtResource("7_iogu2")]
+transform = Transform3D(-0.24742588, 0, 0.9689069, 0, 1, 0, -0.9689069, 0, -0.24742588, -8.544292, 0.010673165, 10.889659)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Supervisor" unique_id=1690775159]
+transform = Transform3D(0.5077971, 0, 0.8614767, 0, 1, 0, -0.8614767, 0, 0.5077971, -0.055415154, 0.018606037, -0.011127472)
+script = ExtResource("8_iogu2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Supervisor/StaticBody3D" unique_id=1087664859]
+transform = Transform3D(1.0000085, 0, -3.427267e-06, 0, 0.999996, 0, 3.427267e-06, 0, 1.0000085, 0, 1.347638, 0)
+shape = SubResource("CapsuleShape3D_nka3p")
+
+[node name="NPCDialogueBox" parent="Supervisor" unique_id=1030725355 instance=ExtResource("9_rhla1")]
+transform = Transform3D(0.7616956, 0, 1.2922151, 0, 1.5, 0, -1.2922151, 0, 0.7616956, 0, 3.8364983, 0)
+
+[node name="TriggerSupervisor" type="Area3D" parent="." unique_id=1575658769 node_paths=PackedStringArray("supervisor_npc", "supervisor_bubble", "supervisor_interact_body")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.414623, 0, 9.894437)
+collision_mask = 2
+script = ExtResource("10_pfttj")
+supervisor_npc = NodePath("../Supervisor")
+supervisor_bubble = NodePath("../Supervisor/NPCDialogueBox")
+supervisor_interact_body = NodePath("../Supervisor/StaticBody3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TriggerSupervisor" unique_id=585400991]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.267629, 0.54989266, 0.19688225)
+shape = SubResource("BoxShape3D_rhla1")
 
 [connection signal="body_entered" from="ElevetorDoor" to="ElevetorDoor" method="_on_body_entered"]
 [connection signal="body_exited" from="ElevetorDoor" to="ElevetorDoor" method="_on_body_exited"]
+[connection signal="body_entered" from="TriggerSupervisor" to="TriggerSupervisor" method="_on_body_entered"]

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://3eo2kgis3aj8"
-path.s3tc="res://.godot/imported/supervisor_EMPTYASPHALT.png-9c099a6b421a550e7cc3197c198a5b21.s3tc.ctex"
+path.s3tc="res://.godot/imported/Supervisor_EMPTYASPHALT.png-0a207a1a4463029a90d1ec129cf46fb1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/Applicants/newmodels/M/supervisor_EMPTYASPHALT.png"
-dest_files=["res://.godot/imported/supervisor_EMPTYASPHALT.png-9c099a6b421a550e7cc3197c198a5b21.s3tc.ctex"]
+source_file="res://assets/Applicants/newmodels/M/Supervisor_EMPTYASPHALT.png"
+dest_files=["res://.godot/imported/Supervisor_EMPTYASPHALT.png-0a207a1a4463029a90d1ec129cf46fb1.s3tc.ctex"]
 
 [params]
 
