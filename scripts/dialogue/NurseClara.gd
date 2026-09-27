@@ -1,24 +1,32 @@
 extends StaticBody3D
 
+signal story_finished
+
 var can_talk: bool = false
 var is_talking: bool = false
 
+@export var npc_name: String = "Clara"
+@export var assigned_day: int = 7
 @export var generic_timelines: Array[String] = ["clara_generic_1", "clara_generic_2"]
+
+func _ready() -> void:
+	add_to_group("special_npc")
 
 func interact():
 	if is_talking:
 		return
 
-	var current_day = SaveManager.current_save_data.get("current_day", 1)
+	var current_day: int = SaveManager.current_save_data.get("current_day", 1)
 
 	# --- DAY 7: Post-Supplier Clinic Monologue ---
-	if current_day == 7:
+	if current_day == assigned_day:
 		if can_talk:
 			is_talking = true
 			face_player()
 			Dialogic.start("clara_monologue")
 			await Dialogic.timeline_ended
 			is_talking = false
+			story_finished.emit() # Redirects the waypoint to the apartment door
 
 	# --- ALL OTHER DAYS: Random Everyday Dialogue ---
 	else:

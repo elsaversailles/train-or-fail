@@ -22,7 +22,10 @@ func _on_body_entered(body: Node3D) -> void:
 			play_ambient_conversation()
 
 func play_ambient_conversation():
-	# 1. Rotate them to face each other
+	# 1. Hide the waypoint marker during the bubble speech
+	get_tree().call_group("waypoint", "set_marker_suppressed", true)
+
+	# 2. Rotate them to face each other
 	if jericho_npc and joice_npc:
 		var target_joice = joice_npc.global_position
 		target_joice.y = jericho_npc.global_position.y
@@ -34,7 +37,7 @@ func play_ambient_conversation():
 		joice_npc.look_at(target_jericho, Vector3.UP)
 		joice_npc.rotate_y(PI) # Uncomment if Joice faces backwards
 
-	# 2. Dialogue sequence
+	# 3. Dialogue sequence
 	jericho_bubble.display_text("Joice, our fleet expansion plan for local commercial buyers like Adrian, Carlo, and Miguel is solid.")
 	await jericho_bubble.finished_displaying
 	await get_tree().create_timer(2.0).timeout
@@ -50,8 +53,11 @@ func play_ambient_conversation():
 	await get_tree().create_timer(2.0).timeout
 	joice_bubble.visible = false
 
-	# 3. Unlock Jericho for the player interaction
+	# 4. Unlock Jericho for the player interaction
 	if jericho_interact_body:
 		jericho_interact_body.can_talk = true
+
+	# 5. Restore the waypoint marker to guide the player to Jericho
+	get_tree().call_group("waypoint", "set_marker_suppressed", false)
 
 	queue_free()

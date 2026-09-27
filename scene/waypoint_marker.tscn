@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bia3kpprkjk83"]
+
+[ext_resource type="Script" uid="uid://de63i57jk2dxp" path="res://scripts/WaypointMarker.gd" id="1_c2haj"]
+[ext_resource type="Texture2D" uid="uid://b8tdbsk5qixpu" path="res://images/waypoint.png" id="2_6vqm4"]
+
+[node name="WaypointMarker" type="Control" unique_id=606989422 groups=["waypoint"]]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(30, 30)
+mouse_filter = 2
+script = ExtResource("1_c2haj")
+
+[node name="Icon" type="TextureRect" parent="." unique_id=716711670]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.5
+offset_top = -27.5
+offset_right = 32.5
+offset_bottom = 32.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(2, 2)
+mouse_filter = 2
+texture = ExtResource("2_6vqm4")
+expand_mode = 1
+stretch_mode = 3

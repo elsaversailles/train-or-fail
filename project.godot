@@ -38,6 +38,8 @@ Dialogic="*uid://ds2q0uclmolvu"
 
 directories/dch_directory={}
 directories/dtl_directory={
+"Quiet Days1": "res://Dialogic/Timelines/Quiet Days1.dtl",
+"Quiet Days2": "res://Dialogic/Timelines/Quiet Days2.dtl",
 "assistant_generic_1": "res://Dialogic/Timelines/assistant_generic_1.dtl",
 "assistant_generic_2": "res://Dialogic/Timelines/assistant_generic_2.dtl",
 "cashier_generic_1": "res://Dialogic/Timelines/cashier_generic_1.dtl",
@@ -45,6 +47,11 @@ directories/dtl_directory={
 "clara_generic_1": "res://Dialogic/Timelines/clara_generic_1.dtl",
 "clara_generic_2": "res://Dialogic/Timelines/clara_generic_2.dtl",
 "clara_monologue": "res://Dialogic/Timelines/clara_monologue.dtl",
+"day1": "res://Dialogic/Timelines/day1.dtl",
+"day2": "res://Dialogic/Timelines/day2.dtl",
+"day4": "res://Dialogic/Timelines/day4.dtl",
+"day7": "res://Dialogic/Timelines/day7.dtl",
+"day8": "res://Dialogic/Timelines/day8.dtl",
 "grandpa_day1": "res://Dialogic/Timelines/grandpa_day1.dtl",
 "grandpa_generic_1": "res://Dialogic/Timelines/grandpa_generic_1.dtl",
 "grandpa_generic_2": "res://Dialogic/Timelines/grandpa_generic_2.dtl",
@@ -85,6 +92,8 @@ import/blender/enabled=false
 [global_group]
 
 player=""
+special_npcs=""
+waypoint=""
 
 [gui]
 

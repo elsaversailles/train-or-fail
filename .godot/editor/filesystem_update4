@@ -1,6 +1,23 @@
-res://scene/office_lobby.tscn
-res://Dialogic/Timelines/supervisor_day1.dtl
-res://scripts/dialogue/Supervisor.gd
-res://scripts/TriggerSupervisorLobby.gd
-res://Dialogic/Timelines/supervisor_day4.dtl
-res://Dialogic/Timelines/supervisor_day7.dtl
+res://scene/outside_world.tscn
+res://scene/waypoint_marker.tscn
+res://scripts/WaypointMarker.gd
+res://scripts/DayObjectiveManager.gd
+res://scripts/dialogue/Grandpa.gd
+res://scene/character.tscn
+res://scripts/TriggerGrandpaAndAssistant.gd
+res://scripts/dialogue/Mark.gd
+res://scripts/MarkAndCashier.gd
+res://scripts/dialogue/NurseClara.gd
+res://scripts/dialogue/jericho.gd
+res://scripts/TriggerClaraAndSupplier.gd
+res://scripts/TriggerJerichoAndJoice.gd
+res://scripts/OutsideWorld.gd
+res://Dialogic/Timelines/day1.dtl
+res://Dialogic/Timelines/day2.dtl
+res://Dialogic/Timelines/day3.dtl
+res://Dialogic/Timelines/day4.dtl
+res://Dialogic/Timelines/day7.dtl
+res://Dialogic/Timelines/day8.dtl
+res://Dialogic/Timelines/Quiet Days.dtl
+res://Dialogic/Timelines/Quiet Days1.dtl
+res://Dialogic/Timelines/Quiet Days2.dtl

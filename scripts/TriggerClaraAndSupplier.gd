@@ -14,7 +14,7 @@ extends Area3D
 var has_triggered: bool = false
 
 func _on_body_entered(body: Node3D) -> void:
-	print("Something touched the Day 2 trigger: ", body.name)
+	print("Something touched Day %d trigger: %s" % [target_day, body.name])
 	if body.is_in_group("player") and not has_triggered:
 		var current_day = SaveManager.current_save_data.get("current_day", 1)
 		
@@ -23,19 +23,22 @@ func _on_body_entered(body: Node3D) -> void:
 			play_ambient_conversation()
 
 func play_ambient_conversation():
-	# 1. Turn them to face each other
+	# 1. Hide the waypoint marker during the bubble chat
+	get_tree().call_group("waypoint", "set_marker_suppressed", true)
+
+	# 2. Turn them to face each other
 	if clara_npc and supplier_npc:
 		var target_supplier = supplier_npc.global_position
 		target_supplier.y = clara_npc.global_position.y
 		clara_npc.look_at(target_supplier, Vector3.UP)
-		clara_npc.rotate_y(PI) # Uncomment if Clara's model faces backward
+		clara_npc.rotate_y(PI)
 
 		var target_clara = clara_npc.global_position
 		target_clara.y = supplier_npc.global_position.y
 		supplier_npc.look_at(target_clara, Vector3.UP)
-		supplier_npc.rotate_y(PI) # Uncomment if Supplier's model faces backward
+		supplier_npc.rotate_y(PI)
 
-	# 2. Clara speaks
+	# 3. Clara speaks
 	clara_bubble.display_text("I know it’s a risk, but this neighborhood really needs a local, low-cost community clinic.")
 	await clara_bubble.finished_displaying
 	await get_tree().create_timer(2.0).timeout
@@ -47,15 +50,18 @@ func play_ambient_conversation():
 
 	await get_tree().create_timer(0.5).timeout
 
-	# 3. Supplier replies
+	# 4. Supplier replies
 	supplier_bubble.display_text("Hope it goes through, Clara. Medical gear isn't cheap, and the bank might look hard at your low profit margins.")
 	await supplier_bubble.finished_displaying
 	await get_tree().create_timer(2.0).timeout
 	supplier_bubble.visible = false
 
-	# 4. Unlock Clara's interaction for Dialogic
+	# 5. Unlock Clara's interaction for Dialogic
 	if clara_interact_body:
 		clara_interact_body.can_talk = true
 
-	# 5. Clean up trigger
+	# 6. Restore the waypoint marker to guide the player to Clara
+	get_tree().call_group("waypoint", "set_marker_suppressed", false)
+
+	# 7. Clean up trigger
 	queue_free()

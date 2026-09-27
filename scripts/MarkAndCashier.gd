@@ -21,7 +21,10 @@ func _on_body_entered(body: Node3D) -> void:
 			play_ambient_conversation()
 
 func play_ambient_conversation():
-	# 1. Turn them to face each other
+	# 1. Hide the waypoint marker during the bubble conversation
+	get_tree().call_group("waypoint", "set_marker_suppressed", true)
+
+	# 2. Turn them to face each other
 	if mark_npc and cashier_npc:
 		var target_cashier = cashier_npc.global_position
 		target_cashier.y = mark_npc.global_position.y
@@ -33,7 +36,7 @@ func play_ambient_conversation():
 		cashier_npc.look_at(target_mark, Vector3.UP)
 		cashier_npc.rotate_y(PI)
 		
-	# 2. Mark speaks
+	# 3. Mark speaks
 	mark_bubble.display_text("I swear the card works! The bank just keeps flagging it every time I move to a new bench. They think someone stole my life savings!")
 	await mark_bubble.finished_displaying
 	await get_tree().create_timer(2.0).timeout
@@ -41,15 +44,18 @@ func play_ambient_conversation():
 
 	await get_tree().create_timer(0.5).timeout
 
-	# 3. Cashier replies
+	# 4. Cashier replies
 	cashier_bubble.display_text("Look, man, the card is declining. I can't give you the bread.")
 	await cashier_bubble.finished_displaying
 	await get_tree().create_timer(2.0).timeout
 	cashier_bubble.visible = false
 
-	# 4. Unlock Mark's interaction for Dialogic
+	# 5. Unlock Mark's interaction for Dialogic
 	if mark_interact_body:
 		mark_interact_body.can_talk = true
 
-	# 5. Remove trigger
+	# 6. Re-enable the waypoint marker pointing directly at Mark
+	get_tree().call_group("waypoint", "set_marker_suppressed", false)
+
+	# 7. Remove trigger
 	queue_free()

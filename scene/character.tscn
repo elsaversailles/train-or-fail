@@ -19,6 +19,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.920667e-08, 4, -0.4393974)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1644174975]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8030635e-09, 0.033190012, -0.041249275)
+current = true
 far = 200.0
 
 [node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=1819240192]

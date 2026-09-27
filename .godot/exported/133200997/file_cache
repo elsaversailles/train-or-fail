@@ -1,5 +1,5 @@
 res://addons/table.tscn::ded9c6fc3103e6cff33d8ad6514ace8a::1787998625::res://.godot/exported/133200997/export-554ad69a964da231c21be0d6016b3566-table.scn
-res://scene/character.tscn::7f829136bd6e93ff9ad8cf23dc481b72::1790086055::res://.godot/exported/133200997/export-4931db860d6571e42e0c4fd506d3cbe9-character.scn
+res://scene/character.tscn::2a857a34c37c2b83b8777e022f137e53::1790526388::res://.godot/exported/133200997/export-4931db860d6571e42e0c4fd506d3cbe9-character.scn
 res://scene/data.tscn::12e8216e4fecab600b2c30f4c9906ef9::1787998628::res://.godot/exported/133200997/export-308ee09e135af6a53c6588f62f230428-data.scn
 res://scene/floppydisk.tscn::ee7e281e6823e22ab11d9be1272e1070::1789953447::res://.godot/exported/133200997/export-04728ab84b73e1e42f4b2ea94bd1cbbe-floppydisk.scn
 res://scene/IdleScreen.tscn::860e57a846320589bacd2ef56b0ef54b::1789730731::res://.godot/exported/133200997/export-463dd8ffe2f8897e8ab4f548fd7499b1-IdleScreen.scn
@@ -23,8 +23,8 @@ res://scene/elevator.tscn::57e1c685b2ea947bb596ee4afb9b2804::1790080172::res://.
 res://scene/lights.tscn::b1060a883d9c953e97dabbcefe199fd9::1789733230::res://.godot/exported/133200997/export-f8575ca403d4e17d687ec5c74a837fbb-lights.scn
 res://scene/men_and_women.tscn::023fdcfa7aed0b0dc426abc6511801f9::1789726049::res://.godot/exported/133200997/export-ec2061d5e87c8c9dbadb30e29e1dac9c-men_and_women.scn
 res://scene/npc_dialogue_box.tscn::df67b964c42c4199698bb04ad304c295::1788015893::res://.godot/exported/133200997/export-ec7020149593643d344fcd29d83dce7e-npc_dialogue_box.scn
-res://scene/office_lobby.tscn::22ec8c74e5a3be3b48a82d99ed2546de::1790080828::res://.godot/exported/133200997/export-ad03d04d05cbda464c5851556d45619c-office_lobby.scn
-res://scene/outside_world.tscn::1d0ebbf7bddef0f7a13b1bb3c1960c0c::1790085452::res://.godot/exported/133200997/export-02707674f5a7f43fe06fff74cfe6a8b0-outside_world.scn
+res://scene/office_lobby.tscn::a4fe1eb3719e2f06b4e8718b59f14932::1790262264::res://.godot/exported/133200997/export-ad03d04d05cbda464c5851556d45619c-office_lobby.scn
+res://scene/outside_world.tscn::546eff8c07c04c8fdc661c8a7250abc1::1790533166::res://.godot/exported/133200997/export-02707674f5a7f43fe06fff74cfe6a8b0-outside_world.scn
 res://scene/world_environment.tscn::2d81d399e8e35181cdb571a88c95a022::1787998628::res://.godot/exported/133200997/export-2bcaf7b1dd5942c8bece5eeddad0ebb4-world_environment.scn
 res://scene/apartment.tscn::e055bd682e21a9b72b9b2b424390509b::1789780270::res://.godot/exported/133200997/export-b39493c067bfc7d272b6254a22f7129c-apartment.scn
 res://theme/game_theme.tres::36f4821fb18b00ed7582ad48e4846b5e::1788182473::res://.godot/exported/133200997/export-546dfbfbe014cb3aa94699a286e462bc-game_theme.res
@@ -196,3 +196,5 @@ res://scene/FloorMarker.tscn::08d53857dd388e0638ed26f2db6249cb::1790085355::res:
 res://models3d/characters/M/john_bernard.tscn::f3c9e8671d66d3a65a161f00445c46f2::1790079751::res://.godot/exported/133200997/export-1ca37183c80fed7a506dc00bc33272b0-john_bernard.scn
 res://models3d/map/office.tscn::5029d40f5b2735e43936d61cdfb427e0::1789725116::res://.godot/exported/133200997/export-c73671757f04c1b9d2a0d208ed2c7c7f-office.scn
 res://assets/music/default_bus_layout.tres::bc030955f207b43cfb1d74d6e947ff6e::1789917699::res://.godot/exported/133200997/export-a72bb44e4c378c59e6f86664c0fceabe-default_bus_layout.res
+res://models3d/characters/M/supervisor.tscn::126bbaf58d3dba04f332d4eb0da18339::1790259160::res://.godot/exported/133200997/export-0f68b792e1f5c7e49d23e3483f4d19ab-supervisor.scn
+res://scene/waypoint_marker.tscn::748552bea67ef8358530c7a2229cbdc1::1790531161::res://.godot/exported/133200997/export-730718989d8df1ebf259d1652cd321cd-waypoint_marker.scn
