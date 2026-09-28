@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://8tr8gjknjso5"]
 
+[ext_resource type="Script" uid="uid://x7td1xr45q0n" path="res://scripts/OfficeLobby.gd" id="1_rhla1"]
 [ext_resource type="PackedScene" uid="uid://crisdh2evrn7g" path="res://models3d/map/office_lobby.tscn" id="2_oauyh"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scene/character.tscn" id="2_uyght"]
 [ext_resource type="Script" uid="uid://bebkd43in6ylf" path="res://scripts/ElevetorDoor.gd" id="3_re36c"]
@@ -38,6 +39,7 @@ height = 2.6799316
 size = Vector3(22.163477, 1.0324707, 17.21783)
 
 [node name="OfficeLobby" type="Node3D" unique_id=1755870788]
+script = ExtResource("1_rhla1")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=319132172]
 environment = SubResource("Environment_jv1ba")

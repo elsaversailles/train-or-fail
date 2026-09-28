@@ -27,8 +27,20 @@ texture = ExtResource("2_uanr2")
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ieep"]
 bg_color = Color(0.09411765, 0, 0.6784314, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_glxag"]
+font_size = 23
+font_color = Color(0, 0, 0, 1)
+outline_size = 5
+outline_color = Color(0.9867516, 0.9867516, 0.9867516, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjnwh"]
 bg_color = Color(0.09411765, 0, 0.6784314, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_m7ag6"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+outline_size = 5
+outline_color = Color(0.9867516, 0.9867516, 0.9867516, 1)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jcbur"]
 load_path = "res://.godot/imported/a1_location.png-852cc11683418185bf71a881fc977259.ctex"
@@ -36,7 +48,18 @@ load_path = "res://.godot/imported/a1_location.png-852cc11683418185bf71a881fc977
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ew6px"]
 bg_color = Color(0.09411765, 0, 0.6784314, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_o60px"]
+font_size = 22
+font_color = Color(0, 0, 0, 1)
+outline_size = 5
+outline_color = Color(0.9867516, 0.9867516, 0.9867516, 1)
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_smf0o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3w45d"]
+font_size = 22
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
 
 [node name="LeftSlidingPanel" type="Panel" unique_id=998709551]
 anchors_preset = 15
@@ -148,6 +171,7 @@ offset_bottom = 33.7
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "Fraud Detection.cmd"
+label_settings = SubResource("LabelSettings_glxag")
 vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="Panel" unique_id=2008636769]
@@ -179,6 +203,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_gjnwh")
 text = "Location"
+label_settings = SubResource("LabelSettings_m7ag6")
 horizontal_alignment = 1
 
 [node name="LocationTextureButton" type="TextureButton" parent="." unique_id=1860925544]
@@ -201,6 +226,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_ew6px")
 text = "Item"
+label_settings = SubResource("LabelSettings_o60px")
 horizontal_alignment = 1
 
 [node name="ItemTextureButton" type="TextureButton" parent="." unique_id=1560976966]
@@ -230,6 +256,7 @@ offset_top = 120.0
 offset_right = 895.0
 offset_bottom = 150.0
 theme_override_font_sizes/font_size = 20
+label_settings = SubResource("LabelSettings_3w45d")
 
 [node name="PriceLabel" type="Label" parent="." unique_id=668583854]
 layout_mode = 0
@@ -248,3 +275,37 @@ offset_top = 210.0
 offset_right = 895.0
 offset_bottom = 240.0
 theme_override_font_sizes/font_size = 20
+label_settings = SubResource("LabelSettings_3w45d")
+
+[node name="AIRiskLabel" type="Label" parent="." unique_id=1715292067]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 291.90997
+offset_top = -61.35501
+offset_right = 431.90997
+offset_bottom = -31.35498
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "AI Risk Factor"
+
+[node name="AIRiskValueLabel" type="Label" parent="." unique_id=1123184660]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 294.625
+offset_top = -18.0
+offset_right = 434.625
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+label_settings = SubResource("LabelSettings_3w45d")

@@ -15,9 +15,10 @@ var is_rotating_right: bool = false
 # --- ID ZOOM FEATURE ---
 var is_id_zoomed: bool = false
 var original_id_pos: Vector2
-var zoom_scale: float = 3 # Change this to make it bigger/smaller when clicked
-var custom_cursor_img = preload("res://assets/cursor/cursor_magnifyingglass.svg") # mouse hover cursor
+var zoom_scale: float = 3
+var custom_cursor_img = preload("res://assets/cursor/cursor_magnifyingglass.svg")
 var mistakes = 0
+
 # -----------------------------
 # NODE REFERENCES
 # -----------------------------
@@ -32,9 +33,11 @@ var mistakes = 0
 @onready var center_button = $CenterButton
 @onready var right_button = $RightButton
 
-# --- NEW: Reference the panel itself, not just the image ---
 @onready var id_panel = $IDPanel 
 @onready var zoom_icon: TextureRect = $IDPanel/ZoomIcon
+
+# AI Risk Factor Label
+@onready var ai_risk_value_label = $AIRiskValueLabel # Adjust path if placed under a container
 
 # -----------------------------
 # READY
@@ -52,19 +55,15 @@ func _ready():
 	center_button.pressed.connect(_on_center_pressed)
 
 	# --- ID ZOOM FEATURE SETUP ---
-	# Save where the ID starts so we can put it back later
 	original_id_pos = id_panel.position
-	# Listen for clicks on the ID panel
 	id_panel.gui_input.connect(_on_id_panel_clicked)
 
 	load_applicant(current_index)
-
 
 # -----------------------------
 # ID ZOOM LOGIC
 # -----------------------------
 func _on_id_panel_clicked(event: InputEvent):
-	# Check if it's a left mouse button click
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		toggle_id_zoom()
 
@@ -78,9 +77,6 @@ func toggle_id_zoom():
 		Input.set_custom_mouse_cursor(null, Input.CURSOR_ARROW)
 		id_panel.move_to_front()
 		zoom_icon.visible = false
-		# --- YOUR HARDCODED NUMBERS ---
-		# Tweak these two numbers until it lands perfectly in the middle!
-		# X is left/right, Y is up/down.
 		var target_pos = Vector2(200, 70) 
 		
 		tween.tween_property(id_panel, "position", target_pos, 0.3)
@@ -90,7 +86,6 @@ func toggle_id_zoom():
 		zoom_icon.visible = true
 		tween.tween_property(id_panel, "position", original_id_pos, 0.3)
 		tween.tween_property(id_panel, "scale", Vector2(1, 1), 0.3)
-
 
 # -----------------------------
 # CONTINUOUS ROTATION LOGIC
@@ -115,6 +110,7 @@ func load_applicant(index):
 	applicant_label.text = "Customer %d / %d" % [index + 1, applicants.size()]
 	name_label.text = data["name"]
 	id_image.texture = data["id_image"]
+	ai_risk_value_label.text = str(data.get("ai_risk_factor", "N/A"))
 	
 	spawn_3d_model(data["model_scene"])
 	
@@ -122,8 +118,6 @@ func load_applicant(index):
 	is_rotating_left = false
 	is_rotating_right = false
 	
-	# --- ID ZOOM RESET ---
-	# If they load the next person while the ID is zoomed, snap it back safely!
 	if is_id_zoomed:
 		is_id_zoomed = false
 		id_panel.scale = Vector2(1, 1)
@@ -136,18 +130,27 @@ func _on_sus_pressed():
 	submit_answer("sus")
 
 func submit_answer(answer):
+	var current_applicant = applicants[current_index]
+
+	# Record special story applicant decisions (e.g., Mark Krazy on Day 5)
+	if current_applicant.get("is_special", false):
+		var char_id = current_applicant.get("id", "")
+		if not SaveManager.current_save_data.has("special_decisions"):
+			SaveManager.current_save_data["special_decisions"] = {}
+		SaveManager.current_save_data["special_decisions"][char_id] = answer
+
 	# 1. Check for a mistake immediately
-	var correct_answer = applicants[current_index]["kyc_correct"] # FIXED: Now checks KYC rules!
+	var correct_answer = current_applicant["kyc_correct"]
 	if answer != correct_answer:
 		mistakes += 1
 		
-		# 2. If they hit 3 strikes, tell the main 3D scene to end the game!
+		# 2. If they hit 3 strikes, trigger game over
 		if mistakes >= 3:
-			legit_button.visible = false # FIXED: Hiding the buttons directly
+			legit_button.visible = false
 			sus_button.visible = false
 			applicant_label.text = "TERMINATED"
 			get_tree().current_scene.trigger_game_over()
-			return # Stop loading the next applicant
+			return
 
 	# 3. If they survive, continue as normal
 	player_answers.append(answer)
@@ -159,23 +162,17 @@ func submit_answer(answer):
 		finish_game()
 
 func spawn_3d_model(model_packed_scene: PackedScene):
-	# 1. Clear previous 3D model
 	for child in model_container.get_children():
 		child.queue_free()
 		
-	# 2. Wait a frame so the node tree cleans up
 	await get_tree().process_frame 
 	
-	# 3. Spawn new character model
 	if model_packed_scene:
 		var new_model = model_packed_scene.instantiate()
 		model_container.add_child(new_model)
 		new_model.position = Vector3.ZERO
-		
-		# --- 180° FLIP: Makes the character face the camera ---
 		new_model.rotate_y(PI)
 		
-		# --- ANIMATION FIX: Forces idle animation to play on every applicant ---
 		var anim_player: AnimationPlayer = new_model.find_child("AnimationPlayer", true, false)
 		if anim_player:
 			if anim_player.autoplay != "":
@@ -200,7 +197,6 @@ func finish_game():
 
 func show_result():
 	get_tree().current_scene.show_final_result(final_score)
-
 
 func _on_id_panel_mouse_entered() -> void:
 	if not is_id_zoomed:

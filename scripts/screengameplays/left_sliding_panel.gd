@@ -31,6 +31,7 @@ var final_score = 0
 @onready var item_button = $ItemTextureButton
 @onready var time_value_label = $TimeValueLabel
 @onready var price_value_label = $PriceValueLabel
+@onready var ai_risk_value_label = $AIRiskValueLabel # Match this path to your Label node in the Scene tree
 
 # -----------------------------
 # ORIGINAL POSITIONS / SIZES FOR SWAP
@@ -82,7 +83,6 @@ func _ready():
 # -----------------------------
 # PANEL SLIDE
 # -----------------------------
-
 func grip_pressed():
 	var main = get_tree().current_scene
 	if main.has_node("MainChar"):
@@ -109,6 +109,7 @@ func load_applicant(index):
 	item_button.texture_normal = data["item"]
 	time_value_label.text = str(data["time"])
 	price_value_label.text = str(data["price"])
+	ai_risk_value_label.text = str(data.get("ai_risk_factor", "N/A"))
 	applicant_label.text = "Applicant %d / %d" % [index + 1, applicants.size()]
 
 	reset_image_positions()
@@ -237,7 +238,6 @@ func spawn_3d_model(model_packed_scene: PackedScene):
 func finish_applicants():
 	final_score = 0
 	for i in range(applicants.size()):
-		# Updated to match the database key
 		if player_answers[i] == applicants[i]["fraud_correct"]:
 			final_score += 1
 

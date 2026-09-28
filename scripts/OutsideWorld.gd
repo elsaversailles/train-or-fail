@@ -1,12 +1,21 @@
 extends Node3D
 
+# Safely reference the player if present in this scene
+@onready var player = get_node_or_null("Player")
+
 # Story days matching your specific timelines
 const STORY_DAYS: Array[int] = [1, 2, 4, 7, 8]
 const QUIET_TIMELINES: Array[String] = ["Quiet Days1", "Quiet Days2"]
 
 func _ready() -> void:
-	# Give the scene and camera a moment to initialize after loading
-	await get_tree().create_timer(0.4).timeout
+	# 1. Freeze the player instantly so holding WASD doesn't push them into walls
+	if player:
+		player.is_paused = true
+
+	# 2. Settle the physics engine before triggering anything
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+
 	play_daily_monologue()
 
 func play_daily_monologue() -> void:
@@ -20,5 +29,14 @@ func play_daily_monologue() -> void:
 		# Randomly pick between your quiet day timelines
 		timeline_to_play = QUIET_TIMELINES.pick_random()
 
+	# Connect Dialogic end signal to restore movement once dialogue is complete
+	if not Dialogic.timeline_ended.is_connected(_on_timeline_ended):
+		Dialogic.timeline_ended.connect(_on_timeline_ended)
+
 	# Start Dialogic
 	Dialogic.start(timeline_to_play)
+
+func _on_timeline_ended() -> void:
+	# Unfreeze the player after the monologue ends
+	if player:
+		player.is_paused = false

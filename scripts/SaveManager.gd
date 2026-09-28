@@ -1,5 +1,8 @@
 extends Node
 
+# --- ENCRYPTION CONFIGURATION ---
+const SAVE_PASSWORD: String = "7654raymartangelonevincemattknitechtrainorfail4325"
+
 # The template for a brand new game mapped to the 9-day structure
 const DEFAULT_SAVE = {
 	"current_scene_path": "res://scene/FraudDetection/FraudDetection.tscn",
@@ -13,18 +16,25 @@ const DEFAULT_SAVE = {
 var current_slot: int = 1
 var current_save_data: Dictionary = {}
 
+# Saved as .dat so players cannot edit it with a standard text editor
 func get_save_path(slot: int) -> String:
-	return "user://save_slot_" + str(slot) + ".json"
+	return "user://save_slot_" + str(slot) + ".dat"
 
 func save_exists(slot: int) -> bool:
 	return FileAccess.file_exists(get_save_path(slot))
 
+# --- ENCRYPTED LOAD GAME ---
 func load_game(slot: int) -> Dictionary:
 	var path = get_save_path(slot)
 	if not FileAccess.file_exists(path):
 		return {}
 
-	var file = FileAccess.open(path, FileAccess.READ)
+	# Open the file using AES encryption password
+	var file = FileAccess.open_encrypted_with_pass(path, FileAccess.READ, SAVE_PASSWORD)
+	if not file:
+		print("Error: Could not open or decrypt save file at: ", path)
+		return {}
+
 	var json = JSON.new()
 	var error = json.parse(file.get_as_text())
 	
@@ -37,13 +47,20 @@ func load_game(slot: int) -> Dictionary:
 			
 		return json.data
 	else:
-		print("JSON Parse Error!")
+		print("JSON Parse Error during decrypted read!")
 		return {}
 
+# --- ENCRYPTED SAVE GAME ---
 func save_game(slot: int, data: Dictionary):
 	var path = get_save_path(slot)
-	var file = FileAccess.open(path, FileAccess.WRITE)
-	var json_string = JSON.stringify(data, "\t") 
+	
+	# Open the file in WRITE mode using AES encryption password
+	var file = FileAccess.open_encrypted_with_pass(path, FileAccess.WRITE, SAVE_PASSWORD)
+	if not file:
+		print("Error: Failed to create encrypted save file at: ", path)
+		return
+
+	var json_string = JSON.stringify(data) 
 	file.store_string(json_string)
 
 func delete_save(slot: int):

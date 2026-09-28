@@ -19,7 +19,7 @@ var gameplay_name: String = "FraudDetection"
 var mistakes: int = 0
 
 func _ready():
-	# 1. THE FIX: Freeze the player instantly upon loading
+	# 1. Freeze the player instantly upon loading
 	if player:
 		player.is_paused = true
 
@@ -45,10 +45,13 @@ func _ready():
 		else:
 			tutorial_ui.queue_free()
 
-	# 4. THE FIX: Wait 0.5 seconds for physics and fades to settle, then unfreeze
-	await get_tree().create_timer(0.5).timeout
+	# 4. THE ROBUST FIX: Wait for the physics engine to fully settle
+	# This ensures collision shapes are active and placed before unfreezing input
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+
 	if player:
-		# Double-check that they didn't somehow trigger a game over during the fade
+		# Double-check that they didn't somehow trigger a game over during the load
 		if not (game_over_panel and game_over_panel.visible):
 			player.is_paused = false
 

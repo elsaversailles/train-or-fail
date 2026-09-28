@@ -1,23 +1,20 @@
 res://scene/outside_world.tscn
-res://scene/waypoint_marker.tscn
-res://scripts/WaypointMarker.gd
-res://scripts/DayObjectiveManager.gd
-res://scripts/dialogue/Grandpa.gd
-res://scene/character.tscn
-res://scripts/TriggerGrandpaAndAssistant.gd
-res://scripts/dialogue/Mark.gd
-res://scripts/MarkAndCashier.gd
-res://scripts/dialogue/NurseClara.gd
-res://scripts/dialogue/jericho.gd
-res://scripts/TriggerClaraAndSupplier.gd
-res://scripts/TriggerJerichoAndJoice.gd
+res://scene/FraudDetection/FraudDetection.tscn
+res://scripts/FraudDetection/FraudDetection.gd
+res://scene/KnowYourCustomer/KnowYourCustomer.tscn
+res://scripts/KnowYourCustomer/KnowYourCustomer.gd
+res://scene/CreditScoring/CreditScoring.tscn
+res://scripts/CreditScoring/CreditScoring.gd
 res://scripts/OutsideWorld.gd
-res://Dialogic/Timelines/day1.dtl
-res://Dialogic/Timelines/day2.dtl
-res://Dialogic/Timelines/day3.dtl
-res://Dialogic/Timelines/day4.dtl
-res://Dialogic/Timelines/day7.dtl
-res://Dialogic/Timelines/day8.dtl
-res://Dialogic/Timelines/Quiet Days.dtl
-res://Dialogic/Timelines/Quiet Days1.dtl
-res://Dialogic/Timelines/Quiet Days2.dtl
+res://scene/office_lobby.tscn
+res://scripts/OfficeLobby.gd
+res://scripts/WaypointMarker.gd
+res://scene/apartment.tscn
+res://scripts/SaveManager.gd
+res://scripts/ApplicantDatabase.gd
+res://scene/screengameplays/left_sliding_panel.tscn
+res://scripts/screengameplays/Left_Sliding_Panel.gd
+res://scene/screengameplays/kyc_panel.tscn
+res://scripts/screengameplays/Kyc_Panel.gd
+res://scene/screengameplays/credit_scoring_panel.tscn
+res://scripts/screengameplays/Credit_Scoring_Panel.gd

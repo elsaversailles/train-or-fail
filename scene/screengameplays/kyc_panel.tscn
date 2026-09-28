@@ -7,6 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://dkkqgqns5f8ry" path="res://images/TutorialsIMG/KCY/kyccenter.png" id="5_ud6u0"]
 [ext_resource type="Texture2D" uid="uid://donkh3s6d7vgj" path="res://images/TutorialsIMG/KCY/kycright.png" id="6_yd263"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_a5r6c"]
+font_size = 22
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5r6c"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d0jgs"]
@@ -53,6 +58,39 @@ offset_top = 50.0
 offset_right = 411.0
 offset_bottom = 103.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="AIRiskLabel" type="Label" parent="." unique_id=1168721598]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 384.0
+offset_top = -38.0
+offset_right = 524.0
+offset_bottom = -7.9999695
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "AI Risk Factor"
+
+[node name="AIRiskValueLabel" type="Label" parent="." unique_id=683298761]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 386.71503
+offset_top = 5.355011
+offset_right = 526.7151
+offset_bottom = 61.35501
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+label_settings = SubResource("LabelSettings_a5r6c")
 
 [node name="IDPanel" type="Panel" parent="." unique_id=936656019]
 layout_mode = 1

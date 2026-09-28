@@ -22,6 +22,7 @@ var final_credit_amount: int = 0
 @onready var reject_button = $Panel/RejectButton
 @onready var result_label = $Panel/ResultLabel
 @onready var credit_score_label = $Panel/CreditscoreLabel
+@onready var ai_risk_value_label = $Panel/AIRiskValueLabel
 @onready var model_container = $"../ModelContainer"
 
 # TabContainer references for customer documentation
@@ -57,13 +58,12 @@ func _on_reject_pressed():
 	final_credit_amount = 0
 	slider.set_value_no_signal(0.0)
 	credit_score_label.text = "Proposed Credit: $0 (REJECTED)"
-	# If clicked directly, ensure it stays pressed (though Godot handles this automatically for toggle buttons, it's safe to enforce):
 	reject_button.button_pressed = true
 
 func _on_slider_value_changed(value: float):
 	if value > 0.0:
 		is_rejected = false
-		reject_button.button_pressed = false # Unpresses the toggle button visually
+		reject_button.button_pressed = false
   
 	var display_score = int(lerp(0, 10000, value))
 	credit_score_label.text = "Proposed Credit: $" + str(display_score)
@@ -80,10 +80,9 @@ func load_applicant():
 	# Reset selection state
 	slider.set_value_no_signal(0.0)
 	is_rejected = false
-	reject_button.button_pressed = false # Ensure button is visually unpressed on new load
+	reject_button.button_pressed = false
 	credit_score_label.text = "Proposed Credit: $0"
 
-	
 	var data = applicants_list[current_case_index]
 
 	# Assign document textures to each tab
@@ -96,30 +95,25 @@ func load_applicant():
 	if data.has("debt_ratio_img") and data["debt_ratio_img"]:
 		debt_ratio_tex.texture = data["debt_ratio_img"]
 
-	# Retrieve target score directly from the applicant's dictionary
+	# Retrieve target score and AI risk factor
 	actual_score = data.get("credit_correct", 0.0)
 	result_label.text = "Evaluating: " + str(data.get("name", "Unknown"))
+	ai_risk_value_label.text = str(data.get("ai_risk_factor", "N/A"))
 	
 	spawn_3d_model(data.get("model_scene"))
 
 func spawn_3d_model(model_packed_scene: PackedScene):
-	# 1. Clear previous 3D model
 	for child in model_container.get_children():
 		child.queue_free()
 		
-	# 2. Wait a frame so the node tree cleans up
 	await get_tree().process_frame
 	
-	# 3. Spawn the new character model
 	if model_packed_scene:
 		var new_model = model_packed_scene.instantiate()
 		model_container.add_child(new_model)
 		new_model.position = Vector3.ZERO
-		
-		# --- 180° FLIP: Makes the applicant face the desk/camera ---
 		new_model.rotate_y(PI)
 		
-		# --- ANIMATION FIX: Plays idle animation automatically ---
 		var anim_player: AnimationPlayer = new_model.find_child("AnimationPlayer", true, false)
 		if anim_player:
 			if anim_player.autoplay != "":
@@ -145,7 +139,6 @@ func _on_submit():
 		elif player_choice <= 0.4:
 			verdict = "sus"
 		else:
-			# Fallback if the slider sits between 0.41 and 0.59
 			verdict = "sus"
 
 		SaveManager.record_special_decision(current_applicant.get("id", ""), verdict)

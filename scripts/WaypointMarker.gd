@@ -24,6 +24,9 @@ var camera: Camera3D
 var is_dialogue_active: bool = false
 
 func _ready() -> void:
+	# 1. Allow this node to continue processing even when get_tree().paused = true
+	process_mode = Node.PROCESS_MODE_ALWAYS
+
 	add_to_group("waypoint")
 	
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -111,7 +114,6 @@ func _update_objective_text(target_name: String) -> void:
 		objective_label.text = "Objective: Talk to %s" % target_name
 
 func _get_npc_name(npc: Node3D) -> String:
-	# Checks if the NPC has a custom variable, otherwise infers from node name
 	if "npc_name" in npc:
 		return str(npc.npc_name)
 	
@@ -127,8 +129,18 @@ func _get_npc_name(npc: Node3D) -> String:
 	return npc.name.capitalize()
 
 func _process(_delta: float) -> void:
+	# 2. Hide immediately when paused
+	if get_tree().paused:
+		visible = false
+		if objective_label:
+			objective_label.visible = false
+		return
+
+	# Hide during dialogues
 	if is_dialogue_active:
 		visible = false
+		if objective_label:
+			objective_label.visible = false
 		return
 
 	if not current_target or not is_instance_valid(current_target):
@@ -175,7 +187,10 @@ func _process(_delta: float) -> void:
 		if icon:
 			icon.rotation = direction.angle() - (PI * 0.5)
 
+	# 3. Restore visibility once unpaused and valid
 	visible = true
+	if objective_label:
+		objective_label.visible = true
 
 func _get_border_clamped_position(center: Vector2, dir: Vector2, rect: Rect2) -> Vector2:
 	var half_size: Vector2 = rect.size * 0.5

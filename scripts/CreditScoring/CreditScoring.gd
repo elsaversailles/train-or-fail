@@ -12,6 +12,10 @@ var current_day: int = 1
 var gameplay_name: String = "CreditScoring"
 
 func _ready():
+	# 1. Freeze the player immediately upon scene load
+	if player:
+		player.is_paused = true
+
 	if canvas_layer:
 		canvas_layer.visible = true
 
@@ -20,12 +24,12 @@ func _ready():
 		game_over_panel.visible = false
 		game_over_panel.gui_input.connect(_on_game_over_clicked)
 		
-	# 1. Ask SaveManager what level/day we are currently playing. 
+	# 2. Ask SaveManager what level/day we are currently playing
 	current_level = SaveManager.current_save_data.get("current_level", 1)
 	current_day = SaveManager.current_save_data.get("current_day", 1)
 
 	if info_label:
-			info_label.text = "Credit Scoring\nDay %d" % current_day
+		info_label.text = "Credit Scoring\nDay %d" % current_day
 
 	if tutorial_ui:
 		if current_day == 7: # Day 7 is Credit Scoring Tutorial Day!
@@ -33,6 +37,14 @@ func _ready():
 		else:
 			# Days 8 and 9 skip the tutorial instantly
 			tutorial_ui.queue_free()
+
+	# 3. Wait for the physics engine to settle collisions before restoring control
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+
+	if player:
+		if not (game_over_panel and game_over_panel.visible):
+			player.is_paused = false
 
 func trigger_game_over():
 	# Show the full-screen termination panel

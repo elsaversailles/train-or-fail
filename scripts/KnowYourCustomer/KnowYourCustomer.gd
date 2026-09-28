@@ -12,14 +12,19 @@ var current_day: int = 1
 var gameplay_name: String = "KnowYourCustomer"
 
 func _ready():
+	# 1. THE FIX: Freeze the player instantly upon loading
+	if player:
+		player.is_paused = true
+
 	if canvas_layer:
 		canvas_layer.visible = true
+		
 	# Hide Game Over panel by default and connect the click event
 	if game_over_panel:
 		game_over_panel.visible = false
 		game_over_panel.gui_input.connect(_on_game_over_clicked)
 	
-	# 1. Ask SaveManager what level/day we are currently playing. 
+	# 2. Ask SaveManager what level/day we are currently playing. 
 	current_level = SaveManager.current_save_data.get("current_level", 1)
 	current_day = SaveManager.current_save_data.get("current_day", 1)
 
@@ -32,6 +37,16 @@ func _ready():
 		else:
 			# Days 5 and 6 skip the tutorial instantly
 			tutorial_ui.queue_free()
+
+	# 3. THE ROBUST FIX: Wait for the physics engine to fully settle
+	# This ensures collision shapes are active and placed before unfreezing input
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+
+	if player:
+		# Double-check that they didn't somehow trigger a game over during the load
+		if not (game_over_panel and game_over_panel.visible):
+			player.is_paused = false
 
 # TERMINATION LOGIC
 func trigger_game_over():
