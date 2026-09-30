@@ -1,9 +1,0 @@
-res://scene/CreditScoring/CreditScoring.tscn
-res://scene/KnowYourCustomer/KnowYourCustomer.tscn
-res://scene/pause_panel.tscn
-res://scripts/PausePanel.gd
-res://scene/tutorial_panel.tscn
-res://scene/TutorialPanel.gd
-res://scripts/tutorial_panel.gd
-res://scene/FraudDetection/FraudDetection.tscn
-res://scripts/TutorialPanel.gd
