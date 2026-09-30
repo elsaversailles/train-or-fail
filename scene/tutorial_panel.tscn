@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://c3etsuta8aojf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i20o8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0bhv7"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+outline_size = 5
+outline_color = Color(0.9867516, 0.9867516, 0.9867516, 1)
+
+[node name="TutorialPanel" type="Panel" unique_id=1458333961]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_i20o8")
+
+[node name="TitleLabel" type="Label" parent="." unique_id=1044405784]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 294.0
+offset_top = 81.0
+offset_right = -294.0
+offset_bottom = 193.0
+grow_horizontal = 2
+label_settings = SubResource("LabelSettings_0bhv7")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ContentLabel" type="Label" parent="." unique_id=1015491939]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 218.0
+offset_top = -95.0
+offset_right = -232.0
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="NextButton" type="Button" parent="." unique_id=1907883391]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -67.685
+offset_top = 191.0
+offset_right = 66.31506
+offset_bottom = 258.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "NEXT"
+
+[node name="PrevButton" type="Button" parent="." unique_id=112604576]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -462.0
+offset_top = 191.0
+offset_right = -328.0
+offset_bottom = 258.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "PREVIOUS"
+
+[node name="CloseTutorialButton" type="Button" parent="." unique_id=440977139]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 368.0
+offset_top = 191.0
+offset_right = 501.99988
+offset_bottom = 258.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "EXIT"
+
+[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="PrevButton" to="." method="_on_prev_button_pressed"]
+[connection signal="pressed" from="CloseTutorialButton" to="." method="_on_close_tutorial_button_pressed"]
