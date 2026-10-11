@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://18450kxjv1jb"]
+
+[ext_resource type="Script" uid="uid://c8errk1gkmkay" path="res://scripts/jeepney.gd" id="1_bjofe"]
+[ext_resource type="PackedScene" uid="uid://dqr7s4wcwt11s" path="res://assets/jeepney/ jeepney.glb" id="2_cq02p"]
+
+[node name="Jeepney" type="Node3D" unique_id=589528123]
+script = ExtResource("1_bjofe")
+
+[node name=" jeepney" parent="." unique_id=1468880640 instance=ExtResource("2_cq02p")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[editable path=" jeepney"]
