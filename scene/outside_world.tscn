@@ -30,7 +30,7 @@
 [ext_resource type="Script" uid="uid://dorssn1uy1iwj" path="res://scripts/dialogue/jericho.gd" id="23_x7ph6"]
 [ext_resource type="PackedScene" uid="uid://bmivfxkgft0gg" path="res://models3d/characters/F/michele_garcia.tscn" id="24_ptfg7"]
 [ext_resource type="Script" uid="uid://cfay18l2r4r4e" path="res://scripts/TriggerJerichoAndJoice.gd" id="24_x7ph6"]
-[ext_resource type="Script" uid="uid://r44016gwiynl" path="res://scene/path_driver.gd" id="31_p1ya7"]
+[ext_resource type="Script" uid="uid://r44016gwiynl" path="res://scripts/PathDriver.gd" id="31_p1ya7"]
 [ext_resource type="PackedScene" uid="uid://18450kxjv1jb" path="res://scene/Jeepney.tscn" id="31_ptfg7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_x7ph6"]
@@ -93,6 +93,7 @@ label_settings = SubResource("LabelSettings_x7ph6")
 [node name="WaypointMarker" parent="CanvasLayer" unique_id=2039758537 node_paths=PackedStringArray("apartment_door", "objective_label") instance=ExtResource("6_kogoh")]
 apartment_door = NodePath("../../OfficeDoor/Node3D")
 objective_label = NodePath("../Label")
+npc_vertical_offset = 4.2
 
 [node name="PausePanel" parent="." unique_id=1179524455 instance=ExtResource("5_4tgtf")]
 

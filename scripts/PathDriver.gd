@@ -2,7 +2,7 @@ extends Path3D
 
 @export var cruise_speed := 16.0     # normal driving speed (m/s)
 @export var acceleration := 12.0     # how fast it speeds up again
-@export var braking := 40.0         # how fast it stops
+@export var braking := 45.0         # how fast it stops
 @export var wheelbase := 3.65
 @export var turn_smoothing := 10.0
 

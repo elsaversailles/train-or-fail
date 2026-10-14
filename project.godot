@@ -36,7 +36,9 @@ Dialogic="*uid://ds2q0uclmolvu"
 
 [dialogic]
 
-directories/dch_directory={}
+directories/dch_directory={
+"dock_arrival": "res://Dialogic/Timelines/dock_arrival.dch"
+}
 directories/dtl_directory={
 "Quiet Days1": "res://Dialogic/Timelines/Quiet Days1.dtl",
 "Quiet Days2": "res://Dialogic/Timelines/Quiet Days2.dtl",
@@ -52,7 +54,10 @@ directories/dtl_directory={
 "day4": "res://Dialogic/Timelines/day4.dtl",
 "day7": "res://Dialogic/Timelines/day7.dtl",
 "day8": "res://Dialogic/Timelines/day8.dtl",
+"dock_arrival": "res://Dialogic/Timelines/dock_arrival.dtl",
+"elevator_warning": "res://Dialogic/Timelines/elevator_warning.dtl",
 "grandpa_day1": "res://Dialogic/Timelines/grandpa_day1.dtl",
+"grandpa_dock": "res://Dialogic/Timelines/grandpa_dock.dtl",
 "grandpa_generic_1": "res://Dialogic/Timelines/grandpa_generic_1.dtl",
 "grandpa_generic_2": "res://Dialogic/Timelines/grandpa_generic_2.dtl",
 "jericho_generic_1": "res://Dialogic/Timelines/jericho_generic_1.dtl",
@@ -60,6 +65,7 @@ directories/dtl_directory={
 "jericho_monologue": "res://Dialogic/Timelines/jericho_monologue.dtl",
 "joice_generic_1": "res://Dialogic/Timelines/joice_generic_1.dtl",
 "joice_generic_2": "res://Dialogic/Timelines/joice_generic_2.dtl",
+"lobby_day1_intro": "res://Dialogic/Timelines/lobby_day1_intro.dtl",
 "mark_day2": "res://Dialogic/Timelines/mark_day2.dtl",
 "mark_day4": "res://Dialogic/Timelines/mark_day4.dtl",
 "mark_generic_1": "res://Dialogic/Timelines/mark_generic_1.dtl",

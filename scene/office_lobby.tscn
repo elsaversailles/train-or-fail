@@ -17,6 +17,11 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_85j0d"]
 radius = 3.0688066
 
+[sub_resource type="LabelSettings" id="LabelSettings_rhla1"]
+font_size = 20
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_jv1ba"]
 size = Vector3(1.0649414, 1, 20.799866)
 
@@ -67,6 +72,13 @@ transform = Transform3D(3.16, 0, 0, 0, 3.16, 0, 0, 0, 3.16, 0.9774933, 0.1613569
 
 [node name="CanvasLayer" parent="." unique_id=1382565654 instance=ExtResource("5_qqb2a")]
 
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1706085039]
+offset_left = 35.0
+offset_top = 29.0
+offset_right = 426.0
+offset_bottom = 53.0
+label_settings = SubResource("LabelSettings_rhla1")
+
 [node name="Lights" type="Node3D" parent="." unique_id=822087955]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0463368, 0)
 
@@ -114,9 +126,10 @@ shape = SubResource("BoxShape3D_iogu2")
 [node name="Supervisor" parent="." unique_id=413634621 instance=ExtResource("7_iogu2")]
 transform = Transform3D(-0.24742588, 0, 0.9689069, 0, 1, 0, -0.9689069, 0, -0.24742588, -8.544292, 0.010673165, 10.889659)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Supervisor" unique_id=1690775159]
+[node name="StaticBody3D" type="StaticBody3D" parent="Supervisor" unique_id=1690775159 node_paths=PackedStringArray("objective_label")]
 transform = Transform3D(0.5077971, 0, 0.8614767, 0, 1, 0, -0.8614767, 0, 0.5077971, -0.055415154, 0.018606037, -0.011127472)
 script = ExtResource("8_iogu2")
+objective_label = NodePath("../../CanvasLayer/Label")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Supervisor/StaticBody3D" unique_id=1087664859]
 transform = Transform3D(1.0000085, 0, -3.427267e-06, 0, 0.999996, 0, 3.427267e-06, 0, 1.0000085, 0, 1.347638, 0)

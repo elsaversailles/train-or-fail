@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://2o6k54rgxqg3" path="res://images/floppydisk.png" id="2_056wq"]
 [ext_resource type="AudioStream" uid="uid://bjpmtxpsk76x0" path="res://assets/music/insertdisk.mp3" id="4_6lufm"]
 
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_dg77c"]
 size = Vector3(0.14133008, 0.76406395, 0.714682)
 

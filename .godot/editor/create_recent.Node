@@ -1,9 +1,10 @@
-AreaLight3D
 DirectionalLight3D
-Camera3D
-MeshInstance3D
-Node
 CollisionShape3D
+MeshInstance3D
+GPUParticles3D
+AreaLight3D
+Camera3D
+Node
 Area3D
 AnimatableBody3D
 StaticBody3D
@@ -11,5 +12,3 @@ PathFollow3D
 Path3D
 Label
 VScrollBar
-Button
-TextureRect

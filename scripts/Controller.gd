@@ -15,7 +15,6 @@ var original_head_transform: Transform3D
 var current_monitor = null
 
 var current_zone_prompt: String = ""
-
 var is_in_dialogue: bool = false
 
 @onready var head: Node3D = $Head
@@ -24,14 +23,21 @@ var is_in_dialogue: bool = false
 @onready var raycast: RayCast3D = $Head/Camera3D/RayCast3D
 @onready var hand_node: Node3D = $Head/Camera3D/handpoint
 
-# HUD references
-@onready var interaction_label: Label = get_tree().current_scene.get_node("CanvasLayer/InteractionLabel")
-@onready var crosshair: Control = get_tree().current_scene.get_node("CanvasLayer/Crosshair")
-@onready var pause_panel: Panel = $"../PausePanel"
+# HUD references (Safe fallback lookup)
+var interaction_label: Label = null
+var crosshair: Control = null
+var pause_panel: Panel = null
 
 func _ready() -> void:
 	add_to_group("player")
 	capture_mouse()
+	
+	# Safe node discovery so the player never crashes standalone scenes (like dock.tscn)
+	var scene = get_tree().current_scene
+	if scene:
+		interaction_label = scene.get_node_or_null("CanvasLayer/InteractionLabel")
+		crosshair = scene.get_node_or_null("CanvasLayer/Crosshair")
+	pause_panel = get_node_or_null("../PausePanel")
 	
 	Dialogic.timeline_started.connect(_on_dialogic_started)
 	Dialogic.timeline_ended.connect(_on_dialogic_ended)
@@ -43,7 +49,7 @@ func _ready() -> void:
 	update_gameplay_ui()
 
 func _physics_process(delta: float) -> void:
-	# Do nothing while paused
+	# Immobilize during pause or dialogue cutscenes
 	if is_paused or is_in_dialogue:
 		velocity.x = 0
 		velocity.z = 0
@@ -81,48 +87,47 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _process(_delta: float) -> void:
-	# Hide interaction text while paused or focused on computer
-	if is_paused or is_focusing_screen:
-		interaction_label.visible = false
+	# Hide interaction text while paused, in dialogue, or focused on computer
+	if is_paused or is_focusing_screen or is_in_dialogue:
+		if interaction_label:
+			interaction_label.visible = false
 		return
 
 	var found_raycast_target = false
 
-	if raycast.is_colliding():
+	if raycast and raycast.is_colliding():
 		var collider = raycast.get_collider()
 
-		# Insert disk into socket
 		if collider is Area3D and collider.has_method("socket_item"):
-			if held_item != null:
+			if held_item != null and interaction_label:
 				interaction_label.text = "Press E to Insert Disk"
 				found_raycast_target = true
 
-		# Hide pickup/interact prompts if hands are full
 		elif held_item != null:
 			pass 
 
-		# Pick up disk
 		elif collider is RigidBody3D and collider.has_method("socket_item") and not collider.is_inserted:
-			interaction_label.text = "Press E to Pick Up"
-			found_raycast_target = true
+			if interaction_label:
+				interaction_label.text = "Press E to Pick Up"
+				found_raycast_target = true
 
-		# Interact with monitor / interactable object
 		elif collider.has_method("interact"):
-			interaction_label.text = "Press E to Interact"
-			found_raycast_target = true
+			if interaction_label:
+				interaction_label.text = "Press E to Interact"
+				found_raycast_target = true
 
-	# Display logic: Show raycast target first, otherwise show the zone prompt
-	if found_raycast_target:
-		interaction_label.visible = true
-	elif current_zone_prompt != "":
-		interaction_label.text = current_zone_prompt
-		interaction_label.visible = true
-	else:
-		interaction_label.visible = false
+	if interaction_label:
+		if found_raycast_target:
+			interaction_label.visible = true
+		elif current_zone_prompt != "":
+			interaction_label.text = current_zone_prompt
+			interaction_label.visible = true
+		else:
+			interaction_label.visible = false
 
 func _input(event: InputEvent) -> void:
-	# Ignore gameplay input while paused
-	if is_paused:
+	# Block interaction input while paused or inside dialogue
+	if is_paused or is_in_dialogue:
 		return
 
 	# E = exit computer focus
@@ -154,14 +159,14 @@ func _input(event: InputEvent) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if is_in_dialogue:
 		return
-	# ESC behavior
+
 	if SceneTransition.is_transitioning:
 		return
+
 	if event.is_action_pressed("ui_cancel"):
 		handle_escape()
 		return
 
-	# Mouse look only when not paused and not focusing on computer
 	if not is_paused and not is_focusing_screen:
 		if event is InputEventMouseMotion:
 			rotate_look(event.relative)
@@ -174,12 +179,10 @@ func handle_escape() -> void:
 	if Dialogic.current_timeline != null:
 		return
 
-	# If on computer, ESC exits computer first
 	if is_focusing_screen:
 		release_computer_focus()
 		return
 
-	# Otherwise toggle pause
 	if is_paused:
 		resume_game()
 	else:
@@ -190,14 +193,16 @@ func pause_game() -> void:
 		return
 
 	is_paused = true
-	pause_panel.visible = true
+	if pause_panel:
+		pause_panel.visible = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().paused = true
 	update_gameplay_ui()
 
 func resume_game() -> void:
 	is_paused = false
-	pause_panel.visible = false
+	if pause_panel:
+		pause_panel.visible = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	get_tree().paused = false
 	update_gameplay_ui()
@@ -234,7 +239,6 @@ func release_computer_focus() -> void:
 		current_monitor.set_idle_visible(true)
 		current_monitor = null
 
-	# Remove UI focus from monitor buttons
 	get_viewport().gui_release_focus()
 
 	capture_mouse()
@@ -245,13 +249,11 @@ func release_computer_focus() -> void:
 # =========================================================
 
 func update_gameplay_ui() -> void:
-	var show_gameplay_ui = not is_paused and not is_focusing_screen
+	var show_gameplay_ui = not is_paused and not is_focusing_screen and not is_in_dialogue
 
-	# Crosshair
 	if crosshair:
 		crosshair.visible = show_gameplay_ui
 
-	# Interaction label
 	if interaction_label:
 		interaction_label.visible = false
 
@@ -260,7 +262,6 @@ func update_gameplay_ui() -> void:
 # =========================================================
 
 func rotate_look(rot_input: Vector2) -> void:
-	# Pull sensitivity directly from your central SettingsManager
 	var current_sensitivity = SettingsManager.mouse_sensitivity
 	
 	look_rotation.x -= rot_input.y * current_sensitivity
@@ -290,7 +291,7 @@ func check_interaction() -> void:
 # =========================================================
 
 func check_for_pickup() -> void:
-	if raycast.is_colliding():
+	if raycast and raycast.is_colliding():
 		var collider = raycast.get_collider()
 
 		if collider is RigidBody3D and collider.has_method("socket_item"):
@@ -327,7 +328,35 @@ func clear_held_item() -> void:
 func _on_dialogic_started() -> void:
 	is_in_dialogue = true
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	update_gameplay_ui()
 
 func _on_dialogic_ended() -> void:
 	is_in_dialogue = false
 	capture_mouse()
+	update_gameplay_ui()
+	
+# For supervisor scene
+func turn_camera_towards(target_pos: Vector3, duration: float = 0.6) -> Tween:
+	var dir = (target_pos - head.global_position).normalized()
+	var target_yaw = atan2(-dir.x, -dir.z)
+	var target_pitch = clamp(asin(dir.y), deg_to_rad(-60), deg_to_rad(40))
+	
+	# Shortest angular path
+	var yaw_diff = wrapf(target_yaw - look_rotation.y, -PI, PI)
+	var final_yaw = look_rotation.y + yaw_diff
+	
+	var tween = create_tween().set_parallel(true).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	
+	tween.tween_method(func(val: float):
+		look_rotation.y = val
+		transform.basis = Basis()
+		rotate_y(look_rotation.y)
+	, look_rotation.y, final_yaw, duration)
+	
+	tween.tween_method(func(val: float):
+		look_rotation.x = val
+		head.transform.basis = Basis()
+		head.rotate_x(look_rotation.x)
+	, look_rotation.x, target_pitch, duration)
+	
+	return tween

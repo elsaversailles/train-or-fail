@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://18450kxjv1jb"]
 
-[ext_resource type="Script" uid="uid://c8errk1gkmkay" path="res://scripts/jeepney.gd" id="1_bjofe"]
+[ext_resource type="Script" uid="uid://c8errk1gkmkay" path="res://scripts/Jeepney.gd" id="1_bjofe"]
 [ext_resource type="PackedScene" uid="uid://dqr7s4wcwt11s" path="res://assets/jeepney/ jeepney.glb" id="2_cq02p"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jv1ba"]
@@ -13,7 +13,7 @@ size = Vector3(1.1924706, 1.718689, 14.447968)
 size = Vector3(6.5858264, 1.718689, 1.1787567)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5ieep"]
-size = Vector3(5.4211, 1, 3)
+size = Vector3(5.4211, 1, 4.5981445)
 
 [node name="Jeepney" type="Node3D" unique_id=589528123]
 script = ExtResource("1_bjofe")
@@ -43,7 +43,7 @@ shape = SubResource("BoxShape3D_pnsxo")
 [node name="FrontTrigger" type="Area3D" parent="." unique_id=515160203]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FrontTrigger" unique_id=1472152187]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.019162416, 1.3251829, -8.321644)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.019162416, 1.3251829, -9.120716)
 shape = SubResource("BoxShape3D_5ieep")
 
 [editable path=" jeepney"]

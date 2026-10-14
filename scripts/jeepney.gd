@@ -1,7 +1,7 @@
 extends Node3D
 
 @export var wheel_radius := 0.43   # same as WHEEL_R in the Blender script
-@export var speed := 60           # meters per second
+@export var speed := 30           # meters per second
 
 var wheels: Array[Node3D] = []
 

@@ -1,6 +1,5 @@
 extends Control
 
-# Adjust paths if your layout changed slightly when moving it!
 @onready var slot_1 = $Panel/SlotButton1
 @onready var slot_2 = $Panel/SlotButton2
 @onready var slot_3 = $Panel/SlotButton3
@@ -65,11 +64,15 @@ func _on_select_pressed():
 		# It's a New Game! Copy the default template and save it to the hard drive
 		SaveManager.current_save_data = SaveManager.DEFAULT_SAVE.duplicate(true)
 		SaveManager.save_game(selected_slot, SaveManager.current_save_data)
+		
+		# Go to the Boat intro scene first! (Adjust path if needed)
+		SceneTransition.change_scene("res://scene/boat.tscn")
+		return
 	else:
 		# It's an Existing Game! Load their progress into memory
 		SaveManager.current_save_data = SaveManager.load_game(selected_slot)
 	
-	# 3. ROUTE THE PLAYER BASED ON THE DAY!
+	# 3. ROUTE THE PLAYER BASED ON THE DAY (For Loaded Games)
 	var current_day = SaveManager.current_save_data.get("current_day", 1)
 	
 	if current_day == 1 or current_day == 4 or current_day == 7:

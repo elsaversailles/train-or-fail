@@ -1,16 +1,32 @@
 extends Node3D
 
-@onready var player = get_node_or_null("Player")
+@export var day1_intro_timeline: String = "lobby_day1_intro"
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if player:
-		player.is_paused = true
+	var current_day = int(SaveManager.current_save_data.get("current_day", 1))
 
-	# 2. Settle the physics engine before triggering anything
-	await get_tree().physics_frame
-	await get_tree().physics_frame
+	# Only trigger the intro text on Day 1
+	if current_day == 1:
+		handle_day1_intro()
 
-	# Unpause here if there is no opening dialogue/cutscene:
-	if player:
-		player.is_paused = false
+func handle_day1_intro() -> void:
+	# 1. Immediately freeze player movement before fade finishes
+	var player = get_tree().get_first_node_in_group("player")
+	if player and "is_in_dialogue" in player:
+		player.is_in_dialogue = true
+
+	# 2. Wait until SceneTransition finishes fading in
+	if SceneTransition and SceneTransition.has_signal("transition_finished"):
+		if SceneTransition.is_transitioning:
+			await SceneTransition.transition_finished
+	else:
+		await RenderingServer.frame_post_draw
+		await get_tree().create_timer(0.5).timeout
+
+	# 3. Play the intro narration
+	Dialogic.start(day1_intro_timeline)
+	await Dialogic.timeline_ended
+
+	# 4. Release player controls so they can walk toward Jordan
+	if player and "is_in_dialogue" in player:
+		player.is_in_dialogue = false

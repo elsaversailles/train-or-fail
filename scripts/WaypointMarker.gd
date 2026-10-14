@@ -1,12 +1,15 @@
 extends Control
 class_name WaypointMarker
 
+# --- Direct Target Override (Use this for Dock, Prologue, or Interior scenes) ---
+@export var target_override: Node3D
+
 @export var apartment_door: Node3D
-@export var objective_label: Label # Drag your CanvasLayer/Label here in Inspector
+@export var objective_label: Label
 @export var edge_padding: float = 50.0
 
 @export_group("Offsets")
-@export var npc_vertical_offset: float = 5.0
+@export var npc_vertical_offset: float = 2.2 # Adjusted: 2.0-2.5m hovers directly above character heads
 @export var door_vertical_offset: float = 1.0
 
 # --- Distance Scaling Settings ---
@@ -19,14 +22,12 @@ class_name WaypointMarker
 @onready var icon: TextureRect = $Icon
 
 var current_target: Node3D = null
-var current_vertical_offset: float = 5.0
+var current_vertical_offset: float = 2.2
 var camera: Camera3D
 var is_dialogue_active: bool = false
 
 func _ready() -> void:
-	# 1. Allow this node to continue processing even when get_tree().paused = true
 	process_mode = Node.PROCESS_MODE_ALWAYS
-
 	add_to_group("waypoint")
 	
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -57,6 +58,15 @@ func _on_dialogue_ended() -> void:
 	set_marker_suppressed(false)
 
 func setup_day_target() -> void:
+	# 1. DIRECT OVERRIDE: If an explicit target is set in the Inspector, lock onto it
+	if target_override and is_instance_valid(target_override):
+		current_target = target_override
+		current_vertical_offset = npc_vertical_offset
+		_update_objective_text(_get_npc_name(target_override))
+		visible = not is_dialogue_active
+		return
+
+	# 2. DEFAULT STORY LOGIC: Multi-day open world handling
 	var current_day: int = SaveManager.current_save_data.get("current_day", 1)
 	var special_npcs = get_tree().get_nodes_in_group("special_npc")
 	
@@ -76,7 +86,6 @@ func setup_day_target() -> void:
 			if not npc.story_finished.is_connected(_on_story_finished):
 				npc.story_finished.connect(_on_story_finished)
 			
-			# Set the NPC objective text
 			_update_objective_text(_get_npc_name(npc))
 			break
 
@@ -96,8 +105,6 @@ func target_apartment_door() -> void:
 		current_target = apartment_door
 		current_vertical_offset = door_vertical_offset
 		visible = not is_dialogue_active
-		
-		# Set the Apartment objective text
 		_update_objective_text("apartment")
 	else:
 		visible = false
@@ -129,15 +136,7 @@ func _get_npc_name(npc: Node3D) -> String:
 	return npc.name.capitalize()
 
 func _process(_delta: float) -> void:
-	# 2. Hide immediately when paused
-	if get_tree().paused:
-		visible = false
-		if objective_label:
-			objective_label.visible = false
-		return
-
-	# Hide during dialogues
-	if is_dialogue_active:
+	if get_tree().paused or is_dialogue_active:
 		visible = false
 		if objective_label:
 			objective_label.visible = false
@@ -187,7 +186,6 @@ func _process(_delta: float) -> void:
 		if icon:
 			icon.rotation = direction.angle() - (PI * 0.5)
 
-	# 3. Restore visibility once unpaused and valid
 	visible = true
 	if objective_label:
 		objective_label.visible = true
