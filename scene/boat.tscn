@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://doo0wqmsg0nvj"]
+
+[ext_resource type="Shader" uid="uid://w5f46qhaithg" path="res://shader/ocean.gdshader" id="1_3cgng"]
+[ext_resource type="PackedScene" uid="uid://drkya446h6odi" path="res://scene/world_environment.tscn" id="1_afmyx"]
+[ext_resource type="Script" uid="uid://ev001u2qovy5" path="res://scripts/ocean.gd" id="2_cgqm2"]
+[ext_resource type="PackedScene" uid="uid://8ya5ayq4amox" path="res://assets/Boat/boat.glb" id="4_lf3pa"]
+[ext_resource type="PackedScene" uid="uid://dxfha0ij6qqai" path="res://models3d/characters/M/player.tscn" id="5_nm0dn"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ew6px"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5ieep"]
+noise = SubResource("FastNoiseLite_ew6px")
+seamless = true
+as_normal_map = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_afmyx"]
+render_priority = 0
+shader = ExtResource("1_3cgng")
+shader_parameter/albedo = Color(0, 0.35686275, 0.64705884, 1)
+shader_parameter/albedo_texture_size = Vector2i(0, 0)
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 0.4
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/texture_refraction = SubResource("NoiseTexture2D_5ieep")
+shader_parameter/refraction = 0.05
+shader_parameter/refraction_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_normal = SubResource("NoiseTexture2D_5ieep")
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/uv1_scale = Vector3(0.005, 0.005, 0.005)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jv1ba"]
+material = SubResource("ShaderMaterial_afmyx")
+size = Vector2(1000, 1000)
+subdivide_width = 64
+subdivide_depth = 64
+
+[node name="Boat" type="Node3D" unique_id=1094541082]
+
+[node name="WorldEnvironment" parent="." unique_id=1060883038 instance=ExtResource("1_afmyx")]
+
+[node name="ocean" type="MeshInstance3D" parent="." unique_id=312265665]
+mesh = SubResource("PlaneMesh_jv1ba")
+script = ExtResource("2_cgqm2")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=840227552]
+transform = Transform3D(0.9937057, 0.02489561, -0.10922078, 0, 0.9749924, 0.22223821, 0.112022184, -0.22083938, 0.9688555, 0.39032745, 2.888607, 4.5604706)
+keep_aspect = 0
+
+[node name="boat" parent="." unique_id=287346167 instance=ExtResource("4_lf3pa")]
+transform = Transform3D(0.77885413, 0, 0.62720513, 0, 1, 0, -0.62720513, 0, 0.77885413, 0.73542434, 0.5453682, 1.1428812)
+
+[node name="Player" parent="." unique_id=1491897563 instance=ExtResource("5_nm0dn")]
+transform = Transform3D(0.93170595, 0, 0.3632133, 0, 1, 0, -0.3632133, 0, 0.93170595, 1.3360589, 1.7642229, 0.8913857)

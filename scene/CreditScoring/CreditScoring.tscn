@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://qxngx7cctkt6" path="res://scene/floppydisk.tscn" id="4_dn53d"]
 [ext_resource type="PackedScene" uid="uid://d08r12hn5mce1" path="res://scene/IdleScreen.tscn" id="5_qlcwt"]
 [ext_resource type="PackedScene" uid="uid://c0v72003xgbg7" path="res://assets/Monitor/Monitor.glb" id="8_5kwha"]
-[ext_resource type="Script" uid="uid://chk5c2vkeowgj" path="res://scripts/Screen.gd" id="9_46dfy"]
+[ext_resource type="Script" uid="uid://chk5c2vkeowgj" path="res://scripts/screen.gd" id="9_46dfy"]
 [ext_resource type="PackedScene" uid="uid://b6tmwnj3ngb3a" path="res://scene/Tutorial/cs_tutorial.tscn" id="9_y65os"]
 [ext_resource type="Texture2D" uid="uid://cu3mqqxg73kgm" path="res://images/Endings/Terminated.png" id="10_3iqyl"]
 [ext_resource type="PackedScene" uid="uid://dm044fdmw3w5o" path="res://scene/screengameplays/credit_scoring_panel.tscn" id="10_bebfk"]

@@ -310,7 +310,7 @@ curve = SubResource("Curve3D_urwcn")
 script = ExtResource("31_p1ya7")
 
 [node name="Jeepney" parent="Track" unique_id=589528123 instance=ExtResource("31_ptfg7")]
-transform = Transform3D(0, 0, 1, 0, 0.9999991, 0, -0.9999991, 0, 0, 0, 0, 0)
+transform = Transform3D(0, 0, 1, 0, 0.9999991, 0, -0.9999991, 0, 0, 96.535, 0, 0)
 
 [connection signal="body_entered" from="OfficeDoor" to="OfficeDoor" method="_on_body_entered"]
 [connection signal="body_exited" from="OfficeDoor" to="OfficeDoor" method="_on_body_exited"]

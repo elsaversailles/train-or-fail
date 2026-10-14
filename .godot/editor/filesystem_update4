@@ -1,4 +1,9 @@
-res://scene/map.tscn
-res://scene/outside_world.tscn
-res://addons/outside_world.occ
-res://scene/pause_panel.tscn
+res://scene/KnowYourCustomer/KnowYourCustomer.tscn
+res://scripts/KnowYourCustomer/KnowYourCustomer.gd
+res://scene/CreditScoring/CreditScoring.tscn
+res://scripts/CreditScoring/CreditScoring.gd
+res://shader/ocean.gdshader
+res://scripts/ocean.gd
+res://models3d/characters/M/player.tscn
+res://scene/boat.tscn
+res://scene/world_environment.tscn

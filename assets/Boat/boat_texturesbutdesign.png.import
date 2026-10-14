@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dghb1ryxuixrg"
-path.s3tc="res://.godot/imported/maincharhandfix_BLACK.png-0ce134540ede3506a2e2c6f7c0bb8e0a.s3tc.ctex"
+uid="uid://c6e3bx38qcieg"
+path.s3tc="res://.godot/imported/boat_texturesbutdesign.png-d58a25c9a43f35a6fa3c57a1a3bc226a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "49e4d8cc9eb611de12d0ce6a2ec7d5bc"
+"md5": "2abf74313b82e52b2302b0239a9bd7df"
 }
 
 [deps]
 
-source_file="res://main char/maincharhandfix_BLACK.png"
-dest_files=["res://.godot/imported/maincharhandfix_BLACK.png-0ce134540ede3506a2e2c6f7c0bb8e0a.s3tc.ctex"]
+source_file="res://assets/Boat/boat_texturesbutdesign.png"
+dest_files=["res://.godot/imported/boat_texturesbutdesign.png-d58a25c9a43f35a6fa3c57a1a3bc226a.s3tc.ctex"]
 
 [params]
 

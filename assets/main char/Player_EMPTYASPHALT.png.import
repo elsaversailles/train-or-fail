@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhmumo88scp2y"
-path.s3tc="res://.godot/imported/maincharhandfix_1 Male.png-baf54b45fd4a66173754892e301167d7.s3tc.ctex"
+uid="uid://3vyx574nupij"
+path.s3tc="res://.godot/imported/Player_EMPTYASPHALT.png-0c4fff21b1a279f412e046cb39d98a7b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "49014df2d3faa56c10ac5e6a3959e83f"
+"md5": "f98d109babd89d36d1e55d084efd0925"
 }
 
 [deps]
 
-source_file="res://main char/maincharhandfix_1 Male.png"
-dest_files=["res://.godot/imported/maincharhandfix_1 Male.png-baf54b45fd4a66173754892e301167d7.s3tc.ctex"]
+source_file="res://assets/main char/Player_EMPTYASPHALT.png"
+dest_files=["res://.godot/imported/Player_EMPTYASPHALT.png-0c4fff21b1a279f412e046cb39d98a7b.s3tc.ctex"]
 
 [params]
 

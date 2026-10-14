@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bddhvjadhmbjo"
-path.s3tc="res://.godot/imported/maincharhandfix_Faces 1 Male.png-9dc9c154fe846867d7fd0ab1194275ec.s3tc.ctex"
+uid="uid://dwcym05h72cld"
+path.s3tc="res://.godot/imported/Player_char1.png-2dadf6b3e3edee940417fb2efe166d34.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "90302da7d44f426d7d8d51513adf113d"
+"md5": "525f1e9c40486370bc11d1c801559be3"
 }
 
 [deps]
 
-source_file="res://main char/maincharhandfix_Faces 1 Male.png"
-dest_files=["res://.godot/imported/maincharhandfix_Faces 1 Male.png-9dc9c154fe846867d7fd0ab1194275ec.s3tc.ctex"]
+source_file="res://assets/main char/Player_char1.png"
+dest_files=["res://.godot/imported/Player_char1.png-2dadf6b3e3edee940417fb2efe166d34.s3tc.ctex"]
 
 [params]
 

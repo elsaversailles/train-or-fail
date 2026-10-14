@@ -19,9 +19,10 @@ func _ready():
 	if canvas_layer:
 		canvas_layer.visible = true
 
-	# Hide Game Over panel by default and connect the click event
+	# Hide Game Over panel by default, reset opacity to 0, and connect click event
 	if game_over_panel:
 		game_over_panel.visible = false
+		game_over_panel.modulate.a = 0.0
 		game_over_panel.gui_input.connect(_on_game_over_clicked)
 		
 	# 2. Ask SaveManager what level/day we are currently playing
@@ -46,20 +47,32 @@ func _ready():
 		if not (game_over_panel and game_over_panel.visible):
 			player.is_paused = false
 
+# ==========================================
+# TERMINATION LOGIC
+# ==========================================
+
 func trigger_game_over():
-	# Show the full-screen termination panel
-	if game_over_panel:
-		game_over_panel.visible = true
-	
 	# Unlock mouse and freeze player
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if player:
 		player.is_paused = true
 
+	if game_over_panel:
+		game_over_panel.modulate.a = 0.0
+		game_over_panel.visible = true
+		
+		# Animate opacity from 0.0 to 1.0 over 0.8 seconds
+		var tween = create_tween()
+		tween.tween_property(game_over_panel, "modulate:a", 1.0, 0.8).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+
 func _on_game_over_clicked(event: InputEvent):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		get_tree().paused = false 
 		get_tree().reload_current_scene()
+
+# ==========================================
+# END OF DAY LOGIC
+# ==========================================
 
 func show_final_result(score: int):
 	# -------------------------------------------------------------
