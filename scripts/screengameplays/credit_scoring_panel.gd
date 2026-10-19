@@ -7,6 +7,12 @@ var slide_speed: float = 10.0
 var closed_x: float
 var open_x: float
 
+# --- GRIP BUTTON GLOW SETTINGS ---
+@export var grip_idle_time: float = 3.0 # Seconds before grip button starts glowing
+@export var grip_glow_color: Color = Color(1.6, 1.5, 0.8, 1.0) # Bright warm glow color
+var grip_idle_timer: Timer
+var grip_glow_tween: Tween
+
 var applicants_list: Array = []
 var current_case_index: int = 0
 var actual_score: float = 1.0
@@ -43,6 +49,8 @@ func _ready():
 	grip_button.pressed.connect(_on_grip_pressed)
 	submit_button.pressed.connect(_on_submit)
 	
+	setup_grip_glow_timer()
+	
 	applicants_list = Database.get_session_applicants()
 	load_applicant()
 
@@ -50,8 +58,54 @@ func _process(delta: float):
 	var target_x = open_x if is_open else closed_x
 	position.x = lerp(position.x, target_x, slide_speed * delta)
 
+# ==========================================
+# GRIP BUTTON IDLE GLOW LOGIC
+# ==========================================
+
+func setup_grip_glow_timer():
+	grip_idle_timer = Timer.new()
+	grip_idle_timer.wait_time = grip_idle_time
+	grip_idle_timer.one_shot = true
+	grip_idle_timer.timeout.connect(_on_grip_idle_timeout)
+	add_child(grip_idle_timer)
+	grip_idle_timer.start()
+
+func _on_grip_idle_timeout():
+	# Only glow if the panel is closed
+	if not is_open:
+		start_grip_glow()
+
+func start_grip_glow():
+	if grip_glow_tween and grip_glow_tween.is_valid():
+		grip_glow_tween.kill()
+		
+	grip_button.pivot_offset = grip_button.size / 2.0
+	grip_glow_tween = create_tween().set_loops().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	grip_glow_tween.tween_property(grip_button, "self_modulate", grip_glow_color, 0.55)
+	grip_glow_tween.parallel().tween_property(grip_button, "scale", Vector2(1.08, 1.08), 0.55)
+	grip_glow_tween.tween_property(grip_button, "self_modulate", Color.WHITE, 0.55)
+	grip_glow_tween.parallel().tween_property(grip_button, "scale", Vector2.ONE, 0.55)
+
+func stop_grip_glow(restart_timer: bool = false):
+	if grip_glow_tween and grip_glow_tween.is_valid():
+		grip_glow_tween.kill()
+	grip_button.self_modulate = Color.WHITE
+	grip_button.scale = Vector2.ONE
+	
+	if grip_idle_timer:
+		if restart_timer:
+			grip_idle_timer.start(grip_idle_time)
+		else:
+			grip_idle_timer.stop()
+
 func _on_grip_pressed():
 	is_open = !is_open
+	if is_open:
+		# Panel is now open: stop glowing and do NOT run the timer
+		stop_grip_glow(false)
+	else:
+		# Panel is now closed: restart the 3-second timer
+		stop_grip_glow(true)
 
 func _on_reject_pressed():
 	is_rejected = true
@@ -64,7 +118,7 @@ func _on_slider_value_changed(value: float):
 	if value > 0.0:
 		is_rejected = false
 		reject_button.button_pressed = false
-  
+
 	var display_score = int(lerp(0, 10000, value))
 	credit_score_label.text = "Proposed Credit: $" + str(display_score)
 
@@ -150,6 +204,7 @@ func _on_submit():
 	else:
 		mistakes += 1
 		if mistakes >= 3:
+			stop_grip_glow(false)
 			submit_button.visible = false
 			reject_button.visible = false
 			slider.visible = false
@@ -165,6 +220,7 @@ func _on_submit():
 		finish_game()
 
 func finish_game():
+	stop_grip_glow(false)
 	is_open = false
 	self.visible = false
 	

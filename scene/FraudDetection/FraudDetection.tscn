@@ -115,9 +115,9 @@ label_settings = SubResource("LabelSettings_1bvp3")
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=268869578]
 offset_left = 11.795
-offset_top = 24.0
+offset_top = 11.705
 offset_right = 124.795
-offset_bottom = 124.0
+offset_bottom = 143.705
 text = "Fraud Detection
 Level 1
 Day 1"

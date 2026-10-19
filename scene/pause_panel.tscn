@@ -94,7 +94,7 @@ offset_top = 417.105
 offset_right = 629.0
 offset_bottom = 452.10504
 theme_override_styles/normal = SubResource("StyleBoxFlat_esuh0")
-text = "RESET GAME"
+text = "Reset Level"
 
 [node name="Quit" type="Button" parent="." unique_id=15608994]
 layout_mode = 0
@@ -120,6 +120,7 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="ConfirmQuitPanel" type="Panel" parent="." unique_id=503594174]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

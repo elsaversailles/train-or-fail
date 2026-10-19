@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://bia3kpprkjk83" path="res://scene/waypoint_marker.tscn" id="9_ad2xu"]
 [ext_resource type="Script" uid="uid://ca5dk0dgimda5" path="res://scripts/dialogue/GrandpaDock.gd" id="10_ad2xu"]
 [ext_resource type="PackedScene" uid="uid://dci8u0ys21qui" path="res://scene/npc_dialogue_box.tscn" id="11_pcdpp"]
+[ext_resource type="PackedScene" uid="uid://d4g6r4vgp2gvs" path="res://assets/Boat/boat.glb" id="13_ipjyd"]
+[ext_resource type="Script" uid="uid://bd6wnr7fojlq0" path="res://scripts/BoatFloat.gd" id="14_4evvr"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ew6px"]
 
@@ -70,7 +72,7 @@ transform = Transform3D(-0.9999924, 0, 0.0039138375, 0, 1, 0, -0.0039138375, 0, 
 [node name="Map" parent="." unique_id=1112612333 instance=ExtResource("2_yeqg6")]
 
 [node name="ocean" type="MeshInstance3D" parent="." unique_id=1338967688]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120.70448, -22.290546, -495.4594)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120.704, -5.221, -495.459)
 mesh = SubResource("PlaneMesh_vut38")
 script = ExtResource("4_rm8ik")
 
@@ -105,5 +107,9 @@ script = ExtResource("10_ad2xu")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Grandpa/StaticBody3D" unique_id=2107814763]
 transform = Transform3D(1.0000085, 0, -3.427267e-06, 0, 1, 0, 3.427267e-06, 0, 1.0000085, 0, 0.85275775, 0)
 shape = SubResource("CapsuleShape3D_78pyd")
+
+[node name="boat" parent="." unique_id=136603452 instance=ExtResource("13_ipjyd")]
+transform = Transform3D(0.053111248, 0, 3.9996474, 0, 4, 0, -3.9996474, 0, 0.053111248, -144.01408, -3.5991125, -111.82778)
+script = ExtResource("14_4evvr")
 
 [editable path="CanvasLayer"]

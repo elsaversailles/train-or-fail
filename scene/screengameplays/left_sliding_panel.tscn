@@ -1,10 +1,14 @@
 [gd_scene format=3 uid="uid://dmxltttqxwip0"]
 
-[ext_resource type="Script" uid="uid://bd1eqx7ns2mep" path="res://scripts/screengameplays/Left_Sliding_Panel.gd" id="1_28aal"]
+[ext_resource type="Script" uid="uid://bd1eqx7ns2mep" path="res://scripts/screengameplays/left_sliding_panel.gd" id="1_28aal"]
 [ext_resource type="Texture2D" uid="uid://yahc322jgg0j" path="res://images/TutorialsIMG/FRAUDDETECTION/fdpanel.png" id="2_glxag"]
 [ext_resource type="Texture2D" uid="uid://koiyree2g1jc" path="res://images/TutorialsIMG/FRAUDDETECTION/fdbuttons.png" id="2_uanr2"]
 [ext_resource type="Texture2D" uid="uid://c5x64jsfa3ot3" path="res://images/TutorialsIMG/FRAUDDETECTION/fdholder.png" id="3_3w45d"]
 [ext_resource type="Texture2D" uid="uid://bxsdiccws8elw" path="res://images/TutorialsIMG/FRAUDDETECTION/fdidk.png" id="5_m7ag6"]
+[ext_resource type="Texture2D" uid="uid://crd58bfg85dgd" path="res://images/note.png" id="6_m7ag6"]
+[ext_resource type="Texture2D" uid="uid://db3vx0b4fj87k" path="res://images/BlankNote.png" id="7_o60px"]
+[ext_resource type="Texture2D" uid="uid://cg3j6mw5kiqw0" path="res://images/SwapModeIcon.png" id="8_8s3y7"]
+[ext_resource type="Texture2D" uid="uid://du4mems3ulp1h" path="res://images/ZoomModeIcon.png" id="9_7hurq"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jv1ba"]
 texture = ExtResource("2_glxag")
@@ -261,9 +265,9 @@ label_settings = SubResource("LabelSettings_3w45d")
 [node name="PriceLabel" type="Label" parent="." unique_id=668583854]
 layout_mode = 0
 offset_left = 765.0
-offset_top = 175.0
+offset_top = 164.0
 offset_right = 895.0
-offset_bottom = 205.0
+offset_bottom = 194.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Price"
@@ -271,9 +275,9 @@ text = "Price"
 [node name="PriceValueLabel" type="Label" parent="." unique_id=619346279]
 layout_mode = 0
 offset_left = 765.0
-offset_top = 210.0
+offset_top = 199.0
 offset_right = 895.0
-offset_bottom = 240.0
+offset_bottom = 232.0
 theme_override_font_sizes/font_size = 20
 label_settings = SubResource("LabelSettings_3w45d")
 
@@ -285,9 +289,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 291.90997
-offset_top = -61.35501
+offset_top = -81.35501
 offset_right = 431.90997
-offset_bottom = -31.35498
+offset_bottom = -51.35498
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -301,11 +305,89 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 294.625
-offset_top = -18.0
-offset_right = 434.625
-offset_bottom = 38.0
+offset_left = 294.62494
+offset_top = -52.99997
+offset_right = 434.62494
+offset_bottom = -19.99997
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 20
+text = "68%"
 label_settings = SubResource("LabelSettings_3w45d")
+
+[node name="NoteIconButton" type="TextureButton" parent="." unique_id=2054015579]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 810.0
+offset_top = 317.0
+offset_right = -84.5
+offset_bottom = -272.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("6_m7ag6")
+stretch_mode = 0
+
+[node name="NotePopupPanel" type="TextureRect" parent="." unique_id=205149279]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -250.0
+offset_right = 250.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_o60px")
+
+[node name="NoteTextLabel" type="Label" parent="NotePopupPanel" unique_id=1051927579]
+custom_minimum_size = Vector2(0.04, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -118.0
+offset_right = 120.0
+offset_bottom = 157.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 17
+text = "asdfasfasfasfsafasfasfsdfasfsadfasdfasfsadfasdfasdfsadf"
+autowrap_mode = 3
+
+[node name="SwapModeButton" type="TextureButton" parent="." unique_id=1944859946]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 711.0
+offset_top = 50.0
+offset_right = -208.0
+offset_bottom = -575.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("8_8s3y7")
+stretch_mode = 0
+
+[node name="ZoomModeButton" type="TextureButton" parent="." unique_id=1350062264]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 672.0
+offset_top = 50.0
+offset_right = -247.0
+offset_bottom = -575.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("9_7hurq")
+stretch_mode = 0

@@ -3,7 +3,7 @@
 [ext_resource type="Shader" uid="uid://w5f46qhaithg" path="res://shader/ocean.gdshader" id="1_3cgng"]
 [ext_resource type="PackedScene" uid="uid://drkya446h6odi" path="res://scene/world_environment.tscn" id="1_afmyx"]
 [ext_resource type="Script" uid="uid://ev001u2qovy5" path="res://scripts/ocean.gd" id="2_cgqm2"]
-[ext_resource type="PackedScene" uid="uid://8ya5ayq4amox" path="res://assets/Boat/boat.glb" id="4_lf3pa"]
+[ext_resource type="PackedScene" uid="uid://d4g6r4vgp2gvs" path="res://assets/Boat/boat.glb" id="4_lf3pa"]
 [ext_resource type="Script" uid="uid://dxbsdflf0wnrj" path="res://scripts/CameraZoom.gd" id="4_uwyv3"]
 [ext_resource type="Script" uid="uid://bd6wnr7fojlq0" path="res://scripts/BoatFloat.gd" id="5_lf3pa"]
 [ext_resource type="PackedScene" uid="uid://dxfha0ij6qqai" path="res://models3d/characters/M/player.tscn" id="5_nm0dn"]
@@ -65,21 +65,17 @@ mesh = SubResource("PlaneMesh_jv1ba")
 script = ExtResource("2_cgqm2")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=840227552]
-transform = Transform3D(0.9952816, -0.021150447, 0.09469533, 0, 0.97595286, 0.21798159, -0.09702859, -0.21695307, 0.9713479, 1.6924515, 2.8996162, 4.2715454)
+transform = Transform3D(0.99343663, -0.028331066, 0.11081979, 0, 0.96884084, 0.24768405, -0.11438389, -0.2460584, 0.962482, 1.726963, 3.4104156, 4.578476)
 keep_aspect = 0
 script = ExtResource("4_uwyv3")
 
-[node name="boat" parent="." unique_id=287346167 instance=ExtResource("4_lf3pa")]
+[node name="boat" parent="." unique_id=1294195838 instance=ExtResource("4_lf3pa")]
 transform = Transform3D(0.77885413, 0, 0.62720513, 0, 1, 0, -0.62720513, 0, 0.77885413, 0.73542434, 0.5453682, 1.1428812)
 script = ExtResource("5_lf3pa")
-bob_height = 0.1
-bob_speed = 1.0
-roll_degrees = 2.0
-pitch_degrees = 1.0
 
 [node name="Player" parent="boat" unique_id=1491897563 instance=ExtResource("5_nm0dn")]
-transform = Transform3D(0.95347226, 0, -0.30148056, 0, 1, 0, 0.30148056, 0, 0.95347226, 0.6255459, 1.2188547, 0.18084264)
+transform = Transform3D(0.95347226, 0, -0.30148056, 0, 1, 0, 0.30148056, 0, 0.95347226, 0.625546, 1.2188547, 0.18084264)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=517343381]
-transform = Transform3D(-0.7946159, 0, -0.6071128, 0, 1, 0, 0.6071128, 0, -0.7946159, -8.00631, 0.5453687, -11.141206)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="boat" unique_id=517343381]
+transform = Transform3D(-0.99967414, 0, 0.025534868, 0, 1, 0, -0.025534868, 0, -0.99967414, 0.8961064, 4.7683716e-07, -15.050372)
 mesh = SubResource("PlaneMesh_5ieep")

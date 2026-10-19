@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dm044fdmw3w5o"]
 
-[ext_resource type="Script" uid="uid://fpwll3wo1ylp" path="res://scripts/screengameplays/Credit_Scoring_Panel.gd" id="1_uhrk6"]
+[ext_resource type="Script" uid="uid://fpwll3wo1ylp" path="res://scripts/screengameplays/credit_scoring_panel.gd" id="1_uhrk6"]
 [ext_resource type="Texture2D" uid="uid://b63q7xp4ywisp" path="res://images/TutorialsIMG/CREDITSCORING/cspanel.png" id="2_etpp7"]
 [ext_resource type="Texture2D" uid="uid://cshetdib31i03" path="res://images/TutorialsIMG/CREDITSCORING/csgrabber.png" id="3_122qi"]
 [ext_resource type="Texture2D" uid="uid://b2li6b1n0vt2x" path="res://images/TutorialsIMG/CREDITSCORING/csbutton.png" id="4_5aogp"]

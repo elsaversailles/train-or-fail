@@ -1,3 +1,9 @@
+OccluderInstance3D
+TextureButton
+Label
+TextureRect
+Panel
+Sprite3D
 DirectionalLight3D
 CollisionShape3D
 MeshInstance3D
@@ -7,8 +13,3 @@ Camera3D
 Node
 Area3D
 AnimatableBody3D
-StaticBody3D
-PathFollow3D
-Path3D
-Label
-VScrollBar

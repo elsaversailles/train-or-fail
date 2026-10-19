@@ -121,7 +121,7 @@ label_settings = SubResource("LabelSettings_1bvp3")
 offset_left = 11.795
 offset_top = 24.0
 offset_right = 124.794975
-offset_bottom = 124.0
+offset_bottom = 156.0
 text = "KYC
 Level 1
 Day 1"

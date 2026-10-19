@@ -32,6 +32,7 @@
 [ext_resource type="Script" uid="uid://cfay18l2r4r4e" path="res://scripts/TriggerJerichoAndJoice.gd" id="24_x7ph6"]
 [ext_resource type="Script" uid="uid://r44016gwiynl" path="res://scripts/PathDriver.gd" id="31_p1ya7"]
 [ext_resource type="PackedScene" uid="uid://18450kxjv1jb" path="res://scene/Jeepney.tscn" id="31_ptfg7"]
+[ext_resource type="Texture2D" uid="uid://bjfvr1cgy17sw" path="res://images/caution_tape.png" id="33_urwcn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_x7ph6"]
 font_size = 20
@@ -76,6 +77,11 @@ speed = 30.0
 
 [node name="Map" parent="." unique_id=1112612333 instance=ExtResource("3_tv3p0")]
 
+[node name="CautionTape" type="Sprite3D" parent="Map/hospital_a" parent_id_path=PackedInt32Array(1112612333, 1088833150) index="0" unique_id=85518899]
+transform = Transform3D(10.925, 0, 0, 0, 5.17, 0, 0, 0, 10, -0.32185364, -0.67856026, 9.908463)
+visible = false
+texture = ExtResource("33_urwcn")
+
 [node name="bakery" parent="." unique_id=1409383611 instance=ExtResource("5_luw4s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.615902, -0.8230076, 18.910591)
 
@@ -115,7 +121,8 @@ transform = Transform3D(1.7358837, 0, -1.3515576, 0, 2.2, 0, 1.3515576, 0, 1.735
 transform = Transform3D(-0.9416751, 0, 0.33652365, 0, 1.0000002, 0, -0.33652365, 0, -0.9416751, 1.0886974, 2.790886, 0.1561389)
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=385124564]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.046951294, 0.050958633, 0.02030468)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.136673, -25.242735, 95.019356)
+visible = false
 layers = 1023
 occluder = ExtResource("9_crkg8")
 
@@ -313,6 +320,11 @@ script = ExtResource("31_p1ya7")
 [node name="Jeepney" parent="Track" unique_id=589528123 instance=ExtResource("31_ptfg7")]
 transform = Transform3D(0, 0, 1, 0, 0.9999991, 0, -0.9999991, 0, 0, 96.535, 0, 0)
 
+[node name="CautionTape" type="Sprite3D" parent="." unique_id=1587121224]
+transform = Transform3D(-6.8146056e-07, 0, -10, 0, 6.515, 0, 15.59, 0, -4.371139e-07, -212.55838, 19.835491, 206.12901)
+visible = false
+texture = ExtResource("33_urwcn")
+
 [connection signal="body_entered" from="OfficeDoor" to="OfficeDoor" method="_on_body_entered"]
 [connection signal="body_exited" from="OfficeDoor" to="OfficeDoor" method="_on_body_exited"]
 [connection signal="body_entered" from="FraudDetection/TriggerGrandpaAndAssistant" to="FraudDetection/TriggerGrandpaAndAssistant" method="_on_body_entered"]
@@ -320,4 +332,5 @@ transform = Transform3D(0, 0, 1, 0, 0.9999991, 0, -0.9999991, 0, 0, 96.535, 0, 0
 [connection signal="body_entered" from="CreditScoring/TriggerClaraAndSupplier" to="CreditScoring/TriggerClaraAndSupplier" method="_on_body_entered"]
 [connection signal="body_entered" from="CreditScoring/TriggerJerichoAndJoice" to="CreditScoring/TriggerJerichoAndJoice" method="_on_body_entered"]
 
+[editable path="Map"]
 [editable path="CanvasLayer"]

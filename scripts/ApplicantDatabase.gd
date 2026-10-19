@@ -16,7 +16,8 @@ var fraud_applicants: Array = [
 		"time": "9:15 AM",
 		"price": "₱240",
 		"fraud_correct": "legit",
-		"ai_risk_factor": "8%"
+		"ai_risk_factor": "8%",
+		"note": "Applicant is a regular morning shopper at this branch two blocks from her home. Routine household purchase."
 	},
 	{
 		"id": "fd_a2",
@@ -27,7 +28,8 @@ var fraud_applicants: Array = [
 		"time": "3:20 PM",
 		"price": "₱1,850",
 		"fraud_correct": "legit",
-		"ai_risk_factor": "14%"
+		"ai_risk_factor": "14%",
+		"note": "Card swiped in-person with valid PIN verification. Purchase matches local hardware store afternoon sale."
 	},
 	{
 		"id": "fd_a3",
@@ -38,7 +40,8 @@ var fraud_applicants: Array = [
 		"time": "2:45 AM",
 		"price": "₱15,000",
 		"fraud_correct": "sus",
-		"ai_risk_factor": "89%"
+		"ai_risk_factor": "89%",
+		"note": "Terminal ID is unregistered. Bulk purchase of non-refundable digital gaming codes made in the middle of the night."
 	},
 	{
 		"id": "fd_a4",
@@ -49,7 +52,8 @@ var fraud_applicants: Array = [
 		"time": "1:10 PM",
 		"price": "₱650",
 		"fraud_correct": "legit",
-		"ai_risk_factor": "6%"
+		"ai_risk_factor": "6%",
+		"note": "Customer presented a valid doctor's prescription matching the cardholder's name at the pharmacy window."
 	},
 	{
 		"id": "fd_a5",
@@ -60,7 +64,8 @@ var fraud_applicants: Array = [
 		"time": "5:40 PM",
 		"price": "₱4,200",
 		"fraud_correct": "legit",
-		"ai_risk_factor": "18%"
+		"ai_risk_factor": "18%",
+		"note": "After-work purchase at a local mall near her office. Matches her typical payday spending history."
 	},
 	{
 		"id": "fd_a6",
@@ -71,7 +76,8 @@ var fraud_applicants: Array = [
 		"time": "3:12 AM",
 		"price": "₱109,000",
 		"fraud_correct": "sus",
-		"ai_risk_factor": "94%"
+		"ai_risk_factor": "94%",
+		"note": "Sudden six-figure swipe at 3:12 AM for five high-resale graphics cards using an isolated alley terminal."
 	},
 	{
 		"id": "fd_a7",
@@ -82,7 +88,8 @@ var fraud_applicants: Array = [
 		"time": "8:30 AM",
 		"price": "₱210",
 		"fraud_correct": "legit",
-		"ai_risk_factor": "5%"
+		"ai_risk_factor": "5%",
+		"note": "Daily morning commute coffee stop. Paid via verified contactless tap."
 	},
 	{
 		"id": "fd_a8",
@@ -93,7 +100,8 @@ var fraud_applicants: Array = [
 		"time": "2:22 AM",
 		"price": "₱25,000",
 		"fraud_correct": "sus",
-		"ai_risk_factor": "91%"
+		"ai_risk_factor": "91%",
+		"note": "No travel notice on file. Card is suddenly routing through a Moscow VPN at 2:22 AM to drain ₱25,000 in prepaid credits."
 	},
 	{
 		"id": "fd_a9",
@@ -104,7 +112,8 @@ var fraud_applicants: Array = [
 		"time": "5:30 PM",
 		"price": "₱3,200",
 		"fraud_correct": "legit",
-		"ai_risk_factor": "19%"
+		"ai_risk_factor": "19%",
+		"note": "Cardholder called customer support in advance to pre-authorize this purchase and confirmed he is connected to his remote work VPN."
 	},
 	{
 		"id": "fd_a10",
@@ -115,7 +124,8 @@ var fraud_applicants: Array = [
 		"time": "11:55 PM",
 		"price": "₱900,000",
 		"fraud_correct": "sus",
-		"ai_risk_factor": "97%"
+		"ai_risk_factor": "97%",
+		"note": "Massive ₱900,000 transaction just before midnight for 10 smartphones delivered to an abandoned warehouse dock."
 	},
 	{
 		"id": "fd_a11",
@@ -126,7 +136,8 @@ var fraud_applicants: Array = [
 		"time": "6:45 PM",
 		"price": "₱1,200",
 		"fraud_correct": "legit",
-		"ai_risk_factor": "9%"
+		"ai_risk_factor": "9%",
+		"note": "Dinner delivery ordered to the cardholder's registered home address. App biometric check passed."
 	},
 	{
 		"id": "fd_a12",
@@ -137,7 +148,8 @@ var fraud_applicants: Array = [
 		"time": "4:00 AM",
 		"price": "₱500,000",
 		"fraud_correct": "sus",
-		"ai_risk_factor": "95%"
+		"ai_risk_factor": "95%",
+		"note": "Security camera at the terminal was deliberately covered with black tape during a ₱500,000 luxury watch purchase at 4:00 AM."
 	}
 ]
 
@@ -423,7 +435,8 @@ var special_applicants: Array = [
 		"time": "11:45 AM",
 		"price": "₱702,000.00",
 		"fraud_correct": "sus",
-		"ai_risk_factor": "92%"
+		"ai_risk_factor": "92%",
+		"note": "Invoice lists a single sack of baking flour, but the terminal charged ₱702,000.00. Flagged for potential money laundering."
 	},
 	{
 		"id": "mark_krazy",
@@ -438,7 +451,8 @@ var special_applicants: Array = [
 		"fraud_correct": "sus",
 		"id_image": preload("res://images/applicants info/special characters/MarkKrazy/Mark_Krazy_ID.png"),
 		"kyc_correct": "sus",
-		"ai_risk_factor": "96%"
+		"ai_risk_factor": "96%",
+		"note": "Four failed PIN attempts recorded before this 2:45 AM withdrawal. Subject appeared agitated on ATM camera."
 	},
 	{
 		"id": "nurse_clara",

@@ -41,7 +41,7 @@ size = Vector3(14.887008, 1, 0.7367768)
 height = 2.6799316
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rhla1"]
-size = Vector3(22.163477, 1.0324707, 17.21783)
+size = Vector3(18.423145, 1.0324707, 29.251968)
 
 [node name="OfficeLobby" type="Node3D" unique_id=1755870788]
 script = ExtResource("1_rhla1")
@@ -147,7 +147,7 @@ supervisor_bubble = NodePath("../Supervisor/NPCDialogueBox")
 supervisor_interact_body = NodePath("../Supervisor/StaticBody3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TriggerSupervisor" unique_id=585400991]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.267629, 0.54989266, 0.19688225)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.226128, 0.54989266, -5.820186)
 shape = SubResource("BoxShape3D_rhla1")
 
 [connection signal="body_entered" from="ElevetorDoor" to="ElevetorDoor" method="_on_body_entered"]

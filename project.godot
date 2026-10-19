@@ -36,9 +36,7 @@ Dialogic="*uid://ds2q0uclmolvu"
 
 [dialogic]
 
-directories/dch_directory={
-"dock_arrival": "res://Dialogic/Timelines/dock_arrival.dch"
-}
+directories/dch_directory={}
 directories/dtl_directory={
 "Quiet Days1": "res://Dialogic/Timelines/Quiet Days1.dtl",
 "Quiet Days2": "res://Dialogic/Timelines/Quiet Days2.dtl",
