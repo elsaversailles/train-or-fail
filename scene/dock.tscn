@@ -67,7 +67,7 @@ sky_mode = 1
 [node name="WorldEnvironment" parent="." unique_id=1060883038 instance=ExtResource("1_xwk6m")]
 
 [node name="Player" parent="." unique_id=2061402672 instance=ExtResource("2_k3b8n")]
-transform = Transform3D(-0.9999924, 0, 0.0039138375, 0, 1, 0, -0.0039138375, 0, -0.9999924, -152.88104, -0.08561158, -91.61768)
+transform = Transform3D(-0.9999924, 0, 0.0039138375, 0, 1, 0, -0.0039138375, 0, -0.9999924, -136.50304, 0.5069642, -81.50294)
 
 [node name="Map" parent="." unique_id=1112612333 instance=ExtResource("2_yeqg6")]
 
@@ -95,7 +95,7 @@ objective_label = NodePath("../Label")
 npc_vertical_offset = 4.2
 
 [node name="Grandpa" parent="." unique_id=1700817525 instance=ExtResource("6_rm8ik")]
-transform = Transform3D(-1.1821742, 0, -1.8553874, 0, 2.2, 0, 1.8553874, 0, -1.1821742, -143.37686, -0.6661065, -24.305641)
+transform = Transform3D(-1.1821742, 0, -1.8553874, 0, 2.2, 0, 1.8553874, 0, -1.1821742, -126.52634, 0.24040908, -24.305641)
 
 [node name="NPCDialogueBox" parent="Grandpa" unique_id=1030725355 instance=ExtResource("11_pcdpp")]
 transform = Transform3D(0.5585767, 0, 0.9476241, 0, 1.0999999, 0, -0.9476241, 0, 0.5585767, 0.0002784729, 2.9314055, 1.1444092e-05)
@@ -109,7 +109,7 @@ transform = Transform3D(1.0000085, 0, -3.427267e-06, 0, 1, 0, 3.427267e-06, 0, 1
 shape = SubResource("CapsuleShape3D_78pyd")
 
 [node name="boat" parent="." unique_id=136603452 instance=ExtResource("13_ipjyd")]
-transform = Transform3D(0.053111248, 0, 3.9996474, 0, 4, 0, -3.9996474, 0, 0.053111248, -144.01408, -3.5991125, -111.82778)
+transform = Transform3D(0.053111248, 0, 3.9996474, 0, 4, 0, -3.9996474, 0, 0.053111248, -129.21454, -3.5991125, -95.855804)
 script = ExtResource("14_4evvr")
 
 [editable path="CanvasLayer"]

@@ -1,3 +1,7 @@
+Marker3D
+CollisionShape3D
+Area3D
+Node
 OccluderInstance3D
 TextureButton
 Label
@@ -5,11 +9,7 @@ TextureRect
 Panel
 Sprite3D
 DirectionalLight3D
-CollisionShape3D
 MeshInstance3D
 GPUParticles3D
 AreaLight3D
 Camera3D
-Node
-Area3D
-AnimatableBody3D

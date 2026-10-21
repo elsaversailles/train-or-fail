@@ -1,4 +1,4 @@
 res://scene/outside_world.tscn
 res://shader/ocean.gdshader
 res://shader/boatwake.gdshader
-res://scene/office_lobby.tscn
+res://scripts/BuildingDecisionTrigger.gd
