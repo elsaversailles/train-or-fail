@@ -28,7 +28,6 @@ var final_score = 0
 # -----------------------------
 # NODE REFERENCES
 # -----------------------------
-@onready var button_panel: Panel = $ButtonPanel/Panel
 @onready var grip_button = $ButtonPanel/GripButton
 @onready var legit_button = $ButtonPanel/LegitButton
 @onready var sus_button = $ButtonPanel/SusButton
@@ -428,7 +427,6 @@ func submit_answer(answer):
 			note_icon_button.visible = false
 			swap_mode_button.visible = false
 			zoom_mode_button.visible = false
-			button_panel.visible = false
 			applicant_label.text = "TERMINATED"
 			get_tree().current_scene.trigger_game_over()
 			return # Stop loading the next applicant
@@ -491,7 +489,6 @@ func finish_applicants():
 	applicant_label.text = "All applicants reviewed"
 	legit_button.visible = false
 	sus_button.visible = false
-	button_panel.visible = false
 	shutdown_button.visible = true
 
 func _on_shutdown_pressed():

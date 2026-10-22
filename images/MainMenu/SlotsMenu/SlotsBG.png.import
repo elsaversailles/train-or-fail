@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmsh6m8vv644q"
-path="res://.godot/imported/Load Game.png-41d0e9ec1c5393b2d38ca57ed773a444.ctex"
+uid="uid://dcb6n32yucfgh"
+path="res://.godot/imported/SlotsBG.png-62a75e8f138b298ac01c92ab611b611f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/MainMenu/buttons/Load Game.png"
-dest_files=["res://.godot/imported/Load Game.png-41d0e9ec1c5393b2d38ca57ed773a444.ctex"]
+source_file="res://images/MainMenu/SlotsMenu/SlotsBG.png"
+dest_files=["res://.godot/imported/SlotsBG.png-62a75e8f138b298ac01c92ab611b611f.ctex"]
 
 [params]
 

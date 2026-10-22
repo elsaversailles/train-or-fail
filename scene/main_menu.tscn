@@ -3,12 +3,17 @@
 [ext_resource type="Script" uid="uid://dn12u7ocbrg15" path="res://scripts/MainMenu.gd" id="1_06t4h"]
 [ext_resource type="Texture2D" uid="uid://bbsagn711k4sn" path="res://images/MainMenu/buttons/Play.png" id="2_14wem"]
 [ext_resource type="Texture2D" uid="uid://da2o0xs3j1sv2" path="res://images/MainMenu/buttons/background.png" id="2_ictww"]
+[ext_resource type="Texture2D" uid="uid://dk4tdukjq5anr" path="res://images/MainMenu/ButtonsBG.png" id="3_ictww"]
 [ext_resource type="Texture2D" uid="uid://dpbnriw38qayc" path="res://images/MainMenu/buttons/Settings.png" id="4_dclss"]
-[ext_resource type="Texture2D" uid="uid://dqiu7tdvewlhm" path="res://images/MainMenu/buttons/About Us.png" id="5_hmxu4"]
+[ext_resource type="Texture2D" uid="uid://db1nqt22peapy" path="res://images/MainMenu/buttons/PlayPressed.png" id="5_1o50l"]
 [ext_resource type="Texture2D" uid="uid://bcaoasayu6jx5" path="res://images/MainMenu/buttons/Quit.png" id="6_ictww"]
 [ext_resource type="Texture2D" uid="uid://cvpma47eqx85r" path="res://images/MainMenu/Game Title.png" id="7_1o50l"]
+[ext_resource type="Texture2D" uid="uid://bbcp4g6mormnj" path="res://images/MainMenu/buttons/AboutUs.png" id="7_cht4j"]
+[ext_resource type="Texture2D" uid="uid://carqlap6da8yh" path="res://images/MainMenu/buttons/SettingsPressed.png" id="7_os2d6"]
 [ext_resource type="AudioStream" uid="uid://dx7o60nd06xxj" path="res://assets/music/music.mp3" id="8_by01r"]
 [ext_resource type="PackedScene" uid="uid://eb3my6rwhod3" path="res://scene/settings_panel.tscn" id="8_dclss"]
+[ext_resource type="Texture2D" uid="uid://1xgf1ktya7y3" path="res://images/MainMenu/buttons/AboutUsPressed.png" id="9_os2d6"]
+[ext_resource type="Texture2D" uid="uid://4l74d3tj8vxx" path="res://images/MainMenu/buttons/QuitPressed.png" id="11_v0h3m"]
 
 [node name="CanvasLayer2" type="CanvasLayer" unique_id=502315201]
 
@@ -38,59 +43,69 @@ anchor_bottom = 1.0
 offset_top = -270.864
 offset_right = 757.016
 
-[node name="New Game" type="Button" parent="Main Menu/Buttons" unique_id=2033790857]
-layout_mode = 0
-offset_left = 91.205
-offset_top = 344.0
-offset_right = 261.205
-offset_bottom = 394.0
-rotation = 0.12796889
-icon = ExtResource("2_14wem")
-flat = true
-expand_icon = true
+[node name="TextureRect" type="TextureRect" parent="Main Menu/Buttons" unique_id=1146667963]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 764.0
+offset_top = 337.0
+offset_right = -122.0
+offset_bottom = -66.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ictww")
 
-[node name="Settings" type="Button" parent="Main Menu/Buttons" unique_id=446335812]
+[node name="New Game" type="TextureButton" parent="Main Menu/Buttons" unique_id=899672900]
 layout_mode = 0
-offset_left = 91.205
-offset_top = 418.0
-offset_right = 261.205
-offset_bottom = 468.0
-rotation = -0.03679195
-icon = ExtResource("4_dclss")
-flat = true
-expand_icon = true
+offset_left = 790.0
+offset_top = 374.0
+offset_right = 1022.0
+offset_bottom = 423.0
+texture_normal = ExtResource("2_14wem")
+texture_pressed = ExtResource("5_1o50l")
+texture_hover = ExtResource("5_1o50l")
 
-[node name="About Us" type="Button" parent="Main Menu/Buttons" unique_id=2077448952]
+[node name="Settings" type="TextureButton" parent="Main Menu/Buttons" unique_id=219807164]
 layout_mode = 0
-offset_left = 91.205
-offset_top = 470.0
-offset_right = 240.20503
-offset_bottom = 518.0
-rotation = 0.024527084
-icon = ExtResource("5_hmxu4")
-flat = true
-expand_icon = true
+offset_left = 790.0
+offset_top = 423.0
+offset_right = 1021.0
+offset_bottom = 480.0
+texture_normal = ExtResource("4_dclss")
+texture_pressed = ExtResource("7_os2d6")
+texture_hover = ExtResource("7_os2d6")
 
-[node name="Quit" type="Button" parent="Main Menu/Buttons" unique_id=2031676534]
+[node name="About Us" type="TextureButton" parent="Main Menu/Buttons" unique_id=736518455]
 layout_mode = 0
-offset_left = 91.205
-offset_top = 533.99994
-offset_right = 240.205
-offset_bottom = 581.99994
-rotation = -0.10609939
-icon = ExtResource("6_ictww")
-flat = true
-expand_icon = true
+offset_left = 790.0
+offset_top = 473.0
+offset_right = 1021.0
+offset_bottom = 530.0
+texture_normal = ExtResource("7_cht4j")
+texture_pressed = ExtResource("9_os2d6")
+texture_hover = ExtResource("9_os2d6")
+
+[node name="Quit" type="TextureButton" parent="Main Menu/Buttons" unique_id=1688574072]
+layout_mode = 0
+offset_left = 790.0
+offset_top = 520.0
+offset_right = 1018.0
+offset_bottom = 577.0
+texture_normal = ExtResource("6_ictww")
+texture_pressed = ExtResource("11_v0h3m")
+texture_hover = ExtResource("11_v0h3m")
 
 [node name="TextureRect" type="TextureRect" parent="Main Menu" unique_id=367183986]
 layout_mode = 0
-offset_left = 38.0
-offset_top = 19.0
-offset_right = 538.0
-offset_bottom = 269.0
+offset_left = 708.0
+offset_top = 51.0
+offset_right = 1104.0
+offset_bottom = 279.0
 texture = ExtResource("7_1o50l")
 
 [node name="SettingsPanel" parent="Main Menu" unique_id=1962049893 instance=ExtResource("8_dclss")]
+visible = false
 layout_mode = 1
 
 [node name="Music" type="AudioStreamPlayer2D" parent="Main Menu" unique_id=1850022703]

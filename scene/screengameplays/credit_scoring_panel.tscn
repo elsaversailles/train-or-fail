@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cshetdib31i03" path="res://images/TutorialsIMG/CREDITSCORING/csgrabber.png" id="3_122qi"]
 [ext_resource type="Texture2D" uid="uid://b2li6b1n0vt2x" path="res://images/TutorialsIMG/CREDITSCORING/csbutton.png" id="4_5aogp"]
 [ext_resource type="Texture2D" uid="uid://bn283ixmr4qtu" path="res://images/TutorialsIMG/CREDITSCORING/csslider.png" id="4_122qi"]
-[ext_resource type="Texture2D" uid="uid://dowrpijsmf37r" path="res://images/TutorialsIMG/CREDITSCORING/csholder.png" id="5_4s6tp"]
+[ext_resource type="Texture2D" uid="uid://ciwjwtcjc14uu" path="res://images/TutorialsIMG/CREDITSCORING/csholder.png" id="5_4s6tp"]
 [ext_resource type="FontFile" uid="uid://bmy32g0c66s4e" path="res://theme/DarumadropOne-Regular.ttf" id="5_5aogp"]
 [ext_resource type="Texture2D" uid="uid://btl8nacck2i5j" path="res://images/TutorialsIMG/CREDITSCORING/csflagbutton_red.png" id="8_5aogp"]
 
@@ -190,6 +190,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 356.0
+offset_top = 40.0
 offset_right = -9.000488
 offset_bottom = -6.0
 grow_horizontal = 2
@@ -252,7 +253,9 @@ anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -988.715
+offset_top = 2.0
 offset_right = -940.7149
+offset_bottom = -6.0
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_x3kqo")
