@@ -19,6 +19,9 @@ var zoom_scale: float = 3
 var custom_cursor_img = preload("res://assets/cursor/cursor_magnifyingglass.svg")
 var mistakes = 0
 
+# --- NOTE TRACKING ---
+var is_note_open: bool = false
+
 # -----------------------------
 # NODE REFERENCES
 # -----------------------------
@@ -39,6 +42,14 @@ var mistakes = 0
 # AI Risk Factor Label
 @onready var ai_risk_value_label = $AIRiskValueLabel # Adjust path if placed under a container
 
+# --- DATE LABEL REFERENCE ---
+@onready var date_label: Label = $DateLabel
+
+# --- NOTE NODE REFERENCES ---
+@onready var note_icon_button = $NoteIconButton
+@onready var note_popup_panel = $NotePopupPanel
+@onready var note_text_label = $NotePopupPanel/NoteTextLabel
+
 # -----------------------------
 # READY
 # -----------------------------
@@ -56,9 +67,74 @@ func _ready():
 
 	# --- ID ZOOM FEATURE SETUP ---
 	original_id_pos = id_panel.position
+	id_panel.z_index = 0
 	id_panel.gui_input.connect(_on_id_panel_clicked)
 
+	# --- NOTE SIGNALS & SETUP ---
+	note_icon_button.pressed.connect(_on_toggle_note)
+	note_popup_panel.gui_input.connect(_on_note_popup_input)
+	note_popup_panel.visible = false
+	note_icon_button.z_index = 1 # Sits below zoomed ID (z_index 6)
+	note_popup_panel.z_index = 10 # Popped-out note sits above everything
+
+	update_date_label()
 	load_applicant(current_index)
+
+# -----------------------------
+# DATE DISPLAY LOGIC
+# -----------------------------
+func update_date_label():
+	if not date_label:
+		return
+		
+	var current_day = int(SaveManager.current_save_data.get("current_day", 4))
+	match current_day:
+		4:
+			date_label.text = "12/7/26"
+		5:
+			date_label.text = "12/8/26"
+		6:
+			date_label.text = "12/9/26"
+		_:
+			date_label.text = "12/7/26"
+
+# -----------------------------
+# NOTE POPUP LOGIC
+# -----------------------------
+func _on_toggle_note():
+	if is_note_open:
+		close_note()
+	else:
+		open_note()
+
+func _on_note_popup_input(event: InputEvent):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		close_note()
+
+func open_note():
+	is_note_open = true
+	note_popup_panel.move_to_front()
+	note_popup_panel.pivot_offset = note_popup_panel.size / 2.0
+	note_popup_panel.scale = Vector2(0.8, 0.8)
+	note_popup_panel.modulate.a = 0.0
+	note_popup_panel.visible = true
+	
+	var tween = create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tween.parallel().tween_property(note_popup_panel, "scale", Vector2.ONE, 0.2)
+	tween.parallel().tween_property(note_popup_panel, "modulate:a", 1.0, 0.15)
+
+func close_note():
+	is_note_open = false
+	note_popup_panel.pivot_offset = note_popup_panel.size / 2.0
+	
+	var tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+	tween.parallel().tween_property(note_popup_panel, "scale", Vector2(0.8, 0.8), 0.15)
+	tween.parallel().tween_property(note_popup_panel, "modulate:a", 0.0, 0.15)
+	tween.tween_callback(func(): note_popup_panel.visible = false)
+
+func close_note_immediately():
+	is_note_open = false
+	note_popup_panel.visible = false
 
 # -----------------------------
 # ID ZOOM LOGIC
@@ -75,6 +151,7 @@ func toggle_id_zoom():
 	
 	if is_id_zoomed:
 		Input.set_custom_mouse_cursor(null, Input.CURSOR_ARROW)
+		id_panel.z_index = 6 # Forces zoomed ID above NoteIconButton and other UI buttons
 		id_panel.move_to_front()
 		zoom_icon.visible = false
 		var target_pos = Vector2(200, 70) 
@@ -86,6 +163,7 @@ func toggle_id_zoom():
 		zoom_icon.visible = true
 		tween.tween_property(id_panel, "position", original_id_pos, 0.3)
 		tween.tween_property(id_panel, "scale", Vector2(1, 1), 0.3)
+		tween.chain().tween_callback(func(): id_panel.z_index = 0)
 
 # -----------------------------
 # CONTINUOUS ROTATION LOGIC
@@ -112,6 +190,11 @@ func load_applicant(index):
 	id_image.texture = data["id_image"]
 	ai_risk_value_label.text = str(data.get("ai_risk_factor", "N/A"))
 	
+	# Load KYC note (checks "kyc_note" first for shared characters like Mark Krazy, then "note")
+	var applicant_note = data.get("kyc_note", data.get("note", "No additional notes for this customer."))
+	note_text_label.text = str(applicant_note)
+	close_note_immediately()
+	
 	spawn_3d_model(data["model_scene"])
 	
 	model_container.rotation_degrees.y = 90
@@ -120,8 +203,10 @@ func load_applicant(index):
 	
 	if is_id_zoomed:
 		is_id_zoomed = false
+		id_panel.z_index = 0
 		id_panel.scale = Vector2(1, 1)
 		id_panel.position = original_id_pos
+		zoom_icon.visible = true
 
 func _on_legit_pressed():
 	submit_answer("legit")
@@ -146,6 +231,8 @@ func submit_answer(answer):
 		
 		# 2. If they hit 3 strikes, trigger game over
 		if mistakes >= 3:
+			close_note_immediately()
+			note_icon_button.visible = false
 			legit_button.visible = false
 			sus_button.visible = false
 			applicant_label.text = "TERMINATED"
@@ -190,6 +277,8 @@ func finish_game():
 		if player_answers[i] == applicants[i]["kyc_correct"]:
 			final_score += 1
 
+	close_note_immediately()
+	note_icon_button.visible = false
 	applicant_label.text = "All customers verified"
 	legit_button.visible = false
 	sus_button.visible = false

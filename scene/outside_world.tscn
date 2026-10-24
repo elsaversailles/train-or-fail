@@ -83,7 +83,7 @@ script = ExtResource("1_yeb0w")
 [node name="WorldEnvironment" parent="." unique_id=1060883038 instance=ExtResource("1_74bty")]
 
 [node name="Player" parent="." unique_id=2061402672 groups=["player"] instance=ExtResource("3_ma6ok")]
-transform = Transform3D(0.018174732, 0, -0.99983484, 0, 1, 0, 0.99983484, 0, 0.018174732, -210.72572, 0.54213715, 139.29137)
+transform = Transform3D(0.018174676, 0, -0.99983484, 0, 1, 0, 0.99983484, 0, 0.018174676, -210.72572, 0.54213715, 139.29137)
 collision_layer = 3
 speed = 30.0
 

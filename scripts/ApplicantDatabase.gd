@@ -16,8 +16,8 @@ var fraud_applicants: Array = [
 		"time": "9:15 AM",
 		"price": "₱240",
 		"fraud_correct": "legit",
-		"ai_risk_factor": "8%",
-		"note": "Applicant is a regular morning shopper at this branch two blocks from her home. Routine household purchase."
+		"ai_risk_factor": "6%",
+		"note": "Routine detergent purchase at a familiar convenience store; normal amount and daytime activity."
 	},
 	{
 		"id": "fd_a2",
@@ -28,8 +28,8 @@ var fraud_applicants: Array = [
 		"time": "3:20 PM",
 		"price": "₱1,850",
 		"fraud_correct": "legit",
-		"ai_risk_factor": "14%",
-		"note": "Card swiped in-person with valid PIN verification. Purchase matches local hardware store afternoon sale."
+		"ai_risk_factor": "12%",
+		"note": "Daytime electric-fan purchase from a known hardware store matches ordinary household spending."
 	},
 	{
 		"id": "fd_a3",
@@ -40,8 +40,8 @@ var fraud_applicants: Array = [
 		"time": "2:45 AM",
 		"price": "₱15,000",
 		"fraud_correct": "sus",
-		"ai_risk_factor": "89%",
-		"note": "Terminal ID is unregistered. Bulk purchase of non-refundable digital gaming codes made in the middle of the night."
+		"ai_risk_factor": "95%",
+		"note": "Bulk gaming-load purchase at 2:45 AM with an obscured camera strongly indicates account misuse."
 	},
 	{
 		"id": "fd_a4",
@@ -52,8 +52,8 @@ var fraud_applicants: Array = [
 		"time": "1:10 PM",
 		"price": "₱650",
 		"fraud_correct": "legit",
-		"ai_risk_factor": "6%",
-		"note": "Customer presented a valid doctor's prescription matching the cardholder's name at the pharmacy window."
+		"ai_risk_factor": "10%",
+		"note": "Low-value prescription purchase at a normal pharmacy and time; no meaningful anomaly."
 	},
 	{
 		"id": "fd_a5",
@@ -65,7 +65,7 @@ var fraud_applicants: Array = [
 		"price": "₱4,200",
 		"fraud_correct": "legit",
 		"ai_risk_factor": "18%",
-		"note": "After-work purchase at a local mall near her office. Matches her typical payday spending history."
+		"note": "Work-shoe purchase at a known department store during normal hours is consistent with prior behavior."
 	},
 	{
 		"id": "fd_a6",
@@ -76,8 +76,8 @@ var fraud_applicants: Array = [
 		"time": "3:12 AM",
 		"price": "₱109,000",
 		"fraud_correct": "sus",
-		"ai_risk_factor": "94%",
-		"note": "Sudden six-figure swipe at 3:12 AM for five high-resale graphics cards using an isolated alley terminal."
+		"ai_risk_factor": "97%",
+		"note": "Five high-end GPUs were bought through an unregistered terminal in a dark alley at 3:12 AM."
 	},
 	{
 		"id": "fd_a7",
@@ -88,8 +88,8 @@ var fraud_applicants: Array = [
 		"time": "8:30 AM",
 		"price": "₱210",
 		"fraud_correct": "legit",
-		"ai_risk_factor": "5%",
-		"note": "Daily morning commute coffee stop. Paid via verified contactless tap."
+		"ai_risk_factor": "4%",
+		"note": "A ₱210 morning coffee is a routine, low-value purchase with no suspicious indicators."
 	},
 	{
 		"id": "fd_a8",
@@ -100,8 +100,8 @@ var fraud_applicants: Array = [
 		"time": "2:22 AM",
 		"price": "₱25,000",
 		"fraud_correct": "sus",
-		"ai_risk_factor": "91%",
-		"note": "No travel notice on file. Card is suddenly routing through a Moscow VPN at 2:22 AM to drain ₱25,000 in prepaid credits."
+		"ai_risk_factor": "96%",
+		"note": "₱25,000 in gaming credits was purchased through a Moscow VPN at 2:22 AM."
 	},
 	{
 		"id": "fd_a9",
@@ -112,8 +112,8 @@ var fraud_applicants: Array = [
 		"time": "5:30 PM",
 		"price": "₱3,200",
 		"fraud_correct": "legit",
-		"ai_risk_factor": "19%",
-		"note": "Cardholder called customer support in advance to pre-authorize this purchase and confirmed he is connected to his remote work VPN."
+		"ai_risk_factor": "14%",
+		"note": "Pre-authorized afternoon transaction during normal hours; consistent with ordinary spending."
 	},
 	{
 		"id": "fd_a10",
@@ -124,8 +124,8 @@ var fraud_applicants: Array = [
 		"time": "11:55 PM",
 		"price": "₱900,000",
 		"fraud_correct": "sus",
-		"ai_risk_factor": "97%",
-		"note": "Massive ₱900,000 transaction just before midnight for 10 smartphones delivered to an abandoned warehouse dock."
+		"ai_risk_factor": "99%",
+		"note": "Bulk smartphone purchase at an abandoned warehouse near midnight strongly indicates fraud."
 	},
 	{
 		"id": "fd_a11",
@@ -137,7 +137,7 @@ var fraud_applicants: Array = [
 		"price": "₱1,200",
 		"fraud_correct": "legit",
 		"ai_risk_factor": "9%",
-		"note": "Dinner delivery ordered to the cardholder's registered home address. App biometric check passed."
+		"note": "Family-meal delivery during the evening is a normal household purchase."
 	},
 	{
 		"id": "fd_a12",
@@ -148,8 +148,8 @@ var fraud_applicants: Array = [
 		"time": "4:00 AM",
 		"price": "₱500,000",
 		"fraud_correct": "sus",
-		"ai_risk_factor": "95%",
-		"note": "Security camera at the terminal was deliberately covered with black tape during a ₱500,000 luxury watch purchase at 4:00 AM."
+		"ai_risk_factor": "98%",
+		"note": "₱500,000 luxury-watch purchase at 4:00 AM with the camera deliberately obscured strongly indicates fraud."
 	}
 ]
 
@@ -163,7 +163,8 @@ var kyc_applicants: Array = [
 		"model_scene": preload("res://models3d/characters/F/maria_santos.tscn"),
 		"id_image": preload("res://images/applicants info/KYC/a1/a1_id.png"),
 		"kyc_correct": "legit",
-		"ai_risk_factor": "10%"
+		"ai_risk_factor": "10%",
+		"note": "Government ID hologram, photo, and personal details match national registry records with no discrepancies."
 	},
 	{
 		"id": "kyc_a2",
@@ -171,7 +172,8 @@ var kyc_applicants: Array = [
 		"model_scene": preload("res://models3d/characters/M/juan_perez.tscn"),
 		"id_image": preload("res://images/applicants info/KYC/a2/a2_id.png"),
 		"kyc_correct": "legit",
-		"ai_risk_factor": "7%"
+		"ai_risk_factor": "7%",
+		"note": "ID serial number and physical appearance are verified and valid. No suspicious alterations detected."
 	},
 	{
 		"id": "kyc_a3",
@@ -179,7 +181,8 @@ var kyc_applicants: Array = [
 		"model_scene": preload("res://models3d/characters/M/carlo_herrer.tscn"),
 		"id_image": preload("res://images/applicants info/KYC/a3/a3_id.png"),
 		"kyc_correct": "sus",
-		"ai_risk_factor": "88%"
+		"ai_risk_factor": "88%",
+		"note": "Facial scan matches flagged fraud suspect 'Carlo Herrer' attempting to register under the alias 'Carlo Mendoza'."
 	},
 	{
 		"id": "kyc_a4",
@@ -187,7 +190,8 @@ var kyc_applicants: Array = [
 		"model_scene": preload("res://models3d/characters/F/teresa_lim.tscn"),
 		"id_image": preload("res://images/applicants info/KYC/a4/a4_id.png"),
 		"kyc_correct": "legit",
-		"ai_risk_factor": "12%"
+		"ai_risk_factor": "12%",
+		"note": "Valid identification card presented. Biometric profile and signature match existing bank records."
 	},
 	{
 		"id": "kyc_a5",
@@ -195,7 +199,8 @@ var kyc_applicants: Array = [
 		"model_scene": preload("res://models3d/characters/M/miguel_reyes.tscn"),
 		"id_image": preload("res://images/applicants info/KYC/a5/a5_id.png"),
 		"kyc_correct": "legit",
-		"ai_risk_factor": "15%"
+		"ai_risk_factor": "15%",
+		"note": "Address and date of birth verified against municipal database. ID card is active and authentic."
 	},
 	{
 		"id": "kyc_a6",
@@ -203,7 +208,8 @@ var kyc_applicants: Array = [
 		"model_scene": preload("res://models3d/characters/F/anna_reyes.tscn"),
 		"id_image": preload("res://images/applicants info/KYC/a6/a6_id.png"),
 		"kyc_correct": "sus",
-		"ai_risk_factor": "85%"
+		"ai_risk_factor": "85%",
+		"note": "ID card shows signs of digital tampering around the photo border and an invalid registry number."
 	},
 	{
 		"id": "kyc_a7",
@@ -211,7 +217,8 @@ var kyc_applicants: Array = [
 		"model_scene": preload("res://models3d/characters/F/rosa_dela_torre.tscn"),
 		"id_image": preload("res://images/applicants info/KYC/a7/a7_id.png"),
 		"kyc_correct": "legit",
-		"ai_risk_factor": "9%"
+		"ai_risk_factor": "9%",
+		"note": "Long-time local resident. ID details and physical appearance match all verification checks."
 	},
 	{
 		"id": "kyc_a8",
@@ -219,7 +226,8 @@ var kyc_applicants: Array = [
 		"model_scene": preload("res://models3d/characters/M/apolinaryo_limaga.tscn"),
 		"id_image": preload("res://images/applicants info/KYC/a8/a8_id.png"),
 		"kyc_correct": "sus",
-		"ai_risk_factor": "92%"
+		"ai_risk_factor": "92%",
+		"note": "Name spelling and ID details conflict with official records. Suspected falsified identification document."
 	},
 	{
 		"id": "kyc_a9",
@@ -227,7 +235,8 @@ var kyc_applicants: Array = [
 		"model_scene": preload("res://models3d/characters/F/carmen_bautista.tscn"),
 		"id_image": preload("res://images/applicants info/KYC/a9/a9_id.png"),
 		"kyc_correct": "legit",
-		"ai_risk_factor": "11%"
+		"ai_risk_factor": "11%",
+		"note": "Clean verification check. Presented ID is current and matches the customer standing at the window."
 	},
 	{
 		"id": "kyc_a10",
@@ -235,7 +244,8 @@ var kyc_applicants: Array = [
 		"model_scene": preload("res://models3d/characters/M/alex_rivera.tscn"),
 		"id_image": preload("res://images/applicants info/KYC/a10/a10_id.png"),
 		"kyc_correct": "legit",
-		"ai_risk_factor": "6%"
+		"ai_risk_factor": "6%",
+		"note": "All KYC identity fields verified. Photo, height, and signature are consistent with government records."
 	},
 	{
 		"id": "kyc_a11",
@@ -243,7 +253,8 @@ var kyc_applicants: Array = [
 		"model_scene": preload("res://models3d/characters/M/mark_lim.tscn"),
 		"id_image": preload("res://images/applicants info/KYC/a11/a11_id.png"),
 		"kyc_correct": "sus",
-		"ai_risk_factor": "86%"
+		"ai_risk_factor": "86%",
+		"note": "ID number belongs to a different citizen in the national database. High probability of identity theft."
 	},
 	{
 		"id": "kyc_a12",
@@ -251,7 +262,8 @@ var kyc_applicants: Array = [
 		"model_scene": preload("res://models3d/characters/M/jose_gonzales.tscn"),
 		"id_image": preload("res://images/applicants info/KYC/a12/a12_id.png"),
 		"kyc_correct": "legit",
-		"ai_risk_factor": "14%"
+		"ai_risk_factor": "14%",
+		"note": "Identity confirmed through secondary government database. No anomalies on the presented ID card."
 	},
 	{
 		"id": "kyc_a13",
@@ -259,7 +271,8 @@ var kyc_applicants: Array = [
 		"model_scene": preload("res://models3d/characters/M/ricardo_villanueva.tscn"),
 		"id_image": preload("res://images/applicants info/KYC/a13/a13_id.png"),
 		"kyc_correct": "sus",
-		"ai_risk_factor": "89%"
+		"ai_risk_factor": "89%",
+		"note": "ID card is expired and features mismatched font alignment on the printed date of birth."
 	},
 	{
 		"id": "kyc_a14",
@@ -267,7 +280,8 @@ var kyc_applicants: Array = [
 		"model_scene": preload("res://models3d/characters/M/antonio_garcia.tscn"),
 		"id_image": preload("res://images/applicants info/KYC/a14/a14_id.png"),
 		"kyc_correct": "sus",
-		"ai_risk_factor": "93%"
+		"ai_risk_factor": "93%",
+		"note": "Counterfeit ID template detected. Security watermark is missing and physical features do not match."
 	}
 ]
 
@@ -435,8 +449,8 @@ var special_applicants: Array = [
 		"time": "11:45 AM",
 		"price": "₱702,000.00",
 		"fraud_correct": "sus",
-		"ai_risk_factor": "92%",
-		"note": "Invoice lists a single sack of baking flour, but the terminal charged ₱702,000.00. Flagged for potential money laundering."
+		"ai_risk_factor": "88%",
+		"note": "Large overseas flour order is unusual, but Elena's bakery and seasonal-stock note support a legitimate business purchase."
 	},
 	{
 		"id": "mark_krazy",
@@ -451,8 +465,9 @@ var special_applicants: Array = [
 		"fraud_correct": "sus",
 		"id_image": preload("res://images/applicants info/special characters/MarkKrazy/Mark_Krazy_ID.png"),
 		"kyc_correct": "sus",
-		"ai_risk_factor": "96%",
-		"note": "Four failed PIN attempts recorded before this 2:45 AM withdrawal. Subject appeared agitated on ATM camera."
+		"ai_risk_factor": "87%",
+		"note": "Late-night ATM withdrawal is flagged by Mark's roaming location and poor camera view; identity is confirmed, so it is legitimate.",
+		"kyc_note": "ID card shows heavy wear and an unverified residential address, though the customer insists it is his only valid ID."
 	},
 	{
 		"id": "nurse_clara",

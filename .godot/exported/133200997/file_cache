@@ -8,8 +8,8 @@ res://scene/screen.tscn::57a551bbd0df624a5fd71322eeaec653::1788163694::res://.go
 res://scene/socket.tscn::0c8e584dd0ba4b53c30a19a65e06897e::1790734109::res://.godot/exported/133200997/export-5e751226423e6cb1c9a025be73c58918-socket.scn
 res://scene/pause_panel.tscn::2cf2ae01db5bff114c03591c28f234c4::1792063578::res://.godot/exported/133200997/export-47ed82ef66f9c21fa0c0ad9d602e6ba1-pause_panel.scn
 res://scene/result_panel.tscn::073822c02644e601e6a5c9648dee9fac::1790734108::res://.godot/exported/133200997/export-c3a71c06d918d329c633337297149307-result_panel.scn
-res://scene/screengameplays/kyc_panel.tscn::53775d1f3de13d708cfcec3c596565a3::1790734108::res://.godot/exported/133200997/export-4dcb898784e90b437aea24f06b3699dd-kyc_panel.scn
-res://scene/screengameplays/left_sliding_panel.tscn::8e4e6fd7140b2c7be68950c6e4beec0c::1792676023::res://.godot/exported/133200997/export-2d7c126d84feee83ab6d123d1d2b496f-left_sliding_panel.scn
+res://scene/screengameplays/kyc_panel.tscn::2045ce84e98617689e9b9c727f5ac834::1792806053::res://.godot/exported/133200997/export-4dcb898784e90b437aea24f06b3699dd-kyc_panel.scn
+res://scene/screengameplays/left_sliding_panel.tscn::89c2cf65d721384f9277f9fff8bc72bb::1792805089::res://.godot/exported/133200997/export-2d7c126d84feee83ab6d123d1d2b496f-left_sliding_panel.scn
 res://scene/screengameplays/credit_scoring_panel.tscn::42728c82aefe046508c3c94556c3912b::1792675834::res://.godot/exported/133200997/export-b3fed4ebfb1dd5121d00c7f5ef3d0ff9-credit_scoring_panel.scn
 res://scene/model_container.tscn::a7453337fa2061a5a1b0c9f12ebd2e7c::1790734107::res://.godot/exported/133200997/export-74c6beca9fd8996a57f4399b25a85a65-model_container.scn
 res://scene/settings_panel.tscn::f87d36cccd59022fa905db32d9664f2e::1790734108::res://.godot/exported/133200997/export-35437418e4492084f95e61ca25cb1966-settings_panel.scn
@@ -23,7 +23,7 @@ res://scene/elevator.tscn::be6b4f737b80f3a87b0b9a155404f0e1::1790734097::res://.
 res://scene/lights.tscn::89a3325014e2ecbfb9ae2c0fdb838124::1790734098::res://.godot/exported/133200997/export-f8575ca403d4e17d687ec5c74a837fbb-lights.scn
 res://scene/men_and_women.tscn::f9e6b6828a42042f4e167d0d6c82b505::1790734107::res://.godot/exported/133200997/export-ec2061d5e87c8c9dbadb30e29e1dac9c-men_and_women.scn
 res://scene/npc_dialogue_box.tscn::c95b0d38305afd8e4f64efe668f96543::1790734108::res://.godot/exported/133200997/export-ec7020149593643d344fcd29d83dce7e-npc_dialogue_box.scn
-res://scene/office_lobby.tscn::d3bf6412ddc89afa1984d250e986dd83::1792062998::res://.godot/exported/133200997/export-ad03d04d05cbda464c5851556d45619c-office_lobby.scn
+res://scene/office_lobby.tscn::d3bf6412ddc89afa1984d250e986dd83::1792806224::res://.godot/exported/133200997/export-ad03d04d05cbda464c5851556d45619c-office_lobby.scn
 res://scene/outside_world.tscn::7f7637df580c2e3743ed37e249746658::1792677822::res://.godot/exported/133200997/export-02707674f5a7f43fe06fff74cfe6a8b0-outside_world.scn
 res://scene/world_environment.tscn::9320cfeabc0f8f9c23fa7c7e8f1e3c1a::1791906419::res://.godot/exported/133200997/export-2bcaf7b1dd5942c8bece5eeddad0ebb4-world_environment.scn
 res://scene/apartment.tscn::24aac1acce60f74837464af7b6c34e81::1790734097::res://.godot/exported/133200997/export-b39493c067bfc7d272b6254a22f7129c-apartment.scn

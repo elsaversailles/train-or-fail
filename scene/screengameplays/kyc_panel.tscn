@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://dgqp1lf8jb1wv"]
 
-[ext_resource type="Script" uid="uid://5jdutigoh210" path="res://scripts/screengameplays/Kyc_Panel.gd" id="1_s16ii"]
+[ext_resource type="Script" uid="uid://5jdutigoh210" path="res://scripts/screengameplays/kyc_panel.gd" id="1_s16ii"]
 [ext_resource type="Texture2D" uid="uid://bd3b36dmmtqqv" path="res://assets/icons/magnifying-glass.png" id="2_8n3vj"]
 [ext_resource type="Texture2D" uid="uid://dshvjvdwc8xl1" path="res://images/TutorialsIMG/KCY/kycbutton.png" id="3_a5r6c"]
 [ext_resource type="Texture2D" uid="uid://coiaxcsw4e5fh" path="res://images/TutorialsIMG/KCY/kycleft.png" id="4_a5r6c"]
 [ext_resource type="Texture2D" uid="uid://dkkqgqns5f8ry" path="res://images/TutorialsIMG/KCY/kyccenter.png" id="5_ud6u0"]
 [ext_resource type="Texture2D" uid="uid://donkh3s6d7vgj" path="res://images/TutorialsIMG/KCY/kycright.png" id="6_yd263"]
+[ext_resource type="Texture2D" uid="uid://crd58bfg85dgd" path="res://images/note.png" id="7_yd263"]
+[ext_resource type="Texture2D" uid="uid://db3vx0b4fj87k" path="res://images/BlankNote.png" id="8_xjj1h"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_a5r6c"]
 font_size = 22
@@ -34,6 +36,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_s16ii")
+
+[node name="DateLabel" type="Label" parent="." unique_id=2130338909]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -245.0
+offset_top = -45.0
+offset_right = -44.0
+offset_bottom = -14.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 22
+horizontal_alignment = 2
 
 [node name="ApplicantLabel" type="Label" parent="." unique_id=1897025475]
 layout_mode = 0
@@ -91,6 +109,20 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 20
 label_settings = SubResource("LabelSettings_a5r6c")
+
+[node name="NoteIconButton" type="TextureButton" parent="." unique_id=1348939843]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 843.0
+offset_top = 290.0
+offset_right = -230.0
+offset_bottom = -262.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("7_yd263")
+stretch_mode = 0
 
 [node name="IDPanel" type="Panel" parent="." unique_id=936656019]
 layout_mode = 1
@@ -218,6 +250,37 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_yd263")
 theme_override_styles/hover = SubResource("StyleBoxTexture_yd263")
 action_mode = 0
 expand_icon = true
+
+[node name="NotePopupPanel" type="TextureRect" parent="." unique_id=1139733270]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_xjj1h")
+
+[node name="NoteTextLabel" type="Label" parent="NotePopupPanel" unique_id=657461370]
+custom_minimum_size = Vector2(0.1, 0.1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -126.0
+offset_top = -118.0
+offset_right = 140.0
+offset_bottom = 177.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Facial scan matches flagged fraud suspect 'Carlo Herrer' attempting to register under the alias 'Carlo Mendoza'."
+autowrap_mode = 3
 
 [connection signal="mouse_entered" from="IDPanel" to="." method="_on_id_panel_mouse_entered"]
 [connection signal="mouse_exited" from="IDPanel" to="." method="_on_id_panel_mouse_exited"]

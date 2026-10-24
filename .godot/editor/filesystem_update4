@@ -1,11 +1,8 @@
-res://scene/main_menu.tscn
+res://scene/screengameplays/kyc_panel.tscn
 res://shader/ocean.gdshader
 res://shader/boatwake.gdshader
-res://scene/slots_menu.tscn
-res://scripts/SlotsMenu.gd
+res://scripts/screengameplays/kyc_panel.gd
+res://scripts/ApplicantDatabase.gd
 res://scene/screengameplays/left_sliding_panel.tscn
-res://scene/screengameplays/credit_scoring_panel.tscn
-res://scripts/screengameplays/left_sliding_panel.gd
-res://scene/map.tscn
+res://scene/office_lobby.tscn
 res://scene/outside_world.tscn
-res://scripts/BuildingDecisionTrigger.gd
