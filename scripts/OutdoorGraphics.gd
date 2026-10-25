@@ -24,6 +24,16 @@ func set_enhanced_environment(new_environment: Environment) -> void:
 func _apply_graphics() -> void:
 	if _enhanced_environment == null or _stock_environment == null:
 		return
+	# The editor or a command-line override can still start in Compatibility.
+	# Enable Forward+ effects only in a renderer that can display them.
+	var forward_plus := RenderingServer.get_current_rendering_method() == "forward_plus"
+	_enhanced_environment.sdfgi_enabled = forward_plus
+	_enhanced_environment.volumetric_fog_enabled = forward_plus
+	_enhanced_environment.ssr_enabled = forward_plus
+	_enhanced_environment.fog_enabled = not forward_plus
+	_enhanced_environment.fog_density = 0.7
+	_stock_environment.fog_enabled = true
+	_stock_environment.fog_density = 0.7
 	var distance := SettingsManager.get_render_distance_meters()
 	for candidate in [_enhanced_environment, _stock_environment]:
 		match SettingsManager.render_distance:
@@ -36,6 +46,9 @@ func _apply_graphics() -> void:
 			_:
 				candidate.fog_depth_begin = 110.0
 				candidate.fog_depth_end = 220.0
+	if not forward_plus:
+		_enhanced_environment.fog_depth_begin = 40.0
+		_enhanced_environment.fog_depth_end = 170.0
 	environment = _enhanced_environment if SettingsManager.enhanced_lighting else _stock_environment
 	var sun := get_node_or_null("../Sun") as DirectionalLight3D
 	if sun:

@@ -2,14 +2,17 @@ extends Node
 
 # --- ENCRYPTION CONFIGURATION ---
 const SAVE_PASSWORD: String = "7654raymartangelonevincemattknitechtrainorfail4325"
+const RAIN_CHANCE := 0.5
+const WEATHER_RULE_VERSION := 2
 
 # The template for a brand new game mapped to the 9-day structure
 const DEFAULT_SAVE = {
 	"current_scene_path": "res://scene/FraudDetection/FraudDetection.tscn",
 	"stage_name": "Fraud L1 - Day 1",
 	"current_day": 1, 
-	"weather_day": 1,
+	"weather_day": 0,
 	"weather_rain": false,
+	"weather_rule_version": WEATHER_RULE_VERSION,
 	"level_scores": {}, 
 	"total_score": 0,
 	"special_decisions": {} # Tracks any special character verdicts: e.g. {"tita_elena": "sus", "character_2": "legit"}
@@ -24,6 +27,17 @@ func get_save_path(slot: int) -> String:
 
 func save_exists(slot: int) -> bool:
 	return FileAccess.file_exists(get_save_path(slot))
+
+func get_weather_rain_for_day(day: int) -> bool:
+	if current_save_data.is_empty():
+		current_save_data = DEFAULT_SAVE.duplicate(true)
+	if current_save_data.get("weather_rule_version", 0) != WEATHER_RULE_VERSION or current_save_data.get("weather_day", 0) != day:
+		current_save_data["weather_day"] = day
+		current_save_data["weather_rain"] = randf() < RAIN_CHANCE
+		current_save_data["weather_rule_version"] = WEATHER_RULE_VERSION
+		if save_exists(current_slot):
+			save_game(current_slot, current_save_data)
+	return bool(current_save_data.get("weather_rain", false))
 
 # --- ENCRYPTED LOAD GAME ---
 func load_game(slot: int) -> Dictionary:

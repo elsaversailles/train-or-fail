@@ -117,7 +117,8 @@ func _on_continue_clicked():
 	SaveManager.current_save_data["current_day"] = next_day
 	# Roll once at the end of the completed day, then persist the next day's weather.
 	SaveManager.current_save_data["weather_day"] = next_day
-	SaveManager.current_save_data["weather_rain"] = randf() < 0.5
+	SaveManager.current_save_data["weather_rain"] = randf() < SaveManager.RAIN_CHANCE
+	SaveManager.current_save_data["weather_rule_version"] = SaveManager.WEATHER_RULE_VERSION
 
 	SaveManager.current_save_data.erase("pending_score")
 	SaveManager.current_save_data.erase("pending_day")

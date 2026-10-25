@@ -69,7 +69,7 @@ func trigger_game_over():
 func _on_game_over_clicked(event: InputEvent):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		get_tree().paused = false 
-		get_tree().reload_current_scene()
+		SceneTransition.reload_scene()
 
 # ==========================================
 # END OF DAY LOGIC

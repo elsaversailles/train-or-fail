@@ -2,9 +2,18 @@ extends Node3D
 
 const RAIN_SHADER = preload("res://shader/rain_streak.gdshader")
 const BIRD_SHADER = preload("res://shader/bird.gdshader")
+const WET_ROAD_SHADER = preload("res://shader/wet_road.gdshader")
 const BIRD_COUNT := 10
 const BIRD_UPDATE_INTERVAL := 0.05
 const SKY_UPDATE_INTERVAL := 0.5
+const STREETLIGHT_POSITIONS := [
+	Vector3(6.0, 5.0, -5.0), Vector3(-17.0, 5.0, -5.0),
+	Vector3(-41.0, 5.0, -5.0), Vector3(-64.0, 5.0, -6.0),
+	Vector3(-74.0, 5.0, 5.0), Vector3(-95.0, 5.0, 38.0),
+	Vector3(-105.0, 5.0, 47.0), Vector3(-95.0, 5.0, 94.0),
+	Vector3(-105.0, 5.0, 103.0), Vector3(-181.0, 5.0, 110.0),
+	Vector3(-201.0, 5.0, 125.0), Vector3(-211.0, 5.0, 145.0),
+]
 
 @export var player_path: NodePath = ^"../Player"
 @export var environment_path: NodePath = ^"../WorldEnvironment"
@@ -22,6 +31,7 @@ var _flight_time := 0.0
 var _sky_time := 0.0
 var _sky_timer := 0.0
 var _rainy := false
+var _streetlights: Array[OmniLight3D] = []
 
 func _ready() -> void:
 	_player = get_node_or_null(player_path) as Node3D
@@ -40,22 +50,72 @@ func _ready() -> void:
 			_sky_material = environment.sky.sky_material as ShaderMaterial
 
 	var day: int = SaveManager.current_save_data.get("current_day", 1)
-	_rainy = SaveManager.current_save_data.get("weather_day", 1) == day and SaveManager.current_save_data.get("weather_rain", false)
+	_rainy = SaveManager.get_weather_rain_for_day(day)
+	_configure_wet_road()
+	_configure_lamp_glow()
+	_configure_post_process()
 	_configure_lighting(environment)
 	world_environment.set_enhanced_environment(environment)
+	_make_streetlights()
+	SettingsManager.graphics_settings_changed.connect(_update_streetlight_visibility)
 	_update_sky()
 	_make_birds()
 	if _rainy:
 		_make_rain()
 
+func _configure_wet_road() -> void:
+	var map := get_node_or_null("../Map")
+	if map == null:
+		return
+	var road := map.find_child("New Road", true, false) as MeshInstance3D
+	if road == null or road.mesh == null:
+		return
+	for surface in road.mesh.get_surface_count():
+		var original := road.get_active_material(surface) as BaseMaterial3D
+		if original == null or original.albedo_texture == null:
+			continue
+		var material := ShaderMaterial.new()
+		material.shader = WET_ROAD_SHADER
+		material.set_shader_parameter("road_texture", original.albedo_texture)
+		material.set_shader_parameter("albedo_tint", original.albedo_color)
+		material.set_shader_parameter("wetness", (0.42 if _rainy else 0.1) if surface == 6 else (0.72 if _rainy else 0.16))
+		road.set_surface_override_material(surface, material)
+
+func _configure_post_process() -> void:
+	var overlay := get_node_or_null("../CityPostProcess/ColorRect") as ColorRect
+	if overlay == null:
+		return
+	var material := overlay.material as ShaderMaterial
+	if material:
+		material.set_shader_parameter("rain_mix", 1.0 if _rainy else 0.0)
+
+func _configure_lamp_glow() -> void:
+	var map := get_node_or_null("../Map")
+	if map == null:
+		return
+	for mesh in map.find_children("*", "MeshInstance3D", true, false):
+		var instance := mesh as MeshInstance3D
+		if instance.mesh == null:
+			continue
+		for surface in instance.mesh.get_surface_count():
+			var original := instance.get_active_material(surface) as StandardMaterial3D
+			if original == null or original.resource_name != "Light Lamp":
+				continue
+			var material := original.duplicate() as StandardMaterial3D
+			material.emission_enabled = true
+			material.emission_energy_multiplier = 1.4
+			instance.set_surface_override_material(surface, material)
+
 func _configure_lighting(environment: Environment) -> void:
-	# Sky irradiance and a small contact-occlusion pass add depth without SDFGI's cost.
+	# Static city geometry contributes to SDFGI; the moving sun updates its bounce.
 	environment.ambient_light_source = Environment.AMBIENT_SOURCE_SKY
 	environment.ambient_light_energy = 0.75
 	environment.reflected_light_source = Environment.REFLECTION_SOURCE_BG
 	environment.ssao_enabled = true
 	environment.ssao_radius = 1.2
 	environment.ssao_intensity = 1.25
+	environment.volumetric_fog_density = 0.042 if _rainy else 0.028
+	environment.volumetric_fog_albedo = Color(0.67, 0.73, 0.8) if _rainy else Color(0.91, 0.72, 0.57)
 	if _rainy:
 		_sky_material.set_shader_parameter("zenith_color", Color(0.28, 0.36, 0.45))
 		_sky_material.set_shader_parameter("horizon_color", Color(0.57, 0.62, 0.68))
@@ -71,18 +131,45 @@ func _update_sky() -> void:
 	if _sun == null or _sky_material == null:
 		return
 	# +X is east, -X is west. The sun holds near sunset at the end of a long day.
-	var progress: float = minf(0.18 + _sky_time / sun_crossing_seconds, 0.92)
+	var progress: float = minf(0.80 + _sky_time / sun_crossing_seconds * 0.13, 0.93)
 	var angle: float = PI * progress
 	var to_sun := Vector3(cos(angle), sin(angle) * 0.86, -0.28).normalized()
 	_sun.basis = Basis.looking_at(-to_sun, Vector3.UP)
 	var warmth: float = pow(absf(progress * 2.0 - 1.0), 2.0)
 	var daylight: float = sin(angle)
-	_sun.light_color = Color(1.0, 0.96, 0.87).lerp(Color(1.0, 0.56, 0.34), warmth) if not _rainy else Color(0.74, 0.81, 0.88)
-	_sun.light_energy = (0.52 + daylight * 0.88) * (0.45 if _rainy else 1.0)
-	_environment.ambient_light_energy = (0.27 + daylight * 0.27) * (0.72 if _rainy else 1.0)
+	_sun.light_color = Color(1.0, 0.87, 0.72).lerp(Color(1.0, 0.48, 0.25), warmth) if not _rainy else Color(0.74, 0.81, 0.88)
+	_sun.light_energy = (0.58 + daylight * 0.5) * (0.55 if _rainy else 1.0)
+	_environment.ambient_light_energy = (0.29 + daylight * 0.18) * (0.8 if _rainy else 1.0)
 	_environment.fog_light_color = Color(0.58, 0.65, 0.73).lerp(Color(0.78, 0.58, 0.45), warmth * 0.6) if not _rainy else Color(0.47, 0.54, 0.62)
+	for light in _streetlights:
+		light.light_energy = 2.1 + (1.0 - daylight) * 1.1
+	_update_streetlight_visibility()
 	# Tiny uniform changes at 2 Hz avoid per-frame sky cubemap rebuilds.
 	_sky_material.set_shader_parameter("cloud_offset", Vector2(_sky_time * 0.0006, _sky_time * 0.00008))
+
+func _make_streetlights() -> void:
+	var group := Node3D.new()
+	group.name = "Streetlights"
+	add_child(group)
+	for position in STREETLIGHT_POSITIONS:
+		var light := OmniLight3D.new()
+		light.position = position
+		light.light_color = Color(1.0, 0.72, 0.43)
+		light.omni_range = 18.0
+		light.omni_attenuation = 1.35
+		light.light_volumetric_fog_energy = 0.0
+		light.light_bake_mode = Light3D.BAKE_STATIC
+		light.shadow_enabled = false
+		group.add_child(light)
+		_streetlights.append(light)
+
+func _update_streetlight_visibility() -> void:
+	for light in _streetlights:
+		light.visible = SettingsManager.enhanced_lighting
+	# Keep the warm sun in the low-quality preset, without expensive shadows.
+	if _sun:
+		_sun.visible = true
+		_sun.shadow_enabled = SettingsManager.enhanced_lighting
 
 func _make_rain() -> void:
 	_rain = GPUParticles3D.new()
@@ -133,6 +220,7 @@ func _make_birds() -> void:
 		_flock.set_instance_custom_data(i, Color(float(i) / float(BIRD_COUNT), 0.0, 0.0, 1.0))
 	var instance := MultiMeshInstance3D.new()
 	instance.name = "BirdFlock"
+	instance.gi_mode = GeometryInstance3D.GI_MODE_DISABLED
 	instance.multimesh = _flock
 	instance.custom_aabb = AABB(Vector3(-270.0, 8.0, -85.0), Vector3(300.0, 60.0, 370.0))
 	add_child(instance)

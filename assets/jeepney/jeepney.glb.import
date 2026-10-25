@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dqr7s4wcwt11s"
-path="res://.godot/imported/ jeepney.glb-5dbc044a54b66b5b5293b21720cb7542.scn"
+path="res://.godot/imported/jeepney.glb-e05ef267408e4401c50afc795f709d47.scn"
 
 [deps]
 
-source_file="res://assets/jeepney/ jeepney.glb"
-dest_files=["res://.godot/imported/ jeepney.glb-5dbc044a54b66b5b5293b21720cb7542.scn"]
+source_file="res://assets/jeepney/jeepney.glb"
+dest_files=["res://.godot/imported/jeepney.glb-e05ef267408e4401c50afc795f709d47.scn"]
 
 [params]
 

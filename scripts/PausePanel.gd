@@ -37,7 +37,7 @@ func _on_quit_pressed() -> void:
 	
 func _on_main_menu_button_pressed() -> void:
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://scene/main_menu.tscn")
+	SceneTransition.change_scene("res://scene/main_menu.tscn")
 
 func _on_desktop_button_pressed() -> void:
 	get_tree().quit()
@@ -47,7 +47,7 @@ func _on_cancel_button_pressed() -> void:
 
 func _on_reset_game_pressed() -> void:
 	get_tree().paused = false
-	get_tree().reload_current_scene()
+	SceneTransition.reload_scene()
 
 # --- Call the Tutorial Scene ---
 func _on_replay_tutorial_pressed() -> void:

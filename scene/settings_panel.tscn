@@ -130,7 +130,7 @@ offset_left = -102.0
 offset_top = 6.0
 offset_right = 104.0
 offset_bottom = 36.0
-tooltip_text = "Turn off enhanced sky lighting, contact shading, and sun shadows."
+tooltip_text = "Enable sunset lighting, SDFGI, volumetric fog, and sun shadows."
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
@@ -138,7 +138,7 @@ theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 14
-text = "Sky GI + Shadows"
+text = "GI + Fog + Shadows"
 
 [node name="RenderDistanceLabel" type="Label" parent="."]
 layout_mode = 0

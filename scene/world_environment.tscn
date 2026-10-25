@@ -27,17 +27,17 @@ seamless = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cgafg"]
 shader = ExtResource("1_atmosphere")
-shader_parameter/zenith_color = Color(0.25, 0.43, 0.72, 1)
-shader_parameter/horizon_color = Color(0.74, 0.79, 0.82, 1)
-shader_parameter/sunset_color = Color(0.94, 0.48, 0.25, 1)
+shader_parameter/zenith_color = Color(0.29, 0.38, 0.62, 1)
+shader_parameter/horizon_color = Color(0.94, 0.59, 0.39, 1)
+shader_parameter/sunset_color = Color(1, 0.43, 0.18, 1)
 shader_parameter/ground_color = Color(0.21, 0.22, 0.24, 1)
-shader_parameter/cloud_light_color = Color(0.95, 0.94, 0.91, 1)
+shader_parameter/cloud_light_color = Color(1, 0.74, 0.56, 1)
 shader_parameter/cloud_shadow_color = Color(0.51, 0.57, 0.64, 1)
 shader_parameter/cloud_texture = SubResource("NoiseTexture2D_0x1t3")
 shader_parameter/cloud_texture2 = SubResource("NoiseTexture2D_8njup")
 shader_parameter/cloud_threshold = 0.59
 shader_parameter/cloud_opacity = 0.58
-shader_parameter/haze_amount = 0.2
+shader_parameter/haze_amount = 0.27
 shader_parameter/sun_cloud_transmission = 0.65
 
 [sub_resource type="Sky" id="Sky_o72fm"]
@@ -51,11 +51,34 @@ sky = SubResource("Sky_o72fm")
 ambient_light_color = Color(1, 1, 1, 1)
 tonemap_mode = 3
 tonemap_white = 6.0
+sdfgi_enabled = false
+sdfgi_cascades = 4
+sdfgi_min_cell_size = 0.4
+sdfgi_energy = 0.7
+sdfgi_bounce_feedback = 0.35
+sdfgi_read_sky_light = true
+ssr_enabled = false
+ssr_max_steps = 32
+glow_enabled = true
+glow_intensity = 0.16
+glow_hdr_threshold = 1.25
+glow_hdr_scale = 1.6
+glow_levels/2 = 0.5
+glow_levels/3 = 0.22
+glow_levels/4 = 0.05
 fog_mode = 1
 fog_light_color = Color(0.64705884, 0.654902, 0.67058825, 1)
 fog_density = 1.0
 fog_depth_begin = 60.0
 fog_depth_end = 350.0
+volumetric_fog_enabled = false
+volumetric_fog_density = 0.028
+volumetric_fog_albedo = Color(0.91, 0.72, 0.57, 1)
+volumetric_fog_anisotropy = 0.58
+volumetric_fog_length = 110.0
+volumetric_fog_sky_affect = 0.25
+volumetric_fog_ambient_inject = 0.25
+volumetric_fog_gi_inject = 0.35
 
 [node name="WorldEnvironment" type="WorldEnvironment" unique_id=1060883038]
 environment = SubResource("Environment_jv1ba")

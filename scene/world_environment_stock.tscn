@@ -82,11 +82,11 @@ seamless = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cgafg"]
 shader = SubResource("Shader_6w6fk")
-shader_parameter/sky_top_color = Color(0.4466496, 0.6714776, 0.999999, 1)
-shader_parameter/sky_horizon_color = Color(0.9780403, 0.84421986, 0.69606423, 1)
+shader_parameter/sky_top_color = Color(0.36, 0.46, 0.69, 1)
+shader_parameter/sky_horizon_color = Color(0.94, 0.62, 0.43, 1)
 shader_parameter/inv_sky_curve = 3.999999841054287
 shader_parameter/ground_bottom_color = Color(0.2, 0.169, 0.133, 1)
-shader_parameter/ground_horizon_color = Color(0.646, 0.656, 0.67, 1)
+shader_parameter/ground_horizon_color = Color(0.79, 0.57, 0.45, 1)
 shader_parameter/inv_ground_curve = 1.0
 shader_parameter/sun_angle_max = 0.877
 shader_parameter/inv_sun_curve = 22.78
@@ -106,7 +106,7 @@ sky_material = SubResource("ShaderMaterial_cgafg")
 [sub_resource type="Environment" id="Environment_jv1ba"]
 background_mode = 2
 sky = SubResource("Sky_o72fm")
-ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_color = Color(1, 0.79, 0.66, 1)
 fog_mode = 1
 fog_light_color = Color(0.64705884, 0.654902, 0.67058825, 1)
 fog_density = 1.0
