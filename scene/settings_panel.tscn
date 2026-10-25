@@ -124,6 +124,40 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_dclss")
 max_value = 1.0
 value = 1.0
 
+[node name="LightingCheckbox" type="CheckBox" parent="."]
+layout_mode = 0
+offset_left = -102.0
+offset_top = 6.0
+offset_right = 104.0
+offset_bottom = 36.0
+tooltip_text = "Turn off enhanced sky lighting, contact shading, and sun shadows."
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "Sky GI + Shadows"
+
+[node name="RenderDistanceLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = -96.0
+offset_top = 51.0
+offset_right = 96.0
+offset_bottom = 71.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "Rendering Distance"
+
+[node name="RenderDistanceOption" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = -96.0
+offset_top = 76.0
+offset_right = 96.0
+offset_bottom = 110.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
 [node name="SensLabel" type="Label" parent="Sensitivity" unique_id=766720649]
 layout_mode = 0
 offset_top = -17.520004

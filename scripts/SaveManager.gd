@@ -8,6 +8,8 @@ const DEFAULT_SAVE = {
 	"current_scene_path": "res://scene/FraudDetection/FraudDetection.tscn",
 	"stage_name": "Fraud L1 - Day 1",
 	"current_day": 1, 
+	"weather_day": 1,
+	"weather_rain": false,
 	"level_scores": {}, 
 	"total_score": 0,
 	"special_decisions": {} # Tracks any special character verdicts: e.g. {"tita_elena": "sus", "character_2": "legit"}

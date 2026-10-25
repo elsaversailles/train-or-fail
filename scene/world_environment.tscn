@@ -1,62 +1,7 @@
 [gd_scene format=3 uid="uid://drkya446h6odi"]
 
-[sub_resource type="Shader" id="Shader_6w6fk"]
-code = "shader_type sky;
-render_mode use_debanding;
-
-uniform vec4 sky_top_color : source_color = vec4(0.385, 0.454, 0.55, 1.0);
-uniform vec4 sky_horizon_color : source_color = vec4(0.646, 0.656, 0.67, 1.0);
-uniform float inv_sky_curve : hint_range(1, 100) = 4.0;
-uniform vec4 ground_bottom_color : source_color = vec4(0.2, 0.169, 0.133, 1.0);
-uniform vec4 ground_horizon_color : source_color = vec4(0.646, 0.656, 0.67, 1.0);
-uniform float inv_ground_curve : hint_range(1, 100) = 30.0;
-uniform float sun_angle_max = 0.877;
-uniform float inv_sun_curve : hint_range(1, 100) = 22.78;
-uniform float exposure : hint_range(0, 128) = 1.0;
-
-uniform sampler2D cloud_texture : filter_linear_mipmap, repeat_enable;
-uniform sampler2D cloud_texture2 : filter_linear_mipmap, repeat_enable;
-uniform vec2 cloud_direction = vec2(0.1, 0.0);
-uniform vec2 cloud_direction2 = vec2(0.05, 0.05);
-uniform vec2 cloud_scale = vec2(0.05, 0.05);
-uniform float cloud_distance = 0.05;
-uniform float cloud_speed = 0.2;
-uniform float cloud_speed2 = 0.15;
-
-void sky() {
-	float v_angle = clamp(EYEDIR.y, -1.0, 1.0);
-	vec3 sky = mix(sky_top_color.rgb, sky_horizon_color.rgb, clamp(pow(1.0 - max(v_angle, 0.0), inv_sky_curve), 0.0, 1.0));
-
-	// Sunlight calculations
-	if (LIGHT0_ENABLED) {
-		float sun_angle = dot(LIGHT0_DIRECTION, EYEDIR);
-		float sun_size = cos(LIGHT0_SIZE);
-		if (sun_angle > sun_size) {
-			sky = LIGHT0_COLOR * LIGHT0_ENERGY;
-		} else if (sun_angle > sun_angle_max) {
-			float c2 = (sun_size - sun_angle) / (sun_size - sun_angle_max);
-			sky = mix(sky, LIGHT0_COLOR * LIGHT0_ENERGY, clamp(pow(1.0 - c2, inv_sun_curve), 0.0, 1.0));
-		}
-	}
-
-	// Cloud mapping protected against division by zero
-	if (EYEDIR.y > 0.01) {
-		vec2 sky_uv = EYEDIR.xz / max(EYEDIR.y, 0.02);
-		vec3 clouds = texture(cloud_texture, sky_uv * cloud_scale + TIME * cloud_direction * cloud_speed).rgb 
-		            - texture(cloud_texture2, sky_uv * cloud_scale + TIME * cloud_direction2 * cloud_speed2).rgb;
-		
-		clouds = clouds - smoothstep(0.0, EYEDIR.y, cloud_distance);
-		clouds = clamp(clouds, 0.0, 1.0);
-		
-		// Softly fade clouds out before reaching the horizon line
-		float horizon_fade = smoothstep(0.01, 0.15, EYEDIR.y);
-		sky += clouds * horizon_fade;
-	}
-
-	vec3 ground = mix(ground_bottom_color.rgb, ground_horizon_color.rgb, clamp(pow(1.0 + min(v_angle, 0.0), inv_ground_curve), 0.0, 1.0));
-
-	COLOR = mix(ground, sky, step(0.0, EYEDIR.y)) * exposure;
-}"
+[ext_resource type="Shader" path="res://shader/atmosphere_sky.gdshader" id="1_atmosphere"]
+[ext_resource type="Script" path="res://scripts/OutdoorGraphics.gd" id="2_outdoor_graphics"]
 
 [sub_resource type="Gradient" id="Gradient_8sbvx"]
 
@@ -81,32 +26,31 @@ color_ramp = SubResource("Gradient_cgafg")
 seamless = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cgafg"]
-shader = SubResource("Shader_6w6fk")
-shader_parameter/sky_top_color = Color(0.4466496, 0.6714776, 0.999999, 1)
-shader_parameter/sky_horizon_color = Color(0.9780403, 0.84421986, 0.69606423, 1)
-shader_parameter/inv_sky_curve = 3.999999841054287
-shader_parameter/ground_bottom_color = Color(0.2, 0.169, 0.133, 1)
-shader_parameter/ground_horizon_color = Color(0.646, 0.656, 0.67, 1)
-shader_parameter/inv_ground_curve = 1.0
-shader_parameter/sun_angle_max = 0.877
-shader_parameter/inv_sun_curve = 22.78
-shader_parameter/exposure = 1.0000000475
+shader = ExtResource("1_atmosphere")
+shader_parameter/zenith_color = Color(0.25, 0.43, 0.72, 1)
+shader_parameter/horizon_color = Color(0.74, 0.79, 0.82, 1)
+shader_parameter/sunset_color = Color(0.94, 0.48, 0.25, 1)
+shader_parameter/ground_color = Color(0.21, 0.22, 0.24, 1)
+shader_parameter/cloud_light_color = Color(0.95, 0.94, 0.91, 1)
+shader_parameter/cloud_shadow_color = Color(0.51, 0.57, 0.64, 1)
 shader_parameter/cloud_texture = SubResource("NoiseTexture2D_0x1t3")
 shader_parameter/cloud_texture2 = SubResource("NoiseTexture2D_8njup")
-shader_parameter/cloud_direction = Vector2(-1, 1)
-shader_parameter/cloud_direction2 = Vector2(1, -1)
-shader_parameter/cloud_scale = Vector2(0.05, 0.05)
-shader_parameter/cloud_distance = 0.035
-shader_parameter/cloud_speed = 0.001
-shader_parameter/cloud_speed2 = 0.001
+shader_parameter/cloud_threshold = 0.59
+shader_parameter/cloud_opacity = 0.58
+shader_parameter/haze_amount = 0.2
+shader_parameter/sun_cloud_transmission = 0.65
 
 [sub_resource type="Sky" id="Sky_o72fm"]
 sky_material = SubResource("ShaderMaterial_cgafg")
+radiance_size = 2
+process_mode = 2
 
 [sub_resource type="Environment" id="Environment_jv1ba"]
 background_mode = 2
 sky = SubResource("Sky_o72fm")
 ambient_light_color = Color(1, 1, 1, 1)
+tonemap_mode = 3
+tonemap_white = 6.0
 fog_mode = 1
 fog_light_color = Color(0.64705884, 0.654902, 0.67058825, 1)
 fog_density = 1.0
@@ -115,3 +59,4 @@ fog_depth_end = 350.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" unique_id=1060883038]
 environment = SubResource("Environment_jv1ba")
+script = ExtResource("2_outdoor_graphics")
