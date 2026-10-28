@@ -682,4 +682,5 @@ shape = SubResource("ConcavePolygonShape3D_2pvdr")
 shape = SubResource("ConcavePolygonShape3D_b40dm")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="." index="86" unique_id=306507293]
+visible = false
 occluder = ExtResource("2_0q3iv")

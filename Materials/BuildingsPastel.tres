@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bfmutc35a26lk"]
+
+[ext_resource type="Texture2D" uid="uid://cfetkeb4ohdyd" path="res://models3d/map/Map_Filler.png" id="1_i55pw"]
+
+[resource]
+resource_name = "BuildingsPastel"
+cull_mode = 2
+albedo_texture = ExtResource("1_i55pw")
+roughness = 0.5
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0

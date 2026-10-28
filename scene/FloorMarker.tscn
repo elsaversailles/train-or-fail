@@ -25,5 +25,5 @@ mesh = SubResource("CylinderMesh_jv1ba")
 [node name="GroundLight" type="OmniLight3D" parent="." unique_id=1715294328]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6244088, 0)
 light_color = Color(0.05490196, 0.2901961, 1, 1)
-light_energy = 1.2
+light_energy = 1.3
 omni_range = 2.5

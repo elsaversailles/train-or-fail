@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cr2qaf61f61os"]
+
+[resource]
+resource_name = "M_Gold_Cap"
+cull_mode = 2
+albedo_color = Color(0.9009602, 0.6685804, 0.22076447, 1)
+metallic = 0.6
+roughness = 0.35

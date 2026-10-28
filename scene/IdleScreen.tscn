@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://buabalu48ie7y" path="res://images/idle_1.png" id="2_tnduc"]
 [ext_resource type="Texture2D" uid="uid://da2o0xs3j1sv2" path="res://images/MainMenu/buttons/background.png" id="3_g6nlj"]
 
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_m45xy"]
 size = Vector3(2.984065, 0.098659664, 1.7002941)
 
@@ -23,7 +22,7 @@ flip_v = true
 texture = ExtResource("2_tnduc")
 
 [node name="SpriteInserted" type="Sprite3D" parent="." unique_id=1603613164]
-transform = Transform3D(0.27334362, -2.1175824e-22, 7.1054274e-14, 1.7763568e-15, -1.3180536e-08, 0.9965093, -7.4115383e-22, -0.30153573, -4.3558785e-08, -0.016826158, -0.09331287, 0.023575187)
+transform = Transform3D(0.24459438, 1.0587912e-22, 7.1054274e-14, 1.7763568e-15, -1.1121621e-08, 0.9965093, -6.352747e-22, -0.25443318, -4.3558785e-08, -0.01201356, -0.09331287, 0.023575187)
 flip_v = true
 texture = ExtResource("3_g6nlj")
 

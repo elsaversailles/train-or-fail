@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://wwrf8wo4dbr6"]
+
+[resource]
+resource_name = "M_BusShelter_Blue"
+cull_mode = 2
+albedo_color = Color(0.12924355, 0.3303819, 0.5538935, 1)
+roughness = 0.7

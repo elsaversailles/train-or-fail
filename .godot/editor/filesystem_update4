@@ -1,8 +1,8 @@
-res://scene/screengameplays/kyc_panel.tscn
+res://scene/outside_world.tscn
 res://shader/ocean.gdshader
 res://shader/boatwake.gdshader
-res://scripts/screengameplays/kyc_panel.gd
-res://scripts/ApplicantDatabase.gd
-res://scene/screengameplays/left_sliding_panel.tscn
-res://scene/office_lobby.tscn
-res://scene/outside_world.tscn
+res://scripts/OutdoorGraphics.gd
+res://scene/FloorMarker.tscn
+res://shader/atmosphere_sky.gdshader
+res://scripts/CityAtmosphere.gd
+res://scene/settings_panel.tscn

@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c2kfat2a58lvb"]
+
+[ext_resource type="Texture2D" uid="uid://cp3w6dqf05pf2" path="res://models3d/map/Map_Shops.png" id="1_1nv26"]
+
+[resource]
+resource_name = "Material"
+cull_mode = 2
+albedo_texture = ExtResource("1_1nv26")
+roughness = 0.5
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0

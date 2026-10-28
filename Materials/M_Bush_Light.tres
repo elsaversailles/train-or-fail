@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cfa0o7pfjypw3"]
+
+[resource]
+resource_name = "M_Bush_Light"
+cull_mode = 2
+albedo_color = Color(0.27473897, 0.47468045, 0.118759096, 1)
+roughness = 0.85

@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://806etg0inmxx"]
+
+[ext_resource type="Texture2D" uid="uid://4p8r5dvh3ew5" path="res://models3d/map/Map_color_512x512.jpg" id="1_n8yxw"]
+
+[resource]
+resource_name = "Material.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_n8yxw")
+roughness = 0.5
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0

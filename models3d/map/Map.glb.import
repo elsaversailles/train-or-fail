@@ -39,7 +39,260 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"materials": {
+"Bldg": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/Bldg.tres",
+"use_external/path": "uid://c5x2ehqybcga5"
+},
+"BuildingsPastel": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/BuildingsPastel.tres",
+"use_external/path": "uid://bfmutc35a26lk"
+},
+"DIRT": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/DIRT.tres",
+"use_external/path": "uid://dkwd88n3nvthr"
+},
+"EMPTY": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/EMPTY.tres",
+"use_external/path": "uid://de2a5ik6ci744"
+},
+"GLASSREAL": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/GLASSREAL.tres",
+"use_external/path": "uid://bw61p5tjphtxn"
+},
+"Light Lamp": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/Light Lamp.tres",
+"use_external/path": "uid://diugk6cevl81a"
+},
+"M_BusShelter_Blue": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/M_BusShelter_Blue.tres",
+"use_external/path": "uid://wwrf8wo4dbr6"
+},
+"M_Bush_Light": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/M_Bush_Light.tres",
+"use_external/path": "uid://cfa0o7pfjypw3"
+},
+"M_Bush_Mid": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/M_Bush_Mid.tres",
+"use_external/path": "uid://cl670hqj7l4vv"
+},
+"M_Gold_Cap": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/M_Gold_Cap.tres",
+"use_external/path": "uid://cr2qaf61f61os"
+},
+"M_Metal_Dark": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/M_Metal_Dark.tres",
+"use_external/path": "uid://e758twh33qlp"
+},
+"M_Palm_Trunk": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/M_Palm_Trunk.tres",
+"use_external/path": "uid://cnllotekfajy6"
+},
+"M_Rock_BlueGrey": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/M_Rock_BlueGrey.tres",
+"use_external/path": "uid://c257nnq51qwhg"
+},
+"M_Rock_BlueGrey.001": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/M_Rock_BlueGrey.001.tres",
+"use_external/path": "uid://chb5w3wesr3qj"
+},
+"M_Rock_BlueGrey.002": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/M_Rock_BlueGrey.002.tres",
+"use_external/path": "uid://bt1aym8pr23ob"
+},
+"M_Rock_LightGrey": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/M_Rock_LightGrey.tres",
+"use_external/path": "uid://7htbfdtr62ac"
+},
+"M_Rock_MidGrey": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/M_Rock_MidGrey.tres",
+"use_external/path": "uid://bydyu5lb8tbu6"
+},
+"M_Wood_Beam": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/M_Wood_Beam.tres",
+"use_external/path": "uid://dv1gyth1ptbkx"
+},
+"M_Wood_Plank_A": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/M_Wood_Plank_A.tres",
+"use_external/path": "uid://djqwtg1gnm0po"
+},
+"M_Wood_Plank_B": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/M_Wood_Plank_B.tres",
+"use_external/path": "uid://bymi35lkkl80i"
+},
+"Material": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/Material.tres",
+"use_external/path": "uid://c2kfat2a58lvb"
+},
+"Material.001": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/Material.001.tres",
+"use_external/path": "uid://806etg0inmxx"
+},
+"Material.003": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/Material.003.tres",
+"use_external/path": "uid://cwkhsygy3a0oj"
+},
+"Material.004": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/Material.004.tres",
+"use_external/path": "uid://fibydiob0fb6"
+},
+"Material.007": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/Material.007.tres",
+"use_external/path": "uid://bri3ucpyh8et8"
+},
+"Material.009": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/Material.009.tres",
+"use_external/path": "uid://ddm60dym5q176"
+},
+"ROADUVNcorner yellow": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/ROADUVNcorner yellow.tres",
+"use_external/path": "uid://183tskb45ve8"
+},
+"ROADUVNcornercloseyellow": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/ROADUVNcornercloseyellow.tres",
+"use_external/path": "uid://dsd6rn705y4ly"
+},
+"Raymart": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/Raymart.tres",
+"use_external/path": "uid://jvdx6pofcuei"
+},
+"Road corner": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/Road corner.tres",
+"use_external/path": "uid://c3ikqi2y5wcp5"
+},
+"SIDEWALK": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/SIDEWALK.tres",
+"use_external/path": "uid://bolyur33oqw3v"
+},
+"Texture.002": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/Texture.002.tres",
+"use_external/path": "uid://clukw3ur7q3s"
+},
+"Texture.003": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/Texture.003.tres",
+"use_external/path": "uid://b6gf8od6sxppi"
+},
+"Texture.005": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/Texture.005.tres",
+"use_external/path": "uid://c2ui8683lh848"
+},
+"Texture.006": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/Texture.006.tres",
+"use_external/path": "uid://chxoh2b1h2qkt"
+},
+"Texture.007": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/Texture.007.tres",
+"use_external/path": "uid://dcg87xmetpeqk"
+},
+"Texture.008": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/Texture.008.tres",
+"use_external/path": "uid://dk541xrogmk73"
+},
+"WALK": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/WALK.tres",
+"use_external/path": "uid://b8tt41dkb8pex"
+},
+"active_material_index": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/active_material_index.tres",
+"use_external/path": "uid://nbgybc2tkr80"
+},
+"active_material_index.001": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/active_material_index.001.tres",
+"use_external/path": "uid://dpncv8ac5mh7a"
+},
+"angiloan": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/angiloan.tres",
+"use_external/path": "uid://ci1aur8q3ptu5"
+},
+"beige": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/beige.tres",
+"use_external/path": "uid://ncnx3iop1bnp"
+},
+"green_light_material": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/green_light_material.tres",
+"use_external/path": "uid://dioh3ax0wc6q0"
+},
+"horizon other": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/horizon other.tres",
+"use_external/path": "uid://bgyssu3wqpu2m"
+},
+"orange_light_material": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/orange_light_material.tres",
+"use_external/path": "uid://dkr7tm12ccx0b"
+},
+"red_light_material": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/red_light_material.tres",
+"use_external/path": "uid://b84m28nbtmot8"
+},
+"resto": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/resto.tres",
+"use_external/path": "uid://btdhce63j86rg"
+},
+"roads_material": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/roads_material.tres",
+"use_external/path": "uid://bpq4onnsxe3t5"
+},
+"rocks": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/rocks.tres",
+"use_external/path": "uid://dasm3n28iisw4"
+},
+"window angeloan": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/window angeloan.tres",
+"use_external/path": "uid://blupjod2yoae4"
+}
+}
+}
 gltf/naming_version=2
 gltf/embedded_image_handling=1
 gltf/texture_map_mode=1

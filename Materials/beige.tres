@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ncnx3iop1bnp"]
+
+[ext_resource type="Texture2D" uid="uid://t62uwuklrcdt" path="res://models3d/map/Map_apartmentbakery.png" id="1_b0j7g"]
+
+[resource]
+resource_name = "beige"
+cull_mode = 2
+albedo_texture = ExtResource("1_b0j7g")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0

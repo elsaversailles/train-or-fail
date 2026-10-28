@@ -1,0 +1,5 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://chxoh2b1h2qkt"]
+
+[resource]
+resource_name = "Texture.006"
+cull_mode = 2

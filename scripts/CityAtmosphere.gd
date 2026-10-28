@@ -5,15 +5,7 @@ const BIRD_SHADER = preload("res://shader/bird.gdshader")
 const WET_ROAD_SHADER = preload("res://shader/wet_road.gdshader")
 const BIRD_COUNT := 10
 const BIRD_UPDATE_INTERVAL := 0.05
-const SKY_UPDATE_INTERVAL := 0.5
-const STREETLIGHT_POSITIONS := [
-	Vector3(6.0, 5.0, -5.0), Vector3(-17.0, 5.0, -5.0),
-	Vector3(-41.0, 5.0, -5.0), Vector3(-64.0, 5.0, -6.0),
-	Vector3(-74.0, 5.0, 5.0), Vector3(-95.0, 5.0, 38.0),
-	Vector3(-105.0, 5.0, 47.0), Vector3(-95.0, 5.0, 94.0),
-	Vector3(-105.0, 5.0, 103.0), Vector3(-181.0, 5.0, 110.0),
-	Vector3(-201.0, 5.0, 125.0), Vector3(-211.0, 5.0, 145.0),
-]
+const SKY_UPDATE_INTERVAL := 0.05
 
 @export var player_path: NodePath = ^"../Player"
 @export var environment_path: NodePath = ^"../WorldEnvironment"
@@ -142,7 +134,7 @@ func _update_sky() -> void:
 	_environment.ambient_light_energy = (0.29 + daylight * 0.18) * (0.8 if _rainy else 1.0)
 	_environment.fog_light_color = Color(0.58, 0.65, 0.73).lerp(Color(0.78, 0.58, 0.45), warmth * 0.6) if not _rainy else Color(0.47, 0.54, 0.62)
 	for light in _streetlights:
-		light.light_energy = 2.1 + (1.0 - daylight) * 1.1
+		light.light_energy = 40.0
 	_update_streetlight_visibility()
 	# Tiny uniform changes at 2 Hz avoid per-frame sky cubemap rebuilds.
 	_sky_material.set_shader_parameter("cloud_offset", Vector2(_sky_time * 0.0006, _sky_time * 0.00008))
@@ -151,18 +143,33 @@ func _make_streetlights() -> void:
 	var group := Node3D.new()
 	group.name = "Streetlights"
 	add_child(group)
-	for position in STREETLIGHT_POSITIONS:
+
+	# Fixed capitalization to match the Scene Group "Streetlights"
+	var lamps := get_tree().get_nodes_in_group("Streetlights")
+	if lamps.is_empty():
+		push_warning("No nodes in group 'Streetlights'; no lights spawned.")
+		return
+
+	for node in lamps:
+		var lamp := node as MeshInstance3D
+		if lamp == null:
+			continue
 		var light := OmniLight3D.new()
-		light.position = position
-		light.light_color = Color(1.0, 0.72, 0.43)
-		light.omni_range = 18.0
+		light.light_color = Color(0.878, 0.639, 0.443, 1.0)
+		light.omni_range = 7.533
 		light.omni_attenuation = 1.35
-		light.light_volumetric_fog_energy = 0.0
-		light.light_bake_mode = Light3D.BAKE_STATIC
+		light.light_energy = 40
+		light.light_volumetric_fog_energy = 1.0
+		light.light_bake_mode = Light3D.BAKE_DYNAMIC # Required for runtime-spawned lights
 		light.shadow_enabled = false
 		group.add_child(light)
-		_streetlights.append(light)
 
+		# Top-center of the mesh bounds in world space, nudged just below the top.
+		var aabb := lamp.get_aabb()
+		var top_local := aabb.get_center() + Vector3(0.0, aabb.size.y * 0.5, 0.0)
+		light.global_position = lamp.global_transform * top_local + Vector3(0.0, 0.3, 0.0)
+		_streetlights.append(light)
+		
 func _update_streetlight_visibility() -> void:
 	for light in _streetlights:
 		light.visible = SettingsManager.enhanced_lighting

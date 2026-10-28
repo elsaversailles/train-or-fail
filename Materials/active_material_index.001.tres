@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dpncv8ac5mh7a"]
+
+[ext_resource type="Texture2D" uid="uid://cje0tw0tt801d" path="res://models3d/map/Map_road uv2.png" id="1_gymfh"]
+
+[resource]
+resource_name = "active_material_index.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_gymfh")
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0

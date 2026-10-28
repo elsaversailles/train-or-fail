@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dasm3n28iisw4"]
+
+[ext_resource type="Texture2D" uid="uid://btd8musgknwl5" path="res://models3d/map/Map_Rocks.png" id="1_rmbti"]
+
+[resource]
+resource_name = "rocks"
+cull_mode = 2
+albedo_texture = ExtResource("1_rmbti")
+roughness = 0.5
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0

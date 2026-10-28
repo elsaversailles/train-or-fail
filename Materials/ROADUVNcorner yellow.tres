@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://183tskb45ve8"]
+
+[ext_resource type="Texture2D" uid="uid://begwu6sr5neq2" path="res://models3d/map/Map_ROADUVNcorner yellow.png" id="1_e55r6"]
+
+[resource]
+resource_name = "ROADUVNcorner yellow"
+cull_mode = 2
+albedo_texture = ExtResource("1_e55r6")
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0

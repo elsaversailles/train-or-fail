@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://7htbfdtr62ac"]
+
+[resource]
+resource_name = "M_Rock_LightGrey"
+cull_mode = 2
+albedo_color = Color(0.5538935, 0.5857135, 0.641059, 1)
+roughness = 0.92

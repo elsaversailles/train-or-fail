@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cwlndmc6sc8x5"]
 
 [ext_resource type="Script" uid="uid://d0js4550ire4" path="res://scripts/CreditScoring/CreditScoring.gd" id="1_x4bpk"]
-[ext_resource type="PackedScene" uid="uid://drkya446h6odi" path="res://scene/world_environment.tscn" id="2_34a68"]
+[ext_resource type="Material" uid="uid://bi5eojdcpl878" path="res://shader/office_shader.tres" id="2_3iqyl"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scene/character.tscn" id="2_elty4"]
 [ext_resource type="PackedScene" uid="uid://dogkxfi5tbrs" path="res://scene/lights.tscn" id="2_rgpp2"]
 [ext_resource type="PackedScene" uid="uid://cwjddyjeack6m" path="res://scene/socket.tscn" id="3_j7mwx"]
@@ -18,6 +18,13 @@
 [ext_resource type="PackedScene" uid="uid://bx7scsfg2nivv" path="res://scene/pause_panel.tscn" id="12_8hxc1"]
 [ext_resource type="AudioStream" uid="uid://lm3fs23d4v2l" path="res://assets/music/gameplaymusic.mp3" id="13_3uodl"]
 [ext_resource type="Texture2D" uid="uid://c5x64jsfa3ot3" path="res://images/TutorialsIMG/FRAUDDETECTION/fdholder.png" id="13_n8goo"]
+
+[sub_resource type="Sky" id="Sky_118ik"]
+sky_material = ExtResource("2_3iqyl")
+
+[sub_resource type="Environment" id="Environment_2oc2n"]
+background_mode = 2
+sky = SubResource("Sky_118ik")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3iqyl"]
 size = Vector3(1.0327148, 1.3692627, 31.334213)
@@ -56,6 +63,9 @@ texture = ExtResource("13_n8goo")
 [node name="CreditScoring" type="Node3D" unique_id=1103394804]
 script = ExtResource("1_x4bpk")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1202022988]
+environment = SubResource("Environment_2oc2n")
+
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=845707268]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.769102, 0, 0)
 
@@ -74,8 +84,6 @@ shape = SubResource("BoxShape3D_easc6")
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" unique_id=7291707]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.627119, 0.18463135, 1.3362713)
 shape = SubResource("BoxShape3D_2oc2n")
-
-[node name="WorldEnvironment" parent="." unique_id=1060883038 instance=ExtResource("2_34a68")]
 
 [node name="Lights" parent="." unique_id=1778490459 instance=ExtResource("2_rgpp2")]
 transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, -5.255369, 9.943366, -12.187546)
@@ -233,3 +241,12 @@ grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_y65os")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_y65os")
 theme_override_styles/hover = SubResource("StyleBoxTexture_y65os")
+
+[node name="Wall" type="CSGBox3D" parent="." unique_id=856245069]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.690865, 18.300331, -0.070653915)
+size = Vector3(1, 7.4942017, 13.028381)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Wall" unique_id=1481029031]
+transform = Transform3D(-4.371139e-08, 4.371139e-08, -1, 1, 1.9106855e-15, -4.371139e-08, 0, -1, -4.371139e-08, -5.5516167, -0.30981827, 0.070653915)
+light_energy = 4.0
+spot_range = 9.320137

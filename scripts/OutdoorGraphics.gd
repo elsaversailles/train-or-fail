@@ -3,6 +3,11 @@ class_name OutdoorGraphics
 
 const STOCK_ENVIRONMENT_SCENE = preload("res://scene/world_environment_stock.tscn")
 
+# Optional: Assign your AreaLight3D and SpotLight3D nodes in the Inspector, 
+# or leave empty to auto-detect them in the scene root.
+@export var area_lights: Array[AreaLight3D] = []
+@export var spot_lights: Array[SpotLight3D] = []
+
 var _enhanced_environment: Environment
 var _stock_environment: Environment
 
@@ -11,6 +16,17 @@ func _ready() -> void:
 	var stock_node := STOCK_ENVIRONMENT_SCENE.instantiate() as WorldEnvironment
 	_stock_environment = stock_node.environment.duplicate(true)
 	stock_node.free()
+	
+	# Auto-find AreaLight3D and SpotLight3D nodes if not manually assigned in the Inspector
+	var scene_root := get_parent()
+	if scene_root:
+		if area_lights.is_empty():
+			for node in scene_root.find_children("*", "AreaLight3D", true, false):
+				area_lights.append(node as AreaLight3D)
+		if spot_lights.is_empty():
+			for node in scene_root.find_children("*", "SpotLight3D", true, false):
+				spot_lights.append(node as SpotLight3D)
+			
 	SettingsManager.graphics_settings_changed.connect(_apply_graphics)
 	_apply_graphics()
 
@@ -50,11 +66,24 @@ func _apply_graphics() -> void:
 		_enhanced_environment.fog_depth_begin = 40.0
 		_enhanced_environment.fog_depth_end = 170.0
 	environment = _enhanced_environment if SettingsManager.enhanced_lighting else _stock_environment
+	
 	var sun := get_node_or_null("../Sun") as DirectionalLight3D
 	if sun:
 		sun.visible = SettingsManager.enhanced_lighting
+		
+	# Toggle AreaLight3D and SpotLight3D nodes on or off
+	_apply_extra_lights(SettingsManager.enhanced_lighting)
+	
 	# The player camera may not have entered the tree yet on the first call.
 	call_deferred("_apply_camera_distance", distance)
+
+func _apply_extra_lights(enabled: bool) -> void:
+	for light in area_lights:
+		if is_instance_valid(light):
+			light.visible = enabled
+	for light in spot_lights:
+		if is_instance_valid(light):
+			light.visible = enabled
 
 func _apply_camera_distance(distance: float) -> void:
 	var scene_root := get_parent()

@@ -59,6 +59,7 @@ offset_left = -96.0
 offset_top = -142.0
 offset_right = 96.0
 offset_bottom = -126.0
+tooltip_text = "Adjusts the overall game volume."
 theme_override_styles/slider = SubResource("StyleBoxLine_by01r")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_dclss")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_dclss")
@@ -105,6 +106,7 @@ offset_left = -102.0
 offset_top = -41.0
 offset_right = 4.0
 offset_bottom = -9.0
+tooltip_text = "Toggles full screen mode."
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.15127608, 0.15127608, 0.15127608, 1)
@@ -118,45 +120,12 @@ offset_left = -96.0
 offset_top = -80.0
 offset_right = 96.0
 offset_bottom = -64.0
+tooltip_text = "Controls how fast the camera or mouse turns."
 theme_override_styles/slider = SubResource("StyleBoxLine_by01r")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_dclss")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_dclss")
 max_value = 1.0
 value = 1.0
-
-[node name="LightingCheckbox" type="CheckBox" parent="."]
-layout_mode = 0
-offset_left = -102.0
-offset_top = 6.0
-offset_right = 104.0
-offset_bottom = 36.0
-tooltip_text = "Enable sunset lighting, SDFGI, volumetric fog, and sun shadows."
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 14
-text = "GI + Fog + Shadows"
-
-[node name="RenderDistanceLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = -96.0
-offset_top = 51.0
-offset_right = 96.0
-offset_bottom = 71.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 14
-text = "Rendering Distance"
-
-[node name="RenderDistanceOption" type="OptionButton" parent="."]
-layout_mode = 0
-offset_left = -96.0
-offset_top = 76.0
-offset_right = 96.0
-offset_bottom = 110.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="SensLabel" type="Label" parent="Sensitivity" unique_id=766720649]
 layout_mode = 0
@@ -176,6 +145,41 @@ offset_bottom = 6.5
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 14
 horizontal_alignment = 2
+
+[node name="LightingCheckbox" type="CheckBox" parent="." unique_id=774781796]
+layout_mode = 0
+offset_left = -102.0
+offset_top = 6.0
+offset_right = 104.0
+offset_bottom = 36.0
+tooltip_text = "Enable sunset lighting, SDFGI, volumetric fog, and sun shadows."
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "GI + Fog + Shadows"
+
+[node name="RenderDistanceLabel" type="Label" parent="." unique_id=2035303723]
+layout_mode = 0
+offset_left = -96.0
+offset_top = 51.0
+offset_right = 96.0
+offset_bottom = 71.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "Rendering Distance"
+
+[node name="RenderDistanceOption" type="OptionButton" parent="." unique_id=1976338649]
+layout_mode = 0
+offset_left = -96.0
+offset_top = 76.0
+offset_right = 96.0
+offset_bottom = 110.0
+tooltip_text = "Sets how far objects are drawn. Higher values look better but may lower FPS."
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [connection signal="value_changed" from="MusicControl" to="MusicControl" method="_on_value_changed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

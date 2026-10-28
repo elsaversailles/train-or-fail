@@ -104,6 +104,7 @@ import/blender/enabled=false
 player=""
 special_npcs=""
 waypoint=""
+Streetlights=""
 
 [gui]
 

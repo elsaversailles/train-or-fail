@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b84m28nbtmot8"]
+
+[resource]
+resource_name = "red_light_material"
+cull_mode = 2
+albedo_color = Color(0.90588045, 0.0509794, 0, 1)
+roughness = 0.5
+emission_enabled = true
+emission = Color(0.90588045, 0.0509794, 0, 1)

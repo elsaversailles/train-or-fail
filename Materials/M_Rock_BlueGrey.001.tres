@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://chb5w3wesr3qj"]
+
+[resource]
+resource_name = "M_Rock_BlueGrey.001"
+cull_mode = 2
+albedo_color = Color(0.45748022, 0.50587547, 0.56584334, 1)
+roughness = 0.92

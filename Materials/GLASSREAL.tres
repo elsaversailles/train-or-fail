@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bw61p5tjphtxn"]
+
+[resource]
+resource_name = "GLASSREAL"
+transparency = 4
+cull_mode = 2
+albedo_color = Color(0.19901338, 0.26619288, 0.29113433, 0.36507937)
+metallic = 0.86507934
+roughness = 0.0

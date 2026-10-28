@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bpq4onnsxe3t5"]
+
+[ext_resource type="Texture2D" uid="uid://6b2u4y7dce62" path="res://models3d/map/Map_SIDEWALK.png" id="1_u8rq8"]
+
+[resource]
+resource_name = "roads_material"
+cull_mode = 2
+albedo_texture = ExtResource("1_u8rq8")
+metadata/_gltf_primary_texture_coord = 0

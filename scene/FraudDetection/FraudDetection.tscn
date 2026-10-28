@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cqow47bch5ocs"]
 
 [ext_resource type="Script" uid="uid://oblqrvb0temk" path="res://scripts/FraudDetection/FraudDetection.gd" id="1_vdmht"]
-[ext_resource type="PackedScene" uid="uid://drkya446h6odi" path="res://scene/world_environment.tscn" id="2_k8o8q"]
+[ext_resource type="Material" uid="uid://bi5eojdcpl878" path="res://shader/office_shader.tres" id="2_118ik"]
 [ext_resource type="PackedScene" uid="uid://dogkxfi5tbrs" path="res://scene/lights.tscn" id="3_118ik"]
 [ext_resource type="PackedScene" uid="uid://dey515o1sh44x" path="res://models3d/map/office.tscn" id="4_118ik"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scene/character.tscn" id="4_v7irp"]
@@ -17,6 +17,13 @@
 [ext_resource type="AudioStream" uid="uid://lm3fs23d4v2l" path="res://assets/music/gameplaymusic.mp3" id="14_sv7s7"]
 [ext_resource type="PackedScene" uid="uid://bx7scsfg2nivv" path="res://scene/pause_panel.tscn" id="15_65k3s"]
 [ext_resource type="PackedScene" uid="uid://cdoxo1627leua" path="res://scene/Tutorial/fd_tutorial.tscn" id="16_k8o8q"]
+
+[sub_resource type="Sky" id="Sky_118ik"]
+sky_material = ExtResource("2_118ik")
+
+[sub_resource type="Environment" id="Environment_jv1ba"]
+background_mode = 2
+sky = SubResource("Sky_118ik")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_118ik"]
 size = Vector3(1.0327148, 1.3692627, 31.334213)
@@ -52,6 +59,9 @@ data = PackedVector3Array(0.205, -0.265, 0, -0.205, -0.265, 0, 0.205, 0.265, 0, 
 [node name="FraudDetectionLevel" type="Node3D" unique_id=1103394804]
 script = ExtResource("1_vdmht")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=453401684]
+environment = SubResource("Environment_jv1ba")
+
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=642989767]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.769102, 0, 0)
 
@@ -71,10 +81,8 @@ shape = SubResource("BoxShape3D_xfii8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.584972, 0.18463135, 1.5205364)
 shape = SubResource("BoxShape3D_v7irp")
 
-[node name="WorldEnvironment" parent="." unique_id=1060883038 instance=ExtResource("2_k8o8q")]
-
 [node name="Lights" parent="." unique_id=1778490459 instance=ExtResource("3_118ik")]
-transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, -5.242485, 10.772501, -12.478853)
+transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, -5.242485, 10.688972, -12.478853)
 
 [node name="Office" parent="." unique_id=1198069303 instance=ExtResource("4_118ik")]
 
@@ -192,3 +200,12 @@ bus = &"Music"
 
 [node name="PausePanel" parent="." unique_id=1179524455 instance=ExtResource("15_65k3s")]
 visible = false
+
+[node name="Wall" type="CSGBox3D" parent="." unique_id=731688256]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.690865, 18.300331, -0.070653915)
+size = Vector3(1, 7.4942017, 13.028381)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Wall" unique_id=1511104492]
+transform = Transform3D(-4.371139e-08, 4.371139e-08, -1, 1, 1.9106855e-15, -4.371139e-08, 0, -1, -4.371139e-08, -5.5516167, -0.30981827, 0.070653915)
+light_energy = 4.0
+spot_range = 9.320137

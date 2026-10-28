@@ -3,14 +3,17 @@
 [ext_resource type="PackedScene" uid="uid://drkya446h6odi" path="res://scene/world_environment.tscn" id="1_74bty"]
 [ext_resource type="Script" uid="uid://upyd3gf0tqb2" path="res://scripts/OutsideWorld.gd" id="1_yeb0w"]
 [ext_resource type="Script" uid="uid://77xg2eri00vy" path="res://scripts/CityAtmosphere.gd" id="2_city_atmosphere"]
-[ext_resource type="Shader" path="res://shader/city_post_process.gdshader" id="2_city_post_shader"]
+[ext_resource type="Shader" uid="uid://np76rdgumjf7" path="res://shader/city_post_process.gdshader" id="2_city_post_shader"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scene/character.tscn" id="3_ma6ok"]
 [ext_resource type="PackedScene" uid="uid://ohta1txhbs1d" path="res://scene/map.tscn" id="3_tv3p0"]
 [ext_resource type="PackedScene" uid="uid://cv87ukpeiw7cp" path="res://scene/crosshair.tscn" id="4_7lxs7"]
 [ext_resource type="PackedScene" uid="uid://bx7scsfg2nivv" path="res://scene/pause_panel.tscn" id="5_4tgtf"]
 [ext_resource type="Script" uid="uid://bbpde2vfs0tbh" path="res://scripts/OutsideDoor.gd" id="6_b6qw5"]
 [ext_resource type="PackedScene" uid="uid://bia3kpprkjk83" path="res://scene/waypoint_marker.tscn" id="6_kogoh"]
+[ext_resource type="Material" uid="uid://bgvn618vq3t7m" path="res://Materials/windows_glow.tres" id="7_s55tp"]
 [ext_resource type="PackedScene" uid="uid://cl3phq1ph8o8" path="res://scene/FloorMarker.tscn" id="7_x7ph6"]
+[ext_resource type="Texture2D" uid="uid://bejq04rsxctqx" path="res://models3d/map/Map_windowangeloan.png" id="7_xww38"]
+[ext_resource type="Texture2D" uid="uid://djnp4jv8unjdc" path="res://models3d/map/windows_emission.png" id="8_2gfpp"]
 [ext_resource type="PackedScene" uid="uid://dci8u0ys21qui" path="res://scene/npc_dialogue_box.tscn" id="8_ym7lu"]
 [ext_resource type="ArrayOccluder3D" uid="uid://khhjre27wmie" path="res://addons/outside_world.occ" id="9_crkg8"]
 [ext_resource type="PackedScene" uid="uid://byja7bqb6ree5" path="res://models3d/characters/M/grandpa.tscn" id="10_tv3p0"]
@@ -36,16 +39,70 @@
 [ext_resource type="PackedScene" uid="uid://dgemu51cirnen" path="res://models3d/characters/F/tita_elena.tscn" id="33_jvih8"]
 [ext_resource type="Texture2D" uid="uid://bjfvr1cgy17sw" path="res://images/caution_tape.png" id="33_urwcn"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dn82p"]
+resource_name = "window angeloan"
+cull_mode = 2
+albedo_texture = ExtResource("7_xww38")
+roughness = 0.5
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 2.5
+emission_operator = 1
+emission_texture = ExtResource("8_2gfpp")
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xww38"]
+resource_name = "window angeloan"
+cull_mode = 2
+albedo_texture = ExtResource("7_xww38")
+roughness = 0.5
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.5
+emission_operator = 1
+emission_texture = ExtResource("8_2gfpp")
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3l71g"]
+resource_name = "window angeloan"
+cull_mode = 2
+albedo_texture = ExtResource("7_xww38")
+roughness = 0.5
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 2.0
+emission_operator = 1
+emission_texture = ExtResource("8_2gfpp")
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6xo7c"]
+resource_name = "window angeloan"
+cull_mode = 2
+albedo_texture = ExtResource("7_xww38")
+roughness = 0.5
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_operator = 1
+emission_texture = ExtResource("8_2gfpp")
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ptfg7"]
 load_path = "res://.godot/imported/caution_tape.png-8a3dbc2ebcafc11f652cd96a5abb83e7.s3tc.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_city_post"]
+shader = ExtResource("2_city_post_shader")
+shader_parameter/rain_mix = 0.0
+shader_parameter/vignette_strength = 0.07
+shader_parameter/grain_strength = 0.006
 
 [sub_resource type="LabelSettings" id="LabelSettings_x7ph6"]
 font_size = 20
 outline_size = 5
 outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_city_post"]
-shader = ExtResource("2_city_post_shader")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0vtf2"]
 radius = 2.789346
@@ -85,13 +142,13 @@ size = Vector3(16.896973, 2.2548828, 25.855957)
 [node name="Outside_World" type="Node3D" unique_id=36747045]
 script = ExtResource("1_yeb0w")
 
-[node name="WorldEnvironment" parent="." unique_id=1060883038 instance=ExtResource("1_74bty")]
+[node name="WorldEnvironment" parent="." unique_id=1060883038 node_paths=PackedStringArray("area_lights", "spot_lights") instance=ExtResource("1_74bty")]
+area_lights = [NodePath("../LightBuildings/AreaLight3D"), NodePath("../LightBuildings/AreaLight3D2"), NodePath("../LightBuildings/AreaLight3D3"), NodePath("../LightBuildings/AreaLight3D4"), NodePath("../LightBuildings/AreaLight3D5"), NodePath("../LightBuildings/AreaLight3D6"), NodePath("../LightBuildings/AreaLight3D7")]
+spot_lights = [NodePath("../Track/Jeepney/SpotLight3D1"), NodePath("../Track/Jeepney/SpotLight3D2")]
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=1755721322]
 transform = Transform3D(0.3420206, -0.53898525, 0.76975113, 0, 0.8191522, 0.5735762, -0.93969244, -0.19617487, 0.28016692, 0, 0, 0)
 light_color = Color(1, 0.83, 0.64, 1)
-light_energy = 1.2
-light_volumetric_fog_energy = 1.35
 light_angular_distance = 0.53
 shadow_enabled = true
 shadow_opacity = 0.88
@@ -103,6 +160,50 @@ directional_shadow_max_distance = 85.0
 [node name="CityAtmosphere" type="Node3D" parent="." unique_id=516981870]
 script = ExtResource("2_city_atmosphere")
 
+[node name="LightBuildings" type="Node" parent="." unique_id=146844447]
+
+[node name="AreaLight3D" type="AreaLight3D" parent="LightBuildings" unique_id=1565559292]
+transform = Transform3D(0.23311701, 0, 0.9724487, 0, 1, 0, -0.9724487, 0, 0.23311701, -238.56671, 36.30163, 129.10521)
+light_energy = 0.3
+area_normalize_energy = false
+area_size = Vector2(32.33731, 37.61351)
+
+[node name="AreaLight3D2" type="AreaLight3D" parent="LightBuildings" unique_id=1000792532]
+transform = Transform3D(0.004079081, 0, 0.9999917, 0, 1, 0, -0.9999917, 0, 0.004079081, -231.80629, 10.776829, 122.88129)
+light_energy = 0.5
+area_normalize_energy = false
+area_size = Vector2(35.317627, 14.636745)
+
+[node name="AreaLight3D3" type="AreaLight3D" parent="LightBuildings" unique_id=36877938]
+transform = Transform3D(-0.0040791687, 0, -0.9999917, 0, 1, 0, 0.9999917, 0, -0.0040791687, -174.91147, 11.658941, 138.52417)
+light_energy = 0.3
+area_normalize_energy = false
+area_size = Vector2(76.958496, 19.189266)
+
+[node name="AreaLight3D4" type="AreaLight3D" parent="LightBuildings" unique_id=1771836951]
+transform = Transform3D(-0.0040791687, 0, -0.9999917, 0, 1, 0, 0.9999917, 0, -0.0040791687, -177.9188, 12.395548, 138.52417)
+light_energy = 0.3
+area_normalize_energy = false
+area_size = Vector2(15.497284, 21.397148)
+
+[node name="AreaLight3D5" type="AreaLight3D" parent="LightBuildings" unique_id=1817602015]
+transform = Transform3D(-0.73320144, 0, -0.6800115, 0, 1, 0, 0.6800115, 0, -0.73320144, -179.25612, 3.664032, 18.452028)
+light_energy = 0.3
+area_normalize_energy = false
+area_size = Vector2(6.44751, 3.183689)
+
+[node name="AreaLight3D6" type="AreaLight3D" parent="LightBuildings" unique_id=1730307148]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -109.64534, 5.5243034, 23.422934)
+light_energy = 0.3
+area_normalize_energy = false
+area_size = Vector2(17.20018, 9.2679825)
+
+[node name="AreaLight3D7" type="AreaLight3D" parent="LightBuildings" unique_id=1064608157]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -126.114746, 5.5243034, 20.581266)
+light_energy = 0.3
+area_normalize_energy = false
+area_size = Vector2(11.088226, 14.699663)
+
 [node name="Player" parent="." unique_id=2061402672 groups=["player"] instance=ExtResource("3_ma6ok")]
 transform = Transform3D(0.018174676, 0, -0.99983484, 0, 1, 0, 0.99983484, 0, 0.018174676, -210.72572, 0.54213715, 139.29137)
 collision_layer = 3
@@ -110,27 +211,141 @@ speed = 30.0
 
 [node name="Map" parent="." unique_id=1112612333 instance=ExtResource("3_tv3p0")]
 
-[node name="CityPostProcess" type="CanvasLayer" parent="."]
-layer = -1
+[node name="Cylinder_007" parent="Map" index="16" unique_id=1484760596 groups=["Streetlights"]]
 
-[node name="ColorRect" type="ColorRect" parent="CityPostProcess"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-mouse_filter = 2
-material = SubResource("ShaderMaterial_city_post")
+[node name="Cylinder_003" parent="Map" index="17" unique_id=548355284 groups=["Streetlights"]]
 
-[node name="BakeryCautionTape" type="Sprite3D" parent="Map/Cube" parent_id_path=PackedInt32Array(1112612333, 1252011237) index="0" unique_id=798807205]
+[node name="Cylinder_005" parent="Map" index="18" unique_id=1161488807 groups=["Streetlights"]]
+
+[node name="Cylinder_006" parent="Map" index="19" unique_id=1294958127 groups=["Streetlights"]]
+
+[node name="Cylinder_010" parent="Map" index="20" unique_id=401533452 groups=["Streetlights"]]
+
+[node name="Cylinder_012" parent="Map" index="21" unique_id=404990274 groups=["Streetlights"]]
+
+[node name="Cylinder_013" parent="Map" index="22" unique_id=989621004 groups=["Streetlights"]]
+
+[node name="Cylinder_014" parent="Map" index="23" unique_id=2027158686 groups=["Streetlights"]]
+
+[node name="Cylinder_015" parent="Map" index="24" unique_id=1076530708 groups=["Streetlights"]]
+
+[node name="Cylinder_016" parent="Map" index="25" unique_id=1337246257 groups=["Streetlights"]]
+
+[node name="Cylinder_021" parent="Map" index="26" unique_id=799498356 groups=["Streetlights"]]
+
+[node name="Cylinder_022" parent="Map" index="27" unique_id=2055781133 groups=["Streetlights"]]
+
+[node name="Cylinder_023" parent="Map" index="28" unique_id=103458762 groups=["Streetlights"]]
+
+[node name="Cylinder_024" parent="Map" index="29" unique_id=328495191 groups=["Streetlights"]]
+
+[node name="Cylinder_025" parent="Map" index="30" unique_id=1656588943 groups=["Streetlights"]]
+
+[node name="Cylinder_027" parent="Map" index="31" unique_id=1360727401 groups=["Streetlights"]]
+
+[node name="Cylinder_029" parent="Map" index="32" unique_id=1957033054 groups=["Streetlights"]]
+
+[node name="Cylinder_030" parent="Map" index="33" unique_id=63004078 groups=["Streetlights"]]
+
+[node name="Cylinder_031" parent="Map" index="34" unique_id=1919655208 groups=["Streetlights"]]
+
+[node name="Cylinder_032" parent="Map" index="35" unique_id=1050361022 groups=["Streetlights"]]
+
+[node name="Cylinder_033" parent="Map" index="36" unique_id=1575587336 groups=["Streetlights"]]
+
+[node name="Cylinder_034" parent="Map" index="37" unique_id=605786098 groups=["Streetlights"]]
+
+[node name="Cylinder_035" parent="Map" index="38" unique_id=1972710024 groups=["Streetlights"]]
+
+[node name="Cylinder_036" parent="Map" index="39" unique_id=563070020 groups=["Streetlights"]]
+
+[node name="Cylinder_037" parent="Map" index="40" unique_id=1384450187 groups=["Streetlights"]]
+
+[node name="Cylinder_038" parent="Map" index="41" unique_id=557321678 groups=["Streetlights"]]
+
+[node name="Cylinder_041" parent="Map" index="42" unique_id=1877994741 groups=["Streetlights"]]
+
+[node name="Cylinder_042" parent="Map" index="43" unique_id=276892398 groups=["Streetlights"]]
+
+[node name="Cylinder_043" parent="Map" index="44" unique_id=1671640588 groups=["Streetlights"]]
+
+[node name="Cylinder_044" parent="Map" index="45" unique_id=76940744 groups=["Streetlights"]]
+
+[node name="Cylinder_046" parent="Map" index="46" unique_id=2083135886 groups=["Streetlights"]]
+
+[node name="Cylinder_048" parent="Map" index="47" unique_id=204751527 groups=["Streetlights"]]
+
+[node name="Cylinder_050" parent="Map" index="48" unique_id=1826656356 groups=["Streetlights"]]
+
+[node name="Cylinder_052" parent="Map" index="49" unique_id=1847222964 groups=["Streetlights"]]
+
+[node name="Cylinder_053" parent="Map" index="50" unique_id=1854985292 groups=["Streetlights"]]
+
+[node name="Cylinder_055" parent="Map" index="51" unique_id=1156173725 groups=["Streetlights"]]
+
+[node name="Cylinder_057" parent="Map" index="52" unique_id=2096319282 groups=["Streetlights"]]
+
+[node name="Cylinder_058" parent="Map" index="53" unique_id=288517716 groups=["Streetlights"]]
+
+[node name="Cylinder_059" parent="Map" index="54" unique_id=1393638619 groups=["Streetlights"]]
+
+[node name="Cylinder_061" parent="Map" index="55" unique_id=361524311 groups=["Streetlights"]]
+
+[node name="Cylinder_064" parent="Map" index="56" unique_id=81830239 groups=["Streetlights"]]
+
+[node name="Cylinder_068" parent="Map" index="57" unique_id=251709916 groups=["Streetlights"]]
+
+[node name="Cylinder_070" parent="Map" index="58" unique_id=771568736 groups=["Streetlights"]]
+
+[node name="Cylinder_071" parent="Map" index="59" unique_id=1235197135 groups=["Streetlights"]]
+
+[node name="Cylinder_073" parent="Map" index="60" unique_id=29950029 groups=["Streetlights"]]
+
+[node name="Cylinder_076" parent="Map" index="61" unique_id=782372119 groups=["Streetlights"]]
+
+[node name="Cylinder_078" parent="Map" index="62" unique_id=242809279 groups=["Streetlights"]]
+
+[node name="Cylinder_079" parent="Map" index="63" unique_id=1968847645 groups=["Streetlights"]]
+
+[node name="Cylinder_080" parent="Map" index="64" unique_id=493140117 groups=["Streetlights"]]
+
+[node name="Cylinder_083" parent="Map" index="65" unique_id=641268073 groups=["Streetlights"]]
+
+[node name="Cylinder_084" parent="Map" index="66" unique_id=1242305114 groups=["Streetlights"]]
+
+[node name="Cylinder_092" parent="Map" index="90" unique_id=1293815033 groups=["Streetlights"]]
+
+[node name="Cylinder_093" parent="Map" index="91" unique_id=1709195546 groups=["Streetlights"]]
+
+[node name="Cube_003" parent="Map" index="110" unique_id=1607341483]
+surface_material_override/0 = ExtResource("7_s55tp")
+
+[node name="Cube" parent="Map" index="200" unique_id=1749114642]
+surface_material_override/2 = SubResource("StandardMaterial3D_dn82p")
+
+[node name="BakeryCautionTape" type="Sprite3D" parent="Map/Cube" index="0" unique_id=798807205]
 transform = Transform3D(1.72, 0, 0, 0, 4.055, 0, 0, 0, 10, -7.1716614, 7.3301525, 0.07543945)
 visible = false
 texture = ExtResource("33_urwcn")
 
-[node name="HospitalCautionTape" type="Sprite3D" parent="Map/hospital_a" parent_id_path=PackedInt32Array(1112612333, 1745767553) index="0" unique_id=85518899]
+[node name="hospital_a" parent="Map" index="205" unique_id=1707259275]
+surface_material_override/1 = SubResource("StandardMaterial3D_xww38")
+
+[node name="HospitalCautionTape" type="Sprite3D" parent="Map/hospital_a" index="0" unique_id=85518899]
 transform = Transform3D(10.925, 0, 0, 0, 5.17, 0, 0, 0, 10, -0.32185364, -0.67856026, 9.908463)
 visible = false
 texture = ExtResource("33_urwcn")
 
-[node name="DealershipCautionTape" type="Sprite3D" parent="Map/Cube_006" parent_id_path=PackedInt32Array(1112612333, 1635900364) index="0" unique_id=1331424076]
+[node name="Plane_003" parent="Map" index="208" unique_id=2006594451]
+surface_material_override/1 = ExtResource("7_s55tp")
+
+[node name="Cube_001" parent="Map" index="241" unique_id=1781243913]
+surface_material_override/1 = SubResource("StandardMaterial3D_3l71g")
+
+[node name="Cube_006" parent="Map" index="242" unique_id=939199395]
+surface_material_override/0 = SubResource("StandardMaterial3D_6xo7c")
+
+[node name="DealershipCautionTape" type="Sprite3D" parent="Map/Cube_006" index="0" unique_id=1331424076]
 transform = Transform3D(1.5, 0, 0, 0, 5.885, 0, 0, 0, 10, -3.9072495, 10.501263, -2.6053715)
 visible = false
 texture = ExtResource("33_urwcn")
@@ -138,6 +353,17 @@ texture = ExtResource("33_urwcn")
 [node name="CautionTape" type="Sprite3D" parent="Map/Cube_006/DealershipCautionTape" unique_id=75868480]
 transform = Transform3D(1.56, 0, 0, 0, 0.575, 0, 0, 0, 10, 10.682877, -0.9022509, 0.4172051)
 texture = SubResource("CompressedTexture2D_ptfg7")
+
+[node name="CityPostProcess" type="CanvasLayer" parent="." unique_id=1221460917]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CityPostProcess" unique_id=1748461354]
+material = SubResource("ShaderMaterial_city_post")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer" parent="." unique_id=1382565654 instance=ExtResource("4_7lxs7")]
 
@@ -169,6 +395,7 @@ shape = SubResource("SphereShape3D_0vtf2")
 transform = Transform3D(3.405, 0, 0, 0, 3.405, 0, 0, 0, 3.405, 0.61337376, 0.34741282, -0.82300186)
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=385124564]
+visible = false
 layers = 1023
 occluder = ExtResource("9_crkg8")
 
@@ -365,6 +592,18 @@ script = ExtResource("31_p1ya7")
 
 [node name="Jeepney" parent="Track" unique_id=589528123 instance=ExtResource("31_ptfg7")]
 transform = Transform3D(0, 0, 1, 0, 0.9999991, 0, -0.9999991, 0, 0, 96.535, 0, 0)
+
+[node name="SpotLight3D1" type="SpotLight3D" parent="Track/Jeepney" unique_id=925089493]
+transform = Transform3D(1.0000008, 0, 0, 0, 0.9809252, 0.19438963, 0, -0.19438902, 0.98092455, -1.4508667, 2.5458605, -5.010292)
+spot_range = 33.891518
+spot_attenuation = -0.9
+spot_angle = 14.33
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Track/Jeepney" unique_id=584347034]
+transform = Transform3D(1.0000008, 0, 0, 0, 0.9809254, 0.1943892, 0, -0.19438906, 0.9809245, 1.4686127, 2.5458603, -5.010292)
+spot_range = 33.891518
+spot_attenuation = -0.9
+spot_angle = 14.33
 
 [node name="Tita Elena" parent="." unique_id=134432329 instance=ExtResource("33_jvih8")]
 transform = Transform3D(-1.3610616, 0, -1.7284417, 0, 2.1999998, 0, 1.7284417, 0, -1.3610616, -177.53983, 0.50579643, 11.266831)

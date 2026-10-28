@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://djqwtg1gnm0po"]
+
+[resource]
+resource_name = "M_Wood_Plank_A"
+cull_mode = 2
+albedo_color = Color(0.76612425, 0.581744, 0.32206154, 1)
+roughness = 0.9
