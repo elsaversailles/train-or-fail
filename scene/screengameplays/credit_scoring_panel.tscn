@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ciwjwtcjc14uu" path="res://images/TutorialsIMG/CREDITSCORING/csholder.png" id="5_4s6tp"]
 [ext_resource type="FontFile" uid="uid://bmy32g0c66s4e" path="res://theme/DarumadropOne-Regular.ttf" id="5_5aogp"]
 [ext_resource type="Texture2D" uid="uid://btl8nacck2i5j" path="res://images/TutorialsIMG/CREDITSCORING/csflagbutton_red.png" id="8_5aogp"]
+[ext_resource type="Texture2D" uid="uid://dcsws2l6c4bs7" path="res://images/TutorialsIMG/CREDITSCORING/csflagbutton.png" id="9_flag_button"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d5ytb"]
 texture = ExtResource("2_etpp7")
@@ -31,11 +32,8 @@ texture = ExtResource("4_5aogp")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x3kqo"]
 texture = ExtResource("5_4s6tp")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5aogp"]
-load_path = "res://.godot/imported/csflagbutton.png-64673581eae28ce419de4e1e274c8bcb.ctex"
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t70an"]
-texture = SubResource("CompressedTexture2D_5aogp")
+texture = ExtResource("9_flag_button")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xghf2"]
 texture = ExtResource("8_5aogp")
