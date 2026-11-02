@@ -1,4 +1,6 @@
 shader_type spatial;
+// Match the imported road materials: some road faces have reversed winding.
+render_mode cull_disabled;
 
 uniform sampler2D road_texture : source_color, filter_linear_mipmap_anisotropic, repeat_enable;
 uniform vec4 albedo_tint : source_color = vec4(1.0);

@@ -15,9 +15,21 @@ var last_event_pos2D = null
 var last_event_time: float = -1.0
 
 func _ready():
-	node_area.mouse_entered.connect(func(): is_mouse_inside = true)
-	node_area.mouse_exited.connect(func(): is_mouse_inside = false)
+	# Keep hover help inside the monitor texture, rather than an OS popup.
+	node_viewport.gui_embed_subwindows = true
+	node_area.mouse_entered.connect(_on_mouse_entered)
+	node_area.mouse_exited.connect(_on_mouse_exited)
 	node_area.input_event.connect(_mouse_input_event)
+
+func _on_mouse_entered() -> void:
+	is_mouse_inside = true
+	node_viewport.notify_mouse_entered()
+
+func _on_mouse_exited() -> void:
+	is_mouse_inside = false
+	node_viewport.notify_mouse_exited()
+	last_event_pos2D = null
+	last_event_time = -1.0
 
 func _unhandled_input(event):
 	# Guard: Don't process if deleting or if it's a mouse event (handled by physics picking)
@@ -32,6 +44,9 @@ func _mouse_input_event(_camera: Camera3D, event: InputEvent, event_position: Ve
 	# CRITICAL FIX: Ensure viewport is still valid and in tree before processing
 	if not is_inside_tree() or not node_viewport or not node_viewport.is_inside_tree():
 		return
+
+	# Other input listeners still need the original window coordinates.
+	event = event.duplicate()
 
 	var now: float = Time.get_ticks_msec() / 1000.0
 	var quad_mesh_size = node_quad.mesh.size
@@ -67,7 +82,7 @@ func _mouse_input_event(_camera: Camera3D, event: InputEvent, event_position: Ve
 	last_event_time = now
 
 	# 4. Final Push
-	node_viewport.push_input(event)
+	node_viewport.push_input(event, true)
 
 
 # ==========================================

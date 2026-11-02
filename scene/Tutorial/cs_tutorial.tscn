@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://b6tmwnj3ngb3a"]
 
 [ext_resource type="Script" uid="uid://xccauf57hbiv" path="res://scripts/TutorialsScript/CSTutorial.gd" id="1_k0wp0"]
-[ext_resource type="Texture2D" uid="uid://yahc322jgg0j" path="res://images/TutorialsIMG/FRAUDDETECTION/fdpanel.png" id="1_lmqpf"]
 [ext_resource type="Texture2D" uid="uid://dondulqomqkkf" path="res://images/TutorialsIMG/CREDITSCORING/CS_data_highlight_img.png" id="2_00ij3"]
 [ext_resource type="Texture2D" uid="uid://cvhhetc3l7j4a" path="res://images/TutorialsIMG/CREDITSCORING/CS_button_highlight_img.png" id="3_nka8f"]
+[ext_resource type="Texture2D" uid="uid://b2li6b1n0vt2x" path="res://images/TutorialsIMG/CREDITSCORING/csbutton.png" id="4_k0wp0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pgulq"]
 
@@ -71,11 +71,12 @@ grow_vertical = 0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="BackgroundPanel/TextBoxContainer" unique_id=403401772]
 layout_mode = 2
-texture = ExtResource("1_lmqpf")
-region_rect = Rect2(-6.854431, -8.245972, 1599.0522, 1052.2499)
-patch_margin_left = 31
-patch_margin_top = 8
-patch_margin_bottom = 9
+texture = ExtResource("4_k0wp0")
+region_rect = Rect2(1.3967438, 2.8738403, 185.95047, 163.06836)
+patch_margin_left = 57
+patch_margin_top = 57
+patch_margin_right = 58
+patch_margin_bottom = 55
 
 [node name="MessageLabel" type="Label" parent="BackgroundPanel" unique_id=237320477]
 custom_minimum_size = Vector2(1, 1)

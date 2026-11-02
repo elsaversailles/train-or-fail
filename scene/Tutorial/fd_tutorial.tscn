@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bg58s1fir1w6l" path="res://scripts/TutorialsScript/FDTutorial.gd" id="1_gr474"]
 [ext_resource type="Texture2D" uid="uid://cxcmnsjc30j2m" path="res://images/TutorialsIMG/FRAUDDETECTION/FD_data_highlight_img.png" id="2_bs7mi"]
 [ext_resource type="Texture2D" uid="uid://dsvrgg868hrti" path="res://images/TutorialsIMG/FRAUDDETECTION/FD_button_highlight_img.png" id="3_m3o2c"]
-[ext_resource type="Texture2D" uid="uid://yahc322jgg0j" path="res://images/TutorialsIMG/FRAUDDETECTION/fdpanel.png" id="4_m3o2c"]
+[ext_resource type="Texture2D" uid="uid://b2li6b1n0vt2x" path="res://images/TutorialsIMG/CREDITSCORING/csbutton.png" id="4_m3o2c"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ei5bu"]
 
@@ -73,10 +73,11 @@ grow_vertical = 0
 [node name="NinePatchRect" type="NinePatchRect" parent="BackgroundPanel/TextBoxContainer" unique_id=967248801]
 layout_mode = 2
 texture = ExtResource("4_m3o2c")
-region_rect = Rect2(-6.854431, -8.245972, 1599.0522, 1052.2499)
-patch_margin_left = 31
-patch_margin_top = 8
-patch_margin_bottom = 9
+region_rect = Rect2(-0.28125, -0.8037796, 187.07741, 166.93393)
+patch_margin_left = 59
+patch_margin_top = 61
+patch_margin_right = 60
+patch_margin_bottom = 58
 
 [node name="MessageLabel" type="Label" parent="BackgroundPanel" unique_id=110076958]
 custom_minimum_size = Vector2(1, 1)

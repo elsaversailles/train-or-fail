@@ -9,6 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://crd58bfg85dgd" path="res://images/note.png" id="7_yd263"]
 [ext_resource type="Texture2D" uid="uid://db3vx0b4fj87k" path="res://images/BlankNote.png" id="8_xjj1h"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_5aogp"]
+outline_size = 22
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_a5r6c"]
 font_size = 22
 outline_size = 7
@@ -50,7 +54,11 @@ offset_right = -44.0
 offset_bottom = -14.0
 grow_horizontal = 0
 grow_vertical = 0
+tooltip_text = "Today's date for checking ID validity.
+Dates are shown as month/day/year."
+mouse_filter = 1
 theme_override_font_sizes/font_size = 22
+label_settings = SubResource("LabelSettings_5aogp")
 horizontal_alignment = 2
 
 [node name="ApplicantLabel" type="Label" parent="." unique_id=1897025475]
@@ -90,6 +98,9 @@ offset_right = 524.0
 offset_bottom = -7.9999695
 grow_horizontal = 2
 grow_vertical = 2
+tooltip_text = "The system's risk estimate for this applicant.
+Review the evidence before deciding."
+mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "AI Risk Factor"
@@ -107,6 +118,9 @@ offset_right = 526.7151
 offset_bottom = 61.35501
 grow_horizontal = 2
 grow_vertical = 2
+tooltip_text = "The system's risk estimate for this applicant.
+Review the evidence before deciding."
+mouse_filter = 1
 theme_override_font_sizes/font_size = 20
 label_settings = SubResource("LabelSettings_a5r6c")
 
@@ -121,6 +135,7 @@ offset_right = -230.0
 offset_bottom = -262.0
 grow_horizontal = 2
 grow_vertical = 2
+tooltip_text = "Show or hide the notes for this customer."
 texture_normal = ExtResource("7_yd263")
 stretch_mode = 0
 
@@ -135,6 +150,8 @@ offset_right = -44.0
 offset_bottom = -58.0
 grow_horizontal = 2
 grow_vertical = 2
+tooltip_text = "Click to enlarge the ID for inspection.
+Click again to restore its size."
 theme_override_styles/panel = SubResource("StyleBoxFlat_a5r6c")
 
 [node name="IDImage" type="TextureRect" parent="IDPanel" unique_id=1758403976]
@@ -153,6 +170,7 @@ offset_left = 6.0
 offset_top = 4.0
 offset_right = 30.0
 offset_bottom = 28.0
+mouse_filter = 2
 texture = ExtResource("2_8n3vj")
 expand_mode = 1
 
@@ -167,6 +185,8 @@ offset_right = -968.0
 offset_bottom = -39.0
 grow_horizontal = 2
 grow_vertical = 2
+tooltip_text = "Submit this customer's identity as legitimate
+and move to the next customer."
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -187,6 +207,8 @@ offset_right = -811.0
 offset_bottom = -38.0
 grow_horizontal = 2
 grow_vertical = 2
+tooltip_text = "Submit this customer's identity as suspicious
+and move to the next customer."
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -195,6 +217,30 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_d0jgs")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_d0jgs")
 theme_override_styles/hover = SubResource("StyleBoxTexture_d0jgs")
 text = "SUSPICIOUS"
+
+[node name="ShutdownButton" type="Button" parent="." unique_id=430773490]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -130.0
+offset_top = -120.0
+offset_right = 130.0
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 0
+tooltip_text = "Finish reviewing and end this shift."
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_d0jgs")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_d0jgs")
+theme_override_styles/hover = SubResource("StyleBoxTexture_d0jgs")
+text = "End Training"
 
 [node name="LeftButton" type="Button" parent="." unique_id=522971002]
 layout_mode = 1
@@ -208,6 +254,7 @@ offset_bottom = -53.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
+tooltip_text = "Hold to turn the customer to the left."
 theme_override_styles/normal = SubResource("StyleBoxTexture_ud6u0")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ud6u0")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ud6u0")
@@ -227,6 +274,7 @@ offset_bottom = -54.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+tooltip_text = "Return the customer to the front view."
 theme_override_styles/normal = SubResource("StyleBoxTexture_xjj1h")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_xjj1h")
 theme_override_styles/hover = SubResource("StyleBoxTexture_xjj1h")
@@ -245,6 +293,7 @@ offset_bottom = -53.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 8
+tooltip_text = "Hold to turn the customer to the right."
 theme_override_styles/normal = SubResource("StyleBoxTexture_yd263")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_yd263")
 theme_override_styles/hover = SubResource("StyleBoxTexture_yd263")
@@ -261,6 +310,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+tooltip_text = "Click this note to close it."
 texture = ExtResource("8_xjj1h")
 
 [node name="NoteTextLabel" type="Label" parent="NotePopupPanel" unique_id=657461370]

@@ -22,7 +22,7 @@ func _ready() -> void:
 	distance_option.select(SettingsManager.render_distance)
 	distance_option.item_selected.connect(_on_render_distance_selected)
 	# 1. When the panel opens, snap the slider to whatever the saved volume is!
-	music_slider.value = SettingsManager.music_volume
+	music_slider.value = SettingsManager.master_volume
 	
 	music_slider.value_changed.connect(_on_music_slider_value_changed)
 	_on_music_slider_value_changed(music_slider.value)
@@ -63,8 +63,7 @@ func _on_render_distance_selected(index: int) -> void:
 func _on_music_slider_value_changed(value: float):
 	var music_value = int(value * 100)
 	volume_value.text = str(music_value) + " %"
-	SettingsManager.music_volume = value
-	SettingsManager.save_settings()
+	# MusicControl applies and saves the Master bus volume.
 
 # --- NEW: Sensitivity Slider Logic ---
 func _on_sensitivity_slider_value_changed(value: float):

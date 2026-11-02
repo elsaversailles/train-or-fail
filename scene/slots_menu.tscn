@@ -6,9 +6,66 @@
 [ext_resource type="Texture2D" uid="uid://cf07eqys1hha8" path="res://images/MainMenu/SlotsMenu/Slots.png" id="4_uxh7c"]
 [ext_resource type="Texture2D" uid="uid://mki1t5in5vk1" path="res://images/MainMenu/SlotsMenu/Button.png" id="5_e4e52"]
 [ext_resource type="Texture2D" uid="uid://rdrnqckm3wec" path="res://images/MainMenu/SlotsMenu/DisabledButton.png" id="6_d2eqt"]
+[ext_resource type="Texture2D" path="res://images/MainMenu/SlotsMenu/Confirmation_BG.png" id="7_confirmation"]
+[ext_resource type="Script" path="res://scripts/SlotSelectionAura.gd" id="8_selection_aura"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_os2d6"]
 texture = ExtResource("2_4q8hf")
+
+[sub_resource type="SystemFont" id="SystemFont_slot_details"]
+font_names = PackedStringArray("Arial")
+
+[sub_resource type="SystemFont" id="SystemFont_slot_title"]
+font_names = PackedStringArray("Arial")
+font_weight = 700
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_confirmation"]
+bg_color = Color(0.13, 0.15, 0.19, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cancel"]
+bg_color = Color(0.21, 0.24, 0.29, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.42, 0.46, 0.53, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_left = 4
+corner_radius_bottom_right = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cancel_hover"]
+bg_color = Color(0.29, 0.33, 0.39, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_left = 4
+corner_radius_bottom_right = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_delete"]
+bg_color = Color(0.75, 0.18, 0.2, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_left = 4
+corner_radius_bottom_right = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_delete_hover"]
+bg_color = Color(0.9, 0.24, 0.26, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_left = 4
+corner_radius_bottom_right = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_confirmation_focus"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.86, 0.9, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_left = 4
+corner_radius_bottom_right = 4
 
 [node name="Slots" type="Control" unique_id=379260567]
 layout_mode = 3
@@ -41,7 +98,14 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_d2eqt")
 
+[node name="SelectionAura" type="Control" parent="Panel"]
+visible = false
+layout_mode = 0
+mouse_filter = 2
+script = ExtResource("8_selection_aura")
+
 [node name="SlotButton1" type="TextureButton" parent="Panel" unique_id=267605896]
+tooltip_text = "Select save slot 1."
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -54,22 +118,62 @@ grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("4_uxh7c")
 
-[node name="Label" type="Label" parent="Panel/SlotButton1" unique_id=996827732]
+[node name="SlotTitleLabel" type="Label" parent="Panel/SlotButton1"]
+custom_minimum_size = Vector2(160, 0)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 35.175003
-offset_top = 104.0
-offset_right = -31.825134
-offset_bottom = -16.0
+anchor_left = 0.155
+anchor_top = 0.45
+anchor_right = 0.86
+anchor_bottom = 0.57
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_slot_title")
+theme_override_font_sizes/font_size = 16
+text = "Slot 1"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="StageLabel" type="Label" parent="Panel/SlotButton1"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 1
+anchor_left = 0.155
+anchor_top = 0.59
+anchor_right = 0.86
+anchor_bottom = 0.77
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_slot_details")
+theme_override_font_sizes/font_size = 12
+text = "Stage: Empty"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ScoreLabel" type="Label" parent="Panel/SlotButton1"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 1
+anchor_left = 0.155
+anchor_top = 0.8
+anchor_right = 0.86
+anchor_bottom = 0.92
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_slot_details")
+theme_override_font_sizes/font_size = 12
+text = "Total Score: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="SlotButton2" type="TextureButton" parent="Panel" unique_id=38488708]
+tooltip_text = "Select save slot 2."
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -82,22 +186,62 @@ grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("4_uxh7c")
 
-[node name="Label" type="Label" parent="Panel/SlotButton2" unique_id=1487805889]
+[node name="SlotTitleLabel" type="Label" parent="Panel/SlotButton2"]
+custom_minimum_size = Vector2(160, 0)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 41.0
-offset_top = 106.0
-offset_right = -43.0
-offset_bottom = -16.0
+anchor_left = 0.155
+anchor_top = 0.45
+anchor_right = 0.86
+anchor_bottom = 0.57
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_slot_title")
+theme_override_font_sizes/font_size = 16
+text = "Slot 2"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="StageLabel" type="Label" parent="Panel/SlotButton2"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 1
+anchor_left = 0.155
+anchor_top = 0.59
+anchor_right = 0.86
+anchor_bottom = 0.77
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_slot_details")
+theme_override_font_sizes/font_size = 12
+text = "Stage: Empty"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ScoreLabel" type="Label" parent="Panel/SlotButton2"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 1
+anchor_left = 0.155
+anchor_top = 0.8
+anchor_right = 0.86
+anchor_bottom = 0.92
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_slot_details")
+theme_override_font_sizes/font_size = 12
+text = "Total Score: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="SlotButton3" type="TextureButton" parent="Panel" unique_id=2140050677]
+tooltip_text = "Select save slot 3."
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -110,36 +254,62 @@ grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("4_uxh7c")
 
-[node name="Label" type="Label" parent="Panel/SlotButton3" unique_id=525679535]
+[node name="SlotTitleLabel" type="Label" parent="Panel/SlotButton3"]
+custom_minimum_size = Vector2(160, 0)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 35.0
-offset_top = 99.0
-offset_right = -32.0
-offset_bottom = -14.0
+anchor_left = 0.155
+anchor_top = 0.45
+anchor_right = 0.86
+anchor_bottom = 0.57
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_slot_title")
+theme_override_font_sizes/font_size = 16
+text = "Slot 3"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
-[node name="SlotInfoLabel" type="Label" parent="Panel" unique_id=1599614751]
+[node name="StageLabel" type="Label" parent="Panel/SlotButton3"]
+custom_minimum_size = Vector2(160, 0)
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -355.0
-offset_top = 93.0
-offset_right = 355.0
-offset_bottom = 165.0
+anchor_left = 0.155
+anchor_top = 0.59
+anchor_right = 0.86
+anchor_bottom = 0.77
 grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_slot_details")
+theme_override_font_sizes/font_size = 12
+text = "Stage: Empty"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ScoreLabel" type="Label" parent="Panel/SlotButton3"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 1
+anchor_left = 0.155
+anchor_top = 0.8
+anchor_right = 0.86
+anchor_bottom = 0.92
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_slot_details")
+theme_override_font_sizes/font_size = 12
+text = "Total Score: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="SelectButton" type="TextureButton" parent="Panel" unique_id=67199981]
+tooltip_text = "Start or load the selected save slot."
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -163,6 +333,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="DeleteButton" type="TextureButton" parent="Panel" unique_id=1380354660]
+tooltip_text = "Permanently delete the selected save.\nThis cannot be undone."
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -188,3 +359,145 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="DeleteConfirmation" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+color = Color(0.02, 0.03, 0.05, 0.75)
+
+[node name="Dialog" type="Panel" parent="DeleteConfirmation"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -241.0
+offset_top = -232.0
+offset_right = 241.0
+offset_bottom = 232.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_confirmation")
+
+[node name="Background" type="NinePatchRect" parent="DeleteConfirmation/Dialog"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_confirmation")
+patch_margin_left = 74
+patch_margin_top = 33
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Header" type="Label" parent="DeleteConfirmation/Dialog"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 0.0
+offset_right = 460.0
+offset_bottom = 33.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.16, 0.18, 0.22, 1)
+theme_override_fonts/font = SubResource("SystemFont_slot_title")
+theme_override_font_sizes/font_size = 13
+text = "SAVE MANAGEMENT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title" type="Label" parent="DeleteConfirmation/Dialog"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 104.0
+offset_right = 450.0
+offset_bottom = 148.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.96, 0.97, 1, 1)
+theme_override_fonts/font = SubResource("SystemFont_slot_title")
+theme_override_font_sizes/font_size = 28
+text = "Delete Slot 1?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Message" type="Label" parent="DeleteConfirmation/Dialog"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 164.0
+offset_right = 438.0
+offset_bottom = 232.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.81, 0.84, 0.89, 1)
+theme_override_fonts/font = SubResource("SystemFont_slot_details")
+theme_override_font_sizes/font_size = 19
+text = "This will permanently erase\nthis slot's saved progress."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Warning" type="Label" parent="DeleteConfirmation/Dialog"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 248.0
+offset_right = 438.0
+offset_bottom = 280.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 0.56, 0.57, 1)
+theme_override_fonts/font = SubResource("SystemFont_slot_details")
+theme_override_font_sizes/font_size = 16
+text = "This cannot be undone."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CancelButton" type="Button" parent="DeleteConfirmation/Dialog"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 330.0
+offset_right = 232.0
+offset_bottom = 386.0
+focus_neighbor_left = NodePath("../DeleteButton")
+focus_neighbor_top = NodePath("../DeleteButton")
+focus_neighbor_right = NodePath("../DeleteButton")
+focus_neighbor_bottom = NodePath("../DeleteButton")
+focus_next = NodePath("../DeleteButton")
+focus_previous = NodePath("../DeleteButton")
+mouse_filter = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("SystemFont_slot_title")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_cancel")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cancel_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cancel_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_confirmation_focus")
+text = "Cancel"
+
+[node name="DeleteButton" type="Button" parent="DeleteConfirmation/Dialog"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 330.0
+offset_right = 438.0
+offset_bottom = 386.0
+focus_neighbor_left = NodePath("../CancelButton")
+focus_neighbor_top = NodePath("../CancelButton")
+focus_neighbor_right = NodePath("../CancelButton")
+focus_neighbor_bottom = NodePath("../CancelButton")
+focus_next = NodePath("../CancelButton")
+focus_previous = NodePath("../CancelButton")
+mouse_filter = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("SystemFont_slot_title")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_delete")
+theme_override_styles/hover = SubResource("StyleBoxFlat_delete_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_delete_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_confirmation_focus")
+text = "Delete"

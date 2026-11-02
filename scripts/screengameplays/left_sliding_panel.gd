@@ -1,4 +1,4 @@
-extends Control
+extends "res://scripts/screengameplays/applicant_review_panel.gd"
 
 # -----------------------------
 # PANEL, ZOOM & GLOW SETTINGS
@@ -65,6 +65,7 @@ var images_swapped = false
 
 var mistakes = 0
 var is_note_open = false
+var note_tween: Tween
 
 # -----------------------------
 # READY
@@ -97,7 +98,7 @@ func _ready():
 	note_popup_panel.z_index = 10 # Keeps the popped-out note above everything
 	note_icon_button.z_index = 4
 
-	shutdown_button.visible = false
+	setup_review_transitions(model_container, shutdown_button)
 
 	location_original_position = location_button.position
 	item_original_position = item_button.position
@@ -128,7 +129,7 @@ func setup_grip_glow_timer():
 
 func _on_grip_idle_timeout():
 	# Only glow if the panel is closed
-	if not is_open:
+	if not is_open and not is_transitioning and not review_finished:
 		start_grip_glow()
 
 func start_grip_glow():
@@ -167,19 +168,27 @@ func grip_pressed():
 	slide_panel()
 
 func slide_panel():
-	var tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-	if is_open:
-		tween.tween_property(self, "position:x", -panel_width, 0.6)
+	if is_transitioning or review_finished:
+		return
+	set_panel_open(not is_open)
+
+func set_panel_open(open: bool) -> Tween:
+	is_open = open
+	if not open:
 		close_note_immediately()
 		reset_zoom_immediately()
-		is_open = false
-		# Panel is now closed: restart the 3-second timer
-		stop_grip_glow(true)
-	else:
-		tween.tween_property(self, "position:x", -3, 0.6)
-		is_open = true
-		# Panel is now open: stop glowing and do NOT run the timer
-		stop_grip_glow(false)
+	stop_grip_glow(not open and not is_transitioning and not review_finished)
+	return animate_panel_to(-3.0 if open else -float(panel_width))
+
+func set_review_controls_enabled(enabled: bool) -> void:
+	grip_button.disabled = not enabled
+	legit_button.disabled = not enabled
+	sus_button.disabled = not enabled
+	note_icon_button.disabled = not enabled
+	swap_mode_button.disabled = not enabled
+	zoom_mode_button.disabled = not enabled
+	location_button.disabled = not enabled
+	item_button.disabled = not enabled
 
 # -----------------------------
 # PICTURE MODE (SWAP VS ZOOM)
@@ -305,28 +314,38 @@ func _on_note_popup_input(event: InputEvent):
 		close_note()
 
 func open_note():
+	stop_note_tween()
 	is_note_open = true
 	note_popup_panel.pivot_offset = note_popup_panel.size / 2.0
 	note_popup_panel.scale = Vector2(0.8, 0.8)
 	note_popup_panel.modulate.a = 0.0
 	note_popup_panel.visible = true
 	
-	var tween = create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
-	tween.parallel().tween_property(note_popup_panel, "scale", Vector2.ONE, 0.2)
-	tween.parallel().tween_property(note_popup_panel, "modulate:a", 1.0, 0.15)
+	note_tween = create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	note_tween.parallel().tween_property(note_popup_panel, "scale", Vector2.ONE, 0.2)
+	note_tween.parallel().tween_property(note_popup_panel, "modulate:a", 1.0, 0.15)
 
 func close_note():
+	stop_note_tween()
 	is_note_open = false
 	note_popup_panel.pivot_offset = note_popup_panel.size / 2.0
 	
-	var tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
-	tween.parallel().tween_property(note_popup_panel, "scale", Vector2(0.8, 0.8), 0.15)
-	tween.parallel().tween_property(note_popup_panel, "modulate:a", 0.0, 0.15)
-	tween.tween_callback(func(): note_popup_panel.visible = false)
+	note_tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+	note_tween.parallel().tween_property(note_popup_panel, "scale", Vector2(0.8, 0.8), 0.15)
+	note_tween.parallel().tween_property(note_popup_panel, "modulate:a", 0.0, 0.15)
+	note_tween.tween_callback(func(): note_popup_panel.visible = false)
 
 func close_note_immediately():
+	stop_note_tween()
 	is_note_open = false
 	note_popup_panel.visible = false
+	note_popup_panel.scale = Vector2.ONE
+	note_popup_panel.modulate.a = 1.0
+
+func stop_note_tween() -> void:
+	if note_tween and note_tween.is_valid():
+		note_tween.kill()
+	note_tween = null
 
 # -----------------------------
 # LOAD APPLICANT
@@ -405,6 +424,10 @@ func _on_sus_pressed():
 	submit_answer("sus")
 
 func submit_answer(answer):
+	if is_transitioning or review_finished or current_index >= applicants.size():
+		return
+	is_transitioning = true
+	set_review_controls_enabled(false)
 	var current_applicant = applicants[current_index]
 
 	# Check if this character is a special story applicant and record the choice
@@ -419,64 +442,36 @@ func submit_answer(answer):
 	if answer != correct_answer:
 		mistakes += 1
 		
-		# 2. If they hit 3 strikes, tell the main 3D scene to end the game!
+		# Stop the review, then wait for End Training before showing termination.
 		if mistakes >= 3:
-			stop_grip_glow(false)
-			close_note_immediately()
-			reset_zoom_immediately()
-			note_icon_button.visible = false
-			swap_mode_button.visible = false
-			zoom_mode_button.visible = false
-			applicant_label.text = "TERMINATED"
-			get_tree().current_scene.trigger_game_over()
+			termination_pending = true
+			await finish_applicants()
 			return # Stop loading the next applicant
 
 	# 3. If they survive, continue as normal
 	player_answers.append(answer)
-	current_index += 1
-
-	if current_index < applicants.size():
-		load_applicant(current_index)
-	else:
-		finish_applicants()
-		
 	if current_applicant.get("is_special", false):
 		SaveManager.record_special_decision(current_applicant.get("id", ""), answer)
+	current_index += 1
 
-func spawn_3d_model(model_packed_scene: PackedScene):
-	# 1. Delete the previous applicant model
-	for child in model_container.get_children():
-		child.queue_free()
-		
-	await get_tree().process_frame 
-	
-	# 2. Spawn the new .tscn model
-	if model_packed_scene:
-		var new_model = model_packed_scene.instantiate()
-		model_container.add_child(new_model)
-		new_model.position = Vector3.ZERO
-		
-		# Rotate 180° if not already adjusted inside the .tscn
-		new_model.rotate_y(PI)
-		
-		# 3. Find AnimationPlayer and start the idle animation
-		var anim_player: AnimationPlayer = new_model.find_child("AnimationPlayer", true, false)
-		if anim_player:
-			if anim_player.autoplay != "":
-				anim_player.play(anim_player.autoplay)
-			elif anim_player.has_animation("idle"):
-				anim_player.play("idle")
-			elif anim_player.has_animation("Idle"):
-				anim_player.play("Idle")
-			elif anim_player.get_animation_list().size() > 0:
-				anim_player.play(anim_player.get_animation_list()[0])
+	await set_panel_open(false).finished
+	await slide_applicant_out()
+	if current_index < applicants.size():
+		load_applicant(current_index)
+		await slide_applicant_in()
+		is_transitioning = false
+		set_review_controls_enabled(true)
+		stop_grip_glow(true)
+	else:
+		await finish_applicants()
 
 # -----------------------------
-# AFTER 5TH APPLICANT
+# AFTER THE LAST APPLICANT
 # -----------------------------
 func finish_applicants():
+	review_finished = true
 	final_score = 0
-	for i in range(applicants.size()):
+	for i in range(player_answers.size()):
 		if player_answers[i] == applicants[i]["fraud_correct"]:
 			final_score += 1
 
@@ -486,11 +481,14 @@ func finish_applicants():
 	note_icon_button.visible = false
 	swap_mode_button.visible = false
 	zoom_mode_button.visible = false
-	applicant_label.text = "All applicants reviewed"
+	applicant_label.text = "Training ended" if termination_pending else "All applicants reviewed"
 	legit_button.visible = false
 	sus_button.visible = false
-	shutdown_button.visible = true
+	if termination_pending:
+		await slide_applicant_out()
+	await set_panel_open(true).finished
+	is_transitioning = false
+	show_shutdown_prompt()
 
 func _on_shutdown_pressed():
-	get_tree().current_scene.show_final_result(final_score)
-	self.visible = false
+	shutdown_review(final_score)

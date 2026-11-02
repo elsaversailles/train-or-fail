@@ -57,6 +57,7 @@ grow_vertical = 2
 texture = ExtResource("3_ictww")
 
 [node name="New Game" type="TextureButton" parent="Main Menu/Buttons" unique_id=899672900]
+tooltip_text = "Choose a save slot to start or continue your career."
 layout_mode = 0
 offset_left = 790.0
 offset_top = 374.0
@@ -67,6 +68,7 @@ texture_pressed = ExtResource("5_1o50l")
 texture_hover = ExtResource("5_1o50l")
 
 [node name="Settings" type="TextureButton" parent="Main Menu/Buttons" unique_id=219807164]
+tooltip_text = "Adjust volume, display, graphics, and mouse sensitivity."
 layout_mode = 0
 offset_left = 790.0
 offset_top = 423.0
@@ -77,6 +79,7 @@ texture_pressed = ExtResource("7_os2d6")
 texture_hover = ExtResource("7_os2d6")
 
 [node name="About Us" type="TextureButton" parent="Main Menu/Buttons" unique_id=736518455]
+tooltip_text = "View the game credits."
 layout_mode = 0
 offset_left = 790.0
 offset_top = 473.0
@@ -87,6 +90,7 @@ texture_pressed = ExtResource("9_os2d6")
 texture_hover = ExtResource("9_os2d6")
 
 [node name="Quit" type="TextureButton" parent="Main Menu/Buttons" unique_id=1688574072]
+tooltip_text = "Close the game and return to your desktop."
 layout_mode = 0
 offset_left = 790.0
 offset_top = 520.0

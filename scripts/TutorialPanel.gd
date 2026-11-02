@@ -10,7 +10,7 @@ var current_tutorial_page: int = 0
 var tutorials: Array = [
 	{
 		"title": "Inserting a Floppy Disk",
-		"text": "To load the required data, click and drag the floppy disk from your desk and drop it onto the computer's disk drive."
+		"text": "Look at the floppy disk and press E to pick it up. Look at the computer's disk drive and press E again to insert it. Wait for the green light, then look at the monitor and press E to use it. Press E or Esc to leave the computer view."
 	},
 	{
 		"title": "Fraud Detection",
@@ -22,14 +22,23 @@ var tutorials: Array = [
 	},
 	{
 		"title": "Credit Scoring",
-		"text": "Analyze the customer's payment history and outstanding debts. Use the financial data to evaluate their risk level. Adjust the slider between 0 and 1 to reflect their creditworthiness, then submit your evaluation."
+		"text": "Review all four document tabs, including payment history and outstanding debts. Adjust the slider to propose a credit amount from $0 to $10,000. Red Flag selects rejection with $0 credit; raise the slider to change that choice. Press Submit to confirm your evaluation."
 	}
 ]
 
 # A public function the pause menu can call to start the tutorial
 func open_tutorial() -> void:
 	current_tutorial_page = 0
+	next_button.visible = true
+	prev_button.visible = true
 	update_tutorial_display()
+	visible = true
+
+func open_controls() -> void:
+	title_label.text = "Controls"
+	content_label.text = "W / A / S / D - Move\nMouse - Look around\nE - Interact, pick up, insert, or drop a disk\nE or Esc - Leave the computer view\nLeft click - Use monitor controls or advance dialogue\nEsc - Pause or resume outside the computer view"
+	next_button.visible = false
+	prev_button.visible = false
 	visible = true
 
 func update_tutorial_display() -> void:

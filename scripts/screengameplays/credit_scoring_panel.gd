@@ -1,9 +1,8 @@
-extends Control
+extends "res://scripts/screengameplays/applicant_review_panel.gd"
 
 # --- PANEL SETTINGS (RIGHT-TO-LEFT) ---
 var is_open: bool = false
 var panel_width: float = 900.0
-var slide_speed: float = 10.0
 var closed_x: float
 var open_x: float
 
@@ -26,6 +25,7 @@ var final_credit_amount: int = 0
 @onready var slider = $Panel/VSlider
 @onready var submit_button = $Panel/SubmitButton
 @onready var reject_button = $Panel/RejectButton
+@onready var shutdown_button = $Panel/ShutdownButton
 @onready var result_label = $Panel/ResultLabel
 @onready var credit_score_label = $Panel/CreditscoreLabel
 @onready var ai_risk_value_label = $Panel/AIRiskValueLabel
@@ -39,6 +39,11 @@ var final_credit_amount: int = 0
 
 func _ready():
 	slider.value_changed.connect(_on_slider_value_changed)
+	var documents: TabContainer = $Panel/TabContainer
+	documents.set_tab_tooltip(0, "Review the applicant's general information.")
+	documents.set_tab_tooltip(1, "Review the applicant's previous payments.")
+	documents.set_tab_tooltip(2, "Review overdue payments and outstanding arrears.")
+	documents.set_tab_tooltip(3, "Review how the applicant's debt compares with income.")
 	
 	var screen_width = get_viewport_rect().size.x
 	closed_x = screen_width - 10.0
@@ -48,15 +53,13 @@ func _ready():
 	reject_button.pressed.connect(_on_reject_pressed)
 	grip_button.pressed.connect(_on_grip_pressed)
 	submit_button.pressed.connect(_on_submit)
+	shutdown_button.pressed.connect(_on_shutdown_pressed)
+	setup_review_transitions(model_container, shutdown_button)
 	
 	setup_grip_glow_timer()
 	
 	applicants_list = Database.get_session_applicants()
 	load_applicant()
-
-func _process(delta: float):
-	var target_x = open_x if is_open else closed_x
-	position.x = lerp(position.x, target_x, slide_speed * delta)
 
 # ==========================================
 # GRIP BUTTON IDLE GLOW LOGIC
@@ -72,7 +75,7 @@ func setup_grip_glow_timer():
 
 func _on_grip_idle_timeout():
 	# Only glow if the panel is closed
-	if not is_open:
+	if not is_open and not is_transitioning and not review_finished:
 		start_grip_glow()
 
 func start_grip_glow():
@@ -99,15 +102,24 @@ func stop_grip_glow(restart_timer: bool = false):
 			grip_idle_timer.stop()
 
 func _on_grip_pressed():
-	is_open = !is_open
-	if is_open:
-		# Panel is now open: stop glowing and do NOT run the timer
-		stop_grip_glow(false)
-	else:
-		# Panel is now closed: restart the 3-second timer
-		stop_grip_glow(true)
+	if is_transitioning or review_finished:
+		return
+	set_panel_open(not is_open)
+
+func set_panel_open(open: bool) -> Tween:
+	is_open = open
+	stop_grip_glow(not open and not is_transitioning and not review_finished)
+	return animate_panel_to(open_x if open else closed_x)
+
+func set_review_controls_enabled(enabled: bool) -> void:
+	grip_button.disabled = not enabled
+	submit_button.disabled = not enabled
+	reject_button.disabled = not enabled
+	slider.editable = enabled
 
 func _on_reject_pressed():
+	if is_transitioning or review_finished:
+		return
 	is_rejected = true
 	final_credit_amount = 0
 	slider.set_value_no_signal(0.0)
@@ -115,6 +127,8 @@ func _on_reject_pressed():
 	reject_button.button_pressed = true
 
 func _on_slider_value_changed(value: float):
+	if is_transitioning or review_finished:
+		return
 	if value > 0.0:
 		is_rejected = false
 		reject_button.button_pressed = false
@@ -156,30 +170,11 @@ func load_applicant():
 	
 	spawn_3d_model(data.get("model_scene"))
 
-func spawn_3d_model(model_packed_scene: PackedScene):
-	for child in model_container.get_children():
-		child.queue_free()
-		
-	await get_tree().process_frame
-	
-	if model_packed_scene:
-		var new_model = model_packed_scene.instantiate()
-		model_container.add_child(new_model)
-		new_model.position = Vector3.ZERO
-		new_model.rotate_y(PI)
-		
-		var anim_player: AnimationPlayer = new_model.find_child("AnimationPlayer", true, false)
-		if anim_player:
-			if anim_player.autoplay != "":
-				anim_player.play(anim_player.autoplay)
-			elif anim_player.has_animation("idle"):
-				anim_player.play("idle")
-			elif anim_player.has_animation("Idle"):
-				anim_player.play("Idle")
-			elif anim_player.get_animation_list().size() > 0:
-				anim_player.play(anim_player.get_animation_list()[0])
-
 func _on_submit():
+	if is_transitioning or review_finished or current_case_index >= applicants_list.size():
+		return
+	is_transitioning = true
+	set_review_controls_enabled(false)
 	var current_applicant = applicants_list[current_case_index]
 
 	# 1. Calculate player selection (snapped to 0.01)
@@ -204,25 +199,42 @@ func _on_submit():
 	else:
 		mistakes += 1
 		if mistakes >= 3:
-			stop_grip_glow(false)
-			submit_button.visible = false
-			reject_button.visible = false
-			slider.visible = false
-			result_label.text = "TERMINATED"
-			get_tree().current_scene.trigger_game_over()
+			termination_pending = true
+			await finish_game()
 			return
 
 	# 4. Advance to the next applicant
 	current_case_index += 1
+	await set_panel_open(false).finished
+	await slide_applicant_out()
 	if current_case_index < applicants_list.size():
 		load_applicant()
+		await slide_applicant_in()
+		is_transitioning = false
+		set_review_controls_enabled(true)
+		stop_grip_glow(true)
 	else:
-		finish_game()
+		await finish_game()
 
 func finish_game():
+	review_finished = true
+	is_transitioning = true
+	set_review_controls_enabled(false)
 	stop_grip_glow(false)
-	is_open = false
-	self.visible = false
-	
-	if get_tree().current_scene.has_method("show_final_result"):
-		get_tree().current_scene.show_final_result(total_correct_answers)
+	submit_button.hide()
+	reject_button.hide()
+	slider.hide()
+	$Panel/Label.hide()
+	$Panel/TabContainer.hide()
+	$Panel/AIRiskLabel.hide()
+	ai_risk_value_label.hide()
+	credit_score_label.hide()
+	result_label.text = "Training ended" if termination_pending else "All applicants reviewed"
+	if termination_pending:
+		await slide_applicant_out()
+	await set_panel_open(true).finished
+	is_transitioning = false
+	show_shutdown_prompt()
+
+func _on_shutdown_pressed():
+	shutdown_review(total_correct_answers)

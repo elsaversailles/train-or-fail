@@ -50,6 +50,11 @@ func _on_reset_game_pressed() -> void:
 	SceneTransition.reload_scene()
 
 # --- Call the Tutorial Scene ---
+func _on_controls_pressed() -> void:
+	settings_panel.visible = false
+	confirm_quit_panel.visible = false
+	tutorial_panel.open_controls()
+
 func _on_replay_tutorial_pressed() -> void:
 	settings_panel.visible = false
 	confirm_quit_panel.visible = false

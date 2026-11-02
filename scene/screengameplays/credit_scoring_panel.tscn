@@ -79,6 +79,8 @@ offset_top = 63.0
 offset_right = -154.69617
 offset_bottom = -185.0
 grow_vertical = 2
+tooltip_text = "Drag to set the proposed credit from $0 to $10,000.
+Use Submit to confirm your assessment."
 theme_override_icons/grabber = ExtResource("3_122qi")
 theme_override_icons/grabber_highlight = ExtResource("3_122qi")
 theme_override_icons/grabber_disabled = ExtResource("3_122qi")
@@ -238,6 +240,8 @@ offset_right = -68.27214
 offset_bottom = -38.0
 grow_horizontal = 2
 grow_vertical = 2
+tooltip_text = "Confirm the current credit amount or rejection
+and move to the next applicant."
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -245,6 +249,23 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_s784d")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_s784d")
 theme_override_styles/hover = SubResource("StyleBoxTexture_s784d")
 text = "Submit"
+
+[node name="ShutdownButton" type="Button" parent="Panel" unique_id=1304139677]
+visible = false
+layout_mode = 0
+offset_left = 75.0
+offset_top = 551.0
+offset_right = 325.0
+offset_bottom = 611.0
+tooltip_text = "Finish reviewing and end this shift."
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_s784d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_s784d")
+theme_override_styles/hover = SubResource("StyleBoxTexture_s784d")
+text = "Shutdown"
 
 [node name="GripButton" type="Button" parent="Panel" unique_id=1887618933]
 layout_mode = 1
@@ -258,6 +279,7 @@ offset_right = -940.7149
 offset_bottom = -6.0
 grow_horizontal = 0
 grow_vertical = 2
+tooltip_text = "Show or hide the credit assessment panel."
 theme_override_styles/normal = SubResource("StyleBoxTexture_x3kqo")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_x3kqo")
 theme_override_styles/hover = SubResource("StyleBoxTexture_x3kqo")
@@ -282,7 +304,7 @@ offset_bottom = -576.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "2,000 to 10,000"
+text = "$0 to $10,000"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -297,6 +319,8 @@ offset_right = -640.00055
 offset_bottom = -37.0
 grow_horizontal = 2
 grow_vertical = 2
+tooltip_text = "Mark this application for rejection with $0 credit.
+Submit to confirm, or raise the slider to change it."
 theme_override_styles/normal = SubResource("StyleBoxTexture_t70an")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_xghf2")
 theme_override_styles/hover = SubResource("StyleBoxTexture_gskt0")
@@ -315,6 +339,9 @@ offset_right = -745.0005
 offset_bottom = -105.999756
 grow_horizontal = 2
 grow_vertical = 2
+tooltip_text = "Your proposed credit amount for this applicant.
+It is only confirmed when you submit."
+mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 horizontal_alignment = 1
 
@@ -331,6 +358,9 @@ offset_right = -178.00024
 offset_bottom = -168.99997
 grow_horizontal = 2
 grow_vertical = 2
+tooltip_text = "The system's risk estimate for this applicant.
+Review the evidence before deciding."
+mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "AI Risk Factor"
@@ -348,5 +378,8 @@ offset_right = -175.28516
 offset_bottom = -99.64499
 grow_horizontal = 2
 grow_vertical = 2
+tooltip_text = "The system's risk estimate for this applicant.
+Review the evidence before deciding."
+mouse_filter = 1
 theme_override_font_sizes/font_size = 20
 label_settings = SubResource("LabelSettings_5aogp")

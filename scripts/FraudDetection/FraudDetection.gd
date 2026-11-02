@@ -1,5 +1,7 @@
 extends Node3D
 
+const GAME_OVER_FADE_SECONDS: float = 1.2
+
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
 @onready var player = $MainChar
 @onready var info_label: Label = $CanvasLayer/Label
@@ -17,6 +19,8 @@ var gameplay_name: String = "FraudDetection"
 
 # --- MISTAKE TRACKER ---
 var mistakes: int = 0
+var _game_over_started: bool = false
+var _game_over_ready: bool = false
 
 func _ready():
 	# 1. Freeze the player instantly upon loading
@@ -59,6 +63,9 @@ func _ready():
 # ==========================================
 
 func trigger_game_over():
+	if _game_over_started:
+		return
+	_game_over_started = true
 	# Unlock mouse and freeze player
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if player:
@@ -69,12 +76,17 @@ func trigger_game_over():
 		game_over_panel.modulate.a = 0.0
 		game_over_panel.visible = true
 		
-		# Animate alpha from 0.0 to 1.0 over 0.8 seconds
+		# Finish the fade before accepting a click to retry.
 		var tween = create_tween()
-		tween.tween_property(game_over_panel, "modulate:a", 1.0, 1.5).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+		tween.tween_property(game_over_panel, "modulate:a", 1.0, GAME_OVER_FADE_SECONDS).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+		await tween.finished
+		_game_over_ready = true
 
 func _on_game_over_clicked(event: InputEvent):
+	if not _game_over_ready:
+		return
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		_game_over_ready = false
 		get_tree().paused = false
 		SceneTransition.reload_scene()
 

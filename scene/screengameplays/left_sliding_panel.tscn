@@ -72,6 +72,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_jv1ba")
 
 [node name="GripButton" type="Button" parent="ButtonPanel" unique_id=1082902497]
+tooltip_text = "Show or hide the transaction review panel."
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -88,6 +89,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_ew6px")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ew6px")
 
 [node name="LegitButton" type="Button" parent="ButtonPanel" unique_id=62105491]
+tooltip_text = "Submit this transaction as legitimate\nand move to the next applicant."
 layout_mode = 0
 offset_left = 765.0
 offset_top = 403.0
@@ -105,6 +107,7 @@ text = "LEGIT"
 expand_icon = true
 
 [node name="SusButton" type="Button" parent="ButtonPanel" unique_id=63002803]
+tooltip_text = "Submit this transaction as suspicious\nand move to the next applicant."
 layout_mode = 0
 offset_left = 765.0
 offset_top = 503.0
@@ -121,6 +124,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_ew2bv")
 text = "SUSPICIOUS"
 
 [node name="ShutdownButton" type="Button" parent="ButtonPanel" unique_id=1851240839]
+tooltip_text = "Finish reviewing and end this shift."
 layout_mode = 0
 offset_left = 805.0
 offset_top = 39.0
@@ -160,6 +164,7 @@ label_settings = SubResource("LabelSettings_m7ag6")
 horizontal_alignment = 1
 
 [node name="LocationTextureButton" type="TextureButton" parent="." unique_id=1860925544]
+tooltip_text = "Swap mode: click to swap the two pictures.\nZoom mode: click the larger picture to zoom in or out."
 layout_mode = 0
 offset_left = 38.0
 offset_top = 80.0
@@ -183,6 +188,7 @@ label_settings = SubResource("LabelSettings_o60px")
 horizontal_alignment = 1
 
 [node name="ItemTextureButton" type="TextureButton" parent="." unique_id=1560976966]
+tooltip_text = "Swap mode: click to swap the two pictures.\nZoom mode: click the larger picture to zoom in or out."
 layout_mode = 0
 offset_left = 529.0
 offset_top = 388.0
@@ -193,6 +199,8 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="TimeLabel" type="Label" parent="." unique_id=1962118203]
+tooltip_text = "The recorded time of this transaction."
+mouse_filter = 1
 layout_mode = 0
 offset_left = 765.0
 offset_top = 80.0
@@ -203,6 +211,8 @@ theme_override_font_sizes/font_size = 20
 text = "Time"
 
 [node name="TimeValueLabel" type="Label" parent="." unique_id=649184482]
+tooltip_text = "The recorded time of this transaction."
+mouse_filter = 1
 layout_mode = 0
 offset_left = 765.0
 offset_top = 120.0
@@ -212,6 +222,8 @@ theme_override_font_sizes/font_size = 20
 label_settings = SubResource("LabelSettings_3w45d")
 
 [node name="PriceLabel" type="Label" parent="." unique_id=668583854]
+tooltip_text = "The recorded transaction amount."
+mouse_filter = 1
 layout_mode = 0
 offset_left = 765.0
 offset_top = 164.0
@@ -222,6 +234,8 @@ theme_override_font_sizes/font_size = 20
 text = "Price"
 
 [node name="PriceValueLabel" type="Label" parent="." unique_id=619346279]
+tooltip_text = "The recorded transaction amount."
+mouse_filter = 1
 layout_mode = 0
 offset_left = 765.0
 offset_top = 199.0
@@ -231,6 +245,8 @@ theme_override_font_sizes/font_size = 20
 label_settings = SubResource("LabelSettings_3w45d")
 
 [node name="AIRiskLabel" type="Label" parent="." unique_id=1715292067]
+tooltip_text = "The system's risk estimate for this applicant.\nReview the evidence before deciding."
+mouse_filter = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -248,6 +264,8 @@ theme_override_font_sizes/font_size = 20
 text = "AI Risk Factor"
 
 [node name="AIRiskValueLabel" type="Label" parent="." unique_id=1123184660]
+tooltip_text = "The system's risk estimate for this applicant.\nReview the evidence before deciding."
+mouse_filter = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -265,6 +283,7 @@ text = "68%"
 label_settings = SubResource("LabelSettings_3w45d")
 
 [node name="NoteIconButton" type="TextureButton" parent="." unique_id=2054015579]
+tooltip_text = "Show or hide the notes for this applicant."
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -279,6 +298,7 @@ texture_normal = ExtResource("6_m7ag6")
 stretch_mode = 0
 
 [node name="NotePopupPanel" type="TextureRect" parent="." unique_id=205149279]
+tooltip_text = "Click this note to close it."
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -313,6 +333,7 @@ theme_override_font_sizes/font_size = 25
 autowrap_mode = 3
 
 [node name="SwapModeButton" type="TextureButton" parent="." unique_id=1944859946]
+tooltip_text = "Enable swap mode, then click either picture\nto switch the large and small views."
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -327,6 +348,7 @@ texture_normal = ExtResource("8_8s3y7")
 stretch_mode = 0
 
 [node name="ZoomModeButton" type="TextureButton" parent="." unique_id=1350062264]
+tooltip_text = "Enable zoom mode, then click the larger picture.\nClick it again to restore its size."
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

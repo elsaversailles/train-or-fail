@@ -32,6 +32,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="ContentLabel" type="Label" parent="." unique_id=1015491939]
+theme_override_colors/font_color = Color(0.05, 0.07, 0.09, 1)
 custom_minimum_size = Vector2(12, 12)
 layout_mode = 1
 anchors_preset = 14
@@ -49,6 +50,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="NextButton" type="Button" parent="." unique_id=1907883391]
+tooltip_text = "Read the next tutorial page."
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -64,6 +66,7 @@ grow_vertical = 2
 text = "NEXT"
 
 [node name="PrevButton" type="Button" parent="." unique_id=112604576]
+tooltip_text = "Read the previous tutorial page."
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -79,6 +82,7 @@ grow_vertical = 2
 text = "PREVIOUS"
 
 [node name="CloseTutorialButton" type="Button" parent="." unique_id=440977139]
+tooltip_text = "Close this guide and return to the pause menu."
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
