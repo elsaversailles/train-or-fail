@@ -6,6 +6,7 @@ const GAME_OVER_FADE_SECONDS: float = 1.2
 @onready var player = $MainChar
 @onready var info_label: Label = $CanvasLayer/Label
 @onready var game_over_panel = $CanvasLayer/GameOverPanel
+@onready var ending_intro = $CanvasLayer/GameOverPanel/EndingIntro
 
 @onready var tutorial_ui = $CanvasLayer/CSTutorial
 # --- DYNAMIC TRACKING ---
@@ -67,15 +68,18 @@ func trigger_game_over():
 	if game_over_panel:
 		game_over_panel.modulate.a = 0.0
 		game_over_panel.visible = true
+		ending_intro.show_ending("terminated")
+		ending_intro.continue_enabled = false
 		
 		# Finish the fade before accepting a click to retry.
 		var tween = create_tween()
 		tween.tween_property(game_over_panel, "modulate:a", 1.0, GAME_OVER_FADE_SECONDS).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 		await tween.finished
+		ending_intro.continue_enabled = true
 		_game_over_ready = true
 
 func _on_game_over_clicked(event: InputEvent):
-	if not _game_over_ready:
+	if not _game_over_ready or ending_intro.visible:
 		return
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		_game_over_ready = false

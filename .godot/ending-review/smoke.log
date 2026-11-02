@@ -1,0 +1,6 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+SMOKE user data: C:/Users/mart/Desktop/train-or-fail-demo-(copy)/.godot/ending-review/userdata/Godot/app_userdata/TrainOrFail Demo (Copy)
+ENDING SMOKE: 95 checks, 0 failures

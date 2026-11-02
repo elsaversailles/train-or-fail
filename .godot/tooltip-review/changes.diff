@@ -1,0 +1,868 @@
+--- before/scene/main_menu.tscn
++++ after/scene/main_menu.tscn
+@@ -57,6 +57,7 @@
+ texture = ExtResource("3_ictww")
+ 
+ [node name="New Game" type="TextureButton" parent="Main Menu/Buttons" unique_id=899672900]
++tooltip_text = "Choose a save slot to start or continue your career."
+ layout_mode = 0
+ offset_left = 790.0
+ offset_top = 374.0
+@@ -67,6 +68,7 @@
+ texture_hover = ExtResource("5_1o50l")
+ 
+ [node name="Settings" type="TextureButton" parent="Main Menu/Buttons" unique_id=219807164]
++tooltip_text = "Adjust volume, display, graphics, and mouse sensitivity."
+ layout_mode = 0
+ offset_left = 790.0
+ offset_top = 423.0
+@@ -77,6 +79,7 @@
+ texture_hover = ExtResource("7_os2d6")
+ 
+ [node name="About Us" type="TextureButton" parent="Main Menu/Buttons" unique_id=736518455]
++tooltip_text = "View the game credits."
+ layout_mode = 0
+ offset_left = 790.0
+ offset_top = 473.0
+@@ -87,6 +90,7 @@
+ texture_hover = ExtResource("9_os2d6")
+ 
+ [node name="Quit" type="TextureButton" parent="Main Menu/Buttons" unique_id=1688574072]
++tooltip_text = "Close the game and return to your desktop."
+ layout_mode = 0
+ offset_left = 790.0
+ offset_top = 520.0
+--- before/scene/pause_panel.tscn
++++ after/scene/pause_panel.tscn
+@@ -56,6 +56,7 @@
+ label_settings = SubResource("LabelSettings_0vlqb")
+ 
+ [node name="Resume" type="Button" parent="." unique_id=1473593301]
++tooltip_text = "Close the pause menu and return to the game."
+ layout_mode = 0
+ offset_left = 525.0
+ offset_top = 216.0
+@@ -64,6 +65,7 @@
+ text = "Resume"
+ 
+ [node name="Settings" type="Button" parent="." unique_id=844184154]
++tooltip_text = "Adjust audio, graphics, display, and camera sensitivity."
+ layout_mode = 0
+ offset_left = 525.0
+ offset_top = 261.0
+@@ -72,6 +74,7 @@
+ text = "Settings"
+ 
+ [node name="Controls" type="Button" parent="." unique_id=2042390155]
++tooltip_text = "View the movement and interaction controls."
+ layout_mode = 0
+ offset_left = 525.0
+ offset_top = 306.0
+@@ -80,6 +83,7 @@
+ text = "Controls"
+ 
+ [node name="ReplayTutorial" type="Button" parent="." unique_id=447335679]
++tooltip_text = "Review the disk and department instructions."
+ layout_mode = 0
+ offset_left = 525.0
+ offset_top = 348.715
+@@ -88,6 +92,7 @@
+ text = "Tutorial"
+ 
+ [node name="Reset Game" type="Button" parent="." unique_id=1315044682]
++tooltip_text = "Restart the current level.\nUnsaved progress in this level will be lost."
+ layout_mode = 0
+ offset_left = 525.0
+ offset_top = 417.105
+@@ -97,6 +102,7 @@
+ text = "Reset Level"
+ 
+ [node name="Quit" type="Button" parent="." unique_id=15608994]
++tooltip_text = "Choose whether to return to the menu or desktop."
+ layout_mode = 0
+ offset_left = 525.0
+ offset_top = 461.0
+@@ -160,6 +166,7 @@
+ autowrap_mode = 2
+ 
+ [node name="MainMenuButton" type="Button" parent="ConfirmQuitPanel" unique_id=1052951275]
++tooltip_text = "Return to the main menu.\nUnsaved progress for today will be lost."
+ layout_mode = 0
+ offset_left = -68.0
+ offset_top = 66.0
+@@ -168,6 +175,7 @@
+ text = "Quit to Main Menu"
+ 
+ [node name="DesktopButton" type="Button" parent="ConfirmQuitPanel" unique_id=1928385483]
++tooltip_text = "Close the game.\nUnsaved progress for today will be lost."
+ layout_mode = 0
+ offset_left = -56.0
+ offset_top = 7.0
+@@ -176,6 +184,7 @@
+ text = "Quit to Desktop"
+ 
+ [node name="CancelButton" type="Button" parent="ConfirmQuitPanel" unique_id=1755077804]
++tooltip_text = "Stay in the game and return to the pause menu."
+ layout_mode = 0
+ offset_left = -21.0
+ offset_top = 157.0
+@@ -190,6 +199,7 @@
+ 
+ [connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
+ [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
++[connection signal="pressed" from="Controls" to="." method="_on_controls_pressed"]
+ [connection signal="pressed" from="ReplayTutorial" to="." method="_on_replay_tutorial_pressed"]
+ [connection signal="pressed" from="Reset Game" to="." method="_on_reset_game_pressed"]
+ [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+--- before/scene/settings_panel.tscn
++++ after/scene/settings_panel.tscn
+@@ -54,12 +54,12 @@
+ text = "Settings"
+ 
+ [node name="MusicControl" type="HSlider" parent="." unique_id=17278690]
++tooltip_text = "Adjust all game audio. Set to 0% to mute."
+ layout_mode = 0
+ offset_left = -96.0
+ offset_top = -142.0
+ offset_right = 96.0
+ offset_bottom = -126.0
+-tooltip_text = "Adjusts the overall game volume."
+ theme_override_styles/slider = SubResource("StyleBoxLine_by01r")
+ theme_override_styles/grabber_area = SubResource("StyleBoxLine_dclss")
+ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_dclss")
+@@ -93,6 +93,7 @@
+ horizontal_alignment = 2
+ 
+ [node name="BackButton" type="Button" parent="." unique_id=970736283]
++tooltip_text = "Close settings. Changes are saved automatically."
+ layout_mode = 0
+ offset_left = -105.0
+ offset_top = 158.0
+@@ -101,12 +102,12 @@
+ text = "Back"
+ 
+ [node name="FullscreenCheckbox" type="CheckBox" parent="." unique_id=1117961063]
++tooltip_text = "Switch between fullscreen and windowed display."
+ layout_mode = 0
+ offset_left = -102.0
+ offset_top = -41.0
+ offset_right = 4.0
+ offset_bottom = -9.0
+-tooltip_text = "Toggles full screen mode."
+ theme_override_colors/font_color = Color(0, 0, 0, 1)
+ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+ theme_override_colors/font_pressed_color = Color(0.15127608, 0.15127608, 0.15127608, 1)
+@@ -115,12 +116,12 @@
+ text = "Full Screen"
+ 
+ [node name="Sensitivity" type="HSlider" parent="." unique_id=2076778275]
++tooltip_text = "Adjust how quickly the camera turns with the mouse."
+ layout_mode = 0
+ offset_left = -96.0
+ offset_top = -80.0
+ offset_right = 96.0
+ offset_bottom = -64.0
+-tooltip_text = "Controls how fast the camera or mouse turns."
+ theme_override_styles/slider = SubResource("StyleBoxLine_by01r")
+ theme_override_styles/grabber_area = SubResource("StyleBoxLine_dclss")
+ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_dclss")
+@@ -147,12 +148,12 @@
+ horizontal_alignment = 2
+ 
+ [node name="LightingCheckbox" type="CheckBox" parent="." unique_id=774781796]
++tooltip_text = "Enable richer lighting, fog, and shadows.\nTurn off for better performance."
+ layout_mode = 0
+ offset_left = -102.0
+ offset_top = 6.0
+ offset_right = 104.0
+ offset_bottom = 36.0
+-tooltip_text = "Enable sunset lighting, SDFGI, volumetric fog, and sun shadows."
+ theme_override_colors/font_color = Color(0, 0, 0, 1)
+ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+ theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+@@ -173,12 +174,12 @@
+ text = "Rendering Distance"
+ 
+ [node name="RenderDistanceOption" type="OptionButton" parent="." unique_id=1976338649]
++tooltip_text = "Choose how far away scenery stays visible.\nShorter distances can improve performance."
+ layout_mode = 0
+ offset_left = -96.0
+ offset_top = 76.0
+ offset_right = 96.0
+ offset_bottom = 110.0
+-tooltip_text = "Sets how far objects are drawn. Higher values look better but may lower FPS."
+ theme_override_colors/font_color = Color(0, 0, 0, 1)
+ 
+ [connection signal="value_changed" from="MusicControl" to="MusicControl" method="_on_value_changed"]
+--- before/scene/slots_menu.tscn
++++ after/scene/slots_menu.tscn
+@@ -42,6 +42,7 @@
+ texture = ExtResource("3_d2eqt")
+ 
+ [node name="SlotButton1" type="TextureButton" parent="Panel" unique_id=267605896]
++tooltip_text = "Select save slot 1 to view its progress."
+ layout_mode = 1
+ anchors_preset = 15
+ anchor_right = 1.0
+@@ -70,6 +71,7 @@
+ vertical_alignment = 1
+ 
+ [node name="SlotButton2" type="TextureButton" parent="Panel" unique_id=38488708]
++tooltip_text = "Select save slot 2 to view its progress."
+ layout_mode = 1
+ anchors_preset = 15
+ anchor_right = 1.0
+@@ -98,6 +100,7 @@
+ vertical_alignment = 1
+ 
+ [node name="SlotButton3" type="TextureButton" parent="Panel" unique_id=2140050677]
++tooltip_text = "Select save slot 3 to view its progress."
+ layout_mode = 1
+ anchors_preset = 15
+ anchor_right = 1.0
+@@ -140,6 +143,7 @@
+ vertical_alignment = 1
+ 
+ [node name="SelectButton" type="TextureButton" parent="Panel" unique_id=67199981]
++tooltip_text = "Start or load the selected save slot."
+ layout_mode = 1
+ anchors_preset = 2
+ anchor_top = 1.0
+@@ -163,6 +167,7 @@
+ vertical_alignment = 1
+ 
+ [node name="DeleteButton" type="TextureButton" parent="Panel" unique_id=1380354660]
++tooltip_text = "Permanently delete the selected save.\nThis cannot be undone."
+ layout_mode = 1
+ anchors_preset = 3
+ anchor_left = 1.0
+--- before/scene/tutorial_panel.tscn
++++ after/scene/tutorial_panel.tscn
+@@ -32,6 +32,7 @@
+ autowrap_mode = 2
+ 
+ [node name="ContentLabel" type="Label" parent="." unique_id=1015491939]
++theme_override_colors/font_color = Color(0.05, 0.07, 0.09, 1)
+ custom_minimum_size = Vector2(12, 12)
+ layout_mode = 1
+ anchors_preset = 14
+@@ -49,6 +50,7 @@
+ autowrap_mode = 2
+ 
+ [node name="NextButton" type="Button" parent="." unique_id=1907883391]
++tooltip_text = "Read the next tutorial page."
+ layout_mode = 1
+ anchors_preset = 8
+ anchor_left = 0.5
+@@ -64,6 +66,7 @@
+ text = "NEXT"
+ 
+ [node name="PrevButton" type="Button" parent="." unique_id=112604576]
++tooltip_text = "Read the previous tutorial page."
+ layout_mode = 1
+ anchors_preset = 8
+ anchor_left = 0.5
+@@ -79,6 +82,7 @@
+ text = "PREVIOUS"
+ 
+ [node name="CloseTutorialButton" type="Button" parent="." unique_id=440977139]
++tooltip_text = "Close this guide and return to the pause menu."
+ layout_mode = 1
+ anchors_preset = 8
+ anchor_left = 0.5
+--- before/scripts/PausePanel.gd
++++ after/scripts/PausePanel.gd
+@@ -50,6 +50,11 @@
+ 	SceneTransition.reload_scene()
+ 
+ # --- Call the Tutorial Scene ---
++func _on_controls_pressed() -> void:
++	settings_panel.visible = false
++	confirm_quit_panel.visible = false
++	tutorial_panel.open_controls()
++
+ func _on_replay_tutorial_pressed() -> void:
+ 	settings_panel.visible = false
+ 	confirm_quit_panel.visible = false
+--- before/scripts/screen.gd
++++ after/scripts/screen.gd
+@@ -15,9 +15,21 @@
+ var last_event_time: float = -1.0
+ 
+ func _ready():
+-	node_area.mouse_entered.connect(func(): is_mouse_inside = true)
+-	node_area.mouse_exited.connect(func(): is_mouse_inside = false)
++	# Keep hover help inside the monitor texture, rather than an OS popup.
++	node_viewport.gui_embed_subwindows = true
++	node_area.mouse_entered.connect(_on_mouse_entered)
++	node_area.mouse_exited.connect(_on_mouse_exited)
+ 	node_area.input_event.connect(_mouse_input_event)
++
++func _on_mouse_entered() -> void:
++	is_mouse_inside = true
++	node_viewport.notify_mouse_entered()
++
++func _on_mouse_exited() -> void:
++	is_mouse_inside = false
++	node_viewport.notify_mouse_exited()
++	last_event_pos2D = null
++	last_event_time = -1.0
+ 
+ func _unhandled_input(event):
+ 	# Guard: Don't process if deleting or if it's a mouse event (handled by physics picking)
+@@ -32,6 +44,9 @@
+ 	# CRITICAL FIX: Ensure viewport is still valid and in tree before processing
+ 	if not is_inside_tree() or not node_viewport or not node_viewport.is_inside_tree():
+ 		return
++
++	# Other input listeners still need the original window coordinates.
++	event = event.duplicate()
+ 
+ 	var now: float = Time.get_ticks_msec() / 1000.0
+ 	var quad_mesh_size = node_quad.mesh.size
+@@ -67,7 +82,7 @@
+ 	last_event_time = now
+ 
+ 	# 4. Final Push
+-	node_viewport.push_input(event)
++	node_viewport.push_input(event, true)
+ 
+ 
+ # ==========================================
+--- before/scripts/SettingsPanel.gd
++++ after/scripts/SettingsPanel.gd
+@@ -22,7 +22,7 @@
+ 	distance_option.select(SettingsManager.render_distance)
+ 	distance_option.item_selected.connect(_on_render_distance_selected)
+ 	# 1. When the panel opens, snap the slider to whatever the saved volume is!
+-	music_slider.value = SettingsManager.music_volume
++	music_slider.value = SettingsManager.master_volume
+ 	
+ 	music_slider.value_changed.connect(_on_music_slider_value_changed)
+ 	_on_music_slider_value_changed(music_slider.value)
+@@ -63,8 +63,7 @@
+ func _on_music_slider_value_changed(value: float):
+ 	var music_value = int(value * 100)
+ 	volume_value.text = str(music_value) + " %"
+-	SettingsManager.music_volume = value
+-	SettingsManager.save_settings()
++	# MusicControl applies and saves the Master bus volume.
+ 
+ # --- NEW: Sensitivity Slider Logic ---
+ func _on_sensitivity_slider_value_changed(value: float):
+--- before/scripts/SlotsMenu.gd
++++ after/scripts/SlotsMenu.gd
+@@ -49,12 +49,16 @@
+ 		var stage = data.get("stage_name", "Saved Game")
+ 		info_label.text = "Stage: %s\nTotal Score: %d" % [stage, data.get("total_score", 0)]
+ 		select_btn_label.text = "Load Game"
++		select_btn.tooltip_text = "Continue the saved career in slot %d." % slot
+ 		delete_btn_label.text = "Delete"
++		delete_btn.tooltip_text = "Permanently delete the save in slot %d.\nThis cannot be undone." % slot
+ 		delete_btn.disabled = false 
+ 	else:
+ 		info_label.text = "No saved data.\nStart a new career?"
+ 		select_btn_label.text = "New Game"
+-		delete_btn_label.text = "" # Clears text (or change to "Delete" if you want it visible while disabled)
++		select_btn.tooltip_text = "Start a new career in empty slot %d." % slot
++		delete_btn_label.text = "Delete"
++		delete_btn.tooltip_text = "This slot is empty. There is no save to delete."
+ 		delete_btn.disabled = true 
+ 
+ func _on_select_pressed():
+--- before/scripts/TutorialPanel.gd
++++ after/scripts/TutorialPanel.gd
+@@ -10,7 +10,7 @@
+ var tutorials: Array = [
+ 	{
+ 		"title": "Inserting a Floppy Disk",
+-		"text": "To load the required data, click and drag the floppy disk from your desk and drop it onto the computer's disk drive."
++		"text": "Look at the floppy disk and press E to pick it up. Look at the computer's disk drive and press E again to insert it. Wait for the green light, then look at the monitor and press E to use it. Press E or Esc to leave the computer view."
+ 	},
+ 	{
+ 		"title": "Fraud Detection",
+@@ -22,14 +22,23 @@
+ 	},
+ 	{
+ 		"title": "Credit Scoring",
+-		"text": "Analyze the customer's payment history and outstanding debts. Use the financial data to evaluate their risk level. Adjust the slider between 0 and 1 to reflect their creditworthiness, then submit your evaluation."
++		"text": "Review all four document tabs, including payment history and outstanding debts. Adjust the slider to propose a credit amount from $0 to $10,000. Red Flag selects rejection with $0 credit; raise the slider to change that choice. Press Submit to confirm your evaluation."
+ 	}
+ ]
+ 
+ # A public function the pause menu can call to start the tutorial
+ func open_tutorial() -> void:
+ 	current_tutorial_page = 0
++	next_button.visible = true
++	prev_button.visible = true
+ 	update_tutorial_display()
++	visible = true
++
++func open_controls() -> void:
++	title_label.text = "Controls"
++	content_label.text = "W / A / S / D - Move\nMouse - Look around\nE - Interact, pick up, insert, or drop a disk\nE or Esc - Leave the computer view\nLeft click - Use monitor controls or advance dialogue\nEsc - Pause or resume outside the computer view"
++	next_button.visible = false
++	prev_button.visible = false
+ 	visible = true
+ 
+ func update_tutorial_display() -> void:
+--- before/theme/game_theme.tres
++++ after/theme/game_theme.tres
+@@ -2,6 +2,26 @@
+ 
+ [ext_resource type="FontFile" uid="uid://bmy32g0c66s4e" path="res://theme/DarumadropOne-Regular.ttf" id="1_84gcg"]
+ 
++[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tooltip"]
++content_margin_left = 12.0
++content_margin_top = 8.0
++content_margin_right = 12.0
++content_margin_bottom = 8.0
++bg_color = Color(0.07, 0.09, 0.12, 0.97)
++border_width_left = 1
++border_width_top = 1
++border_width_right = 1
++border_width_bottom = 1
++border_color = Color(0.6, 0.65, 0.7, 1)
++corner_radius_top_left = 5
++corner_radius_top_right = 5
++corner_radius_bottom_left = 5
++corner_radius_bottom_right = 5
++
+ [resource]
+ Button/fonts/font = ExtResource("1_84gcg")
+ Label/fonts/font = ExtResource("1_84gcg")
++TooltipLabel/colors/font_color = Color(1, 1, 1, 1)
++TooltipLabel/font_sizes/font_size = 20
++TooltipLabel/fonts/font = ExtResource("1_84gcg")
++TooltipPanel/styles/panel = SubResource("StyleBoxFlat_tooltip")
+--- before/scripts/screengameplays/credit_scoring_panel.gd
++++ after/scripts/screengameplays/credit_scoring_panel.gd
+@@ -39,6 +39,11 @@
+ 
+ func _ready():
+ 	slider.value_changed.connect(_on_slider_value_changed)
++	var documents: TabContainer = $Panel/TabContainer
++	documents.set_tab_tooltip(0, "Review the applicant's general information.")
++	documents.set_tab_tooltip(1, "Review the applicant's previous payments.")
++	documents.set_tab_tooltip(2, "Review overdue payments and outstanding arrears.")
++	documents.set_tab_tooltip(3, "Review how the applicant's debt compares with income.")
+ 	
+ 	var screen_width = get_viewport_rect().size.x
+ 	closed_x = screen_width - 10.0
+--- before/scripts/screengameplays/kyc_panel.gd
++++ after/scripts/screengameplays/kyc_panel.gd
+@@ -21,6 +21,7 @@
+ 
+ # --- NOTE TRACKING ---
+ var is_note_open: bool = false
++var note_tween: Tween
+ 
+ # -----------------------------
+ # NODE REFERENCES
+@@ -112,6 +113,7 @@
+ 		close_note()
+ 
+ func open_note():
++	stop_note_tween()
+ 	is_note_open = true
+ 	note_popup_panel.move_to_front()
+ 	note_popup_panel.pivot_offset = note_popup_panel.size / 2.0
+@@ -119,22 +121,31 @@
+ 	note_popup_panel.modulate.a = 0.0
+ 	note_popup_panel.visible = true
+ 	
+-	var tween = create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+-	tween.parallel().tween_property(note_popup_panel, "scale", Vector2.ONE, 0.2)
+-	tween.parallel().tween_property(note_popup_panel, "modulate:a", 1.0, 0.15)
++	note_tween = create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
++	note_tween.parallel().tween_property(note_popup_panel, "scale", Vector2.ONE, 0.2)
++	note_tween.parallel().tween_property(note_popup_panel, "modulate:a", 1.0, 0.15)
+ 
+ func close_note():
++	stop_note_tween()
+ 	is_note_open = false
+ 	note_popup_panel.pivot_offset = note_popup_panel.size / 2.0
+ 	
+-	var tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+-	tween.parallel().tween_property(note_popup_panel, "scale", Vector2(0.8, 0.8), 0.15)
+-	tween.parallel().tween_property(note_popup_panel, "modulate:a", 0.0, 0.15)
+-	tween.tween_callback(func(): note_popup_panel.visible = false)
++	note_tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
++	note_tween.parallel().tween_property(note_popup_panel, "scale", Vector2(0.8, 0.8), 0.15)
++	note_tween.parallel().tween_property(note_popup_panel, "modulate:a", 0.0, 0.15)
++	note_tween.tween_callback(func(): note_popup_panel.visible = false)
+ 
+ func close_note_immediately():
++	stop_note_tween()
+ 	is_note_open = false
+ 	note_popup_panel.visible = false
++	note_popup_panel.scale = Vector2.ONE
++	note_popup_panel.modulate.a = 1.0
++
++func stop_note_tween() -> void:
++	if note_tween and note_tween.is_valid():
++		note_tween.kill()
++	note_tween = null
+ 
+ # -----------------------------
+ # ID ZOOM LOGIC
+--- before/scripts/screengameplays/left_sliding_panel.gd
++++ after/scripts/screengameplays/left_sliding_panel.gd
+@@ -65,6 +65,7 @@
+ 
+ var mistakes = 0
+ var is_note_open = false
++var note_tween: Tween
+ 
+ # -----------------------------
+ # READY
+@@ -305,28 +306,38 @@
+ 		close_note()
+ 
+ func open_note():
++	stop_note_tween()
+ 	is_note_open = true
+ 	note_popup_panel.pivot_offset = note_popup_panel.size / 2.0
+ 	note_popup_panel.scale = Vector2(0.8, 0.8)
+ 	note_popup_panel.modulate.a = 0.0
+ 	note_popup_panel.visible = true
+ 	
+-	var tween = create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+-	tween.parallel().tween_property(note_popup_panel, "scale", Vector2.ONE, 0.2)
+-	tween.parallel().tween_property(note_popup_panel, "modulate:a", 1.0, 0.15)
++	note_tween = create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
++	note_tween.parallel().tween_property(note_popup_panel, "scale", Vector2.ONE, 0.2)
++	note_tween.parallel().tween_property(note_popup_panel, "modulate:a", 1.0, 0.15)
+ 
+ func close_note():
++	stop_note_tween()
+ 	is_note_open = false
+ 	note_popup_panel.pivot_offset = note_popup_panel.size / 2.0
+ 	
+-	var tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+-	tween.parallel().tween_property(note_popup_panel, "scale", Vector2(0.8, 0.8), 0.15)
+-	tween.parallel().tween_property(note_popup_panel, "modulate:a", 0.0, 0.15)
+-	tween.tween_callback(func(): note_popup_panel.visible = false)
++	note_tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
++	note_tween.parallel().tween_property(note_popup_panel, "scale", Vector2(0.8, 0.8), 0.15)
++	note_tween.parallel().tween_property(note_popup_panel, "modulate:a", 0.0, 0.15)
++	note_tween.tween_callback(func(): note_popup_panel.visible = false)
+ 
+ func close_note_immediately():
++	stop_note_tween()
+ 	is_note_open = false
+ 	note_popup_panel.visible = false
++	note_popup_panel.scale = Vector2.ONE
++	note_popup_panel.modulate.a = 1.0
++
++func stop_note_tween() -> void:
++	if note_tween and note_tween.is_valid():
++		note_tween.kill()
++	note_tween = null
+ 
+ # -----------------------------
+ # LOAD APPLICANT
+--- before/scene/screengameplays/credit_scoring_panel.tscn
++++ after/scene/screengameplays/credit_scoring_panel.tscn
+@@ -70,6 +70,7 @@
+ theme_override_styles/panel = SubResource("StyleBoxTexture_d5ytb")
+ 
+ [node name="VSlider" type="VSlider" parent="Panel" unique_id=2043813608]
++tooltip_text = "Drag to set the proposed credit from $0 to $10,000.\nUse Submit to confirm your assessment."
+ layout_mode = 1
+ anchors_preset = -1
+ anchor_right = 0.30900002
+@@ -227,6 +228,7 @@
+ metadata/_tab_index = 3
+ 
+ [node name="SubmitButton" type="Button" parent="Panel" unique_id=885160728]
++tooltip_text = "Confirm the current credit amount or rejection\nand move to the next applicant."
+ layout_mode = 1
+ anchors_preset = -1
+ anchor_top = 0.81200004
+@@ -247,6 +249,7 @@
+ text = "Submit"
+ 
+ [node name="GripButton" type="Button" parent="Panel" unique_id=1887618933]
++tooltip_text = "Show or hide the credit assessment panel."
+ layout_mode = 1
+ anchors_preset = 11
+ anchor_left = 1.0
+@@ -282,11 +285,12 @@
+ grow_horizontal = 2
+ grow_vertical = 2
+ theme_override_colors/font_color = Color(0, 0, 0, 1)
+-text = "2,000 to 10,000"
++text = "$0 to $10,000"
+ horizontal_alignment = 1
+ vertical_alignment = 1
+ 
+ [node name="RejectButton" type="Button" parent="Panel" unique_id=566334260]
++tooltip_text = "Mark this application for rejection with $0 credit.\nSubmit to confirm, or raise the slider to change it."
+ layout_mode = 1
+ anchors_preset = 15
+ anchor_right = 1.0
+@@ -305,6 +309,8 @@
+ expand_icon = true
+ 
+ [node name="CreditscoreLabel" type="Label" parent="Panel" unique_id=873302042]
++tooltip_text = "Your proposed credit amount for this applicant.\nIt is only confirmed when you submit."
++mouse_filter = 1
+ layout_mode = 1
+ anchors_preset = 15
+ anchor_right = 1.0
+@@ -319,6 +325,8 @@
+ horizontal_alignment = 1
+ 
+ [node name="AIRiskLabel" type="Label" parent="Panel" unique_id=829872804]
++tooltip_text = "The system's risk estimate for this applicant.\nReview the evidence before deciding."
++mouse_filter = 1
+ layout_mode = 1
+ anchors_preset = 8
+ anchor_left = 0.5
+@@ -336,6 +344,8 @@
+ text = "AI Risk Factor"
+ 
+ [node name="AIRiskValueLabel" type="Label" parent="Panel" unique_id=1123863634]
++tooltip_text = "The system's risk estimate for this applicant.\nReview the evidence before deciding."
++mouse_filter = 1
+ layout_mode = 1
+ anchors_preset = 8
+ anchor_left = 0.5
+--- before/scene/screengameplays/kyc_panel.tscn
++++ after/scene/screengameplays/kyc_panel.tscn
+@@ -38,6 +38,8 @@
+ script = ExtResource("1_s16ii")
+ 
+ [node name="DateLabel" type="Label" parent="." unique_id=2130338909]
++tooltip_text = "Today's date for checking ID validity.\nDates are shown as month/day/year."
++mouse_filter = 1
+ layout_mode = 1
+ anchors_preset = 3
+ anchor_left = 1.0
+@@ -78,6 +80,8 @@
+ theme_override_colors/font_color = Color(0, 0, 0, 1)
+ 
+ [node name="AIRiskLabel" type="Label" parent="." unique_id=1168721598]
++tooltip_text = "The system's risk estimate for this applicant.\nReview the evidence before deciding."
++mouse_filter = 1
+ layout_mode = 1
+ anchors_preset = 8
+ anchor_left = 0.5
+@@ -95,6 +99,8 @@
+ text = "AI Risk Factor"
+ 
+ [node name="AIRiskValueLabel" type="Label" parent="." unique_id=683298761]
++tooltip_text = "The system's risk estimate for this applicant.\nReview the evidence before deciding."
++mouse_filter = 1
+ layout_mode = 1
+ anchors_preset = 8
+ anchor_left = 0.5
+@@ -111,6 +117,7 @@
+ label_settings = SubResource("LabelSettings_a5r6c")
+ 
+ [node name="NoteIconButton" type="TextureButton" parent="." unique_id=1348939843]
++tooltip_text = "Show or hide the notes for this customer."
+ layout_mode = 1
+ anchors_preset = 15
+ anchor_right = 1.0
+@@ -125,6 +132,7 @@
+ stretch_mode = 0
+ 
+ [node name="IDPanel" type="Panel" parent="." unique_id=936656019]
++tooltip_text = "Click to enlarge the ID for inspection.\nClick again to restore its size."
+ layout_mode = 1
+ anchors_preset = 15
+ anchor_right = 1.0
+@@ -148,6 +156,7 @@
+ expand_mode = 1
+ 
+ [node name="ZoomIcon" type="TextureRect" parent="IDPanel" unique_id=1150218878]
++mouse_filter = 2
+ layout_mode = 0
+ offset_left = 6.0
+ offset_top = 4.0
+@@ -157,6 +166,7 @@
+ expand_mode = 1
+ 
+ [node name="LegitButton" type="Button" parent="." unique_id=832557719]
++tooltip_text = "Submit this customer's identity as legitimate\nand move to the next customer."
+ layout_mode = 1
+ anchors_preset = 15
+ anchor_right = 1.0
+@@ -177,6 +187,7 @@
+ text = "LEGIT"
+ 
+ [node name="SusButton" type="Button" parent="." unique_id=1994152291]
++tooltip_text = "Submit this customer's identity as suspicious\nand move to the next customer."
+ layout_mode = 1
+ anchors_preset = 15
+ anchor_right = 1.0
+@@ -197,6 +208,7 @@
+ text = "SUSPICIOUS"
+ 
+ [node name="LeftButton" type="Button" parent="." unique_id=522971002]
++tooltip_text = "Hold to turn the customer to the left."
+ layout_mode = 1
+ anchors_preset = 15
+ anchor_right = 1.0
+@@ -216,6 +228,7 @@
+ expand_icon = true
+ 
+ [node name="CenterButton" type="Button" parent="." unique_id=797002015]
++tooltip_text = "Return the customer to the front view."
+ layout_mode = 1
+ anchors_preset = 15
+ anchor_right = 1.0
+@@ -234,6 +247,7 @@
+ expand_icon = true
+ 
+ [node name="RightButton" type="Button" parent="." unique_id=1852923915]
++tooltip_text = "Hold to turn the customer to the right."
+ layout_mode = 1
+ anchors_preset = 15
+ anchor_right = 1.0
+@@ -252,6 +266,7 @@
+ expand_icon = true
+ 
+ [node name="NotePopupPanel" type="TextureRect" parent="." unique_id=1139733270]
++tooltip_text = "Click this note to close it."
+ visible = false
+ layout_mode = 1
+ anchors_preset = 8
+--- before/scene/screengameplays/left_sliding_panel.tscn
++++ after/scene/screengameplays/left_sliding_panel.tscn
+@@ -72,6 +72,7 @@
+ theme_override_styles/panel = SubResource("StyleBoxTexture_jv1ba")
+ 
+ [node name="GripButton" type="Button" parent="ButtonPanel" unique_id=1082902497]
++tooltip_text = "Show or hide the transaction review panel."
+ layout_mode = 1
+ anchors_preset = 11
+ anchor_left = 1.0
+@@ -88,6 +89,7 @@
+ theme_override_styles/hover = SubResource("StyleBoxTexture_ew6px")
+ 
+ [node name="LegitButton" type="Button" parent="ButtonPanel" unique_id=62105491]
++tooltip_text = "Submit this transaction as legitimate\nand move to the next applicant."
+ layout_mode = 0
+ offset_left = 765.0
+ offset_top = 403.0
+@@ -105,6 +107,7 @@
+ expand_icon = true
+ 
+ [node name="SusButton" type="Button" parent="ButtonPanel" unique_id=63002803]
++tooltip_text = "Submit this transaction as suspicious\nand move to the next applicant."
+ layout_mode = 0
+ offset_left = 765.0
+ offset_top = 503.0
+@@ -121,6 +124,7 @@
+ text = "SUSPICIOUS"
+ 
+ [node name="ShutdownButton" type="Button" parent="ButtonPanel" unique_id=1851240839]
++tooltip_text = "Finish reviewing and end this shift."
+ layout_mode = 0
+ offset_left = 805.0
+ offset_top = 39.0
+@@ -160,6 +164,7 @@
+ horizontal_alignment = 1
+ 
+ [node name="LocationTextureButton" type="TextureButton" parent="." unique_id=1860925544]
++tooltip_text = "Swap mode: click to swap the two pictures.\nZoom mode: click the larger picture to zoom in or out."
+ layout_mode = 0
+ offset_left = 38.0
+ offset_top = 80.0
+@@ -183,6 +188,7 @@
+ horizontal_alignment = 1
+ 
+ [node name="ItemTextureButton" type="TextureButton" parent="." unique_id=1560976966]
++tooltip_text = "Swap mode: click to swap the two pictures.\nZoom mode: click the larger picture to zoom in or out."
+ layout_mode = 0
+ offset_left = 529.0
+ offset_top = 388.0
+@@ -193,6 +199,8 @@
+ stretch_mode = 0
+ 
+ [node name="TimeLabel" type="Label" parent="." unique_id=1962118203]
++tooltip_text = "The recorded time of this transaction."
++mouse_filter = 1
+ layout_mode = 0
+ offset_left = 765.0
+ offset_top = 80.0
+@@ -203,6 +211,8 @@
+ text = "Time"
+ 
+ [node name="TimeValueLabel" type="Label" parent="." unique_id=649184482]
++tooltip_text = "The recorded time of this transaction."
++mouse_filter = 1
+ layout_mode = 0
+ offset_left = 765.0
+ offset_top = 120.0
+@@ -212,6 +222,8 @@
+ label_settings = SubResource("LabelSettings_3w45d")
+ 
+ [node name="PriceLabel" type="Label" parent="." unique_id=668583854]
++tooltip_text = "The recorded transaction amount."
++mouse_filter = 1
+ layout_mode = 0
+ offset_left = 765.0
+ offset_top = 164.0
+@@ -222,6 +234,8 @@
+ text = "Price"
+ 
+ [node name="PriceValueLabel" type="Label" parent="." unique_id=619346279]
++tooltip_text = "The recorded transaction amount."
++mouse_filter = 1
+ layout_mode = 0
+ offset_left = 765.0
+ offset_top = 199.0
+@@ -231,6 +245,8 @@
+ label_settings = SubResource("LabelSettings_3w45d")
+ 
+ [node name="AIRiskLabel" type="Label" parent="." unique_id=1715292067]
++tooltip_text = "The system's risk estimate for this applicant.\nReview the evidence before deciding."
++mouse_filter = 1
+ layout_mode = 1
+ anchors_preset = 8
+ anchor_left = 0.5
+@@ -248,6 +264,8 @@
+ text = "AI Risk Factor"
+ 
+ [node name="AIRiskValueLabel" type="Label" parent="." unique_id=1123184660]
++tooltip_text = "The system's risk estimate for this applicant.\nReview the evidence before deciding."
++mouse_filter = 1
+ layout_mode = 1
+ anchors_preset = 8
+ anchor_left = 0.5
+@@ -265,6 +283,7 @@
+ label_settings = SubResource("LabelSettings_3w45d")
+ 
+ [node name="NoteIconButton" type="TextureButton" parent="." unique_id=2054015579]
++tooltip_text = "Show or hide the notes for this applicant."
+ layout_mode = 1
+ anchors_preset = 15
+ anchor_right = 1.0
+@@ -279,6 +298,7 @@
+ stretch_mode = 0
+ 
+ [node name="NotePopupPanel" type="TextureRect" parent="." unique_id=205149279]
++tooltip_text = "Click this note to close it."
+ visible = false
+ layout_mode = 1
+ anchors_preset = 8
+@@ -313,6 +333,7 @@
+ autowrap_mode = 3
+ 
+ [node name="SwapModeButton" type="TextureButton" parent="." unique_id=1944859946]
++tooltip_text = "Enable swap mode, then click either picture\nto switch the large and small views."
+ layout_mode = 1
+ anchors_preset = 15
+ anchor_right = 1.0
+@@ -327,6 +348,7 @@
+ stretch_mode = 0
+ 
+ [node name="ZoomModeButton" type="TextureButton" parent="." unique_id=1350062264]
++tooltip_text = "Enable zoom mode, then click the larger picture.\nClick it again to restore its size."
+ layout_mode = 1
+ anchors_preset = 15
+ anchor_right = 1.0

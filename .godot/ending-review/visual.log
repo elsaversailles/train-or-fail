@@ -1,0 +1,17 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 Core Profile Context 26.1.1.251211 - Compatibility - Using Device: ATI Technologies Inc. - Radeon RX 590 Series
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+LAYOUT algorithm_reformer title=[P: (126.0, 229.0), S: (900.0, 70.0)] body=[P: (126.0, 321.0), S: (900.0, 98.0)]
+LAYOUT another_cog_in_the_machine title=[P: (126.0, 178.0), S: (900.0, 70.0)] body=[P: (126.0, 270.0), S: (900.0, 200.0)]
+LAYOUT cold_efficiency title=[P: (126.0, 229.0), S: (900.0, 70.0)] body=[P: (126.0, 321.0), S: (900.0, 98.0)]
+LAYOUT conflict_of_interest title=[P: (126.0, 229.0), S: (900.0, 70.0)] body=[P: (126.0, 321.0), S: (900.0, 98.0)]
+LAYOUT stagnant_survival title=[P: (126.0, 229.0), S: (900.0, 70.0)] body=[P: (126.0, 321.0), S: (900.0, 98.0)]
+LAYOUT terminated title=[P: (126.0, 229.0), S: (900.0, 70.0)] body=[P: (126.0, 321.0), S: (900.0, 98.0)]
+LAYOUT clean_exit title=[P: (126.0, 229.0), S: (900.0, 70.0)] body=[P: (126.0, 321.0), S: (900.0, 98.0)]
+RESOLUTION (1280, 720) card=[P: (0.0, -0.000031), S: (1280.0, 720.0001)] content=(900.0, 292.0)
+RESOLUTION (1024, 768) card=[P: (0.0, 96.0), S: (1024.0, 576.0)] content=(900.0, 292.0)
+RESOLUTION (1920, 1080) card=[P: (0.0, 0.0), S: (1920.0, 1080.0)] content=(900.0, 292.0)
+RESOLUTION (2560, 1080) card=[P: (320.0, 0.0), S: (1920.0, 1080.0)] content=(900.0, 292.0)
+VISUAL_REVIEW_COMPLETE

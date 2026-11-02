@@ -1,0 +1,33 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" uid="uid://cu3mqqxg73kgm" path="res://images/Endings/Terminated.png" id="10_d5ytb"]
+[ext_resource type="Texture2D" uid="uid://c5x64jsfa3ot3" path="res://images/TutorialsIMG/FRAUDDETECTION/fdholder.png" id="14_x3kqo"]
+[ext_resource type="PackedScene" path="res://scene/ending_intro.tscn" id="17_ending_intro"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d5ytb"]
+texture = ExtResource("14_x3kqo")
+
+
+[node name="GameOverPanel" type="Panel" unique_id=1628570260]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=199697445]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_d5ytb")
+expand_mode = 1
+mouse_filter = 2
+
+
+[node name="EndingIntro" parent="." instance=ExtResource("17_ending_intro")]
+layout_mode = 1
+

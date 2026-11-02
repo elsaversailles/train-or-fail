@@ -1,0 +1,79 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" uid="uid://x0qiy380o8qb" path="res://images/Endings/Algorithm_Reformer.png" id="2_kr8m4"]
+[ext_resource type="Texture2D" uid="uid://closi13hc2vs7" path="res://images/Endings/Stagnant_Survival.png" id="3_3778g"]
+[ext_resource type="Texture2D" uid="uid://dowt3jc1kbxpg" path="res://images/Endings/Cold_Efficiency.png" id="3_ludmo"]
+[ext_resource type="Texture2D" uid="uid://ckutpkeo8vjq5" path="res://images/Endings/The_Clean_Exit.png" id="4_gusyn"]
+[ext_resource type="PackedScene" path="res://scene/ending_intro.tscn" id="8_ending_intro"]
+[ext_resource type="Texture2D" uid="uid://dcqthubwl11j3" path="res://images/Endings/Conflict_of_Interest.png" id="6_qgprs"]
+[ext_resource type="Texture2D" uid="uid://sqhwdyq7qbt7" path="res://images/Endings/Another_Cog_In_The_Machine.png" id="7_3778g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aai3x"]
+bg_color = Color(0.5333243, 3.2488256e-07, 2.8878452e-07, 1)
+
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vohb4"]
+bg_color = Color(2.9961393e-06, 0.5267913, 1.0588765e-06, 1)
+
+
+[node name="GameFinishedPanel" type="Panel" unique_id=852810982]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=638450705]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+
+
+[node name="ChoiceContainer" type="HBoxContainer" parent="." unique_id=736500957]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+metadata/_edit_use_anchors_ = true
+
+
+[node name="SurvivalButton" type="Button" parent="ChoiceContainer" unique_id=867225084]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_aai3x")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_aai3x")
+theme_override_styles/hover = SubResource("StyleBoxFlat_aai3x")
+text = "Stay at Desk"
+
+
+[node name="CleanExitButton" type="Button" parent="ChoiceContainer" unique_id=1632283562]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_vohb4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vohb4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vohb4")
+text = "Resign & Walk Away"
+
+
+[node name="EndingIntro" parent="." instance=ExtResource("8_ending_intro")]
+layout_mode = 1
+

@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://c3etsuta8aojf" path="res://scene/tutorial_panel.tscn" id="4_h251e"]
 [ext_resource type="Script" uid="uid://chy3bpo7q124u" path="res://scripts/TutorialPanel.gd" id="5_i20o8"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tv8i1"]
+load_path = "res://.godot/imported/phone.png-e079165b39efe232079a9973b010bed1.ctex"
+
 [sub_resource type="LabelSettings" id="LabelSettings_0vlqb"]
 font_size = 31
 font_color = Color(0, 0, 0, 1)
@@ -36,7 +39,7 @@ offset_right = 161.5
 offset_bottom = 282.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_h251e")
+texture = SubResource("CompressedTexture2D_tv8i1")
 
 [node name="Label" type="Label" parent="." unique_id=1248934033]
 layout_mode = 1

@@ -33,6 +33,9 @@ font_color = Color(0.9955804, 0.99558026, 0.99558026, 1)
 outline_size = 5
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jcbur"]
+load_path = "res://.godot/imported/a1_location.png-852cc11683418185bf71a881fc977259.ctex"
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ew6px"]
 bg_color = Color(0, 0, 0, 1)
 
@@ -167,6 +170,7 @@ offset_left = 38.0
 offset_top = 80.0
 offset_right = 738.0
 offset_bottom = 590.0
+texture_normal = SubResource("CompressedTexture2D_jcbur")
 ignore_texture_size = true
 stretch_mode = 0
 

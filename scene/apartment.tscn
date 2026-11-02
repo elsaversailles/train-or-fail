@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dtpe25cd85fc8" path="res://scene/result_panel.tscn" id="3_w0ngi"]
 [ext_resource type="Texture2D" uid="uid://ckutpkeo8vjq5" path="res://images/Endings/The_Clean_Exit.png" id="4_gusyn"]
 [ext_resource type="PackedScene" uid="uid://cv87ukpeiw7cp" path="res://scene/crosshair.tscn" id="5_w0ngi"]
-[ext_resource type="Texture2D" uid="uid://djrodjg24p7dk" path="res://images/Endings/Perfect.png" id="6_gsw74"]
+[ext_resource type="PackedScene" path="res://scene/ending_intro.tscn" id="8_ending_intro"]
 [ext_resource type="Texture2D" uid="uid://dcqthubwl11j3" path="res://images/Endings/Conflict_of_Interest.png" id="6_qgprs"]
 [ext_resource type="Texture2D" uid="uid://sqhwdyq7qbt7" path="res://images/Endings/Another_Cog_In_The_Machine.png" id="7_3778g"]
 
@@ -62,7 +62,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("6_gsw74")
+mouse_filter = 2
 expand_mode = 1
 
 [node name="ChoiceContainer" type="HBoxContainer" parent="GameFinishedPanel" unique_id=736500957]
@@ -100,6 +100,9 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_vohb4")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_vohb4")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vohb4")
 text = "Resign & Walk Away"
+
+[node name="EndingIntro" parent="GameFinishedPanel" instance=ExtResource("8_ending_intro")]
+layout_mode = 1
 
 [node name="Node3D" type="Node3D" parent="." unique_id=153943184]
 

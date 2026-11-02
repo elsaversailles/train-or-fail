@@ -4,6 +4,7 @@ extends Node3D
 @onready var player = $Player
 @onready var game_finished_panel = $GameFinishedPanel
 @onready var ending_texture_rect = $GameFinishedPanel/TextureRect
+@onready var ending_intro = $GameFinishedPanel/EndingIntro
 
 # Choice UI for the 27/45 score branch
 @onready var choice_container = $GameFinishedPanel/ChoiceContainer
@@ -145,6 +146,7 @@ func _on_continue_clicked():
 
 func resolve_game_ending():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	$CanvasLayer.hide()
 	if player:
 		player.is_paused = true
 	
@@ -155,10 +157,7 @@ func resolve_game_ending():
 		return
 
 	if SaveManager.are_all_specials_marked(ALL_SPECIAL_IDS, "legit"):
-		ending_texture_rect.texture = ending_algorithm_reformer
-		if choice_container:
-			choice_container.visible = false
-		game_finished_panel.visible = true
+		_show_ending("algorithm_reformer", ending_algorithm_reformer)
 		return
 
 	var total_score = SaveManager.current_save_data.get("total_score", 0)
@@ -169,13 +168,11 @@ func resolve_game_ending():
 		game_finished_panel.visible = true
 		return
 
-	ending_texture_rect.texture = ending_another_cog_in_the_machine
-	if choice_container:
-		choice_container.visible = false
-	game_finished_panel.visible = true
+	_show_ending("another_cog_in_the_machine", ending_another_cog_in_the_machine)
 
 func show_secret_grandpa_ending():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	$CanvasLayer.hide()
 	if player:
 		player.is_paused = true
 	
@@ -184,27 +181,29 @@ func show_secret_grandpa_ending():
 	
 	var grandpa_verdict = SaveManager.get_special_decision("grandpa")
 	if grandpa_verdict == "sus":
-		ending_texture_rect.texture = ending_cold_efficiency
+		_show_ending("cold_efficiency", ending_cold_efficiency)
 	else:
-		ending_texture_rect.texture = ending_conflict_of_interest
-		
-	if choice_container:
-		choice_container.visible = false
+		_show_ending("conflict_of_interest", ending_conflict_of_interest)
+
+func _show_ending(ending_id: String, artwork: Texture2D):
+	ending_texture_rect.texture = artwork
+	choice_container.visible = false
 	game_finished_panel.visible = true
+	ending_intro.show_ending(ending_id)
 
 # ==========================================
 # CHOICE SELECTION & EXIT
 # ==========================================
 
 func _on_choose_stagnant_survival():
-	ending_texture_rect.texture = ending_stagnant_survival
-	choice_container.visible = false
+	_show_ending("stagnant_survival", ending_stagnant_survival)
 
 func _on_choose_clean_exit():
-	ending_texture_rect.texture = ending_clean_exit
-	choice_container.visible = false
+	_show_ending("clean_exit", ending_clean_exit)
 
 func _on_game_finished_clicked(event: InputEvent):
+	if ending_intro.visible:
+		return
 	if choice_container and choice_container.visible:
 		return
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:

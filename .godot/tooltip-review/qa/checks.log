@@ -1,0 +1,24 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+ERROR: Unable to open file: res://.godot/imported/a1_location.png-852cc11683418185bf71a881fc977259.ctex.
+   at: _load_data (scene/resources/compressed_texture.cpp:45)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://run_checks.gd:112)
+ERROR: Unable to open file: res://.godot/imported/csflagbutton.png-64673581eae28ce419de4e1e274c8bcb.ctex.
+   at: _load_data (scene/resources/compressed_texture.cpp:45)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://run_checks.gd:135)
+       [1] check_hover (res://run_checks.gd:178)
+ERROR: Unable to open file: res://.godot/imported/a1_location.png-852cc11683418185bf71a881fc977259.ctex.
+   at: _load_data (scene/resources/compressed_texture.cpp:45)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://run_checks.gd:147)
+       [1] check_hover (res://run_checks.gd:178)
+ERROR: Unable to open file: res://.godot/imported/csflagbutton.png-64673581eae28ce419de4e1e274c8bcb.ctex.
+   at: _load_data (scene/resources/compressed_texture.cpp:45)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://run_checks.gd:147)
+       [1] check_hover (res://run_checks.gd:178)
+UI CHECKS: 98 passed, 0 failed

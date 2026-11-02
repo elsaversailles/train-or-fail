@@ -33,6 +33,7 @@ SettingsManager="*uid://csyt0p5ar44py"
 SceneTransition="*uid://c2wvsl3rgk8l7"
 DialogManager="*uid://nb4suyvp8km4"
 Dialogic="*uid://ds2q0uclmolvu"
+EndingShortcuts="*res://scripts/EndingShortcuts.gd"
 
 [dialogic]
 

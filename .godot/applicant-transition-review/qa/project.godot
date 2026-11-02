@@ -1,0 +1,20 @@
+config_version=5
+
+[application]
+config/name="TrainOrFail UI validation"
+
+[autoload]
+SettingsManager="*res://settings_stub.gd"
+SaveManager="*res://save_stub.gd"
+Database="*res://database_stub.gd"
+SceneTransition="*res://transition_stub.gd"
+
+[display]
+window/size/viewport_width=1152
+window/size/viewport_height=648
+
+[gui]
+theme/custom="res://theme/game_theme.tres"
+
+[rendering]
+renderer/rendering_method="gl_compatibility"

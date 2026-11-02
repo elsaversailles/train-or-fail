@@ -45,7 +45,23 @@ Throughout the 9 days, 4 key narrative applicants appear among the standard proc
 
 ## Endings Matrix
 
-The story concludes with one of six narrative endings determined by your cumulative score and decisions regarding special applicants:
+The game has seven endings: six narrative completion endings determined by your cumulative score and decisions regarding special applicants, plus Terminated for excessive evaluation errors.
+
+Each ending first displays its title and description centered on `images/Endings/EndingBG.png`. Click or press Enter to continue to the existing ending artwork; the next click returns to the main menu for narrative completion endings or retries the current shift after Terminated.
+
+Temporary playtest shortcuts work anywhere while running from Godot or in a debug build:
+
+| Key | Ending preview |
+| :--- | :--- |
+| **F1** | Algorithm Reformer |
+| **F2** | Another Cog in the Machine |
+| **F3** | Cold Efficiency |
+| **F4** | Conflict of Interest |
+| **F5** | Stagnant Survival |
+| **F6** | Terminated |
+| **F7** | The Clean Exit |
+
+Click or press Enter to advance from the card to the artwork, then again to resume the game. **Esc** closes the preview immediately; F1–F7 can switch endings while previewing. The game pauses during previews and resumes its previous state without changing progress or saves. Shortcuts wait until any scene transition finishes. To disable them, set `ENABLED = false` in `scripts/EndingShortcuts.gd` or remove the `EndingShortcuts` autoload. They are disabled automatically in release exports.
 
 | Ending Title | Condition & Route | Narrative Outcome |
 | :--- | :--- | :--- |
@@ -55,6 +71,7 @@ The story concludes with one of six narrative endings determined by your cumulat
 | **Cold Efficiency** | All 4 special NPCs are marked "sus", and Grandpa is rejected as "sus" during the Day 10 bonus shift. | Absolute compliance. Personal ties are eliminated in favor of complete corporate assimilation. |
 | **Conflict of Interest** | All 4 special NPCs are marked "sus", but Grandpa is approved as "legit" during the Day 10 bonus shift. | The cold facade fractures at the final hurdle, exposing personal bias to internal audit. |
 | **Another Cog In The Machine** | Mixed verdicts on special applicants (neither all "sus" nor all "legit"), and total score != 27. | A standard evaluation cycle. The player remains an unremarkable, replaceable bureaucrat. |
+| **Terminated** | Accumulate 3 evaluation errors in a single shift, then select End Training. | Immediate termination for incompetence before making a lasting impact on the business or community. |
 
 ---
 

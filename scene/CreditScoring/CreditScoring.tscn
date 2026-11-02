@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bx7scsfg2nivv" path="res://scene/pause_panel.tscn" id="12_8hxc1"]
 [ext_resource type="AudioStream" uid="uid://lm3fs23d4v2l" path="res://assets/music/gameplaymusic.mp3" id="13_3uodl"]
 [ext_resource type="Texture2D" uid="uid://c5x64jsfa3ot3" path="res://images/TutorialsIMG/FRAUDDETECTION/fdholder.png" id="13_n8goo"]
+[ext_resource type="PackedScene" path="res://scene/ending_intro.tscn" id="17_ending_intro"]
 
 [sub_resource type="Sky" id="Sky_118ik"]
 sky_material = ExtResource("2_3iqyl")
@@ -152,8 +153,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("10_3iqyl")
 expand_mode = 1
+
+[node name="EndingIntro" parent="CanvasLayer/GameOverPanel" unique_id=655748650 instance=ExtResource("17_ending_intro")]
+layout_mode = 1
 
 [node name="ResultPanel" parent="." unique_id=779608946 instance=ExtResource("11_quma2")]
 
