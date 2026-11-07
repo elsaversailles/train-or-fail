@@ -1,0 +1,13 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+RETARGET Grandpa ratio=1.0 native_scale=1.05831527709961 min_sole=-0.00030430036713 max_support=0.00026673590764 playback_speed=1.05567915675585
+RETARGET Assistant ratio=0.39196860954586 native_scale=2.70000004768372 min_sole=-0.00030424297438 max_support=0.00026628302294 playback_speed=1.05567916935963
+RETARGET Mark ratio=0.39196860954586 native_scale=2.70000004768372 min_sole=-0.00030424297438 max_support=0.00026628302294 playback_speed=1.05567916935963
+RETARGET Cashier ratio=1.0 native_scale=1.05831527709961 min_sole=-0.00030430036713 max_support=0.00026673590764 playback_speed=1.05567915675585
+RETARGET Clara ratio=0.39196860954586 native_scale=2.70000004768372 min_sole=-0.00030424297438 max_support=0.00026628302294 playback_speed=1.05567916935963
+RETARGET Supplier ratio=0.39196860954586 native_scale=2.70000004768372 min_sole=-0.00030424297438 max_support=0.00026628302294 playback_speed=1.05567916935963
+RETARGET Jericho ratio=0.39196860954586 native_scale=2.70000004768372 min_sole=-0.00030424297438 max_support=0.00026628302294 playback_speed=1.05567916935963
+RETARGET Joice ratio=0.39196860954586 native_scale=2.70000004768372 min_sole=-0.00030424297438 max_support=0.00026628302294 playback_speed=1.05567916935963
+PATROL_INTEGRATION assertions=322 story_cases=14 generic_cases=8 floor_frames=776 failures=[]

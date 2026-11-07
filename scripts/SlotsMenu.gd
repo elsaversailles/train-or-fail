@@ -59,10 +59,13 @@ func update_button_text(btn: TextureButton, slot: int):
 		btn.tooltip_text = "Deleting the save in slot %d." % slot
 	elif SaveManager.save_exists(slot):
 		btn.texture_normal = SAVED_SLOT_TEXTURE
-		var data = SaveManager.load_game(slot)
+		var data = SaveManager.read_save(slot)
 		stage_label.text = "Stage: " + format_slot_stage(str(data.get("stage_name", "Saved Game")))
 		score_label.text = "Total Score: %d" % int(data.get("total_score", 0))
-		btn.tooltip_text = "Select slot %d to continue or delete this saved career." % slot
+		if SaveManager.get_completed_ending_id(data) != "":
+			btn.tooltip_text = "Select slot %d to play again from Day 1." % slot
+		else:
+			btn.tooltip_text = "Select slot %d to continue or delete this saved career." % slot
 	else:
 		btn.texture_normal = EMPTY_SLOT_TEXTURE
 		stage_label.text = "Stage: Empty"
@@ -87,10 +90,15 @@ func _on_slot_clicked(slot: int):
 	select_btn.visible = true
 	delete_btn.visible = true
 	if SaveManager.save_exists(slot):
-		select_btn_label.text = "Load Game"
-		select_btn.tooltip_text = "Continue the saved career in slot %d." % slot
+		var data = SaveManager.read_save(slot)
+		if SaveManager.get_completed_ending_id(data) != "":
+			select_btn_label.text = "Replay"
+			select_btn.tooltip_text = "Start from Day 1 in slot %d with your certificates and collected endings." % slot
+		else:
+			select_btn_label.text = "Load Game"
+			select_btn.tooltip_text = "Continue the saved career in slot %d." % slot
 		delete_btn_label.text = "Delete"
-		delete_btn.tooltip_text = "Permanently delete the save in slot %d.\nThis cannot be undone." % slot
+		delete_btn.tooltip_text = "Permanently delete slot %d and its training certificates." % slot
 		delete_btn.disabled = false 
 	else:
 		select_btn_label.text = "New Game"
@@ -100,25 +108,32 @@ func _on_slot_clicked(slot: int):
 		delete_btn.disabled = true 
 
 func _on_select_pressed():
-	if confirmation_overlay.visible or deleting_slots.has(selected_slot):
+	if SceneTransition.is_transitioning or confirmation_overlay.visible or deleting_slots.has(selected_slot):
 		return
-	# 1. Tell the SaveManager which slot we picked
-	SaveManager.current_slot = selected_slot
-	# 2. Check if the slot is completely empty
-	if not SaveManager.save_exists(selected_slot):
-		# It's a New Game! Copy the default template and save it to the hard drive
-		SaveManager.current_save_data = SaveManager.DEFAULT_SAVE.duplicate(true)
-		SaveManager.save_game(selected_slot, SaveManager.current_save_data)
-		# Go to the Boat intro scene first! (Adjust path if needed)
+	var has_save := SaveManager.save_exists(selected_slot)
+	var data := SaveManager.load_game(selected_slot)
+	if has_save and data.is_empty():
+		return
+	if not has_save or SaveManager.get_completed_ending_id(data) != "":
+		if has_save and not SaveManager.preserve_slot_ending(data):
+			_show_slot_error(selected_slot, "Couldn't save gallery progress. Try Replay again.")
+			return
+		var fresh_run := SaveManager.DEFAULT_SAVE.duplicate(true)
+		if has_save:
+			fresh_run["certificates"] = data["certificates"].duplicate()
+		if not SaveManager.save_game(selected_slot, fresh_run):
+			_show_slot_error(selected_slot, "Couldn't start the new save. Try again.")
+			return
+		SaveManager.current_save_data = fresh_run
 		SceneTransition.change_scene("res://scene/boat.tscn")
 		return
-	else:
-		# It's an Existing Game! Load their progress into memory
-		SaveManager.current_save_data = SaveManager.load_game(selected_slot)
-	
-	# 3. ROUTE THE PLAYER BASED ON THE DAY (For Loaded Games)
-	var current_day = SaveManager.current_save_data.get("current_day", 1)
-	if current_day == 1 or current_day == 4 or current_day == 7:
+
+	var current_day := int(data.get("current_day", 1))
+	if data.get("is_grandpa_shift", false):
+		SceneTransition.change_scene("res://scene/CreditScoring/CreditScoring.tscn")
+	elif current_day > 9:
+		SceneTransition.change_scene("res://scene/apartment.tscn")
+	elif current_day in [1, 4, 7]:
 		SceneTransition.change_scene("res://scene/office_lobby.tscn")
 	else:
 		SceneTransition.change_scene("res://scene/elevator.tscn")
@@ -149,7 +164,9 @@ func _on_confirm_delete_pressed():
 		refresh_slot_names()
 		_on_slot_clicked(selected_slot)
 		return
-	SaveManager.delete_save(deleted_slot)
+	if not SaveManager.delete_save(deleted_slot):
+		_show_slot_error(deleted_slot, "Couldn't delete this save. Try again.")
+		return
 	deleting_slots.append(deleted_slot)
 	selection_aura.clear()
 	select_btn.visible = false
@@ -158,6 +175,11 @@ func _on_confirm_delete_pressed():
 	await get_tree().create_timer(DELETE_FEEDBACK_SECONDS, true, false, true).timeout
 	deleting_slots.erase(deleted_slot)
 	refresh_slot_names()
+
+func _show_slot_error(slot: int, message: String) -> void:
+	var button: TextureButton = [slot_1, slot_2, slot_3][slot - 1]
+	button.get_node("StageLabel").text = message
+	button.tooltip_text = message
 
 func _input(event: InputEvent) -> void:
 	if confirmation_overlay.visible and event.is_action_pressed("ui_cancel"):

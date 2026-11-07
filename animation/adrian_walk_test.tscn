@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://models3d/characters/M/adrian_santos.tscn" id="1_character"]
+[ext_resource type="AnimationLibrary" path="res://animation/walk_animation.tres" id="2_walk"]
+
+[node name="AdrianWalkTest" instance=ExtResource("1_character")]
+
+[node name="AnimationPlayer" parent="Player" index="1"]
+libraries/walking = ExtResource("2_walk")
+autoplay = &"walking/walk"

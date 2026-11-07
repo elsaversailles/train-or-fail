@@ -1,0 +1,3099 @@
+[
+  {
+    "end": "(275.0, 35.2, 389.4)",
+    "materials": [
+      "DIRT res://Materials/DIRT.tres",
+      "rocks res://Materials/rocks.tres"
+    ],
+    "name": "/root/Map/Plane_001",
+    "position": "(-352.0, -22.0, -162.8)"
+  },
+  {
+    "end": "(37.4, 4.4, -24.2)",
+    "materials": [
+      "BuildingsPastel res://Materials/BuildingsPastel.tres"
+    ],
+    "name": "/root/Map/Cube_013",
+    "position": "(22.04889, 0.0, -39.6)"
+  },
+  {
+    "end": "(37.4, 10.34, -24.2)",
+    "materials": [
+      "BuildingsPastel res://Materials/BuildingsPastel.tres"
+    ],
+    "name": "/root/Map/Cube_020",
+    "position": "(22.04889, 0.0, -39.6)"
+  },
+  {
+    "end": "(37.44889, 7.48, -24.2)",
+    "materials": [
+      "BuildingsPastel res://Materials/BuildingsPastel.tres"
+    ],
+    "name": "/root/Map/Cube_021",
+    "position": "(30.84889, 0.0, -26.4)"
+  },
+  {
+    "end": "(38.5, 8.8, -23.1)",
+    "materials": [
+      "Material.001 res://Materials/Material.001.tres"
+    ],
+    "name": "/root/Map/Cube_385",
+    "position": "(20.9, 7.48, -40.7)"
+  },
+  {
+    "end": "(35.24889, 4.4, -24.2)",
+    "materials": [
+      "BuildingsPastel res://Materials/BuildingsPastel.tres"
+    ],
+    "name": "/root/Map/Cube_386",
+    "position": "(30.84889, 0.0, -26.4)"
+  },
+  {
+    "end": "(38.06572, 16.94, -23.53429)",
+    "materials": [
+      "Material.001 res://Materials/Material.001.tres"
+    ],
+    "name": "/root/Map/Cylinder",
+    "position": "(21.33428, 0.000002, -40.26572)"
+  },
+  {
+    "end": "(37.42444, 13.2, -24.2)",
+    "materials": [
+      "BuildingsPastel res://Materials/BuildingsPastel.tres"
+    ],
+    "name": "/root/Map/Cube_387",
+    "position": "(22.07333, 8.8, -39.6)"
+  },
+  {
+    "end": "(37.42444, 16.28, -24.2)",
+    "materials": [
+      "BuildingsPastel res://Materials/BuildingsPastel.tres"
+    ],
+    "name": "/root/Map/Cube_388",
+    "position": "(22.07333, 8.8, -39.6)"
+  },
+  {
+    "end": "(37.47333, 16.28, -24.2)",
+    "materials": [
+      "BuildingsPastel res://Materials/BuildingsPastel.tres"
+    ],
+    "name": "/root/Map/Cube_389",
+    "position": "(30.87333, 8.8, -26.4)"
+  },
+  {
+    "end": "(38.45111, 17.6, -23.1)",
+    "materials": [
+      "Material.001 res://Materials/Material.001.tres"
+    ],
+    "name": "/root/Map/Cube_390",
+    "position": "(20.85111, 16.28, -40.7)"
+  },
+  {
+    "end": "(35.42, 2.64, -24.42)",
+    "materials": [
+      "beige res://Materials/beige.tres"
+    ],
+    "name": "/root/Map/Plane_017",
+    "position": "(30.58, 0.99, -26.4)"
+  },
+  {
+    "end": "(35.244, 4.4, -24.19999)",
+    "materials": [
+      "GLASSREAL res://Materials/GLASSREAL.tres"
+    ],
+    "name": "/root/Map/Cube_391",
+    "position": "(30.844, 0.88, -24.2)"
+  },
+  {
+    "end": "(28.655, 13.2, -24.19999)",
+    "materials": [
+      "BuildingsPastel res://Materials/BuildingsPastel.tres"
+    ],
+    "name": "/root/Map/Cube_392",
+    "position": "(24.277, 8.58, -24.2)"
+  },
+  {
+    "end": "(35.255, 13.2, -24.19999)",
+    "materials": [
+      "BuildingsPastel res://Materials/BuildingsPastel.tres"
+    ],
+    "name": "/root/Map/Cube_393",
+    "position": "(30.877, 8.58, -24.2)"
+  },
+  {
+    "end": "(18.39692, 8.412126, -16.80304)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_007",
+    "position": "(16.80308, -0.022004, -18.39688)"
+  },
+  {
+    "end": "(42.59692, 8.412126, -16.80304)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_003",
+    "position": "(41.00308, -0.022004, -18.39688)"
+  },
+  {
+    "end": "(82.19692, 8.412126, -16.80304)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_005",
+    "position": "(80.60308, -0.022004, -18.39688)"
+  },
+  {
+    "end": "(-16.80308, 8.412126, -14.60303)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_006",
+    "position": "(-18.39692, -0.022004, -16.19688)"
+  },
+  {
+    "end": "(-60.80308, 8.412126, -14.60303)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_010",
+    "position": "(-62.39692, -0.022004, -16.19688)"
+  },
+  {
+    "end": "(-100.4031, 8.412126, -14.60303)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_012",
+    "position": "(-101.9969, -0.022004, -16.19688)"
+  },
+  {
+    "end": "(-133.4031, 8.412126, -14.60303)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_013",
+    "position": "(-134.9969, -0.022004, -16.19688)"
+  },
+  {
+    "end": "(-164.2031, 8.412126, -14.60303)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_014",
+    "position": "(-165.7969, -0.022004, -16.19688)"
+  },
+  {
+    "end": "(-168.6031, 8.412126, 13.99697)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_015",
+    "position": "(-170.1969, -0.022004, 12.40313)"
+  },
+  {
+    "end": "(-144.4031, 8.412126, 13.99697)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_016",
+    "position": "(-145.9969, -0.022004, 12.40313)"
+  },
+  {
+    "end": "(-142.2031, 8.412126, -47.60303)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_021",
+    "position": "(-143.7969, -0.022004, -49.19688)"
+  },
+  {
+    "end": "(-155.4031, 8.412126, -47.60303)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_022",
+    "position": "(-156.9969, -0.022004, -49.19688)"
+  },
+  {
+    "end": "(119.5969, 8.412126, 13.99697)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_023",
+    "position": "(118.0031, -0.022004, 12.40313)"
+  },
+  {
+    "end": "(119.5969, 8.412126, -12.40304)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_024",
+    "position": "(118.0031, -0.022004, -13.99688)"
+  },
+  {
+    "end": "(82.19692, 8.412126, 13.99697)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_025",
+    "position": "(80.60308, -0.022004, 12.40313)"
+  },
+  {
+    "end": "(42.59692, 8.412126, 13.99697)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_027",
+    "position": "(41.00308, -0.022004, 12.40313)"
+  },
+  {
+    "end": "(0.796919, 8.412126, 13.99697)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_029",
+    "position": "(-0.796921, -0.022004, 12.40313)"
+  },
+  {
+    "end": "(-36.60308, 8.412126, 16.19697)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_030",
+    "position": "(-38.19692, -0.022004, 14.60313)"
+  },
+  {
+    "end": "(-58.60308, 8.412126, 16.19697)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_031",
+    "position": "(-60.19692, -0.022004, 14.60313)"
+  },
+  {
+    "end": "(-89.40308, 8.412126, 16.19697)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_032",
+    "position": "(-90.99693, -0.022004, 14.60313)"
+  },
+  {
+    "end": "(-111.4031, 8.412126, 16.19697)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_033",
+    "position": "(-112.9969, -0.022004, 14.60313)"
+  },
+  {
+    "end": "(-206.0031, 8.412126, 13.99697)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_034",
+    "position": "(-207.5969, -0.022004, 12.40313)"
+  },
+  {
+    "end": "(-203.8031, 8.412126, 82.19697)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_035",
+    "position": "(-205.3969, -0.022004, 80.60313)"
+  },
+  {
+    "end": "(-234.6031, 8.412126, 82.19697)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_036",
+    "position": "(-236.1969, -0.022004, 80.60313)"
+  },
+  {
+    "end": "(-232.4031, 8.412126, -30.00304)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_037",
+    "position": "(-233.9969, -0.022004, -31.59688)"
+  },
+  {
+    "end": "(-212.6031, 8.412126, -14.60303)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_038",
+    "position": "(-214.1969, -0.022004, -16.19688)"
+  },
+  {
+    "end": "(-219.2031, 8.412126, -43.20303)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_041",
+    "position": "(-220.7969, -0.022004, -44.79688)"
+  },
+  {
+    "end": "(-276.4031, 8.412126, -47.60303)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_042",
+    "position": "(-277.9969, -0.022004, -49.19688)"
+  },
+  {
+    "end": "(-287.4031, 8.412126, -30.00304)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_043",
+    "position": "(-288.9969, -0.022004, -31.59688)"
+  },
+  {
+    "end": "(-300.6031, 8.412126, -45.40303)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_044",
+    "position": "(-302.1969, -0.022004, -46.99688)"
+  },
+  {
+    "end": "(-252.2031, 8.412126, 64.59697)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_046",
+    "position": "(-253.7969, -0.022004, 63.00313)"
+  },
+  {
+    "end": "(-250.0031, 8.412126, 40.39697)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_048",
+    "position": "(-251.5969, -0.022004, 38.80313)"
+  },
+  {
+    "end": "(-256.6031, 8.412126, 20.59697)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_050",
+    "position": "(-258.1969, -0.022004, 19.00313)"
+  },
+  {
+    "end": "(-276.4031, 8.412126, 16.19697)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_052",
+    "position": "(-277.9969, -0.022004, 14.60313)"
+  },
+  {
+    "end": "(-300.6031, 8.412126, 40.39697)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_053",
+    "position": "(-302.1969, -0.022004, 38.80313)"
+  },
+  {
+    "end": "(-296.2031, 8.412126, 60.19697)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_055",
+    "position": "(-297.7969, -0.022004, 58.60313)"
+  },
+  {
+    "end": "(-307.2031, 8.412126, -1.403035)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_057",
+    "position": "(-308.7969, -0.022004, -2.996875)"
+  },
+  {
+    "end": "(-232.4031, 8.412126, -1.403035)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_058",
+    "position": "(-233.9969, -0.022004, -2.996875)"
+  },
+  {
+    "end": "(-232.4031, 8.412126, 24.99697)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_059",
+    "position": "(-233.9969, -0.022004, 23.40313)"
+  },
+  {
+    "end": "(-232.4031, 8.412126, 57.99697)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_061",
+    "position": "(-233.9969, -0.022004, 56.40313)"
+  },
+  {
+    "end": "(-258.8031, 8.412126, 84.39697)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_064",
+    "position": "(-260.3969, -0.022004, 82.80312)"
+  },
+  {
+    "end": "(-234.6031, 8.412126, 104.197)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_068",
+    "position": "(-236.1969, -0.022004, 102.6031)"
+  },
+  {
+    "end": "(-203.8031, 8.412126, 104.197)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_070",
+    "position": "(-205.3969, -0.022004, 102.6031)"
+  },
+  {
+    "end": "(-234.6031, 8.412126, 137.197)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_071",
+    "position": "(-236.1969, -0.022004, 135.6031)"
+  },
+  {
+    "end": "(-234.6031, 8.412126, 170.197)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_073",
+    "position": "(-236.1969, -0.022004, 168.6031)"
+  },
+  {
+    "end": "(-269.8031, 8.412126, 104.197)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_076",
+    "position": "(-271.3969, -0.022004, 102.6031)"
+  },
+  {
+    "end": "(-206.0031, 8.412126, 141.597)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_078",
+    "position": "(-207.5969, -0.022004, 140.0031)"
+  },
+  {
+    "end": "(-206.0031, 8.412126, 163.597)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_079",
+    "position": "(-207.5969, -0.022004, 162.0031)"
+  },
+  {
+    "end": "(-206.0031, 8.412126, 205.397)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_080",
+    "position": "(-207.5969, -0.022004, 203.8031)"
+  },
+  {
+    "end": "(-179.6031, 8.412126, 101.997)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_083",
+    "position": "(-181.1969, -0.022004, 100.4031)"
+  },
+  {
+    "end": "(-179.6031, 8.412126, 84.39697)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_084",
+    "position": "(-181.1969, -0.022004, 82.80312)"
+  },
+  {
+    "end": "(-4.400001, 13.64, -46.2)",
+    "materials": [
+      "Bldg res://Materials/Bldg.tres"
+    ],
+    "name": "/root/Map/Cube_394",
+    "position": "(-17.6, 0.0, -52.8)"
+  },
+  {
+    "end": "(52.8119, 24.2, 48.41957)",
+    "materials": [
+      "Bldg res://Materials/Bldg.tres"
+    ],
+    "name": "/root/Map/Cube_025",
+    "position": "(-2.2, 0.0, -55.0)"
+  },
+  {
+    "end": "(22.00043, 20.24, 43.1424)",
+    "materials": [
+      "Bldg res://Materials/Bldg.tres"
+    ],
+    "name": "/root/Map/Cube_002",
+    "position": "(-4.400105, 0.0, 25.3216)"
+  },
+  {
+    "end": "(83.60001, 15.4, -26.40517)",
+    "materials": [
+      "Bldg res://Materials/Bldg.tres"
+    ],
+    "name": "/root/Map/Cube_026",
+    "position": "(57.2, 0.0, -52.8)"
+  },
+  {
+    "end": "(68.2, 20.24, -21.78)",
+    "materials": [
+      "Bldg res://Materials/Bldg.tres"
+    ],
+    "name": "/root/Map/Cube_027",
+    "position": "(28.6, 0.0, -55.0)"
+  },
+  {
+    "end": "(-11.29148, 15.4, 52.78861)",
+    "materials": [
+      "Bldg res://Materials/Bldg.tres"
+    ],
+    "name": "/root/Map/Cube_048",
+    "position": "(-37.70391, 0.0, 26.38135)"
+  },
+  {
+    "end": "(4.407411, 13.64, 52.81483)",
+    "materials": [
+      "Bldg res://Materials/Bldg.tres"
+    ],
+    "name": "/root/Map/Cube_049",
+    "position": "(-8.803697, 0.0, 46.19259)"
+  },
+  {
+    "end": "(35.20044, 20.24, 69.5424)",
+    "materials": [
+      "Bldg res://Materials/Bldg.tres"
+    ],
+    "name": "/root/Map/Cube_050",
+    "position": "(8.799896, 0.0, 51.7216)"
+  },
+  {
+    "end": "(4.408325, 13.64, 116.6132)",
+    "materials": [
+      "Bldg res://Materials/Bldg.tres"
+    ],
+    "name": "/root/Map/Cube_052",
+    "position": "(-37.40833, 0.0, 90.18681)"
+  },
+  {
+    "end": "(-76.99167, 13.64, 114.4049)",
+    "materials": [
+      "Bldg res://Materials/Bldg.tres"
+    ],
+    "name": "/root/Map/Cube_054",
+    "position": "(-92.40834, 0.0, 87.99514)"
+  },
+  {
+    "end": "(-57.17784, 40.04, 114.4022)",
+    "materials": [
+      "Bldg res://Materials/Bldg.tres"
+    ],
+    "name": "/root/Map/Cube_055",
+    "position": "(-72.60444, 0.0, 87.98672)"
+  },
+  {
+    "end": "(-76.99167, 30.8, 83.60486)",
+    "materials": [
+      "Bldg res://Materials/Bldg.tres"
+    ],
+    "name": "/root/Map/Cube_056",
+    "position": "(-92.40834, 0.0, 57.19514)"
+  },
+  {
+    "end": "(-57.17784, 13.64, 83.60223)",
+    "materials": [
+      "Bldg res://Materials/Bldg.tres"
+    ],
+    "name": "/root/Map/Cube_057",
+    "position": "(-72.60444, 0.0, 57.18672)"
+  },
+  {
+    "end": "(-76.99583, 19.8, 52.80486)",
+    "materials": [
+      "Bldg res://Materials/Bldg.tres"
+    ],
+    "name": "/root/Map/Cube_058",
+    "position": "(-92.40417, 0.0, 39.59514)"
+  },
+  {
+    "end": "(-57.19114, 13.64, 52.80222)",
+    "materials": [
+      "Bldg res://Materials/Bldg.tres"
+    ],
+    "name": "/root/Map/Cube_059",
+    "position": "(-72.60444, 0.0, 39.58671)"
+  },
+  {
+    "end": "(24.2, 24.2, -44.0)",
+    "materials": [
+      "Bldg res://Materials/Bldg.tres"
+    ],
+    "name": "/root/Map/Cube_060",
+    "position": "(-2.2, 20.24, -55.0)"
+  },
+  {
+    "end": "(-109.9778, 40.04, 134.2022)",
+    "materials": [
+      "Bldg res://Materials/Bldg.tres"
+    ],
+    "name": "/root/Map/Cube_009",
+    "position": "(-125.4044, 0.0, 107.7867)"
+  },
+  {
+    "end": "(-71.62223, 20.24, -18.3048)",
+    "materials": [
+      "Bldg res://Materials/Bldg.tres"
+    ],
+    "name": "/root/Map/Cube_010",
+    "position": "(-98.02223, 0.0, -36.1248)"
+  },
+  {
+    "end": "(-61.60001, 20.24, -39.7496)",
+    "materials": [
+      "Bldg res://Materials/Bldg.tres"
+    ],
+    "name": "/root/Map/Cube_011",
+    "position": "(-88.00001, 0.0, -50.7496)"
+  },
+  {
+    "end": "(-134.1996, 20.24, 122.3424)",
+    "materials": [
+      "Bldg res://Materials/Bldg.tres"
+    ],
+    "name": "/root/Map/Cube_015",
+    "position": "(-160.6001, 0.0, 104.5216)"
+  },
+  {
+    "end": "(-61.59957, 20.24, 34.3424)",
+    "materials": [
+      "Bldg res://Materials/Bldg.tres"
+    ],
+    "name": "/root/Map/Cube_016",
+    "position": "(-88.00011, 0.0, 16.5216)"
+  },
+  {
+    "end": "(-186.9917, 30.8, 79.20486)",
+    "materials": [
+      "Bldg res://Materials/Bldg.tres"
+    ],
+    "name": "/root/Map/Cube_017",
+    "position": "(-202.4083, 0.0, 52.79514)"
+  },
+  {
+    "end": "(-186.9958, 19.8, 50.60486)",
+    "materials": [
+      "Bldg res://Materials/Bldg.tres"
+    ],
+    "name": "/root/Map/Cube_018",
+    "position": "(-202.4042, 0.0, 37.39514)"
+  },
+  {
+    "end": "(-168.6031, 8.412126, 29.39697)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_092",
+    "position": "(-170.1969, -0.022004, 27.80313)"
+  },
+  {
+    "end": "(-168.6031, 8.412126, 51.39697)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres",
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "Light Lamp res://Materials/Light Lamp.tres"
+    ],
+    "name": "/root/Map/Cylinder_093",
+    "position": "(-170.1969, -0.022004, 49.80313)"
+  },
+  {
+    "end": "(-257.3996, 20.24, 245.5424)",
+    "materials": [
+      "Bldg res://Materials/Bldg.tres"
+    ],
+    "name": "/root/Map/Cube_022",
+    "position": "(-283.8001, 0.0, 227.7216)"
+  },
+  {
+    "end": "(-237.5893, 19.8, 244.1574)",
+    "materials": [
+      "Bldg res://Materials/Bldg.tres"
+    ],
+    "name": "/root/Map/Cube_023",
+    "position": "(-250.8634, 0.0, 228.6939)"
+  },
+  {
+    "end": "(-189.1893, 13.09, 246.3574)",
+    "materials": [
+      "Bldg res://Materials/Bldg.tres"
+    ],
+    "name": "/root/Map/Cube_024",
+    "position": "(-202.4634, -0.11, 230.8939)"
+  },
+  {
+    "end": "(-186.9958, 19.8, 264.0049)",
+    "materials": [
+      "Bldg res://Materials/Bldg.tres"
+    ],
+    "name": "/root/Map/Cube_028",
+    "position": "(-202.4042, 0.0, 250.7951)"
+  },
+  {
+    "end": "(-237.5996, 20.24, 202.4004)",
+    "materials": [
+      "Bldg res://Materials/Bldg.tres"
+    ],
+    "name": "/root/Map/Cube_029",
+    "position": "(-264.0001, 0.0, 174.9216)"
+  },
+  {
+    "end": "(5.242127, 1.899314, -56.37917)",
+    "materials": [
+      "roads_material res://Materials/roads_material.tres"
+    ],
+    "name": "/root/Map/hazzard_cone_1",
+    "position": "(3.565542, -0.000644, -57.96563)"
+  },
+  {
+    "end": "(12.69995, 6.718, -11.05873)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light",
+    "position": "(11.25926, 0.0, -11.89763)"
+  },
+  {
+    "end": "(20.26465, 2.442926, -56.50193)",
+    "materials": [
+      "roads_material res://Materials/roads_material.tres"
+    ],
+    "name": "/root/Map/road_barier_2a",
+    "position": "(14.93534, 0.0, -57.89807)"
+  },
+  {
+    "end": "(11.6073, 2.435839, -56.50387)",
+    "materials": [
+      "roads_material res://Materials/roads_material.tres"
+    ],
+    "name": "/root/Map/road_barier_2b",
+    "position": "(5.9927, -0.007814, -57.89596)"
+  },
+  {
+    "end": "(86.60109, 2.514604, 20.22548)",
+    "materials": [
+      "Material.001 res://Materials/Material.001.tres"
+    ],
+    "name": "/root/Map/road_barrier_1",
+    "position": "(78.16205, -0.027991, -25.57119)"
+  },
+  {
+    "end": "(18.17138, 10.48191, -9.203153)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres",
+      "orange_light_material res://Materials/orange_light_material.tres"
+    ],
+    "name": "/root/Map/StopLight_Bus_Train",
+    "position": "(16.85841, 0.0, -10.52799)"
+  },
+  {
+    "end": "(14.1503, 2.482558, -56.23335)",
+    "materials": [
+      "roads_material res://Materials/roads_material.tres"
+    ],
+    "name": "/root/Map/traffic_barell_1",
+    "position": "(12.24969, -0.0, -58.16668)"
+  },
+  {
+    "end": "(35.81032, 10.31013, -21.19571)",
+    "materials": [
+      "Texture.002 res://Materials/Texture.002.tres"
+    ],
+    "name": "/root/Map/Balcony",
+    "position": "(30.17344, 8.484409, -24.40299)"
+  },
+  {
+    "end": "(-67.74755, 21.03658, 16.73423)",
+    "materials": [
+      "Texture.003 res://Materials/Texture.003.tres"
+    ],
+    "name": "/root/Map/CasinoSign",
+    "position": "(-80.77695, 18.60407, 16.25)"
+  },
+  {
+    "end": "(-202.3474, 5.90626, 243.4062)",
+    "materials": [
+      "Texture.005 res://Materials/Texture.005.tres"
+    ],
+    "name": "/root/Map/Sign_Barbershop",
+    "position": "(-202.5818, 4.857692, 233.6671)"
+  },
+  {
+    "end": "(-30.97227, 7.788007, 27.03856)",
+    "materials": [
+      "Texture.006 res://Materials/Texture.006.tres"
+    ],
+    "name": "/root/Map/Sign_Bookshop",
+    "position": "(-37.68764, 5.059676, 25.98427)"
+  },
+  {
+    "end": "(-202.1125, 22.45504, 74.62545)",
+    "materials": [
+      "Texture.008 res://Materials/Texture.008.tres"
+    ],
+    "name": "/root/Map/Sign_Pharmacy",
+    "position": "(-202.6877, 19.11881, 58.06781)"
+  },
+  {
+    "end": "(-235.4, 4.4, 165.0)",
+    "materials": [
+      "SIDEWALK res://Materials/SIDEWALK.tres"
+    ],
+    "name": "/root/Map/Angeloan_005",
+    "position": "(-299.2, 0.0, 103.4)"
+  },
+  {
+    "end": "(-24.28539, 15.4, -22.12597)",
+    "materials": [
+      "window angeloan res://Materials/window angeloan.tres",
+      "Raymart res://Materials/Raymart.tres",
+      "Material res://Materials/Material.tres"
+    ],
+    "name": "/root/Map/Cube_003",
+    "position": "(-59.41607, 0.0, -52.57256)"
+  },
+  {
+    "end": "(-114.4, 36.05556, 202.4)",
+    "materials": [
+      "window angeloan res://Materials/window angeloan.tres"
+    ],
+    "name": "/root/Map/Cube_004",
+    "position": "(-156.2, -2.2, 173.8)"
+  },
+  {
+    "end": "(-46.2, 101.2, 204.6)",
+    "materials": [
+      "window angeloan res://Materials/window angeloan.tres"
+    ],
+    "name": "/root/Map/Cube_005",
+    "position": "(-88.0, 0.0, 176.0)"
+  },
+  {
+    "end": "(0.0, 38.25556, 167.2)",
+    "materials": [
+      "window angeloan res://Materials/window angeloan.tres"
+    ],
+    "name": "/root/Map/Cube_014",
+    "position": "(-41.8, 0.0, 138.6)"
+  },
+  {
+    "end": "(-48.4, 51.7, 167.2)",
+    "materials": [
+      "window angeloan res://Materials/window angeloan.tres"
+    ],
+    "name": "/root/Map/Cube_381",
+    "position": "(-90.2, 0.0, 138.6)"
+  },
+  {
+    "end": "(-143.0, 51.7, 259.6)",
+    "materials": [
+      "window angeloan res://Materials/window angeloan.tres"
+    ],
+    "name": "/root/Map/Cube_382",
+    "position": "(-184.8, 0.0, 231.0)"
+  },
+  {
+    "end": "(-50.6, 51.7, 257.4)",
+    "materials": [
+      "window angeloan res://Materials/window angeloan.tres"
+    ],
+    "name": "/root/Map/Cube_383",
+    "position": "(-92.4, 0.0, 228.8)"
+  },
+  {
+    "end": "(275.0, 6.6, 369.6)",
+    "materials": [
+      "EMPTY res://Materials/EMPTY.tres",
+      "active_material_index.001 res://Materials/active_material_index.001.tres",
+      "Road corner res://Materials/Road corner.tres",
+      "active_material_index res://Materials/active_material_index.tres",
+      "ROADUVNcorner yellow res://Materials/ROADUVNcorner yellow.tres",
+      "ROADUVNcornercloseyellow res://Materials/ROADUVNcornercloseyellow.tres",
+      "WALK res://Materials/WALK.tres"
+    ],
+    "name": "/root/Map/New Road",
+    "position": "(-316.8, 0.0, -88.0)"
+  },
+  {
+    "end": "(-234.96, 4.84, 169.84)",
+    "materials": [
+      "SIDEWALK res://Materials/SIDEWALK.tres"
+    ],
+    "name": "/root/Map/PathSMallWAll",
+    "position": "(-308.44, 0.0, 102.96)"
+  },
+  {
+    "end": "(-314.4978, 3.50381, 45.45901)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage",
+    "position": "(-322.645, -1.160019, 37.99305)"
+  },
+  {
+    "end": "(-279.6864, 4.760478, 16.48042)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage_001",
+    "position": "(-291.9433, -0.953301, 4.2231)"
+  },
+  {
+    "end": "(-237.8864, 4.760478, 38.48042)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage_002",
+    "position": "(-250.1433, -0.953301, 26.2231)"
+  },
+  {
+    "end": "(-240.0139, 2.5931, 21.55081)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage_003",
+    "position": "(-248.1259, -0.953301, 13.39211)"
+  },
+  {
+    "end": "(-318.513, 3.136608, 24.543)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage_007",
+    "position": "(-323.6934, -0.953301, 19.01627)"
+  },
+  {
+    "end": "(-320.6788, 4.760478, 85.37455)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage_009",
+    "position": "(-329.4688, -0.953301, 76.58261)"
+  },
+  {
+    "end": "(-310.7492, 3.632235, -11.63048)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage_012",
+    "position": "(-318.3286, -0.953301, -18.50547)"
+  },
+  {
+    "end": "(19.187, 3.136608, -25.17701)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage_013",
+    "position": "(14.00661, -0.953301, -30.70373)"
+  },
+  {
+    "end": "(-10.64624, 3.023187, -33.24873)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage_014",
+    "position": "(-18.08734, -0.953301, -40.13687)"
+  },
+  {
+    "end": "(19.00122, 4.760478, -31.88546)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage_015",
+    "position": "(10.21123, -0.953301, -40.67739)"
+  },
+  {
+    "end": "(-13.45145, 2.5931, -25.44279)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage_017",
+    "position": "(-19.18759, -0.953301, -31.37624)"
+  },
+  {
+    "end": "(3.850818, 3.632235, -33.63048)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage_024",
+    "position": "(-3.728621, -0.953301, -40.50547)"
+  },
+  {
+    "end": "(-203.1369, 3.136608, -25.08306)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage_025",
+    "position": "(-210.5603, -0.953301, -32.5884)"
+  },
+  {
+    "end": "(-164.1682, 3.023187, -32.79489)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage_026",
+    "position": "(-174.2232, -0.953301, -42.71898)"
+  },
+  {
+    "end": "(-167.4864, 4.760478, -40.71958)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage_027",
+    "position": "(-179.7433, -0.953301, -52.9769)"
+  },
+  {
+    "end": "(-208.4821, 3.683741, -43.80347)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage_028",
+    "position": "(-217.2996, -0.953301, -52.73781)"
+  },
+  {
+    "end": "(-180.6139, 2.5931, -42.24919)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage_029",
+    "position": "(-188.7259, -0.953301, -50.40789)"
+  },
+  {
+    "end": "(-183.8779, 3.632235, -16.7679)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage_030",
+    "position": "(-194.038, -0.953301, -26.76134)"
+  },
+  {
+    "end": "(-227.3369, 3.136608, -75.68307)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage_031",
+    "position": "(-234.7603, -0.953301, -83.1884)"
+  },
+  {
+    "end": "(-234.5682, 3.023187, -83.39489)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage_032",
+    "position": "(-244.6232, -0.953301, -93.31898)"
+  },
+  {
+    "end": "(-259.8864, 4.760478, -53.91958)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage_033",
+    "position": "(-272.1433, -0.953301, -66.1769)"
+  },
+  {
+    "end": "(-261.2821, 3.683741, -72.40347)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage_034",
+    "position": "(-270.0996, -0.953301, -81.33781)"
+  },
+  {
+    "end": "(-253.2139, 2.5931, -84.04919)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage_035",
+    "position": "(-261.3259, -0.953301, -92.20789)"
+  },
+  {
+    "end": "(-214.6779, 3.632235, -69.5679)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage_036",
+    "position": "(-224.838, -0.953301, -79.56134)"
+  },
+  {
+    "end": "(-231.2139, 2.5931, -53.24919)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage_037",
+    "position": "(-239.3259, -0.953301, -61.40789)"
+  },
+  {
+    "end": "(-200.4139, 2.5931, -15.84919)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage_038",
+    "position": "(-208.5259, -0.953301, -24.00789)"
+  },
+  {
+    "end": "(-140.212, 13.68782, 282.0946)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres",
+      "M_Palm_Trunk res://Materials/M_Palm_Trunk.tres"
+    ],
+    "name": "/root/Map/Canopy_Head_001",
+    "position": "(-149.951, -4.09818, 273.2636)"
+  },
+  {
+    "end": "(-316.534, 13.68782, 65.52322)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres",
+      "M_Palm_Trunk res://Materials/M_Palm_Trunk.tres"
+    ],
+    "name": "/root/Map/Canopy_Head_002",
+    "position": "(-326.2729, -4.098181, 55.85895)"
+  },
+  {
+    "end": "(88.26603, 13.68782, 28.12323)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres",
+      "M_Palm_Trunk res://Materials/M_Palm_Trunk.tres"
+    ],
+    "name": "/root/Map/Canopy_Head_003",
+    "position": "(78.52705, -4.098181, 18.45895)"
+  },
+  {
+    "end": "(125.666, 13.68782, 28.12323)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres",
+      "M_Palm_Trunk res://Materials/M_Palm_Trunk.tres"
+    ],
+    "name": "/root/Map/Canopy_Head_004",
+    "position": "(115.927, -4.098181, 18.45895)"
+  },
+  {
+    "end": "(66.58801, 13.68782, 79.69456)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres",
+      "M_Palm_Trunk res://Materials/M_Palm_Trunk.tres"
+    ],
+    "name": "/root/Map/Canopy_Head_005",
+    "position": "(56.84903, -4.09818, 70.86359)"
+  },
+  {
+    "end": "(77.58801, 13.68782, 92.89455)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres",
+      "M_Palm_Trunk res://Materials/M_Palm_Trunk.tres"
+    ],
+    "name": "/root/Map/Canopy_Head_006",
+    "position": "(67.84903, -4.09818, 84.06358)"
+  },
+  {
+    "end": "(9.396019, 15.54422, -28.14945)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres",
+      "M_Palm_Trunk res://Materials/M_Palm_Trunk.tres"
+    ],
+    "name": "/root/Map/Canopy_Head_009",
+    "position": "(0.36678, -2.241781, -38.06785)"
+  },
+  {
+    "end": "(-184.212, 13.68782, -25.90545)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres",
+      "M_Palm_Trunk res://Materials/M_Palm_Trunk.tres"
+    ],
+    "name": "/root/Map/Canopy_Head_010",
+    "position": "(-193.951, -4.09818, -34.73642)"
+  },
+  {
+    "end": "(-217.212, 13.68782, -78.70544)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres",
+      "M_Palm_Trunk res://Materials/M_Palm_Trunk.tres"
+    ],
+    "name": "/root/Map/Canopy_Head_011",
+    "position": "(-226.951, -4.09818, -87.53642)"
+  },
+  {
+    "end": "(-298.612, 13.68782, 53.29455)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres",
+      "M_Palm_Trunk res://Materials/M_Palm_Trunk.tres"
+    ],
+    "name": "/root/Map/Canopy_Head_012",
+    "position": "(-308.351, -4.09818, 44.46358)"
+  },
+  {
+    "end": "(-285.412, 13.68782, 77.49455)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres",
+      "M_Palm_Trunk res://Materials/M_Palm_Trunk.tres"
+    ],
+    "name": "/root/Map/Canopy_Head_013",
+    "position": "(-295.151, -4.09818, 68.66357)"
+  },
+  {
+    "end": "(119.388, 13.68782, 125.8946)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres",
+      "M_Palm_Trunk res://Materials/M_Palm_Trunk.tres"
+    ],
+    "name": "/root/Map/Canopy_Head_014",
+    "position": "(109.649, -4.09818, 117.0636)"
+  },
+  {
+    "end": "(-295.24, 2.046, 348.953)",
+    "materials": [
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "M_BusShelter_Blue res://Materials/M_BusShelter_Blue.tres"
+    ],
+    "name": "/root/Map/Cylinder_001",
+    "position": "(-298.32, -0.022, 347.193)"
+  },
+  {
+    "end": "(-292.16, 2.046, 348.953)",
+    "materials": [
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "M_BusShelter_Blue res://Materials/M_BusShelter_Blue.tres"
+    ],
+    "name": "/root/Map/Cylinder_002",
+    "position": "(-295.24, -0.022, 347.193)"
+  },
+  {
+    "end": "(-298.32, 2.046, 348.953)",
+    "materials": [
+      "M_Metal_Dark res://Materials/M_Metal_Dark.tres",
+      "M_BusShelter_Blue res://Materials/M_BusShelter_Blue.tres"
+    ],
+    "name": "/root/Map/Cylinder_008",
+    "position": "(-301.4, -0.022, 347.193)"
+  },
+  {
+    "end": "(-58.51963, 3.421513, -21.85492)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Hedge",
+    "position": "(-62.87282, -1.175477, -34.65007)"
+  },
+  {
+    "end": "(-48.89598, 3.475499, -17.93902)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Hedge_001",
+    "position": "(-58.44998, -1.096628, -22.07597)"
+  },
+  {
+    "end": "(-19.74001, 3.499774, -20.13798)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Hedge_002",
+    "position": "(-32.49275, -1.119246, -24.3378)"
+  },
+  {
+    "end": "(-92.16692, 4.878373, -48.76943)",
+    "materials": [
+      "M_Rock_BlueGrey.001 res://Materials/M_Rock_BlueGrey.001.tres"
+    ],
+    "name": "/root/Map/Rock_001",
+    "position": "(-115.7281, -11.0926, -76.66227)"
+  },
+  {
+    "end": "(-190.5685, 6.187055, -51.72606)",
+    "materials": [
+      "M_Rock_LightGrey res://Materials/M_Rock_LightGrey.tres"
+    ],
+    "name": "/root/Map/Rock_002",
+    "position": "(-213.6199, -14.24588, -75.93988)"
+  },
+  {
+    "end": "(-195.5549, 0.55934, -66.02238)",
+    "materials": [
+      "M_Rock_BlueGrey.002 res://Materials/M_Rock_BlueGrey.002.tres"
+    ],
+    "name": "/root/Map/Rock_003",
+    "position": "(-220.2419, -13.1887, -88.86312)"
+  },
+  {
+    "end": "(-181.7685, 3.987051, -67.12605)",
+    "materials": [
+      "M_Rock_LightGrey res://Materials/M_Rock_LightGrey.tres"
+    ],
+    "name": "/root/Map/Rock_004",
+    "position": "(-204.8199, -16.44588, -91.33986)"
+  },
+  {
+    "end": "(-198.5844, 4.534429, -79.63821)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres"
+    ],
+    "name": "/root/Map/Rock_005",
+    "position": "(-223.9046, -8.923329, -101.2644)"
+  },
+  {
+    "end": "(-214.7053, -0.351214, -78.68709)",
+    "materials": [
+      "M_Rock_MidGrey res://Materials/M_Rock_MidGrey.tres"
+    ],
+    "name": "/root/Map/Rock_006",
+    "position": "(-242.6965, -14.56848, -107.1238)"
+  },
+  {
+    "end": "(-58.23044, 2.929219, -92.66175)",
+    "materials": [
+      "M_Rock_BlueGrey.001 res://Materials/M_Rock_BlueGrey.001.tres"
+    ],
+    "name": "/root/Map/Rock_007",
+    "position": "(-74.02361, -5.216917, -105.1376)"
+  },
+  {
+    "end": "(-67.30524, 5.006754, -86.63966)",
+    "materials": [
+      "M_Rock_MidGrey res://Materials/M_Rock_MidGrey.tres"
+    ],
+    "name": "/root/Map/Rock_479",
+    "position": "(-95.29651, -26.28506, -115.045)"
+  },
+  {
+    "end": "(-78.95493, 0.559337, -68.22238)",
+    "materials": [
+      "M_Rock_BlueGrey.002 res://Materials/M_Rock_BlueGrey.002.tres"
+    ],
+    "name": "/root/Map/Rock_483",
+    "position": "(-103.6419, -13.1887, -91.06312)"
+  },
+  {
+    "end": "(-115.7685, 3.987055, -51.72606)",
+    "materials": [
+      "M_Rock_LightGrey res://Materials/M_Rock_LightGrey.tres"
+    ],
+    "name": "/root/Map/Rock_504",
+    "position": "(-138.8199, -16.44589, -75.93987)"
+  },
+  {
+    "end": "(-161.1843, 4.534436, -51.03821)",
+    "materials": [
+      "M_Rock_BlueGrey res://Materials/M_Rock_BlueGrey.tres"
+    ],
+    "name": "/root/Map/Rock_519",
+    "position": "(-186.5046, -8.923329, -72.66442)"
+  },
+  {
+    "end": "(-101.9714, 6.858315, -53.10927)",
+    "materials": [
+      "M_Rock_LightGrey res://Materials/M_Rock_LightGrey.tres"
+    ],
+    "name": "/root/Map/Rock_530",
+    "position": "(-123.7155, -4.526648, -69.84023)"
+  },
+  {
+    "end": "(-177.2194, 3.484835, -48.74556)",
+    "materials": [
+      "M_Rock_MidGrey res://Materials/M_Rock_MidGrey.tres"
+    ],
+    "name": "/root/Map/Rock_561",
+    "position": "(-200.9837, -7.834079, -75.02436)"
+  },
+  {
+    "end": "(-79.44759, 6.839393, -53.23367)",
+    "materials": [
+      "M_Rock_BlueGrey.001 res://Materials/M_Rock_BlueGrey.001.tres"
+    ],
+    "name": "/root/Map/Rock_624",
+    "position": "(-105.7759, -6.740799, -74.03189)"
+  },
+  {
+    "end": "(12.06392, 0.15716, -59.13309)",
+    "materials": [
+      "M_Bush_Light res://Materials/M_Bush_Light.tres"
+    ],
+    "name": "/root/Map/Shrub_Leaves_004",
+    "position": "(10.88307, -0.14609, -60.30327)"
+  },
+  {
+    "end": "(12.83813, 0.106664, -58.7435)",
+    "materials": [
+      "M_Bush_Light res://Materials/M_Bush_Light.tres"
+    ],
+    "name": "/root/Map/Shrub_Leaves_005",
+    "position": "(11.87578, -0.134708, -59.61992)"
+  },
+  {
+    "end": "(11.09255, 0.116242, -58.61343)",
+    "materials": [
+      "M_Bush_Light res://Materials/M_Bush_Light.tres"
+    ],
+    "name": "/root/Map/Shrub_Leaves_006",
+    "position": "(10.13715, -0.136324, -59.66463)"
+  },
+  {
+    "end": "(9.874067, 0.34226, -59.23233)",
+    "materials": [
+      "M_Bush_Light res://Materials/M_Bush_Light.tres"
+    ],
+    "name": "/root/Map/Shrub_Leaves_007",
+    "position": "(9.215252, -0.167927, -59.99105)"
+  },
+  {
+    "end": "(-145.332, 3.674, -49.59729)",
+    "materials": [
+      "M_Wood_Plank_A res://Materials/M_Wood_Plank_A.tres",
+      "M_Wood_Plank_B res://Materials/M_Wood_Plank_B.tres",
+      "M_Wood_Beam res://Materials/M_Wood_Beam.tres",
+      "M_Gold_Cap res://Materials/M_Gold_Cap.tres"
+    ],
+    "name": "/root/Map/Deck_Plank_0",
+    "position": "(-153.868, -22.0, -93.9493)"
+  },
+  {
+    "end": "(15.17368, 13.31842, 197.9989)",
+    "materials": [
+      "Material.001 res://Materials/Material.001.tres"
+    ],
+    "name": "/root/Map/park_b_003",
+    "position": "(-331.8505, -3.10992, -154.9262)"
+  },
+  {
+    "end": "(32.1112, 32.20502, -74.9147)",
+    "materials": [
+      "Material.001 res://Materials/Material.001.tres"
+    ],
+    "name": "/root/Map/tree_005",
+    "position": "(11.71387, -1.195818, -96.32935)"
+  },
+  {
+    "end": "(-62.48879, 32.20502, -72.71469)",
+    "materials": [
+      "Material.001 res://Materials/Material.001.tres"
+    ],
+    "name": "/root/Map/tree_010",
+    "position": "(-82.88612, -1.195818, -94.12935)"
+  },
+  {
+    "end": "(-25.0888, 32.20502, -55.1147)",
+    "materials": [
+      "Material.001 res://Materials/Material.001.tres"
+    ],
+    "name": "/root/Map/tree_011",
+    "position": "(-45.48613, -1.195818, -76.52935)"
+  },
+  {
+    "end": "(131.1112, 32.20502, -13.3147)",
+    "materials": [
+      "Material.001 res://Materials/Material.001.tres"
+    ],
+    "name": "/root/Map/tree_012",
+    "position": "(110.7139, -1.195818, -34.72935)"
+  },
+  {
+    "end": "(111.3112, 32.20502, -35.3147)",
+    "materials": [
+      "Material.001 res://Materials/Material.001.tres"
+    ],
+    "name": "/root/Map/tree_013",
+    "position": "(90.91388, -1.195818, -56.72935)"
+  },
+  {
+    "end": "(104.7112, 32.20502, -15.5147)",
+    "materials": [
+      "Material.001 res://Materials/Material.001.tres"
+    ],
+    "name": "/root/Map/tree_014",
+    "position": "(84.31387, -1.195818, -36.92935)"
+  },
+  {
+    "end": "(76.11121, 32.20502, 37.2853)",
+    "materials": [
+      "Material.001 res://Materials/Material.001.tres"
+    ],
+    "name": "/root/Map/tree_015",
+    "position": "(55.71387, -1.195818, 15.87065)"
+  },
+  {
+    "end": "(-165.8888, 32.20502, -15.5147)",
+    "materials": [
+      "Material.001 res://Materials/Material.001.tres"
+    ],
+    "name": "/root/Map/tree_016",
+    "position": "(-186.2861, -1.195818, -36.92935)"
+  },
+  {
+    "end": "(-190.0888, 32.20502, -30.9147)",
+    "materials": [
+      "Material.001 res://Materials/Material.001.tres"
+    ],
+    "name": "/root/Map/tree_017",
+    "position": "(-210.4861, -1.195818, -52.32935)"
+  },
+  {
+    "end": "(-231.9212, 44.54953, -52.44427)",
+    "materials": [
+      "Material.001 res://Materials/Material.001.tres"
+    ],
+    "name": "/root/Map/tree_018",
+    "position": "(-265.5674, -10.54647, -87.76858)"
+  },
+  {
+    "end": "(-215.2844, 30.33378, -51.78647)",
+    "materials": [
+      "Material.001 res://Materials/Material.001.tres"
+    ],
+    "name": "/root/Map/tree_019",
+    "position": "(-233.6733, 0.221601, -71.09263)"
+  },
+  {
+    "end": "(-249.1093, 92.39925, 69.84126)",
+    "materials": [
+      "Material.001 res://Materials/Material.001.tres"
+    ],
+    "name": "/root/Map/tree_020",
+    "position": "(-305.7766, -0.394062, 10.34765)"
+  },
+  {
+    "end": "(-291.2888, 32.20502, 21.8853)",
+    "materials": [
+      "Material.001 res://Materials/Material.001.tres"
+    ],
+    "name": "/root/Map/tree_022",
+    "position": "(-311.6861, -1.195818, 0.470648)"
+  },
+  {
+    "end": "(126.7112, 32.20502, 109.8853)",
+    "materials": [
+      "Material.001 res://Materials/Material.001.tres"
+    ],
+    "name": "/root/Map/tree_023",
+    "position": "(106.3139, -1.195818, 88.47065)"
+  },
+  {
+    "end": "(-109.2232, 3.268626, 21.11762)",
+    "materials": [
+      "Material.003 res://Materials/Material.003.tres"
+    ],
+    "name": "/root/Map/car_c_026",
+    "position": "(-119.5768, -0.188626, 16.72238)"
+  },
+  {
+    "end": "(-108.6953, 17.49648, 40.75985)",
+    "materials": [
+      "Material.003 res://Materials/Material.003.tres"
+    ],
+    "name": "/root/Map/car_e_001",
+    "position": "(-128.9047, 11.48055, 32.94015)"
+  },
+  {
+    "end": "(-109.1093, 3.095402, 26.17116)",
+    "materials": [
+      "Material.003 res://Materials/Material.003.tres"
+    ],
+    "name": "/root/Map/car_e_022",
+    "position": "(-119.6907, -0.015402, 22.22884)"
+  },
+  {
+    "end": "(-181.3866, 15.4, 36.74006)",
+    "materials": [
+      "BuildingsPastel res://Materials/BuildingsPastel.tres",
+      "Material res://Materials/Material.tres",
+      "window angeloan res://Materials/window angeloan.tres"
+    ],
+    "name": "/root/Map/Cube",
+    "position": "(-202.4, 0.0, 15.76225)"
+  },
+  {
+    "end": "(-101.2, 15.4, -22.0)",
+    "materials": [
+      "resto res://Materials/resto.tres",
+      "SIDEWALK res://Materials/SIDEWALK.tres"
+    ],
+    "name": "/root/Map/Cube_007",
+    "position": "(-132.0, 0.0, -46.2)"
+  },
+  {
+    "end": "(-192.8909, 6.6, 24.91587)",
+    "materials": [
+      "BuildingsPastel res://Materials/BuildingsPastel.tres"
+    ],
+    "name": "/root/Map/Cube_384",
+    "position": "(-199.406, 0.0, 18.67807)"
+  },
+  {
+    "end": "(54.84834, 40.83057, 171.5056)",
+    "materials": [
+      "Material.004 res://Materials/Material.004.tres"
+    ],
+    "name": "/root/Map/factorystructure_a_002",
+    "position": "(24.35167, -0.406092, 140.8944)"
+  },
+  {
+    "end": "(-26.14303, 44.76992, -23.67467)",
+    "materials": [
+      "Material.007 res://Materials/Material.007.tres"
+    ],
+    "name": "/root/Map/fruitshop_008",
+    "position": "(-57.74408, 14.03054, -56.82947)"
+  },
+  {
+    "end": "(-164.3947, 31.59603, 200.0052)",
+    "materials": [
+      "Material.009 res://Materials/Material.009.tres",
+      "window angeloan res://Materials/window angeloan.tres"
+    ],
+    "name": "/root/Map/hospital_a",
+    "position": "(-205.784, 0.121265, 103.7283)"
+  },
+  {
+    "end": "(35.22296, 7.140834, -23.98)",
+    "materials": [
+      "Material res://Materials/Material.tres"
+    ],
+    "name": "/root/Map/Plane",
+    "position": "(24.2, 4.786976, -24.24335)"
+  },
+  {
+    "end": "(189.7314, 35.6083, 12.27402)",
+    "materials": [
+      "Material.001 res://Materials/Material.001.tres"
+    ],
+    "name": "/root/Map/bridge_a_001",
+    "position": "(139.3328, -23.56738, -12.34933)"
+  },
+  {
+    "end": "(-250.8, 83.6, 165.0)",
+    "materials": [
+      "BuildingsPastel res://Materials/BuildingsPastel.tres",
+      "window angeloan res://Materials/window angeloan.tres",
+      "angiloan res://Materials/angiloan.tres",
+      "SIDEWALK res://Materials/SIDEWALK.tres"
+    ],
+    "name": "/root/Map/Plane_003",
+    "position": "(-303.6, 0.0, 112.2)"
+  },
+  {
+    "end": "(121.0, 0.006119, 376.2)",
+    "materials": [
+      "SIDEWALK res://Materials/SIDEWALK.tres"
+    ],
+    "name": "/root/Map/Path_001",
+    "position": "(-319.0, 0.006108, -94.6)"
+  },
+  {
+    "end": "(275.0, 6.820001, 371.8)",
+    "materials": [
+      "SIDEWALK res://Materials/SIDEWALK.tres"
+    ],
+    "name": "/root/Map/Plane_005",
+    "position": "(-319.0, 0.0, -90.2)"
+  },
+  {
+    "end": "(264.0, 52.14549, 122.2913)",
+    "materials": [
+      "horizon other res://Materials/horizon other.tres"
+    ],
+    "name": "/root/Map/horizon other",
+    "position": "(211.2, 0.368062, -122.2913)"
+  },
+  {
+    "end": "(28.64889, 4.4, -23.98)",
+    "materials": [
+      "BuildingsPastel res://Materials/BuildingsPastel.tres"
+    ],
+    "name": "/root/Map/Plane_006",
+    "position": "(24.24889, 0.0, -24.2)"
+  },
+  {
+    "end": "(35.24889, 4.84, -22.66)",
+    "materials": [
+      "BuildingsPastel res://Materials/BuildingsPastel.tres"
+    ],
+    "name": "/root/Map/Plane_007",
+    "position": "(24.24889, 4.4, -24.2)"
+  },
+  {
+    "end": "(30.32307, 22.05689, -24.30767)",
+    "materials": [
+      "Material res://Materials/Material.tres"
+    ],
+    "name": "/root/Map/Plane_008",
+    "position": "(22.70129, 16.43216, -26.906)"
+  },
+  {
+    "end": "(38.33649, 27.47935, -24.5129)",
+    "materials": [
+      "Material res://Materials/Material.tres"
+    ],
+    "name": "/root/Map/Plane_009",
+    "position": "(26.18346, 15.34543, -28.7387)"
+  },
+  {
+    "end": "(32.36196, 1.651402, -24.64853)",
+    "materials": [
+      "Material res://Materials/Material.tres"
+    ],
+    "name": "/root/Map/Plane_010",
+    "position": "(31.52131, 1.174994, -24.96537)"
+  },
+  {
+    "end": "(33.46196, 1.651402, -24.64853)",
+    "materials": [
+      "Material res://Materials/Material.tres"
+    ],
+    "name": "/root/Map/Plane_011",
+    "position": "(32.62131, 1.174994, -24.96537)"
+  },
+  {
+    "end": "(34.56196, 1.651402, -24.64853)",
+    "materials": [
+      "Material res://Materials/Material.tres"
+    ],
+    "name": "/root/Map/Plane_012",
+    "position": "(33.72131, 1.174994, -24.96537)"
+  },
+  {
+    "end": "(34.56196, 3.191402, -24.64853)",
+    "materials": [
+      "Material res://Materials/Material.tres"
+    ],
+    "name": "/root/Map/Plane_013",
+    "position": "(33.72131, 2.714994, -24.96537)"
+  },
+  {
+    "end": "(33.46196, 3.191402, -24.64853)",
+    "materials": [
+      "Material res://Materials/Material.tres"
+    ],
+    "name": "/root/Map/Plane_014",
+    "position": "(32.62131, 2.714994, -24.96537)"
+  },
+  {
+    "end": "(32.36196, 3.191402, -24.64853)",
+    "materials": [
+      "Material res://Materials/Material.tres"
+    ],
+    "name": "/root/Map/Plane_015",
+    "position": "(31.52131, 2.714994, -24.96537)"
+  },
+  {
+    "end": "(32.80196, 3.191402, -24.86852)",
+    "materials": [
+      "Material res://Materials/Material.tres"
+    ],
+    "name": "/root/Map/Plane_016",
+    "position": "(31.96131, 2.714994, -25.18537)"
+  },
+  {
+    "end": "(-1.611986, 17.74422, -32.50545)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres",
+      "M_Palm_Trunk res://Materials/M_Palm_Trunk.tres"
+    ],
+    "name": "/root/Map/Canopy_Head_016",
+    "position": "(-11.35097, -0.041781, -41.33642)"
+  },
+  {
+    "end": "(56.81999, 3.499774, -15.51798)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Hedge_003",
+    "position": "(44.06725, -1.119246, -19.7178)"
+  },
+  {
+    "end": "(77.38402, 3.475499, -15.51902)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Hedge_004",
+    "position": "(67.83002, -1.096628, -19.65597)"
+  },
+  {
+    "end": "(48.78402, 3.475499, 21.88098)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Hedge_005",
+    "position": "(39.23002, -1.096628, 17.74403)"
+  },
+  {
+    "end": "(28.21999, 3.499774, 21.88202)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Hedge_006",
+    "position": "(15.46725, -1.119246, 17.68221)"
+  },
+  {
+    "end": "(4.268752, 3.421513, 21.93682)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Hedge_007",
+    "position": "(-8.484254, -1.175477, 17.7126)"
+  },
+  {
+    "end": "(-19.41598, 3.475499, 21.88098)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Hedge_008",
+    "position": "(-28.96998, -1.096628, 17.74403)"
+  },
+  {
+    "end": "(-20.07051, 3.499774, -41.62501)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Hedge_009",
+    "position": "(-24.40867, -1.119246, -54.42264)"
+  },
+  {
+    "end": "(30.41999, 3.499774, 21.88202)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Hedge_010",
+    "position": "(17.66725, -1.119246, 17.68221)"
+  },
+  {
+    "end": "(4.01999, 3.499774, 21.88202)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Hedge_011",
+    "position": "(-8.732751, -1.119246, 17.68221)"
+  },
+  {
+    "end": "(117.1785, 15.32091, 6.590727)",
+    "materials": [
+      "Material.001 res://Materials/Material.001.tres"
+    ],
+    "name": "/root/Map/tree_001",
+    "position": "(94.09198, -8.326475, -28.36609)"
+  },
+  {
+    "end": "(107.9141, 10.72454, 21.9498)",
+    "materials": [
+      "Material.001 res://Materials/Material.001.tres"
+    ],
+    "name": "/root/Map/tree_002",
+    "position": "(89.18031, -6.042067, -2.671991)"
+  },
+  {
+    "end": "(158.988, 41.94421, -87.50545)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres",
+      "M_Palm_Trunk res://Materials/M_Palm_Trunk.tres"
+    ],
+    "name": "/root/Map/Canopy_Head_017",
+    "position": "(149.249, 24.15822, -96.33643)"
+  },
+  {
+    "end": "(205.9803, 49.75571, 87.79131)",
+    "materials": [
+      "Material.001 res://Materials/Material.001.tres"
+    ],
+    "name": "/root/Map/tree_003",
+    "position": "(189.8816, 23.39386, 70.88965)"
+  },
+  {
+    "end": "(-9.283676, 6.380002, 39.11633)",
+    "materials": [
+      "Bldg res://Materials/Bldg.tres"
+    ],
+    "name": "/root/Map/Cylinder_089",
+    "position": "(-19.75633, -0.036856, 28.64368)"
+  },
+  {
+    "end": "(4.400002, 38.25556, 85.8)",
+    "materials": [
+      "window angeloan res://Materials/window angeloan.tres"
+    ],
+    "name": "/root/Map/Cube_051",
+    "position": "(-37.4, 0.0, 57.2)"
+  },
+  {
+    "end": "(101.2067, 38.25556, 143.0068)",
+    "materials": [
+      "window angeloan res://Materials/window angeloan.tres"
+    ],
+    "name": "/root/Map/Cube_053",
+    "position": "(72.47737, 0.0, 101.1184)"
+  },
+  {
+    "end": "(-280.3364, 9.581158, -7.536357)",
+    "materials": [
+      "Bldg res://Materials/Bldg.tres"
+    ],
+    "name": "/root/Map/Cylinder_090",
+    "position": "(-296.0637, -0.055349, -23.26365)"
+  },
+  {
+    "end": "(-110.0, 12.1, 46.2)",
+    "materials": [
+      "BuildingsPastel res://Materials/BuildingsPastel.tres",
+      "window angeloan res://Materials/window angeloan.tres"
+    ],
+    "name": "/root/Map/Cube_001",
+    "position": "(-132.0, 0.0, 28.6)"
+  },
+  {
+    "end": "(-130.9, 22.62247, 47.3)",
+    "materials": [
+      "window angeloan res://Materials/window angeloan.tres",
+      "BuildingsPastel res://Materials/BuildingsPastel.tres",
+      "Material res://Materials/Material.tres"
+    ],
+    "name": "/root/Map/Cube_006",
+    "position": "(-146.3, 0.0, 23.1)"
+  },
+  {
+    "end": "(-34.19356, 4.518851, -25.07367)",
+    "materials": [
+      "BuildingsPastel res://Materials/BuildingsPastel.tres"
+    ],
+    "name": "/root/Map/Plane_002",
+    "position": "(-38.59356, 0.118851, -25.29367)"
+  },
+  {
+    "end": "(-25.05667, 11.0, -22.79062)",
+    "materials": [
+      "SIDEWALK res://Materials/SIDEWALK.tres"
+    ],
+    "name": "/root/Map/Plane_018",
+    "position": "(-58.60938, 0.0, -26.11533)"
+  },
+  {
+    "end": "(-110.0, 70.4, 79.2)",
+    "materials": [
+      "window angeloan res://Materials/window angeloan.tres"
+    ],
+    "name": "/root/Map/Cube_008",
+    "position": "(-151.8, 0.0, 50.6)"
+  },
+  {
+    "end": "(-69.88612, 2.373635, -18.75779)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Hedge_012",
+    "position": "(-72.2203, -0.077732, -23.92942)"
+  },
+  {
+    "end": "(-70.10613, 2.373635, -24.03779)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Hedge_013",
+    "position": "(-72.44031, -0.077732, -29.20942)"
+  },
+  {
+    "end": "(-70.32613, 2.373635, -29.97779)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Hedge_014",
+    "position": "(-72.6603, -0.077732, -35.14943)"
+  },
+  {
+    "end": "(17.35564, 6.718, 10.15753)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_001",
+    "position": "(15.88758, 0.0, 9.2707)"
+  },
+  {
+    "end": "(-11.02604, 6.718, 10.60771)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_002",
+    "position": "(-12.49609, 0.0, 9.717303)"
+  },
+  {
+    "end": "(-16.39598, 6.718, -9.589792)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_003",
+    "position": "(-17.83879, 0.0, -10.43234)"
+  },
+  {
+    "end": "(10.67045, 6.718, -16.34528)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_004",
+    "position": "(9.709768, 0.0, -17.85328)"
+  },
+  {
+    "end": "(-11.03402, 6.718, -11.90609)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_005",
+    "position": "(-11.91518, 0.0, -13.37097)"
+  },
+  {
+    "end": "(-40.32005, 6.718, -9.518728)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_006",
+    "position": "(-41.76074, 0.0, -10.35763)"
+  },
+  {
+    "end": "(-35.44436, 6.718, 10.59753)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_007",
+    "position": "(-36.91242, 0.0, 9.710699)"
+  },
+  {
+    "end": "(-40.85207, 6.718, 13.61076)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_008",
+    "position": "(-41.81275, 0.0, 12.10275)"
+  },
+  {
+    "end": "(-54.15403, 6.718, 16.69391)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_009",
+    "position": "(-55.03519, 0.0, 15.22903)"
+  },
+  {
+    "end": "(-59.46005, 6.718, -9.298728)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_010",
+    "position": "(-60.90074, 0.0, -10.13763)"
+  },
+  {
+    "end": "(-55.68437, 6.718, 12.13753)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_011",
+    "position": "(-57.15243, 0.0, 11.2507)"
+  },
+  {
+    "end": "(-92.24005, 6.718, -9.298728)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_012",
+    "position": "(-93.68074, 0.0, -10.13763)"
+  },
+  {
+    "end": "(-88.46437, 6.718, 11.03753)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_013",
+    "position": "(-89.93243, 0.0, 10.1507)"
+  },
+  {
+    "end": "(-112.0401, 6.718, -9.518728)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_014",
+    "position": "(-113.4807, 0.0, -10.35763)"
+  },
+  {
+    "end": "(-108.6917, 6.718, 12.15516)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_015",
+    "position": "(-110.1832, 0.0, 11.2256)"
+  },
+  {
+    "end": "(-107.1341, 6.718, 16.49396)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_016",
+    "position": "(-108.0832, 0.0, 14.99206)"
+  },
+  {
+    "end": "(-93.65768, 6.718, 13.60744)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_017",
+    "position": "(-94.60466, 0.0, 12.10663)"
+  },
+  {
+    "end": "(-138.5377, 6.718, -15.21256)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_018",
+    "position": "(-139.4847, 0.0, -16.71337)"
+  },
+  {
+    "end": "(-160.5682, 6.718, -12.31384)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_019",
+    "position": "(-161.5611, 0.0, -13.83841)"
+  },
+  {
+    "end": "(-165.0448, 6.718, -9.924213)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_020",
+    "position": "(-166.519, 0.0, -10.82211)"
+  },
+  {
+    "end": "(-161.4845, 6.718, 10.18538)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_021",
+    "position": "(-162.9893, 0.0, 9.230936)"
+  },
+  {
+    "end": "(-234.8821, 3.683741, -21.80347)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage_004",
+    "position": "(-243.6996, -0.953301, -30.73781)"
+  },
+  {
+    "end": "(-254.6821, 3.683741, -10.80347)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage_005",
+    "position": "(-263.4996, -0.953301, -19.73781)"
+  },
+  {
+    "end": "(-262.0864, 4.760478, -18.71958)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage_006",
+    "position": "(-274.3433, -0.953301, -30.9769)"
+  },
+  {
+    "end": "(-237.8864, 4.760478, 1.080418)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage_039",
+    "position": "(-250.1433, -0.953301, -11.1769)"
+  },
+  {
+    "end": "(-233.4139, 2.5931, -11.44919)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage_040",
+    "position": "(-241.5259, -0.953301, -19.60789)"
+  },
+  {
+    "end": "(-249.3369, 3.136608, -22.88306)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage_041",
+    "position": "(-256.7603, -0.953301, -30.3884)"
+  },
+  {
+    "end": "(-266.4139, 2.5931, -0.449186)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage_042",
+    "position": "(-274.5259, -0.953301, -8.607886)"
+  },
+  {
+    "end": "(-243.2779, 3.632235, -10.1679)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage_043",
+    "position": "(-253.438, -0.953301, -20.16134)"
+  },
+  {
+    "end": "(-252.1682, 3.023187, 0.20511)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage_044",
+    "position": "(-262.2231, -0.953301, -9.718981)"
+  },
+  {
+    "end": "(-269.137, 3.136608, -11.88306)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Bush_Foliage_045",
+    "position": "(-276.5603, -0.953301, -19.3884)"
+  },
+  {
+    "end": "(86.50149, 2.435839, 8.088668)",
+    "materials": [
+      "roads_material res://Materials/roads_material.tres"
+    ],
+    "name": "/root/Map/road_barier_2b_001",
+    "position": "(85.09835, -0.007814, 2.471335)"
+  },
+  {
+    "end": "(86.50149, 2.435839, 2.808668)",
+    "materials": [
+      "roads_material res://Materials/roads_material.tres"
+    ],
+    "name": "/root/Map/road_barier_2b_002",
+    "position": "(85.09835, -0.007814, -2.808665)"
+  },
+  {
+    "end": "(86.50149, 2.435839, -2.471333)",
+    "materials": [
+      "roads_material res://Materials/roads_material.tres"
+    ],
+    "name": "/root/Map/road_barier_2b_003",
+    "position": "(85.09835, -0.007814, -8.088665)"
+  },
+  {
+    "end": "(-203.0645, 6.718, 99.06538)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_022",
+    "position": "(-204.5693, 0.0, 98.11093)"
+  },
+  {
+    "end": "(-232.1045, 6.718, 99.94538)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_023",
+    "position": "(-233.6093, 0.0, 98.99094)"
+  },
+  {
+    "end": "(-208.2447, 6.718, 101.6207)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_024",
+    "position": "(-209.2165, 0.0, 100.1069)"
+  },
+  {
+    "end": "(-209.201, 6.718, 81.78069)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_025",
+    "position": "(-210.0422, 0.0, 80.33866)"
+  },
+  {
+    "end": "(-229.9366, 6.718, 104.4726)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_026",
+    "position": "(-230.8134, 0.0, 103.0101)"
+  },
+  {
+    "end": "(-230.8165, 6.718, 84.2326)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_027",
+    "position": "(-231.6934, 0.0, 82.77014)"
+  },
+  {
+    "end": "(-235.4548, 6.718, 86.62825)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_028",
+    "position": "(-236.9051, 0.0, 85.7726)"
+  },
+  {
+    "end": "(-206.4147, 6.718, 85.52825)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_029",
+    "position": "(-207.8651, 0.0, 84.6726)"
+  },
+  {
+    "end": "(-203.0645, 6.718, 222.3479)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_030",
+    "position": "(-204.5693, 0.0, 221.3934)"
+  },
+  {
+    "end": "(-232.1045, 6.718, 223.2279)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_031",
+    "position": "(-233.6093, 0.0, 222.2735)"
+  },
+  {
+    "end": "(-208.2447, 6.718, 224.9032)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_032",
+    "position": "(-209.2165, 0.0, 223.3894)"
+  },
+  {
+    "end": "(-209.2011, 6.718, 205.0632)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_033",
+    "position": "(-210.0423, 0.0, 203.6212)"
+  },
+  {
+    "end": "(-229.9366, 6.718, 227.7551)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_034",
+    "position": "(-230.8134, 0.0, 226.2926)"
+  },
+  {
+    "end": "(-230.8166, 6.718, 207.5151)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_035",
+    "position": "(-231.6934, 0.0, 206.0526)"
+  },
+  {
+    "end": "(-235.4548, 6.718, 209.9108)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_036",
+    "position": "(-236.9052, 0.0, 209.0551)"
+  },
+  {
+    "end": "(-206.4148, 6.718, 208.8108)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres"
+    ],
+    "name": "/root/Map/Pedestrian light_037",
+    "position": "(-207.8651, 0.0, 207.9551)"
+  },
+  {
+    "end": "(-15.49179, 10.48191, 10.40127)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres",
+      "orange_light_material res://Materials/orange_light_material.tres"
+    ],
+    "name": "/root/Map/StopLight_Bus_Train_001",
+    "position": "(-16.81175, 0.0, 9.070024)"
+  },
+  {
+    "end": "(-35.31062, 10.48191, -9.137153)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres",
+      "orange_light_material res://Materials/orange_light_material.tres"
+    ],
+    "name": "/root/Map/StopLight_Bus_Train_002",
+    "position": "(-36.62358, 0.0, -10.46199)"
+  },
+  {
+    "end": "(-60.81179, 10.48191, 10.46727)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres",
+      "orange_light_material res://Materials/orange_light_material.tres"
+    ],
+    "name": "/root/Map/StopLight_Bus_Train_003",
+    "position": "(-62.13176, 0.0, 9.136025)"
+  },
+  {
+    "end": "(-87.79162, 10.48191, -9.137153)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres",
+      "orange_light_material res://Materials/orange_light_material.tres"
+    ],
+    "name": "/root/Map/StopLight_Bus_Train_004",
+    "position": "(-89.10458, 0.0, -10.46199)"
+  },
+  {
+    "end": "(-113.2928, 10.48191, 10.46727)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres",
+      "orange_light_material res://Materials/orange_light_material.tres"
+    ],
+    "name": "/root/Map/StopLight_Bus_Train_005",
+    "position": "(-114.6128, 0.0, 9.136025)"
+  },
+  {
+    "end": "(-131.6926, 10.94672, -9.291152)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres",
+      "orange_light_material res://Materials/orange_light_material.tres"
+    ],
+    "name": "/root/Map/StopLight_Bus_Train_006",
+    "position": "(-133.0056, 0.464808, -10.61599)"
+  },
+  {
+    "end": "(-165.3118, 10.48191, 10.46727)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres",
+      "orange_light_material res://Materials/orange_light_material.tres"
+    ],
+    "name": "/root/Map/StopLight_Bus_Train_007",
+    "position": "(-166.6318, 0.0, 9.136025)"
+  },
+  {
+    "end": "(-229.0892, 10.94672, 79.95149)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres",
+      "orange_light_material res://Materials/orange_light_material.tres"
+    ],
+    "name": "/root/Map/StopLight_Bus_Train_008",
+    "position": "(-230.3381, 0.464808, 78.71986)"
+  },
+  {
+    "end": "(-209.433, 10.48191, 105.8674)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres",
+      "orange_light_material res://Materials/orange_light_material.tres"
+    ],
+    "name": "/root/Map/StopLight_Bus_Train_009",
+    "position": "(-210.6941, 0.0, 104.6227)"
+  },
+  {
+    "end": "(-229.1992, 10.94672, 203.2615)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres",
+      "orange_light_material res://Materials/orange_light_material.tres"
+    ],
+    "name": "/root/Map/StopLight_Bus_Train_010",
+    "position": "(-230.4481, 0.464808, 202.0299)"
+  },
+  {
+    "end": "(-209.543, 10.48191, 229.1774)",
+    "materials": [
+      "green_light_material res://Materials/green_light_material.tres",
+      "roads_material res://Materials/roads_material.tres",
+      "red_light_material res://Materials/red_light_material.tres",
+      "orange_light_material res://Materials/orange_light_material.tres"
+    ],
+    "name": "/root/Map/StopLight_Bus_Train_011",
+    "position": "(-210.8041, 0.0, 227.9327)"
+  },
+  {
+    "end": "(-227.5707, 21.19964, -76.07993)",
+    "materials": [
+      "M_Rock_MidGrey res://Materials/M_Rock_MidGrey.tres"
+    ],
+    "name": "/root/Map/Rock_008",
+    "position": "(-297.3858, -47.15817, -142.0904)"
+  },
+  {
+    "end": "(-8.547508, 21.19965, -69.75368)",
+    "materials": [
+      "M_Rock_MidGrey res://Materials/M_Rock_MidGrey.tres"
+    ],
+    "name": "/root/Map/Rock_009",
+    "position": "(-81.84653, -47.15817, -138.5049)"
+  },
+  {
+    "end": "(-147.4, 24.2, 48.4)",
+    "materials": [
+      " res://models3d/map/Map.glb::StandardMaterial3D_j2gad"
+    ],
+    "name": "/root/Map/Cube_012",
+    "position": "(-151.8, 0.0, 13.2)"
+  },
+  {
+    "end": "(-124.2064, 4.518851, 28.58812)",
+    "materials": [
+      "BuildingsPastel res://Materials/BuildingsPastel.tres"
+    ],
+    "name": "/root/Map/Plane_019",
+    "position": "(-128.6064, 0.118851, 28.36812)"
+  },
+  {
+    "end": "(54.84834, 40.83057, 206.7056)",
+    "materials": [
+      "Material.004 res://Materials/Material.004.tres"
+    ],
+    "name": "/root/Map/factorystructure_a_001",
+    "position": "(24.35167, -0.406092, 176.0944)"
+  },
+  {
+    "end": "(-164.1637, 6.380002, 71.23633)",
+    "materials": [
+      "Bldg res://Materials/Bldg.tres"
+    ],
+    "name": "/root/Map/Cylinder_091",
+    "position": "(-174.6363, -0.036856, 60.76368)"
+  },
+  {
+    "end": "(-171.98, 3.499774, 59.28202)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Hedge_015",
+    "position": "(-184.7327, -1.119246, 55.0822)"
+  },
+  {
+    "end": "(-154.38, 3.499774, 59.28202)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Hedge_016",
+    "position": "(-167.1328, -1.119246, 55.0822)"
+  },
+  {
+    "end": "(-153.9605, 3.475499, 79.63615)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Hedge_017",
+    "position": "(-158.415, -1.096628, 69.949)"
+  },
+  {
+    "end": "(-182.5605, 3.475499, 79.63615)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Hedge_018",
+    "position": "(-187.015, -1.096628, 69.949)"
+  },
+  {
+    "end": "(-55.89708, 3.499774, 32.42083)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Hedge_019",
+    "position": "(-60.22403, -1.119246, 19.62679)"
+  },
+  {
+    "end": "(-89.11708, 3.499774, 32.42083)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Hedge_020",
+    "position": "(-93.44403, -1.119246, 19.62679)"
+  },
+  {
+    "end": "(-167.1605, 3.475499, 44.43615)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Hedge_021",
+    "position": "(-171.615, -1.096628, 34.749)"
+  },
+  {
+    "end": "(-167.1605, 3.475499, 24.63615)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Hedge_022",
+    "position": "(-171.615, -1.096628, 14.94899)"
+  },
+  {
+    "end": "(-270.6, 36.05556, 202.4)",
+    "materials": [
+      "window angeloan res://Materials/window angeloan.tres"
+    ],
+    "name": "/root/Map/Cube_019",
+    "position": "(-312.4, -2.2, 173.8)"
+  },
+  {
+    "end": "(-272.432, 13.68782, 270.2146)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres",
+      "M_Palm_Trunk res://Materials/M_Palm_Trunk.tres"
+    ],
+    "name": "/root/Map/Canopy_Head_015",
+    "position": "(-282.171, -4.09818, 261.3836)"
+  },
+  {
+    "end": "(-239.432, 13.68782, 285.3946)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres",
+      "M_Palm_Trunk res://Materials/M_Palm_Trunk.tres"
+    ],
+    "name": "/root/Map/Canopy_Head_018",
+    "position": "(-249.171, -4.09818, 276.5636)"
+  },
+  {
+    "end": "(-252.412, 13.68782, 295.2946)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres",
+      "M_Palm_Trunk res://Materials/M_Palm_Trunk.tres"
+    ],
+    "name": "/root/Map/Canopy_Head_019",
+    "position": "(-262.151, -4.09818, 286.4636)"
+  },
+  {
+    "end": "(-283.212, 13.68782, 323.8946)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres",
+      "M_Palm_Trunk res://Materials/M_Palm_Trunk.tres"
+    ],
+    "name": "/root/Map/Canopy_Head_020",
+    "position": "(-292.951, -4.09818, 315.0636)"
+  },
+  {
+    "end": "(-252.412, 13.68782, 337.0946)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres",
+      "M_Palm_Trunk res://Materials/M_Palm_Trunk.tres"
+    ],
+    "name": "/root/Map/Canopy_Head_021",
+    "position": "(-262.151, -4.09818, 328.2636)"
+  },
+  {
+    "end": "(-193.012, 13.68782, 282.0946)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres",
+      "M_Palm_Trunk res://Materials/M_Palm_Trunk.tres"
+    ],
+    "name": "/root/Map/Canopy_Head_022",
+    "position": "(-202.751, -4.09818, 273.2636)"
+  },
+  {
+    "end": "(-317.6888, 32.20502, 114.2853)",
+    "materials": [
+      "Material.001 res://Materials/Material.001.tres"
+    ],
+    "name": "/root/Map/tree_004",
+    "position": "(-338.0862, -1.195818, 92.87065)"
+  },
+  {
+    "end": "(-185.6888, 32.20502, 384.8853)",
+    "materials": [
+      "Material.001 res://Materials/Material.001.tres"
+    ],
+    "name": "/root/Map/tree_006",
+    "position": "(-206.0861, -1.195818, 363.4706)"
+  },
+  {
+    "end": "(-119.6888, 32.20502, 244.0853)",
+    "materials": [
+      "Material.001 res://Materials/Material.001.tres"
+    ],
+    "name": "/root/Map/tree_007",
+    "position": "(-140.0861, -1.195818, 222.6707)"
+  },
+  {
+    "end": "(219.1803, 49.75571, 120.7913)",
+    "materials": [
+      "Material.001 res://Materials/Material.001.tres"
+    ],
+    "name": "/root/Map/tree_008",
+    "position": "(203.0816, 23.39386, 103.8896)"
+  },
+  {
+    "end": "(233.788, 13.68782, 73.09456)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres",
+      "M_Palm_Trunk res://Materials/M_Palm_Trunk.tres"
+    ],
+    "name": "/root/Map/Canopy_Head_023",
+    "position": "(224.049, -4.09818, 64.26358)"
+  },
+  {
+    "end": "(242.588, 13.68782, 53.29455)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres",
+      "M_Palm_Trunk res://Materials/M_Palm_Trunk.tres"
+    ],
+    "name": "/root/Map/Canopy_Head_024",
+    "position": "(232.849, -4.09818, 44.46358)"
+  },
+  {
+    "end": "(244.788, 13.68782, 29.09455)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres",
+      "M_Palm_Trunk res://Materials/M_Palm_Trunk.tres"
+    ],
+    "name": "/root/Map/Canopy_Head_025",
+    "position": "(235.049, -4.09818, 20.26358)"
+  },
+  {
+    "end": "(235.988, 13.68782, -17.10545)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres",
+      "M_Palm_Trunk res://Materials/M_Palm_Trunk.tres"
+    ],
+    "name": "/root/Map/Canopy_Head_026",
+    "position": "(226.249, -4.09818, -25.93642)"
+  },
+  {
+    "end": "(231.588, 13.68782, -32.50545)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres",
+      "M_Palm_Trunk res://Materials/M_Palm_Trunk.tres"
+    ],
+    "name": "/root/Map/Canopy_Head_027",
+    "position": "(221.849, -4.09818, -41.33642)"
+  },
+  {
+    "end": "(222.788, 13.68782, -50.10545)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres",
+      "M_Palm_Trunk res://Materials/M_Palm_Trunk.tres"
+    ],
+    "name": "/root/Map/Canopy_Head_028",
+    "position": "(213.049, -4.09818, -58.93642)"
+  },
+  {
+    "end": "(238.188, 13.68782, -47.90545)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres",
+      "M_Palm_Trunk res://Materials/M_Palm_Trunk.tres"
+    ],
+    "name": "/root/Map/Canopy_Head_029",
+    "position": "(228.449, -4.09818, -56.73642)"
+  },
+  {
+    "end": "(246.988, 13.68782, -28.10545)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres",
+      "M_Palm_Trunk res://Materials/M_Palm_Trunk.tres"
+    ],
+    "name": "/root/Map/Canopy_Head_030",
+    "position": "(237.249, -4.09818, -36.93642)"
+  },
+  {
+    "end": "(255.788, 13.68782, 42.29455)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres",
+      "M_Palm_Trunk res://Materials/M_Palm_Trunk.tres"
+    ],
+    "name": "/root/Map/Canopy_Head_031",
+    "position": "(246.049, -4.09818, 33.46358)"
+  },
+  {
+    "end": "(249.188, 13.68782, 68.69456)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres",
+      "M_Palm_Trunk res://Materials/M_Palm_Trunk.tres"
+    ],
+    "name": "/root/Map/Canopy_Head_032",
+    "position": "(239.449, -4.09818, 59.86358)"
+  },
+  {
+    "end": "(46.46711, 25.46958, 23.64572)",
+    "materials": [
+      "Texture.007 res://Materials/Texture.007.tres"
+    ],
+    "name": "/root/Map/Sign_Hardware_001",
+    "position": "(32.77707, 20.6608, 22.99803)"
+  },
+  {
+    "end": "(-195.7605, 3.475499, 114.8361)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Hedge_023",
+    "position": "(-200.215, -1.096628, 105.149)"
+  },
+  {
+    "end": "(-195.7605, 3.475499, 141.2361)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Hedge_024",
+    "position": "(-200.215, -1.096628, 131.549)"
+  },
+  {
+    "end": "(-195.7605, 3.475499, 172.0361)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Hedge_025",
+    "position": "(-200.215, -1.096628, 162.349)"
+  },
+  {
+    "end": "(-195.7605, 3.475499, 198.4361)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Hedge_026",
+    "position": "(-200.215, -1.096628, 188.749)"
+  },
+  {
+    "end": "(-180.78, 3.499774, 206.682)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Hedge_027",
+    "position": "(-193.5327, -1.119246, 202.4822)"
+  },
+  {
+    "end": "(-165.38, 3.499774, 206.682)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Hedge_028",
+    "position": "(-178.1328, -1.119246, 202.4822)"
+  },
+  {
+    "end": "(-237.98, 3.499774, 250.682)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Hedge_029",
+    "position": "(-250.7328, -1.119246, 246.4822)"
+  },
+  {
+    "end": "(-270.98, 3.499774, 252.882)",
+    "materials": [
+      "M_Bush_Mid res://Materials/M_Bush_Mid.tres"
+    ],
+    "name": "/root/Map/Hedge_030",
+    "position": "(-283.7328, -1.119246, 248.6822)"
+  }
+]

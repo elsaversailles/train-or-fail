@@ -63,7 +63,6 @@ var location_label_original_position: Vector2
 var item_label_original_position: Vector2
 var images_swapped = false
 
-var mistakes = 0
 var is_note_open = false
 var note_tween: Tween
 
@@ -437,18 +436,10 @@ func submit_answer(answer):
 			SaveManager.current_save_data["special_decisions"] = {}
 		SaveManager.current_save_data["special_decisions"][char_id] = answer
 
-	# 1. Check for a mistake immediately
 	var correct_answer = current_applicant["fraud_correct"]
 	if answer != correct_answer:
 		mistakes += 1
-		
-		# Stop the review, then wait for End Training before showing termination.
-		if mistakes >= 3:
-			termination_pending = true
-			await finish_applicants()
-			return # Stop loading the next applicant
 
-	# 3. If they survive, continue as normal
 	player_answers.append(answer)
 	if current_applicant.get("is_special", false):
 		SaveManager.record_special_decision(current_applicant.get("id", ""), answer)
@@ -481,11 +472,9 @@ func finish_applicants():
 	note_icon_button.visible = false
 	swap_mode_button.visible = false
 	zoom_mode_button.visible = false
-	applicant_label.text = "Training ended" if termination_pending else "All applicants reviewed"
+	applicant_label.text = "All applicants reviewed"
 	legit_button.visible = false
 	sus_button.visible = false
-	if termination_pending:
-		await slide_applicant_out()
 	await set_panel_open(true).finished
 	is_transitioning = false
 	show_shutdown_prompt()

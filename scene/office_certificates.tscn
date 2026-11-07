@@ -1,0 +1,69 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/OfficeCertificates.gd" id="1_display"]
+[ext_resource type="Texture2D" path="res://images/Certificates/fraud_detection.png" id="2_fraud"]
+[ext_resource type="Texture2D" path="res://images/Certificates/know_your_customer.png" id="3_kyc"]
+[ext_resource type="Texture2D" path="res://images/Certificates/credit_scoring.png" id="4_credit"]
+
+[sub_resource type="StandardMaterial3D" id="Material_frame"]
+albedo_color = Color(0.14, 0.16, 0.17, 1)
+metallic = 0.28
+roughness = 0.6
+
+[sub_resource type="BoxMesh" id="Mesh_frame"]
+material = SubResource("Material_frame")
+size = Vector3(1.15, 0.79, 0.044)
+
+[sub_resource type="QuadMesh" id="Mesh_print"]
+size = Vector2(1.08, 0.72)
+
+[sub_resource type="StandardMaterial3D" id="Material_fraud"]
+albedo_texture = ExtResource("2_fraud")
+metallic_specular = 0.1
+texture_filter = 5
+
+[sub_resource type="StandardMaterial3D" id="Material_kyc"]
+albedo_texture = ExtResource("3_kyc")
+metallic_specular = 0.1
+texture_filter = 5
+
+[sub_resource type="StandardMaterial3D" id="Material_credit"]
+albedo_texture = ExtResource("4_credit")
+metallic_specular = 0.1
+texture_filter = 5
+
+[node name="Certificates" type="Node3D"]
+script = ExtResource("1_display")
+
+[node name="FraudDetection" type="Node3D" parent="."]
+position = Vector3(-0.62, 0.435, 0)
+
+[node name="Frame" type="MeshInstance3D" parent="FraudDetection"]
+mesh = SubResource("Mesh_frame")
+
+[node name="Print" type="MeshInstance3D" parent="FraudDetection"]
+position = Vector3(0, 0, 0.024)
+material_override = SubResource("Material_fraud")
+mesh = SubResource("Mesh_print")
+
+[node name="KnowYourCustomer" type="Node3D" parent="."]
+position = Vector3(0.62, 0.435, 0)
+
+[node name="Frame" type="MeshInstance3D" parent="KnowYourCustomer"]
+mesh = SubResource("Mesh_frame")
+
+[node name="Print" type="MeshInstance3D" parent="KnowYourCustomer"]
+position = Vector3(0, 0, 0.024)
+material_override = SubResource("Material_kyc")
+mesh = SubResource("Mesh_print")
+
+[node name="CreditScoring" type="Node3D" parent="."]
+position = Vector3(0, -0.435, 0)
+
+[node name="Frame" type="MeshInstance3D" parent="CreditScoring"]
+mesh = SubResource("Mesh_frame")
+
+[node name="Print" type="MeshInstance3D" parent="CreditScoring"]
+position = Vector3(0, 0, 0.024)
+material_override = SubResource("Material_credit")
+mesh = SubResource("Mesh_print")

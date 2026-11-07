@@ -1,0 +1,12 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+Grandpa length=60.0 samples=401 blocked=0 examples=[]
+Assistant length=60.0 samples=401 blocked=0 examples=[]
+Mark length=60.0 samples=401 blocked=0 examples=[]
+Cashier length=61.2802441120148 samples=415 blocked=0 examples=[]
+Clara length=60.0 samples=401 blocked=0 examples=[]
+Supplier length=60.0 samples=401 blocked=0 examples=[]
+Jericho length=60.6402131319046 samples=415 blocked=0 examples=[]
+Joice length=57.8323812484741 samples=393 blocked=0 examples=[]

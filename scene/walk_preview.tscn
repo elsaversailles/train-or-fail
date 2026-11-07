@@ -1,0 +1,231 @@
+[gd_scene format=3 uid="uid://ct431nqnt4ilt"]
+
+[ext_resource type="Script" uid="uid://d0c8l7panu4ds" path="res://scripts/WalkPreview.gd" id="1_preview"]
+[ext_resource type="PackedScene" path="res://animation/adrian_walk_test.tscn" id="2_character"]
+
+[sub_resource type="Environment" id="Environment_preview"]
+background_mode = 1
+background_color = Color(0.055, 0.073, 0.098, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.73, 0.81, 0.94, 1)
+ambient_light_energy = 0.55
+reflected_light_source = 1
+
+[sub_resource type="StandardMaterial3D" id="Material_ground"]
+albedo_color = Color(0.12, 0.16, 0.205, 1)
+roughness = 0.92
+
+[sub_resource type="PlaneMesh" id="Mesh_ground"]
+material = SubResource("Material_ground")
+size = Vector2(200, 200)
+
+[sub_resource type="StandardMaterial3D" id="Material_stage"]
+albedo_color = Color(0.22, 0.29, 0.35, 1)
+roughness = 0.85
+
+[sub_resource type="CylinderMesh" id="Mesh_stage"]
+material = SubResource("Material_stage")
+top_radius = 1.05
+bottom_radius = 1.05
+height = 0.035
+radial_segments = 96
+
+[sub_resource type="Theme" id="Theme_preview"]
+default_font_size = 16
+
+[sub_resource type="StyleBoxFlat" id="Style_button"]
+content_margin_left = 18.0
+content_margin_top = 10.0
+content_margin_right = 18.0
+content_margin_bottom = 10.0
+bg_color = Color(0.16, 0.23, 0.29, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="Style_controls"]
+content_margin_left = 22.0
+content_margin_top = 16.0
+content_margin_right = 22.0
+content_margin_bottom = 16.0
+bg_color = Color(0.055, 0.073, 0.098, 0.94)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.28, 0.37, 0.46, 0.75)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="WalkPreview" type="Node3D" unique_id=1860703419]
+script = ExtResource("1_preview")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1332078789]
+environment = SubResource("Environment_preview")
+
+[node name="Ground" type="MeshInstance3D" parent="." unique_id=36335478]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.038, 0)
+mesh = SubResource("Mesh_ground")
+
+[node name="Stage" type="MeshInstance3D" parent="." unique_id=94682282]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0175, 0)
+mesh = SubResource("Mesh_stage")
+
+[node name="Character" parent="." unique_id=115424752 instance=ExtResource("2_character")]
+
+[node name="KeyLight" type="DirectionalLight3D" parent="." unique_id=159957217]
+transform = Transform3D(0.8290376, 0.3741731, -0.4155613, 0, 0.7431448, 0.6691306, 0.5591929, -0.55473447, 0.616095, 0, 0, 0)
+light_color = Color(1, 0.91, 0.81, 1)
+light_energy = 1.3
+shadow_enabled = true
+directional_shadow_max_distance = 15.0
+
+[node name="FillLight" type="OmniLight3D" parent="." unique_id=1457522484]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.8, 2)
+light_color = Color(0.64, 0.79, 1, 1)
+light_energy = 1.15
+omni_range = 6.0
+
+[node name="RimLight" type="OmniLight3D" parent="." unique_id=1583373420]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2.6, -2)
+light_color = Color(0.72, 0.87, 1, 1)
+light_energy = 1.5
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=486691591]
+current = true
+fov = 38.0
+far = 150.0
+
+[node name="Interface" type="CanvasLayer" parent="." unique_id=276610871]
+
+[node name="UI" type="Control" parent="Interface" unique_id=982314173]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_preview")
+
+[node name="Heading" type="VBoxContainer" parent="Interface/UI" unique_id=1240738059]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 28.0
+offset_right = 460.0
+offset_bottom = 145.0
+mouse_filter = 2
+theme_override_constants/separation = 6
+
+[node name="Eyebrow" type="Label" parent="Interface/UI/Heading" unique_id=865421740]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.57, 0.76, 0.84, 1)
+theme_override_font_sizes/font_size = 13
+text = "WALKING PREVIEW"
+
+[node name="Title" type="Label" parent="Interface/UI/Heading" unique_id=1678057925]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94, 0.96, 0.98, 1)
+theme_override_font_sizes/font_size = 32
+text = "Adrian / walking test"
+
+[node name="Subtitle" type="Label" parent="Interface/UI/Heading" unique_id=1284600892]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.69, 0.76, 0.83, 1)
+text = "One character. Looping in place."
+
+[node name="Views" type="HBoxContainer" parent="Interface/UI" unique_id=425868981]
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -236.0
+offset_top = 30.0
+offset_right = -32.0
+offset_bottom = 74.0
+grow_horizontal = 0
+theme_override_constants/separation = 10
+
+[node name="FrontButton" type="Button" parent="Interface/UI/Views" unique_id=1280335324]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_override_styles/normal = SubResource("Style_button")
+text = "Front"
+
+[node name="SideButton" type="Button" parent="Interface/UI/Views" unique_id=229105307]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_override_styles/normal = SubResource("Style_button")
+text = "Side"
+
+[node name="Controls" type="PanelContainer" parent="Interface/UI" unique_id=365479288]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -284.0
+offset_top = -143.0
+offset_right = 284.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("Style_controls")
+
+[node name="Content" type="VBoxContainer" parent="Interface/UI/Controls" unique_id=103519906]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Playback" type="HBoxContainer" parent="Interface/UI/Controls/Content" unique_id=1053677569]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="PauseButton" type="Button" parent="Interface/UI/Controls/Content/Playback" unique_id=38748044]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(90, 40)
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/normal = SubResource("Style_button")
+text = "Pause"
+
+[node name="ResetButton" type="Button" parent="Interface/UI/Controls/Content/Playback" unique_id=141927530]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/normal = SubResource("Style_button")
+text = "Restart"
+
+[node name="SpeedCaption" type="Label" parent="Interface/UI/Controls/Content/Playback" unique_id=1516579680]
+layout_mode = 2
+text = "Speed"
+
+[node name="SpeedSlider" type="HSlider" parent="Interface/UI/Controls/Content/Playback" unique_id=68386658]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+min_value = 0.25
+max_value = 1.5
+step = 0.05
+value = 1.0
+
+[node name="SpeedValue" type="Label" parent="Interface/UI/Controls/Content/Playback" unique_id=449127123]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(46, 0)
+layout_mode = 2
+text = "1.00x"
+horizontal_alignment = 2
+
+[node name="Hint" type="Label" parent="Interface/UI/Controls/Content" unique_id=176301949]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.66, 0.74, 0.81, 1)
+theme_override_font_sizes/font_size = 13
+text = "Drag / arrow keys: orbit   |   Space: pause   |   R: restart"
+horizontal_alignment = 1

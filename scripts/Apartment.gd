@@ -1,5 +1,7 @@
 extends Node3D
 
+const Catalog := preload("res://scripts/EndingCatalog.gd")
+
 @onready var result_panel = $ResultPanel 
 @onready var player = $Player
 @onready var game_finished_panel = $GameFinishedPanel
@@ -10,21 +12,6 @@ extends Node3D
 @onready var choice_container = $GameFinishedPanel/ChoiceContainer
 @onready var choice_survival_btn = $GameFinishedPanel/ChoiceContainer/SurvivalButton
 @onready var choice_clean_exit_btn = $GameFinishedPanel/ChoiceContainer/CleanExitButton
-
-# Ending Texture Exports
-@export var ending_algorithm_reformer: Texture2D
-@export var ending_stagnant_survival: Texture2D
-@export var ending_clean_exit: Texture2D
-@export var ending_cold_efficiency: Texture2D
-@export var ending_conflict_of_interest: Texture2D
-@export var ending_another_cog_in_the_machine: Texture2D
-
-const ALL_SPECIAL_IDS: Array[String] = [
-	"tita_elena",
-	"mark_krazy",
-	"nurse_clara",
-	"jericho_santur"
-]
 
 func _ready():
 	result_panel.visible = false
@@ -46,6 +33,12 @@ func _ready():
 	# Check if returning from the secret Grandpa round
 	if SaveManager.current_save_data.get("grandpa_round_completed", false):
 		show_secret_grandpa_ending()
+		return
+	if int(SaveManager.current_save_data.get("current_day", 1)) > 9:
+		# A resumed final review can immediately lead to the bonus shift.
+		if SceneTransition.is_transitioning:
+			await SceneTransition.transition_finished
+		resolve_game_ending()
 		return
 	
 	if SaveManager.current_save_data.has("pending_score"):
@@ -111,8 +104,8 @@ func _on_continue_clicked():
 			next_stage_name = "Credit L3 - Day 9"
 			
 	else:
-		next_scene_path = "res://scene/main_menu.tscn" 
-		next_stage_name = "Game Finished"
+		next_scene_path = "res://scene/apartment.tscn"
+		next_stage_name = "Final Review"
 
 	SaveManager.current_save_data["current_level"] = next_level
 	SaveManager.current_save_data["current_day"] = next_day
@@ -150,25 +143,21 @@ func resolve_game_ending():
 	if player:
 		player.is_paused = true
 	
-	if SaveManager.are_all_specials_marked(ALL_SPECIAL_IDS, "sus"):
+	var route := Catalog.get_final_route(SaveManager.current_save_data)
+	if route == Catalog.GRANDPA_SHIFT:
 		SaveManager.current_save_data["is_grandpa_shift"] = true
 		SaveManager.save_game(SaveManager.current_slot, SaveManager.current_save_data)
 		SceneTransition.change_scene("res://scene/CreditScoring/CreditScoring.tscn")
 		return
 
-	if SaveManager.are_all_specials_marked(ALL_SPECIAL_IDS, "legit"):
-		_show_ending("algorithm_reformer", ending_algorithm_reformer)
-		return
-
-	var total_score = SaveManager.current_save_data.get("total_score", 0)
-	if total_score == 27:
+	if route == Catalog.CAREER_CHOICE:
 		ending_texture_rect.texture = null
 		if choice_container:
 			choice_container.visible = true
 		game_finished_panel.visible = true
 		return
 
-	_show_ending("another_cog_in_the_machine", ending_another_cog_in_the_machine)
+	_show_ending(route)
 
 func show_secret_grandpa_ending():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -177,16 +166,11 @@ func show_secret_grandpa_ending():
 		player.is_paused = true
 	
 	SaveManager.current_save_data.erase("grandpa_round_completed")
-	SaveManager.save_game(SaveManager.current_slot, SaveManager.current_save_data)
-	
-	var grandpa_verdict = SaveManager.get_special_decision("grandpa")
-	if grandpa_verdict == "sus":
-		_show_ending("cold_efficiency", ending_cold_efficiency)
-	else:
-		_show_ending("conflict_of_interest", ending_conflict_of_interest)
+	_show_ending(Catalog.get_grandpa_ending(SaveManager.get_special_decision("grandpa")))
 
-func _show_ending(ending_id: String, artwork: Texture2D):
-	ending_texture_rect.texture = artwork
+func _show_ending(ending_id: String):
+	SaveManager.record_ending(ending_id)
+	ending_texture_rect.texture = load(Catalog.ENDINGS[ending_id]["image"]) as Texture2D
 	choice_container.visible = false
 	game_finished_panel.visible = true
 	ending_intro.show_ending(ending_id)
@@ -196,10 +180,10 @@ func _show_ending(ending_id: String, artwork: Texture2D):
 # ==========================================
 
 func _on_choose_stagnant_survival():
-	_show_ending("stagnant_survival", ending_stagnant_survival)
+	_show_ending("stagnant_survival")
 
 func _on_choose_clean_exit():
-	_show_ending("clean_exit", ending_clean_exit)
+	_show_ending("clean_exit")
 
 func _on_game_finished_clicked(event: InputEvent):
 	if ending_intro.visible:

@@ -1,0 +1,42 @@
+[gd_scene format=3]
+
+[sub_resource type="StyleBoxFlat" id="Style_card"]
+bg_color = Color(0.21, 0.24, 0.29, 1)
+border_width_bottom = 2
+border_color = Color(0.31, 0.35, 0.41, 1)
+
+[sub_resource type="StyleBoxFlat" id="Style_hover"]
+bg_color = Color(0.27, 0.34, 0.42, 1)
+border_width_bottom = 2
+border_color = Color(0.56, 0.77, 0.93, 1)
+
+[sub_resource type="StyleBoxFlat" id="Style_locked"]
+bg_color = Color(0.17, 0.19, 0.23, 1)
+
+[node name="Entry" type="Button"]
+custom_minimum_size = Vector2(258, 186)
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("Style_card")
+theme_override_styles/hover = SubResource("Style_hover")
+theme_override_styles/pressed = SubResource("Style_hover")
+theme_override_styles/disabled = SubResource("Style_locked")
+
+[node name="Thumbnail" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -42.0
+mouse_filter = 2
+texture_filter = 4
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Caption" type="Label" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = -42.0
+offset_right = -10.0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 19
+vertical_alignment = 1

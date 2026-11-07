@@ -8,7 +8,7 @@ extends StaticBody3D
 var is_talking: bool = false
 
 func interact():
-	if is_talking:
+	if is_talking or Dialogic.current_timeline != null:
 		return
 
 	var current_day = SaveManager.current_save_data.get("current_day", 1)
@@ -27,13 +27,25 @@ func interact():
 
 		await Dialogic.timeline_ended
 		is_talking = false
+		_resume_patrol()
 
 func face_player():
 	var player = get_tree().get_first_node_in_group("player")
 	var root = get_parent()
+	var patrol = root.get_node_or_null("OutdoorNpcPatrol") if root else null
+	if patrol and patrol.has_method("begin_interaction"):
+		patrol.begin_interaction(player)
+		return
 	if root and player:
 		var target_pos = player.global_position
 		target_pos.y = root.global_position.y
+		if root.global_position.distance_squared_to(target_pos) < 0.0001:
+			return
 		root.look_at(target_pos, Vector3.UP)
 		if model_needs_flip:
 			root.rotate_y(PI)
+
+func _resume_patrol() -> void:
+	var patrol = get_parent().get_node_or_null("OutdoorNpcPatrol")
+	if patrol and patrol.has_method("end_interaction"):
+		patrol.end_interaction()

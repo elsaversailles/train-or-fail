@@ -1,0 +1,6 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+WALK_CHECK tracks=29 duration=1.08 min_sole_y=-0.00010834660497 max_support_y=0.00024595556897 stride_z=1.21171200275421 failures=[]
+WALK_PREVIEW_CONTROLS failures=[]

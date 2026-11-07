@@ -1,0 +1,5 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+Walk cycle saved: res://animation/walk_animation.tres (29 tracks, 1.08 seconds), result=0

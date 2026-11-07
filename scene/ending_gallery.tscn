@@ -1,0 +1,104 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/EndingGallery.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://images/MainMenu/EndingsBG.png" id="2_window"]
+[ext_resource type="FontFile" path="res://assets/fonts/IBMPlexMono-Regular.ttf" id="3_mono"]
+[ext_resource type="PackedScene" path="res://scene/ending_intro.tscn" id="4_intro"]
+
+[node name="EndingGallery" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.056, 0.075, 0.106, 0.75)
+script = ExtResource("1_script")
+
+[node name="Window" type="NinePatchRect" parent="."]
+offset_right = 860.0
+offset_bottom = 532.0
+texture = ExtResource("2_window")
+patch_margin_left = 72
+patch_margin_top = 34
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Title" type="Label" parent="Window"]
+offset_left = 84.0
+offset_right = 405.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.15, 0.17, 0.21, 1)
+theme_override_fonts/font = ExtResource("3_mono")
+theme_override_font_sizes/font_size = 15
+text = "Endings Gallery"
+vertical_alignment = 1
+
+[node name="Close" type="Button" parent="Window"]
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -82.0
+offset_right = -5.0
+offset_bottom = 31.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.15, 0.17, 0.21, 1)
+theme_override_colors/font_hover_color = Color(0.07, 0.09, 0.12, 1)
+theme_override_colors/font_focus_color = Color(0.07, 0.09, 0.12, 1)
+theme_override_fonts/font = ExtResource("3_mono")
+theme_override_font_sizes/font_size = 15
+text = "Close"
+flat = true
+
+[node name="Count" type="Label" parent="Window"]
+offset_left = 28.0
+offset_top = 46.0
+offset_right = 460.0
+offset_bottom = 99.0
+theme_override_font_sizes/font_size = 34
+vertical_alignment = 1
+
+[node name="SlotHint" type="Label" parent="Window"]
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -388.0
+offset_top = 46.0
+offset_right = -28.0
+offset_bottom = 99.0
+theme_override_colors/font_color = Color(0.75, 0.79, 0.84, 1)
+theme_override_fonts/font = ExtResource("3_mono")
+theme_override_font_sizes/font_size = 15
+text = "Shared across all save slots"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Entries" type="GridContainer" parent="Window"]
+offset_left = 28.0
+offset_top = 112.0
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 17
+columns = 3
+
+[node name="Artwork" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.045, 0.052, 0.065, 1)
+
+[node name="Picture" type="TextureRect" parent="Artwork"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -52.0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Back" type="Button" parent="Artwork"]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -90.0
+offset_top = -45.0
+offset_right = 90.0
+offset_bottom = -7.0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 20
+text = "Back to gallery"
+
+[node name="EndingIntro" parent="." instance=ExtResource("4_intro")]

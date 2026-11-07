@@ -1,0 +1,91 @@
+[gd_scene load_steps=9 format=3]
+
+[sub_resource type="Curve3D" id="Curve3D_Grandpa"]
+bake_interval = 0.25
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 14, 0.025469, -12.5, 0, 0, 0, 0, 0, 0, 74, 0.025469, -12.5),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_Assistant"]
+bake_interval = 0.25
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 14, 0.042469, -14.8, 0, 0, 0, 0, 0, 0, 74, 0.042469, -14.8),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_Mark"]
+bake_interval = 0.25
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -80, 0.31484, -11.5, 0, 0, 0, 0, 0, 0, -20, 0.31484, -11.5),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_Cashier"]
+bake_interval = 0.25
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -80, 0.31484, -15, 0, 0, 0, 0, 0, 0, -65, 0.31484, -15, 0, 0, 0, 0, 0, 0, -64, 0.31484, -13.7, 0, 0, 0, 0, 0, 0, -59, 0.31484, -13.7, 0, 0, 0, 0, 0, 0, -58, 0.31484, -15, 0, 0, 0, 0, 0, 0, -20, 0.31484, -15),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+}
+point_count = 6
+
+[sub_resource type="Curve3D" id="Curve3D_Clara"]
+bake_interval = 0.25
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -209, 0.171923, 108, 0, 0, 0, 0, 0, 0, -209, 0.171923, 168),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_Supplier"]
+bake_interval = 0.25
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -232.5, 0.171923, 105, 0, 0, 0, 0, 0, 0, -232.5, 0.171923, 165),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_Jericho"]
+bake_interval = 0.25
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -175, 0.152146, 11.8, 0, 0, 0, 0, 0, 0, -172, 0.152146, 11.8, 0, 0, 0, 0, 0, 0, -171, 0.152146, 11.2, 0, 0, 0, 0, 0, 0, -168.2, 0.152146, 11.2, 0, 0, 0, 0, 0, 0, -167, 0.152146, 11.8, 0, 0, 0, 0, 0, 0, -149, 0.152146, 11.8, 0, 0, 0, 0, 0, 0, -148, 0.152146, 11.2, 0, 0, 0, 0, 0, 0, -142.5, 0.152146, 11.2, 0, 0, 0, 0, 0, 0, -141.5, 0.152146, 11.8, 0, 0, 0, 0, 0, 0, -115, 0.152146, 11.8),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 10
+
+[sub_resource type="Curve3D" id="Curve3D_Joice"]
+bake_interval = 0.25
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -138, 0.152146, -15.0, 0, 0, 0, 0, 0, 0, -138, 0.152146, -12.5, 0, 0, 0, 0, 0, 0, -135, 0.152146, -12.5, 0, 0, 0, 0, 0, 0, -134, 0.152146, -11.9, 0, 0, 0, 0, 0, 0, -126, 0.152146, -11.9, 0, 0, 0, 0, 0, 0, -125, 0.152146, -12.5, 0, 0, 0, 0, 0, 0, -83, 0.152146, -12.5),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 7
+
+[node name="NpcPatrolRoutes" type="Node3D"]
+
+[node name="Grandpa" type="Path3D" parent="."]
+curve = SubResource("Curve3D_Grandpa")
+
+[node name="Assistant" type="Path3D" parent="."]
+curve = SubResource("Curve3D_Assistant")
+
+[node name="Mark" type="Path3D" parent="."]
+curve = SubResource("Curve3D_Mark")
+
+[node name="Cashier" type="Path3D" parent="."]
+curve = SubResource("Curve3D_Cashier")
+
+[node name="Clara" type="Path3D" parent="."]
+curve = SubResource("Curve3D_Clara")
+
+[node name="Supplier" type="Path3D" parent="."]
+curve = SubResource("Curve3D_Supplier")
+
+[node name="Jericho" type="Path3D" parent="."]
+curve = SubResource("Curve3D_Jericho")
+
+[node name="Joice" type="Path3D" parent="."]
+curve = SubResource("Curve3D_Joice")

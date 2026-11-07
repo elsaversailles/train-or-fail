@@ -38,6 +38,8 @@
 [ext_resource type="Script" uid="uid://bfxc4yv6y2bn4" path="res://scripts/BuildingDecisionTrigger.gd" id="33_bllr2"]
 [ext_resource type="PackedScene" uid="uid://dgemu51cirnen" path="res://models3d/characters/F/tita_elena.tscn" id="33_jvih8"]
 [ext_resource type="Texture2D" uid="uid://bjfvr1cgy17sw" path="res://images/caution_tape.png" id="33_urwcn"]
+[ext_resource type="PackedScene" path="res://scene/outdoor_npc_paths.tscn" id="36_paths"]
+[ext_resource type="Script" uid="uid://cbxyej5fdfj34" path="res://scripts/OutdoorNpcPatrol.gd" id="36_patrol"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dn82p"]
 resource_name = "window angeloan"
@@ -108,6 +110,7 @@ outline_color = Color(0, 0, 0, 1)
 radius = 2.789346
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yj86u"]
+radius = 0.32
 height = 2.309082
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bllr2"]
@@ -203,6 +206,13 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -138
 light_energy = 0.3
 area_normalize_energy = false
 area_size = Vector2(11.088226, 13.2453785)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="LightBuildings" unique_id=31950824]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.565495, 3.828394, -21.268135)
+light_energy = 5.0
+light_indirect_energy = 20.0
+omni_range = 9.990661
+omni_attenuation = 0.8
 
 [node name="Player" parent="." unique_id=2061402672 groups=["player"] instance=ExtResource("3_ma6ok")]
 transform = Transform3D(0.018174676, 0, -0.99983484, 0, 1, 0, 0.99983484, 0, 0.018174676, -230.04721, 0.54213715, 139.29137)
@@ -406,8 +416,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0333858, 1.9073486e-06, -0.
 [node name="Grandpa" parent="FraudDetection" unique_id=1700817525 instance=ExtResource("10_tv3p0")]
 transform = Transform3D(2.694755, 0, -0.16821285, 0, 2.7, 0, 0.16821285, 0, 2.694755, 1.6093721, 0.025467128, -12.27391)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="FraudDetection/Grandpa" unique_id=1593904460 groups=["special_npcs"]]
+[node name="StaticBody3D" type="AnimatableBody3D" parent="FraudDetection/Grandpa" unique_id=1593904460 groups=["special_npcs"]]
 transform = Transform3D(0.55857664, 0, 0.947624, 0, 1.1, 0, -0.947624, 0, 0.55857664, -0.055415154, 0.018606037, -0.011127472)
+sync_to_physics = false
 script = ExtResource("11_tm8yg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FraudDetection/Grandpa/StaticBody3D" unique_id=428578247]
@@ -417,11 +428,16 @@ shape = SubResource("CapsuleShape3D_yj86u")
 [node name="NPCDialogueBox" parent="FraudDetection/Grandpa" unique_id=311128597 instance=ExtResource("8_ym7lu")]
 transform = Transform3D(0.55857664, 0, 0.947624, 0, 1.1, 0, -0.947624, 0, 0.55857664, 0.00027561188, 2.931406, 9.536743e-06)
 
+[node name="OutdoorNpcPatrol" type="Node" parent="FraudDetection/Grandpa" unique_id=1133118854]
+script = ExtResource("36_patrol")
+patrol_path = NodePath("../../../NpcPatrolRoutes/Grandpa")
+
 [node name="Assistant" parent="FraudDetection" unique_id=155668348 instance=ExtResource("12_tv3p0")]
 transform = Transform3D(2.3787675, 0, -1.2772886, 0, 2.7, 0, 1.2772886, 0, 2.3787675, 4.036893, 0.042467147, -11.196138)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="FraudDetection/Assistant" unique_id=1704643105]
+[node name="StaticBody3D" type="AnimatableBody3D" parent="FraudDetection/Assistant" unique_id=1704643105]
 transform = Transform3D(0.55857664, 0, 0.947624, 0, 1.1000003, 0, -0.947624, 0, 0.55857664, -0.055415154, 0.5085966, -0.011127472)
+sync_to_physics = false
 script = ExtResource("15_e1n6x")
 special_days = Array[int]([1])
 generic_timelines = Array[String](["assistant_generic_1", "assistant_generic_2"])
@@ -433,6 +449,11 @@ shape = SubResource("CapsuleShape3D_yj86u")
 
 [node name="NPCDialogueBox" parent="FraudDetection/Assistant" unique_id=899122111 instance=ExtResource("8_ym7lu")]
 transform = Transform3D(-0.9432967, 0, -0.5658548, 0, 1.1, 0, 0.5658548, 0, -0.9432967, -0.00031471252, 2.9127061, -0.00038146973)
+
+[node name="OutdoorNpcPatrol" type="Node" parent="FraudDetection/Assistant" unique_id=1006373835]
+script = ExtResource("36_patrol")
+patrol_path = NodePath("../../../NpcPatrolRoutes/Assistant")
+start_backwards = true
 
 [node name="TriggerGrandpaAndAssistant" type="Area3D" parent="FraudDetection" unique_id=366009866 node_paths=PackedStringArray("grandpa_npc", "assistant_npc", "grandpa_bubble", "assistant_bubble", "grandpa_interact_body")]
 transform = Transform3D(-0.9131295, 0, 0.40766966, 0, 1, 0, -0.40766966, 0, -0.9131295, -1.8924309, 0.49946713, -2.200347)
@@ -451,8 +472,9 @@ shape = SubResource("BoxShape3D_bllr2")
 [node name="Mark Krazy" parent="FraudDetection" unique_id=925298984 instance=ExtResource("14_x7ph6")]
 transform = Transform3D(2.5045314, 0, 1.0086242, 0, 2.7, 0, -1.0086242, 0, 2.5045314, -47.710926, 0.31483966, -9.709841)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="FraudDetection/Mark Krazy" unique_id=741845743 node_paths=PackedStringArray("mark_bubble") groups=["special_npcs"]]
+[node name="StaticBody3D" type="AnimatableBody3D" parent="FraudDetection/Mark Krazy" unique_id=741845743 node_paths=PackedStringArray("mark_bubble") groups=["special_npcs"]]
 transform = Transform3D(1.0844803, 0, 0.18412855, 0, 1.1, 0, -0.18412855, 0, 1.0844803, 0.058185577, 0.0004220605, 0.018241882)
+sync_to_physics = false
 script = ExtResource("16_sypdl")
 mark_bubble = NodePath("../NPCDialogueBox")
 
@@ -463,14 +485,19 @@ shape = SubResource("CapsuleShape3D_yj86u")
 [node name="NPCDialogueBox" parent="FraudDetection/Mark Krazy" unique_id=88300493 instance=ExtResource("8_ym7lu")]
 transform = Transform3D(1.0844799, 0, 0.18412846, 0, 1.1, 0, -0.18412846, 0, 1.0844799, -0.00019073486, 2.9132223, 0.00023937225)
 
+[node name="OutdoorNpcPatrol" type="Node" parent="FraudDetection/Mark Krazy" unique_id=1378589059]
+script = ExtResource("36_patrol")
+patrol_path = NodePath("../../../NpcPatrolRoutes/Mark")
+
 [node name="Cashier" parent="FraudDetection" unique_id=124877193 instance=ExtResource("16_luw4s")]
 transform = Transform3D(2.6619802, 0, -0.4515104, 0, 2.7, 0, 0.4515104, 0, 2.6619802, -45.354145, 0.31483966, -9.655619)
 
 [node name="NPCDialogueBox" parent="FraudDetection/Cashier" unique_id=2063256543 instance=ExtResource("8_ym7lu")]
 transform = Transform3D(-1.0545266, 0, -0.31300732, 0, 1.1, 0, 0.31300732, 0, -1.0545266, 0.00022125244, 2.9132223, -0.0002784729)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="FraudDetection/Cashier" unique_id=1223075067]
+[node name="StaticBody3D" type="AnimatableBody3D" parent="FraudDetection/Cashier" unique_id=1223075067]
 transform = Transform3D(0.55857664, 0, 0.947624, 0, 1.1000001, 0, -0.947624, 0, 0.55857664, -0.055415154, 0.50859654, -0.011127472)
+sync_to_physics = false
 script = ExtResource("15_e1n6x")
 special_days = Array[int]([2, 4])
 generic_timelines = Array[String](["cashier_generic_1", "cashier_generic_2"])
@@ -479,6 +506,11 @@ model_needs_flip = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FraudDetection/Cashier/StaticBody3D" unique_id=569563127]
 transform = Transform3D(1.0000085, 0, -3.427267e-06, 0, 1, 0, 3.427267e-06, 0, 1.0000085, 0, 0.12589812, 0)
 shape = SubResource("CapsuleShape3D_yj86u")
+
+[node name="OutdoorNpcPatrol" type="Node" parent="FraudDetection/Cashier" unique_id=827150117]
+script = ExtResource("36_patrol")
+patrol_path = NodePath("../../../NpcPatrolRoutes/Cashier")
+start_backwards = true
 
 [node name="TriggerMarkAndCashier" type="Area3D" parent="FraudDetection" unique_id=925960404 node_paths=PackedStringArray("mark_npc", "cashier_npc", "mark_bubble", "cashier_bubble", "mark_interact_body")]
 transform = Transform3D(-0.9965015, 0, -0.0835746, 0, 1, 0, 0.0835746, 0, -0.9965015, -45.917286, 0.80083966, -0.89557695)
@@ -500,8 +532,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.617, -0.325, 10.111)
 [node name="Nurse Clara" parent="CreditScoring" unique_id=407223247 instance=ExtResource("18_e1n6x")]
 transform = Transform3D(-1.0919337, 0, -2.4693482, 0, 2.7, 0, 2.4693482, 0, -1.0919337, -175.08391, 0.49692273, 98.37416)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="CreditScoring/Nurse Clara" unique_id=153156866 groups=["special_npcs"]]
+[node name="StaticBody3D" type="AnimatableBody3D" parent="CreditScoring/Nurse Clara" unique_id=153156866 groups=["special_npcs"]]
 transform = Transform3D(-1.0808178, 0, 0.20452994, 0, 1.1, 0, -0.20452994, 0, -1.0808178, 0.00016784668, 5.4597855e-05, -0.00010347366)
+sync_to_physics = false
 script = ExtResource("19_dbkl4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CreditScoring/Nurse Clara/StaticBody3D" unique_id=1702109730]
@@ -511,11 +544,17 @@ shape = SubResource("CapsuleShape3D_yj86u")
 [node name="NPCDialogueBox" parent="CreditScoring/Nurse Clara" unique_id=1343437894 instance=ExtResource("8_ym7lu")]
 transform = Transform3D(-1.0808178, 0, 0.20452993, 0, 1.1, 0, -0.20452993, 0, -1.0808178, 0.00016784668, 2.9128547, -0.00010347366)
 
+[node name="OutdoorNpcPatrol" type="Node" parent="CreditScoring/Nurse Clara" unique_id=1513358927]
+script = ExtResource("36_patrol")
+patrol_path = NodePath("../../../NpcPatrolRoutes/Clara")
+additional_story_days = Array[int]([8])
+
 [node name="Supplier" parent="CreditScoring" unique_id=1006549139 instance=ExtResource("20_kogoh")]
 transform = Transform3D(-0.45459983, 0, -2.6614542, 0, 2.7, 0, 2.6614542, 0, -0.45459983, -175.54227, 0.49692273, 100.57854)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="CreditScoring/Supplier" unique_id=1142516290]
+[node name="StaticBody3D" type="AnimatableBody3D" parent="CreditScoring/Supplier" unique_id=1142516290]
 transform = Transform3D(0.5585766, 0, 0.947624, 0, 1.1000001, 0, -0.947624, 0, 0.5585766, -0.055419922, 0.50859654, -0.011131287)
+sync_to_physics = false
 script = ExtResource("15_e1n6x")
 special_days = Array[int]([7])
 generic_timelines = Array[String](["supplier_generic_1", "supplier_generic_2"])
@@ -527,6 +566,12 @@ shape = SubResource("CapsuleShape3D_yj86u")
 
 [node name="NPCDialogueBox" parent="CreditScoring/Supplier" unique_id=1713485754 instance=ExtResource("8_ym7lu")]
 transform = Transform3D(-0.93334925, 0, -0.5821162, 0, 1.1, 0, 0.5821162, 0, -0.93334925, 0.00021362305, 2.9128547, -9.202957e-05)
+
+[node name="OutdoorNpcPatrol" type="Node" parent="CreditScoring/Supplier" unique_id=431556692]
+script = ExtResource("36_patrol")
+patrol_path = NodePath("../../../NpcPatrolRoutes/Supplier")
+additional_story_days = Array[int]([8])
+start_backwards = true
 
 [node name="TriggerClaraAndSupplier" type="Area3D" parent="CreditScoring" unique_id=2119374024 node_paths=PackedStringArray("clara_npc", "supplier_npc", "clara_bubble", "supplier_bubble", "clara_interact_body")]
 transform = Transform3D(-0.16837029, 0, -0.98572385, 0, 1, 0, 0.98572385, 0, -0.16837029, -177.0325, 1.4229045, 101.03703)
@@ -545,8 +590,9 @@ shape = SubResource("BoxShape3D_vohb4")
 [node name="Prof_ Jericho Santur" parent="CreditScoring" unique_id=697241532 instance=ExtResource("22_yeb0w")]
 transform = Transform3D(-2.2987874, 0, -1.4161841, 0, 2.7, 0, 1.4161841, 0, -2.2987874, -91.114105, 0.4771458, 0.036039352)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="CreditScoring/Prof_ Jericho Santur" unique_id=411111931 groups=["special_npcs"]]
+[node name="StaticBody3D" type="AnimatableBody3D" parent="CreditScoring/Prof_ Jericho Santur" unique_id=411111931 groups=["special_npcs"]]
 transform = Transform3D(-0.96657586, 0, 0.5251008, 0, 1.1, 0, -0.5251008, 0, -0.96657586, 0.00017929077, -0.00014591217, 0.00014305115)
+sync_to_physics = false
 script = ExtResource("23_x7ph6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CreditScoring/Prof_ Jericho Santur/StaticBody3D" unique_id=159289044]
@@ -556,11 +602,17 @@ shape = SubResource("CapsuleShape3D_yj86u")
 [node name="NPCDialogueBox" parent="CreditScoring/Prof_ Jericho Santur" unique_id=1381116985 instance=ExtResource("8_ym7lu")]
 transform = Transform3D(-0.966576, 0, 0.5251008, 0, 1.1, 0, -0.5251008, 0, -0.966576, 0.00018310547, 2.9126542, 0.0001449585)
 
+[node name="OutdoorNpcPatrol" type="Node" parent="CreditScoring/Prof_ Jericho Santur" unique_id=2016769154]
+script = ExtResource("36_patrol")
+patrol_path = NodePath("../../../NpcPatrolRoutes/Jericho")
+additional_story_days = Array[int]([9])
+
 [node name="Joice" parent="CreditScoring" unique_id=1189940890 instance=ExtResource("24_ptfg7")]
 transform = Transform3D(-2.32554, 0, -1.3718104, 0, 2.7, 0, 1.3718104, 0, -2.32554, -86.75551, 0.4771458, -0.059114456)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="CreditScoring/Joice" unique_id=103327075]
+[node name="StaticBody3D" type="AnimatableBody3D" parent="CreditScoring/Joice" unique_id=103327075]
 transform = Transform3D(0.5585767, 0, 0.94762397, 0, 1.1000001, 0, -0.94762397, 0, 0.5585767, -0.055416107, 0.50859654, -0.011131287)
+sync_to_physics = false
 script = ExtResource("15_e1n6x")
 special_days = Array[int]([8])
 generic_timelines = Array[String](["joice_generic_1", "joice_generic_2"])
@@ -572,6 +624,12 @@ shape = SubResource("CapsuleShape3D_yj86u")
 
 [node name="NPCDialogueBox" parent="CreditScoring/Joice" unique_id=1328916587 instance=ExtResource("8_ym7lu")]
 transform = Transform3D(-1.0109272, 0, 0.43361974, 0, 1.1, 0, -0.43361974, 0, -1.0109272, -0.00030517578, 2.9126542, 0.0005569458)
+
+[node name="OutdoorNpcPatrol" type="Node" parent="CreditScoring/Joice" unique_id=614550316]
+script = ExtResource("36_patrol")
+patrol_path = NodePath("../../../NpcPatrolRoutes/Joice")
+additional_story_days = Array[int]([9])
+start_backwards = true
 
 [node name="TriggerJerichoAndJoice" type="Area3D" parent="CreditScoring" unique_id=1993269788 node_paths=PackedStringArray("jericho_npc", "joice_npc", "jericho_bubble", "joice_bubble", "jericho_interact_body")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97.54646, 1.3851275, -4.8203373)
@@ -608,7 +666,7 @@ spot_attenuation = -0.9
 spot_angle = 14.33
 
 [node name="Tita Elena" parent="." unique_id=134432329 instance=ExtResource("33_jvih8")]
-transform = Transform3D(-1.6703937, 0, -2.1212697, 0, 2.7, 0, 2.1212697, 0, -1.6703937, -199.25089, 0.50579643, 12.384316)
+transform = Transform3D(-1.6703937, 0, -2.1212697, 0, 2.7, 0, 2.1212697, 0, -1.6703937, -198.95146, 0.50579643, 12.701565)
 
 [node name="BakeryDecisionTrigger" type="Area3D" parent="." unique_id=601153534 node_paths=PackedStringArray("caution_tape", "shop_npcs", "camera_anchor")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -217.85155, 0, 23.523445)
@@ -663,6 +721,8 @@ shape = SubResource("BoxShape3D_jv1ba")
 
 [node name="Marker3D" type="Marker3D" parent="DealershipDecisionTrigger" unique_id=1446886740]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.9222717, 10.676938, -17.29637)
+
+[node name="NpcPatrolRoutes" parent="." unique_id=1078312032 instance=ExtResource("36_paths")]
 
 [connection signal="body_entered" from="OfficeDoor" to="OfficeDoor" method="_on_body_entered"]
 [connection signal="body_exited" from="OfficeDoor" to="OfficeDoor" method="_on_body_exited"]

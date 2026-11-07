@@ -18,7 +18,6 @@ var original_id_pos: Vector2
 var zoom_scale: float = 3
 var id_zoom_tween: Tween
 var custom_cursor_img = preload("res://assets/cursor/cursor_magnifyingglass.svg")
-var mistakes = 0
 
 # --- NOTE TRACKING ---
 var is_note_open: bool = false
@@ -269,18 +268,10 @@ func submit_answer(answer):
 			SaveManager.current_save_data["special_decisions"] = {}
 		SaveManager.current_save_data["special_decisions"][char_id] = answer
 
-	# 1. Check for a mistake immediately
 	var correct_answer = current_applicant["kyc_correct"]
 	if answer != correct_answer:
 		mistakes += 1
-		
-		# Wait for End Training before showing the termination screen.
-		if mistakes >= 3:
-			termination_pending = true
-			await finish_game()
-			return
 
-	# 3. If they survive, continue as normal
 	player_answers.append(answer)
 	current_index += 1
 
@@ -291,7 +282,7 @@ func submit_answer(answer):
 		is_transitioning = false
 		set_review_controls_enabled(true)
 	else:
-		await finish_game()
+		finish_game()
 
 func finish_game():
 	review_finished = true
@@ -305,9 +296,7 @@ func finish_game():
 	reset_id_zoom_immediately()
 	for control in [legit_button, sus_button, left_button, center_button, right_button, note_icon_button, id_panel, name_label, ai_risk_value_label, $AIRiskLabel]:
 		control.hide()
-	applicant_label.text = "Training ended" if termination_pending else "All customers verified"
-	if termination_pending:
-		await slide_applicant_out()
+	applicant_label.text = "All customers verified"
 	is_transitioning = false
 	show_shutdown_prompt()
 

@@ -19,12 +19,17 @@ class_name WaypointMarker
 @export var close_distance: float = 4.0
 @export var far_distance: float = 30.0
 
+@export_group("Bounce")
+@export_range(0.0, 40.0, 1.0) var bounce_height: float = 12.0 # Pixels at full scale.
+@export_range(0.0, 5.0, 0.1) var bounce_speed: float = 0.8 # Cycles per second.
+
 @onready var icon: TextureRect = $Icon
 
 var current_target: Node3D = null
 var current_vertical_offset: float = 2.2
 var camera: Camera3D
 var is_dialogue_active: bool = false
+var bounce_phase: float = 0.0
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -135,7 +140,7 @@ func _get_npc_name(npc: Node3D) -> String:
 		return "Jericho"
 	return npc.name.capitalize()
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	if get_tree().paused or is_dialogue_active:
 		visible = false
 		if objective_label:
@@ -150,6 +155,8 @@ func _process(_delta: float) -> void:
 	if not camera:
 		visible = false
 		return
+
+	bounce_phase = fmod(bounce_phase + delta * bounce_speed * TAU, TAU)
 
 	var target_pos: Vector3
 	if current_target.has_node("HeadMarker"):
@@ -175,11 +182,14 @@ func _process(_delta: float) -> void:
 
 	if icon:
 		icon.scale = Vector2(current_scale, current_scale)
+		icon.position = Vector2(-icon.size.x / 2.0, -icon.size.y)
 
 	if is_on_screen:
 		global_position = screen_pos
 		if icon:
 			icon.rotation = 0.0
+			# Bounce upward from the head anchor, never down into the character.
+			icon.position.y -= (0.5 - 0.5 * cos(bounce_phase)) * bounce_height * current_scale
 	else:
 		var direction: Vector2 = (screen_pos - screen_center).normalized()
 		global_position = _get_border_clamped_position(screen_center, direction, usable_rect)

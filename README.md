@@ -25,7 +25,7 @@ The game runs across a 9-day work cycle split across three distinct operational 
 
 ### 3. Grading & Strike System
 * Each standard shift reviews 5 applicants (totaling 45 graded cases across the game).
-* Submitting scores outside a ±0.20 margin of error records a mistake. Accumulating 3 mistakes in a single shift results in immediate contract termination and game over.
+* An incorrect verdict or a credit score outside the ±0.20 margin counts as one mistake. After reviewing all 5 applicants, press the shutdown button. With 3 or more mistakes, the player gets the **Terminated** ending. With 0–2 mistakes, the shift proceeds to the evening commute.
 
 ---
 
@@ -71,7 +71,7 @@ Click or press Enter to advance from the card to the artwork, then again to resu
 | **Cold Efficiency** | All 4 special NPCs are marked "sus", and Grandpa is rejected as "sus" during the Day 10 bonus shift. | Absolute compliance. Personal ties are eliminated in favor of complete corporate assimilation. |
 | **Conflict of Interest** | All 4 special NPCs are marked "sus", but Grandpa is approved as "legit" during the Day 10 bonus shift. | The cold facade fractures at the final hurdle, exposing personal bias to internal audit. |
 | **Another Cog In The Machine** | Mixed verdicts on special applicants (neither all "sus" nor all "legit"), and total score != 27. | A standard evaluation cycle. The player remains an unremarkable, replaceable bureaucrat. |
-| **Terminated** | Accumulate 3 evaluation errors in a single shift, then select End Training. | Immediate termination for incompetence before making a lasting impact on the business or community. |
+| **Terminated** | Finish all 5 reviews with 3 or more mistakes and press the shutdown button. | Contract termination for the shift's evaluation errors. |
 
 ---
 
@@ -86,3 +86,27 @@ main_menu.tscn
               └── outside_world.tscn
                     └── apartment.tscn
                           └── GameFinishedPanel (Endings 1–6)
+```
+
+## Walking animation preview
+
+Open `res://scene/walk_preview.tscn` and press **F6** (Run Current Scene) to try Adrian's looping, in-place walk. Drag the background or use the arrow keys to orbit; **Front** and **Side** switch views. **Space** pauses/resumes, **R** restarts, and the speed slider adjusts playback from 0.25x to 1.5x.
+
+This separate preview uses `animation/adrian_walk_test.tscn` and the `walking/walk` clip from `animation/walk_animation.tres`. The original character model scenes retain their idle animation setup.
+
+## Outside-world NPC patrols
+
+Eight outdoor NPCs patrol the sidewalk along authored `Path3D` routes in `scene/outdoor_npc_paths.tscn`, covering about 60 meters (roughly 30 meters each way). Interacting stops the NPC, switches to idle, and turns them toward the player. After Dialogic finishes, they turn back toward the sidewalk and resume from the same spot.
+
+On these story days, the characters stay at their original locations with idle animation, including the building outcome scenes:
+
+| Characters | Stationary days |
+| :--- | :--- |
+| Grandpa and Assistant | 1 |
+| Mark and Cashier | 2, 4 |
+| Clara and Supplier | 7, 8 |
+| Jericho and Joice | 8, 9 |
+
+Tita Elena always stays in place with her idle animation. Closed-shop NPCs still hide according to the existing building decisions. The original character model scenes and shared idle animation remain unchanged.
+
+Edit the path curves under `NpcPatrolRoutes` in the outside-world scene to adjust their sidewalk routes. Each character's `OutdoorNpcPatrol` node exposes `walk_speed` and `turnaround_pause` for pacing.

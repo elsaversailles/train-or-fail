@@ -4,14 +4,15 @@ extends CanvasLayer
 # Release exports never enable these shortcuts.
 const ENABLED := true
 const INTRO_SCENE := preload("res://scene/ending_intro.tscn")
+const Catalog := preload("res://scripts/EndingCatalog.gd")
 const ENDING_KEYS := {
-	KEY_F1: ["algorithm_reformer", "res://images/Endings/Algorithm_Reformer.png"],
-	KEY_F2: ["another_cog_in_the_machine", "res://images/Endings/Another_Cog_In_The_Machine.png"],
-	KEY_F3: ["cold_efficiency", "res://images/Endings/Cold_Efficiency.png"],
-	KEY_F4: ["conflict_of_interest", "res://images/Endings/Conflict_of_Interest.png"],
-	KEY_F5: ["stagnant_survival", "res://images/Endings/Stagnant_Survival.png"],
-	KEY_F6: ["terminated", "res://images/Endings/Terminated.png"],
-	KEY_F7: ["clean_exit", "res://images/Endings/The_Clean_Exit.png"]
+	KEY_F1: "algorithm_reformer",
+	KEY_F2: "another_cog_in_the_machine",
+	KEY_F3: "cold_efficiency",
+	KEY_F4: "conflict_of_interest",
+	KEY_F5: "stagnant_survival",
+	KEY_F6: "terminated",
+	KEY_F7: "clean_exit"
 }
 
 var _preview: Control
@@ -52,12 +53,12 @@ func _show_preview(keycode: int) -> void:
 		_was_paused = get_tree().paused
 		_previous_mouse_mode = Input.mouse_mode
 		_previous_focus = get_viewport().gui_get_focus_owner()
-	var ending: Array = ENDING_KEYS[keycode]
-	_artwork.texture = load(ending[1]) as Texture2D
+	var ending_id: String = ENDING_KEYS[keycode]
+	_artwork.texture = load(Catalog.get_presentation(ending_id)["image"]) as Texture2D
 	get_tree().paused = true
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	_preview.show()
-	_intro.show_ending(ending[0])
+	_intro.show_ending(ending_id)
 
 
 func _build_preview() -> void:

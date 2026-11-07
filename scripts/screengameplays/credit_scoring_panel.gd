@@ -16,7 +16,6 @@ var applicants_list: Array = []
 var current_case_index: int = 0
 var actual_score: float = 1.0
 var total_correct_answers: int = 0
-var mistakes: int = 0
 var is_rejected: bool = false
 var final_credit_amount: int = 0
 
@@ -198,10 +197,6 @@ func _on_submit():
 		total_correct_answers += 1
 	else:
 		mistakes += 1
-		if mistakes >= 3:
-			termination_pending = true
-			await finish_game()
-			return
 
 	# 4. Advance to the next applicant
 	current_case_index += 1
@@ -229,9 +224,7 @@ func finish_game():
 	$Panel/AIRiskLabel.hide()
 	ai_risk_value_label.hide()
 	credit_score_label.hide()
-	result_label.text = "Training ended" if termination_pending else "All applicants reviewed"
-	if termination_pending:
-		await slide_applicant_out()
+	result_label.text = "All applicants reviewed"
 	await set_panel_open(true).finished
 	is_transitioning = false
 	show_shutdown_prompt()

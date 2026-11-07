@@ -14,6 +14,25 @@
 [ext_resource type="PackedScene" uid="uid://eb3my6rwhod3" path="res://scene/settings_panel.tscn" id="8_dclss"]
 [ext_resource type="Texture2D" uid="uid://1xgf1ktya7y3" path="res://images/MainMenu/buttons/AboutUsPressed.png" id="9_os2d6"]
 [ext_resource type="Texture2D" uid="uid://4l74d3tj8vxx" path="res://images/MainMenu/buttons/QuitPressed.png" id="11_v0h3m"]
+[ext_resource type="Texture2D" path="res://images/MainMenu/Gallery.png" id="15_gallery"]
+[ext_resource type="FontFile" path="res://assets/fonts/IBMPlexMono-Regular.ttf" id="16_mono"]
+
+[sub_resource type="StyleBoxFlat" id="Style_gallery"]
+bg_color = Color(0.92, 0.93, 0.95, 0.96)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_left = 6
+corner_radius_bottom_right = 6
+shadow_color = Color(0.03, 0.04, 0.07, 0.35)
+shadow_size = 3
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="Style_gallery_hover"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_left = 6
+corner_radius_bottom_right = 6
 
 [node name="CanvasLayer2" type="CanvasLayer" unique_id=502315201]
 
@@ -108,6 +127,49 @@ offset_right = 1104.0
 offset_bottom = 279.0
 texture = ExtResource("7_1o50l")
 
+[node name="GalleryButton" type="Button" parent="Main Menu"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 180.0
+offset_bottom = 82.0
+tooltip_text = "Open the endings gallery."
+accessibility_name = "Endings gallery"
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("Style_gallery")
+theme_override_styles/hover = SubResource("Style_gallery_hover")
+theme_override_styles/pressed = SubResource("Style_gallery_hover")
+
+[node name="Icon" type="TextureRect" parent="Main Menu/GalleryButton"]
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 65.0
+offset_bottom = 53.0
+mouse_filter = 2
+texture = ExtResource("15_gallery")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="Main Menu/GalleryButton"]
+offset_left = 71.0
+offset_top = 2.0
+offset_right = 151.0
+offset_bottom = 37.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.12, 0.15, 0.19, 1)
+theme_override_font_sizes/font_size = 25
+text = "Gallery"
+
+[node name="Count" type="Label" parent="Main Menu/GalleryButton"]
+offset_left = 72.0
+offset_top = 36.0
+offset_right = 159.0
+offset_bottom = 55.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.22, 0.26, 0.31, 1)
+theme_override_fonts/font = ExtResource("16_mono")
+theme_override_font_sizes/font_size = 12
+
 [node name="SettingsPanel" parent="Main Menu" unique_id=1962049893 instance=ExtResource("8_dclss")]
 visible = false
 layout_mode = 1
@@ -122,3 +184,4 @@ bus = &"Music"
 [connection signal="pressed" from="Main Menu/Buttons/Settings" to="Main Menu" method="_on_settings_pressed"]
 [connection signal="pressed" from="Main Menu/Buttons/About Us" to="Main Menu" method="_on_about_us_pressed"]
 [connection signal="pressed" from="Main Menu/Buttons/Quit" to="Main Menu" method="_on_quit_pressed"]
+[connection signal="pressed" from="Main Menu/GalleryButton" to="Main Menu" method="_on_gallery_pressed"]

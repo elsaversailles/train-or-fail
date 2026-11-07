@@ -5,10 +5,11 @@ const PANEL_SLIDE_DURATION: float = 0.6
 const APPLICANT_SLIDE_DURATION: float = 0.5
 const APPLICANT_SLIDE_DISTANCE: float = 2.5
 const SHUTDOWN_REMINDER_DELAY: float = 2.0
+const MISTAKES_FOR_TERMINATION: int = 3
 
 var is_transitioning: bool = false
 var review_finished: bool = false
-var termination_pending: bool = false
+var mistakes: int = 0
 
 var _panel_slide_tween: Tween
 var _model_container: Node3D
@@ -128,7 +129,7 @@ func shutdown_review(score: int) -> void:
 	if not begin_shutdown():
 		return
 	hide()
-	if termination_pending:
+	if mistakes >= MISTAKES_FOR_TERMINATION:
 		get_tree().current_scene.trigger_game_over()
 	else:
 		get_tree().current_scene.show_final_result(score)
