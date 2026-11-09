@@ -1,0 +1,16 @@
+config_version=5
+
+[application]
+config/name="Tutorial layout review"
+
+[display]
+window/size/viewport_width=1152
+window/size/viewport_height=648
+
+[gui]
+theme/custom="res://theme/game_theme.tres"
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.2, 0.25, 0.3, 1)

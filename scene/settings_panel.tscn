@@ -54,12 +54,12 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Settings"
 
 [node name="MusicControl" type="HSlider" parent="." unique_id=17278690]
-tooltip_text = "Adjust all game audio. Set to 0% to mute."
 layout_mode = 0
 offset_left = -96.0
 offset_top = -142.0
 offset_right = 96.0
 offset_bottom = -126.0
+tooltip_text = "Adjust all game audio. Set to 0% to mute."
 theme_override_styles/slider = SubResource("StyleBoxLine_by01r")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_dclss")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_dclss")
@@ -93,21 +93,21 @@ theme_override_font_sizes/font_size = 14
 horizontal_alignment = 2
 
 [node name="BackButton" type="Button" parent="." unique_id=970736283]
-tooltip_text = "Close settings. Changes are saved automatically."
 layout_mode = 0
 offset_left = -105.0
 offset_top = 158.0
 offset_right = -28.0
 offset_bottom = 193.0
+tooltip_text = "Close settings. Changes are saved automatically."
 text = "Back"
 
 [node name="FullscreenCheckbox" type="CheckBox" parent="." unique_id=1117961063]
-tooltip_text = "Switch between fullscreen and windowed display."
 layout_mode = 0
 offset_left = -102.0
 offset_top = -41.0
 offset_right = 4.0
 offset_bottom = -9.0
+tooltip_text = "Switch between fullscreen and windowed display."
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.15127608, 0.15127608, 0.15127608, 1)
@@ -116,12 +116,12 @@ theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 text = "Full Screen"
 
 [node name="Sensitivity" type="HSlider" parent="." unique_id=2076778275]
-tooltip_text = "Adjust how quickly the camera turns with the mouse."
 layout_mode = 0
 offset_left = -96.0
 offset_top = -80.0
 offset_right = 96.0
 offset_bottom = -64.0
+tooltip_text = "Adjust how quickly the camera turns with the mouse."
 theme_override_styles/slider = SubResource("StyleBoxLine_by01r")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_dclss")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_dclss")
@@ -148,12 +148,13 @@ theme_override_font_sizes/font_size = 14
 horizontal_alignment = 2
 
 [node name="LightingCheckbox" type="CheckBox" parent="." unique_id=774781796]
-tooltip_text = "Enable richer lighting, fog, and shadows.\nTurn off for better performance."
 layout_mode = 0
 offset_left = -102.0
 offset_top = 6.0
 offset_right = 104.0
 offset_bottom = 36.0
+tooltip_text = "Enable richer lighting, fog, and shadows.
+Turn off for better performance."
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -174,12 +175,13 @@ theme_override_font_sizes/font_size = 14
 text = "Rendering Distance"
 
 [node name="RenderDistanceOption" type="OptionButton" parent="." unique_id=1976338649]
-tooltip_text = "Choose how far away scenery stays visible.\nShorter distances can improve performance."
 layout_mode = 0
 offset_left = -96.0
 offset_top = 76.0
 offset_right = 96.0
 offset_bottom = 110.0
+tooltip_text = "Choose how far away scenery stays visible.
+Shorter distances can improve performance."
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [connection signal="value_changed" from="MusicControl" to="MusicControl" method="_on_value_changed"]

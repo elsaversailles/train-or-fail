@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://cg3j6mw5kiqw0" path="res://images/SwapModeIcon.png" id="8_8s3y7"]
 [ext_resource type="Texture2D" uid="uid://du4mems3ulp1h" path="res://images/ZoomModeIcon.png" id="9_7hurq"]
 
+[ext_resource type="Theme" path="res://theme/review_icon_buttons.tres" id="10_icon_buttons"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jv1ba"]
 texture = ExtResource("2_glxag")
 
@@ -282,20 +284,21 @@ theme_override_font_sizes/font_size = 20
 text = "68%"
 label_settings = SubResource("LabelSettings_3w45d")
 
-[node name="NoteIconButton" type="TextureButton" parent="." unique_id=2054015579]
+[node name="NoteIconButton" type="Button" parent="." unique_id=2054015579]
 tooltip_text = "Show or hide the notes for this applicant."
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 810.0
-offset_top = 317.0
-offset_right = -84.5
-offset_bottom = -272.0
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("6_m7ag6")
-stretch_mode = 0
+layout_mode = 0
+offset_left = 765.0
+offset_top = 315.0
+offset_right = 915.0
+offset_bottom = 379.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("10_icon_buttons")
+theme_override_constants/icon_max_width = 28
+theme_override_font_sizes/font_size = 20
+toggle_mode = true
+text = "Notes"
+icon = ExtResource("6_m7ag6")
+expand_icon = true
 
 [node name="NotePopupPanel" type="TextureRect" parent="." unique_id=205149279]
 tooltip_text = "Click this note to close it."
@@ -332,32 +335,34 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 autowrap_mode = 3
 
-[node name="SwapModeButton" type="TextureButton" parent="." unique_id=1944859946]
+[node name="SwapModeButton" type="Button" parent="." unique_id=1944859946]
 tooltip_text = "Enable swap mode, then click either picture\nto switch the large and small views."
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 711.0
-offset_top = 50.0
-offset_right = -208.0
-offset_bottom = -575.0
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("8_8s3y7")
-stretch_mode = 0
+layout_mode = 0
+offset_left = 636.0
+offset_top = 34.0
+offset_right = 734.0
+offset_bottom = 74.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("10_icon_buttons")
+theme_override_constants/icon_max_width = 20
+theme_override_font_sizes/font_size = 18
+toggle_mode = true
+text = "Swap"
+icon = ExtResource("8_8s3y7")
+expand_icon = true
 
-[node name="ZoomModeButton" type="TextureButton" parent="." unique_id=1350062264]
+[node name="ZoomModeButton" type="Button" parent="." unique_id=1350062264]
 tooltip_text = "Enable zoom mode, then click the larger picture.\nClick it again to restore its size."
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 672.0
-offset_top = 50.0
-offset_right = -247.0
-offset_bottom = -575.0
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("9_7hurq")
-stretch_mode = 0
+layout_mode = 0
+offset_left = 530.0
+offset_top = 34.0
+offset_right = 628.0
+offset_bottom = 74.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("10_icon_buttons")
+theme_override_constants/icon_max_width = 20
+theme_override_font_sizes/font_size = 18
+toggle_mode = true
+text = "Zoom"
+icon = ExtResource("9_7hurq")
+expand_icon = true

@@ -133,6 +133,9 @@ _data = {
 }
 point_count = 5
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5ieep"]
+radius = 0.41748047
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_urwcn"]
 size = Vector3(22.719238, 1.6494141, 29.456024)
 
@@ -666,7 +669,11 @@ spot_attenuation = -0.9
 spot_angle = 14.33
 
 [node name="Tita Elena" parent="." unique_id=134432329 instance=ExtResource("33_jvih8")]
-transform = Transform3D(-1.6703937, 0, -2.1212697, 0, 2.7, 0, 2.1212697, 0, -1.6703937, -198.95146, 0.50579643, 12.701565)
+transform = Transform3D(-1.6703937, 0, -2.1212697, 0, 2.7, 0, 2.1212697, 0, -1.6703937, -198.95146, 0.1077286, 12.701565)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tita Elena" unique_id=670194919]
+transform = Transform3D(1, 0, 0, 0, 0.9999954, 0, 0, 0, 1, 0, 0.8862762, 0)
+shape = SubResource("CapsuleShape3D_5ieep")
 
 [node name="BakeryDecisionTrigger" type="Area3D" parent="." unique_id=601153534 node_paths=PackedStringArray("caution_tape", "shop_npcs", "camera_anchor")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -217.85155, 0, 23.523445)

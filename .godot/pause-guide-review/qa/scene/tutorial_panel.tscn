@@ -1,0 +1,190 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3etsuta8aojf"]
+
+[ext_resource type="Script" path="res://scripts/TutorialPanel.gd" id="1_script"]
+[ext_resource type="Theme" path="res://theme/review_icon_buttons.tres" id="2_theme"]
+
+[sub_resource type="StyleBoxFlat" id="Overlay"]
+bg_color = Color(0.025, 0.04, 0.05, 0.78)
+
+[sub_resource type="StyleBoxFlat" id="Window"]
+bg_color = Color(0.68, 0.72, 0.74, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.89, 0.91, 0.92, 1)
+shadow_color = Color(0, 0, 0, 0.5)
+shadow_size = 7
+shadow_offset = Vector2(5, 6)
+
+[sub_resource type="StyleBoxFlat" id="TitleBar"]
+bg_color = Color(0.2, 0.26, 0.3, 1)
+content_margin_left = 12.0
+content_margin_right = 12.0
+
+[sub_resource type="StyleBoxLine" id="Divider"]
+color = Color(0.48, 0.54, 0.58, 1)
+thickness = 1
+
+[node name="TutorialPanel" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+theme_override_styles/panel = SubResource("Overlay")
+script = ExtResource("1_script")
+
+[node name="GuideWindow" type="Panel" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 1040.0
+offset_bottom = 616.0
+theme_override_styles/panel = SubResource("Window")
+
+[node name="Margin" type="MarginContainer" parent="GuideWindow"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 14.0
+offset_right = -18.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Layout" type="VBoxContainer" parent="GuideWindow/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 9
+
+[node name="TitleBar" type="PanelContainer" parent="GuideWindow/Margin/Layout"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("TitleBar")
+
+[node name="BarRow" type="HBoxContainer" parent="GuideWindow/Margin/Layout/TitleBar"]
+layout_mode = 2
+
+[node name="AppTitle" type="Label" parent="GuideWindow/Margin/Layout/TitleBar/BarRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.96, 0.96, 0.93, 1)
+theme_override_font_sizes/font_size = 19
+text = "TRAINING GUIDE"
+vertical_alignment = 1
+
+[node name="PageLabel" type="Label" parent="GuideWindow/Margin/Layout/TitleBar/BarRow"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.83, 0.88, 0.9, 1)
+theme_override_font_sizes/font_size = 17
+text = "Controls 1 / 2"
+vertical_alignment = 1
+
+[node name="Tabs" type="HBoxContainer" parent="GuideWindow/Margin/Layout"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="MovementButton" type="Button" parent="GuideWindow/Margin/Layout/Tabs"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "Movement"
+tooltip_text = "Walking and looking around."
+
+[node name="InteractionButton" type="Button" parent="GuideWindow/Margin/Layout/Tabs"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "Interaction"
+tooltip_text = "Using objects, dialogue and the computer."
+
+[node name="WorkGuideButton" type="Button" parent="GuideWindow/Margin/Layout/Tabs"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "Work guide"
+tooltip_text = "Step-by-step instructions for your shift."
+
+[node name="Heading" type="VBoxContainer" parent="GuideWindow/Margin/Layout"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TitleLabel" type="Label" parent="GuideWindow/Margin/Layout/Heading"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Movement"
+autowrap_mode = 3
+
+[node name="SubtitleLabel" type="Label" parent="GuideWindow/Margin/Layout/Heading"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22, 0.27, 0.3, 1)
+theme_override_font_sizes/font_size = 19
+text = "Explore the room and look around."
+autowrap_mode = 3
+
+[node name="ContentScroll" type="ScrollContainer" parent="GuideWindow/Margin/Layout"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+follow_focus = true
+theme_override_constants/scrollbar_h_separation = 8
+
+[node name="Content" type="VBoxContainer" parent="GuideWindow/Margin/Layout/ContentScroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Divider" type="HSeparator" parent="GuideWindow/Margin/Layout"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("Divider")
+
+[node name="Footer" type="HBoxContainer" parent="GuideWindow/Margin/Layout"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="BackHint" type="Label" parent="GuideWindow/Margin/Layout/Footer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22, 0.27, 0.3, 1)
+theme_override_font_sizes/font_size = 17
+text = "ESC  Back to pause menu"
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="GuideWindow/Margin/Layout/Footer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="PrevButton" type="Button" parent="GuideWindow/Margin/Layout/Footer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(112, 44)
+layout_mode = 2
+text = "Previous"
+tooltip_text = "Read the previous page."
+
+[node name="NextButton" type="Button" parent="GuideWindow/Margin/Layout/Footer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(112, 44)
+layout_mode = 2
+text = "Next"
+tooltip_text = "Read the next page."
+
+[node name="CloseTutorialButton" type="Button" parent="GuideWindow/Margin/Layout/Footer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 44)
+layout_mode = 2
+text = "Close guide"
+tooltip_text = "Return to the pause menu."

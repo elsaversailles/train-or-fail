@@ -1,0 +1,11 @@
+config_version=5
+
+[application]
+config/name="Tutorial help layout review"
+
+[gui]
+theme/custom="res://theme/game_theme.tres"
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+

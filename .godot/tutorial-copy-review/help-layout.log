@@ -1,0 +1,23 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+WARNING: res://theme/game_theme.tres:3 - ext_resource, invalid UID: uid://bmy32g0c66s4e - using text path instead: res://theme/DarumadropOne-Regular.ttf
+   at: load (scene/resources/resource_format_text.cpp:501)
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+HELP_LAYOUT (1152, 648) pages=7
+HELP_LAYOUT (1280, 720) pages=7
+HELP_LAYOUT (1024, 768) pages=7
+ERROR: HELP_OVERFLOW (800, 600) page=1 content_end=521.5 footer=504.0
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://layout.gd:30)
+ERROR: HELP_OVERFLOW (800, 600) page=2 content_end=521.5 footer=504.0
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://layout.gd:30)
+ERROR: HELP_OVERFLOW (800, 600) page=6 content_end=504.0 footer=504.0
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://layout.gd:30)
+HELP_LAYOUT (800, 600) pages=7
+HELP_LAYOUT failures=3

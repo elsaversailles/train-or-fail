@@ -1,0 +1,16 @@
+config_version=5
+
+[application]
+config/name="Bubble regression isolation"
+
+[display]
+window/size/viewport_width=800
+window/size/viewport_height=600
+
+[gui]
+theme/custom="res://theme/game_theme.tres"
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.18, 0.23, 0.29, 1)

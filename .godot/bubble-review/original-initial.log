@@ -1,0 +1,15 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+WARNING: res://theme/game_theme.tres:3 - ext_resource, invalid UID: uid://bmy32g0c66s4e - using text path instead: res://theme/DarumadropOne-Regular.ttf
+   at: load (scene/resources/resource_format_text.cpp:501)
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+WARNING: res://scene/npc_dialogue_box.tscn:3 - ext_resource, invalid UID: uid://bmgppf0fx0hwn - using text path instead: res://scripts/Npc_Dialogue_Box.gd
+   at: load (scene/resources/resource_format_text.cpp:501)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://initial_probe.gd:7)
+WARNING: res://scene/npc_dialogue_box.tscn:4 - ext_resource, invalid UID: uid://dkjx5vwyvbxh5 - using text path instead: res://assets/try/chat_bubble.png
+   at: load (scene/resources/resource_format_text.cpp:501)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://initial_probe.gd:7)
+INITIAL_PHASE panel=(256.0, 148.0) viewport=(256, 148)

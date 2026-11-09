@@ -1,0 +1,75 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+WARNING: res://theme/game_theme.tres:3 - ext_resource, invalid UID: uid://bmy32g0c66s4e - using text path instead: res://theme/DarumadropOne-Regular.ttf
+   at: load (scene/resources/resource_format_text.cpp:501)
+ERROR: No loader found for resource: res://theme/DarumadropOne-Regular.ttf (expected type: FontFile)
+   at: _load (core/io/resource_loader.cpp:332)
+ERROR: res://theme/game_theme.tres:22 - Parse Error: [ext_resource] referenced non-existent resource at: res://theme/DarumadropOne-Regular.ttf.
+   at: _printerr (scene/resources/resource_format_text.cpp:41)
+ERROR: res://theme/game_theme.tres:22 - Parse Error: [ext_resource] referenced non-existent resource at: res://theme/DarumadropOne-Regular.ttf.
+   at: _printerr (scene/resources/resource_format_text.cpp:41)
+ERROR: Failed loading resource: res://theme/game_theme.tres.
+   at: _load (core/io/resource_loader.cpp:317)
+ERROR: Error loading custom project theme 'res://theme/game_theme.tres'
+   at: initialize_theme (scene/theme/theme_db.cpp:74)
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+ERROR: Could not open 'user://' directory: 'user://'.
+   at: _get_and_create_snapshot_storage_dir (modules/objectdb_profiler/editor/objectdb_profiler_panel.cpp:157)
+[   0% ] first_scan_filesystem | Started Project initialization (5 steps)
+[   0% ] first_scan_filesystem | Scanning file structure...
+[  16% ] first_scan_filesystem | Loading global class names...
+[  33% ] first_scan_filesystem | Verifying GDExtensions...
+[  50% ] first_scan_filesystem | Creating autoload scripts...
+[  66% ] first_scan_filesystem | Initializing plugins...
+[  83% ] first_scan_filesystem | Starting file scan...
+[ DONE ] first_scan_filesystem
+
+[   0% ] _update_scan_actions | Started Scanning actions... (9 steps)
+[   0% ] _update_scan_actions | key_small.svg
+[  10% ] _update_scan_actions | key_wide.svg
+[  20% ] _update_scan_actions | mouse_left.svg
+[  30% ] _update_scan_actions | mouse_look.svg
+[  40% ] _update_scan_actions | review_button_disabled.svg
+[  50% ] _update_scan_actions | review_button_hover.svg
+[  60% ] _update_scan_actions | review_button_normal.svg
+[  70% ] _update_scan_actions | review_button_pressed.svg
+[  80% ] _update_scan_actions | DarumadropOne-Regular.ttf
+[ DONE ] _update_scan_actions
+
+[   0% ] reimport | Started (Re)Importing Assets (9 steps)
+[   0% ] reimport | Preparing files to reimport...
+[  10% ] reimport | Preparing files to reimport...
+[  20% ] reimport | Preparing files to reimport...
+[  30% ] reimport | Preparing files to reimport...
+[  40% ] reimport | Preparing files to reimport...
+[  50% ] reimport | Preparing files to reimport...
+[  60% ] reimport | Preparing files to reimport...
+[  70% ] reimport | Preparing files to reimport...
+[  80% ] reimport | Preparing files to reimport...
+[   0% ] reimport | Executing pre-reimport operations...
+[   0% ] reimport | DarumadropOne-Regular.ttf
+[  10% ] reimport | DarumadropOne-Regular.ttf
+[  20% ] reimport | key_small.svg
+[  30% ] reimport | key_wide.svg
+[  40% ] reimport | mouse_left.svg
+[  50% ] reimport | mouse_look.svg
+[  60% ] reimport | review_button_disabled.svg
+[  70% ] reimport | review_button_hover.svg
+[  80% ] reimport | review_button_normal.svg
+[  90% ] reimport | Finalizing Asset Import...
+[ DONE ] reimport
+
+[   0% ] reimport | Started (Re)Importing Assets (9 steps)
+[   0% ] reimport | Executing post-reimport operations...
+[ DONE ] reimport
+
+[   0% ] loading_editor_layout | Started Loading editor (5 steps)
+[   0% ] loading_editor_layout | Loading editor layout...
+[  16% ] loading_editor_layout | Loading docks...
+[ DONE ] loading_editor_layout
+
+ERROR: Cannot save file 'C:/SteamLibrary/steamapps/common/Godot Engine/editor_data/editor_settings-4.7.tres'.
+   at: save (scene/resources/resource_format_text.cpp:1768)
+ERROR: Error saving editor settings to C:/SteamLibrary/steamapps/common/Godot Engine/editor_data/editor_settings-4.7.tres
+   at: save (editor/settings/editor_settings.cpp:1525)

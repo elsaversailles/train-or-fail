@@ -1,0 +1,24 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+WARNING: res://scene/npc_dialogue_box.tscn:3 - ext_resource, invalid UID: uid://bmgppf0fx0hwn - using text path instead: res://scripts/Npc_Dialogue_Box.gd
+   at: load (scene/resources/resource_format_text.cpp:501)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://baseline.gd:15)
+WARNING: res://scene/npc_dialogue_box.tscn:4 - ext_resource, invalid UID: uid://dkjx5vwyvbxh5 - using text path instead: res://assets/try/chat_bubble.png
+   at: load (scene/resources/resource_format_text.cpp:501)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://baseline.gd:15)
+INITIAL panel=(43.0, 43.0) viewport=(512, 512) label=(1.0, 23.0) text=0 wrap=3
+FRAME 0 panel=(1108.0, 43.0) viewport=(512, 512) label=(1092.0, 23.0) text=141 wrap=3
+FRAME 1 panel=(256.0, 143.0) viewport=(512, 512) label=(240.0, 127.0) text=141 wrap=3
+FRAME 2 panel=(256.0, 143.0) viewport=(256, 143) label=(240.0, 127.0) text=1 wrap=3
+FRAME 3 panel=(256.0, 143.0) viewport=(256, 143) label=(240.0, 23.0) text=2 wrap=3
+FRAME 4 panel=(256.0, 143.0) viewport=(256, 143) label=(240.0, 23.0) text=3 wrap=3
+FRAME 5 panel=(256.0, 143.0) viewport=(256, 143) label=(240.0, 23.0) text=4 wrap=3
+FRAME 6 panel=(256.0, 143.0) viewport=(256, 143) label=(240.0, 23.0) text=5 wrap=3
+FRAME 7 panel=(256.0, 143.0) viewport=(256, 143) label=(240.0, 23.0) text=6 wrap=3
+COMPLETE panel=(256.0, 143.0) viewport=(256, 143) label=(240.0, 127.0) text=141 wrap=3
+SHORT panel=(43.0, 43.0) viewport=(43, 43) label=(27.0, 23.0) text=2 wrap=0
+LONG AGAIN panel=(256.0, 143.0) viewport=(256, 143) label=(240.0, 127.0) text=141 wrap=3

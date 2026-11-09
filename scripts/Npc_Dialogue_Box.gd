@@ -1,9 +1,10 @@
 extends Node3D
 
-@onready var container = $SubViewport/TextBoxContainer
-@onready var label = $SubViewport/TextBoxContainer/Padding/Label
-@onready var timer = $SubViewport/TextBoxContainer/LetterDisplayTimer
-@onready var viewport = $SubViewport
+@onready var container: MarginContainer = $SubViewport/TextBoxContainer
+@onready var padding: MarginContainer = $SubViewport/TextBoxContainer/Padding
+@onready var label: Label = $SubViewport/TextBoxContainer/Padding/Label
+@onready var timer: Timer = $SubViewport/TextBoxContainer/LetterDisplayTimer
+@onready var viewport: SubViewport = $SubViewport
 
 const MAX_WIDTH: int = 256
 
@@ -14,47 +15,72 @@ var letter_time: float = 0.03
 var space_time: float = 0.06
 var punctuation_time: float = 0.2
 
+var _display_request: int = 0
+var _is_typing: bool = false
+
 signal finished_displaying
 
-func _ready():
-	self.visible = false
+func _ready() -> void:
+	visible = false
 	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	# Revealing letters must not change the full message's wrapping or size.
+	label.visible_characters_behavior = TextServer.VC_CHARS_AFTER_SHAPING
+	container.resized.connect(_sync_viewport_size)
 
-func display_text(text_to_display: String):
-	self.visible = true
+func display_text(text_to_display: String) -> void:
+	_display_request += 1
+	timer.stop()
+	_is_typing = false
+	visible = false
 	text = text_to_display
-	
-	# Reset state
+	letter_index = 0
+	label.visible_characters = 0
+	label.text = text_to_display
+
+	# Measure the label directly: container.size may still belong to the previous
+	# line (or the scene's initial 43x43 rectangle) until deferred layout runs.
 	label.autowrap_mode = TextServer.AUTOWRAP_OFF
 	container.custom_minimum_size = Vector2.ZERO
-	label.text = text_to_display
-	
-	# Wait for Godot to measure the raw, single-line text
-	await get_tree().process_frame
-	
-	# Set the X size based on the video's logic
-	container.custom_minimum_size.x = min(container.size.x, MAX_WIDTH)
-	
-	# Force wrap if it exceeds max width
-	if container.size.x > MAX_WIDTH:
-		label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-		await get_tree().process_frame # Wait for X resize
-		await get_tree().process_frame # Wait for Y resize
-		
-	# Lock the Y size and adjust the 3D Viewport window
-	container.custom_minimum_size.y = container.size.y
-	viewport.size = container.size
-	
-	# Clear the text and start the typewriter effect!
-	label.text = ""
-	letter_index = 0
+	var margins := Vector2.ZERO
+	for margin_container: MarginContainer in [container, padding]:
+		margins.x += margin_container.get_theme_constant("margin_left") + margin_container.get_theme_constant("margin_right")
+		margins.y += margin_container.get_theme_constant("margin_top") + margin_container.get_theme_constant("margin_bottom")
+	var background_minimum: Vector2 = $SubViewport/TextBoxContainer/NinePatchRect.get_combined_minimum_size()
+	var bubble_width := minf(MAX_WIDTH, maxf(background_minimum.x, ceilf(label.get_minimum_size().x + margins.x)))
+	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	label.size = Vector2(maxf(1.0, bubble_width - margins.x), 0.0)
+	var bubble_height := maxf(background_minimum.y, ceilf(label.get_minimum_size().y + margins.y))
+	# Invalidate ancestor minimum-size caches before shrinking a reused bubble.
+	padding.update_minimum_size()
+	container.update_minimum_size()
+	container.custom_minimum_size = Vector2(bubble_width, bubble_height)
+	container.size = container.custom_minimum_size
+	_sync_viewport_size()
+	# Callers attach their finished_displaying await after display_text returns.
+	_begin_display.call_deferred(_display_request)
+
+func _sync_viewport_size() -> void:
+	# Follow any later container layout, instead of freezing a stale viewport size.
+	viewport.size = Vector2i(maxi(2, ceili(container.size.x)), maxi(2, ceili(container.size.y)))
+
+func _begin_display(request: int) -> void:
+	if request != _display_request:
+		return
+	if text.is_empty():
+		finished_displaying.emit()
+		return
+	visible = true
+	_is_typing = true
 	display_letter()
 
-func display_letter():
-	label.text += text[letter_index]
+func display_letter() -> void:
+	if not _is_typing:
+		return
 	letter_index += 1
-	
+	label.visible_characters = letter_index
+
 	if letter_index >= text.length():
+		_is_typing = false
 		finished_displaying.emit()
 		return
 		
@@ -67,5 +93,5 @@ func display_letter():
 		_:
 			timer.start(letter_time)
 
-func _on_letter_display_timer_timeout():
+func _on_letter_display_timer_timeout() -> void:
 	display_letter()

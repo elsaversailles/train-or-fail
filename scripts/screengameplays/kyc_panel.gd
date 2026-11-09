@@ -120,6 +120,7 @@ func _on_note_popup_input(event: InputEvent):
 func open_note():
 	stop_note_tween()
 	is_note_open = true
+	note_icon_button.set_pressed_no_signal(true)
 	note_popup_panel.move_to_front()
 	note_popup_panel.pivot_offset = note_popup_panel.size / 2.0
 	note_popup_panel.scale = Vector2(0.8, 0.8)
@@ -133,6 +134,7 @@ func open_note():
 func close_note():
 	stop_note_tween()
 	is_note_open = false
+	note_icon_button.set_pressed_no_signal(false)
 	note_popup_panel.pivot_offset = note_popup_panel.size / 2.0
 	
 	note_tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
@@ -143,6 +145,7 @@ func close_note():
 func close_note_immediately():
 	stop_note_tween()
 	is_note_open = false
+	note_icon_button.set_pressed_no_signal(false)
 	note_popup_panel.visible = false
 	note_popup_panel.scale = Vector2.ONE
 	note_popup_panel.modulate.a = 1.0

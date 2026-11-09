@@ -1,0 +1,8 @@
+config_version=5
+[application]
+config/name="Dock tutorial verification"
+[autoload]
+Dialogic="*res://dialogic_stub.gd"
+SceneTransition="*res://transition_stub.gd"
+[rendering]
+renderer/rendering_method="gl_compatibility"

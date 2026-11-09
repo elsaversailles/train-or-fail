@@ -19,6 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_k0wp0")
 data_highlight_img = ExtResource("2_00ij3")
 slider_highlight_img = ExtResource("3_nka8f")
@@ -45,16 +46,18 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_wst1i")
 
 [node name="HighlightImage" type="TextureRect" parent="BackgroundPanel" unique_id=809468145]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -552.0
-offset_top = 11.0
-offset_right = 557.0
-offset_bottom = 488.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 12.0
+offset_right = -16.0
+offset_bottom = -244.0
 grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 expand_mode = 1
+stretch_mode = 5
 
 [node name="TextBoxContainer" type="MarginContainer" parent="BackgroundPanel" unique_id=1023531355]
 layout_mode = 1
@@ -63,11 +66,12 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 16.0
-offset_top = -138.0
-offset_right = -18.0
+offset_top = -232.0
+offset_right = -16.0
 offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 
 [node name="NinePatchRect" type="NinePatchRect" parent="BackgroundPanel/TextBoxContainer" unique_id=403401772]
 layout_mode = 2
@@ -79,18 +83,55 @@ patch_margin_right = 58
 patch_margin_bottom = 55
 
 [node name="MessageLabel" type="Label" parent="BackgroundPanel" unique_id=237320477]
-custom_minimum_size = Vector2(1, 1)
-layout_mode = 0
-offset_left = 47.0
-offset_top = 529.0
-offset_right = 1105.0
-offset_bottom = 616.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxTexture_k0wp0")
-horizontal_alignment = 1
-vertical_alignment = 1
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 48.0
+offset_top = -174.0
+offset_right = -48.0
+offset_bottom = -62.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.04, 0.05, 0.06, 1)
+theme_override_font_sizes/font_size = 20
 autowrap_mode = 3
-justification_flags = 171
+
+[node name="StepLabel" type="Label" parent="BackgroundPanel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 48.0
+offset_top = -215.0
+offset_right = -48.0
+offset_bottom = -179.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.04, 0.05, 0.06, 1)
+theme_override_font_sizes/font_size = 22
+vertical_alignment = 1
+
+[node name="ContinueLabel" type="Label" parent="BackgroundPanel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 48.0
+offset_top = -56.0
+offset_right = -48.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.25, 0.29, 0.34, 1)
+theme_override_font_sizes/font_size = 16
+vertical_alignment = 1
 
 [node name="LetterDisplayTimer" type="Timer" parent="BackgroundPanel" unique_id=809637520]
 one_shot = true

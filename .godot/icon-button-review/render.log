@@ -1,0 +1,31 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+ERROR: Can't create shader cache folder, no shader caching will happen: user://
+   at: RasterizerGLES3 (drivers/gles3/rasterizer_gles3.cpp:345)
+OpenGL API 3.3.0 Core Profile Context 26.1.1.251211 - Compatibility - Using Device: ATI Technologies Inc. - Radeon RX 590 Series
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+CAPTURE fd_normal
+BUTTON_SMOKE passed: Swap is selected initially
+CAPTURE fd_zoom_hover
+BUTTON_SMOKE passed: Zoom click selects only Zoom
+CAPTURE fd_zoom_selected
+BUTTON_SMOKE passed: Clicking the selected mode keeps it selected
+BUTTON_SMOKE passed: Swap click restores Swap
+BUTTON_SMOKE passed: fd Notes click opens popup and presses button
+CAPTURE fd_notes_open
+BUTTON_SMOKE passed: fd popup click clears Notes pressed state
+BUTTON_SMOKE passed: fd next applicant resets Notes
+CAPTURE fd_disabled
+CAPTURE fd_data
+CAPTURE fd_buttons
+CAPTURE kyc_normal
+BUTTON_SMOKE passed: kyc Notes click opens popup and presses button
+CAPTURE kyc_notes_open
+BUTTON_SMOKE passed: kyc popup click clears Notes pressed state
+BUTTON_SMOKE passed: kyc next applicant resets Notes
+CAPTURE kyc_data
+CAPTURE kyc_buttons
+CAPTURE cs_data
+CAPTURE cs_buttons
+TUTORIAL_IMAGES_COMPLETE

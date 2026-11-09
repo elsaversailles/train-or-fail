@@ -1,0 +1,172 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+ERROR: Can't create shader cache folder, no shader caching will happen: user://
+   at: RasterizerGLES3 (drivers/gles3/rasterizer_gles3.cpp:345)
+OpenGL API 3.3.0 Core Profile Context 26.1.1.251211 - Compatibility - Using Device: ATI Technologies Inc. - Radeon RX 590 Series
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+WARNING: res://scene/Tutorial/fd_tutorial.tscn:3 - ext_resource, invalid UID: uid://bg58s1fir1w6l - using text path instead: res://scripts/TutorialsScript/FDTutorial.gd
+   at: load (scene/resources/resource_format_text.cpp:501)
+   GDScript backtrace (most recent call first):
+       [0] run_department (res://verify.gd:79)
+       [1] _run (res://verify.gd:152)
+PAGE fd_1152x648 0 Fraud Detection | 1 / 5: Check the transaction
+PAGE fd_1152x648 1 Fraud Detection | 2 / 5: Inspect the pictures
+PAGE fd_1152x648 2 Fraud Detection | 3 / 5: Read the customer's note
+PAGE fd_1152x648 3 Fraud Detection | 4 / 5: Submit your decision
+PAGE fd_1152x648 4 Fraud Detection | 5 / 5: Complete the queue
+WARNING: res://scene/Tutorial/kyc_tutorial.tscn:3 - ext_resource, invalid UID: uid://cu38vqdla8nbs - using text path instead: res://scripts/TutorialsScript/KYCTutorial.gd
+   at: load (scene/resources/resource_format_text.cpp:501)
+   GDScript backtrace (most recent call first):
+       [0] run_department (res://verify.gd:79)
+       [1] _run (res://verify.gd:152)
+       [2] run_department (res://verify.gd:119)
+PAGE kyc_1152x648 0 Know Your Customer | 1 / 5: Read the ID
+PAGE kyc_1152x648 1 Know Your Customer | 2 / 5: Compare the face and dates
+PAGE kyc_1152x648 2 Know Your Customer | 3 / 5: Read the supporting information
+PAGE kyc_1152x648 3 Know Your Customer | 4 / 5: Submit your decision
+PAGE kyc_1152x648 4 Know Your Customer | 5 / 5: Complete the queue
+WARNING: res://scene/Tutorial/cs_tutorial.tscn:3 - ext_resource, invalid UID: uid://xccauf57hbiv - using text path instead: res://scripts/TutorialsScript/CSTutorial.gd
+   at: load (scene/resources/resource_format_text.cpp:501)
+   GDScript backtrace (most recent call first):
+       [0] run_department (res://verify.gd:79)
+       [1] _run (res://verify.gd:152)
+       [2] run_department (res://verify.gd:119)
+PAGE cs_1152x648 0 Credit Scoring | 1 / 5: Review all four documents
+PAGE cs_1152x648 1 Credit Scoring | 2 / 5: Check overdue payments and debt
+PAGE cs_1152x648 2 Credit Scoring | 3 / 5: Choose a credit amount
+PAGE cs_1152x648 3 Credit Scoring | 4 / 5: Reject or submit
+PAGE cs_1152x648 4 Credit Scoring | 5 / 5: Complete the queue
+WARNING: res://scene/Tutorial/fd_tutorial.tscn:3 - ext_resource, invalid UID: uid://bg58s1fir1w6l - using text path instead: res://scripts/TutorialsScript/FDTutorial.gd
+   at: load (scene/resources/resource_format_text.cpp:501)
+   GDScript backtrace (most recent call first):
+       [0] run_department (res://verify.gd:79)
+       [1] _run (res://verify.gd:152)
+       [2] run_help (res://verify.gd:143)
+PAGE fd_1280x720 0 Fraud Detection | 1 / 5: Check the transaction
+PAGE fd_1280x720 1 Fraud Detection | 2 / 5: Inspect the pictures
+PAGE fd_1280x720 2 Fraud Detection | 3 / 5: Read the customer's note
+PAGE fd_1280x720 3 Fraud Detection | 4 / 5: Submit your decision
+PAGE fd_1280x720 4 Fraud Detection | 5 / 5: Complete the queue
+WARNING: res://scene/Tutorial/kyc_tutorial.tscn:3 - ext_resource, invalid UID: uid://cu38vqdla8nbs - using text path instead: res://scripts/TutorialsScript/KYCTutorial.gd
+   at: load (scene/resources/resource_format_text.cpp:501)
+   GDScript backtrace (most recent call first):
+       [0] run_department (res://verify.gd:79)
+       [1] _run (res://verify.gd:152)
+       [2] run_department (res://verify.gd:119)
+PAGE kyc_1280x720 0 Know Your Customer | 1 / 5: Read the ID
+PAGE kyc_1280x720 1 Know Your Customer | 2 / 5: Compare the face and dates
+PAGE kyc_1280x720 2 Know Your Customer | 3 / 5: Read the supporting information
+PAGE kyc_1280x720 3 Know Your Customer | 4 / 5: Submit your decision
+PAGE kyc_1280x720 4 Know Your Customer | 5 / 5: Complete the queue
+WARNING: res://scene/Tutorial/cs_tutorial.tscn:3 - ext_resource, invalid UID: uid://xccauf57hbiv - using text path instead: res://scripts/TutorialsScript/CSTutorial.gd
+   at: load (scene/resources/resource_format_text.cpp:501)
+   GDScript backtrace (most recent call first):
+       [0] run_department (res://verify.gd:79)
+       [1] _run (res://verify.gd:152)
+       [2] run_department (res://verify.gd:119)
+PAGE cs_1280x720 0 Credit Scoring | 1 / 5: Review all four documents
+PAGE cs_1280x720 1 Credit Scoring | 2 / 5: Check overdue payments and debt
+PAGE cs_1280x720 2 Credit Scoring | 3 / 5: Choose a credit amount
+PAGE cs_1280x720 3 Credit Scoring | 4 / 5: Reject or submit
+PAGE cs_1280x720 4 Credit Scoring | 5 / 5: Complete the queue
+WARNING: res://scene/Tutorial/fd_tutorial.tscn:3 - ext_resource, invalid UID: uid://bg58s1fir1w6l - using text path instead: res://scripts/TutorialsScript/FDTutorial.gd
+   at: load (scene/resources/resource_format_text.cpp:501)
+   GDScript backtrace (most recent call first):
+       [0] run_department (res://verify.gd:79)
+       [1] _run (res://verify.gd:152)
+       [2] run_help (res://verify.gd:143)
+PAGE fd_1024x768 0 Fraud Detection | 1 / 5: Check the transaction
+PAGE fd_1024x768 1 Fraud Detection | 2 / 5: Inspect the pictures
+PAGE fd_1024x768 2 Fraud Detection | 3 / 5: Read the customer's note
+PAGE fd_1024x768 3 Fraud Detection | 4 / 5: Submit your decision
+PAGE fd_1024x768 4 Fraud Detection | 5 / 5: Complete the queue
+WARNING: res://scene/Tutorial/kyc_tutorial.tscn:3 - ext_resource, invalid UID: uid://cu38vqdla8nbs - using text path instead: res://scripts/TutorialsScript/KYCTutorial.gd
+   at: load (scene/resources/resource_format_text.cpp:501)
+   GDScript backtrace (most recent call first):
+       [0] run_department (res://verify.gd:79)
+       [1] _run (res://verify.gd:152)
+       [2] run_department (res://verify.gd:119)
+PAGE kyc_1024x768 0 Know Your Customer | 1 / 5: Read the ID
+PAGE kyc_1024x768 1 Know Your Customer | 2 / 5: Compare the face and dates
+PAGE kyc_1024x768 2 Know Your Customer | 3 / 5: Read the supporting information
+PAGE kyc_1024x768 3 Know Your Customer | 4 / 5: Submit your decision
+PAGE kyc_1024x768 4 Know Your Customer | 5 / 5: Complete the queue
+WARNING: res://scene/Tutorial/cs_tutorial.tscn:3 - ext_resource, invalid UID: uid://xccauf57hbiv - using text path instead: res://scripts/TutorialsScript/CSTutorial.gd
+   at: load (scene/resources/resource_format_text.cpp:501)
+   GDScript backtrace (most recent call first):
+       [0] run_department (res://verify.gd:79)
+       [1] _run (res://verify.gd:152)
+       [2] run_department (res://verify.gd:119)
+PAGE cs_1024x768 0 Credit Scoring | 1 / 5: Review all four documents
+PAGE cs_1024x768 1 Credit Scoring | 2 / 5: Check overdue payments and debt
+PAGE cs_1024x768 2 Credit Scoring | 3 / 5: Choose a credit amount
+PAGE cs_1024x768 3 Credit Scoring | 4 / 5: Reject or submit
+PAGE cs_1024x768 4 Credit Scoring | 5 / 5: Complete the queue
+WARNING: res://scene/Tutorial/fd_tutorial.tscn:3 - ext_resource, invalid UID: uid://bg58s1fir1w6l - using text path instead: res://scripts/TutorialsScript/FDTutorial.gd
+   at: load (scene/resources/resource_format_text.cpp:501)
+   GDScript backtrace (most recent call first):
+       [0] run_department (res://verify.gd:79)
+       [1] _run (res://verify.gd:152)
+       [2] run_help (res://verify.gd:143)
+PAGE fd_960x540 0 Fraud Detection | 1 / 5: Check the transaction
+PAGE fd_960x540 1 Fraud Detection | 2 / 5: Inspect the pictures
+PAGE fd_960x540 2 Fraud Detection | 3 / 5: Read the customer's note
+PAGE fd_960x540 3 Fraud Detection | 4 / 5: Submit your decision
+PAGE fd_960x540 4 Fraud Detection | 5 / 5: Complete the queue
+WARNING: res://scene/Tutorial/kyc_tutorial.tscn:3 - ext_resource, invalid UID: uid://cu38vqdla8nbs - using text path instead: res://scripts/TutorialsScript/KYCTutorial.gd
+   at: load (scene/resources/resource_format_text.cpp:501)
+   GDScript backtrace (most recent call first):
+       [0] run_department (res://verify.gd:79)
+       [1] _run (res://verify.gd:152)
+       [2] run_department (res://verify.gd:119)
+PAGE kyc_960x540 0 Know Your Customer | 1 / 5: Read the ID
+PAGE kyc_960x540 1 Know Your Customer | 2 / 5: Compare the face and dates
+PAGE kyc_960x540 2 Know Your Customer | 3 / 5: Read the supporting information
+PAGE kyc_960x540 3 Know Your Customer | 4 / 5: Submit your decision
+PAGE kyc_960x540 4 Know Your Customer | 5 / 5: Complete the queue
+WARNING: res://scene/Tutorial/cs_tutorial.tscn:3 - ext_resource, invalid UID: uid://xccauf57hbiv - using text path instead: res://scripts/TutorialsScript/CSTutorial.gd
+   at: load (scene/resources/resource_format_text.cpp:501)
+   GDScript backtrace (most recent call first):
+       [0] run_department (res://verify.gd:79)
+       [1] _run (res://verify.gd:152)
+       [2] run_department (res://verify.gd:119)
+PAGE cs_960x540 0 Credit Scoring | 1 / 5: Review all four documents
+PAGE cs_960x540 1 Credit Scoring | 2 / 5: Check overdue payments and debt
+PAGE cs_960x540 2 Credit Scoring | 3 / 5: Choose a credit amount
+PAGE cs_960x540 3 Credit Scoring | 4 / 5: Reject or submit
+PAGE cs_960x540 4 Credit Scoring | 5 / 5: Complete the queue
+WARNING: res://scene/Tutorial/fd_tutorial.tscn:3 - ext_resource, invalid UID: uid://bg58s1fir1w6l - using text path instead: res://scripts/TutorialsScript/FDTutorial.gd
+   at: load (scene/resources/resource_format_text.cpp:501)
+   GDScript backtrace (most recent call first):
+       [0] run_department (res://verify.gd:79)
+       [1] _run (res://verify.gd:152)
+       [2] run_help (res://verify.gd:143)
+PAGE fd_800x600 0 Fraud Detection | 1 / 5: Check the transaction
+PAGE fd_800x600 1 Fraud Detection | 2 / 5: Inspect the pictures
+PAGE fd_800x600 2 Fraud Detection | 3 / 5: Read the customer's note
+PAGE fd_800x600 3 Fraud Detection | 4 / 5: Submit your decision
+PAGE fd_800x600 4 Fraud Detection | 5 / 5: Complete the queue
+WARNING: res://scene/Tutorial/kyc_tutorial.tscn:3 - ext_resource, invalid UID: uid://cu38vqdla8nbs - using text path instead: res://scripts/TutorialsScript/KYCTutorial.gd
+   at: load (scene/resources/resource_format_text.cpp:501)
+   GDScript backtrace (most recent call first):
+       [0] run_department (res://verify.gd:79)
+       [1] _run (res://verify.gd:152)
+       [2] run_department (res://verify.gd:119)
+PAGE kyc_800x600 0 Know Your Customer | 1 / 5: Read the ID
+PAGE kyc_800x600 1 Know Your Customer | 2 / 5: Compare the face and dates
+PAGE kyc_800x600 2 Know Your Customer | 3 / 5: Read the supporting information
+PAGE kyc_800x600 3 Know Your Customer | 4 / 5: Submit your decision
+PAGE kyc_800x600 4 Know Your Customer | 5 / 5: Complete the queue
+WARNING: res://scene/Tutorial/cs_tutorial.tscn:3 - ext_resource, invalid UID: uid://xccauf57hbiv - using text path instead: res://scripts/TutorialsScript/CSTutorial.gd
+   at: load (scene/resources/resource_format_text.cpp:501)
+   GDScript backtrace (most recent call first):
+       [0] run_department (res://verify.gd:79)
+       [1] _run (res://verify.gd:152)
+       [2] run_department (res://verify.gd:119)
+PAGE cs_800x600 0 Credit Scoring | 1 / 5: Review all four documents
+PAGE cs_800x600 1 Credit Scoring | 2 / 5: Check overdue payments and debt
+PAGE cs_800x600 2 Credit Scoring | 3 / 5: Choose a credit amount
+PAGE cs_800x600 3 Credit Scoring | 4 / 5: Reject or submit
+PAGE cs_800x600 4 Credit Scoring | 5 / 5: Complete the queue
+TUTORIAL_LAYOUT_REVIEW checks=1615 failures=0

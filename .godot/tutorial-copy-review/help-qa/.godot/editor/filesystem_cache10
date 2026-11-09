@@ -1,0 +1,10 @@
+78098b89c88a74ebe8c20117b8754620
+::res://::1794121382
+layout.gd::GDScript::1079359934998860352::1794121380::0::1::::<>SceneTree<><>0<>0<><>::
+::res://scene/::1794121378
+tutorial_panel.tscn::PackedScene::6747573347282601279::1794121343::0::1::::<><><>0<>0<><>::
+::res://scripts/::1794121378
+TutorialPanel.gd::GDScript::2063717389947886695::1794121313::0::1::::<>Panel<><>0<>0<><>::
+::res://theme/::1794121378
+DarumadropOne-Regular.ttf::FontFile::7237953362302393847::1790734116::1794121386::1::::<><><>0<>0<>c3bc29062f06015b180e557eb0c6bcb8<>res://.godot/imported/DarumadropOne-Regular.ttf-2f5389b55b5140241521d6bdb394fd52.fontdata::
+game_theme.tres::Theme::8095935928013237961::1794119655::0::1::::<><><>0<>0<><>::uid://bmy32g0c66s4e::::res://theme/DarumadropOne-Regular.ttf

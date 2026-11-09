@@ -1,0 +1,125 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+ERROR: Cannot open file 'res://.godot/imported/DarumadropOne-Regular.ttf-2f5389b55b5140241521d6bdb394fd52.fontdata'.
+   at: load (core/io/resource_format_binary.cpp:1156)
+ERROR: Failed loading resource: res://.godot/imported/DarumadropOne-Regular.ttf-2f5389b55b5140241521d6bdb394fd52.fontdata.
+   at: _load (core/io/resource_loader.cpp:317)
+ERROR: Failed loading resource: res://theme/DarumadropOne-Regular.ttf.
+   at: _load (core/io/resource_loader.cpp:317)
+ERROR: res://theme/game_theme.tres:22 - Parse Error: [ext_resource] referenced non-existent resource at: res://theme/DarumadropOne-Regular.ttf.
+   at: _printerr (scene/resources/resource_format_text.cpp:41)
+ERROR: res://theme/game_theme.tres:22 - Parse Error: [ext_resource] referenced non-existent resource at: res://theme/DarumadropOne-Regular.ttf.
+   at: _printerr (scene/resources/resource_format_text.cpp:41)
+ERROR: Failed loading resource: res://theme/game_theme.tres.
+   at: _load (core/io/resource_loader.cpp:317)
+ERROR: Error loading custom project theme 'res://theme/game_theme.tres'
+   at: initialize_theme (scene/theme/theme_db.cpp:74)
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+ERROR: Could not open 'user://' directory: 'user://'.
+   at: _get_and_create_snapshot_storage_dir (modules/objectdb_profiler/editor/objectdb_profiler_panel.cpp:157)
+[   0% ] first_scan_filesystem | Started Project initialization (5 steps)
+[   0% ] first_scan_filesystem | Scanning file structure...
+[  16% ] first_scan_filesystem | Loading global class names...
+[  33% ] first_scan_filesystem | Verifying GDExtensions...
+[  50% ] first_scan_filesystem | Creating autoload scripts...
+[  66% ] first_scan_filesystem | Initializing plugins...
+[  83% ] first_scan_filesystem | Starting file scan...
+[ DONE ] first_scan_filesystem
+
+[   0% ] update_scripts_classes | Started Registering global classes... (6 steps)
+[   0% ] update_scripts_classes | 
+[  14% ] update_scripts_classes | 
+[  28% ] update_scripts_classes | 
+[  42% ] update_scripts_classes | 
+[  57% ] update_scripts_classes | 
+[  71% ] update_scripts_classes | 
+[ DONE ] update_scripts_classes
+
+[   0% ] _update_scan_actions | Started Scanning actions... (22 steps)
+[   0% ] _update_scan_actions | csbutton.png
+[   4% ] _update_scan_actions | csflagbutton.png
+[   8% ] _update_scan_actions | csflagbutton_red.png
+[  13% ] _update_scan_actions | csgrabber.png
+[  17% ] _update_scan_actions | csholder.png
+[  21% ] _update_scan_actions | cspanel.png
+[  26% ] _update_scan_actions | csslider.png
+[  30% ] _update_scan_actions | CS_button_highlight_img.png
+[  34% ] _update_scan_actions | CS_data_highlight_img.png
+[  39% ] _update_scan_actions | fdbuttons.png
+[  43% ] _update_scan_actions | fdholder.png
+[  47% ] _update_scan_actions | fdidk.png
+[  52% ] _update_scan_actions | fdpanel.png
+[  56% ] _update_scan_actions | FD_button_highlight_img.png
+[  60% ] _update_scan_actions | FD_data_highlight_img.png
+[  65% ] _update_scan_actions | kycbutton.png
+[  69% ] _update_scan_actions | kyccenter.png
+[  73% ] _update_scan_actions | kycleft.png
+[  78% ] _update_scan_actions | kycright.png
+[  82% ] _update_scan_actions | KYC_button_highlight_img.png
+[  86% ] _update_scan_actions | KYC_data_highlight_img.png
+[  91% ] _update_scan_actions | DarumadropOne-Regular.ttf
+[ DONE ] _update_scan_actions
+
+[   0% ] reimport | Started (Re)Importing Assets (22 steps)
+[   0% ] reimport | Preparing files to reimport...
+[   4% ] reimport | Preparing files to reimport...
+[   8% ] reimport | Preparing files to reimport...
+[  13% ] reimport | Preparing files to reimport...
+[  17% ] reimport | Preparing files to reimport...
+[  21% ] reimport | Preparing files to reimport...
+[  26% ] reimport | Preparing files to reimport...
+[  30% ] reimport | Preparing files to reimport...
+[  34% ] reimport | Preparing files to reimport...
+[  39% ] reimport | Preparing files to reimport...
+[  43% ] reimport | Preparing files to reimport...
+[  47% ] reimport | Preparing files to reimport...
+[  52% ] reimport | Preparing files to reimport...
+[  56% ] reimport | Preparing files to reimport...
+[  60% ] reimport | Preparing files to reimport...
+[  65% ] reimport | Preparing files to reimport...
+[  69% ] reimport | Preparing files to reimport...
+[  73% ] reimport | Preparing files to reimport...
+[  78% ] reimport | Preparing files to reimport...
+[  82% ] reimport | Preparing files to reimport...
+[  86% ] reimport | Preparing files to reimport...
+[  91% ] reimport | Preparing files to reimport...
+[   0% ] reimport | Executing pre-reimport operations...
+[   0% ] reimport | DarumadropOne-Regular.ttf
+[   4% ] reimport | DarumadropOne-Regular.ttf
+[   8% ] reimport | KYC_data_highlight_img.png
+[  13% ] reimport | KYC_button_highlight_img.png
+[  17% ] reimport | kycright.png
+[  21% ] reimport | kycleft.png
+[  26% ] reimport | kyccenter.png
+[  30% ] reimport | kycbutton.png
+[  34% ] reimport | FD_data_highlight_img.png
+[  39% ] reimport | FD_button_highlight_img.png
+[  43% ] reimport | fdpanel.png
+[  47% ] reimport | fdidk.png
+[  52% ] reimport | fdholder.png
+[  56% ] reimport | fdbuttons.png
+[  60% ] reimport | CS_data_highlight_img.png
+[  65% ] reimport | CS_button_highlight_img.png
+[  69% ] reimport | csslider.png
+[  73% ] reimport | cspanel.png
+[  78% ] reimport | csholder.png
+[  82% ] reimport | csgrabber.png
+[  86% ] reimport | csflagbutton_red.png
+[  91% ] reimport | csflagbutton.png
+[  95% ] reimport | Finalizing Asset Import...
+[ DONE ] reimport
+
+[   0% ] reimport | Started (Re)Importing Assets (22 steps)
+[   0% ] reimport | Executing post-reimport operations...
+[ DONE ] reimport
+
+[   0% ] loading_editor_layout | Started Loading editor (5 steps)
+[   0% ] loading_editor_layout | Loading editor layout...
+[  16% ] loading_editor_layout | Loading docks...
+[ DONE ] loading_editor_layout
+
+ERROR: Cannot save file 'C:/SteamLibrary/steamapps/common/Godot Engine/editor_data/editor_settings-4.7.tres'.
+   at: save (scene/resources/resource_format_text.cpp:1768)
+ERROR: Error saving editor settings to C:/SteamLibrary/steamapps/common/Godot Engine/editor_data/editor_settings-4.7.tres
+   at: save (editor/settings/editor_settings.cpp:1525)

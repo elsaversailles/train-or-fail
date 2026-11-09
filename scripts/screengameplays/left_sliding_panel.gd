@@ -203,12 +203,8 @@ func _on_zoom_mode_pressed():
 	update_mode_buttons_visuals()
 
 func update_mode_buttons_visuals():
-	if current_picture_mode == PictureMode.SWAP:
-		swap_mode_button.modulate = Color(1.0, 1.0, 1.0, 1.0)
-		zoom_mode_button.modulate = Color(0.6, 0.6, 0.6, 0.8)
-	else:
-		swap_mode_button.modulate = Color(0.6, 0.6, 0.6, 0.8)
-		zoom_mode_button.modulate = Color(1.0, 1.0, 1.0, 1.0)
+	swap_mode_button.set_pressed_no_signal(current_picture_mode == PictureMode.SWAP)
+	zoom_mode_button.set_pressed_no_signal(current_picture_mode == PictureMode.ZOOM)
 
 func _on_picture_pressed(clicked_button: Control):
 	if current_picture_mode == PictureMode.SWAP:
@@ -315,6 +311,7 @@ func _on_note_popup_input(event: InputEvent):
 func open_note():
 	stop_note_tween()
 	is_note_open = true
+	note_icon_button.set_pressed_no_signal(true)
 	note_popup_panel.pivot_offset = note_popup_panel.size / 2.0
 	note_popup_panel.scale = Vector2(0.8, 0.8)
 	note_popup_panel.modulate.a = 0.0
@@ -327,6 +324,7 @@ func open_note():
 func close_note():
 	stop_note_tween()
 	is_note_open = false
+	note_icon_button.set_pressed_no_signal(false)
 	note_popup_panel.pivot_offset = note_popup_panel.size / 2.0
 	
 	note_tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
@@ -337,6 +335,7 @@ func close_note():
 func close_note_immediately():
 	stop_note_tween()
 	is_note_open = false
+	note_icon_button.set_pressed_no_signal(false)
 	note_popup_panel.visible = false
 	note_popup_panel.scale = Vector2.ONE
 	note_popup_panel.modulate.a = 1.0

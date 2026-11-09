@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://cdoxo1627leua"]
+
+[ext_resource type="Script" uid="uid://bg58s1fir1w6l" path="res://scripts/TutorialsScript/FDTutorial.gd" id="1_gr474"]
+[ext_resource type="Texture2D" uid="uid://cxcmnsjc30j2m" path="res://images/TutorialsIMG/FRAUDDETECTION/FD_data_highlight_img.png" id="2_bs7mi"]
+[ext_resource type="Texture2D" uid="uid://dsvrgg868hrti" path="res://images/TutorialsIMG/FRAUDDETECTION/FD_button_highlight_img.png" id="3_m3o2c"]
+[ext_resource type="Texture2D" uid="uid://b2li6b1n0vt2x" path="res://images/TutorialsIMG/CREDITSCORING/csbutton.png" id="4_m3o2c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ei5bu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_118ik"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bs7mi"]
+
+[node name="FDTutorial" type="Control" unique_id=1856469]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_gr474")
+data_highlight_img = ExtResource("2_bs7mi")
+button_highlight_img = ExtResource("3_m3o2c")
+
+[node name="BackgroundPanel" type="Panel" parent="." unique_id=114467594]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ei5bu")
+
+[node name="Background" type="Panel" parent="BackgroundPanel" unique_id=2126774895]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_118ik")
+
+[node name="HighlightImage" type="TextureRect" parent="BackgroundPanel" unique_id=1751608659]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 12.0
+offset_right = -16.0
+offset_bottom = -244.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextBoxContainer" type="MarginContainer" parent="BackgroundPanel" unique_id=817672828]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -232.0
+offset_right = -16.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="BackgroundPanel/TextBoxContainer" unique_id=967248801]
+layout_mode = 2
+texture = ExtResource("4_m3o2c")
+region_rect = Rect2(-0.28125, -0.8037796, 187.07741, 166.93393)
+patch_margin_left = 59
+patch_margin_top = 61
+patch_margin_right = 60
+patch_margin_bottom = 58
+
+[node name="MessageLabel" type="Label" parent="BackgroundPanel" unique_id=110076958]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 48.0
+offset_top = -174.0
+offset_right = -48.0
+offset_bottom = -62.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.04, 0.05, 0.06, 1)
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 3
+
+[node name="StepLabel" type="Label" parent="BackgroundPanel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 48.0
+offset_top = -215.0
+offset_right = -48.0
+offset_bottom = -179.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.04, 0.05, 0.06, 1)
+theme_override_font_sizes/font_size = 22
+vertical_alignment = 1
+
+[node name="ContinueLabel" type="Label" parent="BackgroundPanel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 48.0
+offset_top = -56.0
+offset_right = -48.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.25, 0.29, 0.34, 1)
+theme_override_font_sizes/font_size = 16
+vertical_alignment = 1
+
+[node name="LetterDisplayTimer" type="Timer" parent="BackgroundPanel" unique_id=1255123840]
+one_shot = true

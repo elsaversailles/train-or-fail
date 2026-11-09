@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://eb3my6rwhod3" path="res://scene/settings_panel.tscn" id="2_0bhv7"]
 [ext_resource type="Texture2D" uid="uid://diqf6bh0u04i0" path="res://images/MainMenu/phone.png" id="3_h251e"]
 [ext_resource type="PackedScene" uid="uid://c3etsuta8aojf" path="res://scene/tutorial_panel.tscn" id="4_h251e"]
-[ext_resource type="Script" uid="uid://chy3bpo7q124u" path="res://scripts/TutorialPanel.gd" id="5_i20o8"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tv8i1"]
 load_path = "res://.godot/imported/phone.png-e079165b39efe232079a9973b010bed1.ctex"
@@ -56,58 +55,59 @@ text = "Paused"
 label_settings = SubResource("LabelSettings_0vlqb")
 
 [node name="Resume" type="Button" parent="." unique_id=1473593301]
-tooltip_text = "Close the pause menu and return to the game."
 layout_mode = 0
 offset_left = 525.0
 offset_top = 216.0
 offset_right = 629.0
 offset_bottom = 251.0
+tooltip_text = "Close the pause menu and return to the game."
 text = "Resume"
 
 [node name="Settings" type="Button" parent="." unique_id=844184154]
-tooltip_text = "Adjust audio, graphics, display, and camera sensitivity."
 layout_mode = 0
 offset_left = 525.0
 offset_top = 261.0
 offset_right = 629.0
 offset_bottom = 296.0
+tooltip_text = "Adjust audio, graphics, display, and camera sensitivity."
 text = "Settings"
 
 [node name="Controls" type="Button" parent="." unique_id=2042390155]
-tooltip_text = "View the movement and interaction controls."
 layout_mode = 0
 offset_left = 525.0
 offset_top = 306.0
 offset_right = 629.0
 offset_bottom = 341.0
+tooltip_text = "View the movement and interaction controls."
 text = "Controls"
 
 [node name="ReplayTutorial" type="Button" parent="." unique_id=447335679]
-tooltip_text = "Review the disk and department instructions."
 layout_mode = 0
 offset_left = 525.0
 offset_top = 348.715
 offset_right = 629.0
 offset_bottom = 383.71506
+tooltip_text = "Review the disk and department instructions."
 text = "Tutorial"
 
 [node name="Reset Game" type="Button" parent="." unique_id=1315044682]
-tooltip_text = "Restart the current level.\nUnsaved progress in this level will be lost."
 layout_mode = 0
 offset_left = 525.0
 offset_top = 417.105
 offset_right = 629.0
 offset_bottom = 452.10504
+tooltip_text = "Restart the current level.
+Unsaved progress in this level will be lost."
 theme_override_styles/normal = SubResource("StyleBoxFlat_esuh0")
 text = "Reset Level"
 
 [node name="Quit" type="Button" parent="." unique_id=15608994]
-tooltip_text = "Choose whether to return to the menu or desktop."
 layout_mode = 0
 offset_left = 525.0
 offset_top = 461.0
 offset_right = 629.0
 offset_bottom = 497.0
+tooltip_text = "Choose whether to return to the menu or desktop."
 text = "Quit"
 
 [node name="SettingsPanel" parent="." unique_id=1962049893 instance=ExtResource("2_0bhv7")]
@@ -166,36 +166,37 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="MainMenuButton" type="Button" parent="ConfirmQuitPanel" unique_id=1052951275]
-tooltip_text = "Return to the main menu.\nUnsaved progress for today will be lost."
 layout_mode = 0
 offset_left = -68.0
 offset_top = 66.0
 offset_right = 86.0
 offset_bottom = 97.0
+tooltip_text = "Return to the main menu.
+Unsaved progress for today will be lost."
 text = "Quit to Main Menu"
 
 [node name="DesktopButton" type="Button" parent="ConfirmQuitPanel" unique_id=1928385483]
-tooltip_text = "Close the game.\nUnsaved progress for today will be lost."
 layout_mode = 0
 offset_left = -56.0
 offset_top = 7.0
 offset_right = 74.0
 offset_bottom = 38.0
+tooltip_text = "Close the game.
+Unsaved progress for today will be lost."
 text = "Quit to Desktop"
 
 [node name="CancelButton" type="Button" parent="ConfirmQuitPanel" unique_id=1755077804]
-tooltip_text = "Stay in the game and return to the pause menu."
 layout_mode = 0
 offset_left = -21.0
 offset_top = 157.0
 offset_right = 39.0
 offset_bottom = 188.0
+tooltip_text = "Stay in the game and return to the pause menu."
 text = "Cancel"
 
 [node name="TutorialPanel" parent="." unique_id=126553682 instance=ExtResource("4_h251e")]
 visible = false
 layout_mode = 1
-script = ExtResource("5_i20o8")
 
 [connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]

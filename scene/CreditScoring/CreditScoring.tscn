@@ -133,6 +133,7 @@ offset_left = 11.795
 offset_top = 24.0
 offset_right = 124.795
 offset_bottom = 124.0
+theme_override_constants/outline_size = 8
 text = "Credit Scoring
 Level 1
 Day 1"

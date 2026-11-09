@@ -30,7 +30,7 @@ func _ready() -> void:
 
 	# 5. Display controls and unlock player movement
 	if tutorial_label:
-		tutorial_label.text = "Press [W, A, S, D] to walk.\nApproach Grandpa and press [E] to talk."
+		tutorial_label.text = "W / A / S / D: Walk     Mouse: Look around\nFollow the marker to Grandpa.\nStand nearby, look at him and press E to talk."
 		tutorial_label.visible = true
 
 	if player:

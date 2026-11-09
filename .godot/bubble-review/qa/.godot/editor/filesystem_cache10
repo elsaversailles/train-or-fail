@@ -1,0 +1,17 @@
+78098b89c88a74ebe8c20117b8754620
+::res://::1794119558
+baseline.gd::GDScript::6083988940536802306::1794119362::0::1::::<>SceneTree<><>0<>0<><>::
+initial_probe.gd::GDScript::5091991062027502289::1794119557::0::1::::<>SceneTree<><>0<>0<><>::
+phase_probe.gd::GDScript::9038804207507783409::1794119402::0::1::::<>SceneTree<><>0<>0<><>::
+regression.gd::GDScript::7425154265661764473::1794119493::0::1::::<>SceneTree<><>0<>0<><>::
+visual.gd::GDScript::3197254369687795405::1794119558::0::1::::<>SceneTree<><>0<>0<><>::
+::res://assets/::1794119340
+::res://assets/try/::1794119367
+chat_bubble.png::CompressedTexture2D::1528223126716087800::1790734080::1794119367::1::::<><><>0<>0<>fbcfff0b88544a3b1ef8a2d44b0a4f38<>res://.godot/imported/chat_bubble.png-4a77b8c4829567d9ff1987931cd982d5.ctex::
+::res://scene/::1794119340
+npc_dialogue_box.tscn::PackedScene::7318195488041256752::1790734108::0::1::::<><><>0<>0<><>::uid://bmgppf0fx0hwn::::res://scripts/Npc_Dialogue_Box.gd<>uid://dkjx5vwyvbxh5::::res://assets/try/chat_bubble.png
+::res://scripts/::1794119367
+Npc_Dialogue_Box.gd::GDScript::960014272029699948::1790734113::0::1::::<>Node3D<><>0<>0<><>::
+::res://theme/::1794119555
+DarumadropOne-Regular.ttf::FontFile::3807754587668715541::1790734116::1794119562::1::::<><><>0<>0<>492db523ec78a86609881ea4f059ae96<>res://.godot/imported/DarumadropOne-Regular.ttf-2f5389b55b5140241521d6bdb394fd52.fontdata::
+game_theme.tres::Theme::8095935928013237961::1794016083::0::1::::<><><>0<>0<><>::uid://bmy32g0c66s4e::::res://theme/DarumadropOne-Regular.ttf

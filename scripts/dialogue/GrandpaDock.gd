@@ -13,7 +13,7 @@ func interact() -> void:
 	is_talking = true
 
 	# 1. Hide the controls tutorial prompt
-	var tutorial_label = get_tree().current_scene.find_child("TutorialLabel", true, false)
+	var tutorial_label = get_tree().current_scene.get_node_or_null("CanvasLayer/Label")
 	if tutorial_label:
 		tutorial_label.visible = false
 

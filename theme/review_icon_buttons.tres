@@ -1,0 +1,86 @@
+[gd_resource type="Theme" format=3 uid="uid://b1qov2vk6mw3u"]
+
+[ext_resource type="FontFile" uid="uid://bmy32g0c66s4e" path="res://theme/DarumadropOne-Regular.ttf" id="1_font"]
+[ext_resource type="Texture2D" uid="uid://bmatx6y53ryg6" path="res://assets/ui/review_button_normal.svg" id="2_normal"]
+[ext_resource type="Texture2D" uid="uid://cnlxreg5hxegm" path="res://assets/ui/review_button_hover.svg" id="3_hover"]
+[ext_resource type="Texture2D" uid="uid://ct6s5fdia1ej6" path="res://assets/ui/review_button_pressed.svg" id="4_pressed"]
+[ext_resource type="Texture2D" uid="uid://bfg7ecgdjkjym" path="res://assets/ui/review_button_disabled.svg" id="5_disabled"]
+
+[sub_resource type="StyleBoxTexture" id="Style_disabled"]
+content_margin_left = 10.0
+content_margin_top = 7.0
+content_margin_right = 10.0
+content_margin_bottom = 7.0
+texture = ExtResource("5_disabled")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="Style_focus"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.19, 0.39, 0.56, 1)
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="Style_hover"]
+content_margin_left = 10.0
+content_margin_top = 7.0
+content_margin_right = 10.0
+content_margin_bottom = 7.0
+texture = ExtResource("3_hover")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="Style_pressed"]
+content_margin_left = 10.0
+content_margin_top = 7.0
+content_margin_right = 10.0
+content_margin_bottom = 7.0
+texture = ExtResource("4_pressed")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="Style_normal"]
+content_margin_left = 10.0
+content_margin_top = 7.0
+content_margin_right = 10.0
+content_margin_bottom = 7.0
+texture = ExtResource("2_normal")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[resource]
+Button/colors/font_color = Color(0.05, 0.07, 0.09, 1)
+Button/colors/font_disabled_color = Color(0.36, 0.4, 0.44, 1)
+Button/colors/font_focus_color = Color(0.05, 0.07, 0.09, 1)
+Button/colors/font_hover_color = Color(0.05, 0.07, 0.09, 1)
+Button/colors/font_hover_pressed_color = Color(0.05, 0.07, 0.09, 1)
+Button/colors/font_pressed_color = Color(0.05, 0.07, 0.09, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 8
+Button/constants/icon_max_width = 24
+Button/font_sizes/font_size = 18
+Button/fonts/font = ExtResource("1_font")
+Button/styles/disabled = SubResource("Style_disabled")
+Button/styles/focus = SubResource("Style_focus")
+Button/styles/hover = SubResource("Style_hover")
+Button/styles/hover_pressed = SubResource("Style_pressed")
+Button/styles/normal = SubResource("Style_normal")
+Button/styles/pressed = SubResource("Style_pressed")
