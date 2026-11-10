@@ -103,6 +103,7 @@ func _on_preview_input(event: InputEvent) -> void:
 
 
 func _close_preview() -> void:
+	GameMusic.clear_ending_music(_preview)
 	_intro.release_focus()
 	_intro.hide()
 	_preview.release_focus()

@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://b6b278r7i2yf8" path="res://scripts/dialogue/Supervisor.gd" id="8_iogu2"]
 [ext_resource type="PackedScene" uid="uid://dci8u0ys21qui" path="res://scene/npc_dialogue_box.tscn" id="9_rhla1"]
 [ext_resource type="Script" uid="uid://ba4wqtr2kvmtd" path="res://scripts/TriggerSupervisorLobby.gd" id="10_pfttj"]
+[ext_resource type="Script" uid="uid://ddecuoqk1ext" path="res://scripts/LobbyWaitingNpcs.gd" id="11_waiting"]
 
 [sub_resource type="Environment" id="Environment_jv1ba"]
 
@@ -56,6 +57,10 @@ speed = 10.0
 
 [node name="OfficeLobby2" parent="." unique_id=248703940 instance=ExtResource("2_oauyh")]
 transform = Transform3D(0.985, 0, 0, 0, 0.985, 0, 0, 0, 0.985, 0, 0, 0)
+
+[node name="WaitingVisitors" type="Node3D" parent="." unique_id=251621883]
+script = ExtResource("11_waiting")
+lobby_model = NodePath("../OfficeLobby2")
 
 [node name="ElevetorDoor" type="Area3D" parent="." unique_id=1431212108]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.507828, -0.1403935, -0.6119034)

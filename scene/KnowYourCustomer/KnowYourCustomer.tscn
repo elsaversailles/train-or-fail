@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://dgqp1lf8jb1wv" path="res://scene/screengameplays/kyc_panel.tscn" id="10_h8xxj"]
 [ext_resource type="PackedScene" uid="uid://dtpe25cd85fc8" path="res://scene/result_panel.tscn" id="11_bomre"]
 [ext_resource type="PackedScene" uid="uid://bx7scsfg2nivv" path="res://scene/pause_panel.tscn" id="12_h8xxj"]
-[ext_resource type="AudioStream" uid="uid://lm3fs23d4v2l" path="res://assets/music/gameplaymusic.mp3" id="14_ncsuc"]
 [ext_resource type="Texture2D" uid="uid://c5x64jsfa3ot3" path="res://images/TutorialsIMG/FRAUDDETECTION/fdholder.png" id="14_x3kqo"]
 [ext_resource type="PackedScene" path="res://scene/ending_intro.tscn" id="17_ending_intro"]
 
@@ -133,7 +132,6 @@ offset_right = 124.794975
 offset_bottom = 156.0
 theme_override_constants/outline_size = 8
 text = "KYC
-Level 1
 Day 1"
 
 [node name="KYCTutorial" parent="CanvasLayer" unique_id=852419912 instance=ExtResource("9_rdx1j")]
@@ -165,12 +163,6 @@ visible = false
 
 [node name="PausePanel" parent="." unique_id=1179524455 instance=ExtResource("12_h8xxj")]
 visible = false
-
-[node name="MusicGameplay" type="AudioStreamPlayer2D" parent="." unique_id=1071873422]
-stream = ExtResource("14_ncsuc")
-volume_db = 7.0
-autoplay = true
-bus = &"Music"
 
 [node name="socket" parent="." unique_id=315384306 instance=ExtResource("3_djb71")]
 transform = Transform3D(0.6316952, 0, -0.7752169, 0, 1, 0, 0.7752169, 0, 0.6316952, -7.8863554, 2.5073187, -12.526727)

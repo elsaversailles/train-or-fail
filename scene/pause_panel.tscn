@@ -72,30 +72,20 @@ offset_bottom = 296.0
 tooltip_text = "Adjust audio, graphics, display, and camera sensitivity."
 text = "Settings"
 
-[node name="Controls" type="Button" parent="." unique_id=2042390155]
-layout_mode = 0
-offset_left = 525.0
-offset_top = 306.0
-offset_right = 629.0
-offset_bottom = 341.0
-tooltip_text = "View the movement and interaction controls."
-text = "Controls"
-
 [node name="ReplayTutorial" type="Button" parent="." unique_id=447335679]
 layout_mode = 0
-offset_left = 525.0
-offset_top = 348.715
-offset_right = 629.0
-offset_bottom = 383.71506
-tooltip_text = "Review the disk and department instructions."
-text = "Tutorial"
+offset_left = 487.0
+offset_top = 306.0
+offset_right = 667.0
+offset_bottom = 341.0
+text = "Controls & Tutorial"
 
 [node name="Reset Game" type="Button" parent="." unique_id=1315044682]
 layout_mode = 0
 offset_left = 525.0
-offset_top = 417.105
+offset_top = 375.0
 offset_right = 629.0
-offset_bottom = 452.10504
+offset_bottom = 410.0
 tooltip_text = "Restart the current level.
 Unsaved progress in this level will be lost."
 theme_override_styles/normal = SubResource("StyleBoxFlat_esuh0")
@@ -104,9 +94,9 @@ text = "Reset Level"
 [node name="Quit" type="Button" parent="." unique_id=15608994]
 layout_mode = 0
 offset_left = 525.0
-offset_top = 461.0
+offset_top = 419.0
 offset_right = 629.0
-offset_bottom = 497.0
+offset_bottom = 455.0
 tooltip_text = "Choose whether to return to the menu or desktop."
 text = "Quit"
 
@@ -200,7 +190,6 @@ layout_mode = 1
 
 [connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="Controls" to="." method="_on_controls_pressed"]
 [connection signal="pressed" from="ReplayTutorial" to="." method="_on_replay_tutorial_pressed"]
 [connection signal="pressed" from="Reset Game" to="." method="_on_reset_game_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

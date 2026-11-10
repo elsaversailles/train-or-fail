@@ -65,6 +65,7 @@ func change_scene(target_path: String, fade_duration: float = 0.5) -> void:
 	if is_transitioning:
 		return
 	is_transitioning = true
+	GameMusic.begin_loading()
 	progress_bar.value = 0
 	loading_screen.modulate.a = 1.0
 	loading_screen.visible = true
@@ -108,6 +109,7 @@ func change_scene(target_path: String, fade_duration: float = 0.5) -> void:
 	loading_screen.modulate.a = 1.0
 	loading_label.text = "LOADING..."
 	is_transitioning = false
+	GameMusic.end_loading()
 	transition_finished.emit()
 
 func reload_scene(fade_duration: float = 0.5) -> void:
@@ -120,6 +122,7 @@ func _finish_failed_load(target_path: String, error: Error) -> void:
 	loading_label.text = "LOADING..."
 	is_transitioning = false
 	get_tree().paused = false
+	GameMusic.end_loading()
 
 func fade_to_black(fade_duration: float = 0.5) -> void:
 	color_rect.mouse_filter = Control.MOUSE_FILTER_STOP

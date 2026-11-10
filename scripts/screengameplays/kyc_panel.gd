@@ -56,6 +56,10 @@ var note_tween: Tween
 # READY
 # -----------------------------
 func _ready():
+	for button in [legit_button, sus_button, left_button, center_button, right_button]:
+		SoundEffects.set_button_sound(button, "")
+	left_button.button_down.connect(func(): SoundEffects.play("inspect"))
+	right_button.button_down.connect(func(): SoundEffects.play("inspect"))
 	applicants = Database.get_session_applicants()
 	
 	legit_button.pressed.connect(_on_legit_pressed)
@@ -223,6 +227,7 @@ func _process(delta):
 func _on_center_pressed():
 	if is_transitioning or review_finished:
 		return
+	SoundEffects.play("inspect")
 	model_container.rotation_degrees.y = 90
 
 # -----------------------------
@@ -258,6 +263,7 @@ func _on_sus_pressed():
 func submit_answer(answer):
 	if is_transitioning or review_finished or current_index >= applicants.size():
 		return
+	SoundEffects.play("accepted" if answer == "legit" else "rejected")
 	is_transitioning = true
 	set_review_controls_enabled(false)
 	close_note_immediately()

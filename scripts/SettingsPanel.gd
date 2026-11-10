@@ -1,8 +1,6 @@
 extends Panel
 
 @onready var settings_panel: Panel = $"."
-@onready var music_slider = $MusicControl
-@onready var volume_value = $MusicControl/VolumeValue
 
 @onready var fullscreen_checkbox = $FullscreenCheckbox
 @onready var lighting_checkbox: CheckBox = $LightingCheckbox
@@ -21,12 +19,6 @@ func _ready() -> void:
 	distance_option.add_item("Ultra Far (500 m)", SettingsManager.RENDER_DISTANCE_ULTRA_FAR)
 	distance_option.select(SettingsManager.render_distance)
 	distance_option.item_selected.connect(_on_render_distance_selected)
-	# 1. When the panel opens, snap the slider to whatever the saved volume is!
-	music_slider.value = SettingsManager.master_volume
-	
-	music_slider.value_changed.connect(_on_music_slider_value_changed)
-	_on_music_slider_value_changed(music_slider.value)
-	
 	# --- Setup Fullscreen Checkbox ---
 	var current_mode = DisplayServer.window_get_mode()
 	fullscreen_checkbox.button_pressed = (current_mode == DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
@@ -59,11 +51,6 @@ func _on_lighting_toggled(enabled: bool) -> void:
 
 func _on_render_distance_selected(index: int) -> void:
 	SettingsManager.set_render_distance(distance_option.get_item_id(index))
-
-func _on_music_slider_value_changed(value: float):
-	var music_value = int(value * 100)
-	volume_value.text = str(music_value) + " %"
-	# MusicControl applies and saves the Master bus volume.
 
 # --- NEW: Sensitivity Slider Logic ---
 func _on_sensitivity_slider_value_changed(value: float):

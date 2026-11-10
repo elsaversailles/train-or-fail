@@ -28,6 +28,8 @@ var pending_delete_slot: int = 0
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	for button in [slot_1, slot_2, slot_3, select_btn, confirm_delete_btn]:
+		SoundEffects.set_button_sound(button, "")
 	slot_1.pressed.connect(func(): _on_slot_clicked(1))
 	slot_2.pressed.connect(func(): _on_slot_clicked(2))
 	slot_3.pressed.connect(func(): _on_slot_clicked(3))
@@ -85,6 +87,7 @@ func format_slot_stage(stage: String) -> String:
 func _on_slot_clicked(slot: int):
 	if confirmation_overlay.visible or deleting_slots.has(slot):
 		return
+	SoundEffects.play("slot")
 	selected_slot = slot
 	selection_aura.follow_slot([slot_1, slot_2, slot_3][slot - 1])
 	select_btn.visible = true
@@ -125,9 +128,11 @@ func _on_select_pressed():
 			_show_slot_error(selected_slot, "Couldn't start the new save. Try again.")
 			return
 		SaveManager.current_save_data = fresh_run
+		SoundEffects.play("new_game")
 		SceneTransition.change_scene("res://scene/boat.tscn")
 		return
 
+	SoundEffects.play("load_game")
 	var current_day := int(data.get("current_day", 1))
 	if data.get("is_grandpa_shift", false):
 		SceneTransition.change_scene("res://scene/CreditScoring/CreditScoring.tscn")
@@ -167,6 +172,7 @@ func _on_confirm_delete_pressed():
 	if not SaveManager.delete_save(deleted_slot):
 		_show_slot_error(deleted_slot, "Couldn't delete this save. Try again.")
 		return
+	SoundEffects.play("delete")
 	deleting_slots.append(deleted_slot)
 	selection_aura.clear()
 	select_btn.visible = false

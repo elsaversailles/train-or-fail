@@ -92,6 +92,84 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 14
 horizontal_alignment = 2
 
+[node name="MusicVolumeControl" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = -96.0
+offset_top = -98.0
+offset_right = 96.0
+offset_bottom = -82.0
+tooltip_text = "Adjust background music. Set to 0% to mute music."
+theme_override_styles/slider = SubResource("StyleBoxLine_by01r")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_dclss")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_dclss")
+max_value = 1.0
+step = 0.01
+value = 1.0
+script = ExtResource("3_anfas")
+audio_bus_name = "Music"
+
+[node name="Volume Label" type="Label" parent="MusicVolumeControl"]
+layout_mode = 0
+offset_top = -17.5
+offset_right = 118.0
+offset_bottom = 5.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "Music"
+
+[node name="VolumeValue" type="Label" parent="MusicVolumeControl"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -62.0
+offset_top = -17.5
+offset_right = 2.0
+offset_bottom = 5.5
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 2
+
+[node name="SfxVolumeControl" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = -96.0
+offset_top = -54.0
+offset_right = 96.0
+offset_bottom = -38.0
+tooltip_text = "Adjust interface sounds and ambience. Set to 0% to mute them."
+theme_override_styles/slider = SubResource("StyleBoxLine_by01r")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_dclss")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_dclss")
+max_value = 1.0
+step = 0.01
+value = 1.0
+script = ExtResource("3_anfas")
+audio_bus_name = "SFX"
+
+[node name="Volume Label" type="Label" parent="SfxVolumeControl"]
+layout_mode = 0
+offset_top = -17.5
+offset_right = 118.0
+offset_bottom = 5.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "Sound Effects"
+
+[node name="VolumeValue" type="Label" parent="SfxVolumeControl"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -62.0
+offset_top = -17.5
+offset_right = 2.0
+offset_bottom = 5.5
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 2
+
 [node name="BackButton" type="Button" parent="." unique_id=970736283]
 layout_mode = 0
 offset_left = -105.0
@@ -104,9 +182,9 @@ text = "Back"
 [node name="FullscreenCheckbox" type="CheckBox" parent="." unique_id=1117961063]
 layout_mode = 0
 offset_left = -102.0
-offset_top = -41.0
+offset_top = 14.0
 offset_right = 4.0
-offset_bottom = -9.0
+offset_bottom = 44.0
 tooltip_text = "Switch between fullscreen and windowed display."
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
@@ -114,13 +192,14 @@ theme_override_colors/font_pressed_color = Color(0.15127608, 0.15127608, 0.15127
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 text = "Full Screen"
+theme_override_font_sizes/font_size = 14
 
 [node name="Sensitivity" type="HSlider" parent="." unique_id=2076778275]
 layout_mode = 0
 offset_left = -96.0
-offset_top = -80.0
+offset_top = -10.0
 offset_right = 96.0
-offset_bottom = -64.0
+offset_bottom = 6.0
 tooltip_text = "Adjust how quickly the camera turns with the mouse."
 theme_override_styles/slider = SubResource("StyleBoxLine_by01r")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_dclss")
@@ -150,9 +229,9 @@ horizontal_alignment = 2
 [node name="LightingCheckbox" type="CheckBox" parent="." unique_id=774781796]
 layout_mode = 0
 offset_left = -102.0
-offset_top = 6.0
+offset_top = 49.0
 offset_right = 104.0
-offset_bottom = 36.0
+offset_bottom = 79.0
 tooltip_text = "Enable richer lighting, fog, and shadows.
 Turn off for better performance."
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -167,9 +246,9 @@ text = "GI + Fog + Shadows"
 [node name="RenderDistanceLabel" type="Label" parent="." unique_id=2035303723]
 layout_mode = 0
 offset_left = -96.0
-offset_top = 51.0
+offset_top = 87.0
 offset_right = 96.0
-offset_bottom = 71.0
+offset_bottom = 107.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 14
 text = "Rendering Distance"
@@ -177,12 +256,11 @@ text = "Rendering Distance"
 [node name="RenderDistanceOption" type="OptionButton" parent="." unique_id=1976338649]
 layout_mode = 0
 offset_left = -96.0
-offset_top = 76.0
+offset_top = 110.0
 offset_right = 96.0
-offset_bottom = 110.0
+offset_bottom = 144.0
 tooltip_text = "Choose how far away scenery stays visible.
 Shorter distances can improve performance."
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 
-[connection signal="value_changed" from="MusicControl" to="MusicControl" method="_on_value_changed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

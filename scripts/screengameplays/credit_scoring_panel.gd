@@ -37,6 +37,7 @@ var final_credit_amount: int = 0
 @onready var debt_ratio_tex = $"Panel/TabContainer/Debt Ratio"
 
 func _ready():
+	SoundEffects.set_button_sound(submit_button, "")
 	slider.value_changed.connect(_on_slider_value_changed)
 	var documents: TabContainer = $Panel/TabContainer
 	documents.set_tab_tooltip(0, "Review the applicant's general information.")
@@ -178,6 +179,7 @@ func _on_submit():
 
 	# 1. Calculate player selection (snapped to 0.01)
 	var player_choice = 0.0 if is_rejected else snapped(slider.value, 0.01)
+	SoundEffects.play("accepted" if player_choice > 0.0 else "rejected")
 
 	# 2. Record decision for special characters based on score threshold
 	if current_applicant.get("is_special", false):

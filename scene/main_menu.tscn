@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://cvpma47eqx85r" path="res://images/MainMenu/Game Title.png" id="7_1o50l"]
 [ext_resource type="Texture2D" uid="uid://bbcp4g6mormnj" path="res://images/MainMenu/buttons/AboutUs.png" id="7_cht4j"]
 [ext_resource type="Texture2D" uid="uid://carqlap6da8yh" path="res://images/MainMenu/buttons/SettingsPressed.png" id="7_os2d6"]
-[ext_resource type="AudioStream" uid="uid://dx7o60nd06xxj" path="res://assets/music/music.mp3" id="8_by01r"]
 [ext_resource type="PackedScene" uid="uid://eb3my6rwhod3" path="res://scene/settings_panel.tscn" id="8_dclss"]
 [ext_resource type="Texture2D" uid="uid://1xgf1ktya7y3" path="res://images/MainMenu/buttons/AboutUsPressed.png" id="9_os2d6"]
 [ext_resource type="Texture2D" uid="uid://4l74d3tj8vxx" path="res://images/MainMenu/buttons/QuitPressed.png" id="11_v0h3m"]
@@ -173,12 +172,6 @@ theme_override_font_sizes/font_size = 12
 [node name="SettingsPanel" parent="Main Menu" unique_id=1962049893 instance=ExtResource("8_dclss")]
 visible = false
 layout_mode = 1
-
-[node name="Music" type="AudioStreamPlayer2D" parent="Main Menu" unique_id=1850022703]
-stream = ExtResource("8_by01r")
-volume_db = 7.0
-autoplay = true
-bus = &"Music"
 
 [connection signal="pressed" from="Main Menu/Buttons/New Game" to="Main Menu" method="_on_new_game_pressed"]
 [connection signal="pressed" from="Main Menu/Buttons/Settings" to="Main Menu" method="_on_settings_pressed"]

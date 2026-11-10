@@ -30,6 +30,6 @@ func _get_pages() -> Array[Dictionary]:
 		},
 		{
 			"title": "Complete the queue",
-			"text": "Repeat these checks for every customer. After the last review, click End Training to finish your shift.\nTo reread the instructions later, leave the monitor with E and open Tutorial in the pause menu."
+			"text": "Repeat these checks for every customer. After the last review, click End Training to finish your shift.\nTo reread the instructions later, leave the monitor with E and open Controls & Tutorial in the pause menu."
 		}
 	]

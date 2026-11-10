@@ -25,6 +25,7 @@ func show_ending(ending_id: String) -> void:
 	title_label.text = ending["title"]
 	description_label.text = ending["description"]
 	continue_enabled = true
+	GameMusic.set_ending_music(get_parent(), ending_id)
 	show()
 	grab_focus()
 

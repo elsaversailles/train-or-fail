@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b3ukn6yq117t4"
+path="res://.godot/imported/Load Game.mp3-5370a8adf8dba8974c55ee70f6bdf324.mp3str"
+
+[deps]
+
+source_file="res://assets/music/sfx/Load Game.mp3"
+dest_files=["res://.godot/imported/Load Game.mp3-5370a8adf8dba8974c55ee70f6bdf324.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

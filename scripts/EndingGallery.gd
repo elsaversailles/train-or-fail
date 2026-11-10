@@ -68,6 +68,7 @@ func _show_artwork() -> void:
 
 
 func _return_to_entries() -> void:
+	GameMusic.clear_ending_music(self)
 	intro.hide()
 	artwork.hide()
 	picture.texture = null

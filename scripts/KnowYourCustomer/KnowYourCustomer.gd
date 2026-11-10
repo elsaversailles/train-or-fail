@@ -61,6 +61,7 @@ func trigger_game_over():
 	if _game_over_started:
 		return
 	_game_over_started = true
+	SaveManager.record_ending("terminated")
 	# Unlock mouse and freeze player
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if player:

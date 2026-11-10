@@ -28,8 +28,25 @@ func _ready() -> void:
 	_update_text_size()
 
 func _update_text_size() -> void:
-	message_label.add_theme_font_size_override("font_size", 18 if size.x < 900.0 else 20)
-	step_label.add_theme_font_size_override("font_size", 20 if size.x < 900.0 else 22)
+	# The text panel occupies the bottom quarter at every window size.
+	# Scale its padding and typography together so all three instruction lines fit.
+	var ui_scale := clampf(minf(size.x / 1152.0, size.y / 720.0), 0.5, 1.5)
+	message_label.add_theme_font_size_override("font_size", roundi(20.0 * ui_scale))
+	step_label.add_theme_font_size_override("font_size", roundi(22.0 * ui_scale))
+	continue_label.add_theme_font_size_override("font_size", roundi(16.0 * ui_scale))
+	for label in [message_label, step_label, continue_label]:
+		label.offset_left = 40.0 * ui_scale
+		label.offset_right = -40.0 * ui_scale
+	step_label.offset_top = 10.0 * ui_scale
+	step_label.offset_bottom = 40.0 * ui_scale
+	message_label.offset_top = 44.0 * ui_scale
+	message_label.offset_bottom = -40.0 * ui_scale
+	continue_label.offset_top = -36.0 * ui_scale
+	continue_label.offset_bottom = -12.0 * ui_scale
+	var text_box: Control = $BackgroundPanel/TextBoxContainer
+	text_box.offset_left = 16.0 * ui_scale
+	text_box.offset_right = -16.0 * ui_scale
+	text_box.offset_bottom = -8.0 * ui_scale
 
 func _get_pages() -> Array[Dictionary]:
 	return []

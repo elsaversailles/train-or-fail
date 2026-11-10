@@ -42,7 +42,7 @@ func _ready():
 	current_day = SaveManager.current_save_data.get("current_day", 1)
 
 	if info_label:
-		info_label.text = "Fraud Detection\nLevel %d\nDay %d" % [current_level, current_day]
+		info_label.text = "Fraud Detection\nDay %d" % current_day
 
 	# 3. TUTORIAL LOGIC
 	if tutorial_ui:
@@ -67,6 +67,7 @@ func trigger_game_over():
 	if _game_over_started:
 		return
 	_game_over_started = true
+	SaveManager.record_ending("terminated")
 	# Unlock mouse and freeze player
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if player:

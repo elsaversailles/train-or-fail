@@ -1,0 +1,6 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+AUDIO_PROBE_USER_DIR=C:/Users/mart/Desktop/train-or-fail-demo-(copy)/.godot/audio-review/userdata/Godot/app_userdata/Audio Isolation Probe
+AUDIO_PROBE_APPDATA=C:\Users\mart\Desktop\train-or-fail-demo-(copy)\.godot\audio-review\userdata

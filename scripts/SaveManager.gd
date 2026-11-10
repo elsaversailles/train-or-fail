@@ -104,6 +104,10 @@ func get_completed_ending_id(data: Dictionary) -> String:
 func record_ending(ending_id: String) -> void:
 	if not Catalog.ENDINGS.has(ending_id):
 		return
+	# Termination is collectible, but the player can still retry the failed shift.
+	if ending_id == "terminated":
+		unlock_ending(ending_id)
+		return
 	current_save_data["ending_id"] = ending_id
 	current_save_data["stage_name"] = "Game Finished"
 	save_game(current_slot, current_save_data)
@@ -115,6 +119,12 @@ func preserve_slot_ending(data: Dictionary) -> bool:
 	var ending_id := get_completed_ending_id(data)
 	if ending_id == "":
 		return true
+	return unlock_ending(ending_id)
+
+
+func unlock_ending(ending_id: String) -> bool:
+	if not Catalog.ENDINGS.has(ending_id):
+		return false
 	if not is_ending_unlocked(ending_id):
 		_unlocked_endings[ending_id] = true
 		_collection_needs_save = true

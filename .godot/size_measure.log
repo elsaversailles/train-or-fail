@@ -1,0 +1,19 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+M/supervisor skscale (1.5, 1.5, 1.5)
+thigh.L (0.266975, 2.091305, -0.044496)
+shin.L (0.266975, 1.245883, -0.0)
+foot.L (0.266975, 0.266974, -0.044496)
+spine.006 (-0.0, 3.719854, -0.057844)
+M/adrian_santos skscale (0.705543, 0.705543, 0.705543)
+thigh.L (0.194164, 1.52095, -0.032361)
+shin.L (0.194164, 0.906098, -0.0)
+foot.L (0.194164, 0.194164, -0.032361)
+spine.006 (-0.0, 2.705348, -0.042069)
+F/anna_reyes skscale (1.8, 1.8, 1.8)
+thigh.L (0.194164, 1.52095, -0.032361)
+shin.L (0.194164, 0.906098, -0.0)
+foot.L (0.194164, 0.194164, -0.032361)
+spine.006 (-0.0, 2.705349, -0.042069)

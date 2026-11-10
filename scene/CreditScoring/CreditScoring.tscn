@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://dphv38qynyp4e" path="res://scene/model_container.tscn" id="10_gkt0f"]
 [ext_resource type="PackedScene" uid="uid://dtpe25cd85fc8" path="res://scene/result_panel.tscn" id="11_quma2"]
 [ext_resource type="PackedScene" uid="uid://bx7scsfg2nivv" path="res://scene/pause_panel.tscn" id="12_8hxc1"]
-[ext_resource type="AudioStream" uid="uid://lm3fs23d4v2l" path="res://assets/music/gameplaymusic.mp3" id="13_3uodl"]
 [ext_resource type="Texture2D" uid="uid://c5x64jsfa3ot3" path="res://images/TutorialsIMG/FRAUDDETECTION/fdholder.png" id="13_n8goo"]
 [ext_resource type="PackedScene" path="res://scene/ending_intro.tscn" id="17_ending_intro"]
 
@@ -135,7 +134,6 @@ offset_right = 124.795
 offset_bottom = 124.0
 theme_override_constants/outline_size = 8
 text = "Credit Scoring
-Level 1
 Day 1"
 
 [node name="CSTutorial" parent="CanvasLayer" unique_id=427432534 instance=ExtResource("9_y65os")]
@@ -165,12 +163,6 @@ layout_mode = 1
 
 [node name="PausePanel" parent="." unique_id=1179524455 instance=ExtResource("12_8hxc1")]
 visible = false
-
-[node name="MusicGameplay" type="AudioStreamPlayer2D" parent="." unique_id=1071873422]
-stream = ExtResource("13_3uodl")
-volume_db = 7.0
-autoplay = true
-bus = &"Music"
 
 [node name="socket" parent="." unique_id=315384306 instance=ExtResource("3_j7mwx")]
 transform = Transform3D(0.6316952, 0, -0.7752169, 0, 1, 0, 0.7752169, 0, 0.6316952, -7.8863554, 2.5073187, -12.526727)

@@ -1,20 +1,17 @@
 extends HSlider
 
-@export var audio_bus_name: String
-var audio_bus_id
+@export_enum("Master", "Music", "SFX") var audio_bus_name: String = "Master"
+
+@onready var volume_label: Label = $VolumeValue
 
 func _ready() -> void:
-	audio_bus_id = AudioServer.get_bus_index(audio_bus_name)
-	
-	# Snap to saved master volume if this is the master slider
-	if audio_bus_name == "Master":
-		value = SettingsManager.master_volume
-		_on_value_changed(value)
+	SettingsManager.audio_settings_changed.connect(_sync_saved_volume)
+	_sync_saved_volume()
+	value_changed.connect(_on_value_changed)
 
-func _on_value_changed(value: float) -> void:
-	var db = linear_to_db(value)
-	AudioServer.set_bus_volume_db(audio_bus_id, db)
-	
-	if audio_bus_name == "Master":
-		SettingsManager.master_volume = value
-		SettingsManager.save_settings()
+func _sync_saved_volume() -> void:
+	set_value_no_signal(SettingsManager.get_audio_volume(audio_bus_name))
+	volume_label.text = "%d %%" % roundi(value * 100.0)
+
+func _on_value_changed(new_value: float) -> void:
+	SettingsManager.set_audio_volume(audio_bus_name, new_value)

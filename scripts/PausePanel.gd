@@ -49,15 +49,7 @@ func _on_reset_game_pressed() -> void:
 	get_tree().paused = false
 	SceneTransition.reload_scene()
 
-# --- Call the Tutorial Scene ---
-func _on_controls_pressed() -> void:
-	settings_panel.visible = false
-	confirm_quit_panel.visible = false
-	tutorial_panel.open_controls()
-
 func _on_replay_tutorial_pressed() -> void:
 	settings_panel.visible = false
 	confirm_quit_panel.visible = false
-	
-	# Trigger the function inside your new separate scene
-	tutorial_panel.open_tutorial()
+	tutorial_panel.open_controls()

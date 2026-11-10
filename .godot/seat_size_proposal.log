@@ -1,0 +1,9 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+thigh.L (0.266975, 1.079, 0.0)
+shin.L (0.300805, 1.062085, 0.845746)
+foot.L (0.300805, 0.354594, 1.523759)
+toe.L (0.300805, 0.132114, 1.790734)
+heel.02.L (0.122822, 0.087618, 1.390272)

@@ -1,0 +1,5 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+SEATING_FIX_CHECK_OK: all 12 models match supervisor size; knees clear seat edge by >15cm; heels above floor; 30 randomized 5-7 visitor layouts

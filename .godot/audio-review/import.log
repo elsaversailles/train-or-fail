@@ -1,0 +1,225 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+[   0% ] first_scan_filesystem | Started Project initialization (5 steps)
+[   0% ] first_scan_filesystem | Scanning file structure...
+[  16% ] first_scan_filesystem | Loading global class names...
+[  33% ] first_scan_filesystem | Verifying GDExtensions...
+[  50% ] first_scan_filesystem | Creating autoload scripts...
+SCRIPT ERROR: Parse Error: Preload file "res://assets/music/sfx/Click of every button.mp3" has no resource loaders (unrecognized file extension).
+   at: GDScript::reload (res://scripts/SoundEffects.gd:5)
+SCRIPT ERROR: Parse Error: Preload file "res://assets/music/sfx/Click.mp3" has no resource loaders (unrecognized file extension).
+   at: GDScript::reload (res://scripts/SoundEffects.gd:6)
+SCRIPT ERROR: Parse Error: Preload file "res://assets/music/sfx/Click play from menu.mp3" has no resource loaders (unrecognized file extension).
+   at: GDScript::reload (res://scripts/SoundEffects.gd:7)
+SCRIPT ERROR: Parse Error: Preload file "res://assets/music/sfx/click save file.mp3" has no resource loaders (unrecognized file extension).
+   at: GDScript::reload (res://scripts/SoundEffects.gd:8)
+SCRIPT ERROR: Parse Error: Preload file "res://assets/music/sfx/click new game from save file.mp3" has no resource loaders (unrecognized file extension).
+   at: GDScript::reload (res://scripts/SoundEffects.gd:9)
+SCRIPT ERROR: Parse Error: Preload file "res://assets/music/sfx/Load Game.mp3" has no resource loaders (unrecognized file extension).
+   at: GDScript::reload (res://scripts/SoundEffects.gd:10)
+SCRIPT ERROR: Parse Error: Preload file "res://assets/music/sfx/Delete.mp3" has no resource loaders (unrecognized file extension).
+   at: GDScript::reload (res://scripts/SoundEffects.gd:11)
+SCRIPT ERROR: Parse Error: Preload file "res://assets/music/sfx/Accepted.mp3" has no resource loaders (unrecognized file extension).
+   at: GDScript::reload (res://scripts/SoundEffects.gd:12)
+SCRIPT ERROR: Parse Error: Preload file "res://assets/music/sfx/Rejected.mp3" has no resource loaders (unrecognized file extension).
+   at: GDScript::reload (res://scripts/SoundEffects.gd:13)
+SCRIPT ERROR: Parse Error: Preload file "res://assets/music/sfx/slider tick up and down.mp3" has no resource loaders (unrecognized file extension).
+   at: GDScript::reload (res://scripts/SoundEffects.gd:14)
+SCRIPT ERROR: Parse Error: Preload file "res://assets/music/sfx/spinning char inpect button.mp3" has no resource loaders (unrecognized file extension).
+   at: GDScript::reload (res://scripts/SoundEffects.gd:15)
+ERROR: Failed to load script "res://scripts/SoundEffects.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
+ERROR: Failed to create an autoload, script 'res://scripts/SoundEffects.gd' is not compiling.
+   at: _create_autoload (editor/settings/editor_autoload_settings.cpp:340)
+[  66% ] first_scan_filesystem | Initializing plugins...
+ERROR: Failed to create an autoload, script 'res://scripts/SoundEffects.gd' is not compiling.
+   at: _create_autoload (editor/settings/editor_autoload_settings.cpp:340)
+   GDScript backtrace (most recent call first):
+       [0] _enter_tree (res://addons/dialogic/plugin.gd:35)
+ERROR: Condition "!info->node" is true. Continuing.
+   at: update_autoload (editor/settings/editor_autoload_settings.cpp:566)
+   GDScript backtrace (most recent call first):
+       [0] _enter_tree (res://addons/dialogic/plugin.gd:35)
+[  83% ] first_scan_filesystem | Starting file scan...
+[ DONE ] first_scan_filesystem
+
+[   0% ] update_scripts_classes | Started Registering global classes... (15 steps)
+[   0% ] update_scripts_classes | 
+[   6% ] update_scripts_classes | 
+[  12% ] update_scripts_classes | 
+[  18% ] update_scripts_classes | 
+[  25% ] update_scripts_classes | 
+[  31% ] update_scripts_classes | 
+[  37% ] update_scripts_classes | 
+[  43% ] update_scripts_classes | 
+[  50% ] update_scripts_classes | 
+[  56% ] update_scripts_classes | 
+[  62% ] update_scripts_classes | 
+[  68% ] update_scripts_classes | 
+[  75% ] update_scripts_classes | 
+[  81% ] update_scripts_classes | 
+[  87% ] update_scripts_classes | 
+[ DONE ] update_scripts_classes
+
+[   0% ] _update_scan_actions | Started Scanning actions... (23 steps)
+[   0% ] _update_scan_actions | Bad Ending.mp3
+[   4% ] _update_scan_actions | Elevator.mp3
+[   8% ] _update_scan_actions | Gameplay.mp3
+[  12% ] _update_scan_actions | Lobby.mp3
+[  16% ] _update_scan_actions | Main Menu.mp3
+[  20% ] _update_scan_actions | Overworld.mp3
+[  25% ] _update_scan_actions | Accepted.mp3
+[  29% ] _update_scan_actions | click new game from save file.mp3
+[  33% ] _update_scan_actions | Click of every button.mp3
+[  37% ] _update_scan_actions | Click play from menu.mp3
+[  41% ] _update_scan_actions | click save file.mp3
+[  45% ] _update_scan_actions | Click.mp3
+[  50% ] _update_scan_actions | Delete.mp3
+[  54% ] _update_scan_actions | Load Game.mp3
+[  58% ] _update_scan_actions | Rain.mp3
+[  62% ] _update_scan_actions | Rejected.mp3
+[  66% ] _update_scan_actions | slider tick up and down.mp3
+[  70% ] _update_scan_actions | spinning char inpect button.mp3
+[  75% ] _update_scan_actions | loading screen.mp3
+[  79% ] _update_scan_actions | mixkit-birds-chirping-near-the-river-2473.wav
+[  83% ] _update_scan_actions | mixkit-liquid-bubble-3000.wav
+[  87% ] _update_scan_actions | random loadscreena.mp3
+[  91% ] _update_scan_actions | randomized loadscreen.mp3
+[ DONE ] _update_scan_actions
+
+[   0% ] reimport | Started (Re)Importing Assets (23 steps)
+[   0% ] reimport | Preparing files to reimport...
+[   4% ] reimport | Preparing files to reimport...
+[   8% ] reimport | Preparing files to reimport...
+[  12% ] reimport | Preparing files to reimport...
+[  16% ] reimport | Preparing files to reimport...
+[  20% ] reimport | Preparing files to reimport...
+[  25% ] reimport | Preparing files to reimport...
+[  29% ] reimport | Preparing files to reimport...
+[  33% ] reimport | Preparing files to reimport...
+[  37% ] reimport | Preparing files to reimport...
+[  41% ] reimport | Preparing files to reimport...
+[  45% ] reimport | Preparing files to reimport...
+[  50% ] reimport | Preparing files to reimport...
+[  54% ] reimport | Preparing files to reimport...
+[  58% ] reimport | Preparing files to reimport...
+[  62% ] reimport | Preparing files to reimport...
+[  66% ] reimport | Preparing files to reimport...
+[  70% ] reimport | Preparing files to reimport...
+[  75% ] reimport | Preparing files to reimport...
+[  79% ] reimport | Preparing files to reimport...
+[  83% ] reimport | Preparing files to reimport...
+[  87% ] reimport | Preparing files to reimport...
+[  91% ] reimport | Preparing files to reimport...
+[   0% ] reimport | Executing pre-reimport operations...
+[   0% ] reimport | randomized loadscreen.mp3
+[   4% ] reimport | random loadscreena.mp3
+[   8% ] reimport | loading screen.mp3
+[  12% ] reimport | spinning char inpect button.mp3
+[  16% ] reimport | slider tick up and down.mp3
+[  20% ] reimport | Rejected.mp3
+[  25% ] reimport | Rain.mp3
+[  29% ] reimport | Load Game.mp3
+[  33% ] reimport | Delete.mp3
+[  37% ] reimport | Click.mp3
+[  41% ] reimport | click save file.mp3
+[  45% ] reimport | Click play from menu.mp3
+[  50% ] reimport | Click of every button.mp3
+[  54% ] reimport | click new game from save file.mp3
+[  58% ] reimport | Accepted.mp3
+[  62% ] reimport | Overworld.mp3
+[  66% ] reimport | Main Menu.mp3
+[  70% ] reimport | Lobby.mp3
+[  75% ] reimport | Gameplay.mp3
+[  79% ] reimport | Elevator.mp3
+[  83% ] reimport | Bad Ending.mp3
+[  87% ] reimport | randomized loadscreen.mp3
+[  91% ] reimport | random loadscreena.mp3
+ERROR: Format not supported for WAVE file (not PCM). Save WAVE files as uncompressed PCM or IEEE float instead.
+   at: load_from_buffer (scene/resources/audio_stream_wav.cpp:738)
+ERROR: Can't save empty resource to path 'res://.godot/imported/mixkit-birds-chirping-near-the-river-2473.wav-fbcb25b63aad8aa181b8a383acd10025.sample'.
+   at: save (core/io/resource_saver.cpp:103)
+ERROR: Condition "f.is_null()" is true. Continuing.
+   at: get_multiple_md5 (core/io/file_access.cpp:967)
+[  95% ] reimport | Finalizing Asset Import...
+[ DONE ] reimport
+
+[   0% ] reimport | Started (Re)Importing Assets (23 steps)
+[   0% ] reimport | Executing post-reimport operations...
+[ DONE ] reimport
+
+WARNING: Case mismatch opening requested file 'res://assets/Applicants/newmodels/M/Supervisor_char1.png', stored as 'res://assets/Applicants/newmodels/M/supervisor_char1.png' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+   at: open_internal (drivers/windows/file_access_windows.cpp:192)
+WARNING: Case mismatch opening requested file 'res://assets/Applicants/newmodels/M/Supervisor_char1.png.import', stored as 'res://assets/Applicants/newmodels/M/supervisor_char1.png.import' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+   at: open_internal (drivers/windows/file_access_windows.cpp:192)
+[   0% ] loading_editor_layout | Started Loading editor (5 steps)
+[   0% ] loading_editor_layout | Loading editor layout...
+[  16% ] loading_editor_layout | Loading docks...
+[  33% ] loading_editor_layout | Reopening scenes...
+[  50% ] loading_editor_layout | Loading central editor layout...
+[  66% ] loading_editor_layout | Loading plugin window layout...
+WARNING: Case mismatch opening requested file 'res://scripts/screengameplays/Credit_Scoring_Panel.gd', stored as 'res://scripts/screengameplays/credit_scoring_panel.gd' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+   at: open_internal (drivers/windows/file_access_windows.cpp:192)
+WARNING: Case mismatch opening requested file 'res://scripts/screengameplays/Credit_Scoring_Panel.gd', stored as 'res://scripts/screengameplays/credit_scoring_panel.gd' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+   at: open_internal (drivers/windows/file_access_windows.cpp:192)
+WARNING: Case mismatch opening requested file 'res://scripts/screengameplays/Credit_Scoring_Panel.gd', stored as 'res://scripts/screengameplays/credit_scoring_panel.gd' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+   at: open_internal (drivers/windows/file_access_windows.cpp:192)
+SCRIPT ERROR: Compile Error: Identifier not found: SoundEffects
+   at: GDScript::reload (res://scripts/screengameplays/Credit_Scoring_Panel.gd:40)
+ERROR: Failed to load script "res://scripts/screengameplays/Credit_Scoring_Panel.gd" with error "Compilation failed".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
+SCRIPT ERROR: Compile Error: Identifier not found: SoundEffects
+   at: GDScript::reload (res://scripts/screengameplays/credit_scoring_panel.gd:40)
+ERROR: Failed to load script "res://scripts/screengameplays/credit_scoring_panel.gd" with error "Compilation failed".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
+WARNING: Case mismatch opening requested file 'res://scripts/screengameplays/Kyc_Panel.gd', stored as 'res://scripts/screengameplays/kyc_panel.gd' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+   at: open_internal (drivers/windows/file_access_windows.cpp:192)
+WARNING: Case mismatch opening requested file 'res://scripts/screengameplays/Kyc_Panel.gd', stored as 'res://scripts/screengameplays/kyc_panel.gd' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+   at: open_internal (drivers/windows/file_access_windows.cpp:192)
+WARNING: Case mismatch opening requested file 'res://scripts/screengameplays/Kyc_Panel.gd', stored as 'res://scripts/screengameplays/kyc_panel.gd' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+   at: open_internal (drivers/windows/file_access_windows.cpp:192)
+SCRIPT ERROR: Compile Error: Identifier not found: SoundEffects
+   at: GDScript::reload (res://scripts/screengameplays/Kyc_Panel.gd:60)
+ERROR: Failed to load script "res://scripts/screengameplays/Kyc_Panel.gd" with error "Compilation failed".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
+SCRIPT ERROR: Compile Error: Identifier not found: SoundEffects
+   at: GDScript::reload (res://scripts/screengameplays/kyc_panel.gd:60)
+ERROR: Failed to load script "res://scripts/screengameplays/kyc_panel.gd" with error "Compilation failed".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
+WARNING: Case mismatch opening requested file 'res://scripts/screengameplays/Left_Sliding_Panel.gd', stored as 'res://scripts/screengameplays/left_sliding_panel.gd' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+   at: open_internal (drivers/windows/file_access_windows.cpp:192)
+WARNING: Case mismatch opening requested file 'res://scripts/screengameplays/Left_Sliding_Panel.gd', stored as 'res://scripts/screengameplays/left_sliding_panel.gd' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+   at: open_internal (drivers/windows/file_access_windows.cpp:192)
+WARNING: Case mismatch opening requested file 'res://scripts/screengameplays/Left_Sliding_Panel.gd', stored as 'res://scripts/screengameplays/left_sliding_panel.gd' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+   at: open_internal (drivers/windows/file_access_windows.cpp:192)
+SCRIPT ERROR: Compile Error: Identifier not found: SoundEffects
+   at: GDScript::reload (res://scripts/screengameplays/Left_Sliding_Panel.gd:73)
+ERROR: Failed to load script "res://scripts/screengameplays/Left_Sliding_Panel.gd" with error "Compilation failed".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
+SCRIPT ERROR: Compile Error: Identifier not found: SoundEffects
+   at: GDScript::reload (res://scripts/screengameplays/left_sliding_panel.gd:73)
+ERROR: Failed to load script "res://scripts/screengameplays/left_sliding_panel.gd" with error "Compilation failed".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
+SCRIPT ERROR: Compile Error: Identifier not found: SoundEffects
+   at: GDScript::reload (res://scripts/MainMenu.gd:11)
+ERROR: Failed to load script "res://scripts/MainMenu.gd" with error "Compilation failed".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
+WARNING: Case mismatch opening requested file 'res://scripts/Screen.gd', stored as 'res://scripts/screen.gd' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+   at: open_internal (drivers/windows/file_access_windows.cpp:192)
+WARNING: Case mismatch opening requested file 'res://scripts/Screen.gd', stored as 'res://scripts/screen.gd' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+   at: open_internal (drivers/windows/file_access_windows.cpp:192)
+WARNING: Case mismatch opening requested file 'res://scripts/Screen.gd', stored as 'res://scripts/screen.gd' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+   at: open_internal (drivers/windows/file_access_windows.cpp:192)
+SCRIPT ERROR: Compile Error: Identifier not found: SoundEffects
+   at: GDScript::reload (res://scripts/SlotsMenu.gd:32)
+ERROR: Failed to load script "res://scripts/SlotsMenu.gd" with error "Compilation failed".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
+[  83% ] loading_editor_layout | Editor layout ready.
+[ DONE ] loading_editor_layout
+
+ERROR: Cannot save file 'C:/SteamLibrary/steamapps/common/Godot Engine/editor_data/editor_settings-4.7.tres'.
+   at: save (scene/resources/resource_format_text.cpp:1768)
+ERROR: Error saving editor settings to C:/SteamLibrary/steamapps/common/Godot Engine/editor_data/editor_settings-4.7.tres
+   at: save (editor/settings/editor_settings.cpp:1525)

@@ -12,7 +12,7 @@ color = Color(0.056, 0.075, 0.106, 0.75)
 script = ExtResource("1_script")
 
 [node name="Window" type="NinePatchRect" parent="."]
-offset_right = 860.0
+offset_right = 1133.0
 offset_bottom = 532.0
 texture = ExtResource("2_window")
 patch_margin_left = 72
@@ -72,7 +72,7 @@ offset_left = 28.0
 offset_top = 112.0
 theme_override_constants/h_separation = 15
 theme_override_constants/v_separation = 17
-columns = 3
+columns = 4
 
 [node name="Artwork" type="ColorRect" parent="."]
 visible = false

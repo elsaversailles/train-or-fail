@@ -8,6 +8,7 @@ const Catalog := preload("res://scripts/EndingCatalog.gd")
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	SoundEffects.set_button_sound($"Buttons/New Game", "")
 	settings_panel.visible = false
 	settings_panel.visibility_changed.connect(func(): gallery_button.visible = not settings_panel.visible)
 	$GalleryButton/Count.text = "%d/%d endings" % [SaveManager.get_unlocked_ending_count(), Catalog.ENDINGS.size()]
@@ -27,7 +28,9 @@ func _on_gallery_pressed() -> void:
 	add_child(gallery)
 
 func _on_new_game_pressed():
-	# Call our new Autoload to handle the fade and load!
+	if SceneTransition.is_transitioning:
+		return
+	SoundEffects.play("play")
 	SceneTransition.change_scene("res://scene/slots_menu.tscn")
 
 func _on_settings_pressed():

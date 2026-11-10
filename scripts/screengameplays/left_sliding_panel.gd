@@ -70,6 +70,8 @@ var note_tween: Tween
 # READY
 # -----------------------------
 func _ready():
+	SoundEffects.set_button_sound(legit_button, "")
+	SoundEffects.set_button_sound(sus_button, "")
 	self.visible = true # Force it to show up!
 	is_open = false
 	position.x = -panel_width # Ensure it starts tucked away so the grip button is clickable
@@ -424,6 +426,7 @@ func _on_sus_pressed():
 func submit_answer(answer):
 	if is_transitioning or review_finished or current_index >= applicants.size():
 		return
+	SoundEffects.play("accepted" if answer == "legit" else "rejected")
 	is_transitioning = true
 	set_review_controls_enabled(false)
 	var current_applicant = applicants[current_index]

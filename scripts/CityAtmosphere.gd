@@ -43,6 +43,7 @@ func _ready() -> void:
 
 	var day: int = SaveManager.current_save_data.get("current_day", 1)
 	_rainy = SaveManager.get_weather_rain_for_day(day)
+	_start_ambience()
 	_configure_wet_road()
 	_configure_lamp_glow()
 	_configure_post_process()
@@ -54,6 +55,17 @@ func _ready() -> void:
 	_make_birds()
 	if _rainy:
 		_make_rain()
+
+func _start_ambience() -> void:
+	var ambience := AudioStreamPlayer.new()
+	ambience.name = "WeatherAmbience"
+	ambience.bus = &"SFX"
+	ambience.volume_db = -12.0
+	var path := "res://assets/music/sfx/Rain.mp3" if _rainy else "res://assets/music/mixkit-birds-chirping-near-the-river-2473.wav"
+	ambience.stream = load(path) as AudioStream
+	add_child(ambience)
+	ambience.finished.connect(ambience.play)
+	ambience.play()
 
 func _configure_wet_road() -> void:
 	var map := get_node_or_null("../Map")

@@ -1,0 +1,22 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+AUDIO_TEST_USER_DIR=C:/Users/mart/Desktop/train-or-fail-demo-(copy)/.godot/audio-review/userdata/Godot/app_userdata/TrainOrFail Demo (Copy)
+WARNING: This control can't grab focus. Use set_focus_mode() and set_focus_behavior_recursive() to allow a control to get focus.
+   at: grab_focus (scene/gui/control.cpp:3011)
+   GDScript backtrace (most recent call first):
+       [0] _return_to_entries (res://scripts/EndingGallery.gd:76)
+       [1] _run (res://.godot/audio-review/smoke.gd:145)
+EXPECTED_LOAD_FAILURE_BEGIN
+ERROR: Cannot open file 'res://scene/audio_test_missing_scene.tscn'.
+   at: load (scene/resources/resource_format_text.cpp:1442)
+ERROR: Failed loading resource: res://scene/audio_test_missing_scene.tscn.
+   at: _load (core/io/resource_loader.cpp:317)
+ERROR: Could not load scene res://scene/audio_test_missing_scene.tscn (error 1)
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _finish_failed_load (res://scripts/SceneTransition.gd:120)
+       [1] change_scene (res://scripts/SceneTransition.gd:88)
+EXPECTED_LOAD_FAILURE_END
+AUDIO_SMOKE: 79 checks, 0 failures

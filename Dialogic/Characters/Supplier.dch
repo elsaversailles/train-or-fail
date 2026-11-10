@@ -1,0 +1,6 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": "",
+"display_name": "Medical Supplier",
+"color": Color(1, 1, 1, 1)
+}

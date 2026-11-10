@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b1dpr3f3b1i2r"
+path="res://.godot/imported/loading screen.mp3-b944356a3fd81bc1147f80f4c0ed0f07.mp3str"
+
+[deps]
+
+source_file="res://assets/music/loading screen.mp3"
+dest_files=["res://.godot/imported/loading screen.mp3-b944356a3fd81bc1147f80f4c0ed0f07.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

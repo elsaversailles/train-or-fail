@@ -88,6 +88,12 @@ main_menu.tscn
                           └── GameFinishedPanel (Endings 1–6)
 ```
 
+## Audio
+
+`GameMusic` selects the new tracks in `assets/music/game music`: Main Menu for menus, Lobby for the office lobby, Elevator for the elevator, Gameplay for all three departments, Overworld for travel and the apartment, and Bad Ending for Terminated. Music loops, including the three randomly selected loading-screen tracks. Closing ending previews restores the previous music context.
+
+Settings provides saved Master, Music, and Sound Effects levels; 0% mutes the corresponding bus. `SoundEffects` handles the new button, save, decision, inspection, and slider sounds through SFX, alongside rain/bird ambience. The original floppy disk sound and playback remain unchanged and continue to follow Master volume. The bird WAV uses a standard PCM header for Godot compatibility; its audio samples are unchanged.
+
 ## Walking animation preview
 
 Open `res://scene/walk_preview.tscn` and press **F6** (Run Current Scene) to try Adrian's looping, in-place walk. Drag the background or use the arrow keys to orbit; **Front** and **Side** switch views. **Space** pauses/resumes, **R** restarts, and the speed slider adjusts playback from 0.25x to 1.5x.

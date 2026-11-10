@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://2hpcln4wrg7"
+path="res://.godot/imported/spinning char inpect button.mp3-653c8fe62738ee9bef3813ae4e67ca96.mp3str"
+
+[deps]
+
+source_file="res://assets/music/sfx/spinning char inpect button.mp3"
+dest_files=["res://.godot/imported/spinning char inpect button.mp3-653c8fe62738ee9bef3813ae4e67ca96.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

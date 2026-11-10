@@ -1,4 +1,4 @@
-res://scene/pause_panel.tscn
+res://scene/office_lobby.tscn
 res://theme/game_theme.tres
 res://shader/atmosphere_sky.gdshader
 res://theme/review_icon_buttons.tres

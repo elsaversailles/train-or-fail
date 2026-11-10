@@ -27,6 +27,6 @@ func handle_day1_intro() -> void:
 	Dialogic.start(day1_intro_timeline)
 	await Dialogic.timeline_ended
 
-	# 4. Release player controls so they can walk toward Jordan
+	# 4. Release player controls so they can walk toward the supervisor
 	if player and "is_in_dialogue" in player:
 		player.is_in_dialogue = false

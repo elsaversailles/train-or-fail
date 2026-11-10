@@ -19,7 +19,7 @@ warnings/check_angle_interpolation_type_conflicting=false
 config/name="TrainOrFail Demo (Copy)"
 run/main_scene="uid://crev2inf1u6xe"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://c8jruco16bm7m"
 
 [audio]
 
@@ -30,6 +30,8 @@ buses/default_bus_layout="res://assets/music/default_bus_layout.tres"
 Database="*uid://dobteaufurtes"
 SaveManager="*uid://bwqfj2w5sixej"
 SettingsManager="*uid://csyt0p5ar44py"
+GameMusic="*res://scripts/GameMusic.gd"
+SoundEffects="*res://scripts/SoundEffects.gd"
 SceneTransition="*uid://c2wvsl3rgk8l7"
 DialogManager="*uid://nb4suyvp8km4"
 Dialogic="*uid://ds2q0uclmolvu"
@@ -37,7 +39,17 @@ EndingShortcuts="*res://scripts/EndingShortcuts.gd"
 
 [dialogic]
 
-directories/dch_directory={}
+directories/dch_directory={
+"Assistant": "res://Dialogic/Characters/Assistant.dch",
+"Cashier": "res://Dialogic/Characters/Cashier.dch",
+"Clara": "res://Dialogic/Characters/Clara.dch",
+"Grandpa": "res://Dialogic/Characters/Grandpa.dch",
+"Jericho": "res://Dialogic/Characters/Jericho.dch",
+"Joice": "res://Dialogic/Characters/Joice.dch",
+"Mark": "res://Dialogic/Characters/Mark.dch",
+"Supervisor": "res://Dialogic/Characters/Supervisor.dch",
+"Supplier": "res://Dialogic/Characters/Supplier.dch"
+}
 directories/dtl_directory={
 "Quiet Days1": "res://Dialogic/Timelines/Quiet Days1.dtl",
 "Quiet Days2": "res://Dialogic/Timelines/Quiet Days2.dtl",

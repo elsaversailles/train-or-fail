@@ -22,7 +22,7 @@ func _on_body_entered(body: Node3D) -> void:
 			play_callout("Hey hey hey, Your work now is almost complete and you’ll be regular in a few more training sessions, just like me!")
 
 func play_callout(message: String) -> void:
-	# 1. Rotate Jordan toward the approaching player
+	# 1. Rotate the supervisor toward the approaching player
 	var player = get_tree().get_first_node_in_group("player")
 	if supervisor_npc and player:
 		var target_pos = player.global_position
