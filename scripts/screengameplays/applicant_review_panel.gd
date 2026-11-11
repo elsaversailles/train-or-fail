@@ -21,6 +21,18 @@ var _shutdown_button_home: Vector2
 var _shutdown_requested: bool = false
 
 
+func format_note_bullets(note: String) -> String:
+	var sentence_breaks := RegEx.new()
+	sentence_breaks.compile("(?<=[.!?])\\s+(?=[A-Z])")
+	var lines := sentence_breaks.sub(note, "\n", true).split("\n", false)
+	var bullets := PackedStringArray()
+	for line in lines:
+		var entry := line.strip_edges()
+		if not entry.is_empty():
+			bullets.append(entry if entry.begins_with("• ") else "• " + entry)
+	return "\n".join(bullets)
+
+
 func setup_review_transitions(container: Node3D, end_button: Button) -> void:
 	_model_container = container
 	_model_home_position = container.global_position

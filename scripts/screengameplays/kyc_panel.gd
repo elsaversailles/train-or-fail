@@ -243,7 +243,7 @@ func load_applicant(index):
 	
 	# Load KYC note (checks "kyc_note" first for shared characters like Mark Krazy, then "note")
 	var applicant_note = data.get("kyc_note", data.get("note", "No additional notes for this customer."))
-	note_text_label.text = str(applicant_note)
+	note_text_label.text = format_note_bullets(str(applicant_note))
 	close_note_immediately()
 	
 	spawn_3d_model(data["model_scene"])

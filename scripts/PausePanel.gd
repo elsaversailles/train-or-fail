@@ -18,6 +18,22 @@ func _ready() -> void:
 	if tutorial_panel:
 		tutorial_panel.visible = false
 
+func _unhandled_input(event: InputEvent) -> void:
+	if not is_visible_in_tree() or not get_tree().paused:
+		return
+	if not event.is_action_pressed("ui_cancel") or event.is_echo():
+		return
+	# Consume Esc before resuming so the player cannot pause again on this event.
+	get_viewport().set_input_as_handled()
+	if tutorial_panel.visible:
+		tutorial_panel.hide()
+	elif confirm_quit_panel.visible:
+		confirm_quit_panel.hide()
+	elif settings_panel.visible:
+		settings_panel.hide()
+	else:
+		_on_resume_pressed()
+
 func _on_resume_pressed() -> void:
 	if player:
 		settings_panel.visible = false

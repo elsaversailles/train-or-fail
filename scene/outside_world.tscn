@@ -220,7 +220,7 @@ omni_attenuation = 0.8
 [node name="Player" parent="." unique_id=2061402672 groups=["player"] instance=ExtResource("3_ma6ok")]
 transform = Transform3D(0.018174676, 0, -0.99983484, 0, 1, 0, 0.99983484, 0, 0.018174676, -230.04721, 0.54213715, 139.29137)
 collision_layer = 3
-speed = 30.0
+speed = 20.0
 
 [node name="Map" parent="." unique_id=1112612333 instance=ExtResource("3_tv3p0")]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
@@ -689,7 +689,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0332794, 0.32470703, -14.38
 shape = SubResource("BoxShape3D_urwcn")
 
 [node name="Marker3D" type="Marker3D" parent="BakeryDecisionTrigger" unique_id=2106384878]
-transform = Transform3D(-0.7273433, 0, -0.6862738, 0, 1, 0, 0.6862738, 0, -0.7273433, -8.513077, 8.475225, -15.726983)
+transform = Transform3D(-0.7273433, 0, -0.6862738, 0, 1, 0, 0.6862738, 0, -0.7273433, -1.303833, 8.475226, -23.54004)
 
 [node name="HospitalDecisionTrigger" type="Area3D" parent="." unique_id=1672839249 node_paths=PackedStringArray("caution_tape", "shop_npcs", "camera_anchor")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -208.51784, -1.9073486e-06, 120.11512)
@@ -708,7 +708,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.929306, 0.2849121, -7.048
 shape = SubResource("BoxShape3D_jvih8")
 
 [node name="Marker3D" type="Marker3D" parent="HospitalDecisionTrigger" unique_id=1513566932]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -20.45227, 11.258928, 18.979362)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -20.45227, 11.258928, 31.854195)
 
 [node name="DealershipDecisionTrigger" type="Area3D" parent="." unique_id=1864919116 node_paths=PackedStringArray("caution_tape", "shop_npcs", "camera_anchor")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -114.842255, 0, 8.267204)
@@ -727,7 +727,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1018524, 0.6274414, -7.258
 shape = SubResource("BoxShape3D_jv1ba")
 
 [node name="Marker3D" type="Marker3D" parent="DealershipDecisionTrigger" unique_id=1446886740]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.9222717, 10.676938, -17.29637)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -11.618774, 10.676938, -17.29637)
 
 [node name="NpcPatrolRoutes" parent="." unique_id=1078312032 instance=ExtResource("36_paths")]
 

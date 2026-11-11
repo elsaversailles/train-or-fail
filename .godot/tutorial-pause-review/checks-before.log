@@ -1,0 +1,51 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+HARNESS STARTED
+ERROR: FD: Resume button did not resume tutorial
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://checks.gd:23)
+       [1] test_department (res://checks.gd:137)
+ERROR: FD: resumed tutorial click did not finish text
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://checks.gd:23)
+       [1] test_department (res://checks.gd:140)
+ERROR: FD: resumed tutorial could not advance
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://checks.gd:23)
+       [1] test_department (res://checks.gd:142)
+ERROR: KYC: Resume button did not resume tutorial
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://checks.gd:23)
+       [1] test_department (res://checks.gd:137)
+ERROR: KYC: resumed tutorial click did not finish text
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://checks.gd:23)
+       [1] test_department (res://checks.gd:140)
+ERROR: KYC: resumed tutorial could not advance
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://checks.gd:23)
+       [1] test_department (res://checks.gd:142)
+ERROR: CS: Resume button did not resume tutorial
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://checks.gd:23)
+       [1] test_department (res://checks.gd:137)
+ERROR: CS: resumed tutorial click did not finish text
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://checks.gd:23)
+       [1] test_department (res://checks.gd:140)
+ERROR: CS: resumed tutorial could not advance
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://checks.gd:23)
+       [1] test_department (res://checks.gd:142)
+Tutorial pause checks: 56 checks, 9 failures

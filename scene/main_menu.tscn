@@ -13,15 +13,15 @@
 [ext_resource type="PackedScene" uid="uid://eb3my6rwhod3" path="res://scene/settings_panel.tscn" id="8_dclss"]
 [ext_resource type="Texture2D" uid="uid://1xgf1ktya7y3" path="res://images/MainMenu/buttons/AboutUsPressed.png" id="9_os2d6"]
 [ext_resource type="Texture2D" uid="uid://4l74d3tj8vxx" path="res://images/MainMenu/buttons/QuitPressed.png" id="11_v0h3m"]
-[ext_resource type="Texture2D" path="res://images/MainMenu/Gallery.png" id="15_gallery"]
-[ext_resource type="FontFile" path="res://assets/fonts/IBMPlexMono-Regular.ttf" id="16_mono"]
+[ext_resource type="Texture2D" uid="uid://uwvlh3eaeey4" path="res://images/MainMenu/Gallery.png" id="15_gallery"]
+[ext_resource type="FontFile" uid="uid://cr0as831oignr" path="res://assets/fonts/IBMPlexMono-Regular.ttf" id="16_mono"]
 
 [sub_resource type="StyleBoxFlat" id="Style_gallery"]
 bg_color = Color(0.92, 0.93, 0.95, 0.96)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
-corner_radius_bottom_left = 6
 corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 shadow_color = Color(0.03, 0.04, 0.07, 0.35)
 shadow_size = 3
 shadow_offset = Vector2(0, 2)
@@ -30,8 +30,8 @@ shadow_offset = Vector2(0, 2)
 bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
-corner_radius_bottom_left = 6
 corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [node name="CanvasLayer2" type="CanvasLayer" unique_id=502315201]
 
@@ -75,45 +75,45 @@ grow_vertical = 2
 texture = ExtResource("3_ictww")
 
 [node name="New Game" type="TextureButton" parent="Main Menu/Buttons" unique_id=899672900]
-tooltip_text = "Choose a save slot to start or continue your career."
 layout_mode = 0
 offset_left = 790.0
 offset_top = 374.0
 offset_right = 1022.0
 offset_bottom = 423.0
+tooltip_text = "Choose a save slot to start or continue your career."
 texture_normal = ExtResource("2_14wem")
 texture_pressed = ExtResource("5_1o50l")
 texture_hover = ExtResource("5_1o50l")
 
 [node name="Settings" type="TextureButton" parent="Main Menu/Buttons" unique_id=219807164]
-tooltip_text = "Adjust volume, display, graphics, and mouse sensitivity."
 layout_mode = 0
 offset_left = 790.0
 offset_top = 423.0
 offset_right = 1021.0
 offset_bottom = 480.0
+tooltip_text = "Adjust volume, display, graphics, and mouse sensitivity."
 texture_normal = ExtResource("4_dclss")
 texture_pressed = ExtResource("7_os2d6")
 texture_hover = ExtResource("7_os2d6")
 
 [node name="About Us" type="TextureButton" parent="Main Menu/Buttons" unique_id=736518455]
-tooltip_text = "View the game credits."
 layout_mode = 0
 offset_left = 790.0
 offset_top = 473.0
 offset_right = 1021.0
 offset_bottom = 530.0
+tooltip_text = "View the game credits."
 texture_normal = ExtResource("7_cht4j")
 texture_pressed = ExtResource("9_os2d6")
 texture_hover = ExtResource("9_os2d6")
 
 [node name="Quit" type="TextureButton" parent="Main Menu/Buttons" unique_id=1688574072]
-tooltip_text = "Close the game and return to your desktop."
 layout_mode = 0
 offset_left = 790.0
 offset_top = 520.0
 offset_right = 1018.0
 offset_bottom = 577.0
+tooltip_text = "Close the game and return to your desktop."
 texture_normal = ExtResource("6_ictww")
 texture_pressed = ExtResource("11_v0h3m")
 texture_hover = ExtResource("11_v0h3m")
@@ -126,20 +126,21 @@ offset_right = 1104.0
 offset_bottom = 279.0
 texture = ExtResource("7_1o50l")
 
-[node name="GalleryButton" type="Button" parent="Main Menu"]
+[node name="GalleryButton" type="Button" parent="Main Menu" unique_id=1899117653]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 180.0
 offset_bottom = 82.0
 tooltip_text = "Open the endings gallery."
-accessibility_name = "Endings gallery"
 mouse_default_cursor_shape = 2
+accessibility_name = "Endings gallery"
 theme_override_styles/normal = SubResource("Style_gallery")
-theme_override_styles/hover = SubResource("Style_gallery_hover")
 theme_override_styles/pressed = SubResource("Style_gallery_hover")
+theme_override_styles/hover = SubResource("Style_gallery_hover")
 
-[node name="Icon" type="TextureRect" parent="Main Menu/GalleryButton"]
+[node name="Icon" type="TextureRect" parent="Main Menu/GalleryButton" unique_id=729013343]
+layout_mode = 0
 offset_left = 9.0
 offset_top = 9.0
 offset_right = 65.0
@@ -149,22 +150,22 @@ texture = ExtResource("15_gallery")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Title" type="Label" parent="Main Menu/GalleryButton"]
+[node name="Title" type="Label" parent="Main Menu/GalleryButton" unique_id=1570072042]
+layout_mode = 0
 offset_left = 71.0
 offset_top = 2.0
 offset_right = 151.0
 offset_bottom = 37.0
-mouse_filter = 2
 theme_override_colors/font_color = Color(0.12, 0.15, 0.19, 1)
 theme_override_font_sizes/font_size = 25
 text = "Gallery"
 
-[node name="Count" type="Label" parent="Main Menu/GalleryButton"]
+[node name="Count" type="Label" parent="Main Menu/GalleryButton" unique_id=1919810317]
+layout_mode = 0
 offset_left = 72.0
 offset_top = 36.0
 offset_right = 159.0
 offset_bottom = 55.0
-mouse_filter = 2
 theme_override_colors/font_color = Color(0.22, 0.26, 0.31, 1)
 theme_override_fonts/font = ExtResource("16_mono")
 theme_override_font_sizes/font_size = 12

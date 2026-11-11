@@ -189,7 +189,7 @@ var kyc_applicants: Array = [
 		"name": "Teresa Lim",
 		"model_scene": preload("res://models3d/characters/F/teresa_lim.tscn"),
 		"id_image": preload("res://images/applicants info/KYC/a4/a4_id.png"),
-		"kyc_correct": "legit",
+		"kyc_correct": "sus",
 		"ai_risk_factor": "12%",
 		"note": "Valid identification card presented. Biometric profile and signature match existing bank records."
 	},
@@ -198,9 +198,9 @@ var kyc_applicants: Array = [
 		"name": "Miguel Reyes",
 		"model_scene": preload("res://models3d/characters/M/miguel_reyes.tscn"),
 		"id_image": preload("res://images/applicants info/KYC/a5/a5_id.png"),
-		"kyc_correct": "legit",
+		"kyc_correct": "sus",
 		"ai_risk_factor": "15%",
-		"note": "Address and date of birth verified against municipal database. ID card is active and authentic."
+		"note": "ID card is active and authentic."
 	},
 	{
 		"id": "kyc_a6",

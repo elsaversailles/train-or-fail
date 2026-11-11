@@ -55,6 +55,9 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 17.5
 collision_layer = 3
 speed = 10.0
 
+[node name="RayCast3D" parent="Player/Head/Camera3D" parent_id_path=PackedInt32Array(2061402672, 1644174975) index="0" unique_id=1819240192]
+target_position = Vector3(0, 0, -4)
+
 [node name="OfficeLobby2" parent="." unique_id=248703940 instance=ExtResource("2_oauyh")]
 transform = Transform3D(0.985, 0, 0, 0, 0.985, 0, 0, 0, 0.985, 0, 0, 0)
 
@@ -158,3 +161,5 @@ shape = SubResource("BoxShape3D_rhla1")
 [connection signal="body_entered" from="ElevetorDoor" to="ElevetorDoor" method="_on_body_entered"]
 [connection signal="body_exited" from="ElevetorDoor" to="ElevetorDoor" method="_on_body_exited"]
 [connection signal="body_entered" from="TriggerSupervisor" to="TriggerSupervisor" method="_on_body_entered"]
+
+[editable path="Player"]

@@ -1,0 +1,18 @@
+config_version=5
+
+[application]
+config/name="Tutorial pause regression checks"
+run/main_scene="res://checks.tscn"
+
+[autoload]
+Dialogic="*res://dialogic_stub.gd"
+SettingsManager="*res://settings_stub.gd"
+SceneTransition="*res://transition_stub.gd"
+
+[display]
+window/size/viewport_width=1152
+window/size/viewport_height=720
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+

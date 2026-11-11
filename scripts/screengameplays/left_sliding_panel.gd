@@ -361,7 +361,7 @@ func load_applicant(index):
 	applicant_label.text = "Applicant %d / %d" % [index + 1, applicants.size()]
 	
 	# Load applicant's note text and make sure the popup starts closed
-	note_text_label.text = str(data.get("note", "No additional notes for this applicant."))
+	note_text_label.text = format_note_bullets(str(data.get("note", "No additional notes for this applicant.")))
 	close_note_immediately()
 
 	reset_image_positions()
@@ -452,9 +452,9 @@ func submit_answer(answer):
 	if current_index < applicants.size():
 		load_applicant(current_index)
 		await slide_applicant_in()
+		await set_panel_open(true).finished
 		is_transitioning = false
 		set_review_controls_enabled(true)
-		stop_grip_glow(true)
 	else:
 		await finish_applicants()
 

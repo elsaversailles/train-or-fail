@@ -27,6 +27,7 @@ var is_in_dialogue: bool = false
 var interaction_label: Label = null
 var crosshair: Control = null
 var pause_panel: Panel = null
+var _paused_tutorial: Control = null
 
 func _ready() -> void:
 	add_to_group("player")
@@ -163,7 +164,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	if SceneTransition.is_transitioning:
 		return
 
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("ui_cancel") and not event.is_echo():
+		get_viewport().set_input_as_handled()
 		handle_escape()
 		return
 
@@ -171,30 +173,41 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event is InputEventMouseMotion:
 			rotate_look(event.relative)
 
-func handle_escape() -> void: 
-	var tutorial = get_tree().current_scene.get_node_or_null("CanvasLayer/FDTutorial")
-	if tutorial and tutorial.visible:
-		return
-	
-	if Dialogic.current_timeline != null:
-		return
+func _get_visible_department_tutorial() -> Control:
+	var scene := get_tree().current_scene
+	if not scene:
+		return null
+	for tutorial_name in ["FDTutorial", "KYCTutorial", "CSTutorial"]:
+		var tutorial := scene.get_node_or_null("CanvasLayer/" + tutorial_name) as Control
+		if tutorial and not tutorial.is_queued_for_deletion() and tutorial.is_visible_in_tree():
+			return tutorial
+	return null
 
-	if is_focusing_screen:
-		release_computer_focus()
+func handle_escape() -> void:
+	if Dialogic.current_timeline != null:
 		return
 
 	if is_paused:
 		resume_game()
+	elif is_focusing_screen and not _get_visible_department_tutorial():
+		release_computer_focus()
 	else:
 		pause_game()
 
 func pause_game() -> void:
-	if is_focusing_screen:
+	if not is_instance_valid(pause_panel) or get_tree().paused:
+		return
+	var tutorial := _get_visible_department_tutorial()
+	if is_focusing_screen and not tutorial:
 		return
 
+	# Tutorial artwork is on a higher canvas layer than the pause menu.
+	# Keep its current page and timer intact while the scene tree is paused.
+	_paused_tutorial = tutorial
+	if _paused_tutorial:
+		_paused_tutorial.hide()
 	is_paused = true
-	if pause_panel:
-		pause_panel.visible = true
+	pause_panel.visible = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().paused = true
 	update_gameplay_ui()
@@ -203,7 +216,10 @@ func resume_game() -> void:
 	is_paused = false
 	if pause_panel:
 		pause_panel.visible = false
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	if is_instance_valid(_paused_tutorial) and not _paused_tutorial.is_queued_for_deletion():
+		_paused_tutorial.show()
+	_paused_tutorial = null
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE if is_focusing_screen else Input.MOUSE_MODE_CAPTURED)
 	get_tree().paused = false
 	update_gameplay_ui()
 

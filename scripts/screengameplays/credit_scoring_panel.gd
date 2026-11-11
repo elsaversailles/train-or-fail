@@ -207,9 +207,9 @@ func _on_submit():
 	if current_case_index < applicants_list.size():
 		load_applicant()
 		await slide_applicant_in()
+		await set_panel_open(true).finished
 		is_transitioning = false
 		set_review_controls_enabled(true)
-		stop_grip_glow(true)
 	else:
 		await finish_game()
 
