@@ -1,5 +1,7 @@
 extends "res://scripts/screengameplays/applicant_review_panel.gd"
 
+const CREDIT_CATEGORIES: Array[String] = ["Rejected", "Low", "Medium", "Medium", "High", "High"]
+
 # --- PANEL SETTINGS (RIGHT-TO-LEFT) ---
 var is_open: bool = false
 var panel_width: float = 900.0
@@ -17,7 +19,6 @@ var current_case_index: int = 0
 var actual_score: float = 1.0
 var total_correct_answers: int = 0
 var is_rejected: bool = false
-var final_credit_amount: int = 0
 
 # --- UI REFERENCES ---
 @onready var grip_button = $Panel/GripButton
@@ -120,21 +121,20 @@ func set_review_controls_enabled(enabled: bool) -> void:
 func _on_reject_pressed():
 	if is_transitioning or review_finished:
 		return
-	is_rejected = true
-	final_credit_amount = 0
 	slider.set_value_no_signal(0.0)
-	credit_score_label.text = "Proposed Credit: $0 (REJECTED)"
-	reject_button.button_pressed = true
+	_update_credit_selection(0.0)
 
 func _on_slider_value_changed(value: float):
 	if is_transitioning or review_finished:
 		return
-	if value > 0.0:
-		is_rejected = false
-		reject_button.button_pressed = false
+	_update_credit_selection(value)
 
-	var display_score = int(lerp(0, 10000, value))
-	credit_score_label.text = "Proposed Credit: $" + str(display_score)
+func _update_credit_selection(value: float) -> void:
+	# The slider has six positions, from 0 to 1 in increments of 0.2.
+	var category_index := clampi(roundi(value * 5.0), 0, CREDIT_CATEGORIES.size() - 1)
+	is_rejected = category_index == 0
+	reject_button.set_pressed_no_signal(is_rejected)
+	credit_score_label.text = "Proposed Credit: " + CREDIT_CATEGORIES[category_index]
 
 # ==========================================
 # APPLICANT EVALUATION LOOP
@@ -147,9 +147,7 @@ func load_applicant():
 
 	# Reset selection state
 	slider.set_value_no_signal(0.0)
-	is_rejected = false
-	reject_button.button_pressed = false
-	credit_score_label.text = "Proposed Credit: $0"
+	_update_credit_selection(0.0)
 
 	var data = applicants_list[current_case_index]
 
@@ -221,7 +219,6 @@ func finish_game():
 	submit_button.hide()
 	reject_button.hide()
 	slider.hide()
-	$Panel/Label.hide()
 	$Panel/TabContainer.hide()
 	$Panel/AIRiskLabel.hide()
 	ai_risk_value_label.hide()

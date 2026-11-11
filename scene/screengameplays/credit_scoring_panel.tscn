@@ -79,7 +79,8 @@ offset_top = 63.0
 offset_right = -154.69617
 offset_bottom = -185.0
 grow_vertical = 2
-tooltip_text = "Drag to set the proposed credit from $0 to $10,000.
+tooltip_text = "0 = Rejected; 0.2 = Low.
+0.4 or 0.6 = Medium; 0.8 or 1.0 = High.
 Use Submit to confirm your assessment."
 theme_override_icons/grabber = ExtResource("3_122qi")
 theme_override_icons/grabber_highlight = ExtResource("3_122qi")
@@ -240,7 +241,7 @@ offset_right = -68.27214
 offset_bottom = -38.0
 grow_horizontal = 2
 grow_vertical = 2
-tooltip_text = "Confirm the current credit amount or rejection
+tooltip_text = "Confirm the current credit score or rejection
 and move to the next applicant."
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -292,22 +293,6 @@ offset_right = 325.0
 offset_bottom = 454.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 
-[node name="Label" type="Label" parent="Panel" unique_id=2023006502]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 117.0
-offset_top = 10.0
-offset_right = -592.0005
-offset_bottom = -576.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "$0 to $10,000"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="RejectButton" type="Button" parent="Panel" unique_id=566334260]
 layout_mode = 1
 anchors_preset = 15
@@ -319,7 +304,7 @@ offset_right = -640.00055
 offset_bottom = -37.0
 grow_horizontal = 2
 grow_vertical = 2
-tooltip_text = "Mark this application for rejection with $0 credit.
+tooltip_text = "Set the credit score to 0 (Rejected).
 Submit to confirm, or raise the slider to change it."
 theme_override_styles/normal = SubResource("StyleBoxTexture_t70an")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_xghf2")
@@ -335,14 +320,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 41.0
 offset_top = 491.0
-offset_right = -745.0005
+offset_right = -604.0005
 offset_bottom = -105.999756
 grow_horizontal = 2
 grow_vertical = 2
-tooltip_text = "Your proposed credit amount for this applicant.
+tooltip_text = "Your proposed credit category for this applicant.
 It is only confirmed when you submit."
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Proposed Credit: Rejected"
 horizontal_alignment = 1
 
 [node name="AIRiskLabel" type="Label" parent="Panel" unique_id=829872804]

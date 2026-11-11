@@ -1,0 +1,4 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Script" path="res://.godot/lobby_bubble_preview.gd" id="1"]
+[node name="LobbyBubblePreview" type="Node"]
+script = ExtResource("1")

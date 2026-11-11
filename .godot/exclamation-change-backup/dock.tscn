@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://djh1iqb3yvvm0"]
+
+[ext_resource type="Script" uid="uid://dwm05id52hvnr" path="res://scripts/Dock.gd" id="1_pcdpp"]
+[ext_resource type="PackedScene" uid="uid://drkya446h6odi" path="res://scene/world_environment.tscn" id="1_xwk6m"]
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scene/character.tscn" id="2_k3b8n"]
+[ext_resource type="PackedScene" uid="uid://ohta1txhbs1d" path="res://scene/map.tscn" id="2_yeqg6"]
+[ext_resource type="Shader" uid="uid://w5f46qhaithg" path="res://shader/ocean.gdshader" id="3_k3b8n"]
+[ext_resource type="Script" uid="uid://ev001u2qovy5" path="res://scripts/ocean.gd" id="4_rm8ik"]
+[ext_resource type="PackedScene" uid="uid://byja7bqb6ree5" path="res://models3d/characters/M/grandpa.tscn" id="6_rm8ik"]
+[ext_resource type="PackedScene" uid="uid://bx7scsfg2nivv" path="res://scene/pause_panel.tscn" id="7_vut38"]
+[ext_resource type="PackedScene" uid="uid://cv87ukpeiw7cp" path="res://scene/crosshair.tscn" id="8_yvk5q"]
+[ext_resource type="PackedScene" uid="uid://bia3kpprkjk83" path="res://scene/waypoint_marker.tscn" id="9_ad2xu"]
+[ext_resource type="Script" uid="uid://ca5dk0dgimda5" path="res://scripts/dialogue/GrandpaDock.gd" id="10_ad2xu"]
+[ext_resource type="PackedScene" uid="uid://dci8u0ys21qui" path="res://scene/npc_dialogue_box.tscn" id="11_pcdpp"]
+[ext_resource type="PackedScene" uid="uid://d4g6r4vgp2gvs" path="res://assets/Boat/boat.glb" id="13_ipjyd"]
+[ext_resource type="Script" uid="uid://bd6wnr7fojlq0" path="res://scripts/BoatFloat.gd" id="14_4evvr"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ew6px"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bocmh"]
+noise = SubResource("FastNoiseLite_ew6px")
+seamless = true
+as_normal_map = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_afmyx"]
+render_priority = 0
+shader = ExtResource("3_k3b8n")
+shader_parameter/albedo = Color(0, 0.35686275, 0.64705884, 1)
+shader_parameter/albedo_texture_size = Vector2i(0, 0)
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 0.4
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/texture_refraction = SubResource("NoiseTexture2D_bocmh")
+shader_parameter/refraction = 0.05
+shader_parameter/refraction_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_normal = SubResource("NoiseTexture2D_bocmh")
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/uv1_scale = Vector3(0.005, 0.005, 0.005)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vut38"]
+material = SubResource("ShaderMaterial_afmyx")
+size = Vector2(1000, 1000)
+subdivide_width = 64
+subdivide_depth = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_pcdpp"]
+font_size = 20
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_78pyd"]
+height = 2.309082
+
+[node name="dock" type="Node3D" unique_id=1764259884]
+script = ExtResource("1_pcdpp")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=18145260]
+transform = Transform3D(0.3420206, -0.53898525, 0.76975113, 0, 0.8191522, 0.5735762, -0.93969244, -0.19617487, 0.28016692, 0, 0, 0)
+light_color = Color(1, 0.83, 0.64, 1)
+light_energy = 1.2
+light_angular_distance = 0.53
+shadow_enabled = true
+shadow_opacity = 0.88
+shadow_blur = 1.3
+directional_shadow_mode = 1
+directional_shadow_split_1 = 0.22
+directional_shadow_max_distance = 85.0
+
+[node name="WorldEnvironment" parent="." unique_id=1060883038 instance=ExtResource("1_xwk6m")]
+
+[node name="Player" parent="." unique_id=2061402672 instance=ExtResource("2_k3b8n")]
+transform = Transform3D(-0.9999924, 0, 0.0039138375, 0, 1, 0, -0.0039138375, 0, -0.9999924, -136.50304, 0.5069642, -81.50294)
+
+[node name="Map" parent="." unique_id=1112612333 instance=ExtResource("2_yeqg6")]
+
+[node name="ocean" type="MeshInstance3D" parent="." unique_id=1338967688]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120.704, -5.221, -495.459)
+mesh = SubResource("PlaneMesh_vut38")
+script = ExtResource("4_rm8ik")
+
+[node name="PausePanel" parent="." unique_id=1179524455 instance=ExtResource("7_vut38")]
+
+[node name="CanvasLayer" parent="." unique_id=1382565654 instance=ExtResource("8_yvk5q")]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=238086775]
+anchor_right = 1.0
+offset_left = 35.0
+offset_top = 29.0
+offset_right = -35.0
+offset_bottom = 145.0
+mouse_filter = 2
+text = "W / A / S / D: Walk     Mouse: Look around
+Follow the marker to Grandpa.
+Stand nearby, look at him and press E to talk."
+label_settings = SubResource("LabelSettings_pcdpp")
+autowrap_mode = 3
+
+[node name="WaypointMarker" parent="CanvasLayer" unique_id=606989422 node_paths=PackedStringArray("target_override", "objective_label") instance=ExtResource("9_ad2xu")]
+target_override = NodePath("../../Grandpa")
+objective_label = NodePath("../Label")
+npc_vertical_offset = 4.2
+
+[node name="Grandpa" parent="." unique_id=1700817525 instance=ExtResource("6_rm8ik")]
+transform = Transform3D(-1.3971149, 0, -2.192731, 0, 2.6, 0, 2.192731, 0, -1.3971149, -126.52634, 0.24040908, -24.305641)
+
+[node name="NPCDialogueBox" parent="Grandpa" unique_id=1030725355 instance=ExtResource("11_pcdpp")]
+transform = Transform3D(0.5585767, 0, 0.9476241, 0, 1.0999999, 0, -0.9476241, 0, 0.5585767, 0.0002784729, 2.9314055, 1.1444092e-05)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Grandpa" unique_id=1098453599 groups=["special_npcs"]]
+transform = Transform3D(0.55857664, 0, 0.947624, 0, 1.1, 0, -0.947624, 0, 0.55857664, -0.055415154, 0.018606037, -0.011127472)
+script = ExtResource("10_ad2xu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Grandpa/StaticBody3D" unique_id=2107814763]
+transform = Transform3D(1.0000085, 0, -3.427267e-06, 0, 1, 0, 3.427267e-06, 0, 1.0000085, 0, 0.85275775, 0)
+shape = SubResource("CapsuleShape3D_78pyd")
+
+[node name="boat" parent="." unique_id=136603452 instance=ExtResource("13_ipjyd")]
+transform = Transform3D(0.053111248, 0, 3.9996474, 0, 4, 0, -3.9996474, 0, 0.053111248, -129.21454, -3.5991125, -95.855804)
+script = ExtResource("14_4evvr")
+
+[editable path="CanvasLayer"]

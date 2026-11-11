@@ -7,8 +7,14 @@ extends StaticBody3D
 
 var is_talking: bool = false
 
-func interact():
+func can_interact() -> bool:
 	if is_talking or Dialogic.current_timeline != null:
+		return false
+	var current_day: int = SaveManager.current_save_data.get("current_day", 1)
+	return current_day not in special_days and not generic_timelines.is_empty()
+
+func interact():
+	if not can_interact():
 		return
 
 	var current_day = SaveManager.current_save_data.get("current_day", 1)

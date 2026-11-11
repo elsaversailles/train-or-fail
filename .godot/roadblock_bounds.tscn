@@ -1,0 +1,6 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://.godot/roadblock_bounds.gd" id="1"]
+
+[node name="RoadblockBounds" type="Node"]
+script = ExtResource("1")

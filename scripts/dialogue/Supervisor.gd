@@ -1,5 +1,7 @@
 extends StaticBody3D
 
+signal dialogue_finished
+
 @export var objective_label: Label
 @export var model_needs_flip: bool = true
 
@@ -21,11 +23,16 @@ func _ready() -> void:
 	else:
 		set_objective_text("Enter in elevator")
 
-func interact():
-	var current_day = int(SaveManager.current_save_data.get("current_day", 1))
+func can_interact() -> bool:
+	if not can_talk or is_talking or Dialogic.current_timeline != null:
+		return false
+	var current_day := int(SaveManager.current_save_data.get("current_day", 1))
+	return current_day in [1, 4, 7]
 
-	if not can_talk or is_talking:
+func interact():
+	if not can_interact():
 		return
+	var current_day := int(SaveManager.current_save_data.get("current_day", 1))
 
 	# Day 1: General orientation
 	if current_day == 1:
@@ -55,6 +62,7 @@ func on_dialogue_finished() -> void:
 	is_talking = false
 	has_completed_dialogue = true
 	set_objective_text("Enter in elevator")
+	dialogue_finished.emit()
 
 func set_objective_text(new_text: String) -> void:
 	if objective_label:

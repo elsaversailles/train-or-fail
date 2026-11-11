@@ -1,6 +1,6 @@
+StaticBody3D
 Node3D
 CollisionShape3D
-StaticBody3D
 OmniLight3D
 SpotLight3D
 Node
@@ -12,4 +12,3 @@ Label
 TextureRect
 TextureButton
 Marker3D
-Area3D

@@ -1,0 +1,28 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+RIG res://models3d/characters/M/grandpa.tscn global transform [X: (0.391969, 0.0, 0.0), Y: (0.0, 0.391969, 0.0), Z: (0.0, 0.0, 0.391969), O: (0.0, 0.0, 0.0)] hand rest [X: (-0.316228, -0.0, -0.948683), Y: (-0.948683, -0.0, 0.316228), Z: (-0.0, 1.0, -0.0), O: (-1.651184, 3.394103, 0.0)]
+MESH /root/NpcGripInspect/Grandpa/Player/Skeleton3D/spine_006/GrandpaHair transform [X: (-0.0, -0.001553, 0.057022), Y: (-0.000714, 0.057017, 0.001553), Z: (-0.057039, -0.000714, -0.000019), O: (-0.0, 1.698068, -0.054699)] skeleton  skin <Object#null>
+MESH /root/NpcGripInspect/Grandpa/Player/Skeleton3D/spine_006/Hat transform [X: (0.046387, 0.0, 0.0), Y: (-0.0, 0.04637, 0.001263), Z: (-0.0, -0.001263, 0.04637), O: (0.0, 1.799253, 0.00808)] skeleton  skin <Object#null>
+MESH /root/NpcGripInspect/Grandpa/Player/Skeleton3D/spine_006/Moustache transform [X: (1.0, 0.0, 0.0), Y: (-0.0, 0.999629, 0.027232), Z: (-0.0, -0.027232, 0.999629), O: (-0.0, 1.542624, 0.101126)] skeleton  skin <Object#null>
+MESH /root/NpcGripInspect/Grandpa/Player/Skeleton3D/Body transform [X: (0.391969, 0.0, 0.0), Y: (0.0, 0.391969, 0.0), Z: (0.0, 0.0, 0.391969), O: (0.0, 0.0, 0.0)] skeleton .. skin Skin2 (res://assets/Applicants/newmodels/M/Grandpa.glb::Skin_sobyq):<Skin#-9223371917417772557>
+HAND BIND 14 [X: (-0.806768, -2.420304, -0.0), Y: (0.0, -0.0, 2.551224), Z: (-2.420304, 0.806768, -0.0), O: (-0.52215, -1.566451, -3.394102)]
+MESH /root/NpcGripInspect/Grandpa/Player/Skeleton3D/Pants transform [X: (0.391969, 0.0, 0.0), Y: (0.0, 0.391969, 0.0), Z: (0.0, 0.0, 0.391969), O: (0.0, 0.0, 0.0)] skeleton .. skin Skin2 (res://assets/Applicants/newmodels/M/Grandpa.glb::Skin_sobyq):<Skin#-9223371917417772557>
+HAND BIND 14 [X: (-0.806768, -2.420304, -0.0), Y: (0.0, -0.0, 2.551224), Z: (-2.420304, 0.806768, -0.0), O: (-0.52215, -1.566451, -3.394102)]
+MESH /root/NpcGripInspect/Grandpa/Player/Skeleton3D/Shoes transform [X: (0.391969, 0.0, 0.0), Y: (0.0, 0.391969, 0.0), Z: (0.0, 0.0, 0.391969), O: (0.0, 0.0, 0.0)] skeleton .. skin Skin2 (res://assets/Applicants/newmodels/M/Grandpa.glb::Skin_sobyq):<Skin#-9223371917417772557>
+HAND BIND 14 [X: (-0.806768, -2.420304, -0.0), Y: (0.0, -0.0, 2.551224), Z: (-2.420304, 0.806768, -0.0), O: (-0.52215, -1.566451, -3.394102)]
+MESH /root/NpcGripInspect/Grandpa/Player/Skeleton3D/Skin transform [X: (0.391969, 0.0, 0.0), Y: (0.0, 0.391969, 0.0), Z: (0.0, 0.0, 0.391969), O: (0.0, 0.0, 0.0)] skeleton .. skin Skin2 (res://assets/Applicants/newmodels/M/Grandpa.glb::Skin_sobyq):<Skin#-9223371917417772557>
+HAND BIND 14 [X: (-0.806768, -2.420304, -0.0), Y: (0.0, -0.0, 2.551224), Z: (-2.420304, 0.806768, -0.0), O: (-0.52215, -1.566451, -3.394102)]
+MESH /root/NpcGripInspect/Grandpa/Player/Skeleton3D/Vest transform [X: (0.391969, 0.0, 0.0), Y: (0.0, 0.391969, 0.0), Z: (0.0, 0.0, 0.391969), O: (0.0, 0.0, 0.0)] skeleton .. skin Skin2 (res://assets/Applicants/newmodels/M/Grandpa.glb::Skin_sobyq):<Skin#-9223371917417772557>
+HAND BIND 14 [X: (-0.806768, -2.420304, -0.0), Y: (0.0, -0.0, 2.551224), Z: (-2.420304, 0.806768, -0.0), O: (-0.52215, -1.566451, -3.394102)]
+RIG res://models3d/characters/F/nurse_clara_garcia.tscn global transform [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)] hand rest [X: (-0.316228, 0.0, -0.948683), Y: (-0.948683, 0.0, 0.316228), Z: (0.0, 1.0, 0.0), O: (-0.647213, 1.330382, -0.0)]
+MESH /root/NpcGripInspect/Nurse Clara Garcia/Player/Skeleton3D/spine_006/1PlayerHair_002 transform [X: (-0.0, -0.001553, 0.057022), Y: (-0.000714, 0.057017, 0.001553), Z: (-0.057039, -0.000714, -0.000019), O: (-0.0, 1.700316, -0.055855)] skeleton  skin <Object#null>
+MESH /root/NpcGripInspect/Nurse Clara Garcia/Player/Skeleton3D/FBody_010 transform [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)] skeleton .. skin Skin (res://assets/Applicants/newmodels/F/Nurse Clara Garcia.glb::Skin_ujt5k):<Skin#-9223371921746294341>
+HAND BIND 14 [X: (-0.316228, -0.948683, -0.0), Y: (0.0, -0.0, 1.0), Z: (-0.948683, 0.316228, -0.0), O: (-0.204667, -0.614, -1.330382)]
+MESH /root/NpcGripInspect/Nurse Clara Garcia/Player/Skeleton3D/FPants_010 transform [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)] skeleton .. skin Skin (res://assets/Applicants/newmodels/F/Nurse Clara Garcia.glb::Skin_ujt5k):<Skin#-9223371921746294341>
+HAND BIND 14 [X: (-0.316228, -0.948683, -0.0), Y: (0.0, -0.0, 1.0), Z: (-0.948683, 0.316228, -0.0), O: (-0.204667, -0.614, -1.330382)]
+MESH /root/NpcGripInspect/Nurse Clara Garcia/Player/Skeleton3D/FShoes_010 transform [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)] skeleton .. skin Skin (res://assets/Applicants/newmodels/F/Nurse Clara Garcia.glb::Skin_ujt5k):<Skin#-9223371921746294341>
+HAND BIND 14 [X: (-0.316228, -0.948683, -0.0), Y: (0.0, -0.0, 1.0), Z: (-0.948683, 0.316228, -0.0), O: (-0.204667, -0.614, -1.330382)]
+MESH /root/NpcGripInspect/Nurse Clara Garcia/Player/Skeleton3D/FSkin_010 transform [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)] skeleton .. skin Skin (res://assets/Applicants/newmodels/F/Nurse Clara Garcia.glb::Skin_ujt5k):<Skin#-9223371921746294341>
+HAND BIND 14 [X: (-0.316228, -0.948683, -0.0), Y: (0.0, -0.0, 1.0), Z: (-0.948683, 0.316228, -0.0), O: (-0.204667, -0.614, -1.330382)]

@@ -1,0 +1,7 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+Saved story decision for [category_low_test]: sus
+Saved story decision for [category_high_test]: legit
+CREDIT CATEGORY CHECKS: 124 passed, 0 failed

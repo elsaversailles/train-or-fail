@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://18450kxjv1jb"]
 
 [ext_resource type="Script" uid="uid://c8errk1gkmkay" path="res://scripts/Jeepney.gd" id="1_bjofe"]
-[ext_resource type="PackedScene" uid="uid://dqr7s4wcwt11s" path="res://assets/jeepney/ jeepney.glb" id="2_cq02p"]
+[ext_resource type="PackedScene" uid="uid://dqr7s4wcwt11s" path="res://assets/jeepney/jeepney.glb" id="2_cq02p"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jv1ba"]
 size = Vector3(1.5186424, 1.718689, 14.345154)

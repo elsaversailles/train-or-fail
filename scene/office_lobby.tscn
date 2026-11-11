@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://dci8u0ys21qui" path="res://scene/npc_dialogue_box.tscn" id="9_rhla1"]
 [ext_resource type="Script" uid="uid://ba4wqtr2kvmtd" path="res://scripts/TriggerSupervisorLobby.gd" id="10_pfttj"]
 [ext_resource type="Script" uid="uid://ddecuoqk1ext" path="res://scripts/LobbyWaitingNpcs.gd" id="11_waiting"]
+[ext_resource type="PackedScene" path="res://scene/exclamation.tscn" id="12_exclamation"]
+[ext_resource type="Script" path="res://scripts/LobbyObjectiveMarker.gd" id="13_objective_marker"]
 
 [sub_resource type="Environment" id="Environment_jv1ba"]
 
@@ -76,9 +78,22 @@ shape = SubResource("SphereShape3D_85j0d")
 [node name="Node3D" parent="ElevetorDoor" unique_id=306043952 instance=ExtResource("4_qqb2a")]
 transform = Transform3D(3.16, 0, 0, 0, 3.16, 0, 0, 0, 3.16, 0.9774933, 0.16135693, -1.3725195)
 
+[node name="WaypointAnchor" type="Marker3D" parent="ElevetorDoor"]
+position = Vector3(0.9774933, 0.96135693, -1.3725195)
+
 [node name="PausePanel" parent="." unique_id=1179524455 instance=ExtResource("4_oauyh")]
 
 [node name="CanvasLayer" parent="." unique_id=1382565654 instance=ExtResource("5_qqb2a")]
+
+[node name="Exclamation" parent="CanvasLayer" node_paths=PackedStringArray("target_override", "objective_label", "supervisor", "supervisor_bubble", "elevator") instance=ExtResource("12_exclamation")]
+visible = false
+script = ExtResource("13_objective_marker")
+target_override = NodePath("../../Supervisor")
+objective_label = NodePath("../Label")
+npc_vertical_offset = 4.8
+supervisor = NodePath("../../Supervisor/StaticBody3D")
+supervisor_bubble = NodePath("../../Supervisor/NPCDialogueBox")
+elevator = NodePath("../../ElevetorDoor/WaypointAnchor")
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=1706085039]
 offset_left = 35.0
@@ -160,6 +175,7 @@ shape = SubResource("BoxShape3D_rhla1")
 
 [connection signal="body_entered" from="ElevetorDoor" to="ElevetorDoor" method="_on_body_entered"]
 [connection signal="body_exited" from="ElevetorDoor" to="ElevetorDoor" method="_on_body_exited"]
+[connection signal="dialogue_finished" from="Supervisor/StaticBody3D" to="CanvasLayer/Exclamation" method="target_elevator"]
 [connection signal="body_entered" from="TriggerSupervisor" to="TriggerSupervisor" method="_on_body_entered"]
 
 [editable path="Player"]

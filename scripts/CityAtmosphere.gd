@@ -3,6 +3,7 @@ extends Node3D
 const RAIN_SHADER = preload("res://shader/rain_streak.gdshader")
 const BIRD_SHADER = preload("res://shader/bird.gdshader")
 const WET_ROAD_SHADER = preload("res://shader/wet_road.gdshader")
+const RAIN_UMBRELLA = preload("res://scripts/RainUmbrella.gd")
 const BIRD_COUNT := 10
 const BIRD_UPDATE_INTERVAL := 0.05
 const SKY_UPDATE_INTERVAL := 0.05
@@ -55,6 +56,21 @@ func _ready() -> void:
 	_make_birds()
 	if _rainy:
 		_make_rain()
+		# NPC branches are later in the scene, so wait until their rigs are ready.
+		_give_npcs_umbrellas.call_deferred()
+
+func _give_npcs_umbrellas() -> void:
+	if not _rainy:
+		return
+	for npc in get_tree().get_nodes_in_group("outdoor_npcs"):
+		if not get_parent().is_ancestor_of(npc):
+			continue
+		var skeleton := npc.find_child("Skeleton3D", true, false) as Skeleton3D
+		if skeleton == null or skeleton.has_node("RainUmbrella"):
+			continue
+		var umbrella := RAIN_UMBRELLA.new()
+		umbrella.name = "RainUmbrella"
+		skeleton.add_child(umbrella)
 
 func _start_ambience() -> void:
 	var ambience := AudioStreamPlayer.new()

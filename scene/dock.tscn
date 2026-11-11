@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://byja7bqb6ree5" path="res://models3d/characters/M/grandpa.tscn" id="6_rm8ik"]
 [ext_resource type="PackedScene" uid="uid://bx7scsfg2nivv" path="res://scene/pause_panel.tscn" id="7_vut38"]
 [ext_resource type="PackedScene" uid="uid://cv87ukpeiw7cp" path="res://scene/crosshair.tscn" id="8_yvk5q"]
-[ext_resource type="PackedScene" uid="uid://bia3kpprkjk83" path="res://scene/waypoint_marker.tscn" id="9_ad2xu"]
+[ext_resource type="PackedScene" path="res://scene/exclamation.tscn" id="9_ad2xu"]
 [ext_resource type="Script" uid="uid://ca5dk0dgimda5" path="res://scripts/dialogue/GrandpaDock.gd" id="10_ad2xu"]
 [ext_resource type="PackedScene" uid="uid://dci8u0ys21qui" path="res://scene/npc_dialogue_box.tscn" id="11_pcdpp"]
 [ext_resource type="PackedScene" uid="uid://d4g6r4vgp2gvs" path="res://assets/Boat/boat.glb" id="13_ipjyd"]
@@ -101,10 +101,10 @@ Stand nearby, look at him and press E to talk."
 label_settings = SubResource("LabelSettings_pcdpp")
 autowrap_mode = 3
 
-[node name="WaypointMarker" parent="CanvasLayer" unique_id=606989422 node_paths=PackedStringArray("target_override", "objective_label") instance=ExtResource("9_ad2xu")]
+[node name="Exclamation" parent="CanvasLayer" unique_id=606989422 node_paths=PackedStringArray("target_override", "objective_label") instance=ExtResource("9_ad2xu")]
 target_override = NodePath("../../Grandpa")
 objective_label = NodePath("../Label")
-npc_vertical_offset = 4.2
+npc_vertical_offset = 4.8
 
 [node name="Grandpa" parent="." unique_id=1700817525 instance=ExtResource("6_rm8ik")]
 transform = Transform3D(-1.3971149, 0, -2.192731, 0, 2.6, 0, 2.192731, 0, -1.3971149, -126.52634, 0.24040908, -24.305641)

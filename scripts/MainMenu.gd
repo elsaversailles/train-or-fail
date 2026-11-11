@@ -22,6 +22,7 @@ func _on_gallery_pressed() -> void:
 		gallery.queue_free()
 		$Buttons.show()
 		$TextureRect.show()
+		$GalleryButton/Count.text = "%d/%d endings" % [SaveManager.get_unlocked_ending_count(), Catalog.ENDINGS.size()]
 		gallery_button.show()
 		gallery_button.grab_focus()
 	)

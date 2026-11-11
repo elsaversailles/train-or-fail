@@ -1,0 +1,8 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://scene/waypoint_marker.tscn" id="1_marker"]
+[ext_resource type="Script" path="res://scripts/TutorialsScript/TutorialWaypoint.gd" id="2_script"]
+
+[node name="TutorialWaypoint" instance=ExtResource("1_marker")]
+visible = false
+script = ExtResource("2_script")

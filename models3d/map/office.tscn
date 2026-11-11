@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b1pismffbetv" path="res://models3d/map/OFFICE (2).glb" id="1_g3mwp"]
 [ext_resource type="ArrayOccluder3D" uid="uid://boqhp1mnvqcew" path="res://addons/office.occ" id="2_0q3iv"]
 [ext_resource type="PackedScene" path="res://scene/office_certificates.tscn" id="3_certificates"]
+[ext_resource type="PackedScene" path="res://scene/desk_gifts.tscn" id="4_desk_gifts"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k3hob"]
 size = Vector3(49.325836, 1.5854492, 34.39361)
@@ -688,3 +689,5 @@ occluder = ExtResource("2_0q3iv")
 
 [node name="Certificates" parent="." index="87" unique_id=222725874 instance=ExtResource("3_certificates")]
 transform = Transform3D(7.54979e-08, 0, -1, 0, 1, 0, 1, 0, 7.54979e-08, -2.0053077, 3.315, -11.096592)
+
+[node name="DeskGifts" parent="." index="88" instance=ExtResource("4_desk_gifts")]

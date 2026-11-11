@@ -272,10 +272,7 @@ func submit_answer(answer):
 
 	# Record special story applicant decisions (e.g., Mark Krazy on Day 5)
 	if current_applicant.get("is_special", false):
-		var char_id = current_applicant.get("id", "")
-		if not SaveManager.current_save_data.has("special_decisions"):
-			SaveManager.current_save_data["special_decisions"] = {}
-		SaveManager.current_save_data["special_decisions"][char_id] = answer
+		SaveManager.record_special_decision(current_applicant.get("id", ""), answer)
 
 	var correct_answer = current_applicant["kyc_correct"]
 	if answer != correct_answer:

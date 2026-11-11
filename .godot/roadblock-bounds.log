@@ -1,0 +1,10 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+ROADBLOCK BOUNDS: road block bounds=[P: (-0.766453, -0.023341, -1.060849), S: (1.639, 2.31145, 14.38171)] center=(0.053047, 1.132384, 6.130008) bodies=0
+ROADBLOCK BOUNDS: road block2 bounds=[P: (-0.766453, -0.023341, -1.060849), S: (1.639, 2.31145, 14.38172)] center=(0.053047, 1.132384, 6.130012) bodies=0
+ROADBLOCK BOUNDS: road block3 bounds=[P: (-0.766453, -0.023341, -1.06085), S: (1.639, 2.31145, 14.38173)] center=(0.053047, 1.132384, 6.130015) bodies=0
+ROADBLOCK BOUNDS: road block4 bounds=[P: (-0.766453, -0.023341, -1.060849), S: (1.639, 2.31145, 14.38171)] center=(0.053047, 1.132384, 6.130008) bodies=0
+ROADBLOCK BOUNDS: road block5 bounds=[P: (-0.766453, -0.023341, -1.060849), S: (1.615744, 2.31145, 10.23756)] center=(0.041419, 1.132384, 4.057933) bodies=0
+ROADBLOCK BOUNDS: road block6 bounds=[P: (-0.766453, -0.023341, -1.060849), S: (1.615746, 2.31145, 10.23756)] center=(0.04142, 1.132384, 4.057933) bodies=0

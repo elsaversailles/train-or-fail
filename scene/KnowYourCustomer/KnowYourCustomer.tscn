@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bx7scsfg2nivv" path="res://scene/pause_panel.tscn" id="12_h8xxj"]
 [ext_resource type="Texture2D" uid="uid://c5x64jsfa3ot3" path="res://images/TutorialsIMG/FRAUDDETECTION/fdholder.png" id="14_x3kqo"]
 [ext_resource type="PackedScene" path="res://scene/ending_intro.tscn" id="17_ending_intro"]
+[ext_resource type="PackedScene" path="res://scene/Tutorial/tutorial_waypoint.tscn" id="18_tutorial_waypoint"]
 
 [sub_resource type="Sky" id="Sky_5ieep"]
 sky_material = ExtResource("2_d5ytb")
@@ -94,6 +95,11 @@ transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, -6.1
 transform = Transform3D(0.93652076, 0, -0.35061222, 0, 1, 0, 0.35061222, 0, 0.93652076, -6.797475, 0.16314283, 2.2780805)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1476932616]
+
+[node name="TutorialWaypoint" parent="CanvasLayer" node_paths=PackedStringArray("tutorial", "player", "monitor") instance=ExtResource("18_tutorial_waypoint")]
+tutorial = NodePath("../KYCTutorial")
+player = NodePath("../../MainChar")
+monitor = NodePath("../../Monitor")
 
 [node name="Crosshair" type="ColorRect" parent="CanvasLayer" unique_id=741844015]
 anchors_preset = 8

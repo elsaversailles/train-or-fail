@@ -6,8 +6,11 @@ extends StaticBody3D
 
 var is_talking: bool = false
 
+func can_interact() -> bool:
+	return not is_talking and Dialogic.current_timeline == null and not timeline_name.is_empty()
+
 func interact() -> void:
-	if is_talking:
+	if not can_interact():
 		return
 
 	is_talking = true

@@ -1,0 +1,165 @@
+[gd_scene format=3 uid="uid://8tr8gjknjso5"]
+
+[ext_resource type="Script" uid="uid://x7td1xr45q0n" path="res://scripts/OfficeLobby.gd" id="1_rhla1"]
+[ext_resource type="PackedScene" uid="uid://crisdh2evrn7g" path="res://models3d/map/office_lobby.tscn" id="2_oauyh"]
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scene/character.tscn" id="2_uyght"]
+[ext_resource type="Script" uid="uid://bebkd43in6ylf" path="res://scripts/ElevetorDoor.gd" id="3_re36c"]
+[ext_resource type="PackedScene" uid="uid://bx7scsfg2nivv" path="res://scene/pause_panel.tscn" id="4_oauyh"]
+[ext_resource type="PackedScene" uid="uid://cl3phq1ph8o8" path="res://scene/FloorMarker.tscn" id="4_qqb2a"]
+[ext_resource type="PackedScene" uid="uid://cv87ukpeiw7cp" path="res://scene/crosshair.tscn" id="5_qqb2a"]
+[ext_resource type="PackedScene" uid="uid://bjv1n1gjlnkvq" path="res://models3d/characters/M/supervisor.tscn" id="7_iogu2"]
+[ext_resource type="Script" uid="uid://b6b278r7i2yf8" path="res://scripts/dialogue/Supervisor.gd" id="8_iogu2"]
+[ext_resource type="PackedScene" uid="uid://dci8u0ys21qui" path="res://scene/npc_dialogue_box.tscn" id="9_rhla1"]
+[ext_resource type="Script" uid="uid://ba4wqtr2kvmtd" path="res://scripts/TriggerSupervisorLobby.gd" id="10_pfttj"]
+[ext_resource type="Script" uid="uid://ddecuoqk1ext" path="res://scripts/LobbyWaitingNpcs.gd" id="11_waiting"]
+
+[sub_resource type="Environment" id="Environment_jv1ba"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_85j0d"]
+radius = 3.0688066
+
+[sub_resource type="LabelSettings" id="LabelSettings_rhla1"]
+font_size = 20
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jv1ba"]
+size = Vector3(1.0649414, 1, 20.799866)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qqb2a"]
+size = Vector3(20.839867, 1, 0.9289353)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_85j0d"]
+size = Vector3(0.78681827, 1, 9.617056)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ren0j"]
+size = Vector3(7.9389763, 1, 0.7367768)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iogu2"]
+size = Vector3(14.887008, 1, 0.7367768)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nka3p"]
+height = 2.6799316
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rhla1"]
+size = Vector3(25.957714, 1.0324707, 24.574736)
+
+[node name="OfficeLobby" type="Node3D" unique_id=1755870788]
+script = ExtResource("1_rhla1")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=319132172]
+environment = SubResource("Environment_jv1ba")
+
+[node name="Player" parent="." unique_id=2061402672 groups=["player"] instance=ExtResource("2_uyght")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 17.571623, 0.28040838, 6.264459)
+collision_layer = 3
+speed = 10.0
+
+[node name="RayCast3D" parent="Player/Head/Camera3D" parent_id_path=PackedInt32Array(2061402672, 1644174975) index="0" unique_id=1819240192]
+target_position = Vector3(0, 0, -4)
+
+[node name="OfficeLobby2" parent="." unique_id=248703940 instance=ExtResource("2_oauyh")]
+transform = Transform3D(0.985, 0, 0, 0, 0.985, 0, 0, 0, 0.985, 0, 0, 0)
+
+[node name="WaitingVisitors" type="Node3D" parent="." unique_id=251621883]
+script = ExtResource("11_waiting")
+lobby_model = NodePath("../OfficeLobby2")
+
+[node name="ElevetorDoor" type="Area3D" parent="." unique_id=1431212108]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.507828, -0.1403935, -0.6119034)
+script = ExtResource("3_re36c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ElevetorDoor" unique_id=119235886]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49018192, 0.14741397, -1.3981383)
+shape = SubResource("SphereShape3D_85j0d")
+
+[node name="Node3D" parent="ElevetorDoor" unique_id=306043952 instance=ExtResource("4_qqb2a")]
+transform = Transform3D(3.16, 0, 0, 0, 3.16, 0, 0, 0, 3.16, 0.9774933, 0.16135693, -1.3725195)
+
+[node name="PausePanel" parent="." unique_id=1179524455 instance=ExtResource("4_oauyh")]
+
+[node name="CanvasLayer" parent="." unique_id=1382565654 instance=ExtResource("5_qqb2a")]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1706085039]
+offset_left = 35.0
+offset_top = 29.0
+offset_right = 426.0
+offset_bottom = 53.0
+label_settings = SubResource("LabelSettings_rhla1")
+
+[node name="Lights" type="Node3D" parent="." unique_id=822087955]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0463368, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights" unique_id=62073456]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7594404, 8.743194, 14.26342)
+light_energy = 40.0
+omni_range = 30.0
+omni_attenuation = 1.5
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lights" unique_id=299769539]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.999496, 8.743194, -7.0885506)
+light_energy = 40.0
+omni_range = 30.0
+omni_attenuation = 1.5
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Lights" unique_id=1793677457]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.482508, 8.743194, 14.056509)
+light_energy = 40.0
+omni_range = 30.0
+omni_attenuation = 1.5
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=2052364370]
+transform = Transform3D(1.98, 0, 0, 0, 1.98, 0, 0, 0, 1.98, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=465896189]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.384537, 0, 0.22727394)
+shape = SubResource("BoxShape3D_jv1ba")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=1782721028]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -0.05893993, 0, 10.379768)
+shape = SubResource("BoxShape3D_qqb2a")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=555948202]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.325152, 0, 5.7043467)
+shape = SubResource("BoxShape3D_85j0d")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" unique_id=83312882]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.429182, 0, 1.4658673)
+shape = SubResource("BoxShape3D_ren0j")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D" unique_id=1429335106]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7273521, 0, -10.273304)
+shape = SubResource("BoxShape3D_iogu2")
+
+[node name="Supervisor" parent="." unique_id=413634621 instance=ExtResource("7_iogu2")]
+transform = Transform3D(-0.37113875, 0, 1.4533602, 0, 1.5, 0, -1.4533602, 0, -0.37113875, -8.544292, 0.010673165, 7.760558)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Supervisor" unique_id=1690775159 node_paths=PackedStringArray("objective_label")]
+transform = Transform3D(0.5077971, 0, 0.8614767, 0, 1, 0, -0.8614767, 0, 0.5077971, -0.055415154, 0.018606037, -0.011127472)
+script = ExtResource("8_iogu2")
+objective_label = NodePath("../../CanvasLayer/Label")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Supervisor/StaticBody3D" unique_id=1087664859]
+transform = Transform3D(1.0000085, 0, -3.427267e-06, 0, 0.999996, 0, 3.427267e-06, 0, 1.0000085, 0, 1.347638, 0)
+shape = SubResource("CapsuleShape3D_nka3p")
+
+[node name="NPCDialogueBox" parent="Supervisor" unique_id=1030725355 instance=ExtResource("9_rhla1")]
+transform = Transform3D(0.7616956, 0, 1.2922151, 0, 1.5, 0, -1.2922151, 0, 0.7616956, 0, 3.8364983, 0)
+
+[node name="TriggerSupervisor" type="Area3D" parent="." unique_id=1575658769 node_paths=PackedStringArray("supervisor_npc", "supervisor_bubble", "supervisor_interact_body")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.414623, 0, 9.894437)
+collision_mask = 2
+script = ExtResource("10_pfttj")
+supervisor_npc = NodePath("../Supervisor")
+supervisor_bubble = NodePath("../Supervisor/NPCDialogueBox")
+supervisor_interact_body = NodePath("../Supervisor/StaticBody3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TriggerSupervisor" unique_id=585400991]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.164747, 0.54989266, -3.4815702)
+shape = SubResource("BoxShape3D_rhla1")
+
+[connection signal="body_entered" from="ElevetorDoor" to="ElevetorDoor" method="_on_body_entered"]
+[connection signal="body_exited" from="ElevetorDoor" to="ElevetorDoor" method="_on_body_exited"]
+[connection signal="body_entered" from="TriggerSupervisor" to="TriggerSupervisor" method="_on_body_entered"]
+
+[editable path="Player"]

@@ -14,8 +14,18 @@ var is_talking: bool = false
 func _ready() -> void:
 	add_to_group("special_npc")
 
-func interact():
+func can_interact() -> bool:
 	if is_talking or Dialogic.current_timeline != null:
+		return false
+	var current_day: int = SaveManager.current_save_data.get("current_day", 1)
+	if current_day == 2:
+		return can_talk
+	if current_day == 4:
+		return true
+	return not generic_timelines.is_empty()
+
+func interact():
+	if not can_interact():
 		return
 
 	var current_day: int = SaveManager.current_save_data.get("current_day", 1)

@@ -1,0 +1,744 @@
+[gd_scene format=3 uid="uid://pxoaoemhow58"]
+
+[ext_resource type="PackedScene" uid="uid://drkya446h6odi" path="res://scene/world_environment.tscn" id="1_74bty"]
+[ext_resource type="Script" uid="uid://upyd3gf0tqb2" path="res://scripts/OutsideWorld.gd" id="1_yeb0w"]
+[ext_resource type="Script" uid="uid://77xg2eri00vy" path="res://scripts/CityAtmosphere.gd" id="2_city_atmosphere"]
+[ext_resource type="Shader" uid="uid://np76rdgumjf7" path="res://shader/city_post_process.gdshader" id="2_city_post_shader"]
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scene/character.tscn" id="3_ma6ok"]
+[ext_resource type="PackedScene" uid="uid://ohta1txhbs1d" path="res://scene/map.tscn" id="3_tv3p0"]
+[ext_resource type="PackedScene" uid="uid://cv87ukpeiw7cp" path="res://scene/crosshair.tscn" id="4_7lxs7"]
+[ext_resource type="PackedScene" uid="uid://bx7scsfg2nivv" path="res://scene/pause_panel.tscn" id="5_4tgtf"]
+[ext_resource type="Script" uid="uid://bbpde2vfs0tbh" path="res://scripts/OutsideDoor.gd" id="6_b6qw5"]
+[ext_resource type="PackedScene" uid="uid://bia3kpprkjk83" path="res://scene/waypoint_marker.tscn" id="6_kogoh"]
+[ext_resource type="Material" uid="uid://bgvn618vq3t7m" path="res://Materials/windows_glow.tres" id="7_s55tp"]
+[ext_resource type="PackedScene" uid="uid://cl3phq1ph8o8" path="res://scene/FloorMarker.tscn" id="7_x7ph6"]
+[ext_resource type="Texture2D" uid="uid://bejq04rsxctqx" path="res://models3d/map/Map_windowangeloan.png" id="7_xww38"]
+[ext_resource type="Texture2D" uid="uid://djnp4jv8unjdc" path="res://models3d/map/windows_emission.png" id="8_2gfpp"]
+[ext_resource type="PackedScene" uid="uid://dci8u0ys21qui" path="res://scene/npc_dialogue_box.tscn" id="8_ym7lu"]
+[ext_resource type="ArrayOccluder3D" uid="uid://khhjre27wmie" path="res://addons/outside_world.occ" id="9_crkg8"]
+[ext_resource type="PackedScene" uid="uid://byja7bqb6ree5" path="res://models3d/characters/M/grandpa.tscn" id="10_tv3p0"]
+[ext_resource type="Script" uid="uid://dr6xjimk03mxt" path="res://scripts/dialogue/Grandpa.gd" id="11_tm8yg"]
+[ext_resource type="Script" uid="uid://cu6rmtyoooa2n" path="res://scripts/TriggerGrandpaAndAssistant.gd" id="12_tm8yg"]
+[ext_resource type="PackedScene" uid="uid://ch0bphl4iddmi" path="res://models3d/characters/F/trisha_aquino.tscn" id="12_tv3p0"]
+[ext_resource type="PackedScene" uid="uid://lbknd63qu8u7" path="res://models3d/characters/M/mark_krazy.tscn" id="14_x7ph6"]
+[ext_resource type="Script" uid="uid://drdbot8l1h882" path="res://scripts/dialogue/PartnerNPC.gd" id="15_e1n6x"]
+[ext_resource type="PackedScene" uid="uid://b4u5dyp1hcyb1" path="res://models3d/characters/M/angelo.tscn" id="16_luw4s"]
+[ext_resource type="Script" uid="uid://dwn4hinao0nxp" path="res://scripts/dialogue/Mark.gd" id="16_sypdl"]
+[ext_resource type="Script" uid="uid://dv1x5o0fdrvob" path="res://scripts/MarkAndCashier.gd" id="17_d62gi"]
+[ext_resource type="PackedScene" uid="uid://b80sl2e3irkcr" path="res://models3d/characters/F/nurse_clara_garcia.tscn" id="18_e1n6x"]
+[ext_resource type="Script" uid="uid://dp0l48pbd1oyy" path="res://scripts/dialogue/NurseClara.gd" id="19_dbkl4"]
+[ext_resource type="PackedScene" uid="uid://dmr46lw2ll8cf" path="res://models3d/characters/M/briar_galima.tscn" id="20_kogoh"]
+[ext_resource type="Script" uid="uid://ct6ahlgf0t5c" path="res://scripts/TriggerClaraAndSupplier.gd" id="21_ddiht"]
+[ext_resource type="PackedScene" uid="uid://cqq7wgvesnut7" path="res://models3d/characters/M/prof__jericho_santur.tscn" id="22_yeb0w"]
+[ext_resource type="Script" uid="uid://dorssn1uy1iwj" path="res://scripts/dialogue/jericho.gd" id="23_x7ph6"]
+[ext_resource type="PackedScene" uid="uid://bmivfxkgft0gg" path="res://models3d/characters/F/michele_garcia.tscn" id="24_ptfg7"]
+[ext_resource type="Script" uid="uid://cfay18l2r4r4e" path="res://scripts/TriggerJerichoAndJoice.gd" id="24_x7ph6"]
+[ext_resource type="Script" uid="uid://r44016gwiynl" path="res://scripts/PathDriver.gd" id="31_p1ya7"]
+[ext_resource type="PackedScene" uid="uid://18450kxjv1jb" path="res://scene/Jeepney.tscn" id="31_ptfg7"]
+[ext_resource type="Script" uid="uid://bfxc4yv6y2bn4" path="res://scripts/BuildingDecisionTrigger.gd" id="33_bllr2"]
+[ext_resource type="PackedScene" uid="uid://dgemu51cirnen" path="res://models3d/characters/F/tita_elena.tscn" id="33_jvih8"]
+[ext_resource type="Texture2D" uid="uid://bjfvr1cgy17sw" path="res://images/caution_tape.png" id="33_urwcn"]
+[ext_resource type="PackedScene" path="res://scene/outdoor_npc_paths.tscn" id="36_paths"]
+[ext_resource type="Script" uid="uid://cbxyej5fdfj34" path="res://scripts/OutdoorNpcPatrol.gd" id="36_patrol"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dn82p"]
+resource_name = "window angeloan"
+cull_mode = 2
+albedo_texture = ExtResource("7_xww38")
+roughness = 0.5
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 2.5
+emission_operator = 1
+emission_texture = ExtResource("8_2gfpp")
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xww38"]
+resource_name = "window angeloan"
+cull_mode = 2
+albedo_texture = ExtResource("7_xww38")
+roughness = 0.5
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.5
+emission_operator = 1
+emission_texture = ExtResource("8_2gfpp")
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3l71g"]
+resource_name = "window angeloan"
+cull_mode = 2
+albedo_texture = ExtResource("7_xww38")
+roughness = 0.5
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 2.0
+emission_operator = 1
+emission_texture = ExtResource("8_2gfpp")
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6xo7c"]
+resource_name = "window angeloan"
+cull_mode = 2
+albedo_texture = ExtResource("7_xww38")
+roughness = 0.5
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_operator = 1
+emission_texture = ExtResource("8_2gfpp")
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ptfg7"]
+load_path = "res://.godot/imported/caution_tape.png-8a3dbc2ebcafc11f652cd96a5abb83e7.s3tc.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_city_post"]
+shader = ExtResource("2_city_post_shader")
+shader_parameter/rain_mix = 0.0
+shader_parameter/vignette_strength = 0.07
+shader_parameter/grain_strength = 0.006
+
+[sub_resource type="LabelSettings" id="LabelSettings_x7ph6"]
+font_size = 20
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0vtf2"]
+radius = 2.789346
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yj86u"]
+radius = 0.32
+height = 2.309082
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bllr2"]
+size = Vector3(32.04325, 1.0324707, 22.271109)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aai3x"]
+size = Vector3(34.752827, 1.0324707, 26.222315)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vohb4"]
+size = Vector3(37.647415, 1, 26.428875)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s55tp"]
+size = Vector3(45.335842, 1, 24.762167)
+
+[sub_resource type="Curve3D" id="Curve3D_urwcn"]
+bake_interval = 46.47
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 96.535, 0, 0, 0, 0, 0, 0, 0, 0, 6.057724, 0, -0.07128906, 0, 0, 0, 0, 0, 0, 7.1993256, 0, -210.20016, 0, 0, 0, 0, 0, 0, 173.97168, 0, -210.26802, 0, 0, 0, 0, 0, 0, 172.74654, 0, -87.11842),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5ieep"]
+radius = 0.41748047
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_urwcn"]
+size = Vector3(22.719238, 1.6494141, 29.456024)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jvih8"]
+size = Vector3(26.428024, 1.5698242, 15.097656)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jv1ba"]
+size = Vector3(16.896973, 2.2548828, 25.855957)
+
+[node name="Outside_World" type="Node3D" unique_id=36747045]
+script = ExtResource("1_yeb0w")
+
+[node name="WorldEnvironment" parent="." unique_id=1060883038 node_paths=PackedStringArray("area_lights", "spot_lights") instance=ExtResource("1_74bty")]
+area_lights = [NodePath("../LightBuildings/AreaLight3D"), NodePath("../LightBuildings/AreaLight3D2"), NodePath("../LightBuildings/AreaLight3D3"), NodePath("../LightBuildings/AreaLight3D4"), NodePath("../LightBuildings/AreaLight3D5"), NodePath("../LightBuildings/AreaLight3D6"), NodePath("../LightBuildings/AreaLight3D7")]
+spot_lights = [NodePath("../Track/Jeepney/SpotLight3D1"), NodePath("../Track/Jeepney/SpotLight3D2")]
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1755721322]
+transform = Transform3D(0.3420206, -0.53898525, 0.76975113, 0, 0.8191522, 0.5735762, -0.93969244, -0.19617487, 0.28016692, 0, 0, 0)
+light_color = Color(1, 0.83, 0.64, 1)
+light_angular_distance = 0.53
+shadow_enabled = true
+shadow_opacity = 0.88
+shadow_blur = 1.3
+directional_shadow_mode = 1
+directional_shadow_split_1 = 0.22
+directional_shadow_max_distance = 85.0
+
+[node name="CityAtmosphere" type="Node3D" parent="." unique_id=516981870]
+script = ExtResource("2_city_atmosphere")
+
+[node name="LightBuildings" type="Node" parent="." unique_id=146844447]
+
+[node name="AreaLight3D" type="AreaLight3D" parent="LightBuildings" unique_id=1565559292]
+transform = Transform3D(0.23311701, 0, 0.9724487, 0, 1, 0, -0.9724487, 0, 0.23311701, -262.55328, 36.504883, 138.74783)
+light_energy = 0.3
+area_normalize_energy = false
+area_size = Vector2(32.33731, 37.427948)
+
+[node name="AreaLight3D2" type="AreaLight3D" parent="LightBuildings" unique_id=1000792532]
+transform = Transform3D(0.004079081, 0, 0.9999917, 0, 1, 0, -0.9999917, 0, 0.004079081, -254.82152, 10.776829, 135.75772)
+light_energy = 0.5
+area_normalize_energy = false
+area_size = Vector2(35.317627, 14.636745)
+
+[node name="AreaLight3D3" type="AreaLight3D" parent="LightBuildings" unique_id=36877938]
+transform = Transform3D(-0.0040791687, 0, -0.9999917, 0, 1, 0, 0.9999917, 0, -0.0040791687, -191.52733, 12.732786, 150.97786)
+light_energy = 0.3
+area_normalize_energy = false
+area_size = Vector2(88.45575, 23.020218)
+
+[node name="AreaLight3D4" type="AreaLight3D" parent="LightBuildings" unique_id=1771836951]
+transform = Transform3D(-0.0040791687, 0, -0.9999917, 0, 1, 0, 0.9999917, 0, -0.0040791687, -196.18892, 15.440311, 151.97481)
+light_energy = 0.3
+area_normalize_energy = false
+area_size = Vector2(15.497284, 28.558708)
+
+[node name="AreaLight3D5" type="AreaLight3D" parent="LightBuildings" unique_id=1817602015]
+transform = Transform3D(-0.73320144, 0, -0.6800115, 0, 1, 0, 0.6800115, 0, -0.73320144, -198.65227, 3.664032, 20.161545)
+light_energy = 0.3
+area_normalize_energy = false
+area_size = Vector2(6.44751, 3.183689)
+
+[node name="AreaLight3D6" type="AreaLight3D" parent="LightBuildings" unique_id=1730307148]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -122.22976, 5.5243034, 26.21964)
+light_energy = 0.3
+area_normalize_energy = false
+area_size = Vector2(17.20018, 9.2679825)
+
+[node name="AreaLight3D7" type="AreaLight3D" parent="LightBuildings" unique_id=1064608157]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -138.7263, 7.8886538, 22.919132)
+light_energy = 0.3
+area_normalize_energy = false
+area_size = Vector2(11.088226, 13.2453785)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="LightBuildings" unique_id=31950824]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.565495, 3.828394, -21.268135)
+light_energy = 5.0
+light_indirect_energy = 20.0
+omni_range = 9.990661
+omni_attenuation = 0.8
+
+[node name="Player" parent="." unique_id=2061402672 groups=["player"] instance=ExtResource("3_ma6ok")]
+transform = Transform3D(0.018174676, 0, -0.99983484, 0, 1, 0, 0.99983484, 0, 0.018174676, -230.04721, 0.54213715, 139.29137)
+collision_layer = 3
+
+[node name="Map" parent="." unique_id=1112612333 instance=ExtResource("3_tv3p0")]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+
+[node name="Cylinder_007" parent="Map" index="16" unique_id=1484760596 groups=["Streetlights"]]
+
+[node name="Cylinder_003" parent="Map" index="17" unique_id=548355284 groups=["Streetlights"]]
+
+[node name="Cylinder_005" parent="Map" index="18" unique_id=1161488807 groups=["Streetlights"]]
+
+[node name="Cylinder_006" parent="Map" index="19" unique_id=1294958127 groups=["Streetlights"]]
+
+[node name="Cylinder_010" parent="Map" index="20" unique_id=401533452 groups=["Streetlights"]]
+
+[node name="Cylinder_012" parent="Map" index="21" unique_id=404990274 groups=["Streetlights"]]
+
+[node name="Cylinder_013" parent="Map" index="22" unique_id=989621004 groups=["Streetlights"]]
+
+[node name="Cylinder_014" parent="Map" index="23" unique_id=2027158686 groups=["Streetlights"]]
+
+[node name="Cylinder_015" parent="Map" index="24" unique_id=1076530708 groups=["Streetlights"]]
+
+[node name="Cylinder_016" parent="Map" index="25" unique_id=1337246257 groups=["Streetlights"]]
+
+[node name="Cylinder_021" parent="Map" index="26" unique_id=799498356 groups=["Streetlights"]]
+
+[node name="Cylinder_022" parent="Map" index="27" unique_id=2055781133 groups=["Streetlights"]]
+
+[node name="Cylinder_023" parent="Map" index="28" unique_id=103458762 groups=["Streetlights"]]
+
+[node name="Cylinder_024" parent="Map" index="29" unique_id=328495191 groups=["Streetlights"]]
+
+[node name="Cylinder_025" parent="Map" index="30" unique_id=1656588943 groups=["Streetlights"]]
+
+[node name="Cylinder_027" parent="Map" index="31" unique_id=1360727401 groups=["Streetlights"]]
+
+[node name="Cylinder_029" parent="Map" index="32" unique_id=1957033054 groups=["Streetlights"]]
+
+[node name="Cylinder_030" parent="Map" index="33" unique_id=63004078 groups=["Streetlights"]]
+
+[node name="Cylinder_031" parent="Map" index="34" unique_id=1919655208 groups=["Streetlights"]]
+
+[node name="Cylinder_032" parent="Map" index="35" unique_id=1050361022 groups=["Streetlights"]]
+
+[node name="Cylinder_033" parent="Map" index="36" unique_id=1575587336 groups=["Streetlights"]]
+
+[node name="Cylinder_034" parent="Map" index="37" unique_id=605786098 groups=["Streetlights"]]
+
+[node name="Cylinder_035" parent="Map" index="38" unique_id=1972710024 groups=["Streetlights"]]
+
+[node name="Cylinder_036" parent="Map" index="39" unique_id=563070020 groups=["Streetlights"]]
+
+[node name="Cylinder_037" parent="Map" index="40" unique_id=1384450187 groups=["Streetlights"]]
+
+[node name="Cylinder_038" parent="Map" index="41" unique_id=557321678 groups=["Streetlights"]]
+
+[node name="Cylinder_041" parent="Map" index="42" unique_id=1877994741 groups=["Streetlights"]]
+
+[node name="Cylinder_042" parent="Map" index="43" unique_id=276892398 groups=["Streetlights"]]
+
+[node name="Cylinder_043" parent="Map" index="44" unique_id=1671640588 groups=["Streetlights"]]
+
+[node name="Cylinder_044" parent="Map" index="45" unique_id=76940744 groups=["Streetlights"]]
+
+[node name="Cylinder_046" parent="Map" index="46" unique_id=2083135886 groups=["Streetlights"]]
+
+[node name="Cylinder_048" parent="Map" index="47" unique_id=204751527 groups=["Streetlights"]]
+
+[node name="Cylinder_050" parent="Map" index="48" unique_id=1826656356 groups=["Streetlights"]]
+
+[node name="Cylinder_052" parent="Map" index="49" unique_id=1847222964 groups=["Streetlights"]]
+
+[node name="Cylinder_053" parent="Map" index="50" unique_id=1854985292 groups=["Streetlights"]]
+
+[node name="Cylinder_055" parent="Map" index="51" unique_id=1156173725 groups=["Streetlights"]]
+
+[node name="Cylinder_057" parent="Map" index="52" unique_id=2096319282 groups=["Streetlights"]]
+
+[node name="Cylinder_058" parent="Map" index="53" unique_id=288517716 groups=["Streetlights"]]
+
+[node name="Cylinder_059" parent="Map" index="54" unique_id=1393638619 groups=["Streetlights"]]
+
+[node name="Cylinder_061" parent="Map" index="55" unique_id=361524311 groups=["Streetlights"]]
+
+[node name="Cylinder_064" parent="Map" index="56" unique_id=81830239 groups=["Streetlights"]]
+
+[node name="Cylinder_068" parent="Map" index="57" unique_id=251709916 groups=["Streetlights"]]
+
+[node name="Cylinder_070" parent="Map" index="58" unique_id=771568736 groups=["Streetlights"]]
+
+[node name="Cylinder_071" parent="Map" index="59" unique_id=1235197135 groups=["Streetlights"]]
+
+[node name="Cylinder_073" parent="Map" index="60" unique_id=29950029 groups=["Streetlights"]]
+
+[node name="Cylinder_076" parent="Map" index="61" unique_id=782372119 groups=["Streetlights"]]
+
+[node name="Cylinder_078" parent="Map" index="62" unique_id=242809279 groups=["Streetlights"]]
+
+[node name="Cylinder_079" parent="Map" index="63" unique_id=1968847645 groups=["Streetlights"]]
+
+[node name="Cylinder_080" parent="Map" index="64" unique_id=493140117 groups=["Streetlights"]]
+
+[node name="Cylinder_083" parent="Map" index="65" unique_id=641268073 groups=["Streetlights"]]
+
+[node name="Cylinder_084" parent="Map" index="66" unique_id=1242305114 groups=["Streetlights"]]
+
+[node name="Cylinder_092" parent="Map" index="90" unique_id=1293815033 groups=["Streetlights"]]
+
+[node name="Cylinder_093" parent="Map" index="91" unique_id=1709195546 groups=["Streetlights"]]
+
+[node name="Cube_003" parent="Map" index="110" unique_id=1607341483]
+surface_material_override/0 = ExtResource("7_s55tp")
+
+[node name="Cube" parent="Map" index="200" unique_id=1749114642]
+surface_material_override/2 = SubResource("StandardMaterial3D_dn82p")
+
+[node name="BakeryCautionTape" type="Sprite3D" parent="Map/Cube" index="0" unique_id=798807205]
+transform = Transform3D(1.72, 0, 0, 0, 4.055, 0, 0, 0, 10, -7.1716614, 7.3301525, 0.07543945)
+visible = false
+texture = ExtResource("33_urwcn")
+
+[node name="hospital_a" parent="Map" index="205" unique_id=1707259275]
+surface_material_override/1 = SubResource("StandardMaterial3D_xww38")
+
+[node name="HospitalCautionTape" type="Sprite3D" parent="Map/hospital_a" index="0" unique_id=85518899]
+transform = Transform3D(10.925, 0, 0, 0, 5.17, 0, 0, 0, 10, -0.32185364, -0.67856026, 9.908463)
+visible = false
+texture = ExtResource("33_urwcn")
+
+[node name="Plane_003" parent="Map" index="208" unique_id=2006594451]
+surface_material_override/1 = ExtResource("7_s55tp")
+
+[node name="Cube_001" parent="Map" index="241" unique_id=1781243913]
+surface_material_override/1 = SubResource("StandardMaterial3D_3l71g")
+
+[node name="Cube_006" parent="Map" index="242" unique_id=939199395]
+surface_material_override/0 = SubResource("StandardMaterial3D_6xo7c")
+
+[node name="DealershipCautionTape" type="Sprite3D" parent="Map/Cube_006" index="0" unique_id=1331424076]
+transform = Transform3D(1.5, 0, 0, 0, 5.885, 0, 0, 0, 10, -3.9072495, 10.501263, -2.6053715)
+visible = false
+texture = ExtResource("33_urwcn")
+
+[node name="CautionTape" type="Sprite3D" parent="Map/Cube_006/DealershipCautionTape" unique_id=75868480]
+transform = Transform3D(1.56, 0, 0, 0, 0.575, 0, 0, 0, 10, 10.682877, -0.9022509, 0.4172051)
+texture = SubResource("CompressedTexture2D_ptfg7")
+
+[node name="CityPostProcess" type="CanvasLayer" parent="." unique_id=1221460917]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CityPostProcess" unique_id=1748461354]
+material = SubResource("ShaderMaterial_city_post")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer" parent="." unique_id=1382565654 instance=ExtResource("4_7lxs7")]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1258091576]
+offset_left = 35.0
+offset_top = 29.0
+offset_right = 426.0
+offset_bottom = 53.0
+text = "Need to go home to lolo's bakery and sleep.
+(Go home, maybe talk to people on the way.)"
+label_settings = SubResource("LabelSettings_x7ph6")
+
+[node name="WaypointMarker" parent="CanvasLayer" unique_id=2039758537 node_paths=PackedStringArray("apartment_door", "objective_label") instance=ExtResource("6_kogoh")]
+apartment_door = NodePath("../../OfficeDoor/Node3D")
+objective_label = NodePath("../Label")
+npc_vertical_offset = 4.2
+
+[node name="PausePanel" parent="." unique_id=1179524455 instance=ExtResource("5_4tgtf")]
+
+[node name="OfficeDoor" type="Area3D" parent="." unique_id=2006405475]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 25.51314, -0.2659948, -16.859104)
+script = ExtResource("6_b6qw5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OfficeDoor" unique_id=842765186]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6667404, 0.27522087, -0.8476143)
+shape = SubResource("SphereShape3D_0vtf2")
+
+[node name="Node3D" parent="OfficeDoor" unique_id=306043952 instance=ExtResource("7_x7ph6")]
+transform = Transform3D(3.405, 0, 0, 0, 3.405, 0, 0, 0, 3.405, 0.61337376, 0.34741282, -0.82300186)
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=385124564]
+visible = false
+layers = 1023
+occluder = ExtResource("9_crkg8")
+
+[node name="FraudDetection" type="Node3D" parent="." unique_id=247957009]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0333858, 1.9073486e-06, -0.62718296)
+
+[node name="Grandpa" parent="FraudDetection" unique_id=1700817525 instance=ExtResource("10_tv3p0")]
+transform = Transform3D(2.694755, 0, -0.16821285, 0, 2.7, 0, 0.16821285, 0, 2.694755, 1.6093721, 0.025467128, -12.27391)
+
+[node name="StaticBody3D" type="AnimatableBody3D" parent="FraudDetection/Grandpa" unique_id=1593904460 groups=["special_npcs"]]
+transform = Transform3D(0.55857664, 0, 0.947624, 0, 1.1, 0, -0.947624, 0, 0.55857664, -0.055415154, 0.018606037, -0.011127472)
+sync_to_physics = false
+script = ExtResource("11_tm8yg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FraudDetection/Grandpa/StaticBody3D" unique_id=428578247]
+transform = Transform3D(1.0000085, 0, -3.427267e-06, 0, 1, 0, 3.427267e-06, 0, 1.0000085, 0, 0.85275775, 0)
+shape = SubResource("CapsuleShape3D_yj86u")
+
+[node name="NPCDialogueBox" parent="FraudDetection/Grandpa" unique_id=311128597 instance=ExtResource("8_ym7lu")]
+transform = Transform3D(0.55857664, 0, 0.947624, 0, 1.1, 0, -0.947624, 0, 0.55857664, 0.00027561188, 2.931406, 9.536743e-06)
+
+[node name="OutdoorNpcPatrol" type="Node" parent="FraudDetection/Grandpa" unique_id=1133118854]
+script = ExtResource("36_patrol")
+patrol_path = NodePath("../../../NpcPatrolRoutes/Grandpa")
+
+[node name="Assistant" parent="FraudDetection" unique_id=155668348 instance=ExtResource("12_tv3p0")]
+transform = Transform3D(2.3787675, 0, -1.2772886, 0, 2.7, 0, 1.2772886, 0, 2.3787675, 4.036893, 0.042467147, -11.196138)
+
+[node name="StaticBody3D" type="AnimatableBody3D" parent="FraudDetection/Assistant" unique_id=1704643105]
+transform = Transform3D(0.55857664, 0, 0.947624, 0, 1.1000003, 0, -0.947624, 0, 0.55857664, -0.055415154, 0.5085966, -0.011127472)
+sync_to_physics = false
+script = ExtResource("15_e1n6x")
+special_days = Array[int]([1])
+generic_timelines = Array[String](["assistant_generic_1", "assistant_generic_2"])
+model_needs_flip = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FraudDetection/Assistant/StaticBody3D" unique_id=1351306519]
+transform = Transform3D(1.0000085, 0, -3.427267e-06, 0, 1, 0, 3.427267e-06, 0, 1.0000085, 0, 0.12589812, 0)
+shape = SubResource("CapsuleShape3D_yj86u")
+
+[node name="NPCDialogueBox" parent="FraudDetection/Assistant" unique_id=899122111 instance=ExtResource("8_ym7lu")]
+transform = Transform3D(-0.9432967, 0, -0.5658548, 0, 1.1, 0, 0.5658548, 0, -0.9432967, -0.00031471252, 2.9127061, -0.00038146973)
+
+[node name="OutdoorNpcPatrol" type="Node" parent="FraudDetection/Assistant" unique_id=1006373835]
+script = ExtResource("36_patrol")
+patrol_path = NodePath("../../../NpcPatrolRoutes/Assistant")
+start_backwards = true
+
+[node name="TriggerGrandpaAndAssistant" type="Area3D" parent="FraudDetection" unique_id=366009866 node_paths=PackedStringArray("grandpa_npc", "assistant_npc", "grandpa_bubble", "assistant_bubble", "grandpa_interact_body")]
+transform = Transform3D(-0.9131295, 0, 0.40766966, 0, 1, 0, -0.40766966, 0, -0.9131295, -1.8924309, 0.49946713, -2.200347)
+collision_mask = 2
+script = ExtResource("12_tm8yg")
+grandpa_npc = NodePath("../Grandpa")
+assistant_npc = NodePath("../Assistant")
+grandpa_bubble = NodePath("../Grandpa/NPCDialogueBox")
+assistant_bubble = NodePath("../Assistant/NPCDialogueBox")
+grandpa_interact_body = NodePath("../Grandpa/StaticBody3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FraudDetection/TriggerGrandpaAndAssistant" unique_id=1108795479]
+transform = Transform3D(0.91770774, 0, 0.39725775, 0, 1, 0, -0.39725775, 0, 0.91770774, 5.8713, 0.54989266, -2.9083273)
+shape = SubResource("BoxShape3D_bllr2")
+
+[node name="Mark Krazy" parent="FraudDetection" unique_id=925298984 instance=ExtResource("14_x7ph6")]
+transform = Transform3D(2.5045314, 0, 1.0086242, 0, 2.7, 0, -1.0086242, 0, 2.5045314, -47.710926, 0.31483966, -9.709841)
+
+[node name="StaticBody3D" type="AnimatableBody3D" parent="FraudDetection/Mark Krazy" unique_id=741845743 node_paths=PackedStringArray("mark_bubble") groups=["special_npcs"]]
+transform = Transform3D(1.0844803, 0, 0.18412855, 0, 1.1, 0, -0.18412855, 0, 1.0844803, 0.058185577, 0.0004220605, 0.018241882)
+sync_to_physics = false
+script = ExtResource("16_sypdl")
+mark_bubble = NodePath("../NPCDialogueBox")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FraudDetection/Mark Krazy/StaticBody3D" unique_id=729048179]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8527577, 0)
+shape = SubResource("CapsuleShape3D_yj86u")
+
+[node name="NPCDialogueBox" parent="FraudDetection/Mark Krazy" unique_id=88300493 instance=ExtResource("8_ym7lu")]
+transform = Transform3D(1.0844799, 0, 0.18412846, 0, 1.1, 0, -0.18412846, 0, 1.0844799, -0.00019073486, 2.9132223, 0.00023937225)
+
+[node name="OutdoorNpcPatrol" type="Node" parent="FraudDetection/Mark Krazy" unique_id=1378589059]
+script = ExtResource("36_patrol")
+patrol_path = NodePath("../../../NpcPatrolRoutes/Mark")
+
+[node name="Cashier" parent="FraudDetection" unique_id=124877193 instance=ExtResource("16_luw4s")]
+transform = Transform3D(2.6619802, 0, -0.4515104, 0, 2.7, 0, 0.4515104, 0, 2.6619802, -45.354145, 0.31483966, -9.655619)
+
+[node name="NPCDialogueBox" parent="FraudDetection/Cashier" unique_id=2063256543 instance=ExtResource("8_ym7lu")]
+transform = Transform3D(-1.0545266, 0, -0.31300732, 0, 1.1, 0, 0.31300732, 0, -1.0545266, 0.00022125244, 2.9132223, -0.0002784729)
+
+[node name="StaticBody3D" type="AnimatableBody3D" parent="FraudDetection/Cashier" unique_id=1223075067]
+transform = Transform3D(0.55857664, 0, 0.947624, 0, 1.1000001, 0, -0.947624, 0, 0.55857664, -0.055415154, 0.50859654, -0.011127472)
+sync_to_physics = false
+script = ExtResource("15_e1n6x")
+special_days = Array[int]([2, 4])
+generic_timelines = Array[String](["cashier_generic_1", "cashier_generic_2"])
+model_needs_flip = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FraudDetection/Cashier/StaticBody3D" unique_id=569563127]
+transform = Transform3D(1.0000085, 0, -3.427267e-06, 0, 1, 0, 3.427267e-06, 0, 1.0000085, 0, 0.12589812, 0)
+shape = SubResource("CapsuleShape3D_yj86u")
+
+[node name="OutdoorNpcPatrol" type="Node" parent="FraudDetection/Cashier" unique_id=827150117]
+script = ExtResource("36_patrol")
+patrol_path = NodePath("../../../NpcPatrolRoutes/Cashier")
+start_backwards = true
+
+[node name="TriggerMarkAndCashier" type="Area3D" parent="FraudDetection" unique_id=925960404 node_paths=PackedStringArray("mark_npc", "cashier_npc", "mark_bubble", "cashier_bubble", "mark_interact_body")]
+transform = Transform3D(-0.9965015, 0, -0.0835746, 0, 1, 0, 0.0835746, 0, -0.9965015, -45.917286, 0.80083966, -0.89557695)
+collision_mask = 2
+script = ExtResource("17_d62gi")
+mark_npc = NodePath("../Mark Krazy")
+cashier_npc = NodePath("../Cashier")
+mark_bubble = NodePath("../Mark Krazy/NPCDialogueBox")
+cashier_bubble = NodePath("../Cashier/NPCDialogueBox")
+mark_interact_body = NodePath("../Mark Krazy/StaticBody3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FraudDetection/TriggerMarkAndCashier" unique_id=1861181291]
+transform = Transform3D(0.99661815, 0, -0.08222356, 0, 1, 0, 0.08222356, 0, 0.99661815, 19.876163, 0.54989266, 1.332572)
+shape = SubResource("BoxShape3D_aai3x")
+
+[node name="CreditScoring" type="Node3D" parent="." unique_id=957792986]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.617, -0.325, 10.111)
+
+[node name="Nurse Clara" parent="CreditScoring" unique_id=407223247 instance=ExtResource("18_e1n6x")]
+transform = Transform3D(-1.0919337, 0, -2.4693482, 0, 2.7, 0, 2.4693482, 0, -1.0919337, -175.08391, 0.49692273, 98.37416)
+
+[node name="StaticBody3D" type="AnimatableBody3D" parent="CreditScoring/Nurse Clara" unique_id=153156866 groups=["special_npcs"]]
+transform = Transform3D(-1.0808178, 0, 0.20452994, 0, 1.1, 0, -0.20452994, 0, -1.0808178, 0.00016784668, 5.4597855e-05, -0.00010347366)
+sync_to_physics = false
+script = ExtResource("19_dbkl4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CreditScoring/Nurse Clara/StaticBody3D" unique_id=1702109730]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8527577, 0)
+shape = SubResource("CapsuleShape3D_yj86u")
+
+[node name="NPCDialogueBox" parent="CreditScoring/Nurse Clara" unique_id=1343437894 instance=ExtResource("8_ym7lu")]
+transform = Transform3D(-1.0808178, 0, 0.20452993, 0, 1.1, 0, -0.20452993, 0, -1.0808178, 0.00016784668, 2.9128547, -0.00010347366)
+
+[node name="OutdoorNpcPatrol" type="Node" parent="CreditScoring/Nurse Clara" unique_id=1513358927]
+script = ExtResource("36_patrol")
+patrol_path = NodePath("../../../NpcPatrolRoutes/Clara")
+additional_story_days = Array[int]([8])
+
+[node name="Supplier" parent="CreditScoring" unique_id=1006549139 instance=ExtResource("20_kogoh")]
+transform = Transform3D(-0.45459983, 0, -2.6614542, 0, 2.7, 0, 2.6614542, 0, -0.45459983, -175.54227, 0.49692273, 100.57854)
+
+[node name="StaticBody3D" type="AnimatableBody3D" parent="CreditScoring/Supplier" unique_id=1142516290]
+transform = Transform3D(0.5585766, 0, 0.947624, 0, 1.1000001, 0, -0.947624, 0, 0.5585766, -0.055419922, 0.50859654, -0.011131287)
+sync_to_physics = false
+script = ExtResource("15_e1n6x")
+special_days = Array[int]([7])
+generic_timelines = Array[String](["supplier_generic_1", "supplier_generic_2"])
+model_needs_flip = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CreditScoring/Supplier/StaticBody3D" unique_id=62101880]
+transform = Transform3D(1.0000085, 0, -3.427267e-06, 0, 1, 0, 3.427267e-06, 0, 1.0000085, 0, 0.12589812, 0)
+shape = SubResource("CapsuleShape3D_yj86u")
+
+[node name="NPCDialogueBox" parent="CreditScoring/Supplier" unique_id=1713485754 instance=ExtResource("8_ym7lu")]
+transform = Transform3D(-0.93334925, 0, -0.5821162, 0, 1.1, 0, 0.5821162, 0, -0.93334925, 0.00021362305, 2.9128547, -9.202957e-05)
+
+[node name="OutdoorNpcPatrol" type="Node" parent="CreditScoring/Supplier" unique_id=431556692]
+script = ExtResource("36_patrol")
+patrol_path = NodePath("../../../NpcPatrolRoutes/Supplier")
+additional_story_days = Array[int]([8])
+start_backwards = true
+
+[node name="TriggerClaraAndSupplier" type="Area3D" parent="CreditScoring" unique_id=2119374024 node_paths=PackedStringArray("clara_npc", "supplier_npc", "clara_bubble", "supplier_bubble", "clara_interact_body")]
+transform = Transform3D(-0.16837029, 0, -0.98572385, 0, 1, 0, 0.98572385, 0, -0.16837029, -177.0325, 1.4229045, 101.03703)
+collision_mask = 2
+script = ExtResource("21_ddiht")
+clara_npc = NodePath("../Nurse Clara")
+supplier_npc = NodePath("../Supplier")
+clara_bubble = NodePath("../Nurse Clara/NPCDialogueBox")
+supplier_bubble = NodePath("../Supplier/NPCDialogueBox")
+clara_interact_body = NodePath("../Nurse Clara/StaticBody3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CreditScoring/TriggerClaraAndSupplier" unique_id=1765008999]
+transform = Transform3D(0.9830162, 0, 0.18351893, 0, 1, 0, -0.18351893, 0, 0.9830162, 14.697205, -0.20579815, 2.4805908)
+shape = SubResource("BoxShape3D_vohb4")
+
+[node name="Prof_ Jericho Santur" parent="CreditScoring" unique_id=697241532 instance=ExtResource("22_yeb0w")]
+transform = Transform3D(-2.2987874, 0, -1.4161841, 0, 2.7, 0, 1.4161841, 0, -2.2987874, -91.114105, 0.4771458, 0.036039352)
+
+[node name="StaticBody3D" type="AnimatableBody3D" parent="CreditScoring/Prof_ Jericho Santur" unique_id=411111931 groups=["special_npcs"]]
+transform = Transform3D(-0.96657586, 0, 0.5251008, 0, 1.1, 0, -0.5251008, 0, -0.96657586, 0.00017929077, -0.00014591217, 0.00014305115)
+sync_to_physics = false
+script = ExtResource("23_x7ph6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CreditScoring/Prof_ Jericho Santur/StaticBody3D" unique_id=159289044]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8527577, 0)
+shape = SubResource("CapsuleShape3D_yj86u")
+
+[node name="NPCDialogueBox" parent="CreditScoring/Prof_ Jericho Santur" unique_id=1381116985 instance=ExtResource("8_ym7lu")]
+transform = Transform3D(-0.966576, 0, 0.5251008, 0, 1.1, 0, -0.5251008, 0, -0.966576, 0.00018310547, 2.9126542, 0.0001449585)
+
+[node name="OutdoorNpcPatrol" type="Node" parent="CreditScoring/Prof_ Jericho Santur" unique_id=2016769154]
+script = ExtResource("36_patrol")
+patrol_path = NodePath("../../../NpcPatrolRoutes/Jericho")
+additional_story_days = Array[int]([9])
+
+[node name="Joice" parent="CreditScoring" unique_id=1189940890 instance=ExtResource("24_ptfg7")]
+transform = Transform3D(-2.32554, 0, -1.3718104, 0, 2.7, 0, 1.3718104, 0, -2.32554, -86.75551, 0.4771458, -0.059114456)
+
+[node name="StaticBody3D" type="AnimatableBody3D" parent="CreditScoring/Joice" unique_id=103327075]
+transform = Transform3D(0.5585767, 0, 0.94762397, 0, 1.1000001, 0, -0.94762397, 0, 0.5585767, -0.055416107, 0.50859654, -0.011131287)
+sync_to_physics = false
+script = ExtResource("15_e1n6x")
+special_days = Array[int]([8])
+generic_timelines = Array[String](["joice_generic_1", "joice_generic_2"])
+model_needs_flip = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CreditScoring/Joice/StaticBody3D" unique_id=22912029]
+transform = Transform3D(1.0000085, 0, -3.427267e-06, 0, 1, 0, 3.427267e-06, 0, 1.0000085, 0, 0.12589812, 0)
+shape = SubResource("CapsuleShape3D_yj86u")
+
+[node name="NPCDialogueBox" parent="CreditScoring/Joice" unique_id=1328916587 instance=ExtResource("8_ym7lu")]
+transform = Transform3D(-1.0109272, 0, 0.43361974, 0, 1.1, 0, -0.43361974, 0, -1.0109272, -0.00030517578, 2.9126542, 0.0005569458)
+
+[node name="OutdoorNpcPatrol" type="Node" parent="CreditScoring/Joice" unique_id=614550316]
+script = ExtResource("36_patrol")
+patrol_path = NodePath("../../../NpcPatrolRoutes/Joice")
+additional_story_days = Array[int]([9])
+start_backwards = true
+
+[node name="TriggerJerichoAndJoice" type="Area3D" parent="CreditScoring" unique_id=1993269788 node_paths=PackedStringArray("jericho_npc", "joice_npc", "jericho_bubble", "joice_bubble", "jericho_interact_body")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97.54646, 1.3851275, -4.8203373)
+collision_mask = 2
+script = ExtResource("24_x7ph6")
+jericho_npc = NodePath("../Prof_ Jericho Santur")
+joice_npc = NodePath("../Joice")
+jericho_bubble = NodePath("../Prof_ Jericho Santur/NPCDialogueBox")
+joice_bubble = NodePath("../Joice/NPCDialogueBox")
+jericho_interact_body = NodePath("../Prof_ Jericho Santur/StaticBody3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CreditScoring/TriggerJerichoAndJoice" unique_id=395693980]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.190353, -0.20579815, -7.732564)
+shape = SubResource("BoxShape3D_s55tp")
+
+[node name="Track" type="Path3D" parent="." unique_id=353624409]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -221.23657, 0.239604, 215.004)
+curve = SubResource("Curve3D_urwcn")
+script = ExtResource("31_p1ya7")
+
+[node name="Jeepney" parent="Track" unique_id=589528123 instance=ExtResource("31_ptfg7")]
+transform = Transform3D(0, 0, 1, 0, 0.9999991, 0, -0.9999991, 0, 0, 96.535, 0, 0)
+
+[node name="SpotLight3D1" type="SpotLight3D" parent="Track/Jeepney" unique_id=925089493]
+transform = Transform3D(1.0000008, 0, 0, 0, 0.9809252, 0.19438963, 0, -0.19438902, 0.98092455, -1.4508667, 2.5458605, -5.010292)
+spot_range = 33.891518
+spot_attenuation = -0.9
+spot_angle = 14.33
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Track/Jeepney" unique_id=584347034]
+transform = Transform3D(1.0000008, 0, 0, 0, 0.9809254, 0.1943892, 0, -0.19438906, 0.9809245, 1.4686127, 2.5458603, -5.010292)
+spot_range = 33.891518
+spot_attenuation = -0.9
+spot_angle = 14.33
+
+[node name="Tita Elena" parent="." unique_id=134432329 instance=ExtResource("33_jvih8")]
+transform = Transform3D(-1.6703937, 0, -2.1212697, 0, 2.7, 0, 2.1212697, 0, -1.6703937, -198.95146, 0.1077286, 12.701565)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tita Elena" unique_id=670194919]
+transform = Transform3D(1, 0, 0, 0, 0.9999954, 0, 0, 0, 1, 0, 0.8862762, 0)
+shape = SubResource("CapsuleShape3D_5ieep")
+
+[node name="BakeryDecisionTrigger" type="Area3D" parent="." unique_id=601153534 node_paths=PackedStringArray("caution_tape", "shop_npcs", "camera_anchor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -217.85155, 0, 23.523445)
+collision_mask = 2
+script = ExtResource("33_bllr2")
+target_day = 3
+caution_tape = NodePath("../Map/Cube/BakeryCautionTape")
+shop_npcs = [NodePath("../Tita Elena")]
+camera_anchor = NodePath("Marker3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BakeryDecisionTrigger" unique_id=1922802701]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0332794, 0.32470703, -14.38652)
+shape = SubResource("BoxShape3D_urwcn")
+
+[node name="Marker3D" type="Marker3D" parent="BakeryDecisionTrigger" unique_id=2106384878]
+transform = Transform3D(-0.7273433, 0, -0.6862738, 0, 1, 0, 0.6862738, 0, -0.7273433, -1.303833, 8.475226, -23.54004)
+
+[node name="HospitalDecisionTrigger" type="Area3D" parent="." unique_id=1672839249 node_paths=PackedStringArray("caution_tape", "shop_npcs", "camera_anchor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -208.51784, -1.9073486e-06, 120.11512)
+collision_mask = 2
+script = ExtResource("33_bllr2")
+special_npc_id = "nurse_clara"
+target_day = 8
+open_timeline = "hospital_open"
+closed_timeline = "hospital_closed"
+caution_tape = NodePath("../Map/hospital_a/HospitalCautionTape")
+shop_npcs = [NodePath("../CreditScoring/Nurse Clara"), NodePath("../CreditScoring/Supplier")]
+camera_anchor = NodePath("Marker3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HospitalDecisionTrigger" unique_id=1893848683]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.929306, 0.2849121, -7.048828)
+shape = SubResource("BoxShape3D_jvih8")
+
+[node name="Marker3D" type="Marker3D" parent="HospitalDecisionTrigger" unique_id=1513566932]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -20.45227, 11.258928, 31.854195)
+
+[node name="DealershipDecisionTrigger" type="Area3D" parent="." unique_id=1864919116 node_paths=PackedStringArray("caution_tape", "shop_npcs", "camera_anchor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -114.842255, 0, 8.267204)
+collision_mask = 2
+script = ExtResource("33_bllr2")
+special_npc_id = "jericho_santur"
+target_day = 9
+open_timeline = "dealership_open"
+closed_timeline = "dealership_closed"
+caution_tape = NodePath("../Map/Cube_006/DealershipCautionTape")
+shop_npcs = [NodePath("../CreditScoring/Prof_ Jericho Santur"), NodePath("../CreditScoring/Joice")]
+camera_anchor = NodePath("Marker3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DealershipDecisionTrigger" unique_id=1123996410]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1018524, 0.6274414, -7.2581997)
+shape = SubResource("BoxShape3D_jv1ba")
+
+[node name="Marker3D" type="Marker3D" parent="DealershipDecisionTrigger" unique_id=1446886740]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -11.618774, 10.676938, -17.29637)
+
+[node name="NpcPatrolRoutes" parent="." unique_id=1078312032 instance=ExtResource("36_paths")]
+
+[connection signal="body_entered" from="OfficeDoor" to="OfficeDoor" method="_on_body_entered"]
+[connection signal="body_exited" from="OfficeDoor" to="OfficeDoor" method="_on_body_exited"]
+[connection signal="body_entered" from="FraudDetection/TriggerGrandpaAndAssistant" to="FraudDetection/TriggerGrandpaAndAssistant" method="_on_body_entered"]
+[connection signal="body_entered" from="FraudDetection/TriggerMarkAndCashier" to="FraudDetection/TriggerMarkAndCashier" method="_on_body_entered"]
+[connection signal="body_entered" from="CreditScoring/TriggerClaraAndSupplier" to="CreditScoring/TriggerClaraAndSupplier" method="_on_body_entered"]
+[connection signal="body_entered" from="CreditScoring/TriggerJerichoAndJoice" to="CreditScoring/TriggerJerichoAndJoice" method="_on_body_entered"]
+[connection signal="body_entered" from="BakeryDecisionTrigger" to="BakeryDecisionTrigger" method="_on_body_entered"]
+[connection signal="body_entered" from="HospitalDecisionTrigger" to="HospitalDecisionTrigger" method="_on_body_entered"]
+[connection signal="body_entered" from="DealershipDecisionTrigger" to="DealershipDecisionTrigger" method="_on_body_entered"]
+
+[editable path="Map"]
+[editable path="CanvasLayer"]

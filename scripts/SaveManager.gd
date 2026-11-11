@@ -1,5 +1,7 @@
 extends Node
 
+signal special_decision_changed(character_id: String, decision: String)
+
 const Catalog := preload("res://scripts/EndingCatalog.gd")
 const COLLECTION_PATH := "user://ending_collection.dat"
 const CERTIFICATE_DAYS := {
@@ -31,13 +33,17 @@ var current_slot: int = 1
 var current_save_data: Dictionary = {}
 var _unlocked_endings := {}
 var _collection_needs_save := false
+var _collection_generation := 0
 
 
 func _ready() -> void:
 	_load_collection()
 	# Recover recorded IDs and any identifiable endings from pre-gallery slots.
 	for slot in range(1, 4):
-		var ending_id := get_completed_ending_id(read_save(slot))
+		var data := read_save(slot)
+		if int(data.get("ending_collection_generation", 0)) != _collection_generation:
+			continue
+		var ending_id := get_completed_ending_id(data)
 		if ending_id != "" and not is_ending_unlocked(ending_id):
 			_unlocked_endings[ending_id] = true
 			_collection_needs_save = true
@@ -51,6 +57,11 @@ func _load_collection() -> bool:
 	if collection.load_encrypted_pass(COLLECTION_PATH, SAVE_PASSWORD) != OK:
 		push_error("Could not read the ending collection.")
 		return false
+	var generation := int(collection.get_value("collection", "generation", 0))
+	if generation != _collection_generation:
+		_unlocked_endings.clear()
+		_collection_needs_save = false
+		_collection_generation = generation
 	for id in Catalog.ENDINGS:
 		if collection.get_value("endings", id, false) == true:
 			_unlocked_endings[id] = true
@@ -109,6 +120,7 @@ func record_ending(ending_id: String) -> void:
 		unlock_ending(ending_id)
 		return
 	current_save_data["ending_id"] = ending_id
+	current_save_data["ending_collection_generation"] = _collection_generation
 	current_save_data["stage_name"] = "Game Finished"
 	save_game(current_slot, current_save_data)
 	preserve_slot_ending(current_save_data)
@@ -116,6 +128,9 @@ func record_ending(ending_id: String) -> void:
 
 # Replay and deletion must preserve a slot's ending if its first profile write failed.
 func preserve_slot_ending(data: Dictionary) -> bool:
+	# A deliberate gallery reset must not recover endings from older playthroughs.
+	if int(data.get("ending_collection_generation", 0)) != _collection_generation:
+		return true
 	var ending_id := get_completed_ending_id(data)
 	if ending_id == "":
 		return true
@@ -138,8 +153,31 @@ func _save_collection() -> bool:
 	if not _load_collection():
 		return false
 	var collection := ConfigFile.new()
+	collection.set_value("collection", "generation", _collection_generation)
 	for id in _unlocked_endings:
 		collection.set_value("endings", id, true)
+	if not _write_collection(collection):
+		return false
+	_collection_needs_save = false
+	return true
+
+
+func reset_all_endings() -> bool:
+	if not _load_collection():
+		return false
+	var collection := ConfigFile.new()
+	var next_generation := _collection_generation + 1
+	collection.set_value("collection", "generation", next_generation)
+	# Keep both the saved collection and in-memory unlocks if writing fails.
+	if not _write_collection(collection):
+		return false
+	_unlocked_endings.clear()
+	_collection_needs_save = false
+	_collection_generation = next_generation
+	return true
+
+
+func _write_collection(collection: ConfigFile) -> bool:
 	# Replace the old collection only after the new one is completely written.
 	var temp_path := "%s.%d.tmp" % [COLLECTION_PATH, OS.get_process_id()]
 	var error := collection.save_encrypted_pass(temp_path, SAVE_PASSWORD)
@@ -148,7 +186,6 @@ func _save_collection() -> bool:
 	if error != OK:
 		push_error("Could not save the ending collection: " + error_string(error))
 		return false
-	_collection_needs_save = false
 	return true
 
 # Saved as .dat so players cannot edit it with a standard text editor
@@ -261,6 +298,7 @@ func record_special_decision(character_id: String, decision: String):
 		
 	current_save_data["special_decisions"][character_id] = decision
 	save_game(current_slot, current_save_data)
+	special_decision_changed.emit(character_id, decision)
 	print("Saved story decision for [%s]: %s" % [character_id, decision])
 
 # Retrieves the decision for a character (returns "" if not encountered yet)

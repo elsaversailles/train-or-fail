@@ -1,0 +1,7 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+WAYPOINT BOUNDS: floppydisk origin=(-6.774897, 2.340561, -12.83188) top=2.42256593704224 relative_top=0.08200526237488
+WAYPOINT BOUNDS: socket/FloppyCartridge origin=(-7.876946, 2.363253, -12.14575) top=2.66229867935181 relative_top=0.2990460395813
+WAYPOINT BOUNDS: Monitor origin=(-4.623867, 2.316467, -14.19444) top=4.30975961685181 relative_top=1.99329257011414

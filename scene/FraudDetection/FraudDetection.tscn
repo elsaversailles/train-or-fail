@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bx7scsfg2nivv" path="res://scene/pause_panel.tscn" id="15_65k3s"]
 [ext_resource type="PackedScene" uid="uid://cdoxo1627leua" path="res://scene/Tutorial/fd_tutorial.tscn" id="16_k8o8q"]
 [ext_resource type="PackedScene" path="res://scene/ending_intro.tscn" id="17_ending_intro"]
+[ext_resource type="PackedScene" path="res://scene/Tutorial/tutorial_waypoint.tscn" id="18_tutorial_waypoint"]
 
 [sub_resource type="Sky" id="Sky_118ik"]
 sky_material = ExtResource("2_118ik")
@@ -90,6 +91,15 @@ transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, -5.2
 transform = Transform3D(0.9550795, 0, -0.2963497, 0, 1, 0, 0.2963497, 0, 0.9550795, -6.3500395, 0.09924817, 3.3019118)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1476932616]
+
+[node name="TutorialWaypoint" parent="CanvasLayer" node_paths=PackedStringArray("tutorial", "player", "floppy_disk", "cartridge", "monitor", "monitor_screen") instance=ExtResource("18_tutorial_waypoint")]
+tutorial = NodePath("../FDTutorial")
+player = NodePath("../../MainChar")
+floppy_disk = NodePath("../../floppydisk")
+cartridge = NodePath("../../socket/FloppyCartridge")
+monitor = NodePath("../../Monitor")
+monitor_screen = NodePath("../../Monitor/Screen")
+guide_disk_setup = true
 
 [node name="Crosshair" type="ColorRect" parent="CanvasLayer" unique_id=741844015]
 anchors_preset = 8

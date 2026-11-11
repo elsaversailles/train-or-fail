@@ -5,6 +5,58 @@
 [ext_resource type="FontFile" path="res://assets/fonts/IBMPlexMono-Regular.ttf" id="3_mono"]
 [ext_resource type="PackedScene" path="res://scene/ending_intro.tscn" id="4_intro"]
 
+[sub_resource type="StyleBoxFlat" id="Style_reset"]
+bg_color = Color(0.75, 0.18, 0.2, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_left = 4
+corner_radius_bottom_right = 4
+
+[sub_resource type="StyleBoxFlat" id="Style_reset_hover"]
+bg_color = Color(0.9, 0.24, 0.26, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_left = 4
+corner_radius_bottom_right = 4
+
+[sub_resource type="StyleBoxFlat" id="Style_focus"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.86, 0.9, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_left = 4
+corner_radius_bottom_right = 4
+
+[sub_resource type="StyleBoxFlat" id="Style_dialog"]
+bg_color = Color(0.13, 0.15, 0.19, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.42, 0.46, 0.53, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_left = 6
+corner_radius_bottom_right = 6
+
+[sub_resource type="StyleBoxFlat" id="Style_cancel"]
+bg_color = Color(0.21, 0.24, 0.29, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_left = 4
+corner_radius_bottom_right = 4
+
+[sub_resource type="StyleBoxFlat" id="Style_cancel_hover"]
+bg_color = Color(0.29, 0.33, 0.39, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_left = 4
+corner_radius_bottom_right = 4
+
 [node name="EndingGallery" type="ColorRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -48,7 +100,7 @@ flat = true
 [node name="Count" type="Label" parent="Window"]
 offset_left = 28.0
 offset_top = 46.0
-offset_right = 460.0
+offset_right = 360.0
 offset_bottom = 99.0
 theme_override_font_sizes/font_size = 34
 vertical_alignment = 1
@@ -56,9 +108,9 @@ vertical_alignment = 1
 [node name="SlotHint" type="Label" parent="Window"]
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -388.0
+offset_left = -723.0
 offset_top = 46.0
-offset_right = -28.0
+offset_right = -318.0
 offset_bottom = 99.0
 theme_override_colors/font_color = Color(0.75, 0.79, 0.84, 1)
 theme_override_fonts/font = ExtResource("3_mono")
@@ -66,6 +118,23 @@ theme_override_font_sizes/font_size = 15
 text = "Shared across all save slots"
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="ResetAllEndings" type="Button" parent="Window"]
+offset_left = 841.0
+offset_top = 51.0
+offset_right = 1105.0
+offset_bottom = 94.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("Style_reset")
+theme_override_styles/hover = SubResource("Style_reset_hover")
+theme_override_styles/pressed = SubResource("Style_reset_hover")
+theme_override_styles/focus = SubResource("Style_focus")
+text = "Reset All Endings"
+tooltip_text = "Clear unlocked endings from the gallery."
 
 [node name="Entries" type="GridContainer" parent="Window"]
 offset_left = 28.0
@@ -102,3 +171,94 @@ theme_override_font_sizes/font_size = 20
 text = "Back to gallery"
 
 [node name="EndingIntro" parent="." instance=ExtResource("4_intro")]
+
+[node name="ResetConfirmation" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 0
+color = Color(0.02, 0.03, 0.05, 0.8)
+
+[node name="Dialog" type="Panel" parent="ResetConfirmation"]
+offset_right = 624.0
+offset_bottom = 322.0
+theme_override_styles/panel = SubResource("Style_dialog")
+
+[node name="Title" type="Label" parent="ResetConfirmation/Dialog"]
+offset_left = 32.0
+offset_top = 28.0
+offset_right = 592.0
+offset_bottom = 70.0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 28
+text = "Reset all endings?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Message" type="Label" parent="ResetConfirmation/Dialog"]
+offset_left = 32.0
+offset_top = 92.0
+offset_right = 592.0
+offset_bottom = 162.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.9, 0.92, 0.96, 1)
+theme_override_fonts/font = ExtResource("3_mono")
+theme_override_font_sizes/font_size = 18
+text = "All unlocked endings will be locked again.\nThis cannot be undone."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="SaveHint" type="Label" parent="ResetConfirmation/Dialog"]
+offset_left = 32.0
+offset_top = 177.0
+offset_right = 592.0
+offset_bottom = 207.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.75, 0.79, 0.84, 1)
+theme_override_fonts/font = ExtResource("3_mono")
+theme_override_font_sizes/font_size = 15
+text = "Your save slots and story progress will be kept."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cancel" type="Button" parent="ResetConfirmation/Dialog"]
+offset_left = 42.0
+offset_top = 238.0
+offset_right = 302.0
+offset_bottom = 288.0
+focus_neighbor_left = NodePath("../Confirm")
+focus_neighbor_top = NodePath("../Confirm")
+focus_neighbor_right = NodePath("../Confirm")
+focus_neighbor_bottom = NodePath("../Confirm")
+focus_next = NodePath("../Confirm")
+focus_previous = NodePath("../Confirm")
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("Style_cancel")
+theme_override_styles/hover = SubResource("Style_cancel_hover")
+theme_override_styles/pressed = SubResource("Style_cancel_hover")
+theme_override_styles/focus = SubResource("Style_focus")
+text = "Cancel"
+
+[node name="Confirm" type="Button" parent="ResetConfirmation/Dialog"]
+offset_left = 322.0
+offset_top = 238.0
+offset_right = 582.0
+offset_bottom = 288.0
+focus_neighbor_left = NodePath("../Cancel")
+focus_neighbor_top = NodePath("../Cancel")
+focus_neighbor_right = NodePath("../Cancel")
+focus_neighbor_bottom = NodePath("../Cancel")
+focus_next = NodePath("../Cancel")
+focus_previous = NodePath("../Cancel")
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("Style_reset")
+theme_override_styles/hover = SubResource("Style_reset_hover")
+theme_override_styles/pressed = SubResource("Style_reset_hover")
+theme_override_styles/focus = SubResource("Style_focus")
+text = "Reset All Endings"

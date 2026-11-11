@@ -190,7 +190,7 @@ var kyc_applicants: Array = [
 		"model_scene": preload("res://models3d/characters/F/teresa_lim.tscn"),
 		"id_image": preload("res://images/applicants info/KYC/a4/a4_id.png"),
 		"kyc_correct": "sus",
-		"ai_risk_factor": "12%",
+		"ai_risk_factor": "53%",
 		"note": "Valid identification card presented. Biometric profile and signature match existing bank records."
 	},
 	{
@@ -199,7 +199,7 @@ var kyc_applicants: Array = [
 		"model_scene": preload("res://models3d/characters/M/miguel_reyes.tscn"),
 		"id_image": preload("res://images/applicants info/KYC/a5/a5_id.png"),
 		"kyc_correct": "sus",
-		"ai_risk_factor": "15%",
+		"ai_risk_factor": "51%",
 		"note": "ID card is active and authentic."
 	},
 	{
@@ -447,7 +447,7 @@ var special_applicants: Array = [
 		"location": preload("res://images/applicants info/special characters/TitaElena/flour_location.png"),
 		"item": preload("res://images/applicants info/special characters/TitaElena/flour_item.png"),
 		"time": "11:45 AM",
-		"price": "₱702,000.00",
+		"price": "₱100,000.00",
 		"fraud_correct": "sus",
 		"ai_risk_factor": "88%",
 		"note": "Large overseas flour order is unusual, but Elena's bakery and seasonal-stock note support a legitimate business purchase."

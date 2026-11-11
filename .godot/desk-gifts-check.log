@@ -1,0 +1,24 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+TEST USER DIRECTORY: C:/Users/mart/Desktop/train-or-fail-demo-(copy)/.godot/desk-gifts-test-user/Godot/app_userdata/TrainOrFail Demo (Copy)
+Saved story decision for [tita_elena]: legit
+Saved story decision for [mark_krazy]: legit
+Saved story decision for [tita_elena]: sus
+Saved story decision for [mark_krazy]: sus
+Saved story decision for [mark_krazy]: legit
+Saved story decision for [mark_krazy]: sus
+Saved story decision for [mark_krazy]: legit
+Saved story decision for [nurse_clara]: legit
+Saved story decision for [jericho_santur]: legit
+Saved story decision for [nurse_clara]: sus
+Saved story decision for [jericho_santur]: sus
+Saved story decision for [tita_elena]: legit
+Saved story decision for [jericho_santur]: legit
+Saved story decision for [mark_krazy]: legit
+Saved story decision for [nurse_clara]: legit
+Saved story decision for [grandpa]: legit
+Saved story decision for [grandpa]: sus
+Saved story decision for [grandpa]: legit
+DESK GIFTS CHECKS: 226 / FAILURES: 0

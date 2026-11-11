@@ -1,0 +1,16 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+EXPECTED WRITE FAILURE BEGIN
+ERROR: Could not save the ending collection: Can't open file
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _write_collection (res://scripts/SaveManager.gd:187)
+       [1] reset_all_endings (res://scripts/SaveManager.gd:172)
+       [2] _confirm_reset (res://scripts/EndingGallery.gd:99)
+       [3] _run (res://.godot/ending_reset_check.gd:104)
+       [4] press_key (res://.godot/ending_reset_check.gd:29)
+       [5] frames (res://.godot/ending_reset_check.gd:18)
+EXPECTED WRITE FAILURE END
+ENDING RESET CHECKS: 50 / FAILURES: 0

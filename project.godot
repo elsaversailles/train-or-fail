@@ -87,6 +87,7 @@ directories/dtl_directory={
 "mark_day4": "res://Dialogic/Timelines/mark_day4.dtl",
 "mark_generic_1": "res://Dialogic/Timelines/mark_generic_1.dtl",
 "mark_generic_2": "res://Dialogic/Timelines/mark_generic_2.dtl",
+"road_blocked": "res://Dialogic/Timelines/road_blocked.dtl",
 "supervisor_day1": "res://Dialogic/Timelines/supervisor_day1.dtl",
 "supervisor_day4": "res://Dialogic/Timelines/supervisor_day4.dtl",
 "supervisor_day7": "res://Dialogic/Timelines/supervisor_day7.dtl",

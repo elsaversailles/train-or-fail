@@ -112,7 +112,7 @@ func _process(_delta: float) -> void:
 				interaction_label.text = "Press E to Pick Up"
 				found_raycast_target = true
 
-		elif collider.has_method("interact"):
+		elif _can_interact_with(collider):
 			if interaction_label:
 				interaction_label.text = "Press E to Interact"
 				found_raycast_target = true
@@ -294,10 +294,18 @@ func rotate_look(rot_input: Vector2) -> void:
 # INTERACTION SYSTEM
 # =========================================================
 
+func _can_interact_with(target: Object) -> bool:
+	if not is_instance_valid(target) or not target.has_method("interact"):
+		return false
+	# NPCs decide availability using the same rules as their dialogue action.
+	if target.has_method("can_interact"):
+		return bool(target.call("can_interact"))
+	return true
+
 func check_interaction() -> void:
 	if interact_ray and interact_ray.is_colliding():
 		var target = interact_ray.get_collider()
-		if target.has_method("interact"):
+		if _can_interact_with(target):
 			target.interact()
 	elif not interact_ray:
 		push_error("RayCast3D is missing! Check your scene tree.")

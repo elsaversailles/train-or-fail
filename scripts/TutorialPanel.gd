@@ -77,7 +77,7 @@ var tutorials: Array = [
 	},
 	{
 		"title": "Read the credit documents",
-		"subtitle": "Credit Scoring  /  Open all four tabs before choosing an amount.",
+		"subtitle": "Credit Scoring  /  Open all four tabs before choosing a score.",
 		"steps": [
 			["General Info", "Read the customer's financial background."],
 			["Payment History", "Check their record of repaying credit."],
@@ -87,12 +87,12 @@ var tutorials: Array = [
 		"note": "Use the records to judge what the customer can repay. AI Risk Factor is only a hint."
 	},
 	{
-		"title": "Choose a credit amount",
-		"subtitle": "Credit Scoring  /  Set the amount, then confirm your decision.",
+		"title": "Choose a credit score",
+		"subtitle": "Credit Scoring  /  Set the score, then confirm your decision.",
 		"steps": [
-			["Set Proposed Credit", "Drag the slider to choose an amount from $0 to $10,000."],
-			["Reject when needed", "Click the flag to reject. It turns red and selects $0. Raising the slider clears rejection."],
-			["Submit your decision", "Click Submit to confirm and move to the next customer. You can change the amount until you submit."]
+			["Set Proposed Credit", "0 = Rejected; 0.2 = Low; 0.4 or 0.6 = Medium; 0.8 or 1.0 = High."],
+			["Reject when needed", "Click the flag or set the slider to 0 for Rejected. The flag turns red. Raising the slider clears rejection."],
+			["Submit your decision", "Click Submit to confirm and move to the next customer. You can change the score until you submit."]
 		]
 	},
 	{

@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://c2d0aob8bo2uu"]
+
+[ext_resource type="PackedScene" uid="uid://blrbpj7lkyfbd" path="res://assets/jeepsign/signjeep.glb" id="1_2e5qb"]
+
+[node name="signjeep" unique_id=144693055 instance=ExtResource("1_2e5qb")]

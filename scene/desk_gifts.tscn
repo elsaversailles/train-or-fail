@@ -1,0 +1,51 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/DeskGifts.gd" id="1_gdveo"]
+[ext_resource type="PackedScene" path="res://assets/ACHIEVEMETNS/minecraft_slice_of_bread.glb" id="2_i7pnu"]
+[ext_resource type="PackedScene" path="res://assets/ACHIEVEMETNS/low_poly_toy_car_i_kids_car_for_projects.glb" id="3_y56kh"]
+[ext_resource type="PackedScene" path="res://assets/ACHIEVEMETNS/low_poly_tank.glb" id="4_86k55"]
+[ext_resource type="PackedScene" path="res://assets/ACHIEVEMETNS/first_aid_kit.glb" id="5_r8nmy"]
+[ext_resource type="PackedScene" path="res://assets/ACHIEVEMETNS/ball_of_yarn.glb" id="6_80xig"]
+
+[node name="DeskGifts" type="Node3D" unique_id=1638490844]
+script = ExtResource("1_gdveo")
+
+[node name="Bread" type="Node3D" parent="." unique_id=1499796659]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75, 2.345, -11.65)
+
+[node name="Orientation" type="Node3D" parent="Bread" unique_id=946031304]
+transform = Transform3D(2.9899666, -0.80115914, 3.501978e-08, 0, -1.3530604e-07, -3.0954413, 0.80115914, 2.9899666, -1.306956e-07, 0.27327198, 0.19346513, -0.5823008)
+
+[node name="Sketchfab_Scene" type="Node3D" parent="Bread/Orientation" unique_id=2114140871 instance=ExtResource("2_i7pnu")]
+
+[node name="ToyCar" type="Node3D" parent="." unique_id=911213961]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2.345, -12.95)
+
+[node name="Orientation" type="Node3D" parent="ToyCar" unique_id=191793139]
+transform = Transform3D(0.13545437, 0, 0.19344889, 0, 0.23615748, 0, -0.19344889, 0, 0.13545437, -0.125493, -0.0041510127, -0.08787113)
+
+[node name="Sketchfab_Scene" type="Node3D" parent="ToyCar/Orientation" unique_id=821391669 instance=ExtResource("3_y56kh")]
+
+[node name="ToyTank" type="Node3D" parent="." unique_id=341987024]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.55, 2.345, -14.55)
+
+[node name="Orientation" type="Node3D" parent="ToyTank" unique_id=1643072162]
+transform = Transform3D(0.00075826864, 0, -0.0002759872, 0, 0.0008069326, 0, 0.0002759872, 0, 0.00075826864, 0.13227671, 0.0033448827, 0.044403188)
+
+[node name="Sketchfab_Scene" type="Node3D" parent="ToyTank/Orientation" unique_id=460217571 instance=ExtResource("4_86k55")]
+
+[node name="FirstAidKit" type="Node3D" parent="." unique_id=705275271]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8, 2.345, -13.85)
+
+[node name="Orientation" type="Node3D" parent="FirstAidKit" unique_id=1277908831]
+transform = Transform3D(0.33339733, 0, -0.058786944, 0, 0.33854052, 0, 0.058786944, 0, 0.33339733, -0.010619789, 0.0004729558, 0.00024617877)
+
+[node name="Sketchfab_Scene" type="Node3D" parent="FirstAidKit/Orientation" unique_id=1007114474 instance=ExtResource("5_r8nmy")]
+
+[node name="Yarn" type="Node3D" parent="." unique_id=1086036640]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.55, 2.345, -10.65)
+
+[node name="Orientation" type="Node3D" parent="Yarn" unique_id=846208229]
+transform = Transform3D(0.30081093, 0, 0.08060205, 0, 0.3114224, 0, -0.08060205, 0, 0.30081093, -0.050508883, 0.25599313, -0.18850163)
+
+[node name="Sketchfab_Scene" type="Node3D" parent="Yarn/Orientation" unique_id=1622492739 instance=ExtResource("6_80xig")]

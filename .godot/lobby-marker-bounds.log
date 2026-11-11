@@ -1,0 +1,13 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+LOBBY BOUNDS: OfficeLobby2/Elevator min=(-19.7, -0.738753, -8.865001) max=(-8.815749, 12.3125, 3.4475)
+ELEVATOR SURFACE: Material.002 min=(-19.7, -0.738753, -8.865001) max=(-8.815749, 12.3125, 3.4475)
+LOBBY BOUNDS: ElevetorDoor/Node3D/DiscMesh min=(-11.05833, -0.611037, -4.512423) max=(-6.002335, 0.020963, 0.543577)
+LOBBY BOUNDS: Supervisor/M EYEGLASSES min=(-8.720283, 3.843832, 7.369959) max=(-8.150788, 4.125634, 8.103518)
+LOBBY BOUNDS: Supervisor/M EYEGLASSES/Player/Skeleton3D/spine_006/z min=(-9.124136, 3.564509, 7.304934) max=(-8.101936, 4.672133, 8.248722)
+LOBBY BOUNDS: Supervisor/M EYEGLASSES/Player/Skeleton3D/MBody_015 min=(-9.293491, 2.255929, 6.118545) max=(-7.854721, 3.54219, 9.417337)
+LOBBY BOUNDS: Supervisor/M EYEGLASSES/Player/Skeleton3D/MPants_015 min=(-8.933039, 0.243263, 7.233616) max=(-8.216412, 2.323763, 8.303042)
+LOBBY BOUNDS: Supervisor/M EYEGLASSES/Player/Skeleton3D/MShoes_015 min=(-8.848621, -0.003674, 7.18706) max=(-7.938746, 0.292774, 8.257135)
+LOBBY BOUNDS: Supervisor/M EYEGLASSES/Player/Skeleton3D/MSkin_015 min=(-9.513377, 3.201665, 5.649797) max=(-7.681541, 4.473441, 9.898473)

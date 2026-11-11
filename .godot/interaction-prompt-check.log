@@ -1,0 +1,63 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+WARNING: res://scene/map.tscn:5 - ext_resource, invalid UID: uid://bjjxo4pp5goh8 - using text path instead: res://scripts/RoadblockWarning.gd
+   at: load (scene/resources/resource_format_text.cpp:501)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://.godot/interaction_prompt_check.gd:58)
+WARNING: Adding 'StaticBody3D' as child to '@Node3D@46' will make owner 'Outside_World' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1728)
+   GDScript backtrace (most recent call first):
+       [0] mount_npc (res://.godot/interaction_prompt_check.gd:27)
+       [1] _run (res://.godot/interaction_prompt_check.gd:63)
+WARNING: Adding 'StaticBody3D' as child to '@Node3D@67' will make owner 'Outside_World' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1728)
+   GDScript backtrace (most recent call first):
+       [0] mount_npc (res://.godot/interaction_prompt_check.gd:27)
+       [1] _run (res://.godot/interaction_prompt_check.gd:63)
+       [2] unmount_npc (res://.godot/interaction_prompt_check.gd:35)
+       [3] frames (res://.godot/tutorial_waypoint_check.gd:17)
+WARNING: Adding 'StaticBody3D' as child to '@Node3D@88' will make owner 'Outside_World' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1728)
+   GDScript backtrace (most recent call first):
+       [0] mount_npc (res://.godot/interaction_prompt_check.gd:27)
+       [1] _run (res://.godot/interaction_prompt_check.gd:63)
+       [2] unmount_npc (res://.godot/interaction_prompt_check.gd:35)
+       [3] frames (res://.godot/tutorial_waypoint_check.gd:17)
+WARNING: Adding 'StaticBody3D' as child to '@Node3D@109' will make owner 'Outside_World' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1728)
+   GDScript backtrace (most recent call first):
+       [0] mount_npc (res://.godot/interaction_prompt_check.gd:27)
+       [1] _run (res://.godot/interaction_prompt_check.gd:63)
+       [2] unmount_npc (res://.godot/interaction_prompt_check.gd:35)
+       [3] frames (res://.godot/tutorial_waypoint_check.gd:17)
+WARNING: Adding 'StaticBody3D' as child to '@Node3D@130' will make owner 'Outside_World' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1728)
+   GDScript backtrace (most recent call first):
+       [0] mount_npc (res://.godot/interaction_prompt_check.gd:27)
+       [1] _run (res://.godot/interaction_prompt_check.gd:88)
+       [2] unmount_npc (res://.godot/interaction_prompt_check.gd:35)
+       [3] frames (res://.godot/tutorial_waypoint_check.gd:17)
+WARNING: Adding 'StaticBody3D' as child to '@Node3D@131' will make owner 'Outside_World' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1728)
+   GDScript backtrace (most recent call first):
+       [0] mount_npc (res://.godot/interaction_prompt_check.gd:27)
+       [1] _run (res://.godot/interaction_prompt_check.gd:88)
+       [2] unmount_npc (res://.godot/interaction_prompt_check.gd:35)
+       [3] frames (res://.godot/tutorial_waypoint_check.gd:17)
+WARNING: Adding 'StaticBody3D' as child to '@Node3D@132' will make owner 'Outside_World' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1728)
+   GDScript backtrace (most recent call first):
+       [0] mount_npc (res://.godot/interaction_prompt_check.gd:27)
+       [1] _run (res://.godot/interaction_prompt_check.gd:88)
+       [2] unmount_npc (res://.godot/interaction_prompt_check.gd:35)
+       [3] frames (res://.godot/tutorial_waypoint_check.gd:17)
+WARNING: Adding 'StaticBody3D' as child to '@Node3D@133' will make owner 'Outside_World' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1728)
+   GDScript backtrace (most recent call first):
+       [0] mount_npc (res://.godot/interaction_prompt_check.gd:27)
+       [1] _run (res://.godot/interaction_prompt_check.gd:102)
+       [2] unmount_npc (res://.godot/interaction_prompt_check.gd:35)
+       [3] frames (res://.godot/tutorial_waypoint_check.gd:17)
+INTERACTION PROMPT RESULT: 208 checks; 0 failures

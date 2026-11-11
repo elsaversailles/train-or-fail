@@ -1,0 +1,54 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+[   0% ] first_scan_filesystem | Started Project initialization (5 steps)
+[   0% ] first_scan_filesystem | Scanning file structure...
+[  16% ] first_scan_filesystem | Loading global class names...
+[  33% ] first_scan_filesystem | Verifying GDExtensions...
+[  50% ] first_scan_filesystem | Creating autoload scripts...
+[  66% ] first_scan_filesystem | Initializing plugins...
+[  83% ] first_scan_filesystem | Starting file scan...
+[ DONE ] first_scan_filesystem
+
+WARNING: Case mismatch opening requested file 'res://assets/Applicants/newmodels/M/Supervisor_char1.png', stored as 'res://assets/Applicants/newmodels/M/supervisor_char1.png' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+   at: open_internal (drivers/windows/file_access_windows.cpp:192)
+WARNING: Case mismatch opening requested file 'res://assets/Applicants/newmodels/M/Supervisor_char1.png.import', stored as 'res://assets/Applicants/newmodels/M/supervisor_char1.png.import' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+   at: open_internal (drivers/windows/file_access_windows.cpp:192)
+[   0% ] loading_editor_layout | Started Loading editor (5 steps)
+[   0% ] loading_editor_layout | Loading editor layout...
+[  16% ] loading_editor_layout | Loading docks...
+[  33% ] loading_editor_layout | Reopening scenes...
+[  50% ] loading_editor_layout | Loading central editor layout...
+[  66% ] loading_editor_layout | Loading plugin window layout...
+WARNING: Case mismatch opening requested file 'res://scripts/screengameplays/Credit_Scoring_Panel.gd', stored as 'res://scripts/screengameplays/credit_scoring_panel.gd' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+   at: open_internal (drivers/windows/file_access_windows.cpp:192)
+WARNING: Case mismatch opening requested file 'res://scripts/screengameplays/Credit_Scoring_Panel.gd', stored as 'res://scripts/screengameplays/credit_scoring_panel.gd' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+   at: open_internal (drivers/windows/file_access_windows.cpp:192)
+WARNING: Case mismatch opening requested file 'res://scripts/screengameplays/Credit_Scoring_Panel.gd', stored as 'res://scripts/screengameplays/credit_scoring_panel.gd' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+   at: open_internal (drivers/windows/file_access_windows.cpp:192)
+WARNING: Case mismatch opening requested file 'res://scripts/screengameplays/Kyc_Panel.gd', stored as 'res://scripts/screengameplays/kyc_panel.gd' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+   at: open_internal (drivers/windows/file_access_windows.cpp:192)
+WARNING: Case mismatch opening requested file 'res://scripts/screengameplays/Kyc_Panel.gd', stored as 'res://scripts/screengameplays/kyc_panel.gd' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+   at: open_internal (drivers/windows/file_access_windows.cpp:192)
+WARNING: Case mismatch opening requested file 'res://scripts/screengameplays/Kyc_Panel.gd', stored as 'res://scripts/screengameplays/kyc_panel.gd' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+   at: open_internal (drivers/windows/file_access_windows.cpp:192)
+WARNING: Case mismatch opening requested file 'res://scripts/screengameplays/Left_Sliding_Panel.gd', stored as 'res://scripts/screengameplays/left_sliding_panel.gd' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+   at: open_internal (drivers/windows/file_access_windows.cpp:192)
+WARNING: Case mismatch opening requested file 'res://scripts/screengameplays/Left_Sliding_Panel.gd', stored as 'res://scripts/screengameplays/left_sliding_panel.gd' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+   at: open_internal (drivers/windows/file_access_windows.cpp:192)
+WARNING: Case mismatch opening requested file 'res://scripts/screengameplays/Left_Sliding_Panel.gd', stored as 'res://scripts/screengameplays/left_sliding_panel.gd' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+   at: open_internal (drivers/windows/file_access_windows.cpp:192)
+WARNING: Case mismatch opening requested file 'res://scripts/Screen.gd', stored as 'res://scripts/screen.gd' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+   at: open_internal (drivers/windows/file_access_windows.cpp:192)
+WARNING: Case mismatch opening requested file 'res://scripts/Screen.gd', stored as 'res://scripts/screen.gd' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+   at: open_internal (drivers/windows/file_access_windows.cpp:192)
+WARNING: Case mismatch opening requested file 'res://scripts/Screen.gd', stored as 'res://scripts/screen.gd' in the filesystem. This file will not open when exported to other case-sensitive platforms.
+   at: open_internal (drivers/windows/file_access_windows.cpp:192)
+[  83% ] loading_editor_layout | Editor layout ready.
+[ DONE ] loading_editor_layout
+
+ERROR: Cannot save file 'C:/SteamLibrary/steamapps/common/Godot Engine/editor_data/editor_settings-4.7.tres'.
+   at: save (scene/resources/resource_format_text.cpp:1768)
+ERROR: Error saving editor settings to C:/SteamLibrary/steamapps/common/Godot Engine/editor_data/editor_settings-4.7.tres
+   at: save (editor/settings/editor_settings.cpp:1525)
