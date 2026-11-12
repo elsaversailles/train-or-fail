@@ -24,10 +24,10 @@ res://scene/lights.tscn::22c6dc68fb201f52bfbe3ffcf2f9b12a::1792981933::res://.go
 res://scene/men_and_women.tscn::f9e6b6828a42042f4e167d0d6c82b505::1790734107::res://.godot/exported/133200997/export-ec2061d5e87c8c9dbadb30e29e1dac9c-men_and_women.scn
 res://scene/npc_dialogue_box.tscn::c95b0d38305afd8e4f64efe668f96543::1790734108::res://.godot/exported/133200997/export-ec7020149593643d344fcd29d83dce7e-npc_dialogue_box.scn
 res://scene/office_lobby.tscn::9b20ea1db710e6e3b2a61d78ea2ab21b::1794418807::res://.godot/exported/133200997/export-ad03d04d05cbda464c5851556d45619c-office_lobby.scn
-res://scene/outside_world.tscn::dba0f79e77f52de1d7315ed3348a0a41::1794416233::res://.godot/exported/133200997/export-02707674f5a7f43fe06fff74cfe6a8b0-outside_world.scn
+res://scene/outside_world.tscn::dba0f79e77f52de1d7315ed3348a0a41::1794476899::res://.godot/exported/133200997/export-02707674f5a7f43fe06fff74cfe6a8b0-outside_world.scn
 res://scene/world_environment.tscn::bf3f4ae1b7dce3f9514e9e8d1e06de81::1792980450::res://.godot/exported/133200997/export-2bcaf7b1dd5942c8bece5eeddad0ebb4-world_environment.scn
 res://scene/apartment.tscn::289d6470730b991d5713119fb384e121::1793929588::res://.godot/exported/133200997/export-b39493c067bfc7d272b6254a22f7129c-apartment.scn
-res://theme/game_theme.tres::eef43ac2f166a1d13d1ee649eeef42f0::1794420905::res://.godot/exported/133200997/export-546dfbfbe014cb3aa94699a286e462bc-game_theme.res
+res://theme/game_theme.tres::eef43ac2f166a1d13d1ee649eeef42f0::1794476894::res://.godot/exported/133200997/export-546dfbfbe014cb3aa94699a286e462bc-game_theme.res
 res://scene/Tutorial/cs_tutorial.tscn::bc1cddcf25779990b43245f842493f09::1794277523::res://.godot/exported/133200997/export-5224d508157b8086eb7657937aaa3a2f-cs_tutorial.scn
 res://scene/Tutorial/fd_tutorial.tscn::04a444e6f705a4e167700ea2ca7fce0c::1794277523::res://.godot/exported/133200997/export-d8c2ff00ed012983240cad14c01fbcc9-fd_tutorial.scn
 res://scene/Tutorial/kyc_tutorial.tscn::6d0ae8d3c669b3876a309d206d302a2f::1794277523::res://.godot/exported/133200997/export-3a82406da217e369da201cb4cdcf8734-kyc_tutorial.scn
@@ -194,7 +194,7 @@ res://models3d/map/elevator.tscn::188ebb9f07c09b7c4a9b9b0090301412::1790734096::
 res://models3d/map/office_lobby.tscn::f917e223dcfbca8597ead7bb41cc9e0a::1794120347::res://.godot/exported/133200997/export-64a7b9f76ebf24acf13f45661bb89340-office_lobby.scn
 res://scene/FloorMarker.tscn::01feda7b45400f5e4def9cf45b627d4b::1793193716::res://.godot/exported/133200997/export-f379732a83345089b8a994282f9a37c5-FloorMarker.scn
 res://models3d/characters/M/john_bernard.tscn::102773fbaf06b89a45c436852c29a10e::1790734094::res://.godot/exported/133200997/export-1ca37183c80fed7a506dc00bc33272b0-john_bernard.scn
-res://models3d/map/office.tscn::3ac7d4cf46cd237b7be9d7f0d113e867::1794416886::res://.godot/exported/133200997/export-c73671757f04c1b9d2a0d208ed2c7c7f-office.scn
+res://models3d/map/office.tscn::e0ef8e20f0d2d6657c99f68460ec90af::1794478257::res://.godot/exported/133200997/export-c73671757f04c1b9d2a0d208ed2c7c7f-office.scn
 res://assets/music/default_bus_layout.tres::066ba751d4c1d0fab8ad8c639c8e6fa4::1794352465::res://.godot/exported/133200997/export-a72bb44e4c378c59e6f86664c0fceabe-default_bus_layout.res
 res://models3d/characters/M/supervisor.tscn::a9c305df37709109b2c0c315b6e7391d::1790734095::res://.godot/exported/133200997/export-0f68b792e1f5c7e49d23e3483f4d19ab-supervisor.scn
 res://scene/waypoint_marker.tscn::748552bea67ef8358530c7a2229cbdc1::1790738792::res://.godot/exported/133200997/export-730718989d8df1ebf259d1652cd321cd-waypoint_marker.scn
@@ -256,16 +256,16 @@ res://Materials/window angeloan.tres::18faffdadfddd5fb3b8de3d50f277cb0::17930714
 res://Materials/windows_glow.tres::13c3fe9852ad883b3b1e79c85a7617e6::1793530239::res://.godot/exported/133200997/export-c5679bea1359df239796b9ef22052365-windows_glow.res
 res://scene/world_environment_office.tscn::235eae44de7d4274244ef9857b29de1d::1792982129::res://.godot/exported/133200997/export-d947c0460767065111ffae21b19bebb6-world_environment_office.scn
 res://scene/world_environment_stock.tscn::0499b7f0b3db0dd3394596acea922326::1792980450::res://.godot/exported/133200997/export-3ed06c199a36f96b5d6dd8391c8319ee-world_environment_stock.scn
-res://shader/office_shader.tres::3fed2b1fed903254f35565fc2a178cf3::1794278664::res://.godot/exported/133200997/export-e4aa672ec8b183a4b2d2a406c42d8aeb-office_shader.res
+res://shader/office_shader.tres::3fed2b1fed903254f35565fc2a178cf3::1794478257::res://.godot/exported/133200997/export-e4aa672ec8b183a4b2d2a406c42d8aeb-office_shader.res
 res://scene/ending_intro.tscn::82e235891319a32abc4e094a4c71d5f6::1793626461::res://.godot/exported/133200997/export-7eb1363b3bb41b3bbc4709ca08edf6b9-ending_intro.scn
 res://animation/adrian_walk_test.tscn::c06156f9ae12168d3d9a8c3323809cb4::1794015724::res://.godot/exported/133200997/export-054f20e57b7e8bd8266f4f08dbb9f053-adrian_walk_test.scn
-res://animation/walk_animation.tres::992aaac685e6082dcddce26ab0fb9a17::1794420905::res://.godot/exported/133200997/export-e5b2e1330887e226f5270764a353d070-walk_animation.res
+res://animation/walk_animation.tres::992aaac685e6082dcddce26ab0fb9a17::1794476894::res://.godot/exported/133200997/export-e5b2e1330887e226f5270764a353d070-walk_animation.res
 res://scene/ending_gallery.tscn::4a7fa46104f4fae5f1f1188a2a42a3d8::1794418170::res://.godot/exported/133200997/export-ac893c4b39e3549a1687aad3c1d84c0a-ending_gallery.scn
 res://scene/ending_gallery_entry.tscn::07dbc1fdb717b0cb7d53bea147fc1449::1793929582::res://.godot/exported/133200997/export-00ade2c33927204cebcebbfba6ded0a7-ending_gallery_entry.scn
 res://scene/office_certificates.tscn::7d7b255bb3b7fec9ef4f1ab7fa0c8e46::1793966297::res://.godot/exported/133200997/export-a2386803a88613e71d274ecb4cc34b70-office_certificates.scn
 res://scene/outdoor_npc_paths.tscn::ff8f7f26047c9b9a31a618805c10d4a1::1794018476::res://.godot/exported/133200997/export-32c0e944801ddc5414b569e04d5ac19e-outdoor_npc_paths.scn
 res://scene/walk_preview.tscn::466e339bafe740afa725bc0cda3e95e8::1794016083::res://.godot/exported/133200997/export-6b6868f4ac7119a0b59fc979cb2c5e1e-walk_preview.scn
-res://theme/review_icon_buttons.tres::5f3777cb0f429ecb9c52f7321777d9cf::1794420905::res://.godot/exported/133200997/export-36102b92d4b58a55930fb5f8465a4611-review_icon_buttons.res
+res://theme/review_icon_buttons.tres::5f3777cb0f429ecb9c52f7321777d9cf::1794476894::res://.godot/exported/133200997/export-36102b92d4b58a55930fb5f8465a4611-review_icon_buttons.res
 res://assets/Road Block/road_block.tscn::829038261688c34dd776e51273d55cfd::1794399956::res://.godot/exported/133200997/export-f2c3c75e4fb0d310a91659974b4ad822-road_block.scn
 res://scene/Tutorial/tutorial_waypoint.tscn::acc1371bc9cc8a47d99879b3060fd492::1794409337::res://.godot/exported/133200997/export-e4ba481fbd0cd48948e26e9e844e264a-tutorial_waypoint.scn
 res://scene/exclamation.tscn::a8dc6517ca872ce4cbbb8f23045c025f::1794410297::res://.godot/exported/133200997/export-bccae6260657a18b9db4c5707bd2a8dc-exclamation.scn

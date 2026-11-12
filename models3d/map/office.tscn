@@ -690,4 +690,4 @@ occluder = ExtResource("2_0q3iv")
 [node name="Certificates" parent="." index="87" unique_id=222725874 instance=ExtResource("3_certificates")]
 transform = Transform3D(7.54979e-08, 0, -1, 0, 1, 0, 1, 0, 7.54979e-08, -2.0053077, 3.315, -11.096592)
 
-[node name="DeskGifts" parent="." index="88" instance=ExtResource("4_desk_gifts")]
+[node name="DeskGifts" parent="." index="88" unique_id=110134621 instance=ExtResource("4_desk_gifts")]

@@ -96,12 +96,12 @@ func _on_slot_clicked(slot: int):
 		var data = SaveManager.read_save(slot)
 		if SaveManager.get_completed_ending_id(data) != "":
 			select_btn_label.text = "Replay"
-			select_btn.tooltip_text = "Start from Day 1 in slot %d with your certificates and collected endings." % slot
+			select_btn.tooltip_text = "Start from Day 1 in slot %d with your certificates, collected endings, and final desk gifts." % slot
 		else:
 			select_btn_label.text = "Load Game"
 			select_btn.tooltip_text = "Continue the saved career in slot %d." % slot
 		delete_btn_label.text = "Delete"
-		delete_btn.tooltip_text = "Permanently delete slot %d and its training certificates." % slot
+		delete_btn.tooltip_text = "Permanently delete slot %d, its training certificates, and carried desk gifts." % slot
 		delete_btn.disabled = false 
 	else:
 		select_btn_label.text = "New Game"
@@ -124,6 +124,7 @@ func _on_select_pressed():
 		var fresh_run := SaveManager.DEFAULT_SAVE.duplicate(true)
 		if has_save:
 			fresh_run["certificates"] = data["certificates"].duplicate()
+			fresh_run["desk_gifts_carried"] = SaveManager.get_replay_desk_gifts(data)
 		if not SaveManager.save_game(selected_slot, fresh_run):
 			_show_slot_error(selected_slot, "Couldn't start the new save. Try again.")
 			return

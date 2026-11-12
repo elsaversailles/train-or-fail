@@ -1,7 +1,13 @@
+res://scene/outside_world.tscn
 res://theme/game_theme.tres
 res://shader/atmosphere_sky.gdshader
 res://theme/review_icon_buttons.tres
 res://animation/walk_animation.tres
 res://shader/ocean.gdshader
 res://shader/boatwake.gdshader
-res://scene/map.tscn
+res://scripts/ApplicantDatabase.gd
+res://scripts/DeskGifts.gd
+res://scripts/SaveManager.gd
+res://scripts/SlotsMenu.gd
+res://models3d/map/office.tscn
+res://shader/office_shader.tres

@@ -363,7 +363,7 @@ var credit_applicants: Array = [
 		"payment_history_img": preload("res://images/applicants info/CreditScoring/a7/cs_a7_PH.png"),
 		"arrears_img": preload("res://images/applicants info/CreditScoring/a7/cs_a7_arrears.png"),
 		"debt_ratio_img": preload("res://images/applicants info/CreditScoring/a7/cs_a7_DR.png"),
-		"credit_correct": 0.4,
+		"credit_correct": 0.8,
 		"ai_risk_factor": "67%"
 	},
 	{
@@ -396,7 +396,7 @@ var credit_applicants: Array = [
 		"payment_history_img": preload("res://images/applicants info/CreditScoring/a11/cs_a11_PH.png"),
 		"arrears_img": preload("res://images/applicants info/CreditScoring/a11/cs_a11_arrears.png"),
 		"debt_ratio_img": preload("res://images/applicants info/CreditScoring/a11/cs_a11_DR.png"),
-		"credit_correct": 0.0,
+		"credit_correct": 0.8,
 		"ai_risk_factor": "95%"
 	},
 	{

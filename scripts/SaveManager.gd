@@ -12,8 +12,9 @@ const CERTIFICATE_DAYS := {
 
 # --- ENCRYPTION CONFIGURATION ---
 const SAVE_PASSWORD: String = "7654raymartangelonevincemattknitechtrainorfail4325"
-const RAIN_CHANCE := 0.5
+const RAIN_CHANCE := 0.2
 const WEATHER_RULE_VERSION := 2
+const FINAL_DESK_GIFTS := ["jericho_santur", "grandpa"]
 
 # The template for a brand new game mapped to the 9-day structure
 const DEFAULT_SAVE = {
@@ -26,6 +27,8 @@ const DEFAULT_SAVE = {
 	"level_scores": {}, 
 	"total_score": 0,
 	"certificates": [],
+	"desk_gift_available_days": {},
+	"desk_gifts_carried": [],
 	"special_decisions": {} # Tracks any special character verdicts: e.g. {"tita_elena": "sus", "character_2": "legit"}
 }
 
@@ -232,6 +235,7 @@ func read_save(slot: int) -> Dictionary:
 		# Migration fallback: ensure special_decisions exists in older save files
 		if not data.has("special_decisions"):
 			data["special_decisions"] = {}
+		_ensure_desk_gift_delivery_days(data)
 		_update_slot_certificates(data)
 			
 		return data
@@ -295,8 +299,15 @@ func record_special_decision(character_id: String, decision: String):
 		
 	if not current_save_data.has("special_decisions"):
 		current_save_data["special_decisions"] = {}
-		
+	_ensure_desk_gift_delivery_days(current_save_data)
 	current_save_data["special_decisions"][character_id] = decision
+	var delivery_days: Dictionary = current_save_data["desk_gift_available_days"]
+	if decision == "legit":
+		# Re-approving Mark must not postpone a gift that was already delivered.
+		if not delivery_days.has(character_id):
+			delivery_days[character_id] = int(current_save_data.get("current_day", 1)) + 1
+	else:
+		delivery_days.erase(character_id)
 	save_game(current_slot, current_save_data)
 	special_decision_changed.emit(character_id, decision)
 	print("Saved story decision for [%s]: %s" % [character_id, decision])
@@ -305,3 +316,61 @@ func record_special_decision(character_id: String, decision: String):
 func get_special_decision(character_id: String) -> String:
 	var decisions = current_save_data.get("special_decisions", {})
 	return decisions.get(character_id, "")
+
+
+func is_desk_gift_available(character_id: String) -> bool:
+	if character_id in current_save_data.get("desk_gifts_carried", []):
+		return true
+	if get_special_decision(character_id) != "legit":
+		return false
+	if character_id == "grandpa":
+		var secret_round: bool = current_save_data.get("is_grandpa_shift", false) or current_save_data.get("grandpa_round_completed", false)
+		if not secret_round and get_completed_ending_id(current_save_data) != "conflict_of_interest":
+			return false
+	_ensure_desk_gift_delivery_days(current_save_data)
+	var available_day := int(current_save_data["desk_gift_available_days"].get(character_id, 0))
+	return available_day > 0 and int(current_save_data.get("current_day", 1)) >= available_day
+
+
+func get_replay_desk_gifts(data: Dictionary) -> Array[String]:
+	var carried: Array[String] = []
+	for character_id in FINAL_DESK_GIFTS:
+		if character_id in data.get("desk_gifts_carried", []):
+			carried.append(character_id)
+	var ending_id := get_completed_ending_id(data)
+	if ending_id == "":
+		return carried
+	var decisions: Dictionary = data.get("special_decisions", {})
+	if decisions.get("jericho_santur", "") == "legit" and not carried.has("jericho_santur"):
+		carried.append("jericho_santur")
+	if ending_id == "conflict_of_interest" and decisions.get("grandpa", "") == "legit" and not carried.has("grandpa"):
+		carried.append("grandpa")
+	return carried
+
+
+func _ensure_desk_gift_delivery_days(data: Dictionary) -> void:
+	if data.has("desk_gift_available_days"):
+		return
+	# Older saves have verdicts but no approval dates. Use the latest scheduled
+	# review up to their saved day, then persist the inferred date on the next save.
+	var delivery_days := {}
+	var current_day := int(data.get("current_day", 1))
+	var decisions: Dictionary = data.get("special_decisions", {})
+	for character_id in decisions:
+		if decisions[character_id] != "legit":
+			continue
+		var decision_day := 10 if character_id == "grandpa" else current_day
+		for applicant in Database.special_applicants:
+			if applicant.id != character_id:
+				continue
+			var target = applicant.get("target_days", applicant.get("target_day"))
+			var scheduled_days: Array = target if target is Array else [target]
+			var latest_day := 0
+			for day in scheduled_days:
+				if int(day) <= current_day:
+					latest_day = maxi(latest_day, int(day))
+			if latest_day > 0:
+				decision_day = latest_day
+			break
+		delivery_days[character_id] = decision_day + 1
+	data["desk_gift_available_days"] = delivery_days
